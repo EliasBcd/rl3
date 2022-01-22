@@ -12,6 +12,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+      ratio: "16:9"
 
 ---
 
@@ -189,14 +190,32 @@ chien
 
 --
 
-Ou encore des conditions logiques (`TRUE` ou `FALSE`)
+Ou encore des conditions logiques (`TRUE` ou `FALSE`) basées sur des comparaisons
 
 ```{r}
 valeur <- TRUE
 valeur
 
 chien == "Doberman"
+3<2
 ```
+
+---
+### Opérateurs logiques
+
+| Opérateur | Résumé | Exemple | Résultat |
+|:---------|:---------------------:|:---------------------:|:-------:|
+| `x < y`  | `x` plus petit que `y`                | `3 < 42`               | `r 3 < 42`               |
+| `x > y`  | `x` plus grand que `y`             | `3 > 42`               | `r 3 > 42`               |
+| `x <= y` | `x` plus petit ou égal à `y`    | `3 <= 42`              | `r 3 <= 42`              |
+| `x >= y` | `x` plus grand ou égal à `y` | `3 >= 42`              | `r 3 >= 42`              |
+| `x == y` | `x` égal à `y`                  | `3 == 42`              | `r 3 == 42`              |
+| `x != y` | `x` pas égal à `y`             | `3 != 42`              | `r 3 != 42`              |
+| `!x`     | pas `x`                          | `!(3 > 42)`            | `r !(3 > 42)`            |
+| <code>x &#124; y</code>  | `x` ou `y`     | <code>(3 > 42) &#124; TRUE</code>      | `r TRUE`      |
+| `x & y`  | `x` et `y`                      | `(3 < 4) & ( 42 > 13)` | `r (3 < 4) & ( 42 > 13)` |
+
+
 
 ---
 
@@ -274,9 +293,10 @@ Notons qu'on peut tester l'égalité des éléments d'un vecteur et d'un objet
 ```{r}
 chiens_pref==chien
 tailles==147
+tailles_m>1.6
 ```
 
-La double égalité `==` est l'opérateur de comparaison
+
 
 ---
 
@@ -316,4 +336,306 @@ tailles[-2]
 ```
 
 ---
+
+Enfin, on peut faire des sous-ensembles sur la base d'un vecteur d'indices.
+
+```{r}
+tailles[1:3]
+tailles[c(1,3,4)]
+```
+
+
+Nous pourrions également utiliser un vecteur de valeurs logiques.
+
+```{r}
+z = c(TRUE, TRUE, FALSE, TRUE, FALSE)
+tailles[z]
+
+```
+
+Ce qui est très pratique pour extraire un sous-vecteur des entrées respectant une condition logique : 
+```{r}
+tailles[tailles>160]
+```
+
+---
+
+## Fonctions
+
+### Principes
+
+Nous savons effectuer des opérations de base sur des nombres et des vecteurs, et stocker des valeurs dans des objets pour pouvoir les réutiliser plus tard.
+
+Pour aller plus loin, nous devons aborder les fonctions qui sont, avec les objets, un deuxième concept de base de R. On utilise des fonctions pour effectuer des calculs, obtenir des résultats et accomplir des actions.
+
+Formellement, une fonction a un nom, elle prend en entrée entre parenthèses un ou plusieurs arguments (ou paramètres), et retourne un résultat.
+
+Prenons tout de suite un exemple. Si on veut connaître le nombre d'éléments du vecteur `tailles` que nous avons construit précédemment, on peut utiliser la fonction `length()`, de cette manière :
+
+```{r}
+length(tailles)
+```
+
+---
+
+Ici, `length()` est  la fonction, on l'appelle en lui passant un argument entre parenthèses (ici notre vecteur tailles), et elle nous renvoie un résultat, à savoir le nombre d'éléments du vecteur passé en paramètre.
+
+Autre exemple, les fonctions `min()` et `max()` retournent respectivement les valeurs minimales et maximales d’un vecteur de nombres.
+
+```{r}
+min(tailles)
+max(tailles)
+```
+La fonction `mean()` calcule et retourne la moyenne d'un vecteur de nombres.
+
+```{r}
+mean(tailles)
+```
+
+Une fonction peut renvoyer d'autres types de résultats. Par exemple, la fonction `range()` (étendue) renvoie un vecteur de deux nombres, le minimum et le maximum.
+
+```{r}
+range(tailles)
+```
+
+---
+
+### Arguments
+
+Une fonction peut prendre plusieurs arguments, dans ce cas on les indique entre parenthèses en les séparant par des virgules.
+
+On a déjà rencontré un exemple de fonction acceptant plusieurs arguments : la fonction `c()`, qui combine l'ensemble de ses arguments en un vecteur
+```{r}
+tailles=c(156,164,197,147,173)
+```
+Ici, `c()` est appelée en lui passant cinq arguments, les cinq tailles séparées par des virgules, et elle renvoie un vecteur numérique regroupant ces cinq valeurs.
+
+Supposons maintenant que dans notre vecteur tailles nous avons une valeur manquante (une personne a refusé de répondre, ou notre mètre mesureur était en panne). On symbolise celle-ci dans R avec le code interne `NA`.
+
+```{r}
+tailles <- c(156, 164, 197, NA, 173)
+tailles
+```
+
+---
+
+### Valeurs manquantes
+
+Si on calcule maintenant la taille moyenne à l'aide de la fonction `mean()`, on obtient :
+```{r}
+mean(tailles)
+
+```
+
+En effet, R considère par défaut qu’il ne peut pas calculer la moyenne si une des valeurs n’est pas disponible. Dans ce cas il considère que la moyenne est elle-même “non disponible” et renvoie donc `NA` comme résultat.
+
+On peut cependant indiquer à `mean()` d'effectuer le calcul en ignorant les valeurs manquantes. Ceci se fait en ajoutant un argument supplémentaire, nommé `na.rm` (abbréviation de NA remove, “enlever les NA”), et de lui attribuer la valeur `TRUE`.
+
+```{r}
+mean(tailles, na.rm = TRUE)
+```
+
+Mettre le paramètre `na.rm` à `TRUE` indique à la fonction `mean()` de ne pas tenir compte des valeurs manquantes dans le calcul.
+
+
+---
+
+### Aide sur une fonction
+
+Il est fréquent de ne pas savoir (ou d'avoir oublié) quels sont les arguments d'une fonction, ou comment ils se nomment. On peut à tout moment faire appel à l'aide intégrée à R en passant le nom de la fonction (entre guillemets) à la fonction `help()`.
+```{r eval=FALSE}
+help("mean")
+```
+
+On peut aussi utiliser le raccourci `?mean`.
+
+```{r eval=FALSE}
+?mean
+```
+
+
+Ces deux commandes affichent une page (en anglais) décrivant la fonction, ses paramètres, son résultat, le tout accompagné de diverses notes, références et exemples. Ces pages d'aide contiennent à peu près tout ce que vous pourrez chercher à savoir, mais elles ne sont pas toujours d'une lecture aisée.
+
+---
+
+### Regrouper ses commandes dans des scripts
+
+- Jusqu'ici on a utilisé R de manière “interactive”, en saisissant des commandes directement dans la console. Ce n'est pas très pratique pour sauvegarder son travail. De lorsque R ou RStudio redémarre, tout ce qui a été effectué dans la console est perdu.
+
+
+- On va plutôt  regrouper les commandes dans des scripts (de simples fichiers texte), qui vont garder une trace de toutes les opérations effectuées. En rouvrant les scripts et en réexécutant les commandes qu'ils contiennent on pourra “reproduire” le chargement des données, leur traitement, les analyses et leurs résultats.
+
+- Pour créer un script, il suffit de sélectionner le menu File, puis New file et R script. Une quatrième zone apparaît alors en haut à gauche de l'interface de RStudio. On peut enregistrer notre script à tout moment dans un fichier avec l'extension .R, en cliquant sur l'icône de disquette ou en choisissant File puis Save.
+
+- Un script est un fichier texte brut, qui s'édite de la manière habituelle. À la différence de la console, quand on appuie sur Entrée, cela n'exécute pas la commande en cours mais insère un saut de ligne.
+
+
+- Pour exécuter une commande dans un script, il faut positionner le curseur sur la ligne de la commande en question, et de cliquer sur le bouton Run dans la barre d'outils juste au-dessus de la zone d'édition du script. On peut aussi utiliser le raccourci clavier Ctrl + Entrée (Cmd + Entrée sous Mac). On peut aussi sélectionner plusieurs lignes avec la souris ou le clavier et cliquer sur Run (ou utiliser le raccourci clavier), et l'ensemble des lignes est exécuté d'un coup.
+
+---
+
+Au final, un script pourra ressembler à quelque chose comme ça :
+
+```{r eval = FALSE}
+tailles <- c(156, 164, 197, 147, 173)
+poids <- c(45, 59, 110, 44, 88)
+
+mean(tailles)
+mean(poids)
+
+imc <- poids / (tailles / 100) ^ 2
+min(imc)
+max(imc)
+
+```
+
+---
+### Commentaires
+
+Les commentaires sont un élément très important d'un script. Il s'agit de texte, ignoré par R, et qui permet de décrire les étapes du script, sa logique, les raisons pour lesquelles on a procédé de telle ou telle manière… Il est primordial de documenter ses scripts avec des commentaires, car il est très facile de ne plus se retrouver dans un programme qu'on a produit soi-même, même après une courte interruption.
+
+Pour ajouter un commentaire, il suffit de le faire précéder d'un ou plusieurs symboles `#`. En effet, dès que R rencontre ce caractère, il ignore tout ce qui se trouve derrière, jussqu'à la fin de la ligne.
+
+On peut donc documenter le script précédent :
+
+```{r eval=FALSE}
+# Saisie des tailles et poids des enquêtés
+tailles <- c(156, 164, 197, 147, 173)
+poids <- c(45, 59, 110, 44, 88)
+
+# Calcul des tailles et poids moyens
+mean(tailles)
+mean(poids)
+
+# Calcul de l'IMC (poids en kilo divisé par les tailles en mètre au carré)
+imc <- poids / (tailles / 100) ^ 2
+# Valeurs extrêmes de l'IMC
+min(imc)
+max(imc)
+```
+
+---
+
+## Installer et charger des extensions (packages)
+
+- L'installation de base de R permet de faire énormément de choses, mais le langage dispose en plus d'un système d'extensions permettant d'ajouter facilement de nouvelles fonctionnalités. La plupart des extensions sont développées et maintenues par la communauté des utilisateurs et utilisatrices de R, et diffusées via un réseau de serveurs nommé CRAN (Comprehensive R Archive Network).
+
+- Pour installer une extension, si on dispose d'une connexion Internet, on peut 
+    - Cliquer sur le bouton Install de l'onglet Packages de RStudio.
+    - Il suffit alors d'indiquer le nom de l'extension dans le champ Package et de cliquer sur Install.
+    
+- On peut aussi installer des extensions en utilisant la fonction `install.packages()` directement dans la console. Par exemple, pour installer le package `ggplot2` on peut exécuter la commande    
+
+```{r eval=FALSE}
+install.packages(ggplot2)
+```
+---
+
+- Une fois l'extension installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu'elle propose. Ceci se fait avec la fonction `library()`. Par exemple, pour pouvoir utiliser les fonctions de `ggplot2`, vous devrez exécuter la commande suivante :
+
+```{r eval=FALSE}
+library(ggplot2)
+```
+
+Ainsi, on regroupe en général en début de script toute une série de commandes `library()` qui permettent de charger tous les packages utilisés dans le script. Quelque chose comme 
+
+```{r}
+library(ggplot2)
+library(haven)
+library(tidyr)
+```
+
+---
+## Exercices
+
+###Exercice 1
+
+Construire le vecteur x suivant :
+
+```{r echo=F}
+x <- c(120, 134, 256,  12)
+x
+```
+
+Utiliser ce vecteur x pour générer les deux vecteurs suivants :
+```{r echo=F}
+x+100
+x*2
+```
+
+---
+
+### Exercice 2
+
+On a demandé à 4 ménages le revenu des deux conjoints, et le nombre de personnes du ménage :
+
+```{r}
+conjoint1 <- c(1200, 1180, 1750, 2100)
+conjoint2 <- c(1450, 1870, 1690, 0)
+nb_personnes <- c(4, 2, 3, 2)
+```
+
+Calculer le revenu total de chaque ménage, puis diviser par le nombre de personnes pour obtenir le revenu par personne de chaque ménage.
+
+--
+
+### Exercice 3
+
+Dans l'exercice précédent, calculer le revenu minimum et maximum parmi ceux du premier conjoint.
+```{r}
+conjoint1 <- c(1200, 1180, 1750, 2100)
+```
+
+Recommencer avec les revenus suivants, parmi lesquels l'un des enquêtés n'a pas voulu répondre :
+
+```{r}
+conjoint1 <- c(1200, 1180, 1750, NA)
+```
+
+---
+### Exercice 4
+
+Les deux vecteurs suivants représentent les précipitations (en mm) et la température (en °C) moyennes pour chaque mois de l'année pour la ville de Lyon (moyennes calculées sur la période 1981-2010) :
+
+```{r}
+temperature <- c(3.4, 4.8, 8.4, 11.4, 15.8, 19.4, 22.2, 21.6, 17.6, 13.4, 7.6, 4.4)
+precipitations <- c(47.2, 44.1, 50.4, 74.9, 90.8, 75.6, 63.7, 62, 87.5, 98.6, 81.9, 55.2)
+```
+
+Calculer la température moyenne sur l’année.
+
+Calculer la quantité totale de précipitations sur l’année.
+
+À quoi correspond et comment peut-on interpréter le résultat de la fonction suivante ? Vous pouvez vous aider de la page d’aide de la fonction si nécessaire.
+
+```{r}
+cumsum(precipitations)
+```
+
+Même question pour :
+```{r}
+diff(temperature)
+```
+
+---
+### Exercice 5
+
+On a relevé les notes en maths, anglais et sport d'une classe de 6 élèves et on a stocké ces données dans trois vecteurs :
+
+```{r}
+maths <- c(12, 16, 8, 18, 6, 10)
+anglais <- c(14, 9, 13, 15, 17, 11)
+sport <- c(18, 11, 14, 10, 8, 12)
+```
+
+Calculer la moyenne des élèves de la classe en anglais.
+
+Calculer la moyenne générale de chaque élève (la moyenne des ses notes dans les trois matières).
+
+
+Essayez de comprendre le résultat des deux fonctions suivantes (vous pouvez vous aider de la page d’aide de ces fonctions) :
+```{r}
+pmin(maths, anglais, sport)
+pmax(maths, anglais, sport)
+```
 
