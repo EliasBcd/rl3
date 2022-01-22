@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Une introduction à R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Élias Bouacida ; Antoine Terracol" />
+    <meta name="date" content="2022-01-22" />
+    <script src="slidesrl3_files/header-attrs/header-attrs.js"></script>
+    <link href="slidesrl3_files/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style_perso.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Une introduction à R
+## L3 économie-finance
+### Élias Bouacida ; Antoine Terracol
+### Université Paris 8
+### 2022-01-22
+
+---
+
+
+
+
+
+
+class: left, middle
+name: Installation
+
+# Installation
+
+Le seul prérequis pour suivre ce cours est d'avoir installé R et RStudio sur votre ordinateur.
+
+Il s'agit de deux logiciels libres, gratuits, téléchargeables en ligne et fonctionnant sous Windows, Mac et Linux.
+
+Pour installer R, il suffit de se rendre sur une des pages suivantes :
+
+[Installer R sous Windows](https://cloud.r-project.org/bin/windows/base/)
+
+[Installer R sous Mac](https://cloud.r-project.org/bin/macosx/)
+
+Pour installer RStudio, rendez-vous sur [la page de téléchargement du logiciel](https://www.rstudio.com/products/rstudio/download/#download) et installez la version adaptée à votre système.
+
+Vous trouverez plus d'informations sur l'installation de R et Rstudio sur le page Moodle du cours.
+---
+class: left, middle
+
+# Prise en main
+
+## La console
+
+Au premier lancement de RStudio, l'interface est organisée en trois grandes zones.
+
+&lt;img src="fenetreRStudio.png" width="600px" /&gt;
+
+
+
+La zone de gauche se nomme la Console. À son démarrage, RStudio a lancé une nouvelle session de R et c'est dans cette fenêtre que nous allons pouvoir interagir avec lui.
+---
+La Console affiche un texte de bienvenue suivi d'une ligne commençant par le caractère `&gt;` (l'invite de commande). 
+
+
+Nous pouvons tout de suite essayer quelques calculs :
+
+
+```r
+2+2
+```
+
+```
+## [1] 4
+```
+--
+
+
+```r
+5-7
+```
+
+```
+## [1] -2
+```
+
+```r
+4*12
+```
+
+```
+## [1] 48
+```
+
+```r
+-10/3
+```
+
+```
+## [1] -3.333333
+```
+
+```r
+5^2
+```
+
+```
+## [1] 25
+```
+
+---
+## Calculs de base
+
+
+
+
+#### Addition, Sousraction, Multiplication et Division
+
+| Math          | code `R`    | Résultat    |
+|:-------------:|:-------:|:---------:|
+| `\(3 + 2\)`       | `3 + 2` | 5 |
+| `\(3 - 2\)`       | `3 - 2` | 1 |
+| `\(3 \times 2\)`    | `3 * 2` | 6 |
+| `\(3 \div 2\)`       | `3 / 2` | 1.5 |
+
+#### Exposants
+
+| Math          | code `R`    | Résultat    |
+|:-------------:|:-------:|:---------:|
+| `\(3^2\)`        | `3 ^ 2`         | 9         |
+| `\(2^{(-3)}\)`   | `2 ^ (-3)`      | 0.125      |
+| `\(100^{1/2}\)`  | `100 ^ (1 / 2)` | 10 |
+| `\(\sqrt{100}\)` | `sqrt(100)`     | 10     |
+
+---
+
+#### Constantes mathématiques 
+
+| Math          | code `R`    | Résultat    |
+|:------------:|:---------------:|:-----------------:|
+| `\(\pi\)`        | `pi`            | `3.141593`            |
+| `\(e\)`          | `exp(1)`        | `2.718282`        |
+
+#### Logarithmes
+
+Il n'y a pas de `ln()` dans `R`, mais on utilise `log()` pour désigner le logarithme naturel. `log10()` désigne le logarithme en base 10
+
+| Math          | code `R`    | Résultat    |
+|:------------:|:---------------:|:-----------------:|
+| `\(\ln(e)\)`         | `log(exp(1))`       | `1`       |
+| `\(\log_{10}(1000)\)` | `log10(1000)`       | `3`       |
+
+#### Trigonometrie
+
+| Math          | code `R`    | Résultat    |
+|:------------:|:---------------:|:-----------------:|
+| `\(\sin(\pi / 2)\)` | `sin(pi / 2)` | `1` |
+| `\(\cos(0)\)`       | `cos(0)`      | `1`      |
+
+
+---
+
+## Objets 
+
+Pour conserver le résultat d'une opération, on peut le stocker dans un objet à l'aide de l'opérateur d'assignation `&lt;-`. Cette “flèche” stocke ce qu'il y a à sa droite dans un objet dont le nom est indiqué à sa gauche.
+
+
+```r
+x &lt;- 2
+```
+Se lit “prend la valeur 2 et mets la dans un objet qui s'appelle `x`”.
+
+--
+Si on exécute une commande comportant juste le nom d'un objet, `R` affiche son contenu
+
+
+```r
+x
+```
+
+```
+## [1] 2
+```
+--
+
+On peut évidemment réutiliser cet objet dans d'autres opérations : `R` le remplacera alors par sa valeur.
+
+```r
+x+4
+```
+
+```
+## [1] 6
+```
+
+---
+On peut créer autant d'objets qu'on le souhaite.
+
+
+```r
+x &lt;- 2
+y &lt;- 5
+resultat &lt;- x + y
+resultat
+```
+
+```
+## [1] 7
+```
+--
+
+Si on assigne une nouvelle valeur à un objet, la valeur précédente est perdue.
+
+
+```r
+x &lt;- 2
+x &lt;- 5
+x
+```
+
+```
+## [1] 5
+```
+--
+Assigner un objet à un autre  copie juste la valeur de l'objet de droite dans celui de gauche
+
+
+```r
+x &lt;- 1
+y &lt;- 3
+x &lt;- y
+x
+```
+
+```
+## [1] 3
+```
+
+---
+
+Les objets peuvent contenir tout un tas d'informations.
+
+Jusqu'ici on n'a stocké que des nombres, mais ils peuvent aussi contenir des chaînes de caractères (du texte), qu'on délimite avec des guillemets simples ou doubles (' ou ") :
+
+
+```r
+chien &lt;- "Chihuahua"
+chien
+```
+
+```
+## [1] "Chihuahua"
+```
+
+--
+
+Ou encore des conditions logiques (`TRUE` ou `FALSE`)
+
+
+```r
+valeur &lt;- TRUE
+valeur
+```
+
+```
+## [1] TRUE
+```
+
+```r
+chien == "Doberman"
+```
+
+```
+## [1] FALSE
+```
+
+---
+
+## Vecteurs
+
+Imaginons qu'on a demandé la taille en centimètres de 5 personnes et qu'on souhaite calculer leur taille moyenne.
+
+On pourrait créer autant d'objets que de tailles et calculer la moyenne
+
+
+```r
+taille1 &lt;- 156
+taille2 &lt;- 164
+taille3 &lt;- 197
+taille4 &lt;- 147
+taille5 &lt;- 173
+(taille1 + taille2 + taille3 + taille4 + taille5) / 5
+```
+
+```
+## [1] 167.4
+```
+
+--
+Ce n’est clairement pas pratique du tout. On va plutôt stocker l'ensemble de nos tailles dans un seul objet, un vecteur, avec la syntaxe suivante :
+
+
+```r
+tailles &lt;- c(156, 164, 197, 147, 173)
+```
+
+où le `c()` veut dire "combine les valeurs suivantes dans un vecteur ou une liste"
+
+---
+Si on affiche le contenu de cet objet, on voit qu’il contient bien l’ensemble des tailles saisies.
+
+
+```r
+tailles
+```
+
+```
+## [1] 156 164 197 147 173
+```
+
+--
+Si on applique une opération à un vecteur, celle-ci s'applique à toutes les valeurs qu'il contient. 
+
+Si on veut la taille en mètres plutôt qu'en centimètres, on peut faire :
+
+```r
+tailles_m &lt;- tailles/100
+tailles_m
+```
+
+```
+## [1] 1.56 1.64 1.97 1.47 1.73
+```
+
+---
+Imaginons maintenant qu’on a aussi demandé aux cinq mêmes personnes leur poids en kilos.
+
+On peut créer un deuxième vecteur :
+
+
+```r
+poids &lt;- c(45, 59, 110, 44, 88)
+```
+
+On peut alors effectuer des calculs utilisant nos deux vecteurs `tailles` et `poids`.
+
+On peut par exemple calculer l’indice de masse corporelle (IMC) de chacun de nos enquêtés en divisant leur poids en kilo par leur taille en mètre au carré :
+
+```r
+imc &lt;- poids / (tailles / 100) ^ 2
+imc
+```
+
+```
+## [1] 18.49112 21.93635 28.34394 20.36189 29.40292
+```
+
+---
+
+Un vecteur peut contenir des nombres, mais il peut aussi contenir du texte.
+
+Imaginons qu'on a demandé aux 5 mêmes personnes leur type de chien préféré : on peut regrouper l'information dans un vecteur.
+
+
+```r
+chiens_pref &lt;-c("Doberman","Chihuahua","Husky","Bouvier Bernois","Labrador")
+chiens_pref
+```
+
+```
+## [1] "Doberman"        "Chihuahua"       "Husky"           "Bouvier Bernois" "Labrador"
+```
+
+--
+Notons qu'on peut tester l'égalité des éléments d'un vecteur et d'un objet
+
+
+```r
+chiens_pref==chien
+```
+
+```
+## [1] FALSE  TRUE FALSE FALSE FALSE
+```
+
+```r
+tailles==147
+```
+
+```
+## [1] FALSE FALSE FALSE  TRUE FALSE
+```
+
+La double égalité `==` est l'opérateur de comparaison
+
+---
+
+L'opérateur `:` permet de générer rapidement un vecteur comprenant tous les nombres entre deux valeurs, opération assez courante sous R :
+
+
+```r
+liste &lt;- 1:10
+liste
+```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10
+```
+
+```r
+liste2 &lt;- 10:1
+liste2
+```
+
+```
+##  [1] 10  9  8  7  6  5  4  3  2  1
+```
+
+--
+
+Si nous voulons créer une séquence qui ne soit pas limitée aux nombres entiers et qui augmente de 1 à la fois, nous pouvons utiliser la fonction `seq()`.
+
+```r
+seq(from = 1.5, to = 2.2, by = 0.1)
+```
+
+```
+## [1] 1.5 1.6 1.7 1.8 1.9 2.0 2.1 2.2
+```
+
+---
+### Sous vecteurs
+
+Pour extraire un sous-vecteur (subsetting), c'est-à-dire pour n'en choisir que certains éléments, nous utilisons des crochets, “`[]`”. Par exemple, `x[1]` renvoie le premier élément du vecteur `x`, et `x[3]` renvoie le troisième élément
+
+
+```r
+tailles
+```
+
+```
+## [1] 156 164 197 147 173
+```
+
+```r
+tailles[1]
+```
+
+```
+## [1] 156
+```
+
+```r
+tailles[3]
+```
+
+```
+## [1] 197
+```
+
+--
+
+Nous pouvons également exclure certains indices, en les faisant précéder par un signe `-` .
+
+```r
+tailles[-2]
+```
+
+```
+## [1] 156 197 147 173
+```
+
+---
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
