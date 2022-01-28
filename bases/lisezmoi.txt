@@ -1,0 +1,51 @@
+Fichier individu de l'enquête histoire de vie
+
+Le fichier individu au format dBase est scindé en 4 tables :
+
+- hdv1.dbf contient les variables IDENT POIDSF POIDLOG A8B à DFREQ17;
+- hdv2.dbf Contient les variables IDENT POIDSF POIDLOG DICAUS1 à GTLIEU15;
+- hdv3.dbf contient les variables IDENT POIDSF POIDLOG GVALIE à LPPASS ;
+- hdv4.dbf contient les variables IDENT POIDSF POIDLOG LPRATQ1 à ZTHEMQ10.
+
+Pour savoir quelle variables de pondération utiliser, consulter la rubrique "Description des fichiers" dans la documentation complète téléchargeable sur le site insee.fr.
+
+Pour réaliser des croisements de variables situées dans deux différentes des 
+quatre tables dBase, on utilisera IDENT comme variable d'appariement.
+
+En complément de ces tables contenant les données "Individu"", sont livrées 
+deux tables dBase décrivant les variables ; ces tables sont directement 
+utilisables sous forme électronique pour récupérer les intitulés 
+des variables et de leurs modalités lors de la confection des tableaux :
+
+- varlist.dbf : liste les variables du fichier "Individu". 
+
+    Cette table contient 4 champs :
+
+    VARIABLE : nom de la variable
+    LIBELLE  : libellé en clair de la variable
+    TYPE     : type de la variable (char=caractère ; num=numérique)
+    LONGUEUR : taille de la variable
+
+- varmod.dbf : décrit les modalités des variables du fichier "Individu". 
+
+    Cette table contient 3 champs :
+
+    VARIABLE   : nom de la variable
+    MODALITE   : code de la modalité
+    MODLIBELLE : libellé de la modalité
+
+---------------------------------------------------------
+MODE D'EMPLOI
+
+1 - Décompactez les tables dBase nécessaires dans le répertoire 
+    de votre choix.
+
+2 - Utilisez les tables dBase avec votre outil de traitement 
+    habituel.
+
+NB : la table de données dBase du fichier individu contient 8403
+     enregistrements. 
+
+
+
+
