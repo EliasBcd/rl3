@@ -681,7 +681,7 @@ Nous utiliserons dans ce cours des données issues de l'INSEE : la base "[Histoi
 
 La base est disponible au format `.csv` à l'adresse suivante [https://raw.githubusercontent.com/P8EcoGe/rl3/main/bases/hdv3.csv](https://raw.githubusercontent.com/P8EcoGe/rl3/main/bases/hdv3.csv)
 
-Vous pouvez la charger directement dans `R` à l'aide de la commande `read.csv()` : 
+Vous pouvez la charger directement dans `R` à l'aide de la commande `read.csv()`. On va la placer dans un objet nommé `hv3` : 
 
 ```{r}
 hv3 <- read.csv("https://raw.githubusercontent.com/P8EcoGe/rl3/main/bases/hdv3.csv")
@@ -691,5 +691,32 @@ Alternativement, vous pouvez enregistrer le fichier sur votre disque dur, puis l
 
 ```{r eval=FALSE}
 hv3 <- read.csv("chemin_vers_le_fichier/hdv3.csv")
+```
+
+Vous pouvez voir dans l'onglet "Environment" que la base de donnée comprend 2000 observations, et 21 variables 
+
+
+Si vous souhaitez voir le contenu de la base, vous pouvez utiliser la commande `View()` : 
+```{r eval=FALSE}
+View(hv3)
+```
+
+
+---
+
+## Structure de la base
+
+Un tableau étant un objet comme un autre, on peut lui appliquer des fonctions. Par exemple, `nrow()` et `ncol()` retournent le nombre de lignes et de colonnes du tableau. `dim()` renvoie les deux
+
+```{r}
+nrow(hv3)
+ncol(hv3)
+dim(hv3)
+```
+
+La fonction `names()` retourne les noms des colonnes du tableau, c'est-à-dire la liste de nos variables
+
+```{r}
+names(hv3)
 ```
 

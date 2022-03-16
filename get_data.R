@@ -1,3 +1,4 @@
 library(questionr)
+library(readr)
 data(hdv2003)
-write.csv(hdv2003, file="./bases/hdv3.csv")
+write_csv(hdv2003, file="./bases/hdv3.csv")
