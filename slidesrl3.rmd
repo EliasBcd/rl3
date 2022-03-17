@@ -720,3 +720,150 @@ La fonction `names()` retourne les noms des colonnes du tableau, c'est-à-dire l
 names(hv3)
 ```
 
+---
+Enfin, la fonction `str()` renvoie un descriptif plus détaillé de la structure du tableau. Elle liste les différentes variables, indique leur type et affiche les premières valeurs.
+
+```{r}
+str(hv3)
+```
+
+---
+
+## Accéder aux variables, et en créer de nouvelles
+
+On se réfère aux variables à l'aide de l'opérateur `$`, qui permet d'accéder aux colonnes du tableau. On utilisera la syntaxe `nom_de_la_base$nom_de_la_variable` pour désigner une variable particulière d'une base de données.
+
+Par exemple, on peut utiliser la fonction `head()` pour afficher les premières valeurs de la variable `age` de la base stockée dans l'objet `hv3`
+
+```{r}
+head(hv3$age)
+```
+
+On peut aussi utiliser l’opérateur `$` pour créer une nouvelle variable dans notre base : pour cela, il suffit de lui assigner une valeur.
+
+Par exemple, la variable `heures.tv` contient le nombre d'heures passées quotidiennement devant la télé.
+
+```{r}
+head(hv3$heures.tv)
+```
+
+---
+On peut vouloir créer une nouvelle variable dans notre tableau qui contienne la même durée convertie en minutes. 
+
+On va donc créer une nouvelle variables `minutes.tv` de la manière suivante 
+
+```{r}
+hv3$minutes.tv <- hv3$heures.tv * 60
+```
+
+On peut alors constater, qu'une nouvelle variable (une nouvelle colonne) a bien été ajoutée à la base de données.
+
+```{r}
+head(hv3$minutes.tv)
+```
+
+---
+## Analyse univariée
+
+### Variable quantitative
+
+Une variable quantitative est une variable de type numérique (un nombre) qui peut prendre un grand nombre de valeurs. On en a plusieurs dans notre jeu de données, notamment l'âge (variable `age`) ou le nombre d'heures passées devant la télé (`heures.tv`).
+
+
+#### Indicateurs numériques
+Pour obtenir un résumé numérique concis d'une variable numérique, on peut utiliser la commande `summary()` : 
+
+```{r}
+summary(hv3$heures.tv)
+summary(hv3$age)
+```
+
+`summary()` donne le minimum, le maximum, la moyenne, les premier second (médiane) et troisième quartile de la distribution. La dernière valeur donne, s'il y en a, le nombre de valeurs manquantes (`NA`) pour la variable. 
+
+
+
+---
+
+On peut également obtenir (et, si on le souhaite, sauver dans un objet) les valeurs de chaque élément avec les fonction `min()`, `max()`, `median()`, `mean()` et `quantile()` : 
+
+```{r}
+min(hv3$age)
+max(hv3$age)
+mean(hv3$age)
+median(hv3$age)
+quantile(hv3$age,prob=0.75) # l'option "Prob=" permet de préciser le quantile souhaité
+```
+
+---
+
+Si la variable examinée contient des valeurs manquante, il convient d'inclure l'option `na.rm=TRUE` dans l'appel de la fonction : 
+
+```{r}
+mean(hv3$heures.tv)
+mean(hv3$heures.tv, na.rm=TRUE)
+```
+
+On peut obtenir des indicateurs de dispersion (variance, écart-type) à l'aide des commandes `var()` et `sd()` : 
+
+
+
+```{r}
+var(hv3$age)
+sd(hv3$age)
+```
+
+---
+
+#### Représentation graphique
+
+La représentation graphique la plus courante pour présenter la distribution d'une variable quantitative continue est l'histogramme, que l'on obtient à l'aide de la commande `hist()`
+
+.pull-left[
+```{r code-first, fig.show="hide", warning=FALSE}
+hist(hv3$age)
+```
+]
+
+.pull-right[
+```{r, echo=FALSE,out.width = '400px'}
+knitr::include_graphics(
+  knitr::fig_chunk("code-first", "png")
+)
+```
+]
+
+---
+
+.pull-left[
+```{r code-second, fig.show="hide", warning=FALSE}
+hist(hv3$age, breaks=10)
+```
+]
+
+.pull-right[
+```{r, echo=FALSE,out.width = '300px'}
+knitr::include_graphics(
+  knitr::fig_chunk("code-second", "png")
+)
+```
+]
+
+.pull-left[
+```{r code-trois, fig.show="hide", warning=FALSE}
+hist(hv3$age, col = "skyblue",
+     main = "Répartition des âges des enquêtés",
+     xlab = "Âge",
+     ylab = "Effectif",
+     breaks = 30)
+```
+]
+
+.pull-right[
+```{r, echo=FALSE,out.width = '300px'}
+knitr::include_graphics(
+  knitr::fig_chunk("code-trois", "png")
+)
+```
+]
+---
+
