@@ -866,4 +866,35 @@ knitr::include_graphics(
 ```
 ]
 ---
+Une autre représentation classique est la "Boîte à moustache", que l'on obtient avec la commande `boxplot()` : 
 
+.pull-left[
+```{r box1, fig.show="hide", warning=FALSE}
+boxplot(hv3$age)
+```
+]
+
+.pull-right[
+```{r, echo=FALSE,out.width = '250px'}
+knitr::include_graphics(
+  knitr::fig_chunk("box1", "png")
+)
+```
+]
+
+.pull-left[
+```{r box2, fig.show="hide", warning=FALSE}
+boxplot(hv3$age~hv3$sport,   # La syntaxe y~x permet de représenter la distribution de y pour chaque valeur de x
+        col=c("gold","darkgreen"),
+        xlab="Pratique d'un sport", ylab="Âge"
+        ) 
+```
+]
+
+.pull-right[
+```{r, echo=FALSE,out.width = '250px'}
+knitr::include_graphics(
+  knitr::fig_chunk("box2", "png")
+)
+```
+]
