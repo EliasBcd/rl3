@@ -11,7 +11,7 @@ Cous d'introduction à R, L3 économie-Finance à l'université Paris 8
 2. Utilisation basique de R
     - Présentation des différentes structures de données : Booléen, nombre, chaîne 
     caractères, vecteur et matrice, data.frame et dérivés, listes
-    - Opérations sur les données : opérations classiques (`+, -, *, /`) et pratiques 
+    - Opérations sur les données : opérations classiques (`+, -, *, /, ^`) et pratiques 
     (`%%, %/%`)
     - Opérations booléennes (tests de vérités) : `==, !=, >=, <=, >, <, &, |, !,
 %in%`
