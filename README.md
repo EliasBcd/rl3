@@ -1,6 +1,6 @@
-# rl3
+# Introduction à R
 
-Cous d'introduction à R, L3 économie-Finance
+Cous d'introduction à R, L3 économie-Finance à l'université Paris 8
 
 ## Syllabus
 

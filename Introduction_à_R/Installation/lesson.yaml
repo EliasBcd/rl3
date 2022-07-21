@@ -1,9 +1,9 @@
 - Class: meta
   Course: Introduction à R
   Lesson: Installation
-  Author: your name goes here
+  Author: Elias Bouacida
   Type: Standard
-  Organization: your organization's name goes here
+  Organization: Université Paris 8
   Version: 2.4.5
 
 - Class: text
@@ -13,4 +13,4 @@
   Output: Taper 2 + 2
   CorrectAnswer: 2 + 2
   AnswerTests: omnitest(correctExpr='2 + 2')
-  Hint: Type a hint.
+  Hint: Pensez à une calculatrice.
