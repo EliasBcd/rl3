@@ -1,0 +1,16 @@
+- Class: meta
+  Course: Introduction à R
+  Lesson: Installation
+  Author: your name goes here
+  Type: Standard
+  Organization: your organization's name goes here
+  Version: 2.4.5
+
+- Class: text
+  Output: Bienvenue à votre première leçon de R.
+
+- Class: cmd_question
+  Output: Taper 2 + 2
+  CorrectAnswer: 2 + 2
+  AnswerTests: omnitest(correctExpr='2 + 2')
+  Hint: Type a hint.

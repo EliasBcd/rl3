@@ -433,7 +433,7 @@ Une fonction peut prendre plusieurs arguments, dans ce cas on les indique entre 
 
 On a déjà rencontré un exemple de fonction acceptant plusieurs arguments : la fonction `c()`, qui combine l'ensemble de ses arguments en un vecteur
 ```{r}
-tailles=c(156,164,197,147,173)
+tailles <- c(156,164,197,147,173)
 ```
 Ici, `c()` est appelée en lui passant cinq arguments, les cinq tailles séparées par des virgules, et elle renvoie un vecteur numérique regroupant ces cinq valeurs.
 
@@ -820,7 +820,11 @@ La représentation graphique la plus courante pour présenter la distribution d'
 
 .pull-left[
 ```{r code-first, fig.show="hide", warning=FALSE}
-hist(hv3$age)
+library(ggplot2)
+
+ggplot(hv3, aes(x=age)) +
+  geom_histogram()
+# hist(hv3$age)
 ```
 ]
 
@@ -828,6 +832,24 @@ hist(hv3$age)
 ```{r, echo=FALSE,out.width = '400px'}
 knitr::include_graphics(
   knitr::fig_chunk("code-first", "png")
+)
+```
+]
+
+---
+.pull-left[
+```{r code-sec, fig.show="hide", warning=FALSE}
+# library(ggplot2)
+
+
+hist(hv3$age)
+```
+]
+
+.pull-right[
+```{r, echo=FALSE,out.width = '400px'}
+knitr::include_graphics(
+  knitr::fig_chunk("code-sec", "png")
 )
 ```
 ]
