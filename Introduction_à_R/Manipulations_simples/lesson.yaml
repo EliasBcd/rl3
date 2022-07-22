@@ -1,0 +1,40 @@
+- Class: meta
+  Course: Introduction à R
+  Lesson: Manipulations simples
+  Author: Elias Bouacida
+  Type: Standard
+  Organization: Université Paris 8
+  Version: 2.4.5
+  
+- Class: text
+  Output: "Bienvenue à votre première leçon de R. Nous allons apprendre à manipuler R. La console affiche un texte de bienvenue suivi d'une ligne commençant par le caractère `>` (l'invite de commande)"
+
+- Class: cmd_question
+  Output: "Nous pouvons tout de suite essayer quelques calculs: Taper 2 + 2"
+  CorrectAnswer: 2 + 2
+  AnswerTests: omnitest(correctExpr='2 + 2')
+  Hint: Pensez à une calculatrice.
+  
+- Class: cmd_question
+  Output: "Nous avons vu une addition, essayons une soustraction : Taper 5 - 7"
+  CorrectAnswer: 5 - 7
+  AnswerTests: omnitest(correctExpr='5-7')
+  Hint: Pensez à une calculatrice.
+  
+- Class: cmd_question
+  Output: "Une multiplication : Taper 4 * 12"
+  CorrectAnswer:  4 * 12
+  AnswerTests: omnitest(correctExpr='4 * 12')
+  Hint: Pensez à une calculatrice.
+
+- Class: cmd_question
+  Output: "Une division : Taper -10/3"
+  CorrectAnswer:  -10/3
+  AnswerTests: omnitest(correctExpr='-10/3')
+  Hint: Pensez à une calculatrice.
+
+- Class: cmd_question
+  Output: "Des puissances : Taper 5^2"
+  CorrectAnswer:  5^2
+  AnswerTests: omnitest(correctExpr='5^2')
+  Hint: Pensez à une calculatrice.

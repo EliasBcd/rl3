@@ -26,6 +26,7 @@ Cous d'introduction à R, L3 économie-Finance à l'université Paris 8
 (fonctions de type `dxxx, rxxx`, ...)
 7. Résolution numériques d'équation avec R (fonctions de type `solve`)
 8. Traitement de données avec l'ensemble des librairies `tidyverse`
+9. Introduire `Rmarkdown` et `markdown`
   
   
 ## Exercices
