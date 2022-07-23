@@ -38,3 +38,39 @@
   CorrectAnswer:  5^2
   AnswerTests: omnitest(correctExpr='5^2')
   Hint: Pensez à une calculatrice.
+  
+- Class: text
+  Output: "Nous allons voir maintenant comment calculer les fonctions mathématiques usuelle ln, sqrt, exp"
+
+
+- Class: cmd_question
+  Output: "Pour calculer la racine carré, on utilise la commande sqrt(), pour square root, l'équivalent en anglais. Taper sqrt(4)"
+  CorrectAnswer:  sqrt(4)
+  AnswerTests: omnitest(correctExpr='sqrt(4)')
+  Hint: Pensez à une calculatrice.
+
+- Class: cmd_question
+  Output: "Essayons maintenant avec la fonction exponentielle. Taper exp(0)"
+  CorrectAnswer:  exp(0)
+  AnswerTests: omnitest(correctExpr='exp(0)')
+  Hint: Pensez à une calculatrice.
+
+- Class: cmd_question
+  Output: "Essayons maintenant avec la fonction logarithme népérien. `R` est un logiciel de programmation en anglais, il utilise donc la convention anglaise.
+  Pour obtenir ln(1), il faut taper log(1)"
+  CorrectAnswer: log(1)
+  AnswerTests: omnitest(correctExpr='log(1)')
+  Hint: Taper log(1)
+
+- Class: cmd_question
+  Output: "Pour calculer le log français (logarithme en base 10), il suffit de taper log10. Essayer avec log10(100)"
+  CorrectAnswer: log10(100)
+  AnswerTests: omnitest(correctExpr='log10(100)')
+  Hint: Taper log10(100)
+  
+- Class: cmd_question
+  Output: "Il y a en fait deux méthodes pour calculer le logarithme en base 10. `R` permet de calculer le logarithme en n'importe quelle base, en utilisant log(x, base).
+  Voyons voir si vous avez compris. Essayer calculer le logarithme en base 10 de 1000"
+  CorrectAnswer: log(1000, 10)
+  AnswerTests: omnitest(correctExpr='log(1000, 10)')
+  Hint: Taper log(1000, 10)
