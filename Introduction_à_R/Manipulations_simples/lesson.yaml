@@ -56,7 +56,8 @@
   Hint: Pensez à une calculatrice.
 
 - Class: cmd_question
-  Output: "Essayons maintenant avec la fonction logarithme népérien. `R` est un logiciel de programmation en anglais, il utilise donc la convention anglaise.
+  Output: "Essayons maintenant avec la fonction logarithme naturel.
+  `R` est un logiciel de programmation en anglais, il utilise donc la convention anglaise.
   Pour obtenir ln(1), il faut taper log(1)"
   CorrectAnswer: log(1)
   AnswerTests: omnitest(correctExpr='log(1)')
@@ -69,8 +70,52 @@
   Hint: Taper log10(100)
   
 - Class: cmd_question
-  Output: "Il y a en fait deux méthodes pour calculer le logarithme en base 10. `R` permet de calculer le logarithme en n'importe quelle base, en utilisant log(x, base).
+  Output: "Il y a en fait deux méthodes pour calculer le logarithme en base 10.
+  `R` permet de calculer le logarithme en n'importe quelle base, en utilisant log(x, base).
   Voyons voir si vous avez compris. Essayer calculer le logarithme en base 10 de 1000"
   CorrectAnswer: log(1000, 10)
   AnswerTests: omnitest(correctExpr='log(1000, 10)')
   Hint: Taper log(1000, 10)
+
+- Class: cmd_question
+  Output: "R connaît aussi les fonctions trigonométriques. Essayez de calculer le sinus de 0."
+  CorrectAnswer: sin(0)
+  AnswerTests: omnitest(correctExpr='sin(0)')
+  Hint: Taper sin(0)
+  
+- Class: cmd_question
+  Output: "Ce qui nous amène naturellement à la constante pi. R connaît certaines constantes.
+  Essayez de taper pi."
+  CorrectAnswer: pi
+  AnswerTests: omnitest()
+  Hint: Taper pi
+
+- Class: cmd_question
+  Output: "On peut donc maintenant calculer le cosinus de pi"
+  CorrectAnswer: cos(pi)
+  AnswerTests: omnitest()
+  Hint: Taper cos(pi)
+
+- Class: cmd_question
+  Output: "Notez que la constante e n'existe pas en tant que telle dans R. Essayer de taper 10e2"
+  CorrectAnswer: 10e2
+  AnswerTests: omnitest()
+  Hint: Taper 10e2
+  
+- Class: mult_question
+  Output: "e remplace en fait 10^, mais nécessite d'avoir un nombre devant un nombre : 1e2 est une expression valide, mais e2 ne l'est pas.
+  Voyons voir si vous avez compris. Que vaut 1e2 ?"
+  AnswerChoices: 1000, 100, exp(2), 0.01
+  CorrectAnswer:  100
+  Hint: Pensez à remplacer e par 10^.
+
+- Class: cmd_question
+  Output: "Revenons à nos constantes, pour obtenir la constante e, il suffit d'utiliser la fonction exponentielle. Que vaut e ?"
+  CorrectAnswer: exp(1)
+  AnswerTests: omnitest()
+  Hint: Taper exp(1)
+  
+- Class: text
+  Output: "Félicitations, vous avez maintenant vu les principales opérations simples possibles avec R. 
+  Vous savez maintenant utiliser R comme une calculatrice collège. 
+  La prochaine leçon va nous permettre d'aller plus loin."
