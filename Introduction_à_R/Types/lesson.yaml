@@ -1,0 +1,118 @@
+- Class: meta
+  Course: Introduction à R
+  Lesson: Types
+  Author: Elias Bouacida
+  Type: Standard
+  Organization: Université Paris 8
+  Version: 2.4.5
+
+- Class: text
+  Output: "Nous avons pour l'instant utilisé un seul type de valeur : des valeurs numériques.
+  Il en existe en fait d'autres.
+  Pour en donner quelques-uns des plus importants : les booléens, les caractères, les vecteurs, les listes et les data.frames.
+  Il y en a pleins d'autres."
+
+- Class: cmd_question
+  Output: "Les booléens sont simples, il y a deux valeurs possibles : TRUE et FALSE (abrégé parfois en T et F).
+Ils nous servirons beaucoup plus tard, pour l'instant, taper simplement T."
+  CorrectAnswer: T
+  AnswerTests: omnitest(correctExpr='T')
+  Hint: Taper T
+  
+- Class: cmd_question
+  Output: "Les booléens sont généralement obtenu après une comparaison.
+  Essayez de taper 3>2"
+  CorrectAnswer: 3>2
+  AnswerTests: omnitest(correctExpr='3>2')
+  Hint: Taper 3>2
+  
+- Class: text
+  Output: "On obtient TRUE!"
+
+# - Class: mult_question
+#   Output: "Si on tape 3 < 2, que devrait-on obtenir ?"
+#   PossibleAnswer: c(T, F)
+#   CorrectAnswer: F
+#   AnswerTests: omnitest()
+
+- Class: cmd_question
+  Output: "Un autre type de valeur important sont les caractères. 
+  Les chaînes de caractères sont entre guillemets \" ou '.
+  Assigner le nom du cours à l'objet nom."
+  CorrectAnswer: nom <- "Introduction à R"
+  AnswerTests: omnitest()
+  Hint: Taper nom <- "Introduction à R"
+
+- Class: text
+  Output: "Nous aurons une leçon dédiée au -- chaîne de -- caractères."
+  
+- Class: cmd_question
+  Output: "Imaginons qu'on a demandé la taille en centimètres de 5 personnes et qu'on souhaite calculer leur taille moyenne.
+On pourrait créer autant d'objets que de tailles et calculer la moyenne.
+Commençons par assigner 156 à taille1."
+  CorrectAnswer: taille1 <- 156
+  AnswerTests: omnitest(correctExpr = 'taille1 <- 156')
+  Hint: "Taper taille1 <- 156"
+  
+- Class: cmd_question
+  Output: "Puis 164 à taille2"
+  CorrectAnswer: taille2 <- 164
+  AnswerTests: omnitest(correctExpr = 'taille2 <- 164')
+  Hint: "Taper taille2 <- 164"
+  
+- Class: cmd_question
+  Output: "Puis 197 à taille3"
+  CorrectAnswer: taille3 <- 197
+  AnswerTests: omnitest(correctExp = 'taille3 <- 197')
+  Hint: "Taper taille3 <- 197"
+
+- Class: cmd_question
+  Output: "Nous pouvons alors calculer la moyenne en divisant la somme de ces 3 tailles par 3. 
+  Essayer."
+  CorrectAnswer: (taille1 + taille2 + taille3) / 3
+  AnswerTests: omnitest(correctExpr = '(taille1 + taille2 + taille3) / 3')
+  Hint: "Taper (taille1 + taille2 + taille3) / 3"
+
+- Class: cmd_question
+  Output: "Un autre type de valeur importante est les vecteurs. 
+  La commande classique pour créé un vecteur est la commande c().
+  Par exemple, c(10, 20) est un vecteur. 
+  On peut assigner ce vecteur à x. 
+  Essayer."
+  CorrectAnswer: x <- c(10, 20)
+  AnswerTests: omnitest(correctExpr =  'x <- c(10, 20)')
+  Hint: Taper x <- c(10, 20)
+
+- Class: cmd_question
+  Output: "On accède à un élément d'un vecteur en donnant sa position entre crochets [].
+  Si vous souhaitez accéder au deuxième élément du vecteur x, il faut taper x[2]"
+  CorrectAnswer: x[2]
+  AnswerTests: omnitest(correctExpr = 'x[2]' )
+  Hint: Taper x[2]
+  
+- Class: text
+  Output: "Il y a de nombreuses autres manières de construire des vecteurs, en particulier des vecteurs de numériques.
+  Nous les verrons en temps voulu."
+  
+- Class: cmd_question
+  Output: "Un type d'objet similaire aux vecteurs est la liste.
+  Une liste est essentiellement un vecteur ou les valeurs ont des noms, si elles sont explicitement nommés, ou des numéros.
+  Une liste est créée grâce à la commande list().
+  Dans une liste intitulée identitée, vous pouvez nommer le nom, le prénom et l'âge.
+  Essayer identite <- list(nom = votre_nom, prenom = votre_prenom, age = votre_age)."
+  CorrectAnswer: identite <- list(nom = "Doe", prenom = "John", age = 32)
+  AnswerTests: omnitest(correctExpr = 'list(nom = "Doe", prenom = "John", age = 32)')
+  Hint: Taper identite <- list(nom = "Doe", prenom = "John", age = 32)
+  
+- Class: text
+  Output: "Remarquer que le nommage des variables fonctionne essentiellement comme une assignation, mais qui n'est valable qu'au sein de la liste.
+  Si vous essayez de taper nom dans l'invite de commande, vous obtiendrez une erreur. # Would be nice to able to make that work.
+  Pour faire cette assignation au sein d'une liste, vous devez utiliser le signe =, <- ne marchera pas.
+  "
+  
+- Class: cmd_question
+  Output: "Il est possible de nommer"
+  CorrectAnswer: identite <- list(nom = "Doe", prenom = "John", age = 32)
+  AnswerTests: omnitest(correctExpr =  'identite <- list(nom = "Doe", prenom = "John", age = 32)')
+  Hint: Taper identite <- list(nom = "Doe", prenom = "John", age = 32)
+    

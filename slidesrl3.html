@@ -4,7 +4,7 @@
     <title>Une introduction à R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Élias Bouacida ; Antoine Terracol" />
-    <meta name="date" content="2022-07-22" />
+    <meta name="date" content="2022-09-08" />
     <script src="slidesrl3_files/header-attrs/header-attrs.js"></script>
     <link href="slidesrl3_files/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="style_perso.css" type="text/css" />
@@ -26,7 +26,7 @@ class: center, middle, inverse, title-slide
 ### Université Paris 8
 ]
 .date[
-### 2022-07-22
+### 2022-09-08
 ]
 
 ---
@@ -35,7 +35,6 @@ class: center, middle, inverse, title-slide
 
 
 
----
 class: left, top
 name: Introduction
 
@@ -50,7 +49,7 @@ name: objectif
 # Objectif du cours
 
 - Apprendre à utiliser R et Rstudio
-- Apprendre à utiliser les principales librairies de R
+- Apprendre à utiliser les principales librairies (aussi appelées paquets) de R
 - Vous préparez à utiliser R dans d'autres cours
 
 ---
@@ -96,15 +95,16 @@ La zone de gauche se nomme la Console.
 À son démarrage, RStudio a lancé une nouvelle session de R et c'est dans cette fenêtre que nous allons pouvoir interagir avec lui.
 
 ---
+
 La première chose à faire est d'installer le paquet `swirl`.
-Pour cela, copié-collé les lignes suivantes dans la console :
+Pour cela, copier-coller les lignes suivantes dans la console et taper entrée:
 
 ```r
 library(swirl)
 swirl::select_language("french", append_rprofile = T)
 ```
 
-Et de télécharger une leçon
+Et de télécharger une leçon, le reste se déroule maintenant sur dans votre console
 
 ---
 La Console affiche un texte de bienvenue suivi d'une ligne commençant par le caractère `&gt;` (l'invite de commande). 

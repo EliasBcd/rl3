@@ -1,0 +1,86 @@
+- Class: meta
+  Course: Introduction à R
+  Lesson: Assignations et objets
+  Author: Elias Bouacida
+  Type: Standard
+  Organization: "Université Paris 8"
+  Version: 2.4.5
+
+- Class: text
+  Output: "Nous commençons maintenant la partie 'langage de programmation de R'.
+Une possilibité très importante dans tout langage de programmation est la possibilité d'assigner une valeur à un objet (=une variable).
+Cela permet de la sauvegarder pour plus tard.
+Nous pouvons ensuite faire des opérations sur cette objet."
+
+- Class: cmd_question
+  Output: "Commençons simplement.
+Nous cherchons à assigner à l'objet x la valeur 2.
+L'opérateur d'assignation dans R est la flèche vers la gauche : <-.
+Elle symbolise ce qu'elle fait, on assigne à ce qui est à gauche ce qui est à droite.
+Pour assigner 2 à x, il suffit de taper x <- 2."
+  CorrectAnswer: x <- 2
+  AnswerTests: omnitest(correctExpr='x <- 2')
+  Hint: Taper x <- 2
+
+- Class: cmd_question
+  Output: "Taper maintenant x."
+  CorrectAnswer: x
+  AnswerTests: omnitest(correctExpr='x')
+  Hint: Taper simplement x dans la console.
+
+- Class: text
+  Output: "R a sauvegardé 2 dans l'objet x.
+Remarquer que R n'a pas affiché de valeur au moment de l'assignation.
+Il faut taper l'objet seul pour afficher sa valeur.
+Deuxième remarque importante : il est possible d'utiliser = comme opérateur d'assignation
+(x = 2 fonctionne exactement comme x <- 2) mais c'est généralement considéré comme une mauvaise pratique de code, pour une raison qui vous apparaîtra plus tard.
+Enfin, Rstudio offre un raccourci pour taper <-. 
+C'est généralement  alt gauche + -.
+Je vous encourage à l'utiliser dès maintenant."
+
+- Class: cmd_question
+  Output: "On peut faire des opérations sur les objets exactement comme on le ferait sur des valeurs.
+Essayer de taper x^2"
+  CorrectAnswer: x^2
+  AnswerTests: omnitest(correctExpr='x^2')
+  Hint: Taper x^2
+
+- Class: cmd_question
+  Output: "On peut assigner évidemment assigner plusieurs objets dans une même session.
+Essayer d'assigner 4 à y"
+  CorrectAnswer: y <- 4
+  AnswerTests: omnitest(correctExpr='y <- 4')
+  Hint: Taper y <- 4
+
+- Class: cmd_question
+  Output: "Et faire des opérations sur les objets comme on le ferait sur des valeurs.
+Essayer d'additionner x et y."
+  CorrectAnswer: x + y
+  AnswerTests: omnitest(correctExpr='x + y')
+  Hint: Taper x + y
+
+- Class: text
+  Output: "R a fait les opérations sur les objets comme il l'aurait fait sur les valeurs."
+  
+- Class: cmd_question
+  Output: "Si on assigne plusieurs  valeurs l'une après l'autre à un unique objet, seule la dernière assignation est prise en compte.
+  Si maintenant vous taper x <- 5"
+  CorrectAnswer: x <- 5
+  AnswerTests: omnitest(correctExpr='x <- 5')
+  Hint: Taper x <- 5
+  
+- Class: cmd_question
+  Output: "x prend la valeur 5. 
+  Essayer de taper x"
+  CorrectAnswer: x
+  AnswerTests: omnitest(correctExpr='x')
+  Hint: Taper x
+
+- Class: text
+  Output: "Plusieurs remarques sur les noms d'objets.
+  La casse est importante, y et Y sont deux objets différents.
+  Un nom d'objet ne peut pas commencer par un chiffre, mais peut en contenir.
+  2 n'est pas un nom d'objet, pas plus que 2x, mais x et x2, en revanche, le sont.
+  Les caractères spéciaux ne marchent généralement pas dans les noms d'objets, en dehors de _ et -.
+  deux_poids est un nom d'objet admissible, mais pas deux%poids, par exemple."
+

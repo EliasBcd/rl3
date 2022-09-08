@@ -1,7 +1,9 @@
 ---
 title: "Une introduction à R"
 subtitle: "L3 économie-finance"
-author: "Élias Bouacida ; Antoine Terracol"
+author: 
+  - Elias Bouacida
+  - Antoine Terracol
 institute: "Université Paris 8"
 date: "`r Sys.Date()`"
 output:
@@ -88,6 +90,7 @@ La zone de gauche se nomme la Console.
 La première chose à faire est d'installer le paquet `swirl`.
 Pour cela, copier-coller les lignes suivantes dans la console et taper entrée:
 ```{r swirl}
+install.packages(swirl)
 library(swirl)
 swirl::select_language("french", append_rprofile = T)
 ```

@@ -107,6 +107,7 @@
   Voyons voir si vous avez compris. Que vaut 1e2 ?"
   AnswerChoices: 1000, 100, exp(2), 0.01
   CorrectAnswer:  100
+  AnswerTests: omnitest()
   Hint: Pensez à remplacer e par 10^.
 
 - Class: cmd_question
