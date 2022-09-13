@@ -7,116 +7,148 @@
   Version: 2.4.5
   
 - Class: text
-  Output: "Bienvenue à votre première leçon de R. Nous allons apprendre à manipuler R. La console affiche un texte de bienvenue suivi d'une ligne commençant par le caractère `>` (l'invite de commande)"
+  Output: Bienvenue à votre première leçon de R.
+    Nous allons apprendre à manipuler R.
+    La console affiche un texte de bienvenue suivi d'une ligne commençant par 
+    le caractère `>` (l'invite de commande)
+
+- Class: text
+  Output: Si vous souhaitez obtenir plus d'information sur un sujet en 
+    particulier en lien avec R, vous pouvez taper help.start() dans l'invite de
+    commande. 
+    Cela ouvrira un menu avec des informations (soit dans votre navigateur par
+    défaut, soit dans Rstudio, suivant votre installation).
+    Évidemment, vous trouverez aussi des réponses à vos
+    questions en faisant une recherche sur internet.
 
 - Class: cmd_question
-  Output: "Nous pouvons tout de suite essayer quelques calculs: Taper 2 + 2"
+  Output: L'utilisation la plus basique de R est comme une calculatrice 
+    interactive.
+    Nous pouvons tout de suite essayer quelques calculs. Tapez 2 + 2 et tapez
+    entrée.
   CorrectAnswer: 2 + 2
   AnswerTests: omnitest(correctExpr='2 + 2')
   Hint: Pensez à une calculatrice.
   
 - Class: cmd_question
-  Output: "Nous avons vu une addition, essayons une soustraction : Taper 5 - 7"
+  Output: Nous avons vu une addition, essayons une soustraction. Tapez 5 - 7.
   CorrectAnswer: 5 - 7
   AnswerTests: omnitest(correctExpr='5-7')
   Hint: Pensez à une calculatrice.
   
 - Class: cmd_question
-  Output: "Une multiplication : Taper 4 * 12"
+  Output: Une multiplication. Tapez 4 * 12.
   CorrectAnswer:  4 * 12
   AnswerTests: omnitest(correctExpr='4 * 12')
   Hint: Pensez à une calculatrice.
 
 - Class: cmd_question
-  Output: "Une division : Taper -10/3"
+  Output: Une division. Tapez -10/3.
   CorrectAnswer:  -10/3
   AnswerTests: omnitest(correctExpr='-10/3')
   Hint: Pensez à une calculatrice.
 
 - Class: cmd_question
-  Output: "Des puissances : Taper 5^2"
+  Output: Des puissances. TapeZ 5^2.
   CorrectAnswer:  5^2
   AnswerTests: omnitest(correctExpr='5^2')
   Hint: Pensez à une calculatrice.
   
 - Class: text
-  Output: "Nous allons voir maintenant comment calculer les fonctions mathématiques usuelle ln, sqrt, exp"
-
+  Output: Nous allons voir maintenant comment calculer les fonctions 
+    mathématiques usuelles logarithme, racine carrée, exponentielle et valeur 
+    absolue.
+  
 
 - Class: cmd_question
-  Output: "Pour calculer la racine carré, on utilise la commande sqrt(), pour square root, l'équivalent en anglais. Taper sqrt(4)"
+  Output: Pour calculer la racine carré, on utilise la commande sqrt(), pour
+    square root, l'équivalent en anglais. Tapez sqrt(4).
   CorrectAnswer:  sqrt(4)
   AnswerTests: omnitest(correctExpr='sqrt(4)')
-  Hint: Pensez à une calculatrice.
+  Hint: Tapez sqrt(4)
 
 - Class: cmd_question
-  Output: "Essayons maintenant avec la fonction exponentielle. Taper exp(0)"
+  Output: Essayons maintenant avec la fonction exponentielle. Tapez exp(0).
   CorrectAnswer:  exp(0)
   AnswerTests: omnitest(correctExpr='exp(0)')
-  Hint: Pensez à une calculatrice.
+  Hint: Tapez exp(0)
 
 - Class: cmd_question
-  Output: "Essayons maintenant avec la fonction logarithme naturel.
-  `R` est un logiciel de programmation en anglais, il utilise donc la convention anglaise.
-  Pour obtenir ln(1), il faut taper log(1)"
-  CorrectAnswer: log(1)
-  AnswerTests: omnitest(correctExpr='log(1)')
-  Hint: Taper log(1)
+  Output: Essayons maintenant avec la fonction logarithme naturel.
+    R est un logiciel de programmation en anglais, il utilise donc la 
+    convention anglaise.
+    Pour obtenir ln(x), il faut taper log(x).
+    Cherchez la valeur de ln(2).
+  CorrectAnswer: log(2)
+  AnswerTests: omnitest(correctExpr='log(2)')
+  Hint: Tapez log(2)
 
 - Class: cmd_question
-  Output: "Pour calculer le log français (logarithme en base 10), il suffit de taper log10. Essayer avec log10(100)"
+  Output: Pour calculer le log français (logarithme décimal, en base 10), il 
+    suffit de taper log10.
+    Cherchez à obtenir le logarithme décimal de 100.
   CorrectAnswer: log10(100)
   AnswerTests: omnitest(correctExpr='log10(100)')
-  Hint: Taper log10(100)
+  Hint: Tapez log10(100)
   
 - Class: cmd_question
-  Output: "Il y a en fait deux méthodes pour calculer le logarithme en base 10.
-  `R` permet de calculer le logarithme en n'importe quelle base, en utilisant log(x, base).
-  Voyons voir si vous avez compris. Essayer calculer le logarithme en base 10 de 1000"
-  CorrectAnswer: log(1000, 10)
-  AnswerTests: omnitest(correctExpr='log(1000, 10)')
-  Hint: Taper log(1000, 10)
+  Output: Il y a en fait deux méthodes pour calculer le logarithme en base 10.
+    R permet de calculer le logarithme en n'importe quelle base, en utilisant 
+    log(x, base).
+    Voyons voir si vous avez compris. 
+    Essayez calculer le logarithme en base 8 de 1000
+  CorrectAnswer: log(1000, 8)
+  AnswerTests: omnitest(correctExpr='log(1000, 8)')
+  Hint: Tapez log(1000, 8)
 
 - Class: cmd_question
-  Output: "R connaît aussi les fonctions trigonométriques. Essayez de calculer le sinus de 0."
+  Output: R connaît aussi les fonctions trigonométriques. 
+    Essayez de calculer le sinus de 0.
   CorrectAnswer: sin(0)
   AnswerTests: omnitest(correctExpr='sin(0)')
   Hint: Taper sin(0)
   
 - Class: cmd_question
-  Output: "Ce qui nous amène naturellement à la constante pi. R connaît certaines constantes.
-  Essayez de taper pi."
+  Output: Ce qui nous amène naturellement à la constante pi. 
+    R connaît certaines constantes.
+    Essayez de taper pi.
   CorrectAnswer: pi
-  AnswerTests: omnitest()
+  AnswerTests: omnitest(correctExpr='pi')
   Hint: Taper pi
 
 - Class: cmd_question
-  Output: "On peut donc maintenant calculer le cosinus de pi"
-  CorrectAnswer: cos(pi)
-  AnswerTests: omnitest()
-  Hint: Taper cos(pi)
+  Output: On peut donc maintenant calculer le cosinus de pi/2.
+  CorrectAnswer: cos(pi/2)
+  AnswerTests: omnitest(correctExpr='cos(pi/2)')
+  Hint: Tapez cos(pi/2)
 
 - Class: cmd_question
-  Output: "Notez que la constante e n'existe pas en tant que telle dans R. Essayer de taper 10e2"
+  Output: Notez que la constante e (exponentielle) n'existe pas en tant que 
+    telle dans R.
+    Essayer de taper 10e2
   CorrectAnswer: 10e2
-  AnswerTests: omnitest()
-  Hint: Taper 10e2
+  AnswerTests: omnitest(correctExpr='10e2')
+  Hint: Tapez 10e2
   
 - Class: mult_question
-  Output: "e remplace en fait 10^, mais nécessite d'avoir un nombre devant un nombre : 1e2 est une expression valide, mais e2 ne l'est pas.
-  Voyons voir si vous avez compris. Que vaut 1e2 ?"
-  AnswerChoices: 1000, 100, exp(2), 0.01
+  Output: e remplace en fait 10^, mais nécessite d'avoir un nombre devant.
+    1e2 est une expression valide, mais e2 ne l'est pas.
+    Voyons voir si vous avez compris. Que vaut 1e2 ?    
+  AnswerChoices: 1000; 100; exp(2); 0.01
   CorrectAnswer:  100
-  AnswerTests: omnitest()
+  AnswerTests: omnitest(correctVal="100")
   Hint: Pensez à remplacer e par 10^.
 
 - Class: cmd_question
-  Output: "Revenons à nos constantes, pour obtenir la constante e, il suffit d'utiliser la fonction exponentielle. Que vaut e ?"
+  Output: Revenons à nos constantes, pour obtenir la constante e, il suffit
+    d'utiliser la fonction exponentielle. Que vaut e ?
   CorrectAnswer: exp(1)
-  AnswerTests: omnitest()
-  Hint: Taper exp(1)
+  AnswerTests: omnitest(CorrectExpr='exp(1)')
+  Hint: Tapez exp(1)
   
 - Class: text
-  Output: "Félicitations, vous avez maintenant vu les principales opérations simples possibles avec R. 
-  Vous savez maintenant utiliser R comme une calculatrice collège. 
-  La prochaine leçon va nous permettre d'aller plus loin."
+  Output: Félicitations, vous avez maintenant vu les principales opérations 
+    mathématiques simples possibles avec R. 
+    Vous savez maintenant utiliser R comme une calculatrice collège, mais R 
+    est bien plus puissant que cela. 
+    La prochaine leçon nous permettra d'aller plus loin.
