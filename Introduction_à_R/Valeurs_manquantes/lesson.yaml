@@ -1,0 +1,42 @@
+- Class: meta
+  Course: Introduction à R
+  Lesson: Valeurs manquantes
+  Author: Elias Bouacida
+  Type: Standard
+  Organization: Université Paris 8
+  Version: 2.4.5
+  
+  Output: Missing values play an important role in statistics and data analysis. Often, missing values must not be ignored,
+  but rather they should be carefully studied to see if there's an underlying pattern or cause for their missingness.
+
+- Class: text
+  Output: Les valeurs manquantes jouent un rôle important en statistiques et en 
+    analyse de données.
+    Il arrive que les valeurs manquantes ne doivent pas être ignorée, mais au 
+    contraire étudiez avec attention.
+
+- Class: text
+  Output: Dans R, les valeurs manquantes sont représentées par la valeur NA 
+    (not available en anglais). 
+    Dans d'autres langages, cela peut être missing plutôt.
+    Dans cette leçon, nous allons voir comment traiter les valeurs manquantes.
+
+- Class: cmd_question
+  Output: N'importe quelle opération dans laquelle NA existe abouti à un résultat
+    NA. 
+    Pour illustrer cela, créez le vecteur c(44, NA, 5, NA) et assigné le à 
+    l'objet x.
+  CorrectAnswer: x <- c(44, NA, 5, NA)
+  AnswerTests: omnitest(correctExpr='x <- c(44, NA, 5, NA)')
+  Hint: Assignez le vecteur c(44, NA, 5, NA) à l'objet x. 
+    NA doit être en lettres capitales.
+    
+- Class: cmd_question
+  Output: Multiplions x par 3.
+  CorrectAnswer: x * 3
+  AnswerTests: any_of_exprs('x * 3', '3 * x')
+  Hint: Essayez x * 3.
+
+- Class: text
+  Output: Remarquez que dans le résultat affiché, les valeurs NA correspondent
+    aux valeurs où x est lui-même NA.
