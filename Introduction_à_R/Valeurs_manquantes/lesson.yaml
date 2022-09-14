@@ -6,9 +6,6 @@
   Organization: Université Paris 8
   Version: 2.4.5
   
-  Output: Missing values play an important role in statistics and data analysis. Often, missing values must not be ignored,
-  but rather they should be carefully studied to see if there's an underlying pattern or cause for their missingness.
-
 - Class: text
   Output: Les valeurs manquantes jouent un rôle important en statistiques et en 
     analyse de données.
@@ -40,3 +37,56 @@
 - Class: text
   Output: Remarquez que dans le résultat affiché, les valeurs NA correspondent
     aux valeurs où x est lui-même NA.
+    
+
+- Class: cmd_question
+  Output: Afin de rendre le problème un peu plus intéressant, nous allons créer 
+    un vecteur contenant 1000 tirages issue d'une distribution normale centrée
+    réduite et les assigner à l'objet y. 
+    Utilisez pour cela la commande y <- rnorm(1000).
+  CorrectAnswer: y <- rnorm(1000)
+  AnswerTests: omnitest(correctExpr='y <- rnorm(1000)')
+  Hint: La commande rnorm() génère un nombre aléatoire issu d'une distribution
+    normale centrée réduite. 
+    Tapez y <- rnorm(1000).
+    
+- Class: cmd_question
+  Output: Créons maintenant un vecteur contenant 1000 NA avec z <- rep(NA, 1000).
+  CorrectAnswer: z <- rep(NA, 1000)
+  AnswerTests: omnitest(correctExpr='z <- rep(NA, 1000)')
+  Hint: Tapez z <- rep(NA, 1000) pour générer un vecteur de 1000 NAs.
+  
+- Class: cmd_question
+  Output: Enfin, sélectionnons 100 valeurs provenant des vecteurs y et z au 
+    hasard, afin de ne pas savoir combien il y a d'élément manquants dans le 
+    vecteur final, ni leur position.
+    Pour cela, on utilise la commande data <- sample(c(y, z), 100)
+  CorrectAnswer: data <- sample(c(y, z), 100)
+  AnswerTests: omnitest(correctExpr='data <- sample(c(y, z), 100)')
+  Hint: La commande sample() tire un sous-ensemble au hasard des données 
+    indiquées dans le premier argument (ici c(y, z)) de la taille du second 
+    argument (100). 
+    La commande data <- sample(c(y, z), 100) nous donne ce que nous voulons.
+    
+- Class: cmd_question
+  Output: Commençons par identiifer où se trouve nos NA dans les données.
+    La commande is.na() nous dit si chaque élément d'un vecteur est NA.
+    Utilisez is.na() sur data et assignez le résultat à my_na.
+  CorrectAnswer: my_na <- is.na(data)
+  AnswerTests: omnitest(correctExpr='my_na <- is.na(data)')
+  Hint: Assignez le résultat de is.na(data) à l'objet my_na.
+  
+- Class: cmd_question
+  Output: Affichez maintenant my_na.
+  CorrectAnswer: my_na
+  AnswerTests: omnitest(correctExpr='my_na')
+  Hint: Tapez my_na pour voir son contenu.
+  
+- Class: text
+  Output: À chaque fois que vous voyez TRUE, vous savez que l'élément 
+    correspondant dans data est une NA.
+    À l'inverse, quand vous voyez FALSE, l'élément correspond est un des nombre
+    issu du tirage aléatoire.
+
+
+
