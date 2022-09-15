@@ -27,7 +27,7 @@
   
 - Class: text
   Output: Tout comme les expressions arithmétiques, les expressions logiques 
-    peuvent être regroupé à l'aide de parenthèses et indiquer ainsi les priorités
+    peuvent être regroupées à l'aide de parenthèses et indiquer ainsi les priorités
     de calcul. 
     Par exemple, le résultat de l'expression (TRUE == TRUE) == TRUE sera bien 
     TRUE.
@@ -42,7 +42,7 @@
   Output: L'opérateur d'égalité peut aussi servir à comparer des nombres.
     Utilisez-le pour savoir si 6 et 7 sont égaux.
   CorrectAnswer: 6 == 7
-  AnswerTests: omnitest(correctExpr='6 == 7')
+  AnswerTests:  any_of_exprs('6 == 7', '7 == 6')
   Hint: Utilisez l'opérateur d'égalité et tapez 6 == 7.
   
 - Class: text
@@ -90,3 +90,55 @@
   Hint: Vous pouvez, si vous en avez besoin, essayez chaque expression dans R
     pour trouver le bon résultat.
     
+- Class: cmd_question
+  Output: Intéressons maintenant à l'opérateur 'non-égal' (=différent) représenté
+    par `!=`.
+    Différent teste si deux valeurs sont différentes, de telle sorte que le résultat
+    de TRUE != FALSE est TRUE.
+    Tout comme l'opérateur égalité, l'opérateur différent de s'utilise aussi avec
+    des nombres.
+    Essayez d'écrire une expression pour savoir si 5 est différent de 7.
+  CorrectAnswer: 5 != 7
+  AnswerTests:  any_of_exprs('5 != 7', '7 != 5')
+  Hint: Utilisez l'opérateur différent de est tapez 5 != 7.
+  
+- Class: cmd_question
+  Output: "Il peut être utile de 'négativer' une expression avec l'opérateur NON.
+    Un point d'exclamation `!` inversera les évaluations de TRUE et FALSE, de 
+    telle sorte que la valeur de !TRUE (dire : non TRUE) est FALSE et que la
+    valeur de !FALSE (non FALSE) est TRUE.
+    Essayez d'utiliser l'opéraeur NON pour trouver l'inverse de 5 est égal à 7."
+  CorrectAnswer: '!5 == 7'
+  AnswerTests: any_of_exprs('!5 == 7', '!(5 == 7)', '!7 == 5', '!(7 == 5)')
+  Hint: Cette question est peut-être un peu difficile, pensez à la négation de 
+    l'expression 5 == 7 (vous avez seulement besoin d'un point d'exclamation
+    devant).
+
+- Class: text
+  Output: Récapitulons.
+    L'opérateur égal `==` teste si deux valeurs sont égales.
+    L'opérateur différent de `!=` teste si deux valeurs sont différentes.
+    L'opérateur NON `!` négative une expression logique de telle manière que
+    TRUE devient FALSE et FALSE devient TRUE.
+
+- Class: mult_question
+  Output: Laquelle des expressions suivante est FALSE ?
+  CorrectAnswer: "!(0 >= -1)"
+  AnswerChoices: "!(0 >= -1); !FALSE; 7 != 8; 9 < 10"
+  AnswerTests: omnitest(correctVal='!(0 >= -1)')
+  Hint: Vous pouvez, si vous en avez besoin, essayez chaque expression dans R
+    pour trouver le bon résultat.
+    
+- Class: mult_question
+  Output: 'Quel est à votre avis le résultat de l'expression suivante :
+    (TRUE != FALSE) == !(6 == 7)'
+  CorrectAnswer: TRUE
+  AnswerChoices: TRUE; FALSE; Y a-t-il une vérité objective dans la programmation ?; %>%
+  AnswerTests: omnitest(correctVal='TRUE')
+  Hint: Essayez d'évaluer les expressions indépendamment pour trouver le résultat.
+  
+- Class: text
+  Output: Il est parfois nécessaire d'examiner les relations entre plusieurs
+    expressions logiques.
+    C'est alors qu'il peut être necessaire d'avoir les opérateurs ET (AND) et OU (OR).
+
