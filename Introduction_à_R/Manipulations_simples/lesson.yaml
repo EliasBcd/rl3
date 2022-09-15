@@ -143,7 +143,7 @@
   Output: Revenons à nos constantes, pour obtenir la constante e, il suffit
     d'utiliser la fonction exponentielle. Que vaut e ?
   CorrectAnswer: exp(1)
-  AnswerTests: omnitest(CorrectExpr='exp(1)')
+  AnswerTests: omnitest(correctExpr='exp(1)')
   Hint: Tapez exp(1)
   
 - Class: text
@@ -152,3 +152,10 @@
     Vous savez maintenant utiliser R comme une calculatrice collège, mais R 
     est bien plus puissant que cela. 
     La prochaine leçon nous permettra d'aller plus loin.
+
+- Class: mult_question
+  Output: Souhaitez-vous soumettre votre progression à votre enseignant ?
+  AnswerChoices: Oui;Non
+  CorrectAnswer: NULL
+  AnswerTests: submit_log()
+  Hint: NULL
