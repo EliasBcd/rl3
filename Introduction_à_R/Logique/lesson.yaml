@@ -1,0 +1,92 @@
+- Class: meta
+  Course: Introduction à R
+  Lesson: Logique
+  Author: Elias Bouacida
+  Type: Standard
+  Organization: Université Paris 8
+  Version: 2.4.5
+
+- Class: text
+  Output: Cette leçon introduit les opérateurs et opérations logiques dans R.
+  
+- Class: text
+  Output: Comme nous l'avons déjà vu, il y a deux valeurs logique dans R, aussi
+    appelé valeurs booléennes, TRUE et FALSE. 
+    Dans R, il est possible de créer des expressions logiques dont le résultat
+    sera TRUE ou FALSE.
+
+- Class: cmd_question
+  Output: La création d'expressions logiques nécessite des opérateurs logiques.
+    Nous avons déjà vu les opérateurs arithmétiques tel que `+`, `-`, `*` et `/`.
+    Le premier opérateur logique à connaître est l'égalité, représenté par deux
+    signes égalités `==`.
+    Essayez d'utiliser cet opérateur pour trouver si TRUE et TRUE sont égaux.
+  CorrectAnswer: TRUE == TRUE
+  AnswerTests: omnitest(correctExpr='TRUE == TRUE')
+  Hint: Utilisez l'opérateur d'égalité et tapez TRUE == TRUE.
+  
+- Class: text
+  Output: Tout comme les expressions arithmétiques, les expressions logiques 
+    peuvent être regroupé à l'aide de parenthèses et indiquer ainsi les priorités
+    de calcul. 
+    Par exemple, le résultat de l'expression (TRUE == TRUE) == TRUE sera bien 
+    TRUE.
+    
+- Class: cmd_question
+  Output: Testons cette propriété, essayez d'évaluer (FALSE == TRUE) == FALSE .
+  CorrectAnswer: (FALSE == TRUE) == FALSE
+  AnswerTests: omnitest(correctExpr='(FALSE == TRUE) == FALSE')
+  Hint: Tapez (FALSE == TRUE) == FALSE
+  
+- Class: cmd_question
+  Output: L'opérateur d'égalité peut aussi servir à comparer des nombres.
+    Utilisez-le pour savoir si 6 et 7 sont égaux.
+  CorrectAnswer: 6 == 7
+  AnswerTests: omnitest(correctExpr='6 == 7')
+  Hint: Utilisez l'opérateur d'égalité et tapez 6 == 7.
+  
+- Class: text
+  Output: Le résultat de l'expression précédente est FALSE, parce 6 est plus
+    petit que 7. 
+    Heureusement pour nous, nous pouvons aussi tester les inégalités pour savoir
+    si un nombre est plus petit ou plus grand qu'un autre.
+    
+- Class: cmd_question
+  Output: L'opérateur plus petit que `<` teste si le nombre à gauche de 
+    l'opérateur est plus petit que le nombre à droite. 
+    Tapez une expression pour tester si 6 et plus petit que 7.
+  CorrectAnswer: 6 < 7
+  AnswerTests: omnitest(correctExpr='6 < 7')
+  Hint: Utilisez l'opérateur 'plus petit que' et tapez 6 < 7.
+  
+- Class: cmd_question
+  Output: Il existe aussi un opérateur plus petit ou égal à `<=` qui teste si
+    l'expression à gauche est plus petite ou égale à l'expression à droite.
+    Essayez de voir si 10 est plus petit ou égal à 10.
+  CorrectAnswer: 10 <= 10
+  AnswerTests: omnitest(correctExpr='10 <= 10')
+  Hint: Utilisez l'opérateur `<=` et tapez 10 <= 10.
+  
+- Class: text
+  Output: On peut aussi utiliser les opérateurs plus grand que `>` et plus 
+    grand ou égal à `>=`.
+    
+
+- Class: mult_question
+  Output: Voyons si vous avez compris. 
+    Laquelle des expressions suivantes à pour résultat FALSE ?
+  CorrectAnswer: 9 >= 10
+  AnswerChoices: 9 >= 10; 7 == 7; 6 < 8; 0 > -36 
+  AnswerTests: omnitest(correctVal='9 >= 10')
+  Hint: Vous pouvez, si vous en avez besoin, essayez chaque expression dans R
+    pour trouver le bon résultat.
+    
+- Class: mult_question
+  Output: Et maintenant, laquelle des expressions suivantes à pour résultat 
+    TRUE ?
+  CorrectAnswer: 9 >= 10
+  AnswerChoices: 9 >= 10; 7 == 9; 57 < 8; -6 > -7 
+  AnswerTests: omnitest(correctVal='-6 > -7')
+  Hint: Vous pouvez, si vous en avez besoin, essayez chaque expression dans R
+    pour trouver le bon résultat.
+    
