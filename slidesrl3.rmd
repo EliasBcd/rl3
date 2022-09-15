@@ -15,6 +15,7 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
+bibliography: Bibliographie.bib
 
 ---
 
@@ -22,6 +23,17 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
+```
+
+```{r, load_refs, include=FALSE, cache=FALSE}
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "authoryear",
+           style = "markdown",
+           hyperlink = TRUE,
+           dashed = FALSE)
+myBib <- ReadBib("./Bibliographie.bib", check = FALSE)
 ```
 
 class: left, top
@@ -63,6 +75,14 @@ Vous pouvez aussi utiliser la version en ligne [Rstudio.cloud](https://rstudio.c
 
 Vous trouverez plus d'informations sur l'installation de R et Rstudio sur le page Moodle du cours.
 
+---
+name: Ressources
+# Ressources utiles
+
+- `r Citet(myBib, "Barnier")`
+- `r Citet(myBib, "swirldev")`
+
+Pour aller plus loin dans votre maîtrise de R : <https://swirlstats.com/swirlify/index.html> (en anglais)
 
 ---
 class:inverse
@@ -89,8 +109,8 @@ La zone de gauche se nomme la Console.
 
 La première chose à faire est d'installer le paquet `swirl`.
 Pour cela, copier-coller les lignes suivantes dans la console et taper entrée:
-```{r swirl}
-install.packages(swirl)
+```{r swirl, eval=F}
+install.packages('swirl')
 library(swirl)
 swirl::select_language("french", append_rprofile = T)
 ```
@@ -957,4 +977,10 @@ knitr::include_graphics(
 ```
 ]
 
+---
 
+# References
+
+```{r refs, echo=FALSE, results="asis"}
+PrintBibliography(myBib)
+```
