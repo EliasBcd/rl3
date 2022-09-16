@@ -1,15 +1,15 @@
 # Put custom tests in this file.
       
-      # Uncommenting the following line of code will disable
-      # auto-detection of new variables and thus prevent swirl from
-      # executing every command twice, which can slow things down.
-      
-      # AUTO_DETECT_NEWVAR <- FALSE
-      
-      # However, this means that you should detect user-created
-      # variables when appropriate. The answer test, creates_new_var()
-      # can be used for for the purpose, but it also re-evaluates the
-      # expression which the user entered, so care must be taken.
+# Uncommenting the following line of code will disable
+# auto-detection of new variables and thus prevent swirl from
+# executing every command twice, which can slow things down.
+
+# AUTO_DETECT_NEWVAR <- FALSE
+
+# However, this means that you should detect user-created
+# variables when appropriate. The answer test, creates_new_var()
+# can be used for for the purpose, but it also re-evaluates the
+# expression which the user entered, so care must be taken.
 
 # Get the swirl state
 getState <- function(){
@@ -23,19 +23,21 @@ getLog <- function(){
   getState()$log
 }
 
+# Get the value which a user either entered directly or was computed
+# by the command he or she entered.
+getVal <- function(){
+  getState()$val
+}
+
 submit_log <- function(){
+  # Changer de lien et de nom pour chaque leçon
+  pre_fill_link <- "https://moodle.univ-paris8.fr/mod/assign/view.php?id=271762&action=editsubmission"
+  saved <- "Simples.csv"
+  temp <- tempfile()
   
-  # Please edit the link below
-  pre_fill_link <- "https://framaforms.org/suivir-1663257351"
-  
-  # Do not edit the code below
-  if(!grepl("=$", pre_fill_link)){
-    pre_fill_link <- paste0(pre_fill_link, "=")
-  }
   
   p <- function(x, p, f, l = length(x)){if(l < p){x <- c(x, rep(f, p - l))};x}
   
-  temp <- tempfile()
   log_ <- getLog()
   nrow_ <- max(unlist(lapply(log_, length)))
   log_tbl <- data.frame(user = rep(log_$user, nrow_),
@@ -49,5 +51,8 @@ submit_log <- function(){
                         stringsAsFactors = FALSE)
   write.csv(log_tbl, file = temp, row.names = FALSE)
   encoded_log <- base64encode(temp)
-  browseURL(paste0(pre_fill_link, encoded_log))
+  write.csv(encoded_log, file=saved, row.names = FALSE)
+  if(getVal() == "Oui"){
+    browseURL(pre_fill_link)
+  }
 }

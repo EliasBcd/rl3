@@ -260,32 +260,32 @@
     dans R.
     Voyons maintenant quelques commandes utiles supplémentaires.
 
-- Class : cmd_question
-  Output: La commande isTRUE() a un argument.
-    Si le résultat de cet argument est TRUE, le résultat de la commande est TRUE.
-    Sinon, le resultat sera FALSE.
-    Essayez la commande en tapant isTRUE(6 > 4).
-  CorrectAnswer: "isTRUE(6 > 4)"
-  AnswerTests: omnitest(correctExpr='isTRUE(6 > 4)')
-  Hint: Essayez isTRUE() en tapant isTRUE(6 > 4)
-  
-- Class: mult_question
-  Output: Quelle expression a pour résultat TRUE ?
-  CorrectAnswer: "!isTRUE(4 < 3)"
-  AnswerChoices: "isTRUE(!TRUE); isTRUE(3); !isTRUE(4 < 3); !isTRUE(8 != 5)"
-  AnswerTests: omnitest(correctVal='!isTRUE(4 < 3)')
-  Hint: isTRUE() a pour résultat TRUE uniquement si l'expression passée comme
-    argument a pour résultat TRUE.
-    
 # - Class : cmd_question
-#   Output: La fonction identical() a pour résultat TRUE si les deux objets R 
+#   Output: La commande isTRUE() a un argument.
+#     Si le résultat de cet argument est TRUE, le résultat de la commande est TRUE.
+#     Sinon, le resultat sera FALSE.
+#     Essayez la commande en tapant isTRUE(6 > 4).
+#   CorrectAnswer: "isTRUE(6 > 4)"
+#   AnswerTests: omnitest(correctExpr='isTRUE(6 > 4)')
+#   Hint: Essayez isTRUE() en tapant isTRUE(6 > 4)
+#   
+# - Class: mult_question
+#   Output: Quelle expression a pour résultat TRUE ?
+#   CorrectAnswer: "!isTRUE(4 < 3)"
+#   AnswerChoices: "isTRUE(!TRUE); isTRUE(3); !isTRUE(4 < 3); !isTRUE(8 != 5)"
+#   AnswerTests: omnitest(correctVal='!isTRUE(4 < 3)')
+#   Hint: isTRUE() a pour résultat TRUE uniquement si l'expression passée comme
+#     argument a pour résultat TRUE.
+#     
+# - Class : cmd_question
+#   Output: La fonction identical() a pour résultat TRUE si les deux objets R
 #     passés en argument sont identiques.
 #     Essayez la fonction identical en tapant identical('twins', 'twins')
 #   CorrectAnswer: "identical('twins', 'twins')"
 #   AnswerTests: omnitest(correctExpr="identical('twins', 'twins')")
 #   Hint: Ignorez pour l'instant ce que peuvent représenter 'twins'.
 #     Tapez identical('twins', 'twins')
-#     
+# 
 # - Class: mult_question
 #   Output: Quelle expression a pour résultat TRUE ?
 #   CorrectAnswer: "identical(5 > 4, 3 < 3.1)"
@@ -293,7 +293,7 @@
 #   AnswerTests: omnitest(correctVal='identical(5 > 4, 3 < 3.1)')
 #   Hint: Le résultat d'identical() est TRUE uniquement si les deux arguments sont
 #     identiques.
-    
+# 
 # - Class : cmd_question
 #   Output: Une autre commande utile est xor() (OU exclusif).
 #     Elle prend deux arguments et retourne TRUE si et un seul des deux arguments
@@ -303,22 +303,22 @@
 #   CorrectAnswer: "xor(5 == 6, !FALSE)"
 #   AnswerTests: omnitest(correctExpr='xor(5 == 6, !FALSE)')
 #   Hint: Tapez xor(5 == 6, !FALSE).
-#   
+# 
 # - Class: text
 #   Output: Le résultat de 5==6 est FALSE, et !FALSE est TRUE.
 #     Le résultat de xor(FALSE, TRUE) est donc TRUE.
-#     En revanche, si le premier argument était changé en 5==5, xor(TRUE, TRUE) 
+#     En revanche, si le premier argument était changé en 5==5, xor(TRUE, TRUE)
 #     est FALSE.
 # 
 # - Class: mult_question
 #   Output: Quelle expression a pour résultat FALSE ?
 #   CorrectAnswer: "xor(4 >= 9, 8 != 8.0)"
-#   AnswerChoices: "xor(4 >= 9, 8 != 8.0); xor(!isTRUE(TRUE), 6 > -1); 
+#   AnswerChoices: "xor(4 >= 9, 8 != 8.0); xor(!isTRUE(TRUE), 6 > -1);
 #     xor(identical(xor, 'xor'), 7 == 7.0); xor(!!TRUE, !!FALSE)"
 #   AnswerTests: omnitest(correctVal='xor(4 >= 9, 8 != 8.0)')
 #   Hint: Pour que le résultat de xor() soit FALSE, il faut que les deux arguments
-   # ait la même valeur logique (deux TRUE ou deux FALSE).
-   
+#    ait la même valeur logique (deux TRUE ou deux FALSE).
+# 
 # - Class: cmd_question
 #   Output: Petite question surprise.
 #     À votre avis, quelle est le résultat de TRUE & c(0, 45, -2) ?
@@ -326,15 +326,26 @@
 #   CorrectAnswer: TRUE & c(0, 45, -2)
 #   AnswerTests: omnitest(correctVal='TRUE & c(0, 45, -2)')
 #   Hint: Tapez TRUE & c(0, 45, -2) et regardez bien le résultat.
-#   
+# 
 # - Class: text
 #   Output: "Surprenant n'est-ce pas ?
 #     On pourrait s'attendre à ce que R nous renvoit une erreur.
 #     Ce n'est pas le cas !
-#     Il est bon de savoir que quand R évalue des expressions logiques, 
-#     il convertit les nombres en TRUE et FALSE, suivant le règle suivante : 
+#     Il est bon de savoir que quand R évalue des expressions logiques,
+#     il convertit les nombres en TRUE et FALSE, suivant le règle suivante :
 #     0 est FALSE, tout les autres nombres sont TRUE."
     
 - Class: text
   Output: C'est la fin de l'introduction à l'évaluation des expressions logiques
     dans R.
+    
+- Class: mult_question
+  Output: Souhaitez-vous soumettre votre progression sur Moodle à votre 
+    enseignant (cela ne fonctionnera que pour les étudiants de l'université 
+    Paris 8) ?
+    Si vous ne le faites pas maintenant, vous pourrez toujours lui envoyer le
+    fichier 'Simples.csv' qui a été créé plus tard.
+  AnswerChoices: Oui;Non
+  CorrectAnswer: "Oui"
+  AnswerTests: submit_log()
+  Hint: Cela soumettra votre avancée dans le cours.

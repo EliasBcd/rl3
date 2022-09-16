@@ -39,16 +39,16 @@
   AnswerTests: omnitest(correctVal="FALSE")
   Hint: Si ce n'est l'un, c'est l'autre !
 
-# - Class: cmd_question
-#   Output: Un autre type de valeur important sont les caractères. 
-#     Les chaînes de caractères sont entre guillemets \" ou '.
-#     Assigner le nom du cours à l'objet nom.
-#   CorrectAnswer: nom <- 'Introduction à R'
-#   AnswerTests: omnitest()
-#   Hint: Taper nom <- "Introduction à R"
-# 
-# - Class: text
-#   Output: "Nous aurons une leçon dédiée au -- chaîne de -- caractères."
+- Class: cmd_question
+  Output: Un autre type de valeur important sont les caractères.
+    Les chaînes de caractères sont entre guillemets \" ou '.
+    Assigner le nom du cours à l'objet nom.
+  CorrectAnswer: nom <- 'Introduction à R'
+  AnswerTests: omnitest()
+  Hint: Taper nom <- "Introduction à R"
+
+- Class: text
+  Output: "Nous aurons une leçon dédiée au -- chaîne de -- caractères."
 
 
   
@@ -116,214 +116,66 @@
     normalement)
 
 - Class: cmd_question
-  Output: Tapez tailles pour voir son contenu.
-    Remarquez qu'il y n'y a pas de virgules qui séparent les valeurs dans
-    l'affichage.
-  CorrectAnswer: tailles
-  AnswerTests: omnitest(correctExpr='tailles')
-  Hint: Tapez tailles et appuyez sur Entrée pour voir son contenu.
-
-
-- Class: cmd_question
-  Output: On peut combiner les vecteurs pour faire un nouveau vecteur.
-    Créez un vecteur qui combine tailles, 185 et tailles encore, dans cet ordre.
-    N'assignez pas le vecteur à un nouvel objet, afin qu'on puisse voir le 
-    résultat immédiatement.
-  CorrectAnswer: c(tailles, 185, tailles)
-  AnswerTests: omnitest(correctExpr='c(tailles, 185, tailles)')
-  Hint: Tapez c(tailles, 185, tailles).
-    Ne créez pas de nouvelle variable.
-    On veut simplement voir le résultat.
+  Output: Un type d'objet en apparence similaire aux vecteurs est la liste.
+    Une caractéristique que nous n'avons pas encore abordé des vecteurs est 
+    qu'ils contiennent des objets de même type.
+    Une liste, au contraire, peut contenir des valeurs de types différent.
+    Une liste est créée grâce à la commande list().
+    Essayez de construire une liste contenant les éléments "R", TRUE et 8 (dans
+    cet ordre).
+    Appelez-là l.
+  CorrectAnswer: l <- list("R", TRUE, 8)
+  AnswerTests: omnitest(correctExpr = 'l <- list("R", TRUE, 8)')
+  Hint: Tapez l <- list("R", TRUE, 8)
   
 - Class: cmd_question
-  Output: 'Les vecteurs numériques peuvent aussi servir dans des opérations.
-    Tapez ceci pour observer le résultat : tailles * 2 + 100.'
-  CorrectAnswer: tailles * 2 + 100
-  AnswerTests: omnitest(correctExpr='tailles * 2 + 100')
-  Hint: Tapez tailles * 2 + 100, sans assigner le résultat à un objet.
-
+  Output: Regardons maintenant ce que contient l.
+  CorrectAnswer: l
+  AnswerTests: omnitest(correctExpr = 'l')
+  Hint: Rappelez-vous qu'il suffit de taper un objet pour l'afficher.
+  
 - Class: text
-  Output: R a d'abord multiplié les 3 éléments de tailles par 2.
-    Il a ensuite ajouté 100 à chacun pour obtenir le résultat que vous voyez 
-    ci-dessus.
-    
-- Class: cmd_question
-  Output: On accède à un élément d'un vecteur en donnant sa position entre 
-    crochets [].
-    Si vous souhaitez accéder au deuxième élément du vecteur tailles, il faut taper 
-    tailles[2]
-  CorrectAnswer: tailles[2]
-  AnswerTests: omnitest(correctExpr = 'tailles[2]' )
-  Hint: Tapez tailles[2]
+  Output: Analysons un petit peu ce que nous renvoit R.
+    La présence de double crochet `[[]]`  nous indique que nous sommes en présence
+    d'une liste.
+    Chaque élément de la liste conserve son type.
   
 - Class: cmd_question
-  Output: On cherche à obtenir les tailles en mètres, puis à calculer leur 
-    racine carrée.
-    Prenez la racine carrée de tailles / 100 et assignez-le à un nouvel objet,
-    ma_racine.
-  CorrectAnswer: ma_racine <- sqrt(tailles / 100)
-  AnswerTests: omnitest(correctExpr='ma_racine <- sqrt(tailles / 100)')
-  Hint: Assignez le résultat de sqrt(tailles / 100) à l'objet appelé ma_racine.
+  Output: Essayons la même chose avec un vecteur.
+    Nommez-le v.
+  CorrectAnswer: v <- c("R", TRUE, 8)
+  AnswerTests: omnitest(correctExpr = 'v <- c("R", TRUE, 8)')
+  Hint: Tapez v <- c("R", TRUE, 8)  
+
+- Class: cmd_question
+  Output: Regardons maintenant ce que contient v.
+  CorrectAnswer: v
+  AnswerTests: omnitest(correctExpr = 'v')
+  Hint: Rappelez-vous qu'il suffit de taper un objet pour l'afficher.
+  
+- Class: cmd_question
+  Output: Il n'y a pas de double crochets, nous sommes bien face à un vecteur.
+    Le type des objets, en revanche, a changé. 
+    Pour vous en convaincre, utilisez la commande str(), qui nous renseigne sur
+    la structure d'un objet, sur l'objet v.
+  CorrectAnswer: str(v)
+  AnswerTests:  omnitest(correctExpr = 'str(v)')
+  Hint: Tapez str(v).
+  
+- Class: cmd_question
+  Output: Faites la même chose sur l.
+  CorrectAnswer: str(l)
+  AnswerTests:  omnitest(correctExpr = 'str(l)')
+  Hint: Tapez str(l).
+  
   
 - Class: mult_question
-  Output: Avant de voir l'objet ma_racine, que pensez-vous qu'il contient ?
-  CorrectAnswer: un vecteur de longueur 3
-  AnswerChoices: un vecteur de longueur 3 ; un nombre (= un vecteur de longueur 1) ;
-    un vecteur de longueur 0 (= un vecteur vide)
-  AnswerTests: omnitest(correctVal='un vecteur de longueur 3')
-  Hint: 'Pensez à comment R a procéder aux opérations sur les précédents vecteurs :
-   éléments par éléments.'
-   
-- Class: cmd_question
-  Output: Imprimez le contenu du vecteur ma_racine.
-  CorrectAnswer: ma_racine
-  AnswerTests: omnitest(correctExpr='ma_racine')
-  Hint: Tapez simplement ma_racine puis appuyez sur Entrée.
-  
-- Class: text
-  Output: Comment vous l'avez probablement deviné, R a d'abord divisé tailles par 
-    100, puis à pris la racine carré de chacun.
-    On obtient ainsi
-    un vecteur de même longueur que le vecteur d'origine tailles.
-   
-- Class: cmd_question
-  Output: On cherche maintenant à calculer les IMC correspondant aux tailles.
-    Commençons par créer un nouveau vecteur poids, contenant les valeurs
-    55, 65 et 78 (dans cet ordre)
-  CorrectAnswer: poids <- c(55, 65, 78)
-  AnswerTests: omnitest(correctExpr='poids <- c(55, 65, 78)')
-  Hint: Rappelez-vous comment on a créé des vecteurs plus tôt.
-  
-- Class: cmd_question
-  Output: Calculons maintenant l'imc de chacun. 
-    Créez une nouvelle variable imc qui prend les valeurs des poids divisés 
-    par taille au carré.
-    N'oubliez pas que la taille doit être en mètre !
-  CorrectAnswer: imc <-  poids / (tailles/100)^2
-  AnswerTests: omnitest(correctExpr='imc <-  poids / (tailles/100)^2')
-  Hint: Tapez imc <-  poids / (tailles/100)^2
-
-- Class: mult_question
-  Output: Quelle affirmation est vraie ?
-  CorrectAnswer: Le premier élément d'imc est égal au premier élément de poids
-    divisé par le carré du premier élément de tailles / 100, etc.
-  AnswerChoices: Le premier élément d'imc est égal au premier élément de poids
-    divisé par le carré du premier élément de tailles / 100, etc.; imc est un
-    nombre unique; imc n'est pas défini
-  AnswerTests: omnitest(correctVal="Le premier élément d'imc est égal au premier
-    élément de poids divisé par le carré du premier élément de tailles / 100, 
-    etc.")
-  Hint: Comment R fait des opérations sur les vecteurs ?
-
-- Class: cmd_question
-  Output: Regardons le contenu d'imc.
-  CorrectAnswer: imc
-  AnswerTests: omnitest(correctExpr='imc')
-  Hint: Tapez imc puis appuyez sur entrée pour voir le résultat.
-  
-- Class: text
-  Output: Quand R a deux vecteurs de même longeur, R effectue les opérations 
-    spécifiée élément par élément. 
-    Dans le cas ou un des vecteurs est plus court que les autres, R 'recycle' le
-    vecteur le plus court jusqu'à ce qu'il atteigne la longueur du vecteur le
-    plus long.
-    
-- Class: text
-  Output: Quand on a calculé tailles * 2 + 100 plus tôt, tailles est un vecteur
-    de longueur 3, et techniquement 2 et 100 sont chacun des vecteurs de 
-    longueur 1.
-    Pour effectuer le calcul, R 'recycle' 2 pour en faire un vecteur de 2 et
-    100 pour en faire un vecteur de 100.
-    En clair, l'opération réellement effectuée est tailles * c(2, 2, 2) + 
-    c(100, 100, 100).
-
-- Class: cmd_question
-  Output: Voici un exemple de 'recyclage', plus parlant.
-    Essayez d'ajouter c(1, 2, 3, 4) et c(0, 10).
-  CorrectAnswer: c(1, 2, 3, 4) + c(0, 10)
-  AnswerTests: omnitest(correctExpr='c(1, 2, 3, 4) + c(0, 10)')
-  Hint: Tapez c(1, 2, 3, 4) + c(0, 10) dans la console.
-    N'essayez pas de sauvegarder le résultat dans un objet.
-    
-- Class: text
-  Output: Si la longueur du vecteur le plus long n'est pas un multiple de la 
-    longueur du vecteur le plus court, R continuera à recycler les valeur, mais 
-    vous préviendra que quelque chose de potentiellement étrange se déroule.
-
-- Class: cmd_question
-  Output: Essayez c(1, 2, 3, 4) + c(0, 10, 100) par exemple.
-  CorrectAnswer: c(1, 2, 3, 4) + c(0, 10, 100)
-  AnswerTests: omnitest(correctExpr='c(1, 2, 3, 4) + c(0, 10, 100)')
-  Hint: Tapez c(1, 2, 3, 4) + c(0, 10, 100) pour voir comment R additionne deux
-   vecteurs si la longeur du plus long n'est pas un multiple de la longueur du 
-   plus court. Pas d'assignation ici.
-   
-- Class: text
-  Output: Il y a de nombreuses autres manières de construire des vecteurs, 
-    en particulier des vecteurs de numériques.
-    Nous les verrons en temps voulu.
-  
-- Class: text
-  Output: Avant de finir la leçon, je vais vous apprendre quelques techniques
-    pour gagner un peu de temps.
-    Tout à l'heure, vous avez calculé tailles * 2 + 100. 
-    Imaginons que vous vous soyez trompé et que vous avez ajouté 1000 plutôt que
-    100.
-    Vous pouvez retaper toute l'expression, ou bien...
-
-- Class: cmd_question
-  Output: Dans beaucoup d'environnement de programmation, la flèche vers le haut 
-    vous permet de visualiser les commandes précédentes.
-    Appuyez sur la flèche haut de votre clavier jusqu'à atteindre la commande 
-    tailles * 2 + 100.
-    Changez 100 en 1000 et appuyez sur entrée.
-    Si la flèche vers le haut ne marche pas chez vous, tapez juste l'expression
-    en entier.
-  CorrectAnswer: tailles * 2 + 1000
-  AnswerTests: omnitest(correctExpr='tailles * 2 + 1000')
-  Hint: Si votre environnement ne vous permet pas d'utiliser la flèche vers le haut,
-    tapez simplement l'expression corrigée pour passer à la suite.
-
-- Class: text
-  Output: Enfin, imaginons que vous voulez afficher le contenu d'un objet
-    que vous avez créé auparavant, mais que vous ne vous souvenez plus du nom 
-    exact, ma_racine ou maRacine.
-    Vous pouvez essayer les deux et chercher celle qui marche, ou...
-    
-- Class: text
-  Output: Vous pouvez taper les deux lettres du nom de l'objet et appuyer sur
-    la touche Tab (potentiellement plusieurs fois).
-    La plupart des environnements de programmation vous afficheront une liste 
-    des objets que vous avez créé qui commence par 'ma'.
-    Cela s'appelle l'auto-complétion et c'est très pratique.
-    Essayez.
-  CorrectAnswer: ma_racine
-  AnswerTests: omnitest(correctExpr='ma_racine')
-  Hint: Si votre environnement de programmation ne vous permet pas d'utiliser 
-    l'auto-complétion, tapez simplement ma_racine et appuyez sur entrée pour 
-    continuer.
-  
-
-  
-# - Class: cmd_question
-#   Output: "Un type d'objet similaire aux vecteurs est la liste.
-#   Une liste est essentiellement un vecteur ou les valeurs ont des noms, si elles sont explicitement nommés, ou des numéros.
-#   Une liste est créée grâce à la commande list().
-#   Dans une liste intitulée identitée, vous pouvez nommer le nom, le prénom et l'âge.
-#   Essayer identite <- list(nom = votre_nom, prenom = votre_prenom, age = votre_age)."
-#   CorrectAnswer: identite <- list(nom = "Doe", prenom = "John", age = 32)
-#   AnswerTests: omnitest(correctExpr = 'list(nom = "Doe", prenom = "John", age = 32)')
-#   Hint: Taper identite <- list(nom = "Doe", prenom = "John", age = 32)
-#   
-# - Class: text
-#   Output: "Remarquer que le nommage des variables fonctionne essentiellement comme une assignation, mais qui n'est valable qu'au sein de la liste.
-#   Si vous essayez de taper nom dans l'invite de commande, vous obtiendrez une erreur. # Would be nice to able to make that work.
-#   Pour faire cette assignation au sein d'une liste, vous devez utiliser le signe =, <- ne marchera pas.
-#   "
-#   
-# - Class: cmd_question
-#   Output: "Il est possible de nommer"
-#   CorrectAnswer: identite <- list(nom = "Doe", prenom = "John", age = 32)
-#   AnswerTests: omnitest(correctExpr =  'identite <- list(nom = "Doe", prenom = "John", age = 32)')
-#   Hint: Taper identite <- list(nom = "Doe", prenom = "John", age = 32)
-    
+  Output: Souhaitez-vous soumettre votre progression sur Moodle à votre 
+    enseignant (cela ne fonctionnera que pour les étudiants de l'université 
+    Paris 8) ?
+    Si vous ne le faites pas maintenant, vous pourrez toujours lui envoyer le
+    fichier 'Simples.csv' qui a été créé plus tard.
+  AnswerChoices: Oui;Non
+  CorrectAnswer: "Oui"
+  AnswerTests: submit_log()
+  Hint: Cela soumettra votre avancée dans le cours.
