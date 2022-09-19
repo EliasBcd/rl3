@@ -5,7 +5,7 @@ author:
   - Elias Bouacida
   - Antoine Terracol
 institute: "Université Paris 8"
-date: "`r Sys.Date()`"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
 output:
   xaringan::moon_reader:
     css: ["default","style_perso.css"]
@@ -41,16 +41,16 @@ name: Introduction
 
 # Qu'est-ce que R ?
 
-- R est un langage de programmation tourné principalement vers l'analyse des données et les statistiques. [Wikipédia](https://fr.wikipedia.org/wiki/R_(langage))
-- Dérive d'un langage antérieur appelé S [Wikipédia](https://fr.wikipedia.org/wiki/S_(langage))
-- R est un logiciel libre
+- R est un langage de programmation tourné principalement vers l'analyse des données et les statistiques. <https://fr.wikipedia.org/wiki/R_(langage)>
+- Dérive d'un langage antérieur appelé S <https://fr.wikipedia.org/wiki/S_(langage)>
+- R est un logiciel libre <https://fr.wikipedia.org/wiki/Logiciel_libre>
 
 ---
 name: objectif
 # Objectif du cours
 
 - Apprendre à utiliser R et Rstudio
-- Apprendre à utiliser les principales librairies (aussi appelées paquets) de R
+- Apprendre à utiliser les principales librairies (aussi appelées paquets) de R pour l'analyse de données et les statistiques
 - Vous préparez à utiliser R dans d'autres cours
 
 ---
@@ -107,18 +107,49 @@ La zone de gauche se nomme la Console.
 
 ---
 
+## Swirl
+La Console affiche un texte de bienvenue suivi d'une ligne commençant par le caractère `>` (l'invite de commande). 
+
 La première chose à faire est d'installer le paquet `swirl`.
 Pour cela, copier-coller les lignes suivantes dans la console et taper entrée:
-```{r swirl, eval=F}
+```{r swirl, eval=FALSE}
 install.packages('swirl')
 library(swirl)
+```
+
+Nous allons maintenant indiquer à Swirl que nous sommes francophones
+
+```{r french, eval=FALSE}
 swirl::select_language("french", append_rprofile = T)
 ```
 
-Et de télécharger une leçon, le reste se déroule maintenant sur dans votre console
+Et enfin nous allons télécharger la leçon 
+
+```{r lecon, eval=F}
+swirl::install_course_github("EliasBcd", "InitiationR")
+```
 
 ---
-La Console affiche un texte de bienvenue suivi d'une ligne commençant par le caractère `>` (l'invite de commande). 
+## Lancement de Swirl
+
+Pour lancer le cours interactif, il suffit taper 
+
+```{r, eval=F}
+swirl()
+```
+
+Swirl va nous proposer de choisir un pseudo.  
+Utilisez votre nom et votre prénom (sans espace).
+
+Il va maintenant nous proposer de choisir un cours, choisissez "InitiationR" (tapez le numéro correspondant dans la console)
+
+Il nous demande maintenant de choisir une leçon.
+
+Choisissez la première.  
+Le reste se déroule maintenant dans votre console ! Laissez Swirl vous parler.
+
+
+---
 
 
 Nous pouvons tout de suite essayer quelques calculs :
