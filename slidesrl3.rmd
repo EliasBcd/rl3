@@ -201,12 +201,15 @@ Nous pouvons tout de suite essayer quelques calculs :
 
 #### Logarithmes
 
-Il n'y a pas de `ln()` dans `R`, mais on utilise `log()` pour désigner le logarithme naturel. `log10()` désigne le logarithme en base 10
+Il n'y a pas de `ln()` dans `R`, mais on utilise `log()` pour désigner le logarithme naturel.
+`log10()` désigne le logarithme en base 10.
+`log(x, base)` désigne le logarithme en base `base` quelconque.
 
 | Math          | code `R`    | Résultat    |
 |:------------:|:---------------:|:-----------------:|
 | $\ln(e)$         | `log(exp(1))`       | `1`       |
 | $\log_{10}(1000)$ | `log10(1000)`       | `3`       |
+| $\log_{10}(1000)$ | `log(1000, 10)`       | `3`       |
 
 #### Trigonometrie
 
@@ -220,12 +223,13 @@ Il n'y a pas de `ln()` dans `R`, mais on utilise `log()` pour désigner le logar
 
 ## Objets 
 
-Pour conserver le résultat d'une opération, on peut le stocker dans un objet à l'aide de l'opérateur d'assignation `<-`. Cette “flèche” stocke ce qu'il y a à sa droite dans un objet dont le nom est indiqué à sa gauche.
+Pour conserver le résultat d'une opération, on peut le stocker dans un objet à l'aide de l'opérateur d'assignation `<-`.
+Cette "flèche" stocke ce qu'il y a à sa droite dans un objet dont le nom est indiqué à sa gauche.
 
 ```{r}
 x <- 2
 ```
-Se lit “prend la valeur 2 et mets la dans un objet qui s'appelle `x`”.
+Se lit "prend la valeur 2 et mets la dans un objet qui s'appelle `x`".
 
 --
 Si on exécute une commande comportant juste le nom d'un objet, `R` affiche son contenu
@@ -271,6 +275,7 @@ x
 ---
 
 Les objets peuvent contenir tout un tas d'informations.
+Les valeurs prises peuvent être de différentes **types**.
 
 Jusqu'ici on n'a stocké que des nombres, mais ils peuvent aussi contenir des chaînes de caractères (du texte), qu'on délimite avec des guillemets simples ou doubles (' ou ") :
 
