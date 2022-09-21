@@ -66,10 +66,11 @@ Il s'agit de deux logiciels libres, gratuits, téléchargeables en ligne et fonc
 Pour installer R, il suffit de se rendre sur une des pages suivantes :
 
 - [Installer R sous Windows](https://cloud.r-project.org/bin/windows/base/)
-- [Installer R sous Mac](https://cloud.r-project.org/bin/macosx/)
+- [Installer R sous Mac](https://cloud.r-project.org/bin/macosx/) (Pour les possesseurs de MAC récents, à processeurs M1 ou M2, il faut utiliser la version *arm64*, les autres doivent prendre la version classique)
 - Pour l'installer sous Linux, vous pouvez utiliser le gestionnaire de paquet ou bien suivre les instructions [ici](https://cran.r-project.org/bin/linux/ubuntu/) (pour Ubuntu/Debian)
 
-Pour installer RStudio, rendez-vous sur [la page de téléchargement du logiciel](https://www.rstudio.com/products/rstudio/download/#download) et installez la version (gratuite) adaptée à votre système.
+Pour installer RStudio, rendez-vous sur [la page de téléchargement du logiciel](https://www.rstudio.com/products/rstudio/download/#download) et installez la version Desktop (gratuite) adaptée à votre système.
+Notez qu'il faut installer R **avant** d'installer Rstudio, sinon Rstudio soulèvera une erreur.
 
 Vous pouvez aussi utiliser la version en ligne [Rstudio.cloud](https://rstudio.cloud/), qui est très similaire à Rstudio.
 
@@ -87,6 +88,11 @@ Pour aller plus loin dans votre maîtrise de R : <https://swirlstats.com/swirlif
 ---
 class:inverse
 # Prise en main
+
+---
+## Lancement de Rstudio
+
+Une fois installé, pour lancer Rstudio, vous pouvez cliquer sur l'icône correspondante ![Logo RStudio](RStudio-Logo-Flat.png){width=20%}
 
 ---
 class: left, top
