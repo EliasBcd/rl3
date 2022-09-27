@@ -118,7 +118,7 @@ Le symbole `>` réapparaît, et nous pouvons lancer d'autres opérations :
 | $3 \times 2$    | `3 * 2` | `r 3 * 2` |
 | $3 \div 2$       | `3 / 2` | `r 3 / 2` |
 
-: Principales opérations arithmétiques et code `R` correspondant
+: Principales opérations arithmétiques
 
 ## Exposants
 
@@ -132,7 +132,7 @@ Le symbole `>` réapparaît, et nous pouvons lancer d'autres opérations :
 | $10^2$       | `1e2`           | `r 1e2`           |
 | $\sqrt{100}$ | `sqrt(100)`     | `r sqrt(100)`     |
 
-: Utilisation des puissances et code `R` correspondant
+: Utilisation des puissances
 
 
 ## Constantes mathématiques 
@@ -150,7 +150,7 @@ Le symbole `>` réapparaît, et nous pouvons lancer d'autres opérations :
 
 Il n'y a pas de `ln()` dans `R`, mais on utilise `log()` pour désigner le logarithme naturel.  
 `log10()` désigne le logarithme en base 10.  
-`log(x, base)` désigne le logarithme en base `base` quelconque.
+`log(x, base)` désigne le logarithme en `base` quelconque.
 
 | Math          | code `R`    | Résultat    |
 |:------------:|:---------------:|:-----------------:|
@@ -303,6 +303,88 @@ On appelle `TRUE` et `FALSE` des booléens.
 
 [^1]: On peut en fait utiliser `|` ou `||` et `&` ou `&&`, mais leur comportement diffère avec des vecteurs.
 L'opérateur doublé est conçu pour les cas où il n'y a à gauche et a droite qu'une seule valeur logique (donc pas pour les vecteurs).
+
+## Vecteurs
+
+Imaginons qu'on a demandé la taille en centimètres de 5 personnes et qu'on souhaite calculer leur taille moyenne.
+
+On pourrait créer autant d'objets que de tailles et calculer la moyenne :
+
+```{r}
+taille1 <- 156
+taille2 <- 164
+taille3 <- 197
+taille4 <- 147
+taille5 <- 173
+(taille1 + taille2 + taille3 + taille4 + taille5) / 5
+```
+
+---
+
+Ce n'est clairement pas pratique du tout. On va plutôt stocker l'ensemble de nos tailles dans un seul objet, un **vecteur**, avec la syntaxe suivante :
+
+```{r}
+tailles <- c(156, 164, 197, 147, 173)
+```
+
+où le `c()` veut dire "combine les valeurs suivantes dans un vecteur".
+
+---
+
+Si on affiche le contenu de cet objet, on voit qu'il contient bien l'ensemble des tailles saisies.
+
+```{r}
+tailles
+```
+
+
+## Listes
+
+Les éléments d'un vecteur sont forcément du même types.
+Si on veut mélanger le poids et le nom de différents chiens dans un même vecteur, le résultat n'est pas vraiment ce que vous attendez.
+
+```{r}
+chiens <- c("Chihuahua", 5, "Doberman", 15)
+chiens
+```
+
+::: {.notes}
+Remarquer que `R` met des guillemets autour des nombres : il les a transformés en chaînes de caractères.
+:::
+
+---
+
+Pour pouvoir combiner des nombres et des chaînes de caractères, il faut utiliser des listes, à l'aide de la fonction `list()`.
+
+```{r}
+liste_chiens <- list("Chihuahua", 5, "Doberman", 15)
+liste_chiens
+```
+
+Nous verrons les listes plus en détails plus tard.
+Remarquez à ce stade la présence de double crochets `[[ ]]`, qui nous indique que nous faisons face à une liste.
+
+## Quel type ?
+
+Il n'est pas toujours facile de savoir à quel type nous faisons face.
+Deux fonctions nous aident pour cela. 
+La première est la fonction `typeof()`.
+
+```{r}
+typeof(chiens)
+typeof(liste_chiens)
+```
+
+La seconde la fonction `str()`
+
+```{r}
+str(chiens)
+str(liste_chiens)
+```
+
+::: {.notes}
+Remarquer que `typeof()` utilisée sur une liste renvoi le type de l'objet global (`list`), élément par élément, alors que `str()` nous renvoit le type des éléments dans la liste, un par un.
+:::
 
 # À vous !
 

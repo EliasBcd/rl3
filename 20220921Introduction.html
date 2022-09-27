@@ -1272,7 +1272,7 @@ display: none;
   <p class="subtitle">L3 économie-finance</p>
   <p class="author">Elias Bouacida</p>
   <p class="institute">Université Paris 8</p>
-  <p class="date">22 septembre 2022</p>
+  <p class="date">27 septembre 2022</p>
 </section>
 
 <section>
@@ -1381,7 +1381,7 @@ display: none;
 <section id="addition-sousraction-multiplication-et-division" class="slide level2">
 <h2>Addition, Sousraction, Multiplication et Division</h2>
 <table>
-<caption>Principales opérations arithmétiques et code <code>R</code> correspondant</caption>
+<caption>Principales opérations arithmétiques</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Math</th>
@@ -1416,7 +1416,7 @@ display: none;
 <section id="exposants" class="slide level2">
 <h2>Exposants</h2>
 <table>
-<caption>Utilisation des puissances et code <code>R</code> correspondant</caption>
+<caption>Utilisation des puissances</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Math</th>
@@ -1482,7 +1482,7 @@ display: none;
 <h2>Logarithmes</h2>
 <p>Il n’y a pas de <code>ln()</code> dans <code>R</code>, mais on utilise <code>log()</code> pour désigner le logarithme naturel.<br>
 <code>log10()</code> désigne le logarithme en base 10.<br>
-<code>log(x, base)</code> désigne le logarithme en base <code>base</code> quelconque.</p>
+<code>log(x, base)</code> désigne le logarithme en <code>base</code> quelconque.</p>
 <table>
 <caption>Logarithmes dans R</caption>
 <thead>
@@ -1750,7 +1750,129 @@ display: none;
 </tr>
 </tbody>
 </table>
-<aside><ol class="aside-footnotes"><li id="fn2" role="doc-endnote"><p>On peut en fait utiliser <code>|</code> ou <code>||</code> et <code>&amp;</code> ou <code>&amp;&amp;</code>, mais leur comportement diffère avec des vecteurs. L’opérateur doublé est conçu pour les cas où il n’y a à gauche et a droite qu’une seule valeur logique (donc pas pour les vecteurs).</p></li></ol></aside></section></section>
+<aside><ol class="aside-footnotes"><li id="fn2" role="doc-endnote"><p>On peut en fait utiliser <code>|</code> ou <code>||</code> et <code>&amp;</code> ou <code>&amp;&amp;</code>, mais leur comportement diffère avec des vecteurs. L’opérateur doublé est conçu pour les cas où il n’y a à gauche et a droite qu’une seule valeur logique (donc pas pour les vecteurs).</p></li></ol></aside></section>
+<section id="vecteurs" class="slide level2">
+<h2>Vecteurs</h2>
+<p>Imaginons qu’on a demandé la taille en centimètres de 5 personnes et qu’on souhaite calculer leur taille moyenne.</p>
+<p>On pourrait créer autant d’objets que de tailles et calculer la moyenne :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>taille1 <span class="ot">&lt;-</span> <span class="dv">156</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a>taille2 <span class="ot">&lt;-</span> <span class="dv">164</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>taille3 <span class="ot">&lt;-</span> <span class="dv">197</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a>taille4 <span class="ot">&lt;-</span> <span class="dv">147</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>taille5 <span class="ot">&lt;-</span> <span class="dv">173</span></span>
+<span id="cb32-6"><a href="#cb32-6"></a>(taille1 <span class="sc">+</span> taille2 <span class="sc">+</span> taille3 <span class="sc">+</span> taille4 <span class="sc">+</span> taille5) <span class="sc">/</span> <span class="dv">5</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 167.4</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Ce n’est clairement pas pratique du tout. On va plutôt stocker l’ensemble de nos tailles dans un seul objet, un <strong>vecteur</strong>, avec la syntaxe suivante :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>tailles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">164</span>, <span class="dv">197</span>, <span class="dv">147</span>, <span class="dv">173</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>où le <code>c()</code> veut dire “combine les valeurs suivantes dans un vecteur”.</p>
+</section>
+<section class="slide level2">
+
+<p>Si on affiche le contenu de cet objet, on voit qu’il contient bien l’ensemble des tailles saisies.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>tailles</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 156 164 197 147 173</code></pre>
+</div>
+</div>
+</section>
+<section id="listes" class="slide level2">
+<h2>Listes</h2>
+<p>Les éléments d’un vecteur sont forcément du même types. Si on veut mélanger le poids et le nom de différents chiens dans un même vecteur, le résultat n’est pas vraiment ce que vous attendez.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>chiens <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Chihuahua&quot;</span>, <span class="dv">5</span>, <span class="st">&quot;Doberman&quot;</span>, <span class="dv">15</span>)</span>
+<span id="cb37-2"><a href="#cb37-2"></a>chiens</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;Chihuahua&quot; &quot;5&quot;         &quot;Doberman&quot;  &quot;15&quot;       </code></pre>
+</div>
+</div>
+<aside class="notes">
+<p>Remarquer que <code>R</code> met des guillemets autour des nombres : il les a transformés en chaînes de caractères.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<p>Pour pouvoir combiner des nombres et des chaînes de caractères, il faut utiliser des listes, à l’aide de la fonction <code>list()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>liste_chiens <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Chihuahua&quot;</span>, <span class="dv">5</span>, <span class="st">&quot;Doberman&quot;</span>, <span class="dv">15</span>)</span>
+<span id="cb39-2"><a href="#cb39-2"></a>liste_chiens</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] &quot;Chihuahua&quot;
+
+[[2]]
+[1] 5
+
+[[3]]
+[1] &quot;Doberman&quot;
+
+[[4]]
+[1] 15</code></pre>
+</div>
+</div>
+<p>Nous verrons les listes plus en détails plus tard. Remarquez à ce stade la présence de double crochets <code>[[ ]]</code>, qui nous indique que nous faisons face à une liste.</p>
+</section>
+<section id="quel-type" class="slide level2">
+<h2>Quel type ?</h2>
+<p>Il n’est pas toujours facile de savoir à quel type nous faisons face. Deux fonctions nous aident pour cela. La première est la fonction <code>typeof()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">typeof</span>(chiens)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;character&quot;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">typeof</span>(liste_chiens)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;list&quot;</code></pre>
+</div>
+</div>
+<p>La seconde la fonction <code>str()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">str</span>(chiens)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> chr [1:4] &quot;Chihuahua&quot; &quot;5&quot; &quot;Doberman&quot; &quot;15&quot;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">str</span>(liste_chiens)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 4
+ $ : chr &quot;Chihuahua&quot;
+ $ : num 5
+ $ : chr &quot;Doberman&quot;
+ $ : num 15</code></pre>
+</div>
+</div>
+<aside class="notes">
+<p>Remarquer que <code>typeof()</code> utilisée sur une liste renvoi le type de l’objet global (<code>list</code>), élément par élément, alors que <code>str()</code> nous renvoit le type des éléments dans la liste, un par un.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
 <section>
 <section id="à-vous" class="title-slide slide level1 center">
 <h1>À vous !</h1>
@@ -1761,12 +1883,12 @@ display: none;
 <p>Le moment est venu de mettre en pratique ce que nous avons vu.</p>
 <p>La première chose à faire est d’installer le paquet <code>swirl</code>. Pour cela, copier-coller les lignes suivantes dans la console et taper <code>Entrée</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;swirl&#39;</span>)</span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">library</span>(swirl)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;swirl&#39;</span>)</span>
+<span id="cb49-2"><a href="#cb49-2"></a><span class="fu">library</span>(swirl)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Nous allons maintenant indiquer à <code>swirl</code> que nous souhaitons le voir en français</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">select_language</span>(<span class="st">&#39;french&#39;</span>, <span class="at">append_rprofile =</span> T)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="fu">select_language</span>(<span class="st">&#39;french&#39;</span>, <span class="at">append_rprofile =</span> T)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="cours-et-leçons-swirl" class="slide level2">
@@ -1777,13 +1899,13 @@ display: none;
 <li>Vous pouvez vous procurer le cours sur Github, à cette adresse <a href="https://github.com/EliasBcd/InitiationR" class="uri">https://github.com/EliasBcd/InitiationR</a>. Vous pouvez le faire directement dans <code>R</code>, à l’aide de la commande suivante :</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">install_course_github</span>(<span class="st">&quot;EliasBcd&quot;</span>, <span class="st">&quot;InitiationR&quot;</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">install_course_github</span>(<span class="st">&quot;EliasBcd&quot;</span>, <span class="st">&quot;InitiationR&quot;</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="lancer-une-leçon" class="slide level2 smaller">
 <h2>Lancer une leçon</h2>
 <p>Vous pouvez ensuite lancer le cours en tapant la commande suivante :</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">swirl</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="fu">swirl</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>L’invite de commande dialogue avec vous ! Elle vous demande un nom.<br>
 </li>
@@ -1804,8 +1926,8 @@ display: none;
 <h2>Réinstaller un cours</h2>
 <p>Si pour une raison ou pour une autre il y a besoin de réinstaller le cours, tapez les commande suivante :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">uninstall_course</span>(<span class="st">&quot;InitiationR&quot;</span>)</span>
-<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">install_course_github</span>(<span class="st">&quot;EliasBcd&quot;</span>, <span class="st">&quot;InitiationR&quot;</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="fu">uninstall_course</span>(<span class="st">&quot;InitiationR&quot;</span>)</span>
+<span id="cb53-2"><a href="#cb53-2"></a><span class="fu">install_course_github</span>(<span class="st">&quot;EliasBcd&quot;</span>, <span class="st">&quot;InitiationR&quot;</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section>
