@@ -176,6 +176,53 @@ Ce qui est très pratique pour extraire un sous-vecteur des entrées respectant 
 tailles[tailles>160]
 ```
 
+## Valeurs manquantes
+
+Il peut arriver qu'il y ait des valeurs manquantes dans vos données. 
+Ces valeurs manquantes sont symbolisées dans `R` par le symbole `r NA`.
+
+```{r}
+NA
+```
+
+Les valeurs manquantes sont 'absorbantes'. 
+Toute opération avec une valeur manquante abouti à une valeur manquante
+
+```{r}
+c(1, 5, NA) == NA
+```
+
+Remarquez que même l'opération d'égalité entre deux `NA` aboutit à un résultat `NA`.
+
+## Traitement des valeurs manquantes
+
+Pour savoir si une valeur est une valeur manquante, il faut utiliser la fonction `is.na()`.
+
+```{r}
+is.na(NA)
+is.na(c(1, 5, NA))
+```
+
+## Not a Number `r NaN`
+
+```{r}
+0 / 0
+```
+
+Un deuxième type de valeurs manquantes est `r NaN`. 
+C'est le résultat que renvoi `R` quand vous demandez une opération impossible.
+Remarquez que `R` connaît d'une certaine manière les limites
+
+```{r}
+10/0
+```
+
+Mais 
+
+```{r}
+Inf / Inf
+```
+
 ## Bases de données
 
 Dans R, les bases de données sont des `data.frame`. Dans une `data.frame`, chaque **variable** est stockée comme une colonne, et chaque ligne est une **observation**.
