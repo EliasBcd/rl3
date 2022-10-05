@@ -1,0 +1,25 @@
+---
+title: "R Programming advanced"
+author: "Elias Bouacida"
+format: html
+---
+
+## Basics
+
+To start up with, you should be doing the [R_Programming_E](https://github.com/swirldev/R_Programming_E) course using swirl().
+You can say that you want to tell me what you did at the end, sending me a message at [elias.bouacida@univ-paris8.fr](mailto:elias.bouacida@univ-paris8.fr).
+
+This should give you the basics to move around R.
+
+## RMarkdown
+
+The second important part of the learning is to learn how to use Rmarkdown to produce nice reports.
+There are many great resources to do so. 
+The most comprehensive is the [Rmarkdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/).
+I ask you to send me the exercises in this  [page](https://r4ds.had.co.nz/r-markdown.html).
+
+## ggplot2
+
+You also need to learn how to plot data with R, using the ggplot2 package.
+Do the x first lessons offered here : <https://wilkelab.org/SDS375/>
+
