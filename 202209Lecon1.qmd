@@ -573,6 +573,8 @@ sd(hv3$age)
 
 
 
+
+
 # Représentations graphiques
 
 ## ggplot2
