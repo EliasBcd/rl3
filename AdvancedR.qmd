@@ -11,15 +11,31 @@ You can say that you want to tell me what you did at the end, sending me a messa
 
 This should give you the basics to move around R.
 
+## Control flow
+
+Chapter 5 of [Advanced R programming](https://adv-r.hadley.nz/control-flow.html)
+Do the exercises in it and send them to me afterwards.
+
 ## RMarkdown
 
 The second important part of the learning is to learn how to use Rmarkdown to produce nice reports.
 There are many great resources to do so. 
 The most comprehensive is the [Rmarkdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/).
-I ask you to send me the exercises in this  [page](https://r4ds.had.co.nz/r-markdown.html).
+I ask you to send me the exercises from this  [page](https://r4ds.had.co.nz/r-markdown.html).
 
 ## ggplot2
 
 You also need to learn how to plot data with R, using the ggplot2 package.
 Do the x first lessons offered here : <https://wilkelab.org/SDS375/>
+
+## Random generation
+
+Included in R_Programming_E
+
+Additional resource: Chapter 5.3 of the Pirate Guide to R <https://bookdown.org/ndphillips/YaRrr/generating-random-data.html>
+
+## Solving non-liner equation
+
+TBD
+
 
