@@ -1,5 +1,5 @@
 ---
-title: "Traitement de données"
+title: "Données et fonctions"
 subtitle: "L3 économie-finance"
 author: "Elias Bouacida"
 format: revealjs
@@ -294,7 +294,8 @@ tailles <- c(156,164,197,147,173)
 ```
 Ici, `c()` est appelée en lui passant cinq arguments, les cinq tailles séparées par des virgules, et elle renvoie un vecteur numérique regroupant ces cinq valeurs.
 
-Supposons maintenant que dans notre vecteur tailles nous avons une *valeur manquante* (une personne a refusé de répondre, ou notre mètre mesureur était en panne). On symbolise celle-ci dans R avec le code interne `NA`.
+Supposons maintenant que dans notre vecteur tailles nous avons une *valeur manquante* (une personne a refusé de répondre, ou notre mètre mesureur était en panne).
+On symbolise celle-ci dans R avec le code interne `NA`.
 
 ```{r}
 tailles <- c(156, 164, 197, NA, 173)
@@ -309,9 +310,11 @@ Si on calcule maintenant la taille moyenne à l'aide de la fonction `mean()`, on
 mean(tailles)
 ```
 
-En effet, R considère par défaut qu'il ne peut pas calculer la moyenne si une des valeurs n'est pas disponible. Dans ce cas il considère que la moyenne est elle-même "non disponible" et renvoie donc `NA` comme résultat.
+En effet, R considère par défaut qu'il ne peut pas calculer la moyenne si une des valeurs n'est pas disponible.
+Dans ce cas il considère que la moyenne est elle-même "non disponible" et renvoie donc `NA` comme résultat.
 
-On peut cependant indiquer à `mean()` d'effectuer le calcul en ignorant les valeurs manquantes. Ceci se fait en ajoutant un argument supplémentaire, nommé `na.rm` (abréviation de NA remove, "enlever les NA"), et de lui attribuer la valeur `TRUE`.
+On peut cependant indiquer à `mean()` d'effectuer le calcul en ignorant les valeurs manquantes.
+Ceci se fait en ajoutant un argument supplémentaire, nommé `na.rm` (abréviation de NA remove, "enlever les NA"), et de lui attribuer la valeur `TRUE`.
 
 ```{r}
 mean(tailles, na.rm = TRUE)
@@ -319,10 +322,26 @@ mean(tailles, na.rm = TRUE)
 
 Mettre le paramètre `na.rm` à `TRUE` indique à la fonction `mean()` de ne pas tenir compte des valeurs manquantes dans le calcul.
 
+Remarquez qu'ici, nous avons nommé l'argument (`na.rm`).
+De manière général, quand on passe un argument en faisant `nom = valeur`, on nomme l'argument.
+Cela est utile quand on ne souvient pas de la position de l'argument dans la fonction.
+
+
+## Valeur par défaut d'un argument
+
+Le nommage des arguments est indissociable des arguments par défaut.
+Dans la première version de `mean` que nous avons utilisé, la valeur de `na.rm` était implicitement  `FALSE`.
+C'est en fait la valeur par défaut de l'argument `na.rm`.
+Si nous ne donnons pas explicitement une valeur à `na.rm`, `R` utilisera la valeur `FALSE`.
+Les valeurs par défaut des arguments sont très utiles pour éviter de rentrer systématiquement une valeur.
+
+`log` a pour exemple comme valeur par défaut pour `base = exp(1)`, donnant ainsi le logarithme népérien quand on l'utilise naïvement.
+
 
 ## Aide sur une fonction
 
-Il est fréquent de ne pas savoir (ou d'avoir oublié) quels sont les arguments d'une fonction, ou comment ils se nomment. On peut à tout moment faire appel à l'aide intégrée à R en passant le nom de la fonction (entre guillemets) à la fonction `help()`.
+Il est fréquent de ne pas savoir (ou d'avoir oublié) quels sont les arguments d'une fonction, ou comment ils se nomment, ou quels sont les valeurs par défaut des arguments.
+On peut à tout moment faire appel à l'aide intégrée à R en passant le nom de la fonction (entre guillemets) à la fonction `help()`.
 ```{r eval=FALSE}
 help("mean")
 ```
@@ -334,7 +353,65 @@ On peut aussi utiliser le raccourci `?` :
 ```
 
 
-Ces deux commandes affichent une page (en anglais) décrivant la fonction, ses paramètres, son résultat, le tout accompagné de diverses notes, références et exemples. Ces pages d'aide contiennent à peu près tout ce que vous pourrez chercher à savoir, mais elles ne sont pas toujours d'une lecture aisée.
+Ces deux commandes affichent une page (en anglais) décrivant la fonction, ses paramètres, son résultat, le tout accompagné de diverses notes, références et exemples.
+Ces pages d'aide contiennent à peu près tout ce que vous pourrez chercher à savoir, mais elles ne sont pas toujours d'une lecture aisée.
+
+
+## L'argument ...
+
+Un dernier argument est souvent rencontré mais pas toujours expliqué dans `R`, l'argument `...`.
+Cet argument permet de "capturer" toutes les valeurs rentrées.
+Si vous rechercher l'aide sur la fonction `c`, vous remarquerez que c'est le premier argument.
+Il permet aussi l'hérédité des arguments quand on construit une nouvelle fonction, vous le verrez en exercices.
+
+## Créer sa propre fonction
+
+Vous serez probablement amené à créer vos propres fonctions dans `R`.
+Voici l'exemple d'une fonction qui reproduirait un peu naïvement `mean` :
+
+```{r}
+moyenne <- function(x, na.rm=FALSE){
+  ## Calculs effectués par la fonctions, les caractères après un # sont ignorés
+  res <- 0
+  if (na.rm && (sum(is.na(x)) > 0)) {
+     # if/else sont des conditions logiques, nous y reviendrons.
+    res <- sum(x[!is.na(x)]) / sum(!is.na(x))
+  }
+  else {
+    res <- sum(x) / length(x)
+  }
+  res # Résultat de la fonction
+}
+```
+
+
+Définir une fonction, c'est attribuer au nom de la fonction (ici, `moyenne`) le mot clé `function` avec entre parenthèses les arguments, éventuellement nommés.
+Les `{}` délimitent ensuite le code propre à la fonction
+La dernière ligne de la fonction est le résultat de celle-ci, qui est renvoyé.
+
+::: {.notes}
+
+- Mot clé `function` attribué au nom de la fonction
+- `if / else` : si / sinon. 
+Commencer à parler des conditions.
+- `length` : longueur d'un vecteur
+- `sum` : somme de toutes les valeurs d'un vecteur
+:::
+
+
+## Fonctions anonymes (fonctions lambda)
+
+Il n'est pas nécessaire de nommer une fonction pour en créer une.
+Il est possible de créer des fonctions anonymes, ce qui peut être utile dans le cas où vous passer une fonction comme argument d'une autre fonction.
+La syntaxe est la suivante :
+
+```{r}
+(function(x) {x+1})(6)
+```
+
+Cette fonction ajoute 1 à l'élément passé comme argument.
+
+On a ensuité évalué cette fonction en 6, d'où le résultat.
 
 # Scripts
 
@@ -398,313 +475,5 @@ min(imc)
 max(imc)
 ```
 
-# Paquets
 
-## Installer et charger des extensions (packages)
-
-- L'installation de base de R permet de faire énormément de choses, mais le langage dispose en plus d'un système d'extensions permettant d'ajouter facilement de nouvelles fonctionnalités. La plupart des extensions sont développées et maintenues par la communauté des utilisateurs et utilisatrices de R, et diffusées via un réseau de serveurs nommé CRAN (Comprehensive R Archive Network).
-- Pour installer une extension, si on dispose d'une connexion Internet, on peut 
-    - Cliquer sur le bouton Install de l'onglet Packages de RStudio.
-    - Il suffit alors d'indiquer le nom de l'extension dans le champ Package et de cliquer sur Install.
-    
-- On peut aussi installer des extensions en utilisant la fonction `install.packages()` directement dans la console. Par exemple, pour installer le package `ggplot2` on peut exécuter la commande    
-
-```{r eval=FALSE}
-install.packages(ggplot2)
-```
-
-- Une fois l'extension installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu'elle propose.
-Ceci se fait avec la fonction `library()`. 
-Par exemple, pour pouvoir utiliser les fonctions de `ggplot2`, vous devrez exécuter la commande suivante :
-
-```{r eval=FALSE}
-library(ggplot2)
-```
-
-- Vous avez déjà rencontré ces commandes quand nous avons installé et commencé à utiliser `swirl`.
-
-. . .
-
-On regroupe en général en début de script toute une série de commandes `library()` qui permettent de charger tous les packages utilisés dans le script.
-Quelque chose comme :
-
-```{r}
-library(ggplot2)
-library(haven)
-library(tidyr)
-```
-
-# Premier travail avec les données
-
-## Données d'exemple
-
-Nous utiliserons dans ce cours des données issues de l'INSEE : la base "[Histoires de vie 2003](https://www.insee.fr/fr/statistiques/2532244)"
-
-La base est disponible au format `.csv` à l'adresse suivante [https://raw.githubusercontent.com/P8EcoGe/rl3/main/bases/hdv3.csv](https://raw.githubusercontent.com/P8EcoGe/rl3/main/bases/hdv3.csv)
-
-Vous pouvez la charger directement dans `R` à l'aide de la commande `read.csv()`. On va la placer dans un objet nommé `hv3` : 
-
-```{r}
-hv3 <- read.csv("https://raw.githubusercontent.com/P8EcoGe/rl3/main/bases/hdv3.csv")
-```
-
-Alternativement, vous pouvez enregistrer le fichier sur votre disque dur, puis le charger dans `R` avec :
-
-```{r eval=FALSE}
-hv3 <- read.csv("chemin_vers_le_fichier/hdv3.csv")
-```
-
-Vous pouvez voir dans l'onglet "Environment" que la base de donnée comprend 2000 observations, et 21 variables.
-
-Si vous souhaitez voir le contenu de la base, vous pouvez utiliser la commande `View()` : 
-```{r eval=FALSE}
-View(hv3)
-```
-
-
-## Structure de la base
-
-Un tableau étant un objet comme un autre, on peut lui appliquer des fonctions. 
-Par exemple, `nrow()` et `ncol()` retournent le nombre de lignes et de colonnes du tableau.
-`dim()` renvoie les deux :
-
-```{r}
-nrow(hv3)
-ncol(hv3)
-dim(hv3)
-```
-
-La fonction `names()` retourne les noms des colonnes du tableau, c'est-à-dire la liste de nos variables.
-
-```{r}
-names(hv3)
-```
-
-Enfin, la fonction `str()` renvoie un descriptif plus détaillé de la structure du tableau. 
-Elle liste les différentes variables, indique leur type et affiche les premières valeurs.
-
-```{r}
-str(hv3)
-```
-
-
-## Accéder aux variables, et en créer de nouvelles
-
-On se réfère aux variables à l'aide de l'opérateur `$`, qui permet d'accéder aux colonnes du tableau. 
-On utilisera la syntaxe `nom_de_la_base$nom_de_la_variable` pour désigner une variable particulière d'une base de données.
-
-Par exemple, on peut utiliser la fonction `head()` pour afficher les premières valeurs de la variable `age` de la base stockée dans l'objet `hv3`.
-
-```{r}
-head(hv3$age)
-```
-
-On peut aussi utiliser l'opérateur `$` pour créer une nouvelle variable dans notre base : pour cela, il suffit de lui assigner une valeur.
-
-Par exemple, la variable `heures.tv` contient le nombre d'heures passées quotidiennement devant la télé.
-
-```{r}
-head(hv3$heures.tv)
-```
-
-On peut vouloir créer une nouvelle variable dans notre tableau qui contienne la même durée convertie en minutes. 
-
-On va donc créer une nouvelle variables `minutes.tv` de la manière suivante :
-
-```{r}
-hv3$minutes.tv <- hv3$heures.tv * 60
-```
-
-On peut alors constater, qu'une nouvelle variable (une nouvelle colonne) a bien été ajoutée à la base de données.
-
-```{r}
-head(hv3$minutes.tv)
-```
-
-
-## Analyse univariée
-
----
-
-### Variable quantitative
-
-Une variable quantitative est une variable de type numérique (un nombre) qui peut prendre un grand nombre de valeurs. On en a plusieurs dans notre jeu de données, notamment l'âge (variable `age`) ou le nombre d'heures passées devant la télé (`heures.tv`).
-
----
-
-### Indicateurs numériques
-
-Pour obtenir un résumé numérique concis d'une variable numérique, on peut utiliser la commande `summary()` : 
-
-```{r}
-summary(hv3$heures.tv)
-summary(hv3$age)
-```
-
-`summary()` donne le minimum, le maximum, la moyenne, les premier second (médiane) et troisième quartile de la distribution. La dernière valeur donne, s'il y en a, le nombre de valeurs manquantes (`NA`) pour la variable. 
-
-On peut également obtenir (et, si on le souhaite, sauver dans un objet) les valeurs de chaque élément avec les fonction `min()`, `max()`, `median()`, `mean()` et `quantile()` : 
-
-```{r}
-min(hv3$age)
-max(hv3$age)
-mean(hv3$age)
-median(hv3$age)
-quantile(hv3$age, prob=0.75) # l'option "prob=" permet de préciser le quantile souhaité
-```
-
----
-
-Si la variable examinée contient des valeurs manquante, il convient d'inclure l'option `na.rm=TRUE` dans l'appel de la fonction : 
-
-```{r}
-mean(hv3$heures.tv)
-mean(hv3$heures.tv, na.rm=TRUE)
-```
-
-On peut obtenir des indicateurs de dispersion (variance, écart-type) à l'aide des commandes `var()` et `sd()` : 
-
-
-
-```{r}
-var(hv3$age)
-sd(hv3$age)
-```
-
-
-
-
-
-# Représentations graphiques
-
-## ggplot2
-
-La librairie (paquet) `R` la plus utilisée pour faire des représentations graphiques est [ggplot2](https://ggplot2.tidyverse.org/).
-C'est une librairie issue du `tidyverse`, un ensemble de librairies `R` destinées au traitement de données.
-
-
-## Un histogramme
-
-La représentation graphique la plus courante pour présenter la distribution d'une variable quantitative continue est l'histogramme.
-Un graphique `ggplot2` commence par la fonction `ggplot()`.
-Le premier argument doit être l'ensemble de données utilisée (en général un `data.frame` ou une autre forme de tableau). 
-Le second argument est `aes()` et contient en général la variable que vous voulez mettre en abscisse, précédent du mot-clé `x`.
-On donne ensuite à `ggplot()` le type de graphique que l'on souhaite utiliser (ici un histogramme en utilisant `geom_histogram()`, après un `+`) :
-
-:::: {.columns}
-
-::: {.column width=60%}
-```{r code-first, fig.show="hide", warning=FALSE}
-library(ggplot2)
-
-ggplot(hv3, aes(x=age)) +
-  geom_histogram()
-```
-:::
-
-::: {.column width=40%}
-```{r, echo=FALSE}
-knitr::include_graphics(
-  knitr::fig_chunk("code-first", "png")
-)
-```
-:::
-
-::::
-
-
----
-
-:::: {.columns}
-
-::: {.column width=60%}
-On peut faire varier le nombre de catégories.
-
-```{r code-second, fig.show="hide", warning=FALSE}
-ggplot(hv3, aes(x=age)) +
-  geom_histogram(bins=10)
-```
-:::
-
-::: {.column width=40%}
-```{r, echo=FALSE}
-knitr::include_graphics(
-  knitr::fig_chunk("code-second", "png")
-)
-```
-:::
-
-::::
-
-::::{.columns}
-
-::: {.column width=60%}
-Changer la couleur et ajouter un titre et une légende pour les axes (très importants pour comprendre un graphique)
-
-```{r code-trois, fig.show="hide", warning=FALSE}
-ggplot(hv3, aes(x=age)) +
-  geom_histogram(bins=30, fill="skyblue") +
-  labs(title = "Répartition des âges des enquêtés") +
-  xlab("Âge") +
-  ylab("Effectif")
-
-```
-:::
-
-::: {.column width=40%}
-```{r, echo=FALSE}
-knitr::include_graphics(
-  knitr::fig_chunk("code-trois", "png")
-)
-```
-:::
-
-::::
-
-## Boîte à moustache
-
-Une autre représentation classique est la "Boîte à moustache", que l'on obtient avec la commande `geom_boxplot()` : 
-
-:::: {.columns}
-
-::: {.column width=60%}
-```{r box1, fig.show="hide", warning=FALSE}
-ggplot(hv3, aes(y=age)) +
-  geom_boxplot()  
-```
-:::
-
-::: {.column width=40%}
-```{r, echo=FALSE}
-knitr::include_graphics(
-  knitr::fig_chunk("box1", "png")
-)
-```
-:::
-
-::::
-
-:::: {.columns}
-::: {.column width=60%}
-```{r box2, fig.show="hide", warning=FALSE}
-ggplot(hv3, aes(x=sport, y=age)) +
-  geom_boxplot(fill = c("gold", "darkgreen")) +
-  xlab("Pratique d'un sport") +
-  ylab("Âge")
-```
-:::
-
-::: {.column width=40%}
-```{r, echo=FALSE}
-knitr::include_graphics(
-  knitr::fig_chunk("box2", "png")
-)
-```
-:::
-
-::::
-
-::: {.notes}
-Bien faire remarquer aux étudiants les différents arguments dans ces fonctions.
-:::
 
