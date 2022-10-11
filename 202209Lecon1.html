@@ -1340,7 +1340,7 @@ display: none;
 </div>
 <div class="fragment">
 <p>Notez néanmoins qu’un vecteur ne peut contenir qu’un seul type de valeurs.<br>
-Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront automatiquement convertie au type le plus large.</p>
+Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront automatiquement converties au type le plus large.</p>
 <aside class="notes">
 <p>En général, le type le plus large est le type texte.</p>
 <style type="text/css">
@@ -1405,7 +1405,7 @@ Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront aut
 </section>
 <section class="slide level2">
 
-<p>Si nous voulons créer un vecteur qui ne soit pas limité aux nombres entiers et qui augmente de 1 à la fois, nous pouvons utiliser la fonction <code>seq()</code>.</p>
+<p>Si nous voulons créer un vecteur qui ne soit pas limité aux nombres entiers et qui augmente de 0.1 à la fois, nous pouvons utiliser la fonction <code>seq()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="fl">1.5</span>, <span class="at">to =</span> <span class="fl">2.2</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1479,7 +1479,7 @@ Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront aut
 <pre><code>[1] NA</code></pre>
 </div>
 </div>
-<p>Les valeurs manquantes sont ‘absorbantes’. Toute opération avec une valeur manquante abouti à une valeur manquante</p>
+<p>Les valeurs manquantes sont “absorbantes”. Toute opération avec une valeur manquante abouti à une valeur manquante :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="cn">NA</span>) <span class="sc">==</span> <span class="cn">NA</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1501,6 +1501,7 @@ Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront aut
 <pre><code>[1] FALSE FALSE  TRUE</code></pre>
 </div>
 </div>
+<p>Remarquez que <code>R</code> a automatiquement “vectorisé” la fonction <code>is.na</code> appliquée à un vecteur.</p>
 </section>
 <section id="not-a-number-nan" class="slide level2">
 <h2>Not a Number NaN</h2>
@@ -1510,14 +1511,14 @@ Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront aut
 <pre><code>[1] NaN</code></pre>
 </div>
 </div>
-<p>Un deuxième type de valeurs manquantes est NaN. C’est le résultat que renvoi <code>R</code> quand vous demandez une opération impossible. Remarquez que <code>R</code> connaît d’une certaine manière les limites</p>
+<p>Un deuxième type de valeurs manquantes est NaN. C’est le résultat que renvoi <code>R</code> quand vous demandez une opération impossible. L’interprétation est ici que <code>R</code> ne sait pas faire le calcul (car il est impossible). Remarquez que <code>R</code> connaît d’une certaine manière les limites :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="dv">10</span><span class="sc">/</span><span class="dv">0</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] Inf</code></pre>
 </div>
 </div>
-<p>Mais</p>
+<p>Mais :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="cn">Inf</span> <span class="sc">/</span> <span class="cn">Inf</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1547,6 +1548,36 @@ Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront aut
 <div class="cell">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a>base<span class="sc">$</span>imc <span class="ot">&lt;-</span> base<span class="sc">$</span>poids<span class="sc">/</span>(base<span class="sc">$</span>taille<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>On peut aussi accéder à une colonne à l’aide de crochets :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>base[<span class="st">&quot;imc&quot;</span>]</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       imc
+1 18.49112
+2 21.93635
+3 28.34394
+4 20.36189
+5 29.40292</code></pre>
+</div>
+</div>
+</section>
+<section id="lignes" class="slide level2">
+<h2>Lignes</h2>
+<p>Pour accéder à une ligne dans une base de donnée, il faut avoir recourir à une notation “matricielle” :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a>base[<span class="dv">2</span>, ]</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  tailles poids      imc
+2     164    59 21.93635</code></pre>
+</div>
+</div>
+<p>On lit ainsi la deuxième ligne des données. Et aussi :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a>base[<span class="dv">2</span>, <span class="st">&quot;imc&quot;</span>]</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 21.93635</code></pre>
+</div>
+</div>
 </section></section>
 <section>
 <section id="fonctions" class="title-slide slide level1 center">
@@ -1556,11 +1587,11 @@ Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront aut
 <section id="principes" class="slide level2">
 <h2>Principes</h2>
 <p>Nous savons effectuer des opérations de base sur des nombres et des vecteurs, et stocker des valeurs dans des objets pour pouvoir les réutiliser plus tard.</p>
-<p>Pour aller plus loin, nous devons aborder les fonctions qui sont, avec les objets, un deuxième concept de base de R. On utilise des fonctions pour effectuer des calculs, obtenir des résultats et accomplir des actions.</p>
+<p>Pour aller plus loin, nous devons aborder les <strong>fonctions</strong> qui sont, avec les <strong>objets</strong>, un deuxième concept de base de R. On utilise des fonctions pour effectuer des calculs, obtenir des résultats et accomplir des actions.</p>
 <p>Formellement, une fonction a un nom, elle prend en entrée entre parenthèses un ou plusieurs arguments (ou paramètres), et retourne un résultat.</p>
 <p>Prenons tout de suite un exemple. Si on veut connaître le nombre d’éléments du vecteur <code>tailles</code> que nous avons construit précédemment, on peut utiliser la fonction <code>length()</code>, de cette manière :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a><span class="fu">length</span>(tailles)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a><span class="fu">length</span>(tailles)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
@@ -1571,25 +1602,25 @@ Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront aut
 <p>Ici, <code>length()</code> est la fonction, on l’appelle en lui passant un argument entre parenthèses (ici notre vecteur tailles), et elle nous renvoie un résultat, à savoir le nombre d’éléments du vecteur passé en paramètre.</p>
 <p>Autre exemple, les fonctions <code>min()</code> et <code>max()</code> retournent respectivement les valeurs minimales et maximales d’un vecteur de nombres.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="fu">min</span>(tailles)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="fu">min</span>(tailles)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 147</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="fu">max</span>(tailles)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="fu">max</span>(tailles)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 197</code></pre>
 </div>
 </div>
 <p>La fonction <code>mean()</code> calcule et retourne la moyenne d’un vecteur de nombres.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a><span class="fu">mean</span>(tailles)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="fu">mean</span>(tailles)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 167.4</code></pre>
 </div>
 </div>
 <p>Une fonction peut renvoyer d’autres types de résultats. Par exemple, la fonction <code>range()</code> (étendue) renvoie un vecteur de deux nombres, le minimum et le maximum.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="fu">range</span>(tailles)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a><span class="fu">range</span>(tailles)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 147 197</code></pre>
 </div>
@@ -1600,13 +1631,13 @@ Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront aut
 <p>Une fonction peut prendre plusieurs arguments, dans ce cas on les indique entre parenthèses en les séparant par des virgules.</p>
 <p>On a déjà rencontré un exemple de fonction acceptant plusieurs arguments : la fonction <code>c()</code>, qui combine l’ensemble de ses arguments en un vecteur</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a>tailles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">156</span>,<span class="dv">164</span>,<span class="dv">197</span>,<span class="dv">147</span>,<span class="dv">173</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a>tailles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">156</span>,<span class="dv">164</span>,<span class="dv">197</span>,<span class="dv">147</span>,<span class="dv">173</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Ici, <code>c()</code> est appelée en lui passant cinq arguments, les cinq tailles séparées par des virgules, et elle renvoie un vecteur numérique regroupant ces cinq valeurs.</p>
-<p>Supposons maintenant que dans notre vecteur tailles nous avons une <em>valeur manquante</em> (une personne a refusé de répondre, ou notre mètre mesureur était en panne). On symbolise celle-ci dans R avec le code interne <code>NA</code>.</p>
+<p>Supposons maintenant que dans notre vecteur tailles nous avons une <em>valeur manquante</em> (une personne a refusé de répondre, ou notre mètre mesureur était en panne).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a>tailles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">164</span>, <span class="dv">197</span>, <span class="cn">NA</span>, <span class="dv">173</span>)</span>
-<span id="cb72-2"><a href="#cb72-2"></a>tailles</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a>tailles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">164</span>, <span class="dv">197</span>, <span class="cn">NA</span>, <span class="dv">173</span>)</span>
+<span id="cb78-2"><a href="#cb78-2"></a>tailles</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 156 164 197  NA 173</code></pre>
 </div>
@@ -1616,7 +1647,7 @@ Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront aut
 <h2>Valeurs manquantes</h2>
 <p>Si on calcule maintenant la taille moyenne à l’aide de la fonction <code>mean()</code>, on obtient :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a><span class="fu">mean</span>(tailles)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a><span class="fu">mean</span>(tailles)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
@@ -1624,7 +1655,7 @@ Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront aut
 <p>En effet, R considère par défaut qu’il ne peut pas calculer la moyenne si une des valeurs n’est pas disponible. Dans ce cas il considère que la moyenne est elle-même “non disponible” et renvoie donc <code>NA</code> comme résultat.</p>
 <p>On peut cependant indiquer à <code>mean()</code> d’effectuer le calcul en ignorant les valeurs manquantes. Ceci se fait en ajoutant un argument supplémentaire, nommé <code>na.rm</code> (abréviation de NA remove, “enlever les NA”), et de lui attribuer la valeur <code>TRUE</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a><span class="fu">mean</span>(tailles, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1"></a><span class="fu">mean</span>(tailles, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 172.5</code></pre>
 </div>
@@ -1635,42 +1666,42 @@ Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront aut
 <section id="valeur-par-défaut-dun-argument" class="slide level2">
 <h2>Valeur par défaut d’un argument</h2>
 <p>Le nommage des arguments est indissociable des arguments par défaut. Dans la première version de <code>mean</code> que nous avons utilisé, la valeur de <code>na.rm</code> était implicitement <code>FALSE</code>. C’est en fait la valeur par défaut de l’argument <code>na.rm</code>. Si nous ne donnons pas explicitement une valeur à <code>na.rm</code>, <code>R</code> utilisera la valeur <code>FALSE</code>. Les valeurs par défaut des arguments sont très utiles pour éviter de rentrer systématiquement une valeur.</p>
-<p><code>log</code> a pour exemple comme valeur par défaut pour <code>base = exp(1)</code>, donnant ainsi le logarithme népérien quand on l’utilise naïvement.</p>
-</section>
-<section id="aide-sur-une-fonction" class="slide level2">
-<h2>Aide sur une fonction</h2>
-<p>Il est fréquent de ne pas savoir (ou d’avoir oublié) quels sont les arguments d’une fonction, ou comment ils se nomment, ou quels sont les valeurs par défaut des arguments. On peut à tout moment faire appel à l’aide intégrée à R en passant le nom de la fonction (entre guillemets) à la fonction <code>help()</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a><span class="fu">help</span>(<span class="st">&quot;mean&quot;</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>On peut aussi utiliser le raccourci <code>?</code> :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1"></a>?mean</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Ces deux commandes affichent une page (en anglais) décrivant la fonction, ses paramètres, son résultat, le tout accompagné de diverses notes, références et exemples. Ces pages d’aide contiennent à peu près tout ce que vous pourrez chercher à savoir, mais elles ne sont pas toujours d’une lecture aisée.</p>
+<p><code>log</code> a pour exemple comme valeur par défaut pour <code>base = exp(1)</code>, donnant ainsi le logarithme népérien en l’absence de précision.</p>
 </section>
 <section id="largument" class="slide level2">
 <h2>L’argument …</h2>
 <p>Un dernier argument est souvent rencontré mais pas toujours expliqué dans <code>R</code>, l’argument <code>...</code>. Cet argument permet de “capturer” toutes les valeurs rentrées. Si vous rechercher l’aide sur la fonction <code>c</code>, vous remarquerez que c’est le premier argument. Il permet aussi l’hérédité des arguments quand on construit une nouvelle fonction, vous le verrez en exercices.</p>
 </section>
+<section id="aide-sur-une-fonction" class="slide level2">
+<h2>Aide sur une fonction</h2>
+<p>Il est fréquent de ne pas savoir (ou d’avoir oublié) quels sont les arguments d’une fonction, ou comment ils se nomment, ou quels sont les valeurs par défaut des arguments. On peut à tout moment faire appel à l’aide intégrée à R en passant le nom de la fonction (entre guillemets) à la fonction <code>help()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a><span class="fu">help</span>(<span class="st">&quot;mean&quot;</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>On peut aussi utiliser le raccourci <code>?</code> :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1"></a>?mean</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ces deux commandes affichent une page (en anglais) décrivant la fonction, ses paramètres, son résultat, le tout accompagné de diverses notes, références et exemples. Ces pages d’aide contiennent à peu près tout ce que vous pourrez chercher à savoir, mais elles ne sont pas toujours d’une lecture aisée.</p>
+</section>
 <section id="créer-sa-propre-fonction" class="slide level2">
 <h2>Créer sa propre fonction</h2>
-<p>Vous serez probablement amené à créer vos propres fonctions dans <code>R</code>. Voici l’exemple d’une fonction qui reproduirait un peu naïvement <code>mean</code> :</p>
+<p>Vous serez probablement amené à créer vos propres fonctions dans <code>R</code>. Voici l’exemple d’une fonction qui reproduirait <code>mean</code> :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a>moyenne <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm=</span><span class="cn">FALSE</span>){</span>
-<span id="cb80-2"><a href="#cb80-2"></a>  <span class="do">## Calculs effectués par la fonctions, les caractères après un # sont ignorés</span></span>
-<span id="cb80-3"><a href="#cb80-3"></a>  res <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb80-4"><a href="#cb80-4"></a>  <span class="cf">if</span> (na.rm <span class="sc">&amp;&amp;</span> (<span class="fu">sum</span>(<span class="fu">is.na</span>(x)) <span class="sc">&gt;</span> <span class="dv">0</span>)) {</span>
-<span id="cb80-5"><a href="#cb80-5"></a>     <span class="co"># if/else sont des conditions logiques, nous y reviendrons.</span></span>
-<span id="cb80-6"><a href="#cb80-6"></a>    res <span class="ot">&lt;-</span> <span class="fu">sum</span>(x[<span class="sc">!</span><span class="fu">is.na</span>(x)]) <span class="sc">/</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(x))</span>
-<span id="cb80-7"><a href="#cb80-7"></a>  }</span>
-<span id="cb80-8"><a href="#cb80-8"></a>  <span class="cf">else</span> {</span>
-<span id="cb80-9"><a href="#cb80-9"></a>    res <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
-<span id="cb80-10"><a href="#cb80-10"></a>  }</span>
-<span id="cb80-11"><a href="#cb80-11"></a>  res <span class="co"># Résultat de la fonction</span></span>
-<span id="cb80-12"><a href="#cb80-12"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1"></a>moyenne <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm=</span><span class="cn">FALSE</span>){</span>
+<span id="cb86-2"><a href="#cb86-2"></a>  <span class="do">## Calculs effectués par la fonctions, les caractères après un # sont ignorés</span></span>
+<span id="cb86-3"><a href="#cb86-3"></a>  res <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb86-4"><a href="#cb86-4"></a>  <span class="cf">if</span> (na.rm <span class="sc">&amp;&amp;</span> (<span class="fu">sum</span>(<span class="fu">is.na</span>(x)) <span class="sc">&gt;</span> <span class="dv">0</span>)) {</span>
+<span id="cb86-5"><a href="#cb86-5"></a>     <span class="co"># if/else sont des conditions logiques, nous y reviendrons.</span></span>
+<span id="cb86-6"><a href="#cb86-6"></a>    res <span class="ot">&lt;-</span> <span class="fu">sum</span>(x[<span class="sc">!</span><span class="fu">is.na</span>(x)]) <span class="sc">/</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(x))</span>
+<span id="cb86-7"><a href="#cb86-7"></a>  }</span>
+<span id="cb86-8"><a href="#cb86-8"></a>  <span class="cf">else</span> {</span>
+<span id="cb86-9"><a href="#cb86-9"></a>    res <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb86-10"><a href="#cb86-10"></a>  }</span>
+<span id="cb86-11"><a href="#cb86-11"></a>  res <span class="co"># Résultat de la fonction</span></span>
+<span id="cb86-12"><a href="#cb86-12"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Définir une fonction, c’est attribuer au nom de la fonction (ici, <code>moyenne</code>) le mot clé <code>function</code> avec entre parenthèses les arguments, éventuellement nommés. Les <code>{}</code> délimitent ensuite le code propre à la fonction La dernière ligne de la fonction est le résultat de celle-ci, qui est renvoyé.</p>
+<p>Définir une fonction, c’est attribuer au nom de la fonction (ici, <code>moyenne</code>) le mot clé <code>function</code> avec entre parenthèses les arguments, éventuellement nommés. Les <code>{}</code> délimitent ensuite le code propre à la fonction. La dernière ligne de la fonction est le résultat de celle-ci, qui est renvoyé.</p>
 <aside class="notes">
 <ul>
 <li>Mot clé <code>function</code> attribué au nom de la fonction</li>
@@ -1694,13 +1725,13 @@ Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront aut
 <h2>Fonctions anonymes (fonctions lambda)</h2>
 <p>Il n’est pas nécessaire de nommer une fonction pour en créer une. Il est possible de créer des fonctions anonymes, ce qui peut être utile dans le cas où vous passer une fonction comme argument d’une autre fonction. La syntaxe est la suivante :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a>(<span class="cf">function</span>(x) {x<span class="sc">+</span><span class="dv">1</span>})(<span class="dv">6</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1"></a>(<span class="cf">function</span>(x) {x<span class="sc">+</span><span class="dv">1</span>})(<span class="dv">6</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7</code></pre>
 </div>
 </div>
 <p>Cette fonction ajoute 1 à l’élément passé comme argument.</p>
-<p>On a ensuité évalué cette fonction en 6, d’où le résultat.</p>
+<p>On a ensuite évalué cette fonction en 6, d’où le résultat.</p>
 </section></section>
 <section>
 <section id="scripts" class="title-slide slide level1 center">
@@ -1710,7 +1741,7 @@ Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront aut
 <section id="regrouper-ses-commandes-dans-des-scripts" class="slide level2">
 <h2>Regrouper ses commandes dans des scripts</h2>
 <ul>
-<li>Jusqu’ici on a utilisé R de manière “interactive”, en saisissant des commandes directement dans la console. Ce n’est pas très pratique pour sauvegarder son travail. Lorsque <code>R</code> ou RStudio redémarre, tout ce qui a été effectué dans la console est perdu.</li>
+<li>Jusqu’ici on a utilisé R de manière “interactive”, en saisissant des commandes directement dans la console. Ce n’est pas très pratique pour sauvegarder son travail ou créer des fonctions. Lorsque <code>R</code> ou RStudio redémarre, tout ce qui a été effectué dans la console est perdu.</li>
 <li>On va plutôt regrouper les commandes dans des scripts (de simples fichiers texte), qui vont garder une trace de toutes les opérations effectuées. En rouvrant les scripts et en réexécutant les commandes qu’ils contiennent on pourra “reproduire” le chargement des données, leur traitement, les analyses et leurs résultats.</li>
 <li>Pour créer un script, il suffit de sélectionner le menu <em>Fichier</em> (File), puis <em>Nouveau fichier</em> (New File) et <em>script R</em> (R script). Une quatrième zone apparaît alors en haut à gauche de l’interface de RStudio. On peut enregistrer notre script à tout moment dans un fichier avec l’extension .R, en cliquant sur l’icône de disquette ou en choisissant <em>Fichier</em> (File) puis <em>Sauvegarder</em> (Save) ou en utilisant le raccourci <em>Ctrl + S</em> (Cmd + S sous Mac).</li>
 <li>Un script est un fichier texte brut, qui s’édite de la manière habituelle. À la différence de la console, quand on appuie sur Entrée, cela n’exécute pas la commande en cours mais insère un saut de ligne.</li>
@@ -1721,38 +1752,38 @@ Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront aut
 
 <p>Au final, un script pourra ressembler à quelque chose comme ça :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1"></a>tailles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">164</span>, <span class="dv">197</span>, <span class="dv">147</span>, <span class="dv">173</span>)</span>
-<span id="cb83-2"><a href="#cb83-2"></a>poids <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">59</span>, <span class="dv">110</span>, <span class="dv">44</span>, <span class="dv">88</span>)</span>
-<span id="cb83-3"><a href="#cb83-3"></a></span>
-<span id="cb83-4"><a href="#cb83-4"></a><span class="fu">mean</span>(tailles)</span>
-<span id="cb83-5"><a href="#cb83-5"></a><span class="fu">mean</span>(poids)</span>
-<span id="cb83-6"><a href="#cb83-6"></a></span>
-<span id="cb83-7"><a href="#cb83-7"></a>imc <span class="ot">&lt;-</span> poids <span class="sc">/</span> (tailles <span class="sc">/</span> <span class="dv">100</span>) <span class="sc">^</span> <span class="dv">2</span></span>
-<span id="cb83-8"><a href="#cb83-8"></a><span class="fu">min</span>(imc)</span>
-<span id="cb83-9"><a href="#cb83-9"></a><span class="fu">max</span>(imc)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1"></a>tailles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">164</span>, <span class="dv">197</span>, <span class="dv">147</span>, <span class="dv">173</span>)</span>
+<span id="cb89-2"><a href="#cb89-2"></a>poids <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">59</span>, <span class="dv">110</span>, <span class="dv">44</span>, <span class="dv">88</span>)</span>
+<span id="cb89-3"><a href="#cb89-3"></a></span>
+<span id="cb89-4"><a href="#cb89-4"></a><span class="fu">mean</span>(tailles)</span>
+<span id="cb89-5"><a href="#cb89-5"></a><span class="fu">mean</span>(poids)</span>
+<span id="cb89-6"><a href="#cb89-6"></a></span>
+<span id="cb89-7"><a href="#cb89-7"></a>imc <span class="ot">&lt;-</span> poids <span class="sc">/</span> (tailles <span class="sc">/</span> <span class="dv">100</span>) <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb89-8"><a href="#cb89-8"></a><span class="fu">min</span>(imc)</span>
+<span id="cb89-9"><a href="#cb89-9"></a><span class="fu">max</span>(imc)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="commentaires" class="slide level2">
 <h2>Commentaires</h2>
 <ul>
 <li>Les commentaires sont un élément très important d’un script. Il s’agit de texte, ignoré par R, et qui permet de décrire les étapes du script, sa logique, les raisons pour lesquelles on a procédé de telle ou telle manière… Il est primordial de documenter ses scripts avec des commentaires, car il est très facile de ne plus se retrouver dans un programme qu’on a produit soi-même, même après une courte interruption.</li>
-<li>Pour ajouter un commentaire, il suffit de le faire précéder d’un ou plusieurs symboles <code>#</code>. En effet, dès que R rencontre ce caractère, il ignore tout ce qui se trouve derrière, jussqu’à la fin de la ligne.</li>
+<li>Pour ajouter un commentaire, il suffit de le faire précéder d’un ou plusieurs symboles <code>#</code>. En effet, dès que R rencontre ce caractère, il ignore tout ce qui se trouve derrière, jusqu’à la fin de la ligne.</li>
 </ul>
 <p>On peut donc documenter le script précédent :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a><span class="co"># Saisie des tailles et poids des enquêtés</span></span>
-<span id="cb84-2"><a href="#cb84-2"></a>tailles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">164</span>, <span class="dv">197</span>, <span class="dv">147</span>, <span class="dv">173</span>)</span>
-<span id="cb84-3"><a href="#cb84-3"></a>poids <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">59</span>, <span class="dv">110</span>, <span class="dv">44</span>, <span class="dv">88</span>)</span>
-<span id="cb84-4"><a href="#cb84-4"></a></span>
-<span id="cb84-5"><a href="#cb84-5"></a><span class="co"># Calcul des tailles et poids moyens</span></span>
-<span id="cb84-6"><a href="#cb84-6"></a><span class="fu">mean</span>(tailles)</span>
-<span id="cb84-7"><a href="#cb84-7"></a><span class="fu">mean</span>(poids)</span>
-<span id="cb84-8"><a href="#cb84-8"></a></span>
-<span id="cb84-9"><a href="#cb84-9"></a><span class="co"># Calcul de l&#39;IMC (poids en kilo divisé par les tailles en mètre au carré)</span></span>
-<span id="cb84-10"><a href="#cb84-10"></a>imc <span class="ot">&lt;-</span> poids <span class="sc">/</span> (tailles <span class="sc">/</span> <span class="dv">100</span>) <span class="sc">^</span> <span class="dv">2</span></span>
-<span id="cb84-11"><a href="#cb84-11"></a><span class="co"># Valeurs extrêmes de l&#39;IMC</span></span>
-<span id="cb84-12"><a href="#cb84-12"></a><span class="fu">min</span>(imc)</span>
-<span id="cb84-13"><a href="#cb84-13"></a><span class="fu">max</span>(imc)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1"></a><span class="co"># Saisie des tailles et poids des enquêtés</span></span>
+<span id="cb90-2"><a href="#cb90-2"></a>tailles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">164</span>, <span class="dv">197</span>, <span class="dv">147</span>, <span class="dv">173</span>)</span>
+<span id="cb90-3"><a href="#cb90-3"></a>poids <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">59</span>, <span class="dv">110</span>, <span class="dv">44</span>, <span class="dv">88</span>)</span>
+<span id="cb90-4"><a href="#cb90-4"></a></span>
+<span id="cb90-5"><a href="#cb90-5"></a><span class="co"># Calcul des tailles et poids moyens</span></span>
+<span id="cb90-6"><a href="#cb90-6"></a><span class="fu">mean</span>(tailles)</span>
+<span id="cb90-7"><a href="#cb90-7"></a><span class="fu">mean</span>(poids)</span>
+<span id="cb90-8"><a href="#cb90-8"></a></span>
+<span id="cb90-9"><a href="#cb90-9"></a><span class="co"># Calcul de l&#39;IMC (poids en kilo divisé par les tailles en mètre au carré)</span></span>
+<span id="cb90-10"><a href="#cb90-10"></a>imc <span class="ot">&lt;-</span> poids <span class="sc">/</span> (tailles <span class="sc">/</span> <span class="dv">100</span>) <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb90-11"><a href="#cb90-11"></a><span class="co"># Valeurs extrêmes de l&#39;IMC</span></span>
+<span id="cb90-12"><a href="#cb90-12"></a><span class="fu">min</span>(imc)</span>
+<span id="cb90-13"><a href="#cb90-13"></a><span class="fu">max</span>(imc)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="footer footer-default">
 

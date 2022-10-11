@@ -94,7 +94,7 @@ chiens_pref
 . . .
 
 Notez néanmoins qu'un vecteur ne peut contenir qu'un seul type de valeurs.  
-Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront automatiquement convertie au type le plus large.
+Si plusieurs types de valeurs sont donnés à un vecteur, les valeurs seront automatiquement converties au type le plus large.
 
 ::: {.notes}
 En général, le type le plus large est le type texte.
@@ -130,7 +130,7 @@ liste2
 
 ---
 
-Si nous voulons créer un vecteur qui ne soit pas limité aux nombres entiers et qui augmente de 1 à la fois, nous pouvons utiliser la fonction `seq()`.
+Si nous voulons créer un vecteur qui ne soit pas limité aux nombres entiers et qui augmente de 0.1 à la fois, nous pouvons utiliser la fonction `seq()`.
 
 ```{r}
 seq(from = 1.5, to = 2.2, by = 0.1)
@@ -185,8 +185,8 @@ Ces valeurs manquantes sont symbolisées dans `R` par le symbole `r NA`.
 NA
 ```
 
-Les valeurs manquantes sont 'absorbantes'. 
-Toute opération avec une valeur manquante abouti à une valeur manquante
+Les valeurs manquantes sont "absorbantes". 
+Toute opération avec une valeur manquante abouti à une valeur manquante :
 
 ```{r}
 c(1, 5, NA) == NA
@@ -203,6 +203,8 @@ is.na(NA)
 is.na(c(1, 5, NA))
 ```
 
+Remarquez que `R` a automatiquement "vectorisé" la fonction `is.na` appliquée à un vecteur.
+
 ## Not a Number `r NaN`
 
 ```{r}
@@ -211,13 +213,14 @@ is.na(c(1, 5, NA))
 
 Un deuxième type de valeurs manquantes est `r NaN`. 
 C'est le résultat que renvoi `R` quand vous demandez une opération impossible.
-Remarquez que `R` connaît d'une certaine manière les limites
+L'interprétation est ici que `R` ne sait pas faire le calcul (car il est impossible).
+Remarquez que `R` connaît d'une certaine manière les limites :
 
 ```{r}
 10/0
 ```
 
-Mais 
+Mais :
 
 ```{r}
 Inf / Inf
@@ -246,13 +249,36 @@ base$imc <- base$poids/(base$taille/100)^2
 ```
 
 
+On peut aussi accéder à une colonne à l'aide de crochets :
+
+```{r}
+base["imc"]
+```
+
+## Lignes
+
+Pour accéder à une ligne dans une base de donnée, il faut avoir recourir à une notation "matricielle" :
+
+```{r}
+base[2, ]
+```
+
+On lit ainsi la deuxième ligne des données.
+Et aussi :
+
+```{r}
+base[2, "imc"]
+```
+
+
 # Fonctions
 
 ## Principes
 
 Nous savons effectuer des opérations de base sur des nombres et des vecteurs, et stocker des valeurs dans des objets pour pouvoir les réutiliser plus tard.
 
-Pour aller plus loin, nous devons aborder les fonctions qui sont, avec les objets, un deuxième concept de base de R. On utilise des fonctions pour effectuer des calculs, obtenir des résultats et accomplir des actions.
+Pour aller plus loin, nous devons aborder les **fonctions** qui sont, avec les **objets**, un deuxième concept de base de R. 
+On utilise des fonctions pour effectuer des calculs, obtenir des résultats et accomplir des actions.
 
 Formellement, une fonction a un nom, elle prend en entrée entre parenthèses un ou plusieurs arguments (ou paramètres), et retourne un résultat.
 
@@ -295,7 +321,7 @@ tailles <- c(156,164,197,147,173)
 Ici, `c()` est appelée en lui passant cinq arguments, les cinq tailles séparées par des virgules, et elle renvoie un vecteur numérique regroupant ces cinq valeurs.
 
 Supposons maintenant que dans notre vecteur tailles nous avons une *valeur manquante* (une personne a refusé de répondre, ou notre mètre mesureur était en panne).
-On symbolise celle-ci dans R avec le code interne `NA`.
+
 
 ```{r}
 tailles <- c(156, 164, 197, NA, 173)
@@ -335,8 +361,15 @@ C'est en fait la valeur par défaut de l'argument `na.rm`.
 Si nous ne donnons pas explicitement une valeur à `na.rm`, `R` utilisera la valeur `FALSE`.
 Les valeurs par défaut des arguments sont très utiles pour éviter de rentrer systématiquement une valeur.
 
-`log` a pour exemple comme valeur par défaut pour `base = exp(1)`, donnant ainsi le logarithme népérien quand on l'utilise naïvement.
+`log` a pour exemple comme valeur par défaut pour `base = exp(1)`, donnant ainsi le logarithme népérien en l'absence de précision.
 
+
+## L'argument ...
+
+Un dernier argument est souvent rencontré mais pas toujours expliqué dans `R`, l'argument `...`.
+Cet argument permet de "capturer" toutes les valeurs rentrées.
+Si vous rechercher l'aide sur la fonction `c`, vous remarquerez que c'est le premier argument.
+Il permet aussi l'hérédité des arguments quand on construit une nouvelle fonction, vous le verrez en exercices.
 
 ## Aide sur une fonction
 
@@ -357,17 +390,12 @@ Ces deux commandes affichent une page (en anglais) décrivant la fonction, ses p
 Ces pages d'aide contiennent à peu près tout ce que vous pourrez chercher à savoir, mais elles ne sont pas toujours d'une lecture aisée.
 
 
-## L'argument ...
 
-Un dernier argument est souvent rencontré mais pas toujours expliqué dans `R`, l'argument `...`.
-Cet argument permet de "capturer" toutes les valeurs rentrées.
-Si vous rechercher l'aide sur la fonction `c`, vous remarquerez que c'est le premier argument.
-Il permet aussi l'hérédité des arguments quand on construit une nouvelle fonction, vous le verrez en exercices.
 
 ## Créer sa propre fonction
 
 Vous serez probablement amené à créer vos propres fonctions dans `R`.
-Voici l'exemple d'une fonction qui reproduirait un peu naïvement `mean` :
+Voici l'exemple d'une fonction qui reproduirait `mean` :
 
 ```{r}
 moyenne <- function(x, na.rm=FALSE){
@@ -386,7 +414,7 @@ moyenne <- function(x, na.rm=FALSE){
 
 
 Définir une fonction, c'est attribuer au nom de la fonction (ici, `moyenne`) le mot clé `function` avec entre parenthèses les arguments, éventuellement nommés.
-Les `{}` délimitent ensuite le code propre à la fonction
+Les `{}` délimitent ensuite le code propre à la fonction.
 La dernière ligne de la fonction est le résultat de celle-ci, qui est renvoyé.
 
 ::: {.notes}
@@ -411,14 +439,14 @@ La syntaxe est la suivante :
 
 Cette fonction ajoute 1 à l'élément passé comme argument.
 
-On a ensuité évalué cette fonction en 6, d'où le résultat.
+On a ensuite évalué cette fonction en 6, d'où le résultat.
 
 # Scripts
 
 ## Regrouper ses commandes dans des scripts
 
 - Jusqu'ici on a utilisé R de manière "interactive", en saisissant des commandes directement dans la console. 
-Ce n'est pas très pratique pour sauvegarder son travail. 
+Ce n'est pas très pratique pour sauvegarder son travail ou créer des fonctions. 
 Lorsque `R` ou RStudio redémarre, tout ce qui a été effectué dans la console est perdu.
 - On va plutôt  regrouper les commandes dans des scripts (de simples fichiers texte), qui vont garder une trace de toutes les opérations effectuées. 
 En rouvrant les scripts et en réexécutant les commandes qu'ils contiennent on pourra "reproduire" le chargement des données, leur traitement, les analyses et leurs résultats.
@@ -455,11 +483,11 @@ max(imc)
 Il s'agit de texte, ignoré par R, et qui permet de décrire les étapes du script, sa logique, les raisons pour lesquelles on a procédé de telle ou telle manière...
 Il est primordial de documenter ses scripts avec des commentaires, car il est très facile de ne plus se retrouver dans un programme qu'on a produit soi-même, même après une courte interruption.
 - Pour ajouter un commentaire, il suffit de le faire précéder d'un ou plusieurs symboles `#`.
-En effet, dès que R rencontre ce caractère, il ignore tout ce qui se trouve derrière, jussqu'à la fin de la ligne.
+En effet, dès que R rencontre ce caractère, il ignore tout ce qui se trouve derrière, jusqu'à la fin de la ligne.
 
 On peut donc documenter le script précédent :
 
-```{r eval=FALSE}
+```{r, eval=FALSE}
 # Saisie des tailles et poids des enquêtés
 tailles <- c(156, 164, 197, 147, 173)
 poids <- c(45, 59, 110, 44, 88)
@@ -474,6 +502,4 @@ imc <- poids / (tailles / 100) ^ 2
 min(imc)
 max(imc)
 ```
-
-
 
