@@ -1,0 +1,153 @@
+---
+title: "Rapports et représentations des données"
+subtitle: "L3 économie-finance"
+author: "Elias Bouacida"
+format: revealjs
+lang: fr
+institute: "Université Paris 8"
+scrollable: true
+date: today
+self-contained: true
+---
+
+# Rmarkdown
+
+# Représentations graphiques
+
+## ggplot2
+
+La librairie (paquet) `R` la plus utilisée pour faire des représentations graphiques est [ggplot2](https://ggplot2.tidyverse.org/).
+C'est une librairie issue du `tidyverse`, un ensemble de librairies `R` destinées au traitement de données.
+
+
+## Un histogramme
+
+La représentation graphique la plus courante pour présenter la distribution d'une variable quantitative continue est l'histogramme.
+Un graphique `ggplot2` commence par la fonction `ggplot()`.
+Le premier argument doit être l'ensemble de données utilisée (en général un `data.frame` ou une autre forme de tableau). 
+Le second argument est `aes()` et contient en général la variable que vous voulez mettre en abscisse, précédent du mot-clé `x`.
+On donne ensuite à `ggplot()` le type de graphique que l'on souhaite utiliser à l'aide du mot-clé `geom_xxxx` (où xxxx sera `points`)
+
+
+## Un histogramme
+
+(ici un histogramme en utilisant `geom_histogram()`, après un `+`) :
+
+:::: {.columns}
+
+::: {.column width=60%}
+```{r code-first, fig.show="hide", warning=FALSE}
+library(ggplot2)
+
+ggplot(hv3, aes(x=age)) +
+  geom_histogram()
+```
+:::
+
+::: {.column width=40%}
+```{r, echo=FALSE}
+knitr::include_graphics(
+  knitr::fig_chunk("code-first", "png")
+)
+```
+:::
+
+::::
+
+
+---
+
+:::: {.columns}
+
+::: {.column width=60%}
+On peut faire varier le nombre de catégories.
+
+```{r code-second, fig.show="hide", warning=FALSE}
+ggplot(hv3, aes(x=age)) +
+  geom_histogram(bins=10)
+```
+:::
+
+::: {.column width=40%}
+```{r, echo=FALSE}
+knitr::include_graphics(
+  knitr::fig_chunk("code-second", "png")
+)
+```
+:::
+
+::::
+
+::::{.columns}
+
+::: {.column width=60%}
+Changer la couleur et ajouter un titre et une légende pour les axes (très importants pour comprendre un graphique)
+
+```{r code-trois, fig.show="hide", warning=FALSE}
+ggplot(hv3, aes(x=age)) +
+  geom_histogram(bins=30, fill="skyblue") +
+  labs(title = "Répartition des âges des enquêtés") +
+  xlab("Âge") +
+  ylab("Effectif")
+
+```
+:::
+
+::: {.column width=40%}
+```{r, echo=FALSE}
+knitr::include_graphics(
+  knitr::fig_chunk("code-trois", "png")
+)
+```
+:::
+
+::::
+
+## Boîte à moustache
+
+Une autre représentation classique est la "Boîte à moustache", que l'on obtient avec la commande `geom_boxplot()` : 
+
+:::: {.columns}
+
+::: {.column width=60%}
+```{r box1, fig.show="hide", warning=FALSE}
+ggplot(hv3, aes(y=age)) +
+  geom_boxplot()  
+```
+:::
+
+::: {.column width=40%}
+```{r, echo=FALSE}
+knitr::include_graphics(
+  knitr::fig_chunk("box1", "png")
+)
+```
+:::
+
+::::
+
+:::: {.columns}
+::: {.column width=60%}
+```{r box2, fig.show="hide", warning=FALSE}
+ggplot(hv3, aes(x=sport, y=age)) +
+  geom_boxplot(fill = c("gold", "darkgreen")) +
+  xlab("Pratique d'un sport") +
+  ylab("Âge")
+```
+:::
+
+::: {.column width=40%}
+```{r, echo=FALSE}
+knitr::include_graphics(
+  knitr::fig_chunk("box2", "png")
+)
+```
+:::
+
+::::
+
+::: {.notes}
+Bien faire remarquer aux étudiants les différents arguments dans ces fonctions.
+:::
+
+
