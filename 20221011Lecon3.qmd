@@ -74,8 +74,22 @@ Un document Rmarkdown est un fichier texte avec une extension `.Rmd` qui ressemb
 ## Principaux éléments
 
 1. L'en tête YAML, comprise entre les ---
-2. Des morceaux de codes, qui commencent par ```
-3. Du texte normal en Rmarkdown.
+2. Des morceaux de code R, qui commencent par ```
+3. Du texte normal en Rmarkdown (avec donc quelques balises de formatages)
+
+## Actions possibles
+
+1. Lancer le code seul en cliquant sur la petite icône *run* en haut à droite de la fenêtre.
+2. Compiler tout le document en cliquant sur *knit* en haut. 
+3. Utiliser le raccourci Cmd/Ctrl + Shift + K pour faire compiler tout le document.
+
+Le document produit est par défaut en .html est apparaîtra à droite dans Rstudio.
+
+::: {.notes}
+Sortir ici un document .Rmd pour montrer aux étudiants les 3 possibilités
+:::
+
+
 
 ## L'en-tête YAML
 
@@ -89,6 +103,91 @@ output: html_document
 
 Contient les options du documents, spécifie titre, auteur, date, format de sortie, etc.
 
+## Formatage du texte
+
+Le texte écrit dans les `.Rmd` est écrit en markdown.
+C'est un ensemble de règles de formatage pour des fichier texte qui est simple à lire et à écrire.
+
+Pandoc Markdown
+
+``` markdown
+Text formatting 
+------------------------------------------------------------
+
+*italique*  ou _italique_
+**gras**   __gras__
+`code`
+exposant^2^ et indice~2~
+
+Titres
+------------------------------------------------------------
+
+# Titre de 1er niveau
+
+## De 2eme niveau
+
+### 3eme niveau
+
+Listes
+------------------------------------------------------------
+
+*   Liste avec des points item 1
+
+*   Item 2
+
+    * Item 2a
+
+    * Item 2b
+
+1.  Liste énuméré item 1
+
+1.  Item 2. Les nombres sont automatiquement incrementé à la compilation
+
+Liens et images
+------------------------------------------------------------
+
+<http://example.com>
+
+[Phrase avec un lien](http://example.com)
+
+![Légende d'une image (optionnelle)](chemin/de/image.png)
+
+Tableaux 
+------------------------------------------------------------
+
+Titre 1  | Titre 2
+-------- | ----------
+Contenu  | Contenu
+Contenu  | Contenu
+
+```
+
+## Morceaux de code
+
+3 façons d'insérer un morceaux de code dans un document `.Rmd` :
+
+1. Avec le raccourci clavier  Cmd/Ctrl + Alt + I
+2. Dans l'onglet "Code", "Insert Chunk"
+3. En tapant manuellement les délimiteurs ````{r}` et  ```
+
+
+Le titre d'un morceau de code consiste en ````{r` suivi d'un nom (optionnel), suivi d'options séparés par des virgules, suivi d'un `}`.
+
+Je vous recommande de donner un nom à chaque morceau de code (ce nom doit être unique).
+
+## Options du morceau de code {.smaller}
+
+|Option | 	Lancer le code |	Montrer le code |	Sortie |	Graphique |	Messages |	Warnings |
+|-----|:------:|:--------:|:-----:|:-----:|:------:|:-----:|
+|eval = FALSE     | - |	  | - | - | - |	- |
+|include = FALSE  |	  | - | - | - | - |	- |
+|echo = FALSE 		|   | - |   |   |   | 	|			
+|results = "hide" |   |   | - |   |   |   |			
+|fig.show = "hide"| 	|   |   | - |   |   | 		
+|message = FALSE  |		|		|   |   |	- |   |	
+|warning = FALSE  |		|		|		|   |   | - |
+
+: Que supprime chaque option ?
 
 # Représentations graphiques
 
