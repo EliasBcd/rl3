@@ -1,5 +1,5 @@
 ---
-title: "Paquets et analyse de données"
+title: "Rapports : RMarkdown"
 subtitle: "L3 économie-finance"
 author: "Elias Bouacida"
 format: revealjs
@@ -8,32 +8,45 @@ institute: "Université Paris 8"
 scrollable: true
 date: today
 self-contained: true
+bibliography: Bibliographie.bib
 ---
 
 
-```{r setup, include=F}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 # Paquets
 
-## Installer et charger des extensions (packages)
+## Installer des extensions (paquets)
 
-- L'installation de base de R permet de faire énormément de choses, mais le langage dispose en plus d'un système d'extensions permettant d'ajouter facilement de nouvelles fonctionnalités. 
-La plupart des extensions sont développées et maintenues par la communauté des utilisateurs et utilisatrices de R, et diffusées via un réseau de serveurs nommé CRAN (Comprehensive R Archive Network).
+
+```{r}
+#| label: setup
+#| message: false
+#| 
+knitr::opts_chunk$set(echo = TRUE)
+
+chunk <- "```"
+inline <- function(x = "") paste0("`` `r ", x, "` ``")
+date <- function(x="") paste0("!r ", x, "Sys.Date()" )
+```
+
+- En plus de l'installation de base : extensions, appelées paquet (*package* en anglais) ou librairie
+- En majorité : développées et maintenues par la communauté des utilisateurs et utilisatrices de R
+- Diffusées via un réseau de serveurs nommé CRAN (Comprehensive R Archive Network).
 - Pour installer une extension, si on dispose d'une connexion Internet, on peut 
-    - Cliquer sur le bouton Install de l'onglet Packages de RStudio.
-    - Il suffit alors d'indiquer le nom de l'extension dans le champ Package et de cliquer sur Install.
-    
-- On peut aussi installer des extensions en utilisant la fonction `install.packages()` directement dans la console. Par exemple, pour installer le package `ggplot2` on peut exécuter la commande    
+    - Cliquer sur le bouton Install Packages de l'onglet Tools de RStudio.
+    Il suffit alors d'indiquer le nom de l'extension dans le champ Package et de cliquer sur Install.
+    - Utiliser la fonction `install.packages()` directement dans la console.
+    Par exemple, pour installer le paquet `ggplot2` on peut exécuter la commande    
 
 ```{r eval=FALSE}
 install.packages(ggplot2)
 ```
 
-- Une fois l'extension installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu'elle propose.
+
+## Charger des extensions
+
+- Une fois installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu'elle propose.
 Ceci se fait avec la fonction `library()`. 
-Par exemple, pour pouvoir utiliser les fonctions de `ggplot2`, vous devrez exécuter la commande suivante :
+Pour pouvoir utiliser les fonctions de `ggplot2`, vous devrez exécuter la commande suivante :
 
 ```{r eval=FALSE}
 library(ggplot2)
@@ -52,143 +65,237 @@ library(haven)
 library(tidyr)
 ```
 
-# Premier travail avec les données
 
-## Données d'exemple
+# Créer des documents avec du code : R Markdown
 
-Nous utiliserons dans ce cours des données issues de l'INSEE : la base "[Histoires de vie 2003](https://www.insee.fr/fr/statistiques/2532244)"
+## Introduction
 
-La base est disponible au format `.csv` à l'adresse suivante [https://raw.githubusercontent.com/EliasBcd/rl3/main/bases/hdv3.csv](https://raw.githubusercontent.com/EliasBcd/rl3/main/bases/hdv3.csv)
+- Un atout important de R et Rstudio est RMarkdown.
+- Format qui combine code et explications
+- Aide disponible [ici](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf)
+- Nécessite l'utilisation de Rstudio pour fonctionner correctement
 
-Vous pouvez la charger directement dans `R` à l'aide de la commande `read.csv()`. On va la placer dans un objet nommé `hv3` : 
+Cette partie est largement inspirée de [@wickham2016r, chapitre 27]
 
-```{r}
-hv3 <- read.csv("https://raw.githubusercontent.com/EliasBcd/rl3/main/bases/hdv3.csv")
-```
+## Structure d'un document
 
-Alternativement, vous pouvez enregistrer le fichier sur votre disque dur, puis le charger dans `R` avec :
-
-```{r eval=FALSE}
-hv3 <- read.csv("chemin_vers_le_fichier/hdv3.csv")
-```
-
-Vous pouvez voir dans l'onglet "Environment" que la base de donnée comprend 2000 observations, et 21 variables.
-
-Si vous souhaitez voir le contenu de la base, vous pouvez utiliser la commande `View()` : 
-```{r eval=FALSE}
-View(hv3)
-```
-
-
-## Structure de la base
-
-Un tableau étant un objet comme un autre, on peut lui appliquer des fonctions. 
-Par exemple, `nrow()` et `ncol()` retournent le nombre de lignes et de colonnes du tableau.
-`dim()` renvoie les deux :
+Un document Rmarkdown est un fichier texte avec une extension `.Rmd` qui ressemble à ceci :
 
 ```{r}
-nrow(hv3)
-ncol(hv3)
-dim(hv3)
-```
-
-La fonction `names()` retourne les noms des colonnes du tableau, c'est-à-dire la liste de nos variables.
-
-```{r}
-names(hv3)
-```
-
-Enfin, la fonction `str()` renvoie un descriptif plus détaillé de la structure du tableau. 
-Elle liste les différentes variables, indique leur type et affiche les premières valeurs.
-
-```{r}
-str(hv3)
+#| echo: false
+#| comment: ""
+cat(readr::read_file("Rmarkdown.Rmd"))
 ```
 
 
-## Accéder aux variables, et en créer de nouvelles
+## Principaux éléments
 
-On se réfère aux variables à l'aide de l'opérateur `$`, qui permet d'accéder aux colonnes du tableau. 
-On utilisera la syntaxe `nom_de_la_base$nom_de_la_variable` pour désigner une variable particulière d'une base de données.
+1. L'en tête YAML, comprise entre les ---
+2. Des morceaux de code R, qui commencent par ```
+3. Du texte normal en Rmarkdown (avec donc quelques balises de formatages)
 
-Par exemple, on peut utiliser la fonction `head()` pour afficher les premières valeurs de la variable `age` de la base stockée dans l'objet `hv3`.
+## Actions possibles
 
-```{r}
-head(hv3$age)
-```
+1. Lancer le code seul en cliquant sur la petite icône *run* en haut à droite de la fenêtre.
+2. Compiler tout le document en cliquant sur *knit* en haut. 
+3. Utiliser le raccourci Cmd/Ctrl + Shift + K pour faire compiler tout le document.
 
-On peut aussi utiliser l'opérateur `$` pour créer une nouvelle variable dans notre base : pour cela, il suffit de lui assigner une valeur.
+Le document produit est par défaut en .html est apparaîtra à droite dans Rstudio.
 
-Par exemple, la variable `heures.tv` contient le nombre d'heures passées quotidiennement devant la télé.
-
-```{r}
-head(hv3$heures.tv)
-```
-
-On peut vouloir créer une nouvelle variable dans notre tableau qui contienne la même durée convertie en minutes. 
-
-On va donc créer une nouvelle variables `minutes.tv` de la manière suivante :
-
-```{r}
-hv3$minutes.tv <- hv3$heures.tv * 60
-```
-
-On peut alors constater, qu'une nouvelle variable (une nouvelle colonne) a bien été ajoutée à la base de données.
-
-```{r}
-head(hv3$minutes.tv)
-```
+::: {.notes}
+Sortir ici un document .Rmd pour montrer aux étudiants les 3 possibilités
+:::
 
 
-## Analyse univariée
 
+# L'en-tête
+
+## YAML
+
+``` markdown
 ---
-
-### Variable quantitative
-
-Une variable quantitative est une variable de type numérique (un nombre) qui peut prendre un grand nombre de valeurs. On en a plusieurs dans notre jeu de données, notamment l'âge (variable `age`) ou le nombre d'heures passées devant la télé (`heures.tv`).
-
+title: "Diamond sizes"
+date: 2016-08-25
+output: html_document
 ---
-
-### Indicateurs numériques
-
-Pour obtenir un résumé numérique concis d'une variable numérique, on peut utiliser la commande `summary()` : 
-
-```{r}
-summary(hv3$heures.tv)
-summary(hv3$age)
 ```
 
-`summary()` donne le minimum, le maximum, la moyenne, les premier second (médiane) et troisième quartile de la distribution.
-La dernière valeur donne, s'il y en a, le nombre de valeurs manquantes (`NA`) pour la variable. 
+Contient les options du documents, spécifie titre, auteur, date, format de sortie, etc.
 
-On peut également obtenir (et, si on le souhaite, sauver dans un objet) les valeurs de chaque élément avec les fonction `min()`, `max()`, `median()`, `mean()` et `quantile()` : 
+Code `R` dans l'en-tête : commence par `!r`, par exemple `r date()`
 
-```{r}
-min(hv3$age)
-max(hv3$age)
-mean(hv3$age)
-median(hv3$age)
-quantile(hv3$age, prob=0.75) # l'option "prob=" permet de préciser le quantile souhaité
+# Corps du texte
+
+## Formatage du texte
+
+Le texte écrit dans les `.Rmd` est écrit en markdown.
+C'est un ensemble de règles de formatage pour des fichier texte qui est simple à lire et à écrire.
+
+
+``` markdown
+Text formatting 
+------------------------------------------------------------
+
+*italique*  ou _italique_
+**gras**   __gras__
+`code`
+exposant^2^ et indice~2~
+
+Titres
+------------------------------------------------------------
+
+# Titre de 1er niveau
+
+## De 2eme niveau
+
+### 3eme niveau
+
+Listes
+------------------------------------------------------------
+
+*   Liste avec des points item 1
+
+*   Item 2
+
+    * Item 2a
+
+    * Item 2b
+
+1.  Liste énuméré item 1
+
+1.  Item 2. Les nombres sont automatiquement incrementé à la compilation
+
+Liens et images
+------------------------------------------------------------
+
+<http://example.com>
+
+[Phrase avec un lien](http://example.com)
+
+![Légende d'une image (optionnelle)](chemin/de/image.png)
+
+Tableaux 
+------------------------------------------------------------
+
+Titre 1  | Titre 2
+-------- | ----------
+Contenu  | Contenu
+Contenu  | Contenu
+
 ```
 
----
+## Morceaux de code
 
-Si la variable examinée contient des valeurs manquante, il convient d'inclure l'option `na.rm=TRUE` dans l'appel de la fonction : 
+3 façons d'insérer un morceaux de code dans un document `.Rmd` :
+
+1. Avec le raccourci clavier  Cmd/Ctrl + Alt + I
+2. Dans l'onglet "Code", "Insert Chunk"
+3. En tapant manuellement les délimiteurs  ```` ```{r} ```` et ```` ``` ````
+
+
+Le titre d'un morceau de code consiste en  ```` ```{r ```` suivi d'un nom (optionnel), suivi d'options séparés par des virgules, suivi d'un `}`.
+Le bloc de code est fini par ```` ``` ````.
+
+Je vous recommande de donner un nom à chaque morceau de code (ce nom doit être unique).
+
+## Options du morceau de code {.smaller}
+
+|Option | 	Lancer le code |	Montrer le code |	Sortie |	Graphique |	Messages |	Warnings |
+|-----|:------:|:--------:|:-----:|:-----:|:------:|:-----:|
+|eval = FALSE     | - |	  | - | - | - |	- |
+|include = FALSE  |	  | - | - | - | - |	- |
+|echo = FALSE 		|   | - |   |   |   | 	|			
+|results = "hide" |   |   | - |   |   |   |			
+|fig.show = "hide"| 	|   |   | - |   |   | 		
+|message = FALSE  |		|		|   |   |	- |   |	
+|warning = FALSE  |		|		|		|   |   | - |
+
+: Que supprime chaque option ?
+
+
+## Tableaux {.smaller}
+
+- Par défaut, les dataframes ont le style de la console.
+- Pour les formater, on peut utiliser `knitr::kable`
 
 ```{r}
-mean(hv3$heures.tv)
-mean(hv3$heures.tv, na.rm=TRUE)
+knitr::kable(
+  mtcars[1:5, ], 
+  caption = "Un kable knitr."
+)
 ```
 
-On peut obtenir des indicateurs de dispersion (variance, écart-type) à l'aide des commandes `var()` et `sd()` : 
+- La fonction `knitr::kable` a a de multiples options que vous pouvez consulter à l'aide `?knitr::kable`
 
+## Options globales
 
+- Parfois utile de changer les options par défaut des morceaux de code : `knitr::opts_chunk$set()`
 
-```{r}
-var(hv3$age)
-sd(hv3$age)
+Par exemple, 
+
+```{r, eval=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE
+)
 ```
 
+Cachera le code dans le rapport.
 
+## Code en ligne
+
+- Possible de mettre du code en ligne dans votre texte, à l'aide de `r inline()`
+- Permet de présenter les caractéristiques de vos données dans le corps du texte (nombre de ligne d'un tableau, par ex)
+
+> Nous avons les données de `r inline('nrow(diamonds)')` diamants.
+> Seulement `r inline('nrow(diamonds) - nrow(smaller)')` font plus que 2,5 carats.
+> La répartition du reste est montrée ci-dessous :
+
+Le résultat est compilé et apparaît ainsi :
+
+> Nous avons les données de 53940 diamants.
+> Seulement 126 font plus que 2,5 carats.
+> La répartition du reste est montrée ci-dessous :
+
+
+Quand vous devez mettre des nombre dans le texte `format()` permet de limiter le nombre de décimales à l'aide de l'option `digits`.
+
+# Bibliographie et citations
+
+## Bibliographie
+
+Possibilités de générer automatiquement des bibliographies à partir de fichier de bibliographie à indiquer dans l'option `bibliographie` de l'en-tête :
+
+``` markdown
+bibliography: rmarkdown.bib
+```
+
+Types de fichiers reconnus : BibLaTex, BibTex, endnote, medline
+
+## Citations
+
+Pour citer, il faut utiliser `@` suivi de la clé d'identification de la citation dans le fichier bibliographique.
+
+On peut ensuite mettre la citation entre crochets.
+
+``` markdown
+Séparation de citations multiples par `;`: Blah blah [@smith04; @doe99].
+
+Vous pouvez ajoutez n'importe quel commentaire dans les crochets :
+Blah blah [see @doe99, pp. 33-35; also @smith04, ch. 1].
+
+Pour obtenir une citation en ligne, enlever les crochets : @smith04 
+dit blah, ou @smith04 [p. 33] dit blah.
+
+Ajoutez un `-` avant la citation afin d'enlever le nom de l'auteur : 
+Smith dit blah [-@smith04].
+```
+
+R Markdown mettra automatiquement la bibliographie à la fin de votre document.
+
+::: {.notes}
+Montrer ici un fichier de bibliographie avec la clé de citation.
+
+:::
+
+# Références
 

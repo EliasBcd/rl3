@@ -1,5 +1,5 @@
 ---
-title: "Analyse de données et rapports scientifiques"
+title: "Paquets et analyse de données"
 subtitle: "L3 économie-finance"
 author: "Elias Bouacida"
 format: revealjs
@@ -10,184 +10,154 @@ date: today
 self-contained: true
 ---
 
+
 ```{r setup, include=F}
 knitr::opts_chunk$set(echo = TRUE)
-```
 
-# Paquets
-
-## Installer des extensions (paquets)
-
-- En plus de l'installation de base : extensions, appelées paquet (*package* en anglais) ou librairie
-- En majorité : développées et maintenues par la communauté des utilisateurs et utilisatrices de R
-- Diffusées via un réseau de serveurs nommé CRAN (Comprehensive R Archive Network).
-- Pour installer une extension, si on dispose d'une connexion Internet, on peut 
-    - Cliquer sur le bouton Install Packages de l'onglet Tools de RStudio.
-    Il suffit alors d'indiquer le nom de l'extension dans le champ Package et de cliquer sur Install.
-    - Utiliser la fonction `install.packages()` directement dans la console.
-    Par exemple, pour installer le paquet `ggplot2` on peut exécuter la commande    
-
-```{r eval=FALSE}
-install.packages(ggplot2)
-```
-
-
-## Charger des extensions
-
-- Une fois installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu'elle propose.
-Ceci se fait avec la fonction `library()`. 
-Pour pouvoir utiliser les fonctions de `ggplot2`, vous devrez exécuter la commande suivante :
-
-```{r eval=FALSE}
-library(ggplot2)
-```
-
-- Vous avez déjà rencontré ces commandes quand nous avons installé et commencé à utiliser `swirl`.
-
-. . .
-
-On regroupe en général en début de script toute une série de commandes `library()` qui permettent de charger tous les paquets utilisés dans le script.
-Quelque chose comme :
-
-```{r}
 library(ggplot2)
 library(haven)
 library(tidyr)
 ```
 
 
-# Créer des documents avec du code : R Markdown
+# Premier travail avec les données
 
-## Introduction
+## Données d'exemple
 
-- Un atout important de R et Rstudio est RMarkdown.
-- Format qui combine code et explications
-- Aide disponible [ici](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf)
-- Nécessite l'utilisation de Rstudio pour fonctionner correctement
+Nous utiliserons dans ce cours des données issues de l'INSEE : la base "[Histoires de vie 2003](https://www.insee.fr/fr/statistiques/2532244)"
 
-## Structure d'un document
+La base est disponible au format `.csv` à l'adresse suivante [https://raw.githubusercontent.com/EliasBcd/rl3/main/bases/hdv3.csv](https://raw.githubusercontent.com/EliasBcd/rl3/main/bases/hdv3.csv)
 
-Un document Rmarkdown est un fichier texte avec une extension `.Rmd` qui ressemble à ceci :
+Vous pouvez la charger directement dans `R` à l'aide de la commande `read.csv()`. On va la placer dans un objet nommé `hv3` : 
 
-![](markdown.png)
-
-## Principaux éléments
-
-1. L'en tête YAML, comprise entre les ---
-2. Des morceaux de code R, qui commencent par ```
-3. Du texte normal en Rmarkdown (avec donc quelques balises de formatages)
-
-## Actions possibles
-
-1. Lancer le code seul en cliquant sur la petite icône *run* en haut à droite de la fenêtre.
-2. Compiler tout le document en cliquant sur *knit* en haut. 
-3. Utiliser le raccourci Cmd/Ctrl + Shift + K pour faire compiler tout le document.
-
-Le document produit est par défaut en .html est apparaîtra à droite dans Rstudio.
-
-::: {.notes}
-Sortir ici un document .Rmd pour montrer aux étudiants les 3 possibilités
-:::
-
-
-
-## L'en-tête YAML
-
-``` markdown
----
-title: "Diamond sizes"
-date: 2016-08-25
-output: html_document
----
+```{r}
+hv3 <- read.csv("https://raw.githubusercontent.com/EliasBcd/rl3/main/bases/hdv3.csv")
 ```
 
-Contient les options du documents, spécifie titre, auteur, date, format de sortie, etc.
+Alternativement, vous pouvez enregistrer le fichier sur votre disque dur, puis le charger dans `R` avec :
 
-## Formatage du texte
-
-Le texte écrit dans les `.Rmd` est écrit en markdown.
-C'est un ensemble de règles de formatage pour des fichier texte qui est simple à lire et à écrire.
-
-Pandoc Markdown
-
-``` markdown
-Text formatting 
-------------------------------------------------------------
-
-*italique*  ou _italique_
-**gras**   __gras__
-`code`
-exposant^2^ et indice~2~
-
-Titres
-------------------------------------------------------------
-
-# Titre de 1er niveau
-
-## De 2eme niveau
-
-### 3eme niveau
-
-Listes
-------------------------------------------------------------
-
-*   Liste avec des points item 1
-
-*   Item 2
-
-    * Item 2a
-
-    * Item 2b
-
-1.  Liste énuméré item 1
-
-1.  Item 2. Les nombres sont automatiquement incrementé à la compilation
-
-Liens et images
-------------------------------------------------------------
-
-<http://example.com>
-
-[Phrase avec un lien](http://example.com)
-
-![Légende d'une image (optionnelle)](chemin/de/image.png)
-
-Tableaux 
-------------------------------------------------------------
-
-Titre 1  | Titre 2
--------- | ----------
-Contenu  | Contenu
-Contenu  | Contenu
-
+```{r eval=FALSE}
+hv3 <- read.csv("chemin_vers_le_fichier/hdv3.csv")
 ```
 
-## Morceaux de code
+Vous pouvez voir dans l'onglet "Environment" que la base de donnée comprend 2000 observations, et 21 variables.
 
-3 façons d'insérer un morceaux de code dans un document `.Rmd` :
+Si vous souhaitez voir le contenu de la base, vous pouvez utiliser la commande `View()` : 
+```{r eval=FALSE}
+View(hv3)
+```
 
-1. Avec le raccourci clavier  Cmd/Ctrl + Alt + I
-2. Dans l'onglet "Code", "Insert Chunk"
-3. En tapant manuellement les délimiteurs ````{r}` et  ```
+
+## Structure de la base
+
+Un tableau étant un objet comme un autre, on peut lui appliquer des fonctions. 
+Par exemple, `nrow()` et `ncol()` retournent le nombre de lignes et de colonnes du tableau.
+`dim()` renvoie les deux :
+
+```{r}
+nrow(hv3)
+ncol(hv3)
+dim(hv3)
+```
+
+La fonction `names()` retourne les noms des colonnes du tableau, c'est-à-dire la liste de nos variables.
+
+```{r}
+names(hv3)
+```
+
+Enfin, la fonction `str()` renvoie un descriptif plus détaillé de la structure du tableau. 
+Elle liste les différentes variables, indique leur type et affiche les premières valeurs.
+
+```{r}
+str(hv3)
+```
 
 
-Le titre d'un morceau de code consiste en ````{r` suivi d'un nom (optionnel), suivi d'options séparés par des virgules, suivi d'un `}`.
+## Accéder aux variables, et en créer de nouvelles
 
-Je vous recommande de donner un nom à chaque morceau de code (ce nom doit être unique).
+On se réfère aux variables à l'aide de l'opérateur `$`, qui permet d'accéder aux colonnes du tableau. 
+On utilisera la syntaxe `nom_de_la_base$nom_de_la_variable` pour désigner une variable particulière d'une base de données.
 
-## Options du morceau de code {.smaller}
+Par exemple, on peut utiliser la fonction `head()` pour afficher les premières valeurs de la variable `age` de la base stockée dans l'objet `hv3`.
 
-|Option | 	Lancer le code |	Montrer le code |	Sortie |	Graphique |	Messages |	Warnings |
-|-----|:------:|:--------:|:-----:|:-----:|:------:|:-----:|
-|eval = FALSE     | - |	  | - | - | - |	- |
-|include = FALSE  |	  | - | - | - | - |	- |
-|echo = FALSE 		|   | - |   |   |   | 	|			
-|results = "hide" |   |   | - |   |   |   |			
-|fig.show = "hide"| 	|   |   | - |   |   | 		
-|message = FALSE  |		|		|   |   |	- |   |	
-|warning = FALSE  |		|		|		|   |   | - |
+```{r}
+head(hv3$age)
+```
 
-: Que supprime chaque option ?
+On peut aussi utiliser l'opérateur `$` pour créer une nouvelle variable dans notre base : pour cela, il suffit de lui assigner une valeur.
+
+Par exemple, la variable `heures.tv` contient le nombre d'heures passées quotidiennement devant la télé.
+
+```{r}
+head(hv3$heures.tv)
+```
+
+On peut vouloir créer une nouvelle variable dans notre tableau qui contienne la même durée convertie en minutes. 
+
+On va donc créer une nouvelle variables `minutes.tv` de la manière suivante :
+
+```{r}
+hv3$minutes.tv <- hv3$heures.tv * 60
+```
+
+On peut alors constater, qu'une nouvelle variable (une nouvelle colonne) a bien été ajoutée à la base de données.
+
+```{r}
+head(hv3$minutes.tv)
+```
+
+
+## Analyse univariée
+
+---
+
+### Variable quantitative
+
+Une variable quantitative est une variable de type numérique (un nombre) qui peut prendre un grand nombre de valeurs. On en a plusieurs dans notre jeu de données, notamment l'âge (variable `age`) ou le nombre d'heures passées devant la télé (`heures.tv`).
+
+---
+
+### Indicateurs numériques
+
+Pour obtenir un résumé numérique concis d'une variable numérique, on peut utiliser la commande `summary()` : 
+
+```{r}
+summary(hv3$heures.tv)
+summary(hv3$age)
+```
+
+`summary()` donne le minimum, le maximum, la moyenne, les premier second (médiane) et troisième quartile de la distribution.
+La dernière valeur donne, s'il y en a, le nombre de valeurs manquantes (`NA`) pour la variable. 
+
+On peut également obtenir (et, si on le souhaite, sauver dans un objet) les valeurs de chaque élément avec les fonction `min()`, `max()`, `median()`, `mean()` et `quantile()` : 
+
+```{r}
+min(hv3$age)
+max(hv3$age)
+mean(hv3$age)
+median(hv3$age)
+quantile(hv3$age, prob=0.75) # l'option "prob=" permet de préciser le quantile souhaité
+```
+
+---
+
+Si la variable examinée contient des valeurs manquante, il convient d'inclure l'option `na.rm=TRUE` dans l'appel de la fonction : 
+
+```{r}
+mean(hv3$heures.tv)
+mean(hv3$heures.tv, na.rm=TRUE)
+```
+
+On peut obtenir des indicateurs de dispersion (variance, écart-type) à l'aide des commandes `var()` et `sd()` : 
+
+
+
+```{r}
+var(hv3$age)
+sd(hv3$age)
+```
+
 
 # Représentations graphiques
 
@@ -204,6 +174,8 @@ Un graphique `ggplot2` commence par la fonction `ggplot()`.
 Le premier argument doit être l'ensemble de données utilisée (en général un `data.frame` ou une autre forme de tableau). 
 Le second argument est `aes()` et contient en général la variable que vous voulez mettre en abscisse, précédent du mot-clé `x`.
 On donne ensuite à `ggplot()` le type de graphique que l'on souhaite utiliser à l'aide du mot-clé `geom_xxxx` (où xxxx sera `points`)
+
+
 
 
 # Premier travail avec les données
@@ -353,5 +325,6 @@ knitr::include_graphics(
 ::: {.notes}
 Bien faire remarquer aux étudiants les différents arguments dans ces fonctions.
 :::
+
 
 
