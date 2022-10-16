@@ -1,0 +1,33 @@
+---
+title: "Taille des diamants"
+author: "Elias Bouacida"
+date: "18 octobre 2022"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+library(ggplot2)
+library(dplyr)
+smaller <- diamonds |> 
+  filter(carat <= 2.5)
+```
+
+Nous avons des données sur  `r nrow(diamonds)` diamants. Seulement 
+`r nrow(diamonds) - nrow(smaller)` font plus de 
+2,5 carats. La répartition des diamants restants est indiquées ci-dessous :
+
+```{r, echo = FALSE}
+smaller |> 
+  ggplot(aes(carat)) + 
+  geom_freqpoly(binwidth = 0.01) +
+  ylab("Nombre")
+```
+
+Il y a des coupures aux tailles rondes, comme s'il y avait un arrondi à certaines tailles particulières.
+
+## Tailles
+
+Nous avons des données sur  `r format(nrow(diamonds), big.mark = " ")` diamants. Seulement 
+`r nrow(diamonds) - nrow(smaller)` font plus de 
+2,5 carats. 
+Il y a `r format(100*(nrow(diamonds) - nrow(smaller)) /nrow(diamonds), big.mark = " ", digits = 2)`% de diamants de plus de 2,5 carats.

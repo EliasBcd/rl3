@@ -257,7 +257,8 @@ Le résultat est compilé et apparaît ainsi :
 > La répartition du reste est montrée ci-dessous :
 
 
-Quand vous devez mettre des nombre dans le texte `format()` permet de limiter le nombre de décimales à l'aide de l'option `digits`.
+- Quand vous devez mettre des nombre dans le texte `format()` permet de limiter le nombre de décimales à l'aide de l'option `digits`.
+- Vous pouvez aussi contrôler les indicateurs de grand nombres à l'aide de l'option `big.mark`.
 
 # Bibliographie et citations
 
