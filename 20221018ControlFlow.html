@@ -521,6 +521,71 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section></section>
+<section>
+<section id="boucles" class="title-slide slide level1 center">
+<h1>Boucles</h1>
+
+</section>
+<section id="boucles-for" class="slide level2">
+<h2>Boucles <code>for</code></h2>
+<p>La boucle la plus simple est la boucle <code>for</code> :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="cf">for</span> (item <span class="cf">in</span> vecteur) faire_action</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Exemple :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) {</span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb20-3"><a href="#cb20-3"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 3</code></pre>
+</div>
+</div>
+<p>Notes : l’assignation à <code>i</code> se fait dans l’environnement courant, changeant la valeur de l’objet :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>i <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) {}</span>
+<span id="cb22-3"><a href="#cb22-3"></a>i</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+</section>
+<section id="interruption-anticipée" class="slide level2">
+<h2>Interruption anticipée</h2>
+<p>On peut interrompre l’exécution d’une boucle <code>for</code> de manière anticipée :</p>
+<ul>
+<li><code>next</code> sort de l’itération actuelle</li>
+<li><code>break</code> sort de la boucle <code>for</code> en entier</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="cf">if</span> (i <span class="sc">&lt;</span> <span class="dv">3</span>) </span>
+<span id="cb24-3"><a href="#cb24-3"></a>    <span class="cf">next</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a></span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb24-6"><a href="#cb24-6"></a>  </span>
+<span id="cb24-7"><a href="#cb24-7"></a>  <span class="cf">if</span> (i <span class="sc">&gt;=</span> <span class="dv">5</span>)</span>
+<span id="cb24-8"><a href="#cb24-8"></a>    <span class="cf">break</span></span>
+<span id="cb24-9"><a href="#cb24-9"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3
+[1] 4
+[1] 5</code></pre>
+</div>
+</div>
+</section>
+<section id="boucles-alternatives" class="slide level2">
+<h2>Boucles alternatives</h2>
+<p>Vous ne savez pas toujours à l’avance les valeurs sur lesquelles vous allez itérer. Vous pouvez alors utiliser :</p>
+<ul>
+<li><code>while(condition) action</code> : l’<code>action</code> est effectuée tant que la <code>condition</code> est <code>TRUE</code></li>
+<li><code>repeat(action)</code> : répète l’<code>action</code> indéfiniment (tant que <code>break</code> n’apparaît pas en fait).</li>
+</ul>
+<p><code>for</code> est moins flexible que <code>while</code> qui est moins flexible que <code>repeat</code>, mais il vaut mieux utiliser la version la moins flexible.</p>
 <div class="footer footer-default">
 
 </div>

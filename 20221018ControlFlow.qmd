@@ -126,3 +126,61 @@ C'est à ça que sert `stop()`.
 ::: {.notes}
 Préciser l'utilisation de `stop()`
 :::
+
+# Boucles
+
+## Boucles `for`
+
+La boucle la plus simple est la boucle `for` :
+
+```{r}
+for (item in vecteur) faire_action
+```
+
+Exemple :
+
+```{r}
+#| eval: true
+for (i in 1:3) {
+  print(i)
+}
+```
+
+Notes : l'assignation à `i` se fait dans l'environnement courant, changeant la valeur de l'objet :
+
+```{r}
+#| eval: true
+i <- 100
+for (i in 1:3) {}
+i
+```
+
+## Interruption anticipée
+
+On peut interrompre l'exécution d'une boucle `for` de manière anticipée :
+
+- `next` sort de l'itération actuelle
+- `break` sort de la boucle `for` en entier
+
+```{r}
+#| eval: true
+for (i in 1:10) {
+  if (i < 3) 
+    next
+
+  print(i)
+  
+  if (i >= 5)
+    break
+}
+```
+
+## Boucles alternatives
+
+Vous ne savez pas toujours à l'avance les valeurs sur lesquelles vous allez itérer. 
+Vous pouvez alors utiliser :
+
+- `while(condition) action` : l'`action` est effectuée tant que la `condition` est `TRUE`
+- `repeat(action)` : répète l'`action` indéfiniment (tant que `break` n'apparaît pas en fait).
+
+`for` est moins flexible que `while` qui est moins flexible que `repeat`, mais il vaut mieux utiliser la version la moins flexible.
