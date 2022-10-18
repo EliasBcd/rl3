@@ -1,11 +1,16 @@
 ---
 title: "Taille des diamants"
 author: 
-date: "15 octobre 2022"
+date: "`r Sys.Date()`"
 output: html_document
+bibliography: Bibliographie.bib
 ---
 
 ```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo=TRUE
+)
+
 library(ggplot2)
 library(dplyr)
 smaller <- diamonds |> 
@@ -14,7 +19,7 @@ smaller <- diamonds |>
 
 Nous avons des données sur  `r nrow(diamonds)` diamants. Seulement 
 `r nrow(diamonds) - nrow(smaller)` font plus de 
-2,5 carats. La répartition des diamants restants est indiquées ci-dessous :
+2,5 carats. La répartition des *diamants* restants est indiquées **ci-dessous** :
 
 ```{r, echo = FALSE}
 smaller |> 
@@ -22,3 +27,5 @@ smaller |>
   geom_freqpoly(binwidth = 0.01) +
   ylab("Nombre")
 ```
+
+

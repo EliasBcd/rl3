@@ -1272,7 +1272,7 @@ display: none;
   <p class="subtitle">L3 économie-finance</p>
   <p class="author">Elias Bouacida</p>
   <p class="institute">Université Paris 8</p>
-  <p class="date">16/10/2022</p>
+  <p class="date">18/10/2022</p>
 </section>
 
 <section>
@@ -1339,54 +1339,35 @@ display: none;
 <p>Un document Rmarkdown est un fichier texte avec une extension <code>.Rmd</code> qui ressemble à ceci :</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>Text formatting 
-------------------------------------------------------------
+<pre><code>---
+title: &quot;Taille des diamants&quot;
+author: 
+date: &quot;`r Sys.Date()`&quot;
+output: html_document
+bibliography: Bibliographie.bib
+---
 
-*italic*  or _italic_
-**bold**   __bold__
-`code`
-superscript^2^ and subscript~2~
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo=TRUE
+)
 
-Headings
-------------------------------------------------------------
+library(ggplot2)
+library(dplyr)
+smaller &lt;- diamonds |&gt; 
+  filter(carat &lt;= 2.5)
+```
 
-# 1st Level Header
+Nous avons des données sur  `r nrow(diamonds)` diamants. Seulement 
+`r nrow(diamonds) - nrow(smaller)` font plus de 
+2,5 carats. La répartition des *diamants* restants est indiquées **ci-dessous** :
 
-## 2nd Level Header
-
-### 3rd Level Header
-
-Lists
-------------------------------------------------------------
-
-*   Bulleted list item 1
-
-*   Item 2
-
-    * Item 2a
-
-    * Item 2b
-
-1.  Numbered list item 1
-
-1.  Item 2. The numbers are incremented automatically in the output.
-
-Links and images
-------------------------------------------------------------
-
-&lt;http://example.com&gt;
-
-[linked phrase](http://example.com)
-
-![optional caption text](path/to/img.png)
-
-Tables 
-------------------------------------------------------------
-
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell</code></pre>
+```{r, echo = FALSE}
+smaller |&gt; 
+  ggplot(aes(carat)) + 
+  geom_freqpoly(binwidth = 0.01) +
+  ylab(&quot;Nombre&quot;)
+```</code></pre>
 </div>
 </div>
 </section>

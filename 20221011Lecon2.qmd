@@ -84,7 +84,7 @@ Un document Rmarkdown est un fichier texte avec une extension `.Rmd` qui ressemb
 ```{r}
 #| echo: false
 #| comment: ""
-cat(readr::read_file("Rmarkdown.Rmd"))
+cat(readr::read_file("20221016Diamants.Rmd"))
 ```
 
 
