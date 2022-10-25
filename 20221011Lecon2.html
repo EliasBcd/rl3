@@ -1272,7 +1272,7 @@ display: none;
   <p class="subtitle">L3 économie-finance</p>
   <p class="author">Elias Bouacida</p>
   <p class="institute">Université Paris 8</p>
-  <p class="date">18/10/2022</p>
+  <p class="date">25/10/2022</p>
 </section>
 
 <section>
@@ -1289,7 +1289,7 @@ display: none;
 <li>En plus de l’installation de base : extensions, appelées paquet (<em>package</em> en anglais) ou librairie</li>
 <li>En majorité : développées et maintenues par la communauté des utilisateurs et utilisatrices de R</li>
 <li>Diffusées via un réseau de serveurs nommé CRAN (Comprehensive R Archive Network).</li>
-<li>Pour installer une extension, si on dispose d’une connexion Internet, on peut
+<li>Pour installer une extension, si on dispose d’une connexion Internet, on peut :
 <ul>
 <li>Cliquer sur le bouton Install Packages de l’onglet Tools de RStudio. Il suffit alors d’indiquer le nom de l’extension dans le champ Package et de cliquer sur Install.</li>
 <li>Utiliser la fonction <code>install.packages()</code> directement dans la console. Par exemple, pour installer le paquet <code>ggplot2</code> on peut exécuter la commande</li>
@@ -1301,22 +1301,21 @@ display: none;
 </section>
 <section id="charger-des-extensions" class="slide level2">
 <h2>Charger des extensions</h2>
-<ul>
-<li>Une fois installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu’elle propose. Ceci se fait avec la fonction <code>library()</code>. Pour pouvoir utiliser les fonctions de <code>ggplot2</code>, vous devrez exécuter la commande suivante :</li>
-</ul>
+<p>Une fois installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu’elle propose. Ceci se fait avec la fonction <code>library()</code>. Pour pouvoir utiliser les fonctions de <code>ggplot2</code>, vous devrez exécuter la commande suivante :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ul>
-<li>Vous avez déjà rencontré ces commandes quand nous avons installé et commencé à utiliser <code>swirl</code>.</li>
-</ul>
-<div class="fragment">
+
+<aside><div>
+<p>Vous avez déjà rencontré ces commandes quand nous avons installé et utilisé le paquet <code>swirl</code>.</p>
+</div></aside></section>
+<section id="en-pratique" class="slide level2">
+<h2>En pratique</h2>
 <p>On regroupe en général en début de script toute une série de commandes <code>library()</code> qui permettent de charger tous les paquets utilisés dans le script. Quelque chose comme :</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(haven)</span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="fu">library</span>(tidyr)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 </section></section>
 <section>
@@ -1327,7 +1326,7 @@ display: none;
 <section id="introduction" class="slide level2">
 <h2>Introduction</h2>
 <ul>
-<li>Un atout important de R et Rstudio est RMarkdown.</li>
+<li>Un atout important de R et Rstudio est R Markdown.</li>
 <li>Format qui combine code et explications</li>
 <li>Aide disponible <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf">ici</a></li>
 <li>Nécessite l’utilisation de Rstudio pour fonctionner correctement</li>
@@ -1336,13 +1335,13 @@ display: none;
 </section>
 <section id="structure-dun-document" class="slide level2">
 <h2>Structure d’un document</h2>
-<p>Un document Rmarkdown est un fichier texte avec une extension <code>.Rmd</code> qui ressemble à ceci :</p>
+<p>Un document R Markdown est un fichier texte avec une extension <code>.Rmd</code> qui ressemble à ceci :</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>---
 title: &quot;Taille des diamants&quot;
 author: 
-date: &quot;`r Sys.Date()`&quot;
+date: &#39;`r Sys.Date()`&#39;
 output: html_document
 bibliography: Bibliographie.bib
 ---
@@ -1370,13 +1369,14 @@ smaller |&gt;
 ```</code></pre>
 </div>
 </div>
+<p>Ce document est compilé afin de créer un document final, en général au format web <code>.html</code> ou au format <code>.pdf</code> ou encore au format <code>.docx</code></p>
 </section>
 <section id="principaux-éléments" class="slide level2">
 <h2>Principaux éléments</h2>
 <ol type="1">
-<li>L’en tête YAML, comprise entre les —</li>
+<li>L’en tête YAML, comprise entre les <code>---</code></li>
 <li>Des morceaux de code R, qui commencent par ```</li>
-<li>Du texte normal en Rmarkdown (avec donc quelques balises de formatages)</li>
+<li>Du texte normal en (R) Markdown (avec des balises de formatages)</li>
 </ol>
 </section>
 <section id="actions-possibles" class="slide level2">
@@ -1384,11 +1384,11 @@ smaller |&gt;
 <ol type="1">
 <li>Lancer le code seul en cliquant sur la petite icône <em>run</em> en haut à droite de la fenêtre.</li>
 <li>Compiler tout le document en cliquant sur <em>knit</em> en haut.</li>
-<li>Utiliser le raccourci Cmd/Ctrl + Shift + K pour faire compiler tout le document.</li>
+<li>Utiliser le raccourci Cmd/Ctrl + Shift + K pour compiler tout le document.</li>
 </ol>
-<p>Le document produit est par défaut en .html est apparaîtra à droite dans Rstudio.</p>
+<p>Le document produit est par défaut en <code>.html</code> est apparaîtra à droite dans Rstudio.</p>
 <aside class="notes">
-<p>Sortir ici un document .Rmd pour montrer aux étudiants les 3 possibilités</p>
+<p>Montrer ici aux étudiants les 3 possibilités à l’aide d’un document <code>.Rmd</code></p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1413,8 +1413,8 @@ smaller |&gt;
 <span id="cb5-3"><a href="#cb5-3"></a><span class="an">date:</span><span class="co"> 2016-08-25</span></span>
 <span id="cb5-4"><a href="#cb5-4"></a><span class="an">output:</span><span class="co"> html_document</span></span>
 <span id="cb5-5"><a href="#cb5-5"></a><span class="co">---</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Contient les options du documents, spécifie titre, auteur, date, format de sortie, etc.</p>
-<p>Code <code>R</code> dans l’en-tête : commence par <code>!r</code>, par exemple !r Sys.Date()</p>
+<p>Contient les options du documents, spécifie titre (<code>title</code>), auteur (<code>author</code>), date (<code>date</code>), format de sortie (<code>output</code>), etc.</p>
+<p>Code <code>R</code> dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus <code>&quot;</code> <code>`r `</code> <code>&quot;</code>, par exemple <code>&quot;</code> <code>`r Sys.Date()`</code> <code>&quot;</code></p>
 </section></section>
 <section>
 <section id="corps-du-texte" class="title-slide slide level1 center">
@@ -1423,7 +1423,7 @@ smaller |&gt;
 </section>
 <section id="formatage-du-texte" class="slide level2">
 <h2>Formatage du texte</h2>
-<p>Le texte écrit dans les <code>.Rmd</code> est écrit en markdown. C’est un ensemble de règles de formatage pour des fichier texte qui est simple à lire et à écrire.</p>
+<p>Le langage utilisé pour le texte écrit dans les <code>.Rmd</code> est le Markdown. C’est un ensemble de règles de formatage pour des fichier texte qui est simple à lire et à écrire. En voici les principales possibilités :</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a>Text formatting </span>
 <span id="cb6-2"><a href="#cb6-2"></a>------------------------------------------------------------</span>
 <span id="cb6-3"><a href="#cb6-3"></a></span>
@@ -1472,17 +1472,32 @@ smaller |&gt;
 <span id="cb6-46"><a href="#cb6-46"></a>-------- | ----------</span>
 <span id="cb6-47"><a href="#cb6-47"></a>Contenu  | Contenu</span>
 <span id="cb6-48"><a href="#cb6-48"></a>Contenu  | Contenu</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Une version complète est résumé est disponible <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown-2.0.pdf">ici</a>.</p>
 </section>
 <section id="morceaux-de-code" class="slide level2">
 <h2>Morceaux de code</h2>
-<p>3 façons d’insérer un morceaux de code dans un document <code>.Rmd</code> :</p>
+<p>3 façons d’insérer un morceau de code dans un document <code>.Rmd</code> :</p>
 <ol type="1">
 <li>Avec le raccourci clavier Cmd/Ctrl + Alt + I</li>
 <li>Dans l’onglet “Code”, “Insert Chunk”</li>
 <li>En tapant manuellement les délimiteurs <code>```{r}</code> et <code>```</code></li>
 </ol>
-<p>Le titre d’un morceau de code consiste en <code>```{r</code> suivi d’un nom (optionnel), suivi d’options séparés par des virgules, suivi d’un <code>}</code>. Le bloc de code est fini par <code>```</code>.</p>
-<p>Je vous recommande de donner un nom à chaque morceau de code (ce nom doit être unique).</p>
+<p>Titre d’un morceau de code :</p>
+<p><code>```{r</code> suivi d’un nom (optionnel), suivi d’options séparés par des virgules, suivi d’un <code>}</code>.</p>
+<p>Le bloc de code est fini par <code>```</code>.</p>
+<aside class="notes">
+<p>Conseil : donnez un nom à chaque morceau de code (ce nom doit être unique).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="options-du-morceau-de-code" class="slide level2 smaller">
 <h2>Options du morceau de code</h2>
@@ -1510,67 +1525,67 @@ smaller |&gt;
 </thead>
 <tbody>
 <tr class="odd">
-<td>eval = FALSE</td>
-<td style="text-align: center;">-</td>
+<td><code>eval = FALSE</code></td>
+<td style="text-align: center;">–</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
 </tr>
 <tr class="even">
-<td>include = FALSE</td>
+<td><code>include = FALSE</code></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;">–</td>
 </tr>
 <tr class="odd">
-<td>echo = FALSE</td>
+<td><code>echo = FALSE</code></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">–</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td>results = “hide”</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td>fig.show = “hide”</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td>message = FALSE</td>
+<td><code>results = &quot;hide&quot;</code></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
+<td style="text-align: center;">–</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;">-</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td>warning = FALSE</td>
+<td><code>fig.show = &quot;hide&quot;</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td><code>message = FALSE</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">–</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td><code>warning = FALSE</code></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">–</td>
 </tr>
 </tbody>
 </table>
@@ -1584,11 +1599,11 @@ smaller |&gt;
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
 <span id="cb7-2"><a href="#cb7-2"></a>  mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, ], </span>
-<span id="cb7-3"><a href="#cb7-3"></a>  <span class="at">caption =</span> <span class="st">&quot;Un kable knitr.&quot;</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="at">caption =</span> <span class="st">&quot;Un tableau produit à l&#39;aide de `knitr::kable`.&quot;</span></span>
 <span id="cb7-4"><a href="#cb7-4"></a>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table style="width:100%;">
-<caption>Un kable knitr.</caption>
+<caption>Un tableau produit à l’aide de <code>knitr::kable</code>.</caption>
 <colgroup>
 <col style="width: 26%">
 <col style="width: 7%">
@@ -1695,7 +1710,7 @@ smaller |&gt;
 </div>
 </div>
 <ul>
-<li>La fonction <code>knitr::kable</code> a a de multiples options que vous pouvez consulter à l’aide <code>?knitr::kable</code></li>
+<li>La fonction <code>knitr::kable</code> a de multiples options que vous pouvez consulter à l’aide <code>?knitr::kable</code></li>
 </ul>
 </section>
 <section id="options-globales" class="slide level2">
@@ -1710,6 +1725,9 @@ smaller |&gt;
 <span id="cb8-3"><a href="#cb8-3"></a>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Cachera le code dans le rapport.</p>
+<ul>
+<li>On le fait en général au début du document.</li>
+</ul>
 </section>
 <section id="code-en-ligne" class="slide level2">
 <h2>Code en ligne</h2>
@@ -1720,13 +1738,16 @@ smaller |&gt;
 <blockquote>
 <p>Nous avons les données de <code>`r nrow(diamonds)`</code> diamants. Seulement <code>`r nrow(diamonds) - nrow(smaller)`</code> font plus que 2,5 carats. La répartition du reste est montrée ci-dessous :</p>
 </blockquote>
-<p>Le résultat est compilé et apparaît ainsi :</p>
+<p>Le résultat est compilé et apparaît ainsi dans le document final :</p>
 <blockquote>
 <p>Nous avons les données de 53940 diamants. Seulement 126 font plus que 2,5 carats. La répartition du reste est montrée ci-dessous :</p>
 </blockquote>
 <ul>
-<li>Quand vous devez mettre des nombre dans le texte <code>format()</code> permet de limiter le nombre de décimales à l’aide de l’option <code>digits</code>.</li>
-<li>Vous pouvez aussi contrôler les indicateurs de grand nombres à l’aide de l’option <code>big.mark</code>.</li>
+<li><code>format()</code> permet de contrôler l’apparence des nombres :
+<ul>
+<li>L’option <code>digits</code> contrôle le nombre de décimales</li>
+<li>L’option <code>big.mark</code> contrôler les indicateurs de grand nombres</li>
+</ul></li>
 </ul>
 </section></section>
 <section>
@@ -1736,7 +1757,7 @@ smaller |&gt;
 </section>
 <section id="bibliographie" class="slide level2">
 <h2>Bibliographie</h2>
-<p>Possibilités de générer automatiquement des bibliographies à partir de fichier de bibliographie à indiquer dans l’option <code>bibliographie</code> de l’en-tête :</p>
+<p>Génération automatique des bibliographies à partir de fichier de bibliographie à indiquer dans l’option <code>bibliography</code> de l’en-tête :</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1"></a><span class="an">bibliography:</span><span class="co"> rmarkdown.bib</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Types de fichiers reconnus : BibLaTex, BibTex, endnote, medline</p>
 </section>
