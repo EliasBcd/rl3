@@ -4,12 +4,14 @@ author: "Elias Bouacida"
 format: 
   revealjs:
     scrollable: true
-date: today
+date: Mardi 29 novembre
 lang: fr
 echo: true
-cache: true
+cache: true  
 bibliography: Bibliographie.bib
 self-contained: true
+width: 1920
+height: 1080
 ---
 
 ```{r setup}
@@ -29,7 +31,7 @@ Elle nécessite l'apprentissage d'un “mini-langage” supplémentaire, mais pe
 
 Une des particularités de `ggplot2` est qu'elle part du principe que les données relatives à un graphique sont stockées dans un tableau de données (dataframe, tibble ou autre).
 
-Ce chapitre est élaboré à partir de [@Barnier, chap. 8]
+Ce chapitre est élaboré à partir du chapitre 8 de @Barnier.
 
 
 ## Préparation
@@ -44,7 +46,7 @@ library(ggplot2)
 
 ## Données
 
-Les données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet `questionr`, que nous devons installer et charger
+Les données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet `questionr`, que nous devons installer et charger :
 
 ```{r}
 #| eval: false
@@ -53,7 +55,7 @@ install.packages('questionr')
 library(questionr)
 ```
 
-Nous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction `filter`.
+Nous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction `filter` de la librairie `tydiverse`.
 
 ```{r}
 data(rp2018)
@@ -64,7 +66,7 @@ rp <- filter(
 )
 ```
 
-## Initialisation
+## Initialisation : données à représenter
 
 Un graphique `ggplot2` s'initialise à l'aide de la fonction `ggplot()`. 
 Les données représentées graphiquement sont toujours issues d'un tableau de données (dataframe ou tibble), qu'on passe en argument data à la fonction :
@@ -72,34 +74,46 @@ Les données représentées graphiquement sont toujours issues d'un tableau de d
 ```{r}
 #| eval: false
 ggplot(data = rp)
-## Ou, équivalent
-ggplot(rp)
+ggplot(rp) ## Equivalent au premier et généralement utilisé
 ```
+
+
+## Géométries : comment ?
 
 Il faut ajouter des éléments de représentation graphique. 
 Ces éléments sont appelés des `geom` et on les ajoute à l'objet graphique de base avec l'opérateur `+`.
 
-Un des `geom` les plus simples est `geom_histogram` :
+Une des `geom` les plus simples est `geom_histogram` :
 
 ```{r}
 #| eval: false
 ggplot(rp) + geom_histogram()
 ```
 
+## Esthétiques : quelles données sont représentées ? {.smaller}
+
 Reste à indiquer quelle donnée nous voulons représenter sous forme d'histogramme.
 Cela se fait à l'aide d'arguments passés via la fonction `aes()`.
 Ici, nous avons un paramètre à renseigner, `x`, qui indique la variable à représenter sur l'axe des x (l'axe horizontal).
+
+:::: {.columns}
+
+::: {.column width='45%'}
 Ainsi, si on souhaite représenter la distribution des communes du jeu de données selon le pourcentage de cadres dans leur population active (variable `cadres`) :
 
 ```{r}
 ggplot(rp) + geom_histogram(aes(x = cadres))
 ```
+:::
 
+::: {.column width="40%"}
 Si on veut représenter une autre variable, il suffit de changer la valeur de `x` :
 
 ```{r}
 ggplot(rp) + geom_histogram(aes(x = ouvr))
 ```
+:::
+::::
 
 ## En résumé
 
@@ -109,7 +123,7 @@ Pour représenter un graphique, il faut :
 2. Un type de représentation (histogramme, ligne, point, etc) donné par `geom_xxxx` où `xxxx` est le type de représentation recherché.
 3. Une ou des variables à représenter (argument `aes()` dans `geom_xxxx`)
 
-On lit les différentes commandes à l'aide de `+`.
+On lie les différentes commandes à l'aide de l'opérateur `+`.
 
 # Les géométries
 
@@ -117,17 +131,25 @@ On lit les différentes commandes à l'aide de `+`.
 
 Certaines `geom` prennent plusieurs paramètres.
 Ainsi, si on veut représenter un nuage de points, on peut le faire en ajoutant un `geom_point`.
-On doit alors indiquer à la fois la position en `x` (la variable sur l’axe horizontal) et en `y` (la variable sur l’axe vertical) de ces points, il faut donc passer ces deux arguments à `aes()` :
+On doit alors indiquer à la fois la position en `x` (la variable sur l'axe horizontal) et en `y` (la variable sur l'axe vertical) de ces points, il faut donc passer ces deux arguments à `aes()` :
 
 ```{r}
 ggplot(rp) + geom_point(aes(x = dipl_sup, y = cadres))
 ```
 
+## Apparence des géométries
 
-On peut modifier certains attributs graphiques d’un `geom` en lui passant des arguments supplémentaires. 
-Par exemple, pour un nuage de points, on peut modifier la couleur des points avec l’argument `color`, leur taille avec l’argument `size`, et leur transparence avec l’argument `alpha` :
+On peut modifier certains attributs graphiques d'un `geom` en lui passant des arguments supplémentaires. 
+Par exemple, pour un nuage de points, on peut modifier :
 
-```{r}
+- la couleur  avec l'argument `color` ; 
+- la taille avec l'argument `size` ;
+- la transparence avec l'argument `alpha`.
+
+```{r points}
+#| fig-width: 9
+#| fig-height: 5
+#| 
 ggplot(rp) +
   geom_point(
     aes(x = dipl_sup, y = cadres),
@@ -135,14 +157,15 @@ ggplot(rp) +
   )
 ```
 
+
 ::: {.notes}
-On notera que dans ce cas les arguments sont dans la fonction geom mais à l’extérieur du `aes()`. Plus d’explications sur ce point dans quelques instants.
+On notera que dans ce cas les arguments sont dans la fonction `geom` mais à l'extérieur du `aes()`. Plus d'explications sur ce point dans quelques instants.
 :::
 
 ## Exemples de `geom`
 
 Il existe un grand nombre de `geom`, décrits en détail dans la [documentation officielle](http://ggplot2.tidyverse.org/reference/). 
-Outre les `geom_histogram` et `geom_point` que l'on vient de voir, on pourra noter les `geom` suivants.
+Outre les `geom_histogram` et `geom_point` que l'on vient de voir, on pourra noter les `geom` suivantes :
 
 - `geom_boxplot`
 - `geom_violin`
@@ -171,11 +194,10 @@ ggplot(rp) +
   )
 ```
 
-## Couleur (`color` ou `colour`)
+## Couleur (`color` ou `colour`) {.scrollable}
 
-Mais on peut ajouter d'autres mappages. 
-Par exemple, `color` permet de faire varier la couleur des points automatiquement en fonction des valeurs d'une troisième variable. 
-Ainsi, on peut vouloir colorer les points selon le département de la commune correspondante.
+Il y en a d'autres. 
+`color` permet de faire varier la couleur des points automatiquement en fonction des valeurs d'une troisième variable. 
 
 ```{r}
 ggplot(rp) +
@@ -212,8 +234,8 @@ Chaque `geom` possède sa propre liste de mappages.
 
 ## `aes()` or not `aes()` ?
 
-Comme on l'a déjà vu, parfois on souhaite changer un attribut sans le relier à une variable : c'est le cas par exemple si on veut représenter tous les points en rouge.
-Dans ce cas on utilise toujours l'attribut `color`, mais comme il ne s'agit pas d'un mappage, on le définit **à l'extérieur** de la fonction `aes()`.
+Parfois on souhaite changer un attribut sans le relier à une variable : par exemple si on veut représenter tous les points en rouge.
+On utilise toujours l'attribut `color`, mais comme il ne s'agit pas d'un mappage, on le définit **à l'extérieur** de la fonction `aes()`.
 
 ```{r}
 ggplot(rp) +
@@ -249,7 +271,7 @@ Si on établit un lien entre les valeurs d'une variable et un attribut graphique
 Sinon, on modifie l'attribut de la même manière pour tous les points, et on le définit  en-dehors de la fonction `aes()`.
 
 
-# Représentation de plusieurs `geom`
+# Représentation de plusieurs `geom` {.smaller}
 
 On peut représenter plusieurs `geom` simultanément sur un même graphique, il suffit de les ajouter à tour de rôle avec l'opérateur `+`.
 
@@ -280,7 +302,9 @@ ggplot(rp, aes(x = departement, y = maison)) +
 ```
 
 ---
+:::: {.columns}
 
+::: {.column width="50%"}
 Autre exemple, on peut vouloir ajouter à un nuage de points une ligne de régression linéaire à l'aide de `geom_smooth` :
 
 ```{r}
@@ -288,7 +312,9 @@ ggplot(rp, aes(x = dipl_sup, y = cadres)) +
   geom_point(alpha = 0.2) +
   geom_smooth(method = "lm")
 ```
+:::
 
+::: {.column width="50%"}
 Et on peut même superposer une troisième visualisation de la répartition des points dans l'espace avec `geom_density2d` :
 
 ```{r}
@@ -297,7 +323,9 @@ ggplot(rp, aes(x = dipl_sup, y = cadres)) +
   geom_density2d(color = "red") +
   geom_smooth(method = "lm")
 ```
+:::
 
+::::
 
 # Scales
 
