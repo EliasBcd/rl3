@@ -11,7 +11,8 @@ self-contained: true
 ---
 
 
-```{r setup, include=F}
+```{r setup}
+#| include: false
 knitr::opts_chunk$set(echo = TRUE)
 
 library(ggplot2)
