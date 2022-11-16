@@ -1,9 +1,8 @@
 ---
 title: "Taille des diamants"
 author: 
-date: '`r Sys.Date()`'
-output: html_document
-bibliography: Bibliographie.bib
+date: "18 octobre 2022"
+output:  html_document
 ---
 
 ```{r setup, include = FALSE}

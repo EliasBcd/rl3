@@ -1,0 +1,54 @@
+---
+title: "Séance du 8 novembre"
+author: "Elias Bouacida"
+format: revealjs
+date: "8 novembre 2022"
+self-contained: true
+scrollable: true
+---
+
+## Aujourd'hui
+
+Objectif : Que tout le monde soit arriver au même point au début de la prochaine séance
+
+## Ce que vous devez avoir déposer sur Moodle avant le 15 novembre 
+
+- Dans le cours swirl `InitiationR` (dans cet ordre) :
+    1. Manipulations simples (facultatif)
+    2. Assignations et objets (facultatif)
+    3. Types (facultatif)
+    4. Vecteurs
+    5. Fichiers et espace de travail
+    6. Logique
+    7. Valeurs manquantes
+    8. Vecteurs numériques
+    9. Dataframes
+    10. Scripts et fonctions
+- Faire les exercices sur RMarkdown (CV en `.Rmd` et diamants en `.Rmd`)
+
+
+## Utilisation de `swirl` 
+
+Si la librairie swirl n'est pas installée, installez-là à l'aide de la commande suivante dans la console
+
+```{r}
+#| echo: true
+#| eval: false
+
+install.packages('swirl')
+```
+
+Quoiqu'il arrive, exécutez les lignes suivantes dans la console :
+
+```{r}
+#| echo: true
+#| eval: false
+
+library(swirl)
+uninstall_all_courses()
+install_course_github('EliasBcd', 'InitiationR')
+select_language('french', append_rprofile = TRUE)
+swirl()
+```
+
+Suivez ensuite les instructions qui apparaissent dans la console
