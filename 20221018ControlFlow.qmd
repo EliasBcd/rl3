@@ -6,11 +6,14 @@ format: revealjs
 lang: fr
 institute: "Université Paris 8"
 scrollable: true
-date: today
+date: Mardi 22 novembre
 self-contained: true
 execute: 
   eval: false
   echo: true
+width: 1920
+height: 1080
+code-overflow: wrap
 ---
 
 ## Introduction
@@ -52,7 +55,7 @@ mention <- function(x) {
 
 ---
 
-`if` renvoi un résultat, il est donc possible d'assigner le résultat :
+`if` renvoie un résultat, il est donc possible d'assigner le résultat :
 
 
 ```{r}
@@ -63,7 +66,7 @@ x2 <- if (FALSE) 1 else 2
 c(x1, x2)
 ```
 
-Quand `else` n'est pas explicitement renseigné mais la condition est fausse, `if` renvoi `NULL`.
+Quand `else` n'est pas explicitement renseigné mais la condition est fausse, `if` renvoie `NULL`.
 
 ## Et si condition n'est pas `TRUE` ou `FALSE` ?
 
@@ -87,7 +90,9 @@ ifelse(x %% 5 == 0, "XXX", as.character(x))
 ifelse(x %% 2 == 0, "even", "odd")
 ```
 
-Les valeurs manquantes seront propagée à la sortie
+::: {.aside}
+Les valeurs manquantes seront propagées à la sortie
+:::
 
 ## `switch()`
 
@@ -115,7 +120,7 @@ x_option <- function(x) {
     a = "option 1",
     b = "option 2",
     c = "option 3",
-    stop("Invalid `x` value")
+    stop("Invalid `x` value") 
   )
 }
 ```
@@ -161,8 +166,8 @@ i
 
 On peut interrompre l'exécution d'une boucle `for` de manière anticipée :
 
-- `next` sort de l'itération actuelle
-- `break` sort de la boucle `for` en entier
+- `next` sort de l'itération actuelle ;
+- `break` sort de la boucle `for` en entier.
 
 ```{r}
 #| eval: true
@@ -185,6 +190,8 @@ Quand on ne sait pas les valeurs sur lesquelles on itère, on utilise :
 - `repeat(action)` : répète l'`action` indéfiniment (tant que `break` n'apparaît pas)
 
 `for` est moins flexible que `while` qui est moins flexible que `repeat`, mais il vaut mieux utiliser la version la moins flexible.
+
+Le grand danger des boucles `while` et `repeat` est la boucle infinie : une boucle qui n'est jamais interrompue, entraînant le plantage de l'ordinateur par manque de mémoire.
 
 ## 3 Codes alternatifs
 
@@ -227,13 +234,13 @@ repeat ({
   print(i)
   
   if (i >= 5)
-    break
+    break ## Attention à ne pas oublier break, sinon on crée une boucle infinie
 })
 ```
 
 ## Une boucle `while` ou `for` ne fonctionne pas
 
-Imaginons que vous ayez acheté une action au prix de 50€ et que vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. 
+Vous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. 
 On fait l'hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.
 
 ``` {r}
