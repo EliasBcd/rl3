@@ -12,6 +12,7 @@ bibliography: Bibliographie.bib
 self-contained: true
 width: 1920
 height: 1080
+code-overflow: wrap
 ---
 
 ```{r setup}
