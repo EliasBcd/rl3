@@ -20,14 +20,11 @@ Cous d'introduction à R, L3 économie-Finance à l'université Paris 8
     - Fonctions
     - Scripts
     - Lectures de fichiers externes (script et données (`.R, .csv, .txt, .xls`))
-4. Graphique (`plot` ou librairie `ggplot` ?)
-5. Fonctions de type `apply`
+9. Introduire `Rmarkdown` et `markdown`
+4. Graphique (librairie `ggplot`)
 6. Tirage aléatoire et fonctions liées au probabilités 
 (fonctions de type `dxxx, rxxx`, ...)
-7. Résolution numériques d'équation avec R (fonctions de type `solve`)
-8. Traitement de données avec l'ensemble des librairies `tidyverse`
-9. Introduire `Rmarkdown` et `markdown`
-  
+
   
 ## Exercices
 
