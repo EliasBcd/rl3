@@ -11,6 +11,7 @@ format:
 lang: fr
 execute: 
   echo: true
+bibliography: Bibliographie.bib
 ---
 
 ```{r}
@@ -26,6 +27,9 @@ library(latex2exp)
 
 `R` a de nombreuses fonctions qui permettent de faire des tirages aléatoires.
 Il connaît aussi beaucoup de distributions de probabilités "classiques" et il est donc possible d'échantillonner à partir de celle-ci.
+
+Ce cours a été construit à l'aide du chapitre 5.3 de @phillips2017yarrr.
+Les exercices swirl à partir de la leçon *simulation* de @swirldev.
 
 # Échantillonner
 
@@ -215,3 +219,5 @@ runif(n = 10, min = -100, max = 100)
 |     `n`|     Le nombre de tirages|
 |     `min`|  Le minimum de la distribution uniforme|
 |     `max`|  Le maximum de la distribution uniforme|
+
+# Références
