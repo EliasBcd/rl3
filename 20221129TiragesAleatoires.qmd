@@ -25,7 +25,7 @@ library(latex2exp)
 ## Les tirages aléatoires
 
 `R` a de nombreuses fonctions qui permettent de faire des tirages aléatoires.
-Il connaît aussi beaucoup de distributions de probabilités "classiques" et il est donc possible d’échantillonner à partir de celle-ci.
+Il connaît aussi beaucoup de distributions de probabilités "classiques" et il est donc possible d'échantillonner à partir de celle-ci.
 
 # Échantillonner
 
@@ -126,7 +126,7 @@ p <- ggplot(df) +
 p
 ```
 
-## Utilisation
+## Usage
 
 
 ```{r}
@@ -142,6 +142,42 @@ rnorm(n = 3, mean = -10, sd = 15)
 |     `mean`|      La moyenne de la distribution.|
 |     `sd`|     L'écart type de la distribution.|
 
+## Loi binomiale
+
+On utilise `rbinom()` pour tirer depuis une loi binomiale.
+
+```{r binomiale}
+#| fig-cap: Trois lois binomiales différentes
+#| echo: false
+
+df <- data.frame(
+  g = c(rbinom(1000, 1, 0.5), rbinom(1000, 5, 0.2), rbinom(1000, 10, 0.8)),
+  distribution = c(rep("1", 1000), rep("2", 1000), rep("3", 1000))
+)
+
+p <- ggplot(df) +
+  geom_histogram(aes(x = g, fill= distribution), position = 'dodge', binwidth = 1) +
+  scale_x_continuous('x', breaks=0:10) +
+  ylab('Densité') +
+  scale_fill_discrete("Caractéristiques", labels = c("taille=1, p=0.5", "taille=5, p=0,2", "taille=10, p=0.8"))
+
+p
+```
+
+## Usage
+
+```{r}
+# Répétition de 5 tirages à pile ou face
+rbinom(n = 5, size = 1, prob = 0.5)
+# Répétition de 10 tirages à pile ou face avec une pièce biaisée
+rbinom(n = 10, size = 1, prob = 0.6)
+```
+
+| Argument | Définition|
+|:---------|:---------------------------------------------|
+|     `n`   |     Le nombre de tirages|
+|     `size`|  Le nombre d'essai possibles |
+|     `prob`| La probabilité de succès sur un tirage |
 
 ## Loi uniforme
 
@@ -163,7 +199,7 @@ p <- ggplot(df) +
 p
 ```
 
-## Utilisation
+## Usage
 
 La loi uniforme utilise la même probabilité pour toutes les valeurs dans un intervalle.
 
