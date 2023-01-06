@@ -1,0 +1,15 @@
+---
+title: "Resultats étudiants"
+author: "Elias"
+format: html
+---
+
+```{r}
+library(base64enc)
+source("TreatResults.R")
+dir <-  "R-Exercices/"
+a <- list.files(dir, pattern = ".")
+b <- lapply(a, function(x) paste(dir, x, sep=""))
+c <- lapply(b, decode_results)
+```
+

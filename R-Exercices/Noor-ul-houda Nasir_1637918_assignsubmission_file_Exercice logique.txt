@@ -1,0 +1,749 @@
+R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> install.packages('swirl')
+Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘utf8’, ‘pillar’, ‘pkgconfig’, ‘vctrs’, ‘sys’, ‘rprojroot’, ‘fs’, ‘diffobj’, ‘fansi’, ‘rematch2’, ‘tibble’, ‘askpass’, ‘glue’, ‘magrittr’, ‘stringi’, ‘brio’, ‘callr’, ‘cli’, ‘crayon’, ‘desc’, ‘ellipsis’, ‘evaluate’, ‘jsonlite’, ‘lifecycle’, ‘pkgload’, ‘praise’, ‘processx’, ‘ps’, ‘R6’, ‘rlang’, ‘waldo’, ‘withr’, ‘curl’, ‘mime’, ‘openssl’, ‘bitops’, ‘stringr’, ‘testthat’, ‘httr’, ‘yaml’, ‘RCurl’, ‘digest’
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/utf8_1.2.2.tar.gz'
+Content type 'application/x-gzip' length 236735 bytes (231 KB)
+==================================================
+downloaded 231 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/pillar_1.8.1.tar.gz'
+Content type 'application/x-gzip' length 674653 bytes (658 KB)
+==================================================
+downloaded 658 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/pkgconfig_2.0.3.tar.gz'
+Content type 'application/x-gzip' length 17376 bytes (16 KB)
+==================================================
+downloaded 16 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/vctrs_0.4.2.tar.gz'
+Content type 'application/x-gzip' length 2132181 bytes (2.0 MB)
+==================================================
+downloaded 2.0 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/sys_3.4.tar.gz'
+Content type 'application/x-gzip' length 55135 bytes (53 KB)
+==================================================
+downloaded 53 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/rprojroot_2.0.3.tar.gz'
+Content type 'application/x-gzip' length 100991 bytes (98 KB)
+==================================================
+downloaded 98 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/fs_1.5.2.tar.gz'
+Content type 'application/x-gzip' length 760048 bytes (742 KB)
+==================================================
+downloaded 742 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/diffobj_0.3.5.tar.gz'
+Content type 'application/x-gzip' length 1007502 bytes (983 KB)
+==================================================
+downloaded 983 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/fansi_1.0.3.tar.gz'
+Content type 'application/x-gzip' length 413211 bytes (403 KB)
+==================================================
+downloaded 403 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/rematch2_2.1.2.tar.gz'
+Content type 'application/x-gzip' length 44269 bytes (43 KB)
+==================================================
+downloaded 43 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/tibble_3.1.8.tar.gz'
+Content type 'application/x-gzip' length 727025 bytes (709 KB)
+==================================================
+downloaded 709 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/askpass_1.1.tar.gz'
+Content type 'application/x-gzip' length 23822 bytes (23 KB)
+==================================================
+downloaded 23 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/glue_1.6.2.tar.gz'
+Content type 'application/x-gzip' length 157185 bytes (153 KB)
+==================================================
+downloaded 153 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/magrittr_2.0.3.tar.gz'
+Content type 'application/x-gzip' length 234989 bytes (229 KB)
+==================================================
+downloaded 229 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/stringi_1.7.8.tar.gz'
+Content type 'application/x-gzip' length 3201641 bytes (3.1 MB)
+==================================================
+downloaded 3.1 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/brio_1.1.3.tar.gz'
+Content type 'application/x-gzip' length 44728 bytes (43 KB)
+==================================================
+downloaded 43 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/callr_3.7.2.tar.gz'
+Content type 'application/x-gzip' length 417661 bytes (407 KB)
+==================================================
+downloaded 407 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/cli_3.4.1.tar.gz'
+Content type 'application/x-gzip' length 1306037 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/crayon_1.5.2.tar.gz'
+Content type 'application/x-gzip' length 158110 bytes (154 KB)
+==================================================
+downloaded 154 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/desc_1.4.2.tar.gz'
+Content type 'application/x-gzip' length 317043 bytes (309 KB)
+==================================================
+downloaded 309 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/ellipsis_0.3.2.tar.gz'
+Content type 'application/x-gzip' length 40284 bytes (39 KB)
+==================================================
+downloaded 39 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/evaluate_0.16.tar.gz'
+Content type 'application/x-gzip' length 76788 bytes (74 KB)
+==================================================
+downloaded 74 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/jsonlite_1.8.0.tar.gz'
+Content type 'application/x-gzip' length 1158740 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/lifecycle_1.0.2.tar.gz'
+Content type 'application/x-gzip' length 106211 bytes (103 KB)
+==================================================
+downloaded 103 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/pkgload_1.3.0.tar.gz'
+Content type 'application/x-gzip' length 169478 bytes (165 KB)
+==================================================
+downloaded 165 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/praise_1.0.0.tar.gz'
+Content type 'application/x-gzip' length 15926 bytes (15 KB)
+==================================================
+downloaded 15 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/processx_3.7.0.tar.gz'
+Content type 'application/x-gzip' length 444938 bytes (434 KB)
+==================================================
+downloaded 434 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/ps_1.7.1.tar.gz'
+Content type 'application/x-gzip' length 387432 bytes (378 KB)
+==================================================
+downloaded 378 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/R6_2.5.1.tar.gz'
+Content type 'application/x-gzip' length 82477 bytes (80 KB)
+==================================================
+downloaded 80 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/rlang_1.0.6.tar.gz'
+Content type 'application/x-gzip' length 1923948 bytes (1.8 MB)
+==================================================
+downloaded 1.8 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/waldo_0.4.0.tar.gz'
+Content type 'application/x-gzip' length 99901 bytes (97 KB)
+==================================================
+downloaded 97 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/withr_2.5.0.tar.gz'
+Content type 'application/x-gzip' length 225454 bytes (220 KB)
+==================================================
+downloaded 220 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/curl_4.3.2.tar.gz'
+Content type 'application/x-gzip' length 905296 bytes (884 KB)
+==================================================
+downloaded 884 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/mime_0.12.tar.gz'
+Content type 'application/x-gzip' length 37125 bytes (36 KB)
+==================================================
+downloaded 36 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/openssl_2.0.3.tar.gz'
+Content type 'application/x-gzip' length 1400287 bytes (1.3 MB)
+==================================================
+downloaded 1.3 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/bitops_1.0-7.tar.gz'
+Content type 'application/x-gzip' length 35531 bytes (34 KB)
+==================================================
+downloaded 34 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/stringr_1.4.1.tar.gz'
+Content type 'application/x-gzip' length 206809 bytes (201 KB)
+==================================================
+downloaded 201 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/testthat_3.1.4.tar.gz'
+Content type 'application/x-gzip' length 3612810 bytes (3.4 MB)
+==================================================
+downloaded 3.4 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/httr_1.4.4.tar.gz'
+Content type 'application/x-gzip' length 498400 bytes (486 KB)
+==================================================
+downloaded 486 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/yaml_2.3.5.tar.gz'
+Content type 'application/x-gzip' length 286243 bytes (279 KB)
+==================================================
+downloaded 279 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/RCurl_1.98-1.8.tar.gz'
+Content type 'application/x-gzip' length 1122428 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/digest_0.6.29.tar.gz'
+Content type 'application/x-gzip' length 357092 bytes (348 KB)
+==================================================
+downloaded 348 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/swirl_2.4.5.tar.gz'
+Content type 'application/x-gzip' length 347115 bytes (338 KB)
+==================================================
+downloaded 338 KB
+
+* installing *binary* package ‘utf8’ ...
+* DONE (utf8)
+* installing *binary* package ‘pkgconfig’ ...
+* DONE (pkgconfig)
+* installing *binary* package ‘sys’ ...
+* DONE (sys)
+* installing *binary* package ‘rprojroot’ ...
+* DONE (rprojroot)
+* installing *binary* package ‘fs’ ...
+* DONE (fs)
+* installing *binary* package ‘fansi’ ...
+* DONE (fansi)
+* installing *binary* package ‘glue’ ...
+* DONE (glue)
+* installing *binary* package ‘magrittr’ ...
+* DONE (magrittr)
+* installing *binary* package ‘stringi’ ...
+* DONE (stringi)
+* installing *binary* package ‘brio’ ...
+* DONE (brio)
+* installing *binary* package ‘cli’ ...
+* DONE (cli)
+* installing *binary* package ‘crayon’ ...
+* DONE (crayon)
+* installing *binary* package ‘evaluate’ ...
+* DONE (evaluate)
+* installing *binary* package ‘jsonlite’ ...
+* DONE (jsonlite)
+* installing *binary* package ‘praise’ ...
+* DONE (praise)
+* installing *binary* package ‘ps’ ...
+* DONE (ps)
+* installing *binary* package ‘R6’ ...
+* DONE (R6)
+* installing *binary* package ‘rlang’ ...
+* DONE (rlang)
+* installing *binary* package ‘withr’ ...
+* DONE (withr)
+* installing *binary* package ‘curl’ ...
+* DONE (curl)
+* installing *binary* package ‘mime’ ...
+* DONE (mime)
+* installing *binary* package ‘bitops’ ...
+* DONE (bitops)
+* installing *binary* package ‘yaml’ ...
+* DONE (yaml)
+* installing *binary* package ‘digest’ ...
+* DONE (digest)
+* installing *binary* package ‘vctrs’ ...
+* DONE (vctrs)
+* installing *binary* package ‘diffobj’ ...
+* DONE (diffobj)
+* installing *binary* package ‘askpass’ ...
+* DONE (askpass)
+* installing *binary* package ‘desc’ ...
+* DONE (desc)
+* installing *binary* package ‘ellipsis’ ...
+* DONE (ellipsis)
+* installing *binary* package ‘lifecycle’ ...
+* DONE (lifecycle)
+* installing *binary* package ‘processx’ ...
+* DONE (processx)
+* installing *binary* package ‘stringr’ ...
+* DONE (stringr)
+* installing *binary* package ‘RCurl’ ...
+* DONE (RCurl)
+* installing *binary* package ‘pillar’ ...
+* DONE (pillar)
+* installing *binary* package ‘callr’ ...
+* DONE (callr)
+* installing *binary* package ‘pkgload’ ...
+* DONE (pkgload)
+* installing *binary* package ‘openssl’ ...
+* DONE (openssl)
+* installing *binary* package ‘tibble’ ...
+* DONE (tibble)
+* installing *binary* package ‘httr’ ...
+* DONE (httr)
+* installing *binary* package ‘rematch2’ ...
+* DONE (rematch2)
+* installing *binary* package ‘waldo’ ...
+* DONE (waldo)
+* installing *binary* package ‘testthat’ ...
+* DONE (testthat)
+* installing *binary* package ‘swirl’ ...
+* DONE (swirl)
+
+The downloaded source packages are in
+	‘/tmp/RtmpRoPKFc/downloaded_packages’
+> library(swirl)
+
+| Hi! Type swirl() when you are ready to begin.
+
+> install_course_github("EliasBcd", "InitiationR")
+Downloading: 49 kB      
+> swirl()
+
+| Welcome to swirl! Please sign in. If you've been here before, use the same name
+| as you did then. If you are new, call yourself something unique.
+
+What shall I call you? Noor
+
+| Thanks, Noor. Let's cover a couple of quick housekeeping items before we begin
+| our first lesson. First of all, you should know that when you see '...', that
+| means you should press Enter when you are done reading and ready to continue.
+
+...  <-- That's your cue to press Enter to continue
+
+| Also, when you see 'ANSWER:', the R prompt (>), or when you are asked to select
+| from a list, that means it's your turn to enter a response, then press Enter to
+| continue.
+
+Select 1, 2, or 3 and press Enter 
+
+1: Continue.
+2: Proceed.
+3: Let's get going!
+
+Selection: 1
+
+| You can exit swirl and return to the R prompt (>) at any time by pressing the Esc
+| key. If you are already at the prompt, type bye() to exit and save your progress.
+| When you exit properly, you'll see a short message letting you know you've done
+| so.
+
+| When you are at the R prompt (>):
+| -- Typing skip() allows you to skip the current question.
+| -- Typing play() lets you experiment with R on your own; swirl will ignore what
+| you do...
+| -- UNTIL you type nxt() which will regain swirl's attention.
+| -- Typing bye() causes swirl to exit. Your progress will be saved.
+| -- Typing main() returns you to swirl's main menu.
+| -- Typing info() displays these options again.
+
+| Let's get started!
+
+...
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: InitiationR
+2: Take me to the swirl course repository!
+
+Selection: 1
+
+| Please choose a lesson, or type 0 to return to course menu.
+
+1: Manipulations simples
+2: Assignations et objets
+3: Types
+4: Vecteurs
+5: Fichiers et espace de travail
+6: Logique
+7: Valeurs manquantes
+8: Vecteurs numériques
+9: Dataframes
+
+Selection: 6
+
+| Attempting to load lesson dependencies...
+
+| This lesson requires the ‘base64enc’ package. Would you like me to install it for
+| you now?
+
+1: Yes
+2: No
+
+Selection: 1
+
+| Trying to install package ‘base64enc’ now...
+
+| Package ‘base64enc’ loaded correctly!
+
+  |                                                                          |   0%
+
+| Cette leçon introduit les opérateurs et opérations logiques dans R.
+
+...
+
+  |==                                                                        |   3%
+| Comme nous l'avons déjà vu, il y a deux valeurs logiques dans R, aussi appelé
+| valeurs booléennes, TRUE et FALSE. Dans R, il est possible de créer des
+| expressions logiques dont le résultat sera TRUE ou FALSE.
+
+...
+
+  |=====                                                                     |   6%
+| La création d'expressions logiques nécessite des opérateurs logiques. Nous avons
+| déjà vu les opérateurs arithmétiques tel que `+`, `-`, `*` et `/`. Le premier
+| opérateur logique à connaître est l'égalité, représenté par deux signes égalités
+| `==`. Essayez d'utiliser cet opérateur pour trouver si TRUE et TRUE sont égaux.
+
+> TRUE == TRUE
+[1] TRUE
+
+| All that hard work is paying off!
+
+  |=======                                                                   |   9%
+| Tout comme les expressions arithmétiques, les expressions logiques peuvent être
+| regroupées à l'aide de parenthèses et indiquer ainsi les priorités de calcul. Par
+| exemple, le résultat de l'expression (TRUE == TRUE) == TRUE sera bien TRUE.
+
+...
+
+  |=========                                                                 |  12%
+| Testons cette propriété, essayez d'évaluer (FALSE == TRUE) == FALSE .
+
+> (FALSE == TRUE) == FALSE
+[1] TRUE
+
+| You got it right!
+
+  |============                                                              |  16%
+| L'opérateur d'égalité peut aussi servir à comparer des nombres. Utilisez-le pour
+| savoir si 6 et 7 sont égaux.
+
+> 6 == 7
+[1] FALSE
+
+| You are really on a roll!
+
+  |==============                                                            |  19%
+| Le résultat de l'expression précédente est FALSE, parce 6 est plus petit que 7.
+| Heureusement pour nous, nous pouvons aussi tester les inégalités pour savoir si
+| un nombre est plus petit ou plus grand qu'un autre.
+
+...
+
+  |================                                                          |  22%
+| L'opérateur plus petit que `<` teste si le nombre à gauche de l'opérateur est
+| plus petit que le nombre à droite. Tapez une expression pour tester si 6 et plus
+| petit que 7.
+
+> 6 < 7
+[1] TRUE
+
+| Excellent work!
+
+  |==================                                                        |  25%
+| Il existe aussi un opérateur plus petit ou égal à `<=` qui teste si l'expression
+| à gauche est plus petite ou égale à l'expression à droite. Essayez de voir si 10
+| est plus petit ou égal à 10.
+
+> 10 <= 10
+[1] TRUE
+
+| You nailed it! Good job!
+
+  |=====================                                                     |  28%
+| On peut aussi utiliser les opérateurs plus grand que `>` et plus grand ou égal à
+| `>=`.
+
+...
+
+  |=======================                                                   |  31%
+| Voyons si vous avez compris. Laquelle des expressions suivantes à pour résultat
+| FALSE ?
+
+1: 9 >= 10
+2: 7 == 7
+3: 0 > -36
+4: 6 < 8
+
+Selection: 1
+
+| You are doing so well!
+
+  |=========================                                                 |  34%
+| Et maintenant, laquelle des expressions suivantes à pour résultat TRUE ?
+
+1: 7 == 9
+2: -6 > -7
+3: 57 < 8
+4: 9 >= 10
+
+Selection: 2
+
+| Excellent job!
+
+  |============================                                              |  38%
+| Intéressons maintenant à l'opérateur 'différent de' (= non-égal) représenté par
+| `!=`. Différent de teste si deux valeurs sont différentes, de telle sorte que le
+| résultat de TRUE != FALSE est TRUE. Tout comme l'opérateur égalité, l'opérateur
+| différent de s'utilise aussi avec des nombres. Essayez d'écrire une expression
+| pour savoir si 5 est différent de 7.
+
+> 5 != 7
+[1] TRUE
+
+| You are really on a roll!
+
+  |==============================                                            |  41%
+| Il peut être utile de 'négativer' une expression avec l'opérateur NON. Un point
+| d'exclamation `!` inversera les évaluations de TRUE et FALSE, de telle sorte que
+| la valeur de !TRUE (lire : non TRUE) est FALSE et que la valeur de !FALSE (lire :
+| non FALSE) est TRUE. Essayez d'utiliser l'opéraeur NON pour trouver l'inverse de
+| 5 est égal à 7.
+
+> NON("5 = 7")
+Error in NON("5 = 7") : could not find function "NON"
+> 5 !TRUE 7
+Error: unexpected '!' in "5 !"
+> !5 == 7
+[1] TRUE
+
+| You are quite good my friend!
+
+  |================================                                          |  44%
+| Récapitulons. L'opérateur égal `==` teste si deux valeurs sont égales.
+| L'opérateur différent de `!=` teste si deux valeurs sont différentes. L'opérateur
+| NON `!` négative une expression logique de telle manière que TRUE devient FALSE
+| et FALSE devient TRUE.
+
+...
+
+  |===================================                                       |  47%
+| Laquelle des expressions suivante est FALSE ?
+
+1: !FALSE
+2: 9 < 10
+3: !(0 >= -1)
+4: 7 != 8
+
+Selection: 3
+
+| Perseverance, that's the answer.
+
+  |=====================================                                     |  50%
+| Quel est à votre avis le résultat de l'expression suivante : (TRUE != FALSE) ==
+| !(6 == 7)
+
+1: %>%
+2: TRUE
+3: Y a-t-il une vérité objective dans la programmation ?
+4: FALSE
+
+Selection: 2
+
+| You got it right!
+
+  |=======================================                                   |  53%
+| Il est parfois nécessaire d'examiner les relations entre plusieurs expressions
+| logiques. On utilise pour cela les opérateurs ET (AND) et OU (OR).
+
+...
+
+  |==========================================                                |  56%
+| Regardons comment l'opérateur ET fonctionne. Il y a deux opérateurs ET dans R,
+| `&` et `&&`. Les deux opérateurs sont similaires. Si les expressions à droite et
+| à gauche de l'opérateur ET ont toutes les deux pour résultat TRUE, alors
+| l'expression entière a pour résultat TRUE, sinon le résultat est FALSE. Par
+| exemple, la valeur de TRUE & TRUE est TRUE. Essayez avec FALSE & FALSE.
+
+> FALSE & FALSE
+[1] FALSE
+
+| You're the best!
+
+  |============================================                              |  59%
+| Vous pouvez utilisez l'opérateur `&` pour évaluer ET suivant un vecteur. La
+| version `&&` a besoin d'avoir une seule valeur logique à gauche et à droite pour
+| fonctionner. Essayons les deux. Commencez par TRUE & c(TRUE, FALSE, FALSE).
+
+> TRUE & c(TRUE, FALSE, FALSE)
+[1]  TRUE FALSE FALSE
+
+| All that practice is paying off!
+
+  |==============================================                            |  62%
+| L'expression de gauche est recyclée (rappelez-vous la leçon sur les vecteurs)
+| afin d'avoir la même longueur que le vecteur de droite. C'est comme si on avait
+| écrit c(TRUE, TRUE, TRUE) & c(TRUE, FALSE, FALSE). Une expression comme cela
+| fonctionnera différemment avec l'opérateur `&&`, R bloquant le recyclage du
+| vecteur de gauche (et renvoit une alerte depuis la version 4.2.0).
+
+...
+
+  |=================================================                         |  66%
+| Utilisons la même opération en remplaçant `&` par `&&`.
+
+> TRUE && c(TRUE, FALSE, FALSE)
+[1] TRUE
+Warning message:
+In TRUE && c(TRUE, FALSE, FALSE) :
+  'length(x) = 3 > 1' in coercion to 'logical(1)'
+
+| You nailed it! Good job!
+
+  |===================================================                       |  69%
+| R nous renvoit un Warning et le résultat ! Un message commençant par Warning est
+| une façon de communiquer pour R. R vous communique que l'opération que vous êtes
+| en train de faire est possible (il vous donne un résultat), mais qu'elle lui
+| semble suspecte. En fait, ici R utilise uniquement le premier élément du vecteur
+| de droite. Ce comportement est amené à disparaître dans les futures versions de
+| R, je ne vous encourage donc pas à l'utiliser. Le principal intérêt de
+| l'opérateur `&&` est de vous garantir que le résultat a une longueur de 1. Cela
+| nous servira dans la suite du cours.
+
+...
+
+  |=====================================================                     |  72%
+| L'opérateur OU fonctionne d'une manière similaire. `|` recycle les vecteurs si
+| besoin, alors que `||` renvoit un résultat de longueur 1.
+
+...
+
+  |========================================================                  |  75%
+| OU renvoit TRUE si l'expression de droite ou l'expression de gauche est TRUE. Il
+| renvoit FALSE sinon.
+
+...
+
+  |==========================================================                |  78%
+| Testons la version vectorielle de OU. Tapez la commande TRUE | c(TRUE, FALSE,
+| FALSE).
+
+> TRUE | c(TRUE, FALSE, FALSE)
+[1] TRUE TRUE TRUE
+
+| All that hard work is paying off!
+
+  |============================================================              |  81%
+| Les opérateurs logiques peuvent être chainés, tout comme les opérations
+| arithmétiques. Les expressions `6 != 10 && FALSE && 1 >= 2` ou `TRUE || 5 < 9.3
+| || FALSE` sont tout à fait normales.
+
+...
+
+  |==============================================================            |  84%
+| Les opérations arithmétiques ont un ordre de priorité. Il en est de même pour les
+| expressions logiques. Tous les opérateurs ET sont évalués avant les opérateurs
+| OU. Essayez cet exemple un peu ambigu 5 > 8 || 6 != 8 && 4 > 3.9.
+
+> 5 > 8 || 6 != 8 && 4 > 3.9
+[1] TRUE
+
+| You got it!
+
+  |=================================================================         |  88%
+| Regardons l'ordre des opérations dans cet exemple. ET est prioritaire sur OU. On
+| commence donc par évaluer les expressions à gauche et à droite de &&. 6 est bien
+| différent de 8, donc le résultat à gauche est TRUE. 4 est bien plus grand que
+| 3.9, donc le résultat à droite est aussi TRUE. Le résultat de TRUE && TRUE est
+| TRUE. On peut maintenant regarder ce qui se passe autour de ||. À droite, on a
+| TRUE, à gauche, 5 n'est pas plus grand que 8, donc le résultat est FALSE. FALSE
+| || TRUE a pour résultat TRUE, ce qui nous donne bien le résultat final.
+
+...
+
+  |===================================================================       |  91%
+| Quelle expression a pour résultat TRUE ?
+
+1: TRUE && FALSE || 9 >= 4 && 3 < 6
+2: 99.99 > 100 || 45 < 7.3 || 4 != 4.0
+3: TRUE && 62 < 62 && 44 >= 44
+4: FALSE || TRUE && FALSE
+
+Selection: 1
+
+| Excellent job!
+
+  |=====================================================================     |  94%
+| Quelle expression a pour résultat FALSE ?
+
+1: FALSE && 6 >= 6 || 7 >= 8 || 50 <= 49.5
+2: !(8 > 4) ||  5 == 5.0 && 7.8 >= 7.79
+3: FALSE || TRUE && 6 != 4 || 9 > 4
+4: 6 >= -9 && !(6 > 7) && !(!TRUE)
+
+Selection: 3
+
+| You almost had it, but not quite. Try again.
+
+| Si vous ne trouvez pas la réponse, essayez chaque expression pour en lire le
+| résultat.
+
+1: !(8 > 4) ||  5 == 5.0 && 7.8 >= 7.79
+2: FALSE && 6 >= 6 || 7 >= 8 || 50 <= 49.5
+3: FALSE || TRUE && 6 != 4 || 9 > 4
+4: 6 >= -9 && !(6 > 7) && !(!TRUE)
+
+Selection: 2
+
+| You are really on a roll!
+
+  |========================================================================  |  97%
+| C'est la fin de l'introduction à l'évaluation des expressions logiques dans R.
+
+...
+
+  |==========================================================================| 100%
+| Souhaitez-vous soumettre votre progression sur Moodle à votre enseignant (cela ne
+| fonctionnera que pour les étudiants de l'université Paris 8) ? Si vous ne le
+| faites pas maintenant, vous pourrez toujours lui envoyer le fichier 'Logique.txt'
+| qui a été créé plus tard.
+
+1: Non
+2: Oui
+
+Selection: 2
+
+| Excellent work!
+
+| You've reached the end of this lesson! Returning to the main menu...
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: InitiationR
+2: Take me to the swirl course repository!
+
+Selection: 0
+
+| Leaving swirl now. Type swirl() to resume.

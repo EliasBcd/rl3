@@ -1,0 +1,849 @@
+R version 4.2.2 (2022-10-31) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> install.packages('swirl')
+Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘utf8’, ‘pillar’, ‘pkgconfig’, ‘vctrs’, ‘sys’, ‘rprojroot’, ‘crayon’, ‘fs’, ‘diffobj’, ‘fansi’, ‘rematch2’, ‘tibble’, ‘askpass’, ‘glue’, ‘magrittr’, ‘stringi’, ‘brio’, ‘callr’, ‘cli’, ‘desc’, ‘ellipsis’, ‘evaluate’, ‘jsonlite’, ‘lifecycle’, ‘pkgload’, ‘praise’, ‘processx’, ‘ps’, ‘R6’, ‘rlang’, ‘waldo’, ‘withr’, ‘curl’, ‘mime’, ‘openssl’, ‘bitops’, ‘stringr’, ‘testthat’, ‘httr’, ‘yaml’, ‘RCurl’, ‘digest’
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/utf8_1.2.2.tar.gz'
+Content type 'application/x-gzip' length 236735 bytes (231 KB)
+==================================================
+downloaded 231 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/pillar_1.8.1.tar.gz'
+Content type 'application/x-gzip' length 674653 bytes (658 KB)
+==================================================
+downloaded 658 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/pkgconfig_2.0.3.tar.gz'
+Content type 'application/x-gzip' length 17376 bytes (16 KB)
+==================================================
+downloaded 16 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/vctrs_0.5.1.tar.gz'
+Content type 'application/x-gzip' length 1260890 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/sys_3.4.1.tar.gz'
+Content type 'application/x-gzip' length 54976 bytes (53 KB)
+==================================================
+downloaded 53 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/rprojroot_2.0.3.tar.gz'
+Content type 'application/x-gzip' length 100991 bytes (98 KB)
+==================================================
+downloaded 98 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/crayon_1.5.2.tar.gz'
+Content type 'application/x-gzip' length 158110 bytes (154 KB)
+==================================================
+downloaded 154 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/fs_1.5.2.tar.gz'
+Content type 'application/x-gzip' length 760048 bytes (742 KB)
+==================================================
+downloaded 742 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/diffobj_0.3.5.tar.gz'
+Content type 'application/x-gzip' length 1007502 bytes (983 KB)
+==================================================
+downloaded 983 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/fansi_1.0.3.tar.gz'
+Content type 'application/x-gzip' length 413211 bytes (403 KB)
+==================================================
+downloaded 403 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/rematch2_2.1.2.tar.gz'
+Content type 'application/x-gzip' length 44269 bytes (43 KB)
+==================================================
+downloaded 43 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/tibble_3.1.8.tar.gz'
+Content type 'application/x-gzip' length 727025 bytes (709 KB)
+==================================================
+downloaded 709 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/askpass_1.1.tar.gz'
+Content type 'application/x-gzip' length 23822 bytes (23 KB)
+==================================================
+downloaded 23 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/glue_1.6.2.tar.gz'
+Content type 'application/x-gzip' length 157185 bytes (153 KB)
+==================================================
+downloaded 153 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/magrittr_2.0.3.tar.gz'
+Content type 'application/x-gzip' length 234989 bytes (229 KB)
+==================================================
+downloaded 229 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/stringi_1.7.8.tar.gz'
+Content type 'application/x-gzip' length 3201641 bytes (3.1 MB)
+==================================================
+downloaded 3.1 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/brio_1.1.3.tar.gz'
+Content type 'application/x-gzip' length 44728 bytes (43 KB)
+==================================================
+downloaded 43 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/callr_3.7.3.tar.gz'
+Content type 'application/x-gzip' length 424223 bytes (414 KB)
+==================================================
+downloaded 414 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/cli_3.4.1.tar.gz'
+Content type 'application/x-gzip' length 1306037 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/desc_1.4.2.tar.gz'
+Content type 'application/x-gzip' length 317043 bytes (309 KB)
+==================================================
+downloaded 309 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/ellipsis_0.3.2.tar.gz'
+Content type 'application/x-gzip' length 40284 bytes (39 KB)
+==================================================
+downloaded 39 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/evaluate_0.18.tar.gz'
+Content type 'application/x-gzip' length 77698 bytes (75 KB)
+==================================================
+downloaded 75 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/jsonlite_1.8.3.tar.gz'
+Content type 'application/x-gzip' length 1165185 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/lifecycle_1.0.3.tar.gz'
+Content type 'application/x-gzip' length 122567 bytes (119 KB)
+==================================================
+downloaded 119 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/pkgload_1.3.2.tar.gz'
+Content type 'application/x-gzip' length 173545 bytes (169 KB)
+==================================================
+downloaded 169 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/praise_1.0.0.tar.gz'
+Content type 'application/x-gzip' length 15926 bytes (15 KB)
+==================================================
+downloaded 15 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/processx_3.8.0.tar.gz'
+Content type 'application/x-gzip' length 446006 bytes (435 KB)
+==================================================
+downloaded 435 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/ps_1.7.2.tar.gz'
+Content type 'application/x-gzip' length 389374 bytes (380 KB)
+==================================================
+downloaded 380 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/R6_2.5.1.tar.gz'
+Content type 'application/x-gzip' length 82477 bytes (80 KB)
+==================================================
+downloaded 80 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/rlang_1.0.6.tar.gz'
+Content type 'application/x-gzip' length 1923948 bytes (1.8 MB)
+==================================================
+downloaded 1.8 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/waldo_0.4.0.tar.gz'
+Content type 'application/x-gzip' length 99901 bytes (97 KB)
+==================================================
+downloaded 97 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/withr_2.5.0.tar.gz'
+Content type 'application/x-gzip' length 225454 bytes (220 KB)
+==================================================
+downloaded 220 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/curl_4.3.3.tar.gz'
+Content type 'application/x-gzip' length 783800 bytes (765 KB)
+==================================================
+downloaded 765 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/mime_0.12.tar.gz'
+Content type 'application/x-gzip' length 37125 bytes (36 KB)
+==================================================
+downloaded 36 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/openssl_2.0.4.tar.gz'
+Content type 'application/x-gzip' length 1402096 bytes (1.3 MB)
+==================================================
+downloaded 1.3 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/bitops_1.0-7.tar.gz'
+Content type 'application/x-gzip' length 35531 bytes (34 KB)
+==================================================
+downloaded 34 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/stringr_1.4.1.tar.gz'
+Content type 'application/x-gzip' length 206809 bytes (201 KB)
+==================================================
+downloaded 201 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/testthat_3.1.5.tar.gz'
+Content type 'application/x-gzip' length 3637261 bytes (3.5 MB)
+==================================================
+downloaded 3.5 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/httr_1.4.4.tar.gz'
+Content type 'application/x-gzip' length 498400 bytes (486 KB)
+==================================================
+downloaded 486 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/yaml_2.3.6.tar.gz'
+Content type 'application/x-gzip' length 286280 bytes (279 KB)
+==================================================
+downloaded 279 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/RCurl_1.98-1.9.tar.gz'
+Content type 'application/x-gzip' length 1123856 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/digest_0.6.30.tar.gz'
+Content type 'application/x-gzip' length 358071 bytes (349 KB)
+==================================================
+downloaded 349 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/swirl_2.4.5.tar.gz'
+Content type 'application/x-gzip' length 347115 bytes (338 KB)
+==================================================
+downloaded 338 KB
+
+* installing *binary* package ‘utf8’ ...
+* DONE (utf8)
+* installing *binary* package ‘pkgconfig’ ...
+* DONE (pkgconfig)
+* installing *binary* package ‘sys’ ...
+* DONE (sys)
+* installing *binary* package ‘rprojroot’ ...
+* DONE (rprojroot)
+* installing *binary* package ‘crayon’ ...
+* DONE (crayon)
+* installing *binary* package ‘fs’ ...
+* DONE (fs)
+* installing *binary* package ‘fansi’ ...
+* DONE (fansi)
+* installing *binary* package ‘glue’ ...
+* DONE (glue)
+* installing *binary* package ‘magrittr’ ...
+* DONE (magrittr)
+* installing *binary* package ‘stringi’ ...
+* DONE (stringi)
+* installing *binary* package ‘brio’ ...
+* DONE (brio)
+* installing *binary* package ‘cli’ ...
+* DONE (cli)
+* installing *binary* package ‘evaluate’ ...
+* DONE (evaluate)
+* installing *binary* package ‘jsonlite’ ...
+* DONE (jsonlite)
+* installing *binary* package ‘praise’ ...
+* DONE (praise)
+* installing *binary* package ‘ps’ ...
+* DONE (ps)
+* installing *binary* package ‘R6’ ...
+* DONE (R6)
+* installing *binary* package ‘rlang’ ...
+* DONE (rlang)
+* installing *binary* package ‘withr’ ...
+* DONE (withr)
+* installing *binary* package ‘curl’ ...
+* DONE (curl)
+* installing *binary* package ‘mime’ ...
+* DONE (mime)
+* installing *binary* package ‘bitops’ ...
+* DONE (bitops)
+* installing *binary* package ‘yaml’ ...
+* DONE (yaml)
+* installing *binary* package ‘digest’ ...
+* DONE (digest)
+* installing *binary* package ‘diffobj’ ...
+* DONE (diffobj)
+* installing *binary* package ‘askpass’ ...
+* DONE (askpass)
+* installing *binary* package ‘desc’ ...
+* DONE (desc)
+* installing *binary* package ‘ellipsis’ ...
+* DONE (ellipsis)
+* installing *binary* package ‘lifecycle’ ...
+* DONE (lifecycle)
+* installing *binary* package ‘processx’ ...
+* DONE (processx)
+* installing *binary* package ‘stringr’ ...
+* DONE (stringr)
+* installing *binary* package ‘RCurl’ ...
+* DONE (RCurl)
+* installing *binary* package ‘vctrs’ ...
+* DONE (vctrs)
+* installing *binary* package ‘callr’ ...
+* DONE (callr)
+* installing *binary* package ‘pkgload’ ...
+* DONE (pkgload)
+* installing *binary* package ‘openssl’ ...
+* DONE (openssl)
+* installing *binary* package ‘pillar’ ...
+* DONE (pillar)
+* installing *binary* package ‘httr’ ...
+* DONE (httr)
+* installing *binary* package ‘tibble’ ...
+* DONE (tibble)
+* installing *binary* package ‘rematch2’ ...
+* DONE (rematch2)
+* installing *binary* package ‘waldo’ ...
+* DONE (waldo)
+* installing *binary* package ‘testthat’ ...
+* DONE (testthat)
+* installing *binary* package ‘swirl’ ...
+* DONE (swirl)
+
+The downloaded source packages are in
+	‘/tmp/RtmpGXN5bY/downloaded_packages’
+> library(swirl)
+
+| Hi! Type swirl() when you are ready to begin.
+
+> install_course_github("EliasBcd", "InitiationR")
+Downloading: 93 kB      
+> swirl()
+
+| Welcome to swirl! Please sign in. If you've been here before, use the same name
+| as you did then. If you are new, call yourself something unique.
+
+What shall I call you? Noor
+
+| Thanks, Noor. Let's cover a couple of quick housekeeping items before we begin
+| our first lesson. First of all, you should know that when you see '...', that
+| means you should press Enter when you are done reading and ready to continue.
+
+...  <-- That's your cue to press Enter to continue
+
+| Also, when you see 'ANSWER:', the R prompt (>), or when you are asked to select
+| from a list, that means it's your turn to enter a response, then press Enter to
+| continue.
+
+Select 1, 2, or 3 and press Enter 
+
+1: Continue.
+2: Proceed.
+3: Let's get going!
+
+Selection: 1
+
+| You can exit swirl and return to the R prompt (>) at any time by pressing the Esc
+| key. If you are already at the prompt, type bye() to exit and save your progress.
+| When you exit properly, you'll see a short message letting you know you've done
+| so.
+
+| When you are at the R prompt (>):
+| -- Typing skip() allows you to skip the current question.
+| -- Typing play() lets you experiment with R on your own; swirl will ignore what
+| you do...
+| -- UNTIL you type nxt() which will regain swirl's attention.
+| -- Typing bye() causes swirl to exit. Your progress will be saved.
+| -- Typing main() returns you to swirl's main menu.
+| -- Typing info() displays these options again.
+
+| Let's get started!
+
+...
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: InitiationR
+2: Take me to the swirl course repository!
+
+Selection: 1
+
+| Please choose a lesson, or type 0 to return to course menu.
+
+ 1: Manipulations simples           2: Assignations et objets       
+ 3: Types                           4: Vecteurs                     
+ 5: Fichiers et espace de travail   6: Logique                      
+ 7: Valeurs manquantes              8: Vecteurs numériques          
+ 9: Dataframes                     10: Scripts et fonctions         
+11: Control Flow                   12: Representations graphiques   
+13: Tirages aleatoires             
+
+Selection: 13
+
+| Attempting to load lesson dependencies...
+
+| This lesson requires the ‘base64enc’ package. Would you like me to install it for
+| you now?
+
+1: Yes
+2: No
+
+Selection: 1
+
+| Trying to install package ‘base64enc’ now...
+
+| Package ‘base64enc’ loaded correctly!
+
+| This lesson requires the ‘ggplot2’ package. Would you like me to install it for
+| you now?
+
+1: Yes
+2: No
+
+Selection: 1
+
+| Trying to install package ‘ggplot2’ now...
+also installing the dependencies ‘colorspace’, ‘farver’, ‘labeling’, ‘munsell’, ‘RColorBrewer’, ‘viridisLite’, ‘gtable’, ‘isoband’, ‘scales’
+
+
+| Package ‘ggplot2’ loaded correctly!
+
+  |                                                                          |   0%
+
+| Un avantage d'utiliser R, un langage de programmation statistique, est la grande
+| quantité d'outils à votre disposition pour effectuer des simulations et générer
+| des nombres aléatoires.
+
+...
+
+  |==                                                                        |   3%
+| Je ne vous expliquerai pas les différentes distributions de probabilités, mais
+| vous en avez déjà vu certaines. Ici, nous les utiliserons pour l'échantillonage
+| et la génération de nombres aléatoires.
+
+...
+
+  |====                                                                      |   6%
+| La première fonction que nous utiliserons pour générer des nombres aléatoires est
+| sample(). Regardez l'aide sur cette fonction grâce à ?sample.
+
+> ?sample.
+No documentation for ‘sample.’ in specified packages and libraries:
+you could try ‘??sample.’
+
+| Not quite right, but keep trying. Or, type info() for more options.
+
+| Regardez l'aide sur la fonction sample() grâce à ?sample.
+
+> ?sample
+
+| You are quite good my friend!
+
+  |=======                                                                   |   9%
+| Pour simuler 4 lancements d'un dé à 6 faces, on utilise la commande : sample(1:6,
+| 4, replace = TRUE).
+
+> sample(1:6, 4, replace = TRUE)
+[1] 4 4 3 1
+
+| Great job!
+
+  |=========                                                                 |  12%
+| Répetez la commande et observez que les résultats sont différents. (La
+| probabilité d'obtenir exactement le même résultat est (1/6)^4 = 0.00077 !)
+
+> sample(1:6, 4, replace = TRUE)
+[1] 5 5 3 5
+
+| That's correct!
+
+  |===========                                                               |  15%
+| sample(1:6, 4, replace = TRUE) dit à R de tirer aléatoirement 4 fois un nombre
+| entre 1 et 6, AVEC remise (c'est l'argument "replace"). Le tirage avec remise
+| signifie que le nombre est "remis" à chaque fois, donc il a encore la même chance
+| d'être sélectionné la fois suivante. C'est bien ce que nous souhaitons obtenir
+| ici, puisque chaque lancé de dé n'affecte pas le suivant.
+
+...
+
+  |=============                                                             |  18%
+| Tirez maintenant aléatoire 10 nombres entre 1 et 20, SANS remise. Pour ce faire,
+| enlever simplement l'argument 'replace' de la fonction.
+
+> sample(1:20, 10)
+ [1] 10  6 12  2 18 17 16  3  1 20
+
+| That's the answer I was looking for.
+
+  |================                                                          |  21%
+| La commande précédente précise qu'il n'y a pas de remise. Chaque nombre de la
+| séquence ne peut donc apparaître qu'une seule fois. La valeur par défaut de
+| l'argument "replace" est FALSE, ce qui explique pourquoi nous avons du le
+| préciser quand nous avons souhaité une remise, mais que nous n'avons pas eu
+| besoin de le faire quand nous le souhaitons pas de remise.
+
+...
+
+  |==================                                                        |  24%
+| LETTERS est un objet prédéfini dans R qui contient les 26 lettres de l'alphabet
+| latin en majuscule. Regardez son contenu maintenant.
+
+> LETTRES
+Error: object 'LETTRES' not found
+
+> LETTERS
+ [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T"
+[21] "U" "V" "W" "X" "Y" "Z"
+
+| That's the answer I was looking for.
+
+  |====================                                                      |  27%
+| La fonction sample() permet aussi de permuter les éléments d'un vecteurs. Par
+| exemple, essayez sample(LETTERS) pour permuter les 26 lettres de l'alphabet.
+
+> sample(LETTERS)
+ [1] "H" "C" "Y" "L" "O" "E" "S" "R" "B" "P" "V" "Z" "F" "K" "X" "I" "U" "J" "W" "M"
+[21] "A" "Q" "N" "G" "T" "D"
+
+| You're the best!
+
+  |======================                                                    |  30%
+| Permuter, c'est exactement comme tirer aléatoirement les 26 LETTERS sans remise.
+| Quand l'argument 'size' n'est pas spécifié dans sample(), R utilise un
+| échantillon de la taille du vecteur à partir duquel nous échantillonnons, ce qui
+| crée de fait une permutation.
+
+...
+
+  |=========================                                                 |  33%
+| Supposons maintenant que nous souhaitons simuler le tirage aléatoire de 100 pile
+| ou face d'une pièce biaisée. Cette pièce a une probabilité de 0.3 d'obtenir pile
+| et une probabilité 0.7 d'obtenir face.
+
+...
+
+  |===========================                                               |  36%
+| Supposons que 0 représente pile et 1 représente face. Utilisez sample() pour
+| tirer aléatoirement un échantillon de taille 100 du vecteur c(0, 1), avec remise.
+| Pour préciser que la pièce est biaisée, nous ajoutons l'argument prob = c(0.3,
+| 0.7) à la fonction. Celui-ci donne les probabilités de chaque valeur. Assignez le
+| résultat à un nouvel objet appelé flips.
+
+> flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))
+
+| Nice work!
+
+  |=============================                                             |  39%
+| Regardez le contenu de flips.
+
+> 
+> flips
+  [1] 1 1 0 1 1 1 1 0 1 1 1 1 1 1 0 1 0 1 1 0 1 1 1 1 0 0 1 0 1 0 1 0 1 1 1 1 0 1 0
+ [40] 1 1 1 1 1 1 1 1 1 1 0 0 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0
+ [79] 1 1 1 0 0 1 0 1 1 1 0 0 0 1 1 1 1 1 0 1 1 1
+
+| Perseverance, that's the answer.
+
+  |===============================                                           |  42%
+| Nous avons mis une probabilité de 0.7 sur face. Nous nous attendons donc à
+| trouver à peu près 70 tirages qui valent 1. Comptez le nombre total de 1 en
+| utilisant la fonction sum().
+
+> sum(flips)
+[1] 76
+
+| You got it right!
+
+  |==================================                                        |  45%
+| Un tirage à pile ou face à un résultat binaire (0 ou 1) et nous faisons 100
+| tirages indépendants. On peut donc utiliser la fonction rbinom() pour simuler des
+| tirages d'une variable aléatoire binomiale. Regardez la documentation de rbinom()
+| en utilisant ?rbinom.
+
+> ?rbinom
+
+| You're the best!
+
+  |====================================                                      |  48%
+| Chaque distribution de probabilité dans R a une fonction r**** (r pour 'random'),
+| une fonction d**** (d pour 'densité'), une fonction p**** (p pour 'probabilité')
+| et une fonction q**** (q pour 'quantile'). Pour les simulations de tirages
+| aléatoires, nous utilisons les fonctions r****. Vous pouvez explorer l'usage des
+| autres fonctions avec l'aide.
+
+...
+
+  |======================================                                    |  52%
+| Une variable aléatoire binomiale représente le nombre de succès (face) pour un
+| nombre donné d'essai indépendant (tirage à pile ou face). On peut générer une
+| variable aléatoire unique qui représente le tirage à pile ou face de notre pièce
+| biaisée en utilisant rbinom(1, size = 100, prob = 0.7). Nous n'avons besoin ici
+| que de spécifier la probabilité de succès (face), pas la probabilité d'échec
+| (pile), qui est automatiquement 1 - probabilité succès. Essayez.
+
+> rbinom(1, size = 100, prob = 0.7)
+[1] 79
+
+| You got it!
+
+  |========================================                                  |  55%
+| De manière équivalente, si nous voulons voir tous les 0 et 1, on peut demander
+| 100 observations, chacune de taille 1 et avec une probabilité de succès de 0,7.
+| Essayez en assignant le résultat à un nouvel objet flips2.
+
+> flips2 <- rbinom(100, size = 1, prob = 0.7)
+
+| Perseverance, that's the answer.
+
+  |===========================================                               |  58%
+| Observez le contenu de flips2.
+
+> flips2
+  [1] 1 1 1 1 0 0 0 1 1 1 1 0 0 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1
+ [40] 0 0 1 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 0 1 1 1 1 1 0 1 0 1 1 1 1 1 0 1 0 1 1
+ [79] 0 1 0 1 0 0 1 1 1 0 0 1 1 1 1 1 1 0 0 1 1 1
+
+| Keep up the great work!
+
+  |=============================================                             |  61%
+| Utilisez maintenant sum() pour compter le nombre de 1 (face) dans flips2. Elle
+| devrait être proche de 70.
+
+> sum(flips2)
+[1] 71
+
+| You are doing so well!
+
+  |===============================================                           |  64%
+| Tout comme rbinom(), on peut utiliser R pour simuler le résultat de beaucoup
+| d'autres distributions. Cherchez la documentation pour rnorm.
+
+> ?rnorm
+
+| That's the answer I was looking for.
+
+  |=================================================                         |  67%
+| La distribution normale classique (la Gaussienne) a une moyenne de 0 et un
+| écart-type de 1. Comme vous pouvez le lire dans la partie 'Usage' de la
+| documentation, les valeurs par défaut des arguments 'mean' (moyenne) et 'sd'
+| (écart-type) sont 0 et 1. rnorm(10) générera donc 10 nombres aléatoires à l'aide
+| de la distribution Gaussienne. Essayez.
+
+> rnorm(10)
+ [1]  0.005299828 -0.835112753  0.462617271  0.280561276 -0.351083592  0.206575767
+ [7]  0.062654900 -0.979176953 -0.430487910 -1.091948419
+
+| Nice work!
+
+  |====================================================                      |  70%
+| Faites maintenant la même chose avec une moyenne de 100 et un écart-type de 25.
+
+> rnorm(10, 100, 25)
+ [1]  92.61826  83.37776  94.79775 112.88452 117.92731  97.07455 115.97453  81.45483
+ [9]  65.61553 155.03886
+
+| You got it right!
+
+  |======================================================                    |  73%
+| Enfin, nous voulons générer 100 groupes de nombres aléatoires. Chaque groupe
+| contiendra 5 valeurs générées par une loi uniforme entre -1 et 1. Commençons par
+| un premier groupe de 5 nombre. Je vous expliquerai par la suite comment répéter
+| facilement l'opération 100 fois.
+
+...
+
+  |========================================================                  |  76%
+| Générer 5 valeurs aléatoires issues d'une distribution uniforme sur -1, 1.
+| Utilisez la documentation de runif() si vous avez besoin d'aide.
+
+> runif(5, -1, 1)
+[1]  0.8584969  0.5783368 -0.3179057  0.2141564  0.4776667
+
+| That's the answer I was looking for.
+
+  |==========================================================                |  79%
+| Utilisez maintenant replicate(100, runif(5, -1, 1)) pour répéter l'opération 100
+| fois. Stockez le résultat dans une nouvelle variable mon_unif.
+
+> mon_unif <- replicate(100, runif(5, -1, 1))
+
+| All that hard work is paying off!
+
+  |=============================================================             |  82%
+| Regardez le contenu de mon_unif.
+
+> mon_unif
+           [,1]       [,2]       [,3]        [,4]        [,5]       [,6]       [,7]
+[1,] -0.3902435  0.1651638  0.1348645 -0.81741983  0.19781876 -0.5703857  0.9694794
+[2,] -0.3240210  0.9687740  0.8242229 -0.81148031 -0.20966434  0.6594389  0.1500495
+[3,] -0.4823430  0.1352777 -0.3257639 -0.00734973 -0.78796166  0.7430013  0.5501107
+[4,] -0.1372568  0.8951775 -0.2920366  0.89880255 -0.28280495  0.5695088 -0.1334925
+[5,] -0.5539276 -0.1601469  0.7903055 -0.92993994 -0.03741739  0.7297979 -0.6765911
+           [,8]        [,9]       [,10]       [,11]      [,12]       [,13]
+[1,]  0.7138976 -0.63704026 -0.70834691  0.74607217 -0.8608931  0.90376016
+[2,] -0.7515442 -0.16131726  0.99025537  0.02173661 -0.8978427  0.26536236
+[3,] -0.9278060  0.59466220 -0.72117052 -0.65932135  0.6111267 -0.15334204
+[4,] -0.5344755  0.48096691  0.88441401  0.45623507 -0.2054555 -0.07711989
+[5,]  0.2554457 -0.07934407  0.05125101  0.90628710  0.7259544  0.16532447
+          [,14]      [,15]       [,16]      [,17]       [,18]      [,19]      [,20]
+[1,]  0.5158037 -0.2164995  0.19161723  0.1600191  0.21408712 -0.5221128  0.6800245
+[2,] -0.8754697 -0.1212707 -0.65475621 -0.9616620 -0.84138940  0.4787811 -0.3266125
+[3,] -0.9090503 -0.9935856  0.10802636 -0.6673794 -0.61339208  0.9040204 -0.7381563
+[4,]  0.2662198  0.3216285 -0.49763579  0.4129444 -0.63629417  0.6563739 -0.7148541
+[5,]  0.7604571  0.8652599 -0.06963988 -0.4902501 -0.07016112 -0.9591263  0.9456101
+          [,21]      [,22]      [,23]       [,24]      [,25]      [,26]      [,27]
+[1,] -0.9684402 -0.8394020 -0.9176120 -0.39346282 -0.1670864  0.8464196 -0.8207870
+[2,] -0.4123740 -0.7379203 -0.9557285  0.01344651 -0.8981883 -0.1364766 -0.5490788
+[3,]  0.7677559 -0.1763658 -0.2056193  0.47918182  0.4891973 -0.6573305 -0.5747265
+[4,] -0.9792381  0.8325335  0.6836356  0.01641068 -0.7346434 -0.1027747  0.3680359
+[5,] -0.5459687 -0.9933143  0.2107591 -0.67606941 -0.7517662  0.5896156  0.3989952
+          [,28]       [,29]      [,30]      [,31]       [,32]       [,33]
+[1,] -0.2058532  0.95000465  0.7213316 -0.5821646 -0.86453607  0.06746319
+[2,]  0.9377182  0.51757919  0.3460885  0.3439716  0.36785902  0.65233833
+[3,] -0.6487820 -0.01289061 -0.7631044  0.1536389 -0.88292978 -0.34885141
+[4,] -0.5526337 -0.70241085 -0.4465222  0.3840423  0.05386895  0.23026128
+[5,] -0.2461626 -0.36588080 -0.9603397 -0.0584800 -0.97582771  0.92406322
+          [,34]       [,35]       [,36]      [,37]      [,38]       [,39]
+[1,]  0.8835617  0.02648098 -0.50007672 -0.8459701  0.6720186 -0.70621498
+[2,]  0.8851671 -0.74346755 -0.44794986 -0.7505112  0.6147782  0.57576958
+[3,] -0.9092622 -0.84604793  0.09409341 -0.3624411  0.8104141 -0.07573176
+[4,] -0.2062526 -0.27987251 -0.95274848 -0.5834660 -0.5779082  0.38315913
+[5,] -0.5238643  0.64576516  0.40922420  0.4928302 -0.3000756 -0.75867261
+          [,40]      [,41]      [,42]      [,43]      [,44]      [,45]      [,46]
+[1,]  0.6406480 -0.4747213 -0.3849221 -0.1220880 -0.8306648 -0.5983983  0.6024331
+[2,] -0.2519442  0.9837887 -0.4511735 -0.9864160 -0.7905887  0.3307078  0.3850642
+[3,] -0.8813157  0.9246738 -0.9438197  0.7145119  0.7529579 -0.8954570  0.8904526
+[4,]  0.1183852  0.4726653  0.9305730 -0.9549944 -0.2489836  0.4302974  0.1461120
+[5,] -0.5586328  0.7438183  0.6328147  0.6766290  0.9374777 -0.3660806 -0.4715011
+          [,47]       [,48]         [,49]      [,50]       [,51]       [,52]
+[1,] -0.9647728 -0.71486619 -0.2871243157  0.7627109  0.01444455  0.91942928
+[2,]  0.7321257 -0.04928499  0.0123400660 -0.7441911 -0.65173866  0.20079890
+[3,]  0.7188655 -0.91589143  0.0006298884  0.5641780 -0.33968361 -0.94412884
+[4,] -0.4508625 -0.41826667 -0.0803300575  0.6240537  0.18916962  0.05672317
+[5,]  0.8675841 -0.29701894  0.7494139662  0.6034338 -0.89128544  0.59752552
+           [,53]      [,54]       [,55]      [,56]        [,57]       [,58]
+[1,] -0.19367676 -0.5486625 -0.01091154  0.8537357  0.778390966 -0.95768421
+[2,]  0.30218143  0.6016665 -0.20512004 -0.4237624  0.976393290  0.76636649
+[3,]  0.03437196 -0.8758442 -0.20287475  0.1873350  0.036934915  0.77548905
+[4,]  0.10211106  0.3938608  0.99471902 -0.1679236  0.005186586 -0.85273256
+[5,]  0.38220214  0.7629103  0.46845309 -0.6925502 -0.735288141 -0.00803308
+          [,59]      [,60]       [,61]      [,62]       [,63]      [,64]      [,65]
+[1,] -0.7229702  0.4155973  0.16332649 -0.8141564  0.64775514 -0.2755893 -0.3878699
+[2,]  0.3431600  0.9806088 -0.10617422  0.3345557 -0.07659658  0.1911967  0.9179884
+[3,]  0.8050492  0.3899518  0.02268384  0.2777073 -0.21148634 -0.9605123 -0.7646397
+[4,]  0.4811992 -0.7273905  0.41440643 -0.8417779  0.98240770  0.0625148 -0.3142806
+[5,] -0.6658203  0.6464998  0.05342706  0.2109252 -0.62841050 -0.7490368 -0.1982856
+           [,66]       [,67]       [,68]      [,69]       [,70]      [,71]
+[1,]  0.90416496  0.14110197  0.47949457 -0.2081156 -0.04215125 -0.8414091
+[2,] -0.39561570  0.06065318 -0.98826965 -0.2503820  0.84361264 -0.9001248
+[3,]  0.05078761  0.46752901 -0.39005486  0.9684388  0.21283198 -0.2166322
+[4,]  0.18638838  0.80460810 -0.05628371  0.4740054 -0.42179097  0.6847261
+[5,] -0.13226156 -0.75734345 -0.39096479  0.8741918  0.79161176 -0.6844510
+          [,72]      [,73]      [,74]      [,75]      [,76]      [,77]       [,78]
+[1,]  0.7235842 -0.8633124  0.2332854 -0.1488930  0.6171953  0.5359773 -0.02839370
+[2,]  0.4056767 -0.7949577 -0.1108101  0.5050133  0.2552607 -0.9824494  0.07117532
+[3,] -0.9258651 -0.2735545 -0.9295317  0.4614452 -0.7100441  0.7657634 -0.15959019
+[4,]  0.6969178 -0.7261660  0.8160337 -0.9885234 -0.5191527 -0.5939026 -0.53272278
+[5,] -0.5582559  0.0523263 -0.2687369 -0.3871020 -0.4597320  0.2267645 -0.06176769
+          [,79]       [,80]      [,81]       [,82]      [,83]       [,84]
+[1,]  0.6050163 -0.21237266  0.6486544  0.19115399  0.8393617  0.02618051
+[2,]  0.6373291  0.55864849 -0.1738211  0.70533658  0.4579882 -0.04885202
+[3,]  0.1446065 -0.67563725  0.4567240  0.21561085 -0.2596766 -0.21134192
+[4,]  0.5178695 -0.02797231 -0.9356019  0.56958630  0.8866694  0.21647138
+[5,] -0.9401328  0.13353318 -0.1994378 -0.08280962  0.6511569  0.95551498
+           [,85]       [,86]       [,87]     [,88]       [,89]      [,90]     [,91]
+[1,] -0.09260716  0.37158406 -0.02077262 0.6547571 -0.33896301 -0.2678111 0.6657173
+[2,]  0.53331745 -0.15826348 -0.98490134 0.6706637 -0.74441865 -0.4237503 0.7818610
+[3,] -0.41338022  0.41176669 -0.00600456 0.5182389 -0.94297180 -0.8493037 0.7466471
+[4,] -0.19988325 -0.02555822 -0.37212725 0.8842555 -0.04095091 -0.6810600 0.2466897
+[5,] -0.17238929 -0.10682457 -0.71213009 0.7880574  0.50865761 -0.8064155 0.6287094
+          [,92]      [,93]        [,94]      [,95]       [,96]     [,97]      [,98]
+[1,] -0.7112605  0.7110484  0.217165636 -0.5768914  0.46365256 0.7442371  0.0875319
+[2,] -0.6928339 -0.6735721 -0.217950114 -0.7416975 -0.01002355 0.1664657  0.9505436
+[3,] -0.2642932 -0.9764809  0.008177061 -0.9128383 -0.86336749 0.1127165 -0.6880606
+[4,] -0.2636399  0.4609734 -0.617848163  0.5875825 -0.28187307 0.9962965  0.4847864
+[5,]  0.8409816 -0.7758378 -0.347602808  0.7225271 -0.68633160 0.2301726 -0.3479600
+           [,99]     [,100]
+[1,]  0.07043596 -0.6553704
+[2,] -0.18502845 -0.2723195
+[3,]  0.28717154 -0.9811448
+[4,]  0.56419007 -0.3786237
+[5,] -0.10947052  0.7634816
+
+| Excellent job!
+
+  |===============================================================           |  85%
+| replicate() a créé une matrice, chaque colonne contient 5 nombres aléatoires
+| issus de la distribution spécifiée. Nous pouvons trouvez maintenant trouver la
+| moyenne dans chaque colonne à l'aide de colMeans(). Stockez le résultat dans
+| l'objet cm.
+
+> cm <- colMeans(mon_unif)
+
+| You got it!
+
+  |=================================================================         |  88%
+| Regardons l'histogramme du résultat à l'aide de ggplot(data.frame(cm = cm)) +
+| geom_histogram(aes(cm))
+
+> ggplot(data.frame(cm = cm)) +
++     | geom_histogram(aes(cm))
+Error: unexpected '|' in:
+"ggplot(data.frame(cm = cm)) +
+    |"
+> ggplot(data.frame(cm = cm)) +
++     | geom_histogram(aes(cm))
+Error: unexpected '|' in:
+"ggplot(data.frame(cm = cm)) +
+    |"
+> ggplot(data.frame(cm = cm)) + geom_histogram(aes(cm))
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+| You are quite good my friend!
+
+  |===================================================================       |  91%
+| Nos valeurs moyennes semblent presque suivre une distribution normale. C'est le
+| théorème centrale limite, que vous n'avez peut-être pas vu.
+
+...
+
+  |======================================================================    |  94%
+| Toutes les distributions aléatoires classiques sont incluses dans R, y compris
+| exponentielle (rexp()), chi-deux (rchisq()), gamma (rgamma()), ...
+
+...
+
+  |========================================================================  |  97%
+| Vous avez maintenant les bases des tirages aléatoires, même si nous n'avons fait
+| que toucher le début du sujet.
+
+...
+
+  |==========================================================================| 100%
+| Souhaitez-vous soumettre votre progression sur Moodle à votre enseignant (cela ne
+| fonctionnera que pour les étudiants de l'université Paris 8) ? Si vous ne le
+| faites pas maintenant, vous pourrez toujours lui envoyer le fichier
+| 'Tirages_aleatoires.txt' qui a été créé plus tard.
+
+1: Oui
+2: Non
+
+Selection: 1
+
+| Excellent work!
+
+| You've reached the end of this lesson! Returning to the main menu...
+
+| Please choose a course, or type 0 to exit swirl.

@@ -1,0 +1,60 @@
+swirl
+swirl()
+library(swirl)
+swirl()
+uninstall_course("InitiationR")
+install_course("InitiationR")
+http://swirlstats.com/scn/
+http://swirlstats.com/scn/
+install_course_github("EliasBcd", "InitiationR")
+install_course("InitiationR")
+install.packages("swirl")
+library("swirl")
+> swirl()
+swirl()
+swirl(resume.class = )
+5+7
+'x gets 5 plus 7'
+x <- 5 + 7
+x
+y <- x - 3
+y
+c ( 1.1 , 9 , 3.14)
+z <- c(1.1, 9 , 3.14)
+?c
+z
+z <- 555 z$
+z <- 555
+c ( z , 555, z)
+z* 2 + 100
+my_sqrt(z-1)
+my_sqrt z-1
+sqrt(z-1)
+sqrt(z-1) <- my_sqrt
+my_sqrt<- sqrt(z-1)
+my_sqrt
+my_div <- z/ my_sqrt
+my_div
+c(1,2,3,4)
+c(1, 2, 3, 4) + c(0, 10)
+c(1, 2, 3, 4) + c(0, 10, 100)
+(z * 2 + 100)
+(z * 2 + 100)
+(z * 2 + 100)
+Nous avons des données sur  `r nrow(diamonds)` diamants. Seulement
+(z * 2 + 100)
+(z * 2 + 100)
+(z * 2 + 1000)
+(z * 2 + 1000)
+info()
+skip()
+my_div
+5
+5+7
+0``
+0
+0
+7
+my_div
+savehistory("~/Downloads/R studioo.Rhistory")
+savehistory("~/Library/Mobile Documents/com~apple~CloudDocs/L3 S1/Untitled.Rhistory")

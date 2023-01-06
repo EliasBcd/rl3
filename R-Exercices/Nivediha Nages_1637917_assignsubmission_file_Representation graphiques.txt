@@ -1,0 +1,452 @@
+> library(swirl)
+
+| Hi! Type swirl() when you are ready to begin.
+
+> install_course_github('EliasBcd', 'InitiationR')
+Downloading: 93 kB      
+> select_language('french', append_rprofile = TRUE)
+> swirl()
+
+| Bienvenue sur Swirl ! Connecte-toi. Si ce n'est pas ta première connexion,
+| indique ton nom utilisé précédemment. Si tu dois encore choisir ton nom,
+| fais preuve d'un peu d'originalité !
+
+Comment dois-je t'appeler ? Nivediha
+
+| Merci, Nivediha. Quelques instructions de base avant d'attaquer la
+| première leçon. Tout d'abord, si tu vois s'afficher '...', cela veut dire
+| que tu dois appuyer sur Entrée quand tu as fini de lire et es prêt(e) à
+| continuer.
+
+...  <-- That's your cue to press Enter to continue
+
+| Et quand tu vois 'Réponse:', le prompt R (>), ou si tu es invité(e) à
+| sélectionner une option, c'est à toi de taper ta réponse et d'appuyer sur
+| Entrée pour continuer.
+
+Select 1, 2, or 3 and press Enter 
+
+1: Continuer.
+2: Avancer.
+3: C'est parti !
+
+Selection: 1
+
+| You can exit swirl and return to the R prompt (>) at any time by pressing
+| the Esc key. If you are already at the prompt, type bye() to exit and save
+| your progress. When you exit properly, you'll see a short message letting
+| you know you've done so.
+
+| Quand tu es arrivé(e) au prompt R (>):
+| -- Tape skip() pour sauter la question.
+| -- Tape play() pour expérimenter et jouer avec R; Swirl en fera
+| abstraction...
+| -- JUSQU'A ce que tu tapes nxt() pour regagner l'attention de Swirl.
+| -- Tape bye() pour quitter Swirl. Ta progression sera sauvegardée.
+| -- Tape main() pour retourner au menu principal de Swirl.
+| -- Tape info() pour montrer les options une nouvelle fois.
+
+| C'est parti !
+
+...
+
+| Choisis un cours ou tape 0 pour quitter Swirl.
+
+1: InitiationR
+2: Montre-moi le répertoire des cours Swirl !
+
+Selection: 1
+
+| Choisis une leçon ou tape 0 pour retourner au menu principal.
+
+ 1: Manipulations simples           2: Assignations et objets       
+ 3: Types                           4: Vecteurs                     
+ 5: Fichiers et espace de travail   6: Logique                      
+ 7: Valeurs manquantes              8: Vecteurs numériques          
+ 9: Dataframes                     10: Scripts et fonctions         
+11: Control Flow                   12: Representations graphiques   
+13: Tirages aleatoires             
+
+Selection: 12
+
+| Attempting to load lesson dependencies...
+
+| Cette leçon requiert le paquet ‘base64enc’ . Voudrais-tu que je l'installe
+| pour toi maintenant ?
+
+1: Oui
+2: Non
+
+Selection: 1
+
+| Installation du paquet ‘base64enc’ maintenant...
+
+| Le paquet ‘base64enc’ a été chargé correctement !
+
+| Cette leçon requiert le paquet ‘tidyverse’ . Voudrais-tu que je l'installe
+| pour toi maintenant ?
+
+1: Oui
+2: Non
+
+Selection: 1
+
+| Installation du paquet ‘tidyverse’ maintenant...
+also installing the dependencies ‘colorspace’, ‘bit’, ‘sass’, ‘cachem’, ‘memoise’, ‘fastmap’, ‘farver’, ‘labeling’, ‘munsell’, ‘RColorBrewer’, ‘viridisLite’, ‘rappdirs’, ‘rematch’, ‘bit64’, ‘prettyunits’, ‘highr’, ‘xfun’, ‘bslib’, ‘htmltools’, ‘jquerylib’, ‘tinytex’, ‘backports’, ‘generics’, ‘assertthat’, ‘blob’, ‘DBI’, ‘tidyselect’, ‘data.table’, ‘gtable’, ‘isoband’, ‘scales’, ‘gargle’, ‘uuid’, ‘cellranger’, ‘ids’, ‘cpp11’, ‘timechange’, ‘clipr’, ‘vroom’, ‘tzdb’, ‘progress’, ‘knitr’, ‘rmarkdown’, ‘selectr’, ‘broom’, ‘dbplyr’, ‘dplyr’, ‘dtplyr’, ‘forcats’, ‘ggplot2’, ‘googledrive’, ‘googlesheets4’, ‘haven’, ‘hms’, ‘lubridate’, ‘modelr’, ‘purrr’, ‘readr’, ‘readxl’, ‘reprex’, ‘rstudioapi’, ‘rvest’, ‘tidyr’, ‘xml2’
+
+
+| Le paquet ‘tidyverse’ a été chargé correctement !
+
+| Cette leçon requiert le paquet ‘questionr’ . Voudrais-tu que je l'installe
+| pour toi maintenant ?
+
+1: Oui
+2: Non
+
+Selection: 1
+
+| Installation du paquet ‘questionr’ maintenant...
+also installing the dependencies ‘Rcpp’, ‘R.methodsS3’, ‘R.oo’, ‘R.utils’, ‘proxy’, ‘httpuv’, ‘xtable’, ‘fontawesome’, ‘sourcetools’, ‘later’, ‘promises’, ‘commonmark’, ‘R.cache’, ‘e1071’, ‘shiny’, ‘miniUI’, ‘styler’, ‘classInt’, ‘labelled’
+
+
+| Le paquet ‘questionr’ a été chargé correctement !
+
+  |                                                                   |   0%
+
+| Une des plus grandes forces de R par rapport à d'autres langages de
+| programmation est la facilité avec laquelle il est possible de créer des
+| graphiques de bonne qualité. Nous allons voir dans cette leçon les bases
+| des représentations graphiques dans R. Nous allons pour ce faire utiliser
+| la librairie ggplot2. R contient une librairie graphique intégrée, mais
+| celle-ci est relativement moins pratique et moins puissante que ggplot2.
+
+...
+
+  |===                                                                |   4%
+| Chargez la base de données déjà existante rp2018 dans R à l'aide de la
+| commande data(rp2018).
+
+> data(rp2018)
+
+| Excellent travail !
+
+  |=====                                                              |   8%
+| ggplot a une limitation sur les types de données qu'il prend en entrée.
+| Elles doivent être sous forme de tableaux. Les seuls tableaux que vous
+| avez vu jusqu'à présent sont des dataframes. Le but de cette leçon est de
+| vous introduire différents types de représentations graphiques et leurs
+| arguments. Les sorties n'auront peut-être pas l'air très intéressantes,
+| mais tout serait plus intéressant avec des données plus larges.
+
+...
+
+  |========                                                           |  12%
+| Affichez l'aide pour le rp2018, à l'aide de help ou ?.
+
+> rp2018
+# A tibble: 5,417 × 62
+   code_insee commune   code_…¹ region code_…² depar…³ pop_tot pop_cl pop_0…⁴
+   <chr>      <chr>     <chr>   <chr>  <chr>   <chr>     <dbl> <fct>    <dbl>
+ 1 01004      Ambérieu… 84      Auver… 01      Ain      14204  10 00…   2716.
+ 2 01007      Ambronay  84      Auver… 01      Ain       2763  2 000…    616.
+ 3 01014      Arbent    84      Auver… 01      Ain       3356  3 001…    630.
+ 4 01024      Attignat  84      Auver… 01      Ain       3196  3 001…    684.
+ 5 01025      Bâgé-Dom… 84      Auver… 01      Ain       4078. 3 001…    874.
+ 6 01027      Balan     84      Auver… 01      Ain       2513  2 000…    483 
+ 7 01031      Bellignat 84      Auver… 01      Ain       3632  3 001…    736.
+ 8 01032      Béligneux 84      Auver… 01      Ain       3351  3 001…    875 
+ 9 01033      Valserhô… 84      Auver… 01      Ain      16431  10 00…   3301.
+10 01034      Belley    84      Auver… 01      Ain       9122. 5 001…   1667.
+# … with 5,407 more rows, 53 more variables: pop_15_29 <dbl>,
+#   pop_18_24 <dbl>, pop_75p <dbl>, pop_femmes <dbl>, pop_act_15p <dbl>,
+#   pop_chom <dbl>, pop_agric <dbl>, pop_indep <dbl>, pop_cadres <dbl>,
+#   pop_interm <dbl>, pop_empl <dbl>, pop_ouvr <dbl>, pop_scol_18_24 <dbl>,
+#   pop_non_scol_15p <dbl>, pop_dipl_aucun <dbl>, pop_dipl_bepc <dbl>,
+#   pop_dipl_capbep <dbl>, pop_dipl_bac <dbl>, pop_dipl_sup2 <dbl>,
+#   pop_dipl_sup34 <dbl>, pop_dipl_sup <dbl>, log_rp <dbl>, …
+# ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
+
+| Ce n'est pas la bonne réponse, mais cherche encore. ou tape info() pour
+| plus d'options.
+
+| Tapez ?rp2018 ou help(rp2018) pour voir des détails sur le dataframe
+| rp2018.
+
+> ?rp2018
+
+| Excellent work!
+
+  |==========                                                         |  15%
+| Vous pouvez voir que le dataframe a 62 variables et 5417 lignes. Nous
+| allons seulement nous intéresser à un sous-ensemble de ces variables,
+| regroupé dans la base de donnée rp qui est déjà pré-entrée pour vous.
+
+...
+
+  |=============                                                      |  19%
+| Utiliser head() sur rp pour voir les premières lignes des données.
+
+> head(rp)
+# A tibble: 6 × 62
+  code_insee commune    code_…¹ region code_…² depar…³ pop_tot pop_cl pop_0…⁴
+  <chr>      <chr>      <chr>   <chr>  <chr>   <chr>     <dbl> <fct>    <dbl>
+1 13001      Aix-en-Pr… 93      Prove… 13      Bouche…  143097 100 0…  19370.
+2 13002      Allauch    93      Prove… 13      Bouche…   20860 10 00…   3357.
+3 13003      Alleins    93      Prove… 13      Bouche…    2516 2 000…    482.
+4 13004      Arles      93      Prove… 13      Bouche…   51031 50 00…   8179.
+5 13005      Aubagne    93      Prove… 13      Bouche…   47208 10 00…   8537.
+6 13007      Auriol     93      Prove… 13      Bouche…   12771 10 00…   2178.
+# … with 53 more variables: pop_15_29 <dbl>, pop_18_24 <dbl>, pop_75p <dbl>,
+#   pop_femmes <dbl>, pop_act_15p <dbl>, pop_chom <dbl>, pop_agric <dbl>,
+#   pop_indep <dbl>, pop_cadres <dbl>, pop_interm <dbl>, pop_empl <dbl>,
+#   pop_ouvr <dbl>, pop_scol_18_24 <dbl>, pop_non_scol_15p <dbl>,
+#   pop_dipl_aucun <dbl>, pop_dipl_bepc <dbl>, pop_dipl_capbep <dbl>,
+#   pop_dipl_bac <dbl>, pop_dipl_sup2 <dbl>, pop_dipl_sup34 <dbl>,
+#   pop_dipl_sup <dbl>, log_rp <dbl>, log_proprio <dbl>, log_loc <dbl>, …
+# ℹ Use `colnames()` to see all variable names
+
+| C'est du bon boulot !
+
+  |===============                                                    |  23%
+| C'est toujours une bonne idée d'avoir une petite idée des données avant de
+| travailler dessus. Quelques commandes R sont utiles pour cela, notamment
+| dim(), names(), head(), tail() et summary().
+
+...
+
+  |==================                                                 |  27%
+| Utilisez une des commandes précédentes (mais pas head()) pour voir ce
+| qu'elle donne.
+
+> names(rp)
+ [1] "code_insee"       "commune"          "code_region"     
+ [4] "region"           "code_departement" "departement"     
+ [7] "pop_tot"          "pop_cl"           "pop_0_14"        
+[10] "pop_15_29"        "pop_18_24"        "pop_75p"         
+[13] "pop_femmes"       "pop_act_15p"      "pop_chom"        
+[16] "pop_agric"        "pop_indep"        "pop_cadres"      
+[19] "pop_interm"       "pop_empl"         "pop_ouvr"        
+[22] "pop_scol_18_24"   "pop_non_scol_15p" "pop_dipl_aucun"  
+[25] "pop_dipl_bepc"    "pop_dipl_capbep"  "pop_dipl_bac"    
+[28] "pop_dipl_sup2"    "pop_dipl_sup34"   "pop_dipl_sup"    
+[31] "log_rp"           "log_proprio"      "log_loc"         
+[34] "log_hlm"          "log_sec"          "log_maison"      
+[37] "log_appart"       "age_0_14"         "age_15_29"       
+[40] "age_75p"          "femmes"           "chom"            
+[43] "agric"            "indep"            "cadres"          
+[46] "interm"           "empl"             "ouvr"            
+[49] "etud"             "dipl_aucun"       "dipl_bepc"       
+[52] "dipl_capbep"      "dipl_bac"         "dipl_sup2"       
+[55] "dipl_sup34"       "dipl_sup"         "resid_sec"       
+[58] "proprio"          "locataire"        "hlm"             
+[61] "maison"           "appart"          
+
+| C'est tout à fait ça !
+
+  |=====================                                              |  31%
+| On va maintenant utiliser ggplot() pour afficher les données. Avant de
+| l'utiliser, mieux vaut regarder comment l'utiliser. Tapez ?ggplot pour
+| afficher l'aide sur ggplot.
+
+> ?ggplot
+
+| Excellent travail !
+
+  |=======================                                            |  35%
+| Pour dire à ggplot que vous allez utiliser la base de donnée rp, tapez :
+| ggplot(rp)
+
+> ggplot(rp)
+
+| Excellent work!
+
+  |==========================                                         |  38%
+| Rien ne se passe ! Il manque en effet à R deux éléments. Premièrement,
+| comment nous souhaitons représenter les données ? On utilise une géométrie
+| pour cela (famille de commandes geom_xxx). Deuxièmement, quelle(s)
+| variable(s) issues des données nous souhaitons représenter ? Ces variables
+| sont données par l'argument aes() dans geom_xxx().
+
+...
+
+  |============================                                       |  42%
+| Le mot-clé essentiel pour spécifier comment est geom_ (geométrie). Si on
+| veut par exemple représenter les données sous formes d'histogramme, on
+| doit utiliser geom_histogram(). La syntaxe de ggplot() est telle que nous
+| devons ajouter au graphique l'esthétique. Il faut taper ggplot(rp) +
+| geom_histogram(aes(cadres)) pour afficher le graphique. Essayez.
+
+> ggplot(rp) + geom_histogram(aes(cadres))
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+| All that practice is paying off!
+
+  |===============================                                    |  46%
+| Remarquez que R a automatiquement donné des noms aux axes. Il utilise
+| comme nom le nom des colonnes du tableau quand il y en a une. Il trouve
+| ensuite le terme le plus adapté. Il a aussi automatiquement créé des
+| échelles avec des beaux nombres ronds sur les axes.
+
+...
+
+  |==================================                                 |  50%
+| Essayez maintenant de représenter le même graphique non pas avec la
+| variable cadre mais avec la variable ouvr.
+
+> ggplot(rp) + geom_histogram(aes(ouvr))
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+| Excellent work!
+
+  |====================================                               |  54%
+| Représentons maintenant un nuage de points. La géométrie ne sera plus un
+| histogram, mais un point : geom_histogram devient geom_point. Des points
+| dans un graphique sont caractérisés par leur abscisse et leur ordonnée. Il
+| faut donc donner deux variables à aes() pour pouvoir représenter un nuage
+| de point. Disons qu'en variable x on veut utiliser la proportion de
+| diplomés du supérieur (dipl_sup) et qu'en variable y on veut utiliser la
+| proportion de cadres. Essayez de modifier les commandes précédentes pour
+| obtenir ce graphique.
+
+> ggplot(rp) + geom_point(aes(dipl_sup))
+Error in `geom_point()`:
+! Problem while setting up geom.
+ℹ Error occurred in the 1st layer.
+Caused by error in `compute_geom_1()`:
+! `geom_point()` requires the following missing aesthetics: y
+Run `rlang::last_error()` to see where the error occurred.
+> ggplot(rp) + geom_point(aes(dipl_sup, cadres))
+
+| Continue comme ça !
+
+  |=======================================                            |  58%
+| Nous allons voir comment changer différents aspects du graphique. Si par
+| exemple nous voulons changer la légende de l'axe des abscisse par diplomés
+| du supérieur, il faut ajouter xlab('diplomés du supérieur') à nos
+| commandes précédentes. Essayez pour voir.
+
+> ggplot(rp) + geom_point(aes(dipl_sup, cadres)) + xlab('diplomés du supérieur')
+
+| Continue comme ça !
+
+  |=========================================                          |  62%
+| On peut faire quelque chose de similaire à l'axe des ordonnées à l'aide de
+| ylab.
+
+...
+
+  |============================================                       |  65%
+| On peut modifier certains attributs graphiques d'une geom en utilisant des
+| arguments supplémentaires. On peut utiliser color pour modifier la
+| couleur, size pour modifier la taille et alpha pour modifier la
+| transparence. Essayez de taper ggplot(rp) + geom_point(aes(x = dipl_sup, y
+| = cadres), color = "red", size = 2, alpha = 0.3) et observez le résultat.
+
+> ggplot(rp) + geom_point(aes(x = dipl_sup, y = cadres), color = "red", size =2, alpha = 0.3)
+
+| Your dedication is inspiring!
+
+  |==============================================                     |  69%
+| Un mappage, dans ggplot2, est une mise en relation entre un attribut
+| graphique du geom (position, couleur, taille...) et une variable du
+| tableau de données. Ces mappages sont passés aux différents geom via la
+| fonction aes() (abbréviation d’aesthetic). On a déjà vu les mappages x et
+| y pour un nuage de points. Ceux-ci signifient que la position d’un point
+| donné horizontalement (x) et verticalement (y) dépend de la valeur des
+| variables passées comme arguments x et y dans aes()
+
+...
+
+  |=================================================                  |  73%
+| Il y en a d'autres, color par exemple permet de faire varier la couleur
+| des points automatiquement suivant une troisième variable. Essayez de
+| taper ggplot(rp) + geom_point(aes(x=dipl_sup, y=cadres,
+| color=departement)) et observez le résultat.
+
+> ggplot(rp) + geom_point(aes(x=dipl_sup, y=cadres,color=departement))
+
+| C'est tout à fait ça !
+
+  |====================================================               |  77%
+| Qu'observe-t-on ? R a coloré les points suivant les départements et a
+| automatiquement créé la légende correspondante. On peut ainsi observer que
+| les Hauts-de-Seine ont une proportion de diplômés du supérieur et de
+| cadres plus importante que les autres départements, alors que le Rhône
+| semble réparti de manière assez homogène sur toute la distribution et que
+| la Lozère en a assez peu.
+
+...
+
+  |======================================================             |  81%
+| size permet de faire varier la taille des points. Si on veut ajouter une
+| dépendance de la taille des points à la population totale, on ajoutera
+| size = pop_tot dans aes(). Essayez.
+
+> ggplot(rp) +  geom_point(aes(x=dipl_sup, y=cadres, color=departement, size=pop_tot))
+
+| Excellent travail !
+
+  |=========================================================          |  85%
+| La plupart des arguments utilisés dans aes() peuvent être utilisés en
+| dehors de aes() et réciproquement. Quand ils sont utilisés dans aes(), il
+| y aura un lien entre l'attribut graphique et la variable. Quand ils sont
+| utilisé en dehors de aes(), il n'y aura pas de lien entre la variable et
+| l'attribut graphique.
+
+...
+
+  |===========================================================        |  88%
+| Il est aussi possible de représenter plusieurs geom simultanément sur le
+| même graphique, il suffit de les lier par +. Cela peut être utile par
+| exemple pour faire passer une droite de régression dans un nuage de
+| points. Vous verrez cela en économétrie plus tard.
+
+...
+
+  |==============================================================     |  92%
+| un dernier point que nous allons voir sont les scale. Les plus couramment
+| utilisés sont scale_x_continuous ou scale_x_discrete, qui modifie l'axe
+| des abscisses, et leur équivalent avec y pour modifier l'axe des
+| ordonnées. Les versions continuous s'utilisent quand la variable
+| représentée est continue. Les versions discrete quand la variable est
+| discrète (logique). On peut utiliser par exemple comme argument
+| limits=c(min, max) pour modifier le minimum et le maximum de l'axe.
+
+...
+
+  |================================================================   |  96%
+| Les diplômés du supérieur sont une proportion continue. On peut vouloir la
+| représenter entre 0 et 100. Nous utiliserons donc
+| scale_x_continuous(limits=c(0, 100)) en plus des commandes déjà utilisées
+| précédemment pour modifier le graphique en conséquence. Essayez. N'oubliez
+| pas de garder les couleurs pour le département et la variation suivant la
+| population de la commune.
+
+> 
+> ggplot(rp) + geom_point(aes(x=dipl_sup, y=cadres, color=departement, size=pop_tot)) + scale_x_continuous(limits=c(0, 100))
+
+| C'est tout à fait ça !
+
+  |===================================================================| 100%
+| Souhaitez-vous soumettre votre progression sur Moodle à votre enseignant
+| (cela ne fonctionnera que pour les étudiants de l'université Paris 8) ? Si
+| vous ne le faites pas maintenant, vous pourrez toujours lui envoyer le
+| fichier 'Representations_graphiques.txt' qui a été créé plus tard.
+
+1: Non
+2: Oui
+
+Selection: 2
+
+| Continue comme ça !
+
+| Tu es arrivé(e) au bout de cette leçon! Retour au menu principal...
+
+| Choisis un cours ou tape 0 pour quitter Swirl.
+
+1: InitiationR
+2: Montre-moi le répertoire des cours Swirl !
+
+Selection:

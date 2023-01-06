@@ -1,0 +1,784 @@
+> library(swirl)
+
+| Hi! Type swirl() when you are ready to begin.
+
+> install_course_github('EliasBcd', 'InitiationR')
+Downloading: 93 kB     
+> select_language('french', append_rprofile = TRUE)
+> swirl()
+
+| Bienvenue sur Swirl ! Connecte-toi. Si ce n'est pas ta première
+| connexion, indique ton nom utilisé précédemment. Si tu dois
+| encore choisir ton nom, fais preuve d'un peu d'originalité !
+
+Comment dois-je t'appeler ? Nivediha
+
+| Merci, Nivediha. Quelques instructions de base avant d'attaquer
+| la première leçon. Tout d'abord, si tu vois s'afficher '...',
+| cela veut dire que tu dois appuyer sur Entrée quand tu as fini
+| de lire et es prêt(e) à continuer.
+
+...  <-- That's your cue to press Enter to continue
+
+| Et quand tu vois 'Réponse:', le prompt R (>), ou si tu es
+| invité(e) à sélectionner une option, c'est à toi de taper ta
+| réponse et d'appuyer sur Entrée pour continuer.
+
+Select 1, 2, or 3 and press Enter 
+
+1: Continuer.
+2: Avancer.
+3: C'est parti !
+
+Selection: 1
+
+| You can exit swirl and return to the R prompt (>) at any time by
+| pressing the Esc key. If you are already at the prompt, type
+| bye() to exit and save your progress. When you exit properly,
+| you'll see a short message letting you know you've done so.
+
+| Quand tu es arrivé(e) au prompt R (>):
+| -- Tape skip() pour sauter la question.
+| -- Tape play() pour expérimenter et jouer avec R; Swirl en fera
+| abstraction...
+| -- JUSQU'A ce que tu tapes nxt() pour regagner l'attention de
+| Swirl.
+| -- Tape bye() pour quitter Swirl. Ta progression sera
+| sauvegardée.
+| -- Tape main() pour retourner au menu principal de Swirl.
+| -- Tape info() pour montrer les options une nouvelle fois.
+
+| C'est parti !
+
+...
+
+| Choisis un cours ou tape 0 pour quitter Swirl.
+
+1: InitiationR
+2: Montre-moi le répertoire des cours Swirl !
+
+Selection: 1
+
+| Choisis une leçon ou tape 0 pour retourner au menu principal.
+
+ 1: Manipulations simples
+ 2: Assignations et objets
+ 3: Types
+ 4: Vecteurs
+ 5: Fichiers et espace de travail
+ 6: Logique
+ 7: Valeurs manquantes
+ 8: Vecteurs numériques
+ 9: Dataframes
+10: Scripts et fonctions
+11: Control Flow
+12: Representations graphiques
+13: Tirages aleatoires
+
+Selection: 10
+
+| Attempting to load lesson dependencies...
+
+| Cette leçon requiert le paquet ‘base64enc’ . Voudrais-tu que je
+| l'installe pour toi maintenant ?
+
+1: Oui
+2: Non
+
+Selection: 1
+
+| Installation du paquet ‘base64enc’ maintenant...
+
+| Le paquet ‘base64enc’ a été chargé correctement !
+
+  |                                                         |   0%
+
+| Jusqu’ici on a utilisé R de manière "interactive", en saisissant
+| des commandes directement dans la console. Ce n'est pas très
+| pratique pour sauvegarder son travail. Lorsque R ou RStudio
+| redémarre, tout ce qui a été effectué dans la console est perdu.
+
+...
+
+  |=                                                        |   2%
+| On va plutôt regrouper les commandes dans des scripts (de
+| simples fichiers texte), qui vont garder une trace de toutes les
+| opérations effectuées. En rouvrant les scripts et en réexécutant
+| les commandes qu’ils contiennent on pourra “reproduire” le
+| chargement des données, leur traitement, les analyses et leurs
+| résultats. Pour créer un script, il suffit de sélectionner le
+| menu Fichier (File), puis Nouveau fichier (New File) et script R
+| (R script). Une quatrième zone apparaît alors en haut à gauche
+| de l’interface de RStudio. On peut enregistrer notre script à
+| tout moment dans un fichier avec l’extension .R, en cliquant sur
+| l’icône de disquette ou en choisissant Fichier (File) puis
+| Sauvegarder (Save) ou en utilisant le raccourci Ctrl + S (Cmd +
+| S sous Mac).
+
+...
+
+  |==                                                       |   4%
+| Un script est un fichier texte brut qui s’édite de la manière
+| habituelle. À la différence de la console, quand on appuie sur
+| Entrée, cela n’exécute pas la commande en cours mais insère un
+| saut de ligne. Pour exécuter une commande dans un script, il
+| faut positionner le curseur sur la ligne de la commande en
+| question, et de cliquer sur le bouton Run dans la barre d’outils
+| juste au-dessus de la zone d’édition du script. On peut aussi
+| utiliser le raccourci clavier Ctrl + Entrée (Cmd + Entrée sous
+| Mac). On peut aussi sélectionner plusieurs lignes avec la souris
+| ou le clavier et cliquer sur Run (ou utiliser le raccourci
+| clavier), et l’ensemble des lignes est exécuté d’un coup.
+
+...
+
+  |===                                                      |   6%
+| Vous allez maintenant créer votre premier script. Il contiendra
+| une assignation du vecteur c(156, 164, 197, 147, 173) à l'objet
+| tailles. Puis une assignation du vecteur c(45, 59, 110, 44, 88)
+| au vecteur poids. Puis un calcul de l'imc des à l'aide des
+| vecteurs précédent et l'assignation du résultat à l'objet imc.
+| swirl va automatiquement ouvrir une fenêtre avec un script pour
+| cet exercice. Essayez de modifier le script qui va s'afficher.
+| Une fois cela fait, vous devez tapez submit() dans l'invite de
+| commande pour soumettre votre réponse.
+
+> submit()
+
+| Chargement de ton script...
+
+
+| Continue comme ça !
+
+  |=====                                                    |   8%
+| Vous devez avoir remarqué dans le script les lignes qui
+| commençaient par un signe dièse #. Ces lignes indiquent un
+| commentaire dans R et ne sont pas prises en compte dans
+| l'évaluation du script. Les commentaires sont une partie très
+| importante d'un script (et des fonctions que nous allons voir).
+| Ils permettent de documenter les actions du script (ou de la
+| fonction) afin de dire ce qu'il fait. On peut ainsi retrouver
+| son code des jours ou des mois plus tard et se rappeler de ce
+| qu'on a voulu faire.
+
+...
+
+  |======                                                   |  10%
+| Passons maintenant aux fonctions. Les fonctions sont une
+| composante essentielle de R. C'est un petit morceau de code qui
+| peut être traité comme n'importe quel objet R. Vous avez déjà
+| rencontré des fonctions dans ce cours. Les fonctions se repèrent
+| généralement par le nom de la fonction suivi de parenthèses.
+
+...
+
+  |=======                                                  |  12%
+| Essayons déjà une fonction simple, incluse dans le text. La
+| fonction Sys.Date() renvoit une chaîne de caractères avec la
+| date du jour. Tapez Sys.Date() pour voir ce qu'il se produit.
+
+> Sys.Date()
+[1] "2022-12-09"
+
+| C'est tout à fait ça !
+
+  |========                                                 |  14%
+| La plupart des fonctions dans R renvoient une valeur. Des
+| fonctions telles que Sys.Date() envoit comme résultat une valeur
+| qui dépend de votre ordinateur. D'autres fonctions, au
+| contraire, manipulent des données afin de calculer un résultat.
+
+...
+
+  |=========                                                |  16%
+| La fonction mean() prend comme valeur d'entrée (ou argument) un
+| vecteur et calcule la moyenne des éléments de ce vecteur. On dit
+| souvent qu'on passe un argument à une fonction pour dire qu'on
+| l'utilise comme valeur d'entrée. Les arguments sont écrits entre
+| les parenthèses. Essayez de passer le vecteur c(2, 4, 5) comme
+| argument à la fonction mean().
+
+> mean(c(2, 4, 5))
+[1] 3.666667
+
+| Perseverance, that's the answer.
+
+  |==========                                               |  18%
+| Les fonctions prennent généralement comme arguments des valeurs
+| sur lesquelles elles opèrent des calculs. La fonction mean(),
+| par exemple, prend comme argument un vecteur, comme dans le cas
+| précédent. La fonction mean() somme ensuite tous les nombres du
+| vecteurs et divise cette somme par la longueur du vecteur.
+
+...
+
+  |===========                                              |  20%
+| Dans la question suivante, je vais vous demander de modifier un
+| script, comme au tout début de cette leçon. Quand vous aurez
+| fini de modifier le script, n'oubliez pas de sauvegarder votre
+| script puis de taper submit() pour faire évaluer votre réponse.
+| Il y aura des commentaires dans le script, lisez-les
+| attentivement !
+
+...
+
+  |=============                                            |  22%
+| La dernière expression évaluée dans une fonction est la valeur
+| retournée par la fonction, le résultat de la fonction. Nous
+| voulons que cette fonction prenne un argument, x, et de nous
+| renvoyer comme résultat cet argument non modifié. Effacez le #
+| dans le script pour faire en sorte que l'argument soit renvoyé
+| tel que. N'oubliez pas de sauvegardez et tapez sur submit().
+
+> submit
+function () 
+{
+    invisible()
+}
+<bytecode: 0x560bcd89f3e8>
+<environment: namespace:swirl>
+> submit()
+
+| Chargement de ton script...
+
+Error in source(e$script_temp_path, encoding = "UTF-8") : 
+  /tmp/RtmpyyWjle/boring_function.R:26:1: unexpected '}'
+25:   function(x)
+26: }
+    ^
+
+| Ce n'est pas la bonne réponse, mais cherche encore.
+
+| N'oubliez pas d'enlever le signe # de commentaire et de ne
+| laisser que x sur la ligne.
+
+> submit()
+
+| Chargement de ton script...
+
+
+| Dans le mille ! Bien joué !
+
+  |==============                                           |  24%
+| Maintenant que vous avez créer votre première fonction,
+| essayons-la ! Tapez boring_function('Hello World!'). Si votre
+| fonction fonctionne correctement, vous devriez voir apparaître
+| comme résultat 'Hello World!'
+
+> boring_function('Hello World!')
+[1] "Hello World!"
+
+| C'est tout à fait ça !
+
+  |===============                                          |  26%
+| Félicitations ! Vous avez écrit votre première fonction. Les
+| fonctions sont un élément clé de R avec les objets. Pour
+| comprendre le fonctionnement de R, deux choses sont importantes.
+| Premièrement, tout ce qui existe est un objet. Deuxièmement,
+| tout ce qui se produit est une fonction. (Citation de John
+| Chambers, un des créateur de R).
+
+...
+
+  |================                                         |  28%
+| Si vous voulez connaître le code de calcul d'une fonction, tapez
+| son nom sans parenthèses ni arguments. Essayez pour la fonction
+| boring_function.
+
+> boring_function
+function(x) {
+  x
+}
+<bytecode: 0x560bcda97cf0>
+
+| Tu es extraordinaire !
+
+  |=================                                        |  30%
+| Faisons une fonction un peu plus utile. Reproduisons le résultat
+| de la fonction mean() dans une fonction appelée my_mean().
+| Rappelez-vous que la moyenne est la somme de tous les nombres
+| dans le vecteur divisé par sa longueur.
+
+...
+
+  |==================                                       |  32%
+| Sauvegardez bien votre script avant de taper submit().
+
+> submit()
+
+| Chargement de ton script...
+
+
+| Not quite, but you're learning! Try again.
+
+| Utilisew la fonction sum() pour trouver la somme de tous les
+| vecteurs d'une fonction et la fonction length pour trouver la
+| taille du vecteur.
+
+> submit()
+
+| Chargement de ton script...
+
+
+| Not quite, but you're learning! Try again.
+
+| Utilisew la fonction sum() pour trouver la somme de tous les
+| vecteurs d'une fonction et la fonction length pour trouver la
+| taille du vecteur.
+
+> submit()
+
+| Chargement de ton script...
+
+
+| Pas tout à fait, mais continue à chercher !
+
+| Utilisew la fonction sum() pour trouver la somme de tous les
+| vecteurs d'une fonction et la fonction length pour trouver la
+| taille du vecteur.
+
+> submit()
+
+| Chargement de ton script...
+
+
+| Try again. Getting it right on the first try is boring anyway!
+
+| Utilisew la fonction sum() pour trouver la somme de tous les
+| vecteurs d'une fonction et la fonction length pour trouver la
+| taille du vecteur.
+
+> submit()
+
+| Chargement de ton script...
+
+
+| C'est tout à fait ça !
+
+  |===================                                      |  34%
+| Testez maintenant votre fonction my_mean() en trouvant la
+| moyenne de du vecteur c(4, 5, 10).
+
+> my_mean(c(4, 5, 10))
+
+| Excellent travail !
+
+  |=====================                                    |  36%
+| Essayons maintenant d'écrire une fonction avec des arguments par
+| défaut. Il est parfois utile de fixer une valeur par défaut pour
+| des arguments d'une fonction. Par exemple si votre fonction va
+| utiliser la même valeur très souvent.
+
+...
+
+  |======================                                   |  38%
+| Sauvegardez bien votre script avant de taper submit().
+
+> submit()
+
+| Chargement de ton script...
+
+Error in source(e$script_temp_path, encoding = "UTF-8") : 
+  /tmp/RtmpyyWjle/remainder.R:37:6: unexpected input
+36: remainder <- function(num, divisor) {
+37:   um % divisor
+         ^
+
+| Bien tenté, mais ce n'est pas exactement ce que j'espérais.
+| Essaie à nouveau.
+
+| N'oubliez pas de mettre les valeurs par défaut.
+
+> submit()
+
+| Chargement de ton script...
+
+Error in source(e$script_temp_path, encoding = "UTF-8") : 
+  /tmp/RtmpyyWjle/remainder.R:37:7: unexpected input
+36: remainder <- function(num, divisor) {
+37:   num % divisor
+          ^
+
+| Presque ! Essaie encore !
+
+| N'oubliez pas de mettre les valeurs par défaut.
+
+> submit()
+
+| Chargement de ton script...
+
+
+| Not quite, but you're learning! Try again.
+
+| N'oubliez pas de mettre les valeurs par défaut.
+
+> submit()
+
+| Chargement de ton script...
+
+
+| Tu assures !
+
+  |=======================                                  |  40%
+| Testons un petit peu le comportement de la fonction remainder.
+| Tapez remainder(5) et observez le résultat.
+
+> remainder(5)
+[1] 1
+
+| Tu assures !
+
+  |========================                                 |  42%
+| Observons ce qu'il s'est passé. Vous avez passé un argument à la
+| fonction. R a décidé que cette argument était 'num', puisque
+| 'num' est le premier argument de la fonction. La valeur par
+| défaut pour 'divisor' est 2, R a donc utilisé cette valeur dans
+| le calcul.
+
+...
+
+  |=========================                                |  44%
+| Observons maintenant le comportement de remainder avec 2
+| arguments. Tapez remainder(11, 5) et observons le résultat.
+
+> remainder(11, 5)
+[1] 1
+
+| All that hard work is paying off!
+
+  |==========================                               |  46%
+| R a utilisé le premier argument pour 'num' et le deuxième pour
+| 'divisor'. C'est bien le comportement attendu.
+
+...
+
+  |===========================                              |  48%
+| Il est aussi possible de spécifier explicitement les arguments
+| avec leur nom. Quand vous procédez ainsi, l'ordre des arguments
+| devient sans importance. Essayez en tapant remainder(divisor =
+| 11, num = 5).
+
+> remainder(divisor = 11, num = 5)
+[1] 5
+
+| Bravo!
+
+  |============================                             |  50%
+| Il y a une grande différence entre remainder(11, 5) et
+| remainder(divisor = 11, num = 5).
+
+...
+
+  |==============================                           |  52%
+| R peut aussi partiellement appairer valeurs et arguments. Tapez
+| remainder(4, div = 2) et observer le résultat.
+
+> remainder(4, div = 2)
+[1] 0
+
+| All that practice is paying off!
+
+  |===============================                          |  54%
+| Vous voulez en général faire en sorte que votre code soit
+| lisible et compréhensible. Mélanger l'ordre des arguments en
+| utilisant leur nom ou appairer seulement une partie des
+| arguments n'est pas une bonne pratique. Faites-le avec
+| parcimonie.
+
+...
+
+  |================================                         |  56%
+| En parlant d'arguments, vous vous demandez peut-être comment on
+| peut découvrir tous les arguments d'une fonction. Fort
+| heureusement, R a une fonction pour ça, args(). Utilisez args()
+| pour connaître les arguments de remainder.
+
+> args(remainder)
+function (num, divisor = 2) 
+NULL
+
+| Quel talent !
+
+  |=================================                        |  58%
+| Vous ne vous en êtes peut-être pas rendu compte, mais vous venez
+| de faire quelque chose d'intéressant. Vous avez utilisé comme
+| argument d'une fonction une autre fonction ! Et oui, il est
+| possible d'utiliser comme argument d'une fonction une autre
+| fonction. Ecrivons un petit script pour explorer cette
+| possibilité.
+
+...
+
+  |==================================                       |  60%
+| Sauvegardez bien votre script avant de taper submit().
+
+> submit()
+
+| Chargement de ton script...
+
+
+| Bon boulot !
+
+  |===================================                      |  62%
+| Utilisons maintenant votre fonction evaluate() pour trouver
+| l'écart type du vecteur c(1.4, 3.6, 7.9, 8.8).
+
+> c(1.4, 3.6, 7.9, 8.8)
+[1] 1.4 3.6 7.9 8.8
+
+| Not quite, but you're learning! Try again. ou tape info() pour
+| plus d'options.
+
+| La fonction écart-type dans R est la fonction sd(). N'oubliez
+| pas que pour passer une fonction en argument il ne faut pas
+| mettre de parenthèses à cette fonction.
+
+> evaluate(sd, c(1.4, 3.6, 7.9, 8.8))
+[1] 3.514138
+
+| Quel talent !
+
+  |====================================                     |  64%
+| L'idée d'utiliser une fonction comme argument dans une autre
+| fonction est un concept clé de programmation. Encore plus fort :
+| il est possible de passer des fonctions en arguments dans une
+| autre fonction sans avoir défini la fonction auparavant. Les
+| fonctions de ce type sont appelées fonctions anonymes (ou lambda
+| fonctions).
+
+...
+
+  |======================================                   |  66%
+| Nous allons utiliser la fonction evaluate pour étudier le
+| fonctionnement des fonctions anonymes. Comme premier argument à
+| evaluate, nous allons écrire une petite fonction, qui tient sur
+| une ligne. Comme second argument à la fonction evaluate nous
+| allons utiliser comme argument un tout petit ensemble de
+| données.
+
+...
+
+  |=======================================                  |  68%
+| Tapez la commande suivante, nous allons voir par la suite
+| comment elle fonctionne : evaluate(function(x){x+1}, 6)
+
+> evaluate(function(x){x+1}, 6)
+[1] 7
+
+| Quelle maîtrise !
+
+  |========================================                 |  70%
+| Le premier argument d'evaluate est une fonction anonyme très
+| simple qui prend comme argument 'x' et retourne 'x+1'. Nous
+| avons dit à evaluate de passer comme argument 6 à cette
+| fonction, le résultat est donc 7.
+
+...
+
+  |=========================================                |  72%
+| Essayez d'utiliser evaluate() avec une fonction anonyme afin
+| qu'elle retourne le premier élément d'un vecteur. Votre fonction
+| anonyme devrait prendre un seul argument, qui devrait être la
+| variable x. Le vecteur que vous devez utiliser pour tester cette
+| fonction doit être le vecteur c(8, 4, 0).
+
+> evaluate(function(x){x+1}, c(8, 4, 0))
+[1] 9 5 1
+
+| Tente encore une fois. ou tape info() pour plus d'options.
+
+| Rappelez vous comment on fait appel à un élément particulier
+| dans un vecteur à l'aide de son index. Votre fonction anonyme ne
+| doit avec qu'un seul argument et le nom de cette argument doit
+| être x.
+
+> evaluate(function(x){x[1]}, c(8, 4, 0))
+[1] 8
+
+| Tu assures !
+
+  |==========================================               |  74%
+| Utilisez maintenant la fonction evaluate() et une fonction
+| anonyme afin de retourner le dernier élément d'un vecteur. Votre
+| fonction anonyme ne doit avoir qu'un seul argument qui sera x.
+| Le vecteur que vous devez utiliser pour tester cette fonction
+| doit être le vecteur c(8, 4, 0).
+
+> evaluate(function(x){x[x]}, c(8, 4, 0))
+[1] NA NA
+
+| Bien tenté, mais ce n'est pas exactement ce que j'espérais.
+| Essaie à nouveau. ou tape info() pour plus d'options.
+
+| Rappelez vous comment on fait appel à un élément particulier
+| dans un vecteur à l'aide de son index. Votre fonction anonyme ne
+| doit avec qu'un seul argument et le nom de cette argument doit
+| être x. La fonction length() peut être utile dans votre fonctio
+| anonyme.
+
+> evaluate(function(x){x[length(x)]}, c(8, 4, 0))
+[1] 0
+
+| C'est la bonne réponse !
+
+  |===========================================              |  76%
+| Jusqu'à la fin de cette leçon nous allons utiliser la fonction
+| paste() fréquemment. Tapez ?paste pour lire la documentation de
+| cette fonction et comprendre son fonctionnement.
+
+> ?paste
+
+| Quel talent !
+
+  |============================================             |  78%
+| Afin de comprendre comment paste() fonctionne, essayez de taper
+| paste("La", "programmation", "c'est", "facile !").
+
+> paste("La", "programmation", "c'est", "facile !")
+[1] "La programmation c'est facile !"
+
+| Quel talent !
+
+  |==============================================           |  80%
+| Ecrivons maintenant notre propre version de paste().
+
+...
+
+  |===============================================          |  82%
+| Sauvegardez bien votre script avant de taper submit().
+
+> submit()
+
+| Chargement de ton script...
+
+
+| Tu es tout près... Je le sens ! Encore une fois.
+
+| N'oubliez pas que des arguments peuvent être donnés après ...
+
+> submit()
+
+| Chargement de ton script...
+
+
+| Quel talent !
+
+  |================================================         |  84%
+| Essayons maintenant votre nouvelle fonction telegram(). Utilisez
+| votre fonction telegram() avec n'importe quels arguments.
+
+> telegram('salut') 
+[1] "START salut STOP"
+
+| Excellent work!
+
+  |=================================================        |  86%
+| Avant de continuer, nous devons faire un petit détour par les
+| listes. Nous avons déjà vu les listes dans la leçon sur les
+| types (mot clé `list`). Une capacité que nous n'avons pas
+| exploré ni exploité des listes jusqu'à présent et le fait qu'on
+| puisse nommer les éléments des listes. Par exemple, on peut
+| créer une liste contenant un vecteur poids et un vecteur
+| tailles. tailles doit être un vecteur contenant les tailles 154,
+| 175 et 165 (dant cet ordre). poids doit être un vecteur
+| contenant les poids 55, 80 et 65 (dant cet ordre). On veut
+| mettre ces deux vecteurs dans une liste. On tapera alors
+| list(tailles = c(154, 175, 165), poids = c(55, 80, 65)). On
+| souhaite assigner cette list à ma_liste.
+
+> ma_liste <- list(tailles = c(154, 175, 165), poids = c(55, 80, 65))
+
+| C'est du bon boulot !
+
+  |==================================================       |  88%
+| Observons maintenant ma_liste.
+
+> ma_liste
+$tailles
+[1] 154 175 165
+
+$poids
+[1] 55 80 65
+
+
+| Bon boulot !
+
+  |===================================================      |  90%
+| On peut accéder à un élément nommé d'une liste à l'aide de la
+| syntaxe list$nom ou bien à l'aide de list[["nom"]], tout comme
+| on a pu le faire pour des colonnes d'un data.frame. Essayez
+| d'accéder à la colonne tailles de ma_list.
+
+> ma_liste$tailles
+[1] 154 175 165
+
+| Tu es extraordinaire !
+
+  |====================================================     |  92%
+| Fin de la parenthèse sur les listes. Nous allons avoir besoin
+| des listes pour le prochain exercices que nous utilisons. En
+| effet, l'argument ... est considéré comme une liste par R.
+
+...
+
+  |======================================================   |  94%
+| Sauvegardez bien votre script avant de taper submit().
+
+> submit()
+
+| Chargement de ton script...
+
+Error in source(e$script_temp_path, encoding = "UTF-8") : 
+  /tmp/RtmpyyWjle/manif.R:33:5: unexpected symbol
+32:   args <- list(...)
+33:   A l
+        ^
+
+| Pas exactement. Retente ta chance.
+
+| Votre fonction doit contenir trois parties. Une capture des ...
+| dans une liste. Le découpage des arguments des ... et
+| l'assignation à une variable. Le passage des variables dans la
+| fonction paste().
+
+> submit()
+
+| Chargement de ton script...
+
+Error in source(e$script_temp_path, encoding = "UTF-8") : 
+  /tmp/RtmpyyWjle/manif.R:33:14: unexpected symbol
+32:   args <- list(...)
+33:   université Paris
+                 ^
+
+| Try again. Getting it right on the first try is boring anyway!
+
+| Votre fonction doit contenir trois parties. Une capture des ...
+| dans une liste. Le découpage des arguments des ... et
+| l'assignation à une variable. Le passage des variables dans la
+| fonction paste().
+
+> submit()
+
+| Chargement de ton script...
+
+
+| Presque ! Essaie encore !
+
+| Votre fonction doit contenir trois parties. Une capture des ...
+| dans une liste. Le découpage des arguments des ... et
+| l'assignation à une variable. Le passage des variables dans la
+| fonction paste().
+
+> submit()
+
+| Chargement de ton script...
+
+
+| Bien tenté, mais ce n'est pas exactement ce que j'espérais.
+| Essaie à nouveau.
+
+| Votre fonction doit contenir trois parties. Une capture des ...
+| dans une liste. Le découpage des arguments des ... et
+| l'assignation à une variable. Le passage des variables dans la
+| fonction paste().

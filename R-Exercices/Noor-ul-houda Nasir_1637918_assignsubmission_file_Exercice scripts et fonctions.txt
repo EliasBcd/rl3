@@ -1,0 +1,921 @@
+
+R version 4.2.2 (2022-10-31) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> install.packages('swirl')
+Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘utf8’, ‘pillar’, ‘pkgconfig’, ‘sys’, ‘rprojroot’, ‘crayon’, ‘fs’, ‘diffobj’, ‘fansi’, ‘rematch2’, ‘tibble’, ‘askpass’, ‘cli’, ‘glue’, ‘lifecycle’, ‘magrittr’, ‘rlang’, ‘stringi’, ‘vctrs’, ‘brio’, ‘callr’, ‘desc’, ‘ellipsis’, ‘evaluate’, ‘jsonlite’, ‘pkgload’, ‘praise’, ‘processx’, ‘ps’, ‘R6’, ‘waldo’, ‘withr’, ‘curl’, ‘mime’, ‘openssl’, ‘bitops’, ‘stringr’, ‘testthat’, ‘httr’, ‘yaml’, ‘RCurl’, ‘digest’
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/utf8_1.2.2.tar.gz'
+Content type 'application/x-gzip' length 236735 bytes (231 KB)
+==================================================
+downloaded 231 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/pillar_1.8.1.tar.gz'
+Content type 'application/x-gzip' length 674653 bytes (658 KB)
+==================================================
+downloaded 658 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/pkgconfig_2.0.3.tar.gz'
+Content type 'application/x-gzip' length 17376 bytes (16 KB)
+==================================================
+downloaded 16 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/sys_3.4.1.tar.gz'
+Content type 'application/x-gzip' length 54976 bytes (53 KB)
+==================================================
+downloaded 53 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/rprojroot_2.0.3.tar.gz'
+Content type 'application/x-gzip' length 100991 bytes (98 KB)
+==================================================
+downloaded 98 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/crayon_1.5.2.tar.gz'
+Content type 'application/x-gzip' length 158110 bytes (154 KB)
+==================================================
+downloaded 154 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/fs_1.5.2.tar.gz'
+Content type 'application/x-gzip' length 760048 bytes (742 KB)
+==================================================
+downloaded 742 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/diffobj_0.3.5.tar.gz'
+Content type 'application/x-gzip' length 1007502 bytes (983 KB)
+==================================================
+downloaded 983 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/fansi_1.0.3.tar.gz'
+Content type 'application/x-gzip' length 413211 bytes (403 KB)
+==================================================
+downloaded 403 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/rematch2_2.1.2.tar.gz'
+Content type 'application/x-gzip' length 44269 bytes (43 KB)
+==================================================
+downloaded 43 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/tibble_3.1.8.tar.gz'
+Content type 'application/x-gzip' length 727025 bytes (709 KB)
+==================================================
+downloaded 709 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/askpass_1.1.tar.gz'
+Content type 'application/x-gzip' length 23822 bytes (23 KB)
+==================================================
+downloaded 23 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/cli_3.4.1.tar.gz'
+Content type 'application/x-gzip' length 1306037 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/glue_1.6.2.tar.gz'
+Content type 'application/x-gzip' length 157185 bytes (153 KB)
+==================================================
+downloaded 153 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/lifecycle_1.0.3.tar.gz'
+Content type 'application/x-gzip' length 122567 bytes (119 KB)
+==================================================
+downloaded 119 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/magrittr_2.0.3.tar.gz'
+Content type 'application/x-gzip' length 234989 bytes (229 KB)
+==================================================
+downloaded 229 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/rlang_1.0.6.tar.gz'
+Content type 'application/x-gzip' length 1923948 bytes (1.8 MB)
+==================================================
+downloaded 1.8 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/stringi_1.7.8.tar.gz'
+Content type 'application/x-gzip' length 3201641 bytes (3.1 MB)
+==================================================
+downloaded 3.1 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/vctrs_0.5.1.tar.gz'
+Content type 'application/x-gzip' length 1260890 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/brio_1.1.3.tar.gz'
+Content type 'application/x-gzip' length 44728 bytes (43 KB)
+==================================================
+downloaded 43 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/callr_3.7.3.tar.gz'
+Content type 'application/x-gzip' length 424223 bytes (414 KB)
+==================================================
+downloaded 414 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/desc_1.4.2.tar.gz'
+Content type 'application/x-gzip' length 317043 bytes (309 KB)
+==================================================
+downloaded 309 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/ellipsis_0.3.2.tar.gz'
+Content type 'application/x-gzip' length 40284 bytes (39 KB)
+==================================================
+downloaded 39 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/evaluate_0.18.tar.gz'
+Content type 'application/x-gzip' length 77698 bytes (75 KB)
+==================================================
+downloaded 75 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/jsonlite_1.8.4.tar.gz'
+Content type 'application/x-gzip' length 1085249 bytes (1.0 MB)
+==================================================
+downloaded 1.0 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/pkgload_1.3.2.tar.gz'
+Content type 'application/x-gzip' length 173545 bytes (169 KB)
+==================================================
+downloaded 169 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/praise_1.0.0.tar.gz'
+Content type 'application/x-gzip' length 15926 bytes (15 KB)
+==================================================
+downloaded 15 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/processx_3.8.0.tar.gz'
+Content type 'application/x-gzip' length 446006 bytes (435 KB)
+==================================================
+downloaded 435 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/ps_1.7.2.tar.gz'
+Content type 'application/x-gzip' length 389374 bytes (380 KB)
+==================================================
+downloaded 380 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/R6_2.5.1.tar.gz'
+Content type 'application/x-gzip' length 82477 bytes (80 KB)
+==================================================
+downloaded 80 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/waldo_0.4.0.tar.gz'
+Content type 'application/x-gzip' length 99901 bytes (97 KB)
+==================================================
+downloaded 97 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/withr_2.5.0.tar.gz'
+Content type 'application/x-gzip' length 225454 bytes (220 KB)
+==================================================
+downloaded 220 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/curl_4.3.3.tar.gz'
+Content type 'application/x-gzip' length 783800 bytes (765 KB)
+==================================================
+downloaded 765 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/mime_0.12.tar.gz'
+Content type 'application/x-gzip' length 37125 bytes (36 KB)
+==================================================
+downloaded 36 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/openssl_2.0.5.tar.gz'
+Content type 'application/x-gzip' length 1300989 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/bitops_1.0-7.tar.gz'
+Content type 'application/x-gzip' length 35531 bytes (34 KB)
+==================================================
+downloaded 34 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/stringr_1.5.0.tar.gz'
+Content type 'application/x-gzip' length 301376 bytes (294 KB)
+==================================================
+downloaded 294 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/testthat_3.1.5.tar.gz'
+Content type 'application/x-gzip' length 3637261 bytes (3.5 MB)
+==================================================
+downloaded 3.5 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/httr_1.4.4.tar.gz'
+Content type 'application/x-gzip' length 498400 bytes (486 KB)
+==================================================
+downloaded 486 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/yaml_2.3.6.tar.gz'
+Content type 'application/x-gzip' length 286280 bytes (279 KB)
+==================================================
+downloaded 279 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/RCurl_1.98-1.9.tar.gz'
+Content type 'application/x-gzip' length 1123856 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/digest_0.6.30.tar.gz'
+Content type 'application/x-gzip' length 358071 bytes (349 KB)
+==================================================
+downloaded 349 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/swirl_2.4.5.tar.gz'
+Content type 'application/x-gzip' length 347115 bytes (338 KB)
+==================================================
+downloaded 338 KB
+
+* installing *binary* package ‘utf8’ ...
+* DONE (utf8)
+* installing *binary* package ‘pkgconfig’ ...
+* DONE (pkgconfig)
+* installing *binary* package ‘sys’ ...
+* DONE (sys)
+* installing *binary* package ‘rprojroot’ ...
+* DONE (rprojroot)
+* installing *binary* package ‘crayon’ ...
+* DONE (crayon)
+* installing *binary* package ‘fs’ ...
+* DONE (fs)
+* installing *binary* package ‘fansi’ ...
+* DONE (fansi)
+* installing *binary* package ‘cli’ ...
+* DONE (cli)
+* installing *binary* package ‘glue’ ...
+* DONE (glue)
+* installing *binary* package ‘magrittr’ ...
+* DONE (magrittr)
+* installing *binary* package ‘rlang’ ...
+* DONE (rlang)
+* installing *binary* package ‘stringi’ ...
+* DONE (stringi)
+* installing *binary* package ‘brio’ ...
+* DONE (brio)
+* installing *binary* package ‘evaluate’ ...
+* DONE (evaluate)
+* installing *binary* package ‘jsonlite’ ...
+* DONE (jsonlite)
+* installing *binary* package ‘praise’ ...
+* DONE (praise)
+* installing *binary* package ‘ps’ ...
+* DONE (ps)
+* installing *binary* package ‘R6’ ...
+* DONE (R6)
+* installing *binary* package ‘withr’ ...
+* DONE (withr)
+* installing *binary* package ‘curl’ ...
+* DONE (curl)
+* installing *binary* package ‘mime’ ...
+* DONE (mime)
+* installing *binary* package ‘bitops’ ...
+* DONE (bitops)
+* installing *binary* package ‘yaml’ ...
+* DONE (yaml)
+* installing *binary* package ‘digest’ ...
+* DONE (digest)
+* installing *binary* package ‘diffobj’ ...
+* DONE (diffobj)
+* installing *binary* package ‘askpass’ ...
+* DONE (askpass)
+* installing *binary* package ‘lifecycle’ ...
+* DONE (lifecycle)
+* installing *binary* package ‘desc’ ...
+* DONE (desc)
+* installing *binary* package ‘ellipsis’ ...
+* DONE (ellipsis)
+* installing *binary* package ‘processx’ ...
+* DONE (processx)
+* installing *binary* package ‘RCurl’ ...
+* DONE (RCurl)
+* installing *binary* package ‘vctrs’ ...
+* DONE (vctrs)
+* installing *binary* package ‘callr’ ...
+* DONE (callr)
+* installing *binary* package ‘pkgload’ ...
+* DONE (pkgload)
+* installing *binary* package ‘openssl’ ...
+* DONE (openssl)
+* installing *binary* package ‘pillar’ ...
+* DONE (pillar)
+* installing *binary* package ‘stringr’ ...
+* DONE (stringr)
+* installing *binary* package ‘httr’ ...
+* DONE (httr)
+* installing *binary* package ‘tibble’ ...
+* DONE (tibble)
+* installing *binary* package ‘rematch2’ ...
+* DONE (rematch2)
+* installing *binary* package ‘waldo’ ...
+* DONE (waldo)
+* installing *binary* package ‘testthat’ ...
+* DONE (testthat)
+* installing *binary* package ‘swirl’ ...
+* DONE (swirl)
+
+The downloaded source packages are in
+	‘/tmp/RtmpMDdFod/downloaded_packages’
+> library(swirl)
+
+| Hi! Type swirl() when you are ready to begin.
+
+> install_course_github("EliasBcd", "InitiationR")
+Downloading: 93 kB      
+> swirl()
+
+| Welcome to swirl! Please sign in. If you've been here before, use the same name
+| as you did then. If you are new, call yourself something unique.
+
+What shall I call you? Noor
+
+| Thanks, Noor. Let's cover a couple of quick housekeeping items before we begin
+| our first lesson. First of all, you should know that when you see '...', that
+| means you should press Enter when you are done reading and ready to continue.
+
+...  <-- That's your cue to press Enter to continue
+
+| Also, when you see 'ANSWER:', the R prompt (>), or when you are asked to select
+| from a list, that means it's your turn to enter a response, then press Enter to
+| continue.
+
+Select 1, 2, or 3 and press Enter 
+
+1: Continue.
+2: Proceed.
+3: Let's get going!
+
+Selection: 1
+
+| You can exit swirl and return to the R prompt (>) at any time by pressing the Esc
+| key. If you are already at the prompt, type bye() to exit and save your progress.
+| When you exit properly, you'll see a short message letting you know you've done
+| so.
+
+| When you are at the R prompt (>):
+| -- Typing skip() allows you to skip the current question.
+| -- Typing play() lets you experiment with R on your own; swirl will ignore what
+| you do...
+| -- UNTIL you type nxt() which will regain swirl's attention.
+| -- Typing bye() causes swirl to exit. Your progress will be saved.
+| -- Typing main() returns you to swirl's main menu.
+| -- Typing info() displays these options again.
+
+| Let's get started!
+
+...
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: InitiationR
+2: Take me to the swirl course repository!
+
+Selection: 1
+
+| Please choose a lesson, or type 0 to return to course menu.
+
+ 1: Manipulations simples           2: Assignations et objets       
+ 3: Types                           4: Vecteurs                     
+ 5: Fichiers et espace de travail   6: Logique                      
+ 7: Valeurs manquantes              8: Vecteurs numériques          
+ 9: Dataframes                     10: Scripts et fonctions         
+11: Control Flow                   12: Representations graphiques   
+13: Tirages aleatoires             
+
+Selection: 10
+
+| Attempting to load lesson dependencies...
+
+| This lesson requires the ‘base64enc’ package. Would you like me to install it for
+| you now?
+
+1: Yes
+2: No
+
+Selection: 1
+
+| Trying to install package ‘base64enc’ now...
+
+| Package ‘base64enc’ loaded correctly!
+
+  |                                                                          |   0%
+
+| Jusqu’ici on a utilisé R de manière "interactive", en saisissant des commandes
+| directement dans la console. Ce n'est pas très pratique pour sauvegarder son
+| travail. Lorsque R ou RStudio redémarre, tout ce qui a été effectué dans la
+| console est perdu.
+
+...
+
+  |=                                                                         |   2%
+| On va plutôt regrouper les commandes dans des scripts (de simples fichiers
+| texte), qui vont garder une trace de toutes les opérations effectuées. En
+| rouvrant les scripts et en réexécutant les commandes qu’ils contiennent on pourra
+| “reproduire” le chargement des données, leur traitement, les analyses et leurs
+| résultats. Pour créer un script, il suffit de sélectionner le menu Fichier
+| (File), puis Nouveau fichier (New File) et script R (R script). Une quatrième
+| zone apparaît alors en haut à gauche de l’interface de RStudio. On peut
+| enregistrer notre script à tout moment dans un fichier avec l’extension .R, en
+| cliquant sur l’icône de disquette ou en choisissant Fichier (File) puis
+| Sauvegarder (Save) ou en utilisant le raccourci Ctrl + S (Cmd + S sous Mac).
+
+...
+
+  |===                                                                       |   4%
+| Un script est un fichier texte brut qui s’édite de la manière habituelle. À la
+| différence de la console, quand on appuie sur Entrée, cela n’exécute pas la
+| commande en cours mais insère un saut de ligne. Pour exécuter une commande dans
+| un script, il faut positionner le curseur sur la ligne de la commande en
+| question, et de cliquer sur le bouton Run dans la barre d’outils juste au-dessus
+| de la zone d’édition du script. On peut aussi utiliser le raccourci clavier Ctrl
+| + Entrée (Cmd + Entrée sous Mac). On peut aussi sélectionner plusieurs lignes
+| avec la souris ou le clavier et cliquer sur Run (ou utiliser le raccourci
+| clavier), et l’ensemble des lignes est exécuté d’un coup.
+
+...
+
+  |====                                                                      |   6%
+| Vous allez maintenant créer votre premier script. Il contiendra une assignation
+| du vecteur c(156, 164, 197, 147, 173) à l'objet tailles. Puis une assignation du
+| vecteur c(45, 59, 110, 44, 88) au vecteur poids. Puis un calcul de l'imc des à
+| l'aide des vecteurs précédent et l'assignation du résultat à l'objet imc. swirl
+| va automatiquement ouvrir une fenêtre avec un script pour cet exercice. Essayez
+| de modifier le script qui va s'afficher. Une fois cela fait, vous devez tapez
+| submit() dans l'invite de commande pour soumettre votre réponse.
+
+tailles <- c(156, 164, 197, 147, 173)
+poids <- c(45, 59, 110, 44, 88)
+
+imc <- poids / (tailles / 100) ^ 2
+
+> submit()
+
+| Sourcing your script...
+
+
+| Great job!
+
+  |======                                                                    |   8%
+| Vous devez avoir remarqué dans le script les lignes qui commençaient par un signe
+| dièse #. Ces lignes indiquent un commentaire dans R et ne sont pas prises en
+| compte dans l'évaluation du script. Les commentaires sont une partie très
+| importante d'un script (et des fonctions que nous allons voir). Ils permettent de
+| documenter les actions du script (ou de la fonction) afin de dire ce qu'il fait.
+| On peut ainsi retrouver son code des jours ou des mois plus tard et se rappeler
+| de ce qu'on a voulu faire.
+
+...
+
+  |=======                                                                   |  10%
+| Passons maintenant aux fonctions. Les fonctions sont une composante essentielle
+| de R. C'est un petit morceau de code qui peut être traité comme n'importe quel
+| objet R. Vous avez déjà rencontré des fonctions dans ce cours. Les fonctions se
+| repèrent généralement par le nom de la fonction suivi de parenthèses.
+
+...
+
+  |=========                                                                 |  12%
+| Essayons déjà une fonction simple, incluse dans le text. La fonction Sys.Date()
+| renvoit une chaîne de caractères avec la date du jour. Tapez Sys.Date() pour voir
+| ce qu'il se produit.
+
+> Sys.Date()
+[1] "2022-12-11"
+
+| You got it right!
+
+  |==========                                                                |  14%
+| La plupart des fonctions dans R renvoient une valeur. Des fonctions telles que
+| Sys.Date() envoit comme résultat une valeur qui dépend de votre ordinateur.
+| D'autres fonctions, au contraire, manipulent des données afin de calculer un
+| résultat.
+
+...
+
+  |============                                                              |  16%
+| La fonction mean() prend comme valeur d'entrée (ou argument) un vecteur et
+| calcule la moyenne des éléments de ce vecteur. On dit souvent qu'on passe un
+| argument à une fonction pour dire qu'on l'utilise comme valeur d'entrée. Les
+| arguments sont écrits entre les parenthèses. Essayez de passer le vecteur c(2, 4,
+| 5) comme argument à la fonction mean().
+
+> mean(c(2, 4, 5))
+[1] 3.666667
+
+| Keep working like that and you'll get there!
+
+  |=============                                                             |  18%
+| Les fonctions prennent généralement comme arguments des valeurs sur lesquelles
+| elles opèrent des calculs. La fonction mean(), par exemple, prend comme argument
+| un vecteur, comme dans le cas précédent. La fonction mean() somme ensuite tous
+| les nombres du vecteurs et divise cette somme par la longueur du vecteur.
+
+...
+
+  |===============                                                           |  20%
+| Dans la question suivante, je vais vous demander de modifier un script, comme au
+| tout début de cette leçon. Quand vous aurez fini de modifier le script, n'oubliez
+| pas de sauvegarder votre script puis de taper submit() pour faire évaluer votre
+| réponse. Il y aura des commentaires dans le script, lisez-les attentivement !
+
+...
+
+  |================                                                          |  22%
+| La dernière expression évaluée dans une fonction est la valeur retournée par la
+| fonction, le résultat de la fonction. Nous voulons que cette fonction prenne un
+| argument, x, et de nous renvoyer comme résultat cet argument non modifié. Effacez
+| le # dans le script pour faire en sorte que l'argument soit renvoyé tel que.
+| N'oubliez pas de sauvegardez et tapez sur submit().
+
+boring_function <- function(x) {
+  x
+}
+
+
+> submit()
+
+| Sourcing your script...
+
+
+| You're the best!
+
+  |==================                                                        |  24%
+| Maintenant que vous avez créer votre première fonction, essayons-la ! Tapez
+| boring_function('Hello World!'). Si votre fonction fonctionne correctement, vous
+| devriez voir apparaître comme résultat 'Hello World!'
+
+> boring_function('Hello World!')
+[1] "Hello World!"
+
+| You got it right!
+
+  |===================                                                       |  26%
+| Félicitations ! Vous avez écrit votre première fonction. Les fonctions sont un
+| élément clé de R avec les objets. Pour comprendre le fonctionnement de R, deux
+| choses sont importantes. Premièrement, tout ce qui existe est un objet.
+| Deuxièmement, tout ce qui se produit est une fonction. (Citation de John
+| Chambers, un des créateur de R).
+
+...
+
+  |=====================                                                     |  28%
+| Si vous voulez connaître le code de calcul d'une fonction, tapez son nom sans
+| parenthèses ni arguments. Essayez pour la fonction boring_function.
+
+> boring_function
+function(x) {
+  x
+}
+<bytecode: 0x56489e4546c8>
+
+| Excellent work!
+
+  |======================                                                    |  30%
+| Faisons une fonction un peu plus utile. Reproduisons le résultat de la fonction
+| mean() dans une fonction appelée my_mean(). Rappelez-vous que la moyenne est la
+| somme de tous les nombres dans le vecteur divisé par sa longueur.
+
+...
+
+  |========================                                                  |  32%
+| Sauvegardez bien votre script avant de taper submit().
+
+my_mean <- function(my_vector) {
+  sum(my_vector)/length(my_vector)
+}
+
+> submit()
+
+| Sourcing your script...
+
+
+| Your dedication is inspiring!
+
+  |=========================                                                 |  34%
+| Testez maintenant votre fonction my_mean() en trouvant la moyenne de du vecteur
+| c(4, 5, 10).
+
+> my_mean(c(4, 5, 10))
+[1] 6.333333
+
+| You got it right!
+
+  |===========================                                               |  36%
+| Essayons maintenant d'écrire une fonction avec des arguments par défaut. Il est
+| parfois utile de fixer une valeur par défaut pour des arguments d'une fonction.
+| Par exemple si votre fonction va utiliser la même valeur très souvent.
+
+...
+
+  |============================                                              |  38%
+| Sauvegardez bien votre script avant de taper submit().
+
+remainder <- function(num, divisor = 2) {
+  num %% divisor
+}
+
+> submit()
+
+| Sourcing your script...
+
+
+| You nailed it! Good job!
+
+  |==============================                                            |  40%
+| Testons un petit peu le comportement de la fonction remainder. Tapez remainder(5)
+| et observez le résultat.
+
+> remainder(5)
+[1] 1
+
+| Great job!
+
+  |===============================                                           |  42%
+| Observons ce qu'il s'est passé. Vous avez passé un argument à la fonction. R a
+| décidé que cette argument était 'num', puisque 'num' est le premier argument de
+| la fonction. La valeur par défaut pour 'divisor' est 2, R a donc utilisé cette
+| valeur dans le calcul.
+
+...
+
+  |=================================                                         |  44%
+| Observons maintenant le comportement de remainder avec 2 arguments. Tapez
+| remainder(11, 5) et observons le résultat.
+
+> remainder(11, 5) 
+[1] 1
+
+| Nice work!
+
+  |==================================                                        |  46%
+| R a utilisé le premier argument pour 'num' et le deuxième pour 'divisor'. C'est
+| bien le comportement attendu.
+
+...
+
+  |====================================                                      |  48%
+| Il est aussi possible de spécifier explicitement les arguments avec leur nom.
+| Quand vous procédez ainsi, l'ordre des arguments devient sans importance. Essayez
+| en tapant remainder(divisor = 11, num = 5).
+
+> remainder(divisor = 11, num = 5)
+[1] 5
+
+| Great job!
+
+  |=====================================                                     |  50%
+| Il y a une grande différence entre remainder(11, 5) et remainder(divisor = 11,
+| num = 5).
+
+...
+
+  |======================================                                    |  52%
+| R peut aussi partiellement appairer valeurs et arguments. Tapez remainder(4, div
+| = 2) et observer le résultat.
+
+> remainder(4, div = 2)
+[1] 0
+
+| All that hard work is paying off!
+
+  |========================================                                  |  54%
+| Vous voulez en général faire en sorte que votre code soit lisible et
+| compréhensible. Mélanger l'ordre des arguments en utilisant leur nom ou appairer
+| seulement une partie des arguments n'est pas une bonne pratique. Faites-le avec
+| parcimonie.
+
+...
+
+  |=========================================                                 |  56%
+| En parlant d'arguments, vous vous demandez peut-être comment on peut découvrir
+| tous les arguments d'une fonction. Fort heureusement, R a une fonction pour ça,
+| args(). Utilisez args() pour connaître les arguments de remainder.
+
+> args(remainder)
+function (num, divisor = 2) 
+NULL
+
+| You nailed it! Good job!
+
+  |===========================================                               |  58%
+| Vous ne vous en êtes peut-être pas rendu compte, mais vous venez de faire quelque
+| chose d'intéressant. Vous avez utilisé comme argument d'une fonction une autre
+| fonction ! Et oui, il est possible d'utiliser comme argument d'une fonction une
+| autre fonction. Ecrivons un petit script pour explorer cette possibilité.
+
+...
+
+  |============================================                              |  60%
+| Sauvegardez bien votre script avant de taper submit().
+
+evaluate <- function(func, dat) {
+  func(dat)
+}
+
+> submit()
+
+| Sourcing your script...
+
+
+| Perseverance, that's the answer.
+
+  |==============================================                            |  62%
+| Utilisons maintenant votre fonction evaluate() pour trouver l'écart type du
+| vecteur c(1.4, 3.6, 7.9, 8.8).
+
+> evaluate(sd, c(1.4, 3.6, 7.9, 8.8))
+[1] 3.514138
+
+| All that hard work is paying off!
+
+  |===============================================                           |  64%
+| L'idée d'utiliser une fonction comme argument dans une autre fonction est un
+| concept clé de programmation. Encore plus fort : il est possible de passer des
+| fonctions en arguments dans une autre fonction sans avoir défini la fonction
+| auparavant. Les fonctions de ce type sont appelées fonctions anonymes (ou lambda
+| fonctions).
+
+...
+
+  |=================================================                         |  66%
+| Nous allons utiliser la fonction evaluate pour étudier le fonctionnement des
+| fonctions anonymes. Comme premier argument à evaluate, nous allons écrire une
+| petite fonction, qui tient sur une ligne. Comme second argument à la fonction
+| evaluate nous allons utiliser comme argument un tout petit ensemble de données.
+
+...
+
+  |==================================================                        |  68%
+| Tapez la commande suivante, nous allons voir par la suite comment elle fonctionne
+| : evaluate(function(x){x+1}, 6)
+
+> evaluate(function(x){x+1}, 6)
+[1] 7
+
+| Your dedication is inspiring!
+
+  |====================================================                      |  70%
+| Le premier argument d'evaluate est une fonction anonyme très simple qui prend
+| comme argument 'x' et retourne 'x+1'. Nous avons dit à evaluate de passer comme
+| argument 6 à cette fonction, le résultat est donc 7.
+
+...
+
+  |=====================================================                     |  72%
+| Essayez d'utiliser evaluate() avec une fonction anonyme afin qu'elle retourne le
+| premier élément d'un vecteur. Votre fonction anonyme devrait prendre un seul
+| argument, qui devrait être la variable x. Le vecteur que vous devez utiliser pour
+| tester cette fonction doit être le vecteur c(8, 4, 0).
+
+> evaluate(function(x){x[1]}, c(8, 4, 0))
+[1] 8
+
+| Keep working like that and you'll get there!
+
+  |=======================================================                   |  74%
+| Utilisez maintenant la fonction evaluate() et une fonction anonyme afin de
+| retourner le dernier élément d'un vecteur. Votre fonction anonyme ne doit avoir
+| qu'un seul argument qui sera x. Le vecteur que vous devez utiliser pour tester
+| cette fonction doit être le vecteur c(8, 4, 0).
+
+> evaluate(function(x){x[length(x)]}, c(8, 4, 0))
+[1] 0
+
+| All that hard work is paying off!
+
+  |========================================================                  |  76%
+| Jusqu'à la fin de cette leçon nous allons utiliser la fonction paste()
+| fréquemment. Tapez ?paste pour lire la documentation de cette fonction et
+| comprendre son fonctionnement.
+
+> ?paste
+
+| Keep up the great work!
+
+  |==========================================================                |  78%
+| Afin de comprendre comment paste() fonctionne, essayez de taper paste("La",
+| "programmation", "c'est", "facile !").
+
+> paste("La", "programmation", "c'est", "facile !")
+[1] "La programmation c'est facile !"
+
+| That's a job well done!
+
+  |===========================================================               |  80%
+| Ecrivons maintenant notre propre version de paste().
+
+...
+
+  |=============================================================             |  82%
+| Sauvegardez bien votre script avant de taper submit().
+
+telegram <- function(...){
+  paste("START", ..., "STOP")
+}
+
+> submit()
+
+| Sourcing your script...
+
+
+| That's correct!
+
+  |==============================================================            |  84%
+| Essayons maintenant votre nouvelle fonction telegram(). Utilisez votre fonction
+| telegram() avec n'importe quels arguments.
+
+> telegram()
+[1] "START STOP"
+
+| All that hard work is paying off!
+
+  |================================================================          |  86%
+| Avant de continuer, nous devons faire un petit détour par les listes. Nous avons
+| déjà vu les listes dans la leçon sur les types (mot clé `list`). Une capacité que
+| nous n'avons pas exploré ni exploité des listes jusqu'à présent et le fait qu'on
+| puisse nommer les éléments des listes. Par exemple, on peut créer une liste
+| contenant un vecteur poids et un vecteur tailles. tailles doit être un vecteur
+| contenant les tailles 154, 175 et 165 (dant cet ordre). poids doit être un
+| vecteur contenant les poids 55, 80 et 65 (dant cet ordre). On veut mettre ces
+| deux vecteurs dans une liste. On tapera alors list(tailles = c(154, 175, 165),
+| poids = c(55, 80, 65)). On souhaite assigner cette list à ma_liste.
+
+> ma_liste <- list(tailles = c(154, 175, 165), poids = c(55, 80, 65))
+
+| All that practice is paying off!
+
+  |=================================================================         |  88%
+| Observons maintenant ma_liste.
+
+> ma_liste
+$tailles
+[1] 154 175 165
+
+$poids
+[1] 55 80 65
+
+
+| Your dedication is inspiring!
+
+  |===================================================================       |  90%
+| On peut accéder à un élément nommé d'une liste à l'aide de la syntaxe list$nom ou
+| bien à l'aide de list[["nom"]], tout comme on a pu le faire pour des colonnes
+| d'un data.frame. Essayez d'accéder à la colonne tailles de ma_list.
+
+> ma_liste$tailles
+[1] 154 175 165
+
+| Excellent job!
+
+  |====================================================================      |  92%
+| Fin de la parenthèse sur les listes. Nous allons avoir besoin des listes pour le
+| prochain exercices que nous utilisons. En effet, l'argument ... est considéré
+| comme une liste par R.
+
+...
+
+  |======================================================================    |  94%
+| Sauvegardez bien votre script avant de taper submit().
+
+manif <- function(...){
+  # Récupérer vos arguments ici.
+  args <- list(...)
+  place <- args[["place"]]
+  adjective <- args[["adjective"]]
+  noun <- args[["noun"]]
+  
+  # Ne modifiez pas le code suivante ces commentaires.
+  # Regardez bien les arguments que vous devez récupérer dans la liste pour 
+  # construire la phrase.
+  paste("Nouvelles de", place, "aujourd'hui, des étudiant.e.s", adjective, "ont fait grève contre les nouveaux", noun, "installés dans l'université.")
+}
+
+> submit()
+
+| Sourcing your script...
+
+
+| Excellent work!
+
+  |=======================================================================   |  96%
+| Utilisons maintenant votre fonction manif. Pensez bien à nommer les arguments
+| place, adjective et noun pour que votre fonction accomplisse son travail.
+
+> manif(adjective = "", place = "", noun = "")
+[1] "Nouvelles de  aujourd'hui, des étudiant.e.s  ont fait grève contre les nouveaux  installés dans l'université."
+
+| You are doing so well!
+
+  |========================================================================= |  98%
+| Nous avons fini cette leçon. Vous avez maintenant un des concepts les plus
+| important de R et du monde de la programmation, les fonctions.
+
+...

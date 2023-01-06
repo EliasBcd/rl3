@@ -1,0 +1,3 @@
+Bonjour je bous laisse cette note pour vous signaler que j'ai eu des probleme pour repondre au question des script car à certain moment j'ecrivais le bon
+script mais R me disais tout de même que ma réponse etait fausse, j'au essayer plusieur fois mais je n'est pas reussi a regler le probleme, d'ou mon utilisation 
+du skip() à certain moment.

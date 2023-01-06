@@ -1,0 +1,761 @@
+
+R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin17.0 (64-bit)
+
+R est un logiciel libre livré sans AUCUNE GARANTIE.
+Vous pouvez le redistribuer sous certaines conditions.
+Tapez 'license()' ou 'licence()' pour plus de détails.
+
+R est un projet collaboratif avec de nombreux contributeurs.
+Tapez 'contributors()' pour plus d'information et
+'citation()' pour la façon de le citer dans les publications.
+
+Tapez 'demo()' pour des démonstrations, 'help()' pour l'aide
+en ligne ou 'help.start()' pour obtenir l'aide au format HTML.
+Tapez 'q()' pour quitter R.
+
+[R.app GUI 1.79 (8095) x86_64-apple-darwin17.0]
+
+[Espace de Travail restauré depuis /Users/imenetalbi/.RData]
+> install.packages('swirl')
+--- SVP sélectionnez un miroir CRAN pour cette session ---
+essai de l'URL 'https://cran.irsn.fr/bin/macosx/contrib/4.2/swirl_2.4.5.tgz'
+Content type 'application/x-gzip' length 348108 bytes (339 KB)
+==================================================
+downloaded 339 KB
+
+
+Les packages binaires téléchargés sont dans
+	/var/folders/lw/c_gmshvs7s52n371l5ptn9_m0000gn/T//RtmpxfiHMw/downloaded_packages
+> 
+> library(swirl)
+
+| Hi! I see that you have some variables saved in your workspace. To keep
+| things running smoothly, I recommend you clean up before starting swirl.
+
+| Type ls() to see a list of the variables in your workspace. Then, type
+| rm(list=ls()) to clear your workspace.
+
+| Type swirl() when you are ready to begin.
+
+> swirl()
+
+| Welcome to swirl! Please sign in. If you've been here before, use the same
+| name as you did then. If you are new, call yourself something unique.
+
+What shall I call you? khawla
+
+| Thanks, khawla. Let's cover a couple of quick housekeeping items before we begin our first lesson. First of all, you should know that when you see '...', that means you should press Enter when you are done
+| reading and ready to continue.
+
+...  <-- That's your cue to press Enter to continue
+
+| Also, when you see 'ANSWER:', the R prompt (>), or when you are asked to select from a list, that means it's your turn to enter a response, then press Enter to continue.
+
+Select 1, 2, or 3 and press Enter 
+
+1: Continue.
+2: Proceed.
+3: Let's get going!
+
+Sélection : 3
+
+| You can exit swirl and return to the R prompt (>) at any time by pressing the Esc key. If you are already at the prompt, type bye() to exit and save your progress. When you exit properly, you'll see a short
+| message letting you know you've done so.
+
+| When you are at the R prompt (>):
+| -- Typing skip() allows you to skip the current question.
+| -- Typing play() lets you experiment with R on your own; swirl will ignore what you do...
+| -- UNTIL you type nxt() which will regain swirl's attention.
+| -- Typing bye() causes swirl to exit. Your progress will be saved.
+| -- Typing main() returns you to swirl's main menu.
+| -- Typing info() displays these options again.
+
+| Let's get started!
+
+...
+
+| To begin, you must install a course. I can install a course for you from the internet, or I can send you to a web page (https://github.com/swirldev/swirl_courses) which will provide course options and
+| directions for installing courses yourself. (If you are not connected to the internet, type 0 to exit.)
+
+1: R Programming: The basics of programming in R
+2: Regression Models: The basics of regression modeling in R
+3: Statistical Inference: The basics of statistical inference in R
+4: Exploratory Data Analysis: The basics of exploring data in R
+5: Don't install anything for me. I'll do it myself.
+
+Sélection : 1
+  |===========================================================================================================================================================================================================| 100%
+
+| Course installed successfully!
+
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: R Programming
+2: Take me to the swirl course repository!
+
+Sélection : 1
+
+| Please choose a lesson, or type 0 to return to course menu.
+
+ 1: Basic Building Blocks      2: Workspace and Files        3: Sequences of Numbers       4: Vectors                    5: Missing Values             6: Subsetting Vectors         7: Matrices and Data Frames
+ 8: Logic                      9: Functions                 10: lapply and sapply         11: vapply and tapply         12: Looking at Data           13: Simulation                14: Dates and Times         
+15: Base Graphics             
+
+Sélection : 1
+  |                                                                                                                                                                                                           |   0%
+
+| In this lesson, we will explore some basic building blocks of the R programming language.
+
+...
+  |=====                                                                                                                                                                                                      |   3%
+| If at any point you'd like more information on a particular topic related to R, you can type help.start() at the prompt, which will open a menu of resources (either within RStudio or your default web browser,
+| depending on your setup). Alternatively, a simple web search often yields the answer you're looking for.
+
+...
+  |===========                                                                                                                                                                                                |   5%
+| In its simplest form, R can be used as an interactive calculator. Type 5 + 7 and press Enter.
+
+> 
+> bye()
+
+| Leaving swirl now. Type swirl() to resume.
+
+> select_language('french', append_rprofile = T)
+> install_course_github("EliasBcd", "InitiationR")
+Downloading: 80 kB      
+> 
+> select_language('french', append_rprofile = T)
+> install_course_github("EliasBcd", "InitiationR")
+Downloading: 80 kB     Message d'avis :
+Dans file.rename(file.path(swirl_courses_dir(), old_name), file.path(swirl_courses_dir(),  :
+  impossible de renommer le fichier '/Library/Frameworks/R.framework/Versions/4.2/Resources/library/swirl/Courses/EliasBcd-InitiationR-3f96058' en '/Library/Frameworks/R.framework/Versions/4.2/Resources/library/swirl/Courses/InitiationR', à cause de 'Directory not empty'
+> swirl()
+
+| Bienvenue sur Swirl ! Connecte-toi. Si ce n'est pas ta première connexion,
+| indique ton nom utilisé précédemment. Si tu dois encore choisir ton nom,
+| fais preuve d'un peu d'originalité !
+
+Comment dois-je t'appeler ? khawla
+
+| Voudrais-tu continuer avec l'une de ces leçons ?
+
+1: R Programming Basic Building Blocks
+2: Non, faisons autre chose.
+
+Sélection : 1
+
+
+
+| In its simplest form, R can be used as an interactive calculator. Type 5 + 7 and press Enter.
+
+> bye()
+
+| Je quitte Swirl. Tape swirl() pour reprendre.
+
+> swirl()
+
+| Bienvenue sur Swirl ! Connecte-toi. Si ce n'est pas ta première connexion, indique ton nom utilisé précédemment. Si tu dois encore choisir ton nom, fais preuve d'un peu d'originalité !
+
+Comment dois-je t'appeler ? khawla
+
+| Voudrais-tu continuer avec l'une de ces leçons ?
+
+1: R Programming Basic Building Blocks
+2: Non, faisons autre chose.
+
+Sélection : 2
+
+| Choisis un cours ou tape 0 pour quitter Swirl.
+
+1: EliasBcd-InitiationR-3f96058
+2: InitiationR
+3: R Programming
+4: Montre-moi le répertoire des cours Swirl !
+
+Sélection : 1
+
+| Choisis une leçon ou tape 0 pour retourner au menu principal.
+
+ 1: Manipulations simples           2: Assignations et objets          3: Types                           4: Vecteurs                        5: Fichiers et espace de travail   6: Logique                      
+ 7: Valeurs manquantes              8: Vecteurs numériques             9: Dataframes                     10: Scripts et fonctions           11: Control Flow                   
+
+Sélection : 1
+
+| Attempting to load lesson dependencies...
+
+| Le paquet ‘base64enc’ a été chargé correctement !
+  |                                                                                                                                                                                                           |   0%
+
+| Bienvenue à votre première leçon de R. Nous allons apprendre à manipuler R. La console affiche un texte de bienvenue suivi d'une ligne commençant par le caractère `>` (l'invite de commande)
+
+...
+  |==========                                                                                                                                                                                                 |   5%
+| Si vous souhaitez obtenir plus d'information sur un sujet en particulier en lien avec R, vous pouvez taper help.start() dans l'invite de commande. Cela ouvrira un menu avec des informations (soit dans votre
+| navigateur par défaut, soit dans Rstudio, suivant votre installation). Évidemment, vous trouverez aussi des réponses à vos questions en faisant une recherche sur internet.
+
+...
+  |====================                                                                                                                                                                                       |  10%
+| L'utilisation la plus basique de R est comme une calculatrice interactive. Nous pouvons tout de suite essayer quelques calculs. Tapez 2 + 2 et tapez entrée.
+
+> 
+> 2+2
+[1] 4
+
+| Tu assures !
+  |==============================                                                                                                                                                                             |  15%
+| Nous avons vu une addition, essayons une soustraction. Tapez 5 - 7.
+
+> 5-7
+[1] -2
+
+| All that practice is paying off!
+  |=========================================                                                                                                                                                                  |  20%
+| Une multiplication. Tapez 4 * 12.
+
+> 4*12
+[1] 48
+
+| All that hard work is paying off!
+  |===================================================                                                                                                                                                        |  25%
+| Une division. Tapez -10/3.
+
+> -10/3
+[1] -3.333333
+
+| Excellent travail !
+  |=============================================================                                                                                                                                              |  30%
+| Des puissances. Tapez 5^2.
+
+> 5^2
+[1] 25
+
+| All that hard work is paying off!
+  |=======================================================================                                                                                                                                    |  35%
+| Nous allons voir maintenant comment calculer les fonctions mathématiques usuelles logarithme, racine carrée, exponentielle et valeur absolue.
+
+...
+  |=================================================================================                                                                                                                          |  40%
+| Pour calculer la racine carré, on utilise la commande sqrt(), pour square root, l'équivalent en anglais. Tapez sqrt(4).
+
+> sqrt(4)
+[1] 2
+
+| Excellent travail !
+  |===========================================================================================                                                                                                                |  45%
+| Essayons maintenant avec la fonction exponentielle. Tapez exp(0).
+
+> exp(0)
+[1] 1
+
+| Tu es extraordinaire !
+  |======================================================================================================                                                                                                     |  50%
+| Essayons maintenant avec la fonction logarithme naturel. R est un logiciel de programmation en anglais, il utilise donc la convention anglaise. Pour obtenir ln(x), il faut taper log(x). Cherchez la valeur de
+| ln(2).
+
+> log(2)
+[1] 0.6931472
+
+| All that practice is paying off!
+  |================================================================================================================                                                                                           |  55%
+| Pour calculer le log français (logarithme décimal, en base 10), il suffit de taper log10. Cherchez à obtenir le logarithme décimal de 100.
+
+> log(100)
+[1] 4.60517
+
+| Ce n'est pas la bonne réponse, mais cherche encore. ou tape info() pour plus d'options.
+
+| Tapez log10(100)
+
+> log10(100)
+[1] 2
+
+| Tu es extraordinaire !
+  |==========================================================================================================================                                                                                 |  60%
+| Il y a en fait deux méthodes pour calculer le logarithme en base 10. R permet de calculer le logarithme en n'importe quelle base, en utilisant log(x, base). Voyons voir si vous avez compris. Essayez calculer le
+| logarithme en base 8 de 1000
+
+> log(1000,8)
+[1] 3.321928
+
+| Excellent travail !
+  |====================================================================================================================================                                                                       |  65%
+| R connaît aussi les fonctions trigonométriques. Essayez de calculer le sinus de 0.
+
+> sin(0)
+[1] 0
+
+| Bon boulot !
+  |==============================================================================================================================================                                                             |  70%
+| Ce qui nous amène naturellement à la constante pi. R connaît certaines constantes. Essayez de taper pi.
+
+> pi
+[1] 3.141593
+
+| All that practice is paying off!
+  |========================================================================================================================================================                                                   |  75%
+| On peut donc maintenant calculer le cosinus de pi/2.
+
+> cos(pi/2)
+[1] 6.123234e-17
+
+| Your dedication is inspiring!
+  |==================================================================================================================================================================                                         |  80%
+| Notez que la constante e (exponentielle) n'existe pas en tant que telle dans R. Essayer de taper 10e2
+
+> 10e2
+[1] 1000
+
+| Quelle maîtrise !
+  |=============================================================================================================================================================================                              |  85%
+| e remplace en fait 10^, mais nécessite d'avoir un nombre devant. 1e2 est une expression valide, mais e2 ne l'est pas. Voyons voir si vous avez compris. Que vaut 1e2 ?
+
+1: exp(2)
+2: 0.01
+3: 1000
+4: 100
+
+Sélection : 1
+
+| Continue ! Tu trouveras !
+
+| Pensez à remplacer e par 10^.
+
+1: 1000
+2: 0.01
+3: 100
+4: exp(2)
+
+Sélection : 1
+
+| Tu y es presque. Essaie encore.
+
+| Pensez à remplacer e par 10^.
+
+1: 100
+2: 0.01
+3: exp(2)
+4: 1000
+
+Sélection : 4
+
+| Not quite, but you're learning! Try again.
+
+| Pensez à remplacer e par 10^.
+
+1: 100
+2: 0.01
+3: 1000
+4: exp(2)
+
+Sélection : buy
+Entrer un des items du menu, ou 0 pour sortir
+Sélection : bye
+Entrer un des items du menu, ou 0 pour sortir
+Sélection : 0
+
+| Try again. Getting it right on the first try is boring anyway!
+
+| Pensez à remplacer e par 10^.
+
+1: 0.01
+2: 1000
+3: exp(2)
+4: 100
+
+Sélection : bye
+Entrer un des items du menu, ou 0 pour sortir
+Sélection : info()
+Entrer un des items du menu, ou 0 pour sortir
+Sélection : by
+Entrer un des items du menu, ou 0 pour sortir
+Sélection : e
+Entrer un des items du menu, ou 0 pour sortir
+Sélection : 
+Entrer un des items du menu, ou 0 pour sortir
+Sélection : 1
+
+| Continue ! Tu trouveras !
+
+| Pensez à remplacer e par 10^.
+
+1: 1000
+2: 0.01
+3: 100
+4: exp(2)
+
+Sélection : 3
+
+| Dans le mille ! Bien joué !
+  |=======================================================================================================================================================================================                    |  90%
+| Revenons à nos constantes, pour obtenir la constante e, il suffit d'utiliser la fonction exponentielle. Que vaut e ?
+
+> info()
+
+| Quand tu es arrivé(e) au prompt R (>):
+| -- Tape skip() pour sauter la question.
+| -- Tape play() pour expérimenter et jouer avec R; Swirl en fera abstraction...
+| -- JUSQU'A ce que tu tapes nxt() pour regagner l'attention de Swirl.
+| -- Tape bye() pour quitter Swirl. Ta progression sera sauvegardée.
+| -- Tape main() pour retourner au menu principal de Swirl.
+| -- Tape info() pour montrer les options une nouvelle fois.
+
+> play()
+
+| Play mode activé. A toi de jouer et d'expérimenter. Tape nxt() pour reprendre le cours.
+
+> nxt()
+
+| Je reprends la leçon...
+
+
+| Revenons à nos constantes, pour obtenir la constante e, il suffit d'utiliser la fonction exponentielle. Que vaut e ?
+
+> swirl()
+
+| Bienvenue sur Swirl ! Connecte-toi. Si ce n'est pas ta première connexion, indique ton nom utilisé précédemment. Si tu dois encore choisir ton nom, fais preuve d'un peu d'originalité !
+
+Comment dois-je t'appeler ? khawla
+
+| Voudrais-tu continuer avec l'une de ces leçons ?
+
+1: Introduction à R Manipulations simples
+2: R Programming Basic Building Blocks
+3: Non, faisons autre chose.
+
+Sélection : 2
+
+
+
+| In its simplest form, R can be used as an interactive calculator. Type 5 + 7 and press Enter.
+
+> swirl()
+
+| Bienvenue sur Swirl ! Connecte-toi. Si ce n'est pas ta première connexion, indique ton nom utilisé précédemment. Si tu dois encore choisir ton nom, fais preuve d'un peu d'originalité !
+
+Comment dois-je t'appeler ? khawla
+
+| Voudrais-tu continuer avec l'une de ces leçons ?
+
+1: Introduction à R Manipulations simples
+2: R Programming Basic Building Blocks
+3: Non, faisons autre chose.
+
+Sélection : 1
+
+| Attempting to load lesson dependencies...
+
+| Le paquet ‘base64enc’ a été chargé correctement !
+
+
+
+| Revenons à nos constantes, pour obtenir la constante e, il suffit d'utiliser la fonction exponentielle. Que vaut e ?
+
+> swirl()
+
+| Bienvenue sur Swirl ! Connecte-toi. Si ce n'est pas ta première connexion, indique ton nom utilisé précédemment. Si tu dois encore choisir ton nom, fais preuve d'un peu d'originalité !
+
+Comment dois-je t'appeler ? 3
+
+| Merci, 3. Quelques instructions de base avant d'attaquer la première leçon. Tout d'abord, si tu vois s'afficher '...', cela veut dire que tu dois appuyer sur Entrée quand tu as fini de lire et es prêt(e) à
+| continuer.
+
+...  <-- That's your cue to press Enter to continue swirl()
+
+| Et quand tu vois 'Réponse:', le prompt R (>), ou si tu es invité(e) à sélectionner une option, c'est à toi de taper ta réponse et d'appuyer sur Entrée pour continuer.
+
+Select 1, 2, or 3 and press Enter 
+
+1: Continuer.
+2: Avancer.
+3: C'est parti !
+
+Sélection : swirl()
+Entrer un des items du menu, ou 0 pour sortir
+Sélection : 1
+
+| You can exit swirl and return to the R prompt (>) at any time by pressing the Esc key. If you are already at the prompt, type bye() to exit and save your progress. When you exit properly, you'll see a short
+| message letting you know you've done so.
+
+| Quand tu es arrivé(e) au prompt R (>):
+| -- Tape skip() pour sauter la question.
+| -- Tape play() pour expérimenter et jouer avec R; Swirl en fera abstraction...
+| -- JUSQU'A ce que tu tapes nxt() pour regagner l'attention de Swirl.
+| -- Tape bye() pour quitter Swirl. Ta progression sera sauvegardée.
+| -- Tape main() pour retourner au menu principal de Swirl.
+| -- Tape info() pour montrer les options une nouvelle fois.
+
+| C'est parti !
+
+...SWIRL()
+
+| Choisis un cours ou tape 0 pour quitter Swirl.
+
+1: EliasBcd-InitiationR-3f96058
+2: InitiationR
+3: R Programming
+4: Montre-moi le répertoire des cours Swirl !
+
+Sélection : 2
+
+| Choisis une leçon ou tape 0 pour retourner au menu principal.
+
+ 1: Manipulations simples           2: Assignations et objets          3: Types                           4: Vecteurs                        5: Fichiers et espace de travail   6: Logique                      
+ 7: Valeurs manquantes              8: Vecteurs numériques             9: Dataframes                     10: Scripts et fonctions           11: Control Flow                   
+
+Sélection : 5
+
+| Attempting to load lesson dependencies...
+
+| Le paquet ‘base64enc’ a été chargé correctement !
+  |                                                                                                                                                                                                           |   0%
+
+| Dans cette leçon, nous etudierons comment examiner votre espace de travail local dans R et le lien entre cet espace de travail et les fichiers sur votre ordinateur.
+
+...
+  |=========                                                                                                                                                                                                  |   5%
+| Chaque système d'exploitation a sa propre convention pour explorer les fichiers, les résultats des commandes dans ce cours pourront varier suivant votre système d'exploitation.
+
+...
+  |==================                                                                                                                                                                                         |   9%
+| R utilise néanmoins le même ensemble de commande quelque soit le système d'exploitation. Votre code fonctionnera normalement de la même manière partout. Essayons !
+
+...
+  |============================                                                                                                                                                                               |  14%
+| Pour déterminer le dossier dans lequel R travaille actuellement, on utilise la commande getwd() (get working directory). Essayez !
+
+> getwd()
+[1] "/Users/imenetalbi"
+
+| Dans le mille ! Bien joué !
+  |=====================================                                                                                                                                                                      |  18%
+| Pour lister tous les objets actuellement dans votre espace de travail il faut utiliser la commande ls().
+
+> ls()
+[1] "l"       "taille"  "taille1" "taille2" "taille3" "tailles" "v"       "x"       "y"      
+
+| C'est tout à fait ça !
+  |==============================================                                                                                                                                                             |  23%
+| Un certain nombre de commande R ont les mêmes noms que leurs commandes équivalentes sous Linux ou Mac. Ces deux systèmes d'exploitations sont issus d'un système d'exploitation appelé Unix. Windows n'en est pas
+| issu, les commandes peuvent donc différer.
+
+...
+  |=======================================================                                                                                                                                                    |  27%
+| Assignez 9 à x, comme vous l'avez appris dans la leçon sur les assignations.
+
+> x->9
+Erreur dans 9 <- x : membre gauche de l'assignation (do_set) incorrect
+> 
+> 9->x
+
+| All that practice is paying off!
+  |=================================================================                                                                                                                                          |  32%
+| Observez maintenant les objets dans votre espace de travail avec la commande ls().
+
+> ls()
+[1] "l"       "taille"  "taille1" "taille2" "taille3" "tailles" "v"       "x"       "y"      
+
+| All that practice is paying off!
+  |==========================================================================                                                                                                                                 |  36%
+| Vous pouvez afficher tous les fichiers dans votre dossier de travail en utilisant les commandes list.files() ou dir().
+
+> 
+> dir()
+ [1] "Applications"           "Desktop"                "Documents"              "Downloads"              "iCloud Drive (archive)" "Library"                "Movies"                 "Music"                 
+ [9] "Pictures"               "Public"                
+
+| Tu assures !
+  |===================================================================================                                                                                                                        |  41%
+| Une bonne pratique d'apprentissage. Pendant cette leçon, vous devriez examiner le fichier d'aide de chaque nouvelle commande à l'aide de la commande ?. Regardez l'aide de la commande list.files ou dir.
+
+> dir
+function (path = ".", pattern = NULL, all.files = FALSE, full.names = FALSE, 
+    recursive = FALSE, ignore.case = FALSE, include.dirs = FALSE, 
+    no.. = FALSE) 
+.Internal(list.files(path, pattern, all.files, full.names, recursive, 
+    ignore.case, include.dirs, no..))
+<bytecode: 0x7fa8ba4c0260>
+<environment: namespace:base>
+
+| Ce n'est pas tout à fait ce que je cherche. Essaie encore. ou tape info() pour plus d'options.
+
+| Tapez ?list.files pour voir l'aide. N'oubliez pas qu'il ne faut pas mettre de parenthèses.
+
+> list.files
+function (path = ".", pattern = NULL, all.files = FALSE, full.names = FALSE, 
+    recursive = FALSE, ignore.case = FALSE, include.dirs = FALSE, 
+    no.. = FALSE) 
+.Internal(list.files(path, pattern, all.files, full.names, recursive, 
+    ignore.case, include.dirs, no..))
+<bytecode: 0x7fa8e801d778>
+<environment: namespace:base>
+
+| Pas exactement. Retente ta chance. ou tape info() pour plus d'options.
+
+| Tapez ?list.files pour voir l'aide. N'oubliez pas qu'il ne faut pas mettre de parenthèses.
+
+> inf()
+Erreur dans inf() : impossible de trouver la fonction "inf"
+> info()
+
+| Quand tu es arrivé(e) au prompt R (>):
+| -- Tape skip() pour sauter la question.
+| -- Tape play() pour expérimenter et jouer avec R; Swirl en fera abstraction...
+| -- JUSQU'A ce que tu tapes nxt() pour regagner l'attention de Swirl.
+| -- Tape bye() pour quitter Swirl. Ta progression sera sauvegardée.
+| -- Tape main() pour retourner au menu principal de Swirl.
+| -- Tape info() pour montrer les options une nouvelle fois.
+
+> skip()
+
+| J'affiche la bonne réponse pour toi...
+
+> ?list.files
+démarrage du serveur d'aide httpd ... fini
+
+| C'est tout à fait ça !
+  |============================================================================================                                                                                                               |  45%
+| Une des parties les plus importante de l'aide est la section See Also. Lisez là pour la commande list.files. Certaines de ces commandes pourront être utilisées par la suite.
+
+...
+  |======================================================================================================                                                                                                     |  50%
+| La commande args() utilisée sur une autre commande permet de connaître les arguments qu'elle prend. C'est parfois très pratique.
+
+...
+  |===============================================================================================================                                                                                            |  55%
+| Utilisez la commande args() pour déterminer les arguments utilisé par la commande list.files().
+
+> args(list.files())
+NULL
+
+| Try again. Getting it right on the first try is boring anyway! ou tape info() pour plus d'options.
+
+| Tapez args(list.files) pour obtenir les arguments de list.files.
+
+> args(list.files)
+function (path = ".", pattern = NULL, all.files = FALSE, full.names = FALSE, 
+    recursive = FALSE, ignore.case = FALSE, include.dirs = FALSE, 
+    no.. = FALSE) 
+NULL
+
+| Tu es extraordinaire !
+  |========================================================================================================================                                                                                   |  59%
+| Assignez la valeur du dossier de travail actuel à un objet appelé "anc.dos".
+
+> 5->anc.doc
+
+| Continue ! Tu trouveras ! ou tape info() pour plus d'options.
+
+| Tapez anc.dos <- getwd() pour assignez la valeur de l'espace de travail actuel à l'objet "anc.dos".
+
+> getwd()->anc.doc
+
+| Pas tout à fait, mais continue à chercher ! ou tape info() pour plus d'options.
+
+| Tapez anc.dos <- getwd() pour assignez la valeur de l'espace de travail actuel à l'objet "anc.dos".
+
+> anc<- getwd()
+
+| Presque ! Essaie encore ! ou tape info() pour plus d'options.
+
+| Tapez anc.dos <- getwd() pour assignez la valeur de l'espace de travail actuel à l'objet "anc.dos".
+
+> anc.dos<-getwd()
+
+| Keep working like that and you'll get there!
+  |=================================================================================================================================                                                                          |  64%
+| Nous reviendrons vers anc.dos plus tard. Beaucoup de commandes ont la propriété pratique d'envoyer comme résultat la réponse à la question qu'elle pose.
+
+...
+  |==========================================================================================================================================                                                                 |  68%
+| Utilisez dir.create() pour créer un dossier de test appelé "testdos" dans le dossier de travail actuel.
+
+> dir.create(testdos)->getwd()
+Erreur dans dir.create(testdos) : objet 'testdos' introuvable
+> dir.create(testdos)
+Erreur dans dir.create(testdos) : objet 'testdos' introuvable
+> 
+> skip()
+
+| J'affiche la bonne réponse pour toi...
+
+> dir.create("testdos")
+
+| Tu es au top !
+  |====================================================================================================================================================                                                       |  73%
+| Nous allons maintenant déplacer notre dossier de travail courant dans le dossier "testdos"
+
+...
+  |=============================================================================================================================================================                                              |  77%
+| Pour ce faire, on utilise la commande setwd() sur le dossier "testdos".
+
+> setwd("testdos")
+
+| Bon boulot !
+  |======================================================================================================================================================================                                     |  82%
+| En général, vous voudrez avoir votre dossier de travail courant dans un endroit raisonnable, par exemple spécifique au projet sur lequel vous êtes en train de travailler.
+
+...
+  |===============================================================================================================================================================================                            |  86%
+| Revenez à votre espace de travail d'origine and utilisant la commande setwd().
+
+> setwd
+function (dir) 
+.Internal(setwd(dir))
+<bytecode: 0x7fa8dd09b9c0>
+<environment: namespace:base>
+
+| Presque ! Essaie encore ! ou tape info() pour plus d'options.
+
+| Rappelez-vous qu'on a utilisé l'objet anc.dos pour stocker le dossier de travail d'origine.
+
+> stewd()
+Erreur dans stewd() : impossible de trouver la fonction "stewd"
+> setwd()
+Erreur dans setwd() : 
+  l'argument "dir" est manquant, avec aucune valeur par défaut
+> dir.setwd()
+Erreur dans dir.setwd() : impossible de trouver la fonction "dir.setwd"
+> skip()
+
+| J'affiche la bonne réponse pour toi...
+
+> setwd(anc.dos)
+
+| Bravo!
+  |=========================================================================================================================================================================================                  |  91%
+| Vous pouvez maintenant supprimer le dossier "testdos" et tout son contenu.
+
+...
+  |==================================================================================================================================================================================================         |  95%
+| Dans cette leçon, vous avez appris à examiner ce que contiennent votre espace de travail et votre dossier de travail. Vous avez aussi commencé à manipuler les fichiers et dossiers depuis R.
+
+...
+  |===========================================================================================================================================================================================================| 100%
+| Souhaitez-vous soumettre votre progression sur Moodle à votre enseignant (cela ne fonctionnera que pour les étudiants de l'université Paris 8) ? Si vous ne le faites pas maintenant, vous pourrez toujours lui
+| envoyer le fichier 'Fichiers_et_espace_de_travail.txt' qui a été créé plus tard.
+
+1: Oui
+2: Non
+
+Sélection : 1
+
+| Tu y es presque. Essaie encore.
+
+| Cela soumettra votre avancée dans le cours.
+
+1: Non
+2: Oui
+
+Sélection : 2
+
+| Pas exactement. Retente ta chance.
+
+| Cela soumettra votre avancée dans le cours.
+
+1: Non
+2: Oui
+
+Sélection : 

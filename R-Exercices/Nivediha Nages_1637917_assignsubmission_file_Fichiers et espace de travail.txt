@@ -1,0 +1,597 @@
+> install.packages('swirl')
+Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘utf8’, ‘pillar’, ‘pkgconfig’, ‘vctrs’, ‘sys’, ‘rprojroot’, ‘crayon’, ‘fs’, ‘diffobj’, ‘fansi’, ‘rematch2’, ‘tibble’, ‘askpass’, ‘glue’, ‘magrittr’, ‘stringi’, ‘brio’, ‘callr’, ‘cli’, ‘desc’, ‘ellipsis’, ‘evaluate’, ‘jsonlite’, ‘lifecycle’, ‘pkgload’, ‘praise’, ‘processx’, ‘ps’, ‘R6’, ‘rlang’, ‘waldo’, ‘withr’, ‘curl’, ‘mime’, ‘openssl’, ‘bitops’, ‘stringr’, ‘testthat’, ‘httr’, ‘yaml’, ‘RCurl’, ‘digest’
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/utf8_1.2.2.tar.gz'
+Content type 'application/x-gzip' length 236735 bytes (231 KB)
+==================================================
+downloaded 231 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/pillar_1.8.1.tar.gz'
+Content type 'application/x-gzip' length 674653 bytes (658 KB)
+==================================================
+downloaded 658 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/pkgconfig_2.0.3.tar.gz'
+Content type 'application/x-gzip' length 17376 bytes (16 KB)
+==================================================
+downloaded 16 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/vctrs_0.5.0.tar.gz'
+Content type 'application/x-gzip' length 2263546 bytes (2.2 MB)
+==================================================
+downloaded 2.2 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/sys_3.4.1.tar.gz'
+Content type 'application/x-gzip' length 54976 bytes (53 KB)
+==================================================
+downloaded 53 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/rprojroot_2.0.3.tar.gz'
+Content type 'application/x-gzip' length 100991 bytes (98 KB)
+==================================================
+downloaded 98 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/crayon_1.5.2.tar.gz'
+Content type 'application/x-gzip' length 158110 bytes (154 KB)
+==================================================
+downloaded 154 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/fs_1.5.2.tar.gz'
+Content type 'application/x-gzip' length 760048 bytes (742 KB)
+==================================================
+downloaded 742 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/diffobj_0.3.5.tar.gz'
+Content type 'application/x-gzip' length 1007502 bytes (983 KB)
+==================================================
+downloaded 983 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/fansi_1.0.3.tar.gz'
+Content type 'application/x-gzip' length 413211 bytes (403 KB)
+==================================================
+downloaded 403 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/rematch2_2.1.2.tar.gz'
+Content type 'application/x-gzip' length 44269 bytes (43 KB)
+==================================================
+downloaded 43 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/tibble_3.1.8.tar.gz'
+Content type 'application/x-gzip' length 727025 bytes (709 KB)
+==================================================
+downloaded 709 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/askpass_1.1.tar.gz'
+Content type 'application/x-gzip' length 23822 bytes (23 KB)
+==================================================
+downloaded 23 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/glue_1.6.2.tar.gz'
+Content type 'application/x-gzip' length 157185 bytes (153 KB)
+==================================================
+downloaded 153 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/magrittr_2.0.3.tar.gz'
+Content type 'application/x-gzip' length 234989 bytes (229 KB)
+==================================================
+downloaded 229 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/stringi_1.7.8.tar.gz'
+Content type 'application/x-gzip' length 3201641 bytes (3.1 MB)
+==================================================
+downloaded 3.1 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/brio_1.1.3.tar.gz'
+Content type 'application/x-gzip' length 44728 bytes (43 KB)
+==================================================
+downloaded 43 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/callr_3.7.3.tar.gz'
+Content type 'application/x-gzip' length 424223 bytes (414 KB)
+==================================================
+downloaded 414 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/cli_3.4.1.tar.gz'
+Content type 'application/x-gzip' length 1306037 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/desc_1.4.2.tar.gz'
+Content type 'application/x-gzip' length 317043 bytes (309 KB)
+==================================================
+downloaded 309 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/ellipsis_0.3.2.tar.gz'
+Content type 'application/x-gzip' length 40284 bytes (39 KB)
+==================================================
+downloaded 39 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/evaluate_0.18.tar.gz'
+Content type 'application/x-gzip' length 77698 bytes (75 KB)
+==================================================
+downloaded 75 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/jsonlite_1.8.3.tar.gz'
+Content type 'application/x-gzip' length 1165185 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/lifecycle_1.0.3.tar.gz'
+Content type 'application/x-gzip' length 122567 bytes (119 KB)
+==================================================
+downloaded 119 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/pkgload_1.3.1.tar.gz'
+Content type 'application/x-gzip' length 172165 bytes (168 KB)
+==================================================
+downloaded 168 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/praise_1.0.0.tar.gz'
+Content type 'application/x-gzip' length 15926 bytes (15 KB)
+==================================================
+downloaded 15 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/processx_3.8.0.tar.gz'
+Content type 'application/x-gzip' length 446006 bytes (435 KB)
+==================================================
+downloaded 435 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/ps_1.7.2.tar.gz'
+Content type 'application/x-gzip' length 389374 bytes (380 KB)
+==================================================
+downloaded 380 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/R6_2.5.1.tar.gz'
+Content type 'application/x-gzip' length 82477 bytes (80 KB)
+==================================================
+downloaded 80 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/rlang_1.0.6.tar.gz'
+Content type 'application/x-gzip' length 1923948 bytes (1.8 MB)
+==================================================
+downloaded 1.8 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/waldo_0.4.0.tar.gz'
+Content type 'application/x-gzip' length 99901 bytes (97 KB)
+==================================================
+downloaded 97 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/withr_2.5.0.tar.gz'
+Content type 'application/x-gzip' length 225454 bytes (220 KB)
+==================================================
+downloaded 220 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/curl_4.3.3.tar.gz'
+Content type 'application/x-gzip' length 783800 bytes (765 KB)
+==================================================
+downloaded 765 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/mime_0.12.tar.gz'
+Content type 'application/x-gzip' length 37125 bytes (36 KB)
+==================================================
+downloaded 36 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/openssl_2.0.4.tar.gz'
+Content type 'application/x-gzip' length 1402096 bytes (1.3 MB)
+==================================================
+downloaded 1.3 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/bitops_1.0-7.tar.gz'
+Content type 'application/x-gzip' length 35531 bytes (34 KB)
+==================================================
+downloaded 34 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/stringr_1.4.1.tar.gz'
+Content type 'application/x-gzip' length 206809 bytes (201 KB)
+==================================================
+downloaded 201 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/testthat_3.1.5.tar.gz'
+Content type 'application/x-gzip' length 3637261 bytes (3.5 MB)
+==================================================
+downloaded 3.5 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/httr_1.4.4.tar.gz'
+Content type 'application/x-gzip' length 498400 bytes (486 KB)
+==================================================
+downloaded 486 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/yaml_2.3.6.tar.gz'
+Content type 'application/x-gzip' length 286280 bytes (279 KB)
+==================================================
+downloaded 279 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/RCurl_1.98-1.9.tar.gz'
+Content type 'application/x-gzip' length 1123856 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/digest_0.6.30.tar.gz'
+Content type 'application/x-gzip' length 358071 bytes (349 KB)
+==================================================
+downloaded 349 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/swirl_2.4.5.tar.gz'
+Content type 'application/x-gzip' length 347115 bytes (338 KB)
+==================================================
+downloaded 338 KB
+
+* installing *binary* package ‘utf8’ ...
+* DONE (utf8)
+* installing *binary* package ‘pkgconfig’ ...
+* DONE (pkgconfig)
+* installing *binary* package ‘sys’ ...
+* DONE (sys)
+* installing *binary* package ‘rprojroot’ ...
+* DONE (rprojroot)
+* installing *binary* package ‘crayon’ ...
+* DONE (crayon)
+* installing *binary* package ‘fs’ ...
+* DONE (fs)
+* installing *binary* package ‘fansi’ ...
+* DONE (fansi)
+* installing *binary* package ‘glue’ ...
+* DONE (glue)
+* installing *binary* package ‘magrittr’ ...
+* DONE (magrittr)
+* installing *binary* package ‘stringi’ ...
+* DONE (stringi)
+* installing *binary* package ‘brio’ ...
+* DONE (brio)
+* installing *binary* package ‘cli’ ...
+* DONE (cli)
+* installing *binary* package ‘evaluate’ ...
+* DONE (evaluate)
+* installing *binary* package ‘jsonlite’ ...
+* DONE (jsonlite)
+* installing *binary* package ‘praise’ ...
+* DONE (praise)
+* installing *binary* package ‘ps’ ...
+* DONE (ps)
+* installing *binary* package ‘R6’ ...
+* DONE (R6)
+* installing *binary* package ‘rlang’ ...
+* DONE (rlang)
+* installing *binary* package ‘withr’ ...
+* DONE (withr)
+* installing *binary* package ‘curl’ ...
+* DONE (curl)
+* installing *binary* package ‘mime’ ...
+* DONE (mime)
+* installing *binary* package ‘bitops’ ...
+* DONE (bitops)
+* installing *binary* package ‘yaml’ ...
+* DONE (yaml)
+* installing *binary* package ‘digest’ ...
+* DONE (digest)
+* installing *binary* package ‘diffobj’ ...
+* DONE (diffobj)
+* installing *binary* package ‘askpass’ ...
+* DONE (askpass)
+* installing *binary* package ‘desc’ ...
+* DONE (desc)
+* installing *binary* package ‘ellipsis’ ...
+* DONE (ellipsis)
+* installing *binary* package ‘lifecycle’ ...
+* DONE (lifecycle)
+* installing *binary* package ‘processx’ ...
+* DONE (processx)
+* installing *binary* package ‘stringr’ ...
+* DONE (stringr)
+* installing *binary* package ‘RCurl’ ...
+* DONE (RCurl)
+* installing *binary* package ‘vctrs’ ...
+* DONE (vctrs)
+* installing *binary* package ‘callr’ ...
+* DONE (callr)
+* installing *binary* package ‘pkgload’ ...
+* DONE (pkgload)
+* installing *binary* package ‘openssl’ ...
+* DONE (openssl)
+* installing *binary* package ‘pillar’ ...
+* DONE (pillar)
+* installing *binary* package ‘httr’ ...
+* DONE (httr)
+* installing *binary* package ‘tibble’ ...
+* DONE (tibble)
+* installing *binary* package ‘rematch2’ ...
+* DONE (rematch2)
+* installing *binary* package ‘waldo’ ...
+* DONE (waldo)
+* installing *binary* package ‘testthat’ ...
+* DONE (testthat)
+* installing *binary* package ‘swirl’ ...
+* DONE (swirl)
+
+The downloaded source packages are in
+	‘/tmp/Rtmpg77sVd/downloaded_packages’
+> library(swirl)
+
+| Hi! Type swirl() when you are ready to begin.
+
+> install_course_github('EliasBcd', 'InitiationR')
+Downloading: 75 kB      
+> select_language('french', append_rprofile = TRUE)
+> swirl()
+
+| Bienvenue sur Swirl ! Connecte-toi. Si ce n'est pas ta première
+| connexion, indique ton nom utilisé précédemment. Si tu dois
+| encore choisir ton nom, fais preuve d'un peu d'originalité !
+
+Comment dois-je t'appeler ? Nivediha
+
+| Merci, Nivediha. Quelques instructions de base avant d'attaquer
+| la première leçon. Tout d'abord, si tu vois s'afficher '...',
+| cela veut dire que tu dois appuyer sur Entrée quand tu as fini
+| de lire et es prêt(e) à continuer.
+
+...  <-- That's your cue to press Enter to continue
+
+| Et quand tu vois 'Réponse:', le prompt R (>), ou si tu es
+| invité(e) à sélectionner une option, c'est à toi de taper ta
+| réponse et d'appuyer sur Entrée pour continuer.
+
+Select 1, 2, or 3 and press Enter 
+
+1: Continuer.
+2: Avancer.
+3: C'est parti !
+
+Selection: 1
+
+| You can exit swirl and return to the R prompt (>) at any time by
+| pressing the Esc key. If you are already at the prompt, type
+| bye() to exit and save your progress. When you exit properly,
+| you'll see a short message letting you know you've done so.
+
+| Quand tu es arrivé(e) au prompt R (>):
+| -- Tape skip() pour sauter la question.
+| -- Tape play() pour expérimenter et jouer avec R; Swirl en fera
+| abstraction...
+| -- JUSQU'A ce que tu tapes nxt() pour regagner l'attention de
+| Swirl.
+| -- Tape bye() pour quitter Swirl. Ta progression sera
+| sauvegardée.
+| -- Tape main() pour retourner au menu principal de Swirl.
+| -- Tape info() pour montrer les options une nouvelle fois.
+
+| C'est parti !
+
+...
+
+| Choisis un cours ou tape 0 pour quitter Swirl.
+
+1: InitiationR
+2: Montre-moi le répertoire des cours Swirl !
+
+Selection: 1
+
+| Choisis une leçon ou tape 0 pour retourner au menu principal.
+
+ 1: Manipulations simples
+ 2: Assignations et objets
+ 3: Types
+ 4: Vecteurs
+ 5: Fichiers et espace de travail
+ 6: Logique
+ 7: Valeurs manquantes
+ 8: Vecteurs numériques
+ 9: Dataframes
+10: Scripts et fonctions
+11: Control Flow
+
+Selection: 5
+
+| Attempting to load lesson dependencies...
+
+| Cette leçon requiert le paquet ‘base64enc’ . Voudrais-tu que je
+| l'installe pour toi maintenant ?
+
+1: Oui
+2: Non
+
+Selection: 1
+
+| Installation du paquet ‘base64enc’ maintenant...
+
+| Le paquet ‘base64enc’ a été chargé correctement !
+
+  |                                                         |   0%
+
+| Dans cette leçon, nous etudierons comment examiner votre espace
+| de travail local dans R et le lien entre cet espace de travail
+| et les fichiers sur votre ordinateur.
+
+...
+
+  |===                                                      |   5%
+| Chaque système d'exploitation a sa propre convention pour
+| explorer les fichiers, les résultats des commandes dans ce cours
+| pourront varier suivant votre système d'exploitation.
+
+...
+
+  |=====                                                    |   9%
+| R utilise néanmoins le même ensemble de commande quelque soit le
+| système d'exploitation. Votre code fonctionnera normalement de
+| la même manière partout. Essayons !
+
+...
+
+  |========                                                 |  14%
+| Pour déterminer le dossier dans lequel R travaille actuellement,
+| on utilise la commande getwd() (get working directory). Essayez
+| !
+
+> getwd()
+[1] "/cloud/project"
+
+| Quelle maîtrise !
+
+  |==========                                               |  18%
+| Pour lister tous les objets actuellement dans votre espace de
+| travail il faut utiliser la commande ls().
+
+> ls()
+character(0)
+
+| Tu es au top !
+
+  |=============                                            |  23%
+| Un certain nombre de commande R ont les mêmes noms que leurs
+| commandes équivalentes sous Linux ou Mac. Ces deux systèmes
+| d'exploitations sont issus d'un système d'exploitation appelé
+| Unix. Windows n'en est pas issu, les commandes peuvent donc
+| différer.
+
+...
+
+  |================                                         |  27%
+| Assignez 9 à x, comme vous l'avez appris dans la leçon sur les
+| assignations.
+
+> x <- 9
+
+| Quel talent !
+
+  |==================                                       |  32%
+| Observez maintenant les objets dans votre espace de travail avec
+| la commande ls().
+
+> ls()
+[1] "x"
+
+| Bon boulot !
+
+  |=====================                                    |  36%
+| Vous pouvez afficher tous les fichiers dans votre dossier de
+| travail en utilisant les commandes list.files() ou dir().
+
+> list.files()
+[1] "project.Rproj"
+
+| Quelle maîtrise !
+
+  |=======================                                  |  41%
+| Une bonne pratique d'apprentissage. Pendant cette leçon, vous
+| devriez examiner le fichier d'aide de chaque nouvelle commande à
+| l'aide de la commande ?. Regardez l'aide de la commande
+| list.files ou dir.
+
+> list.files()
+[1] "project.Rproj"
+
+| Bien tenté, mais ce n'est pas exactement ce que j'espérais.
+| Essaie à nouveau. ou tape info() pour plus d'options.
+
+| Tapez ?list.files pour voir l'aide. N'oubliez pas qu'il ne faut
+| pas mettre de parenthèses.
+
+> ?list.files
+
+| C'est du bon boulot !
+
+  |==========================                               |  45%
+| Une des parties les plus importante de l'aide est la section See
+| Also. Lisez là pour la commande list.files. Certaines de ces
+| commandes pourront être utilisées par la suite.
+
+...
+
+  |============================                             |  50%
+| La commande args() utilisée sur une autre commande permet de
+| connaître les arguments qu'elle prend. C'est parfois très
+| pratique.
+
+...
+
+  |===============================                          |  55%
+| Utilisez la commande args() pour déterminer les arguments
+| utilisé par la commande list.files().
+
+> args(list.files)
+function (path = ".", pattern = NULL, all.files = FALSE, full.names = FALSE, 
+    recursive = FALSE, ignore.case = FALSE, include.dirs = FALSE, 
+    no.. = FALSE) 
+NULL
+
+| Dans le mille ! Bien joué !
+
+  |==================================                       |  59%
+| Assignez la valeur du dossier de travail actuel à un objet
+| appelé "anc.dos".
+
+> anc.dos <- getwd()
+
+| Quel talent !
+
+  |====================================                     |  64%
+| Nous reviendrons vers anc.dos plus tard. Beaucoup de commandes
+| ont la propriété pratique d'envoyer comme résultat la réponse à
+| la question qu'elle pose.
+
+...
+
+  |=======================================                  |  68%
+| Utilisez dir.create() pour créer un dossier de test appelé
+| "testdos" dans le dossier de travail actuel.
+
+> dir.create('testdos')
+
+| Tu es au top !
+
+  |=========================================                |  73%
+| Nous allons maintenant déplacer notre dossier de travail courant
+| dans le dossier "testdos"
+
+...
+
+  |============================================             |  77%
+| Pour ce faire, on utilise la commande setwd() sur le dossier
+| "testdos".
+
+> setwd('testdos')
+
+| C'est tout à fait ça !
+
+  |===============================================          |  82%
+| En général, vous voudrez avoir votre dossier de travail courant
+| dans un endroit raisonnable, par exemple spécifique au projet
+| sur lequel vous êtes en train de travailler.
+
+...
+
+  |=================================================        |  86%
+| Revenez à votre espace de travail d'origine and utilisant la
+| commande setwd().
+
+> setwd(anc.dos)
+
+| All that practice is paying off!
+
+  |====================================================     |  91%
+| Vous pouvez maintenant supprimer le dossier "testdos" et tout
+| son contenu.
+
+...
+
+  |======================================================   |  95%
+| Dans cette leçon, vous avez appris à examiner ce que contiennent
+| votre espace de travail et votre dossier de travail. Vous avez
+| aussi commencé à manipuler les fichiers et dossiers depuis R.
+
+...
+
+  |=========================================================| 100%
+| Souhaitez-vous soumettre votre progression sur Moodle à votre
+| enseignant (cela ne fonctionnera que pour les étudiants de
+| l'université Paris 8) ? Si vous ne le faites pas maintenant,
+| vous pourrez toujours lui envoyer le fichier
+| 'Fichiers_et_espace_de_travail.txt' qui a été créé plus tard.
+
+1: Oui
+2: Non
+
+Selection: 1

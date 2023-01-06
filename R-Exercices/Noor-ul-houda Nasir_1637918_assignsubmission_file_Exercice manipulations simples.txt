@@ -1,0 +1,305 @@
+The downloaded source packages are in
+	‘/tmp/RtmpINoirY/downloaded_packages’
+> library(swirl)
+
+| Hi! Type swirl() when you are ready to begin.
+
+> install_course_github("EliasBcd", "InitiationR")
+Downloading: 43 kB     > swirl()
+
+| Welcome to swirl! Please sign in. If you've been here before, use the same name
+| as you did then. If you are new, call yourself something unique.
+
+What shall I call you? Noor
+
+| Thanks, Noor. Let's cover a couple of quick housekeeping items before we begin
+| our first lesson. First of all, you should know that when you see '...', that
+| means you should press Enter when you are done reading and ready to continue.
+
+...  <-- That's your cue to press Enter to continue
+
+| Also, when you see 'ANSWER:', the R prompt (>), or when you are asked to select
+| from a list, that means it's your turn to enter a response, then press Enter to
+| continue.
+
+Select 1, 2, or 3 and press Enter 
+
+1: Continue.
+2: Proceed.
+3: Let's get going!
+
+Selection: 1
+
+| You can exit swirl and return to the R prompt (>) at any time by pressing the Esc
+| key. If you are already at the prompt, type bye() to exit and save your progress.
+| When you exit properly, you'll see a short message letting you know you've done
+| so.
+
+| When you are at the R prompt (>):
+| -- Typing skip() allows you to skip the current question.
+| -- Typing play() lets you experiment with R on your own; swirl will ignore what
+| you do...
+| -- UNTIL you type nxt() which will regain swirl's attention.
+| -- Typing bye() causes swirl to exit. Your progress will be saved.
+| -- Typing main() returns you to swirl's main menu.
+| -- Typing info() displays these options again.
+
+| Let's get started!
+
+...
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: InitiationR
+2: Take me to the swirl course repository!
+Selection: 1
+
+| Please choose a lesson, or type 0 to return to course menu.
+
+1: Manipulations simples
+2: Assignations et objets
+3: Types
+4: Vecteurs
+5: Fichiers et espace de travail
+6: Logique
+7: Valeurs manquantes
+8: Vecteurs numériques
+
+Selection: 1
+
+| Attempting to load lesson dependencies...
+
+| This lesson requires the ‘base64enc’ package. Would you like me to install it for
+| you now?
+
+1: Yes
+2: No
+
+Selection: 
+Enter an item from the menu, or 0 to exit
+Selection: 1
+
+| Trying to install package ‘base64enc’ now...
+
+| Package ‘base64enc’ loaded correctly!
+
+  |                                                                          |   0%
+
+| Bienvenue à votre première leçon de R. Nous allons apprendre à manipuler R. La
+| console affiche un texte de bienvenue suivi d'une ligne commençant par le
+| caractère `>` (l'invite de commande)
+
+...
+
+  |====                                                                      |   5%
+| Si vous souhaitez obtenir plus d'information sur un sujet en particulier en lien
+| avec R, vous pouvez taper help.start() dans l'invite de commande. Cela ouvrira un
+| menu avec des informations (soit dans votre navigateur par défaut, soit dans
+| Rstudio, suivant votre installation). Évidemment, vous trouverez aussi des
+| réponses à vos questions en faisant une recherche sur internet.
+
+...
+
+  |=======                                                                   |  10%
+| L'utilisation la plus basique de R est comme une calculatrice interactive. Nous
+| pouvons tout de suite essayer quelques calculs. Tapez 2 + 2 et tapez entrée.
+
+> 
+> 2+2
+[1] 4
+
+| You are doing so well!
+
+  |===========                                                               |  15%
+| Nous avons vu une addition, essayons une soustraction. Tapez 5 - 7.
+
+> 5-7
+[1] -2
+
+| Nice work!
+
+  |===============                                                           |  20%
+| Une multiplication. Tapez 4 * 12.
+
+> 4*12
+[1] 48
+
+| You got it!
+
+  |==================                                                        |  25%
+| Une division. Tapez -10/3.
+
+> 
+> -10/3
+[1] -3.333333
+
+| Perseverance, that's the answer.
+
+  |======================                                                    |  30%
+| Des puissances. Tapez 5^2.
+
+> 5^2
+[1] 25
+
+| You're the best!
+
+  |==========================                                                |  35%
+| Nous allons voir maintenant comment calculer les fonctions mathématiques usuelles
+| logarithme, racine carrée, exponentielle et valeur absolue.
+
+...
+
+  |==============================                                            |  40%
+| Pour calculer la racine carré, on utilise la commande sqrt(), pour square root,
+| l'équivalent en anglais. Tapez sqrt(4).
+
+> sqrt(4)
+[1] 2
+
+| Great job!
+
+  |=================================                                         |  45%
+| Essayons maintenant avec la fonction exponentielle. Tapez exp(0).
+
+> exp(0)
+[1] 1
+
+| That's correct!
+
+  |=====================================                                     |  50%
+| Essayons maintenant avec la fonction logarithme naturel. R est un logiciel de
+| programmation en anglais, il utilise donc la convention anglaise. Pour obtenir
+| ln(x), il faut taper log(x). Cherchez la valeur de ln(2).
+
+> ln(2)
+Error in ln(2) : could not find function "ln"
+> log(2)
+[1] 0.6931472
+
+| Perseverance, that's the answer.
+
+  |=========================================                                 |  55%
+| Pour calculer le log français (logarithme décimal, en base 10), il suffit de
+| taper log10. Cherchez à obtenir le logarithme décimal de 100.
+
+> log100
+Error: object 'log100' not found
+> log(100)
+[1] 4.60517
+
+| One more time. You can do it! Or, type info() for more options.
+
+| Tapez log10(100)
+
+> log10(100)
+[1] 2
+
+| Perseverance, that's the answer.
+
+  |============================================                              |  60%
+| Il y a en fait deux méthodes pour calculer le logarithme en base 10. R permet de
+| calculer le logarithme en n'importe quelle base, en utilisant log(x, base).
+| Voyons voir si vous avez compris. Essayez calculer le logarithme en base 8 de
+| 1000
+
+> log(100,8)
+[1] 2.214619
+
+| Not quite! Try again. Or, type info() for more options.
+
+| Tapez log(1000, 8)
+
+> log(1000,8)
+[1] 3.321928
+
+| Keep working like that and you'll get there!
+
+  |================================================                          |  65%
+| R connaît aussi les fonctions trigonométriques. Essayez de calculer le sinus de
+| 0.
+
+> sin(0)
+[1] 0
+
+| You are really on a roll!
+
+  |====================================================                      |  70%
+| Ce qui nous amène naturellement à la constante pi. R connaît certaines
+| constantes. Essayez de taper pi.
+
+> pi
+[1] 3.141593
+
+| Your dedication is inspiring!
+
+  |========================================================                  |  75%
+| On peut donc maintenant calculer le cosinus de pi/2.
+
+> cos(pi/2)
+[1] 6.123234e-17
+
+| You are doing so well!
+
+  |===========================================================               |  80%
+| Notez que la constante e (exponentielle) n'existe pas en tant que telle dans R.
+| Essayer de taper 10e2
+
+> 10e2
+[1] 1000
+
+| Keep up the great work!
+
+  |===============================================================           |  85%
+| e remplace en fait 10^, mais nécessite d'avoir un nombre devant. 1e2 est une
+| expression valide, mais e2 ne l'est pas. Voyons voir si vous avez compris. Que
+| vaut 1e2 ?
+
+1: 1000
+2: exp(2)
+3: 100
+4: 0.01
+
+Selection: 3
+
+| All that practice is paying off!
+
+  |===================================================================       |  90%
+| Revenons à nos constantes, pour obtenir la constante e, il suffit d'utiliser la
+| fonction exponentielle. Que vaut e ?
+
+> exp(1)
+[1] 2.718282
+
+| Keep working like that and you'll get there!
+
+  |======================================================================    |  95%
+| Félicitations, vous avez maintenant vu les principales opérations mathématiques
+| simples possibles avec R. Vous savez maintenant utiliser R comme une calculatrice
+| collège, mais R est bien plus puissant que cela. La prochaine leçon nous
+| permettra d'aller plus loin.
+
+...
+
+  |==========================================================================| 100%
+| Souhaitez-vous soumettre votre progression sur Moodle à votre enseignant (cela ne
+| fonctionnera que pour les étudiants de l'université Paris 8) ? Si vous ne le
+| faites pas maintenant, vous pourrez toujours lui envoyer le fichier
+| 'Manipulations_simples.txt' qui a été créé plus tard.
+
+1: Oui
+2: Non
+
+Selection: 1
+
+| Excellent work!
+
+| You've reached the end of this lesson! Returning to the main menu...
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: InitiationR
+2: Take me to the swirl course repository!
+
+Selection: 0
+
+| Leaving swirl now. Type swirl() to resume.

@@ -1,0 +1,413 @@
+﻿2+2
+5-7
+4*12
+x<- 2
+x+4
+x<- 2
+y<- 5
+resultat <- x+y
+resultat
+x<-2
+x<-5
+x
+x<-1
+y<-3
+x<-y
+x
+chien<-"Chihuahua"
+chien
+valeur<-TRUE
+valeur
+chien=="Doberman"
+3<2
+taille1<-156
+taille2<-164
+taille3<-197
+taille4<-147
+taille5<-173
+(taille1+taille2+taille3+taille4+taille5/5)
+(taille1+taille2+taille3+taille4+taille5)/5
+tailles<-c(156,164,197,147,173)
+tailles
+chien<-c("Chihuahua",5,"Doberman"15)
+chien<-c("Chihuahua",5,"Doberman",15)
+chien
+liste_chiens<-list("Chihuahua",5,"Doberman",15)
+liste_chiens
+typeof(chien)
+typeof(liste_chiens)
+str(chien)
+str(liste_chiens)
+install.packages('swirl')
+install.packages('swirl')
+library('swirl')
+library('swirl')
+library('swirl')
+install.packages('swirl')
+install.packages("swirl")
+library('swirl')
+select_language('french',apprend_rprofile = T)
+Ashraf
+`names<-`('ashraf')
+select_language('french',append_rprofile = T)
+select_language('french', append_rprofile = T)
+taille1<-156
+taille1<-156
+taille2<- 164
+taille3<- 197
+taille4<- 147
+taille5<- 173
+(taille1 + taille2 + taille3 + taille4 + taille5)/5
+tailles<-c(156,164,197,147,173)
+tailles
+taillesm<-tailles/100
+taillesm
+poids<-c(45,59,110,44,88)
+imc<-poids/(tailles/100)^2
+imc
+chiens<-('Chihuahua')
+chiens_pref<-c('Doberman','Chihuahua','Husky','Bouvier Bernois','Labrador')
+chiens_pref
+chiens_pref==chien
+tailles==147
+taillesm>1.6
+liste<-1:10
+liste
+liste2<-10:1
+liste2
+seq(from=1.5, to = 2.2, by= 0.1)
+tailles
+tailles(1)
+tailles{1}
+tailles[1]
+tailles[3]
+tailles[-2]
+tailles[1:3]
+tailles[c(1,3,4)]
+z = c(TRUE, TRUE, FALSE, TRUE, FALSE)
+tailles[z]
+NA
+c(1, 5, NA) == NA
+is.na(NA)
+is.na(c(1, 5, NA))
+0 / 0
+10/0
+Inf/Inf
+base <- data.frame(tailles, poids)
+mean(base$tailles)
+base[2, ]
+base[2, "imc"]
+min(tailles)
+max(tailles)
+tailles <- c(156,164,197,147,173)
+mean(tailles)
+help('mean')
+?mean
+tailles <- c(156, 164, 197, 147, 173)
+poids <- c(45, 59, 110, 44, 88)
+mean(tailles)
+mean(poids)
+imc <- poids / (tailles / 100) ^ 2
+min(imc)
+max(imc)
+library(ggglot2)
+installed.packages('swirl')
+install.packages("ggplot2")
+library(ggplots2)
+library('ggplot2')
+library(haven)
+install.packages(haven)
+install.packages('haven')
+install.packages('tidyr')
+library(ggplot2)
+library(haven)
+library(tidyr)
+install.packages('swirl')
+library(swirl)
+ninstall_all_courses()
+uninstall_all_courses()
+install_course_github('EliasBcd', 'InitiationR')
+select_language('french', append_rprofile = TRUE)
+swirl()
+2+2
+5-7
+4*12
+-10/3
+5^2
+sqrt(4)
+exp(0)
+ln(2)
+log(2)
+log(100)
+log10(100)
+log(base = 8, 1000)
+log(1000, 8)
+sin(0)
+pi
+cos(pi/2)
+10e2
+2
+exp(1)
+getwd()
+ls()
+x<-9
+ls
+ls(x)
+ls()
+list.files()
+dir()
+list.files()
+info()
+skip()
+save.image("~/Untitled.RData")
+save.image("~/Desktop/Untitled.RData")
+load("/Users/ashrafzouine/Desktop/Untitled.RData")
+2+2
+5-7
+4*12
+x<- 2
+x+4
+x<- 2
+y<- 5
+resultat <- x+y
+resultat
+x<-2
+x<-5
+x
+x<-1
+y<-3
+x<-y
+x
+chien<-"Chihuahua"
+chien
+valeur<-TRUE
+valeur
+chien=="Doberman"
+3<2
+taille1<-156
+taille2<-164
+install.packages('swirl')
+library(swirl)
+uninstall_all_courses()
+install_course_github('EliasBcd', 'InitiationR')
+select_language('french' , append_rprofile = TRUE)
+swirl()
+1
+swirl()
+2+2
+5-7
+4*12
+-10/3
+5^2
+sqrt(4)
+exp(0)
+log(2)
+log10(100)
+log(1000, 8)
+sin(0)
+pi
+cos(pi/2)
+exp10(2)
+exp(20)
+10e2
+exp(E)
+10^100
+exp(1)
+x<-2
+x<-pi
+x
+x+4
+y<-5
+x+y
+<-x+y
+x+y
+resultat<- x+y
+resultat
+`x<-8`
+x=8
+x <- 8
+y <- x
+x <- y
+x
+T
+3>2
+swirl<-('chaise')
+taille1<-156
+taille2<-164
+taille3<-197
+(taille1+taille2+taille3)/3
+c(156, 164, 197)
+tailles<-(156, 164, 197)
+tailles<-c(156, 164, 197)
+c()
+?c
+list()
+list('R', TRUE, 8)
+l<-list('R', TRUE, 8)
+l
+v
+v<-list('R', TRUE, 8)
+v<-c('R', TRUE, 8)
+v
+str(v)
+str(l)
+quit(save = )
+swirl
+swirl()
+library('swirl')
+ls
+list('ls')
+play
+play()
+library('swirl')
+rm(list=ls())
+$
+$
+library('swirl')
+quit
+TRUE
+quit(runLast = )
+library()
+library(swirl)
+swirl()
+`[]`
+tailles[2]
+tailles[-2]
+poids[c(1,
+| 3)]
+skip()
+tailles[c(TRUE, TRUE, FALSE)]
+poids[poids < 70
+poids[poids < 70]
+skip()
+skip()
+tail()
+skip
+skip()
+install.packages('swirl')
+library('swirl')
+swirl()
+5+7
+x<-5+7
+quit()
+library('swirl')
+select_language('french')
+swirl()
+5+7
+x<-5+7
+x
+x-3
+y<-x-3
+y
+z<-c(1,1 9, 3.14)
+install.packages('swirl')
+library('swirl')
+uninstall_all_courses()
+install_course_github('EliasBcd' , 'InitiationR')
+select_language('french', append_rprofile = TRUE)
+swirl()
+c(156, 164, 197)
+tailles<- c(156, 164, 197)
+tailles
+taillesm<-c(tailles, 185, tailles)
+c(tailles, 185, tailles)
+taillesm<-c(tailles/100)
+taillesm<- tailles/100
+tailles_m <- tailles / 100
+tailles_m
+poids<- c(55, 65, 78)
+imc<- poids/tailles^2
+imc <- poids / tailles_m^2
+imc
+i
+i
+i
+i
+chiens<-i
+chiens<-c('Doberman', 'Chihuahua', 'Husky')
+c(1, 2, 3, 4)
+c(1, 2, 3, 4) + c(0, 10)
+c(1, 2, 3, 4) + c(0, 10, 100)
+tailles[2]
+tailles[-2]
+poids[c(1,3)]
+tailles[c(TRUE, TRUE, FALSE)]
+poids[poids < 70]
+tailles_m <- tailles / 1000
+chien
+tailles_m
+getwd()
+ls()
+x<-9
+ls()
+list.files()
+dir()
+list.files()
+?list.files
+args()
+args(list.files)
+args(list.files)<-anc.dos
+help()
+anc.dos
+skip()
+dir.create()
+dir.create(getwd)
+dir.create()<-getwd()
+dir.create(testdos)
+skip()
+setwd(testdos)
+skip()
+setwd
+setwd()
+setwd(dir = )
+skip()
+==
+TRUE == TRUE
+FALSE == TRUE
+(FALSE == TRUE) == FALSE
+6=7
+6 == 7
+6 < 7
+10 <= 10
+5 == 7
+5 != 7
+skip()
+skip()
+TRUE & c(TRUE, FALSE, FALSE)
+TRUE && c(TRUE, FALSE, FALSE)
+TRUE | c(TRUE, FALSE, FALSE)
+5 > 8 || 6 != 8 && 4 > 3.9
+c(44, NA, 5, NA)
+x<-c(44, NA, 5, NA)
+x*3
+y<-rnorm(1000)
+z<-rep(NA, 1000)
+data<-sample(c(y, z), 100)
+is.na()
+is.na(my_na)
+skip()
+my_na
+data == NA
+sum(my_na)
+data
+0/0
+Inf - Inf
+1:20
+pi:10
+15:1
+skip()
+seq(1, 20)
+seq(0, 10, by=0.5)
+seq(5, 10, length=30)
+ma_seq <- seq(5, 10, length=30)
+length()
+skip()
+1:length(ma_seq)
+seq(along.with =
+| ma_seq)
+seq(along.with =ma_seq)
+seq_along(ma_seq)
+rep(0, times =40)
+rep(c(0, 1, 2), times = 10)
+rep(c(0, 1, 2), each = 10)
+savehistory("~/Desktop/Untitled.Rhistory")
