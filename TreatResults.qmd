@@ -2,14 +2,79 @@
 title: "Resultats étudiants"
 author: "Elias"
 format: html
+execute: 
+  cache: true
+  warning: false
+  echo: false
 ---
 
-```{r}
-library(base64enc)
+```{r import}
 source("TreatResults.R")
+library(tidyverse)
+
 dir <-  "R-Exercices/"
 a <- list.files(dir, pattern = ".")
 b <- lapply(a, function(x) paste(dir, x, sep=""))
-c <- lapply(b, decode_results)
+c <- sapply(b, decode_results)
 ```
+
+```{r}
+data <- NULL
+failures <- c()
+for (tab in c){
+  if(is.data.frame(tab)){
+    if(is.null(data)){
+      data <- tab
+    }
+    else {
+      tryCatch(data <- rbind(data, tab),
+               error = function(e) cat("ERROR: ", conditionMessage(e), "\n"))
+    }
+  }
+  else(
+    failures <- c(failures, tab)
+  )
+}
+
+
+
+```
+Renommer les leçons correctement
+
+```{r}
+data <- data %>% 
+  mutate(lesson_name = replace(lesson_name, lesson_name == "Vecteurs num<e9>riques", "Vecteurs numériques"),
+         lesson_name = replace(lesson_name, lesson_name == "InitiationR", "Dataframes"))
+
+```
+
+Maximum par leçon
+
+```{r}
+nquestions <- data %>%
+  group_by(lesson_name) %>% 
+  summarise(max = max(question_number))
+
+knitr::kable(nquestions)
+```
+
+
+```{r}
+summary <- data %>%
+  group_by(user, lesson_name) %>%
+  summarise(skip = mean(skipped, na.rm = TRUE), attempt = mean(attempt), max = max(question_number))
+
+
+# for(name in nquestions$lesson_name){
+#   filter(summary, lesson_name == name) %>% 
+#     mutate(max,)
+# }
+
+knitr::kable(summary)
+```
+
+
+## Exploring weird data
+
+
 

@@ -1,8 +1,8 @@
-library(readr, include.only = 'read.csv')
+library(readr, include.only = 'read_csv')
 library(base64enc)
 
 decode_results <- function(path){
-  if(grepl(".txt.txt|Nages", path)){
+  if(grepl(".txt.txt|Nivediha Nages_1637917_assignsubmission_file_Control_flow|Nivediha Nages_1637917_assignsubmission_file_Fichiers et espace de travail", path)){
     return(path)
   }
   else if(grepl('Manipulations|Assignations|travail|Vecteurs|Scripts|Tirages_aleatoires|Types|Valeurs|Representations|Logique|Dataframes|Control', path)){
@@ -12,7 +12,7 @@ decode_results <- function(path){
                       error = function(e){return(path)}
   )
   decoded <- list()
-  #print(path)
+  # print(path)
   for(i in 1:nrow(encoded)){
     # print(i)
     decoded[[i]] <- tryCatch(suppressMessages(
@@ -33,26 +33,4 @@ decode_results <- function(path){
     return(path)
     # print(path)
   }
-}
-
-dir <-  "R-Exercices/"
-a <- list.files(dir, pattern = ".")
-b <- lapply(a, function(x) paste(dir, x, sep=""))
-c <- sapply(b, decode_results)
-
-data <- NULL
-failures <- c()
-for (tab in c){
-  if(is.data.frame(tab)){
-    if(is.null(data)){
-      data <- tab
-    }
-    else {
-      tryCatch(data <- rbind(data, tab),
-               error = function(e) cat("ERROR: ", conditionMessage(e), "\n"))
-    }
-  }
-  else(
-    failures <- c(failures, tab)
-  )
 }
