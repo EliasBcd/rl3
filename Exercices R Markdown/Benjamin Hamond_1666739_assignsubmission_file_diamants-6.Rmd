@@ -1,0 +1,34 @@
+---
+title: "Taille des diamants"
+author: "Benjamin Hamond"
+date: "15 Novembre 2022"
+output:  html_document
+Bibliographie : "Bibli.bib"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo=TRUE
+)
+
+library(ggplot2)
+library(dplyr)
+smaller <- diamonds |> 
+  filter(carat <= 2.5)
+```
+
+Nous avons des données sur  `r format(nrow(diamonds), big.mark=" ")` diamants. Seulement 
+`r format((nrow(diamonds) - nrow(smaller))*100/nrow(diamonds), digits =2)`% font plus de 
+2,5 carats. La répartition des *diamants* restants est indiquées **ci-dessous** :
+
+```{r, echo = FALSE}
+smaller |> 
+  ggplot(aes(carat)) + 
+  geom_freqpoly(binwidth = 0.01) +
+  ylab("Nombre")
+```
+
+
+Comme on peut le voir sur le graphique, la majorité des diamants ont des carats inferieur (ou égale) à 1 avec une concentration vers 0,25 ; 0,75 et 1 carat, La distribution n'est pas uniforme. 
+
+Grace à @wickham2016r que cet exercice existe.

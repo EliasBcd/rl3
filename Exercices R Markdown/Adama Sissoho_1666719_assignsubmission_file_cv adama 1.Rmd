@@ -1,0 +1,16 @@
+---
+title: "cv"
+author: "Adama Sissoho"
+date: "8 novembre 2022"
+output: html_document
+---
+
+expérience professionnel : 
+présidente de la république _2020-actuelle_
+formation : 
+école de l'IENA _2012-2015_
+polytechnique _2009-2010_
+compétence :
+patiente
+sérieuse
+sociable

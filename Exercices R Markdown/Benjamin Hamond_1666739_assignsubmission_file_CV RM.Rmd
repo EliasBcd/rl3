@@ -1,0 +1,23 @@
+---
+title: "CV"
+author: "Hamond benjamin"
+date: "2022-11-15"
+output: html_document
+---
+# Diplomes 
+* Bac **(2012)**
+* Permis B 
+* Master Ing??nerie Financi??re **(2018)**
+* Master Gestion de Portefeuille **(2020)**
+
+# Experience professionnels 
+* Stage ?? l'universit?? Paris 8 **(2015)**
+* Stage ?? la BnP **(2016)**
+* Analyste junior ?? la banque postale **(2018)**
+* Gestionnaire d'actif chez Vanguard **(2020)**
+
+# Comp??tences 
+* Travaille d'??quipe 
+* Oreille absolue
+* Calcule mental 
+* S'adapte ?? son environnement 

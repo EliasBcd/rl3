@@ -1,0 +1,21 @@
+---
+title: "cv"
+author: "Samuel"
+date: "2022-11-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+experience Professionelle :
+Del arte Villebon  *(2019/2022)*
+
+Parcours scolaire  :
+Bac : Economique et sociale 
+L1: eco gestion *(2020/2021)*
+L2 : eco gestion*(2021/2022)*
+L3 : Eco gestion *(2022/2023)*

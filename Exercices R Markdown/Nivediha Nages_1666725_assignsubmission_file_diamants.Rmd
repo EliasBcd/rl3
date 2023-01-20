@@ -1,0 +1,35 @@
+---
+title: "Taille des diamants"
+author: "Nivediha"
+date: "15 novembre 2022"
+output: html_document
+bibliography: BibliographieExercice.bib
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo=TRUE
+)
+
+library(ggplot2)
+library(dplyr)
+smaller <- diamonds |> 
+  filter(carat <= 2.5)
+```
+
+Nous avons des données sur  `r format(nrow(diamonds), big.mark=" ")` diamants. Seulement 
+`r format((nrow(diamonds) - nrow(smaller))*100/nrow(diamonds), digits=2)`% font plus de 
+2,5 carats. La répartition des *diamants* restants est indiquées **ci-dessous** :
+
+```{r, echo = FALSE}
+smaller |> 
+  ggplot(aes(carat)) + 
+  geom_freqpoly(binwidth = 0.01) +
+  ylab("Nombre")
+```
+
+Sur ce graphique, on remarque qu'il y a plus de 2000 diaments qui font 0,25 carats.
+Les diaments sont nombreux entre 0,3 et et 1,0 carats. 
+Entre 1,0 et 2,5 carats, il y a beaucoup moins de diaments, ces diaments sont en dessous de 1000 diaments.
+grace à @wickham2016r
+

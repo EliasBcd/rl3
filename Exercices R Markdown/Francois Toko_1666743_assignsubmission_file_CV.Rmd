@@ -1,0 +1,54 @@
+---
+title: "FRANÇOIS TOKO"
+output: pdf_document
+---
+
+# [CONTACT]{.underline}
+
+Adresse: Allée du Port Royal, 93100 Montreuil
+
+Email: *francois_toko\@hotmail.fr*
+
+# [COMPÉTENCES]{.underline}
+
+* Compétences en communication 
+* Esprit d'équipe et travail autonome
+* Capacité à travailler sous pression et à exécuter plusieurs tâches à la fois
+* Capacité à s'adapter rapidement
+
+# [ÉDUCATION]{.underline}
+
+### **- Licence d'Économie-Gestion (L3 en cours)**
+
+### **2017 - en cours**
+
+### Université Paris 8 Vincennes-Saint-Denis
+
+### - Licence de Sociologie (L1)
+
+### **2016 - 2017**
+
+### Université Paris 7 Diderot
+
+### - Baccalauréat Économique et Social
+
+### **2015 - 2016**
+
+### Lycée Marcelin Berthelot, Pantin
+
+* Obtenu avec mention Assez Bien
+* Option Mathématiques
+* Option Sport (Handball, Musculation)
+
+# [EXPÉRIENCES]{.underline}
+
+### Monoprix, Montreuil
+
+### **Mai - Septembre 2022**
+
+* Employé commercial libre-service caisse
+
+# [LANGUES]{.underline}
+
+* Anglais (Niveau courant)
+* Italien (Niveau intermédiaire)

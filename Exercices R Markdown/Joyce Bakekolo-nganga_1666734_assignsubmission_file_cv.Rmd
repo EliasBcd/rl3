@@ -1,0 +1,21 @@
+---
+title: "Joyce Bakekolo-Nganga"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Education : 
+
+Bondy 93140 Lycée Jean Renoir Bac scientifique **(2019 à 2020)**
+Première année de licence économie et gestion **(2020 à 2021)**
+Seconde année de licence économie et gestion **(2021 à 2022)**
+
+Expériences professionnelles : 
+
+Stockiste à Primark Créteil**(2019 à 2020)**
+Préparateur de commande Entreprise Cop Copine **(2019 à 2020)**
+Vente en boutique chez Go sport **(2021 à 2022)**
+Stockiste à Primark O’PARINOR **(2021 à 2022)**

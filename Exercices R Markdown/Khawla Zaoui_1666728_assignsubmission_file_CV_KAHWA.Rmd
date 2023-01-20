@@ -1,0 +1,91 @@
+---
+title: "CV_Khawla_ZAOUI_L3_ECO_Finance"
+output: html_document
+date: "2022-11-14"
+---
+
+## CV de Khawla ZAOUI Etudiante à l'univeriste de Paris 8
+
+##### ***10 ans d'expérience dans le domaine du trading***
+
+-   Capacité d'adaption
+
+-   Sens de l'oganisation et de la communication
+
+-   Rigoureuse
+
+-   Esprit d'équipe et bon relationnel
+
+## [Compétence Lingustiques et Informatique]{.underline}
+
+-   Anglais
+
+    -   Niveau A1
+
+-   Espagnol
+
+    -   Niveau B1
+
+-   Arabe
+
+    -   Niveau B2/C2
+
+-   Outils Informatique
+
+    -   Word, Excel, Power Point
+
+## [Compétence Lingustiques et Informatique]{.underline}
+
+-   **Septembre 2021 jusqu'à ce jour**
+
+    -   Animatrice
+
+-   **Octobre 2020 - Novembre 2020**
+
+    -   BabySitting
+
+-   **2018 - 2019**
+
+    -   Rélisation d'un Herbirs
+
+-   **Octobre 2018 - Décembre 2018**
+
+    -   Babysitting
+
+-   **2014 - 2015**
+
+    -   Stage Croix - Rouge
+
+-   **2013 - 2014**
+
+    -   Voyage Scolaire en Irlande
+
+## [Formation]{.underline}
+
+-   **2020 - 2023**
+
+    -   Licence Eco Gestion \| Mention Eco Finance
+
+-   **2021 - 2022**
+
+    -   Formation BAFA
+
+-   **2019 - 2020**
+
+    -   PACES
+
+-   **2018 - 2019**
+
+    -   BAC S \| Mention AB
+
+-   **2015**
+
+    -   Brevet des Collèges
+
+## [Centre d'intérêt et/ou autres activités]{.underline}
+
+-   Cinéma
+
+-   Dessin
+
+-   Sport

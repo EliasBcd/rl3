@@ -1,0 +1,11 @@
+---
+title: "Untitled"
+author: "Lamine Belkasmi"
+date: "2022-10-24"
+output: html_document
+bibliography: BibliographieExercice.bib
+---
+
+[@wickham2016r]
+
+c'est grâce à @wickham2016r que cet exercice existe

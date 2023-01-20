@@ -1,0 +1,15 @@
+---
+title: "CV Adam"
+author: Nouinou Adam
+date: "23 novembre 2022"
+output:  html_document
+---
+
+# Experiences professionnelles  
+ *2021/2022* : vendeur
+ *2020/2021* : assistant comptable 
+
+# Parcours academiques  
+ *2020/2023* L3, Etudiant en économie finance - Paris VII  
+ *2019/2020* Bac ES  
+ 

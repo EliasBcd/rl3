@@ -1,0 +1,41 @@
+---
+title: "Taille des diamants"
+author: Mingyue LI
+date: "08/11/2022"
+output:  html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo=TRUE
+)
+
+library(ggplot2)
+library(dplyr)
+smaller <- diamonds |> 
+  filter(carat <= 2.5)
+```
+
+Nous avons des données sur  `r nrow(diamonds)` diamants. Seulement 
+`r format((nrow(diamonds) - nrow(smaller))*100/nrow(diamonds),digits=2)`% font plus de 
+2,5 carats. La répartition des *diamants* restants est indiquées **ci-dessous** :
+
+```{r, echo = FALSE}
+smaller |> 
+  ggplot(aes(carat)) + 
+  geom_freqpoly(binwidth = 0.01) +
+  ylab("Nombre")
+```
+
+
+Il n'y a que 126 diamants de plus de 2,5 carats dans le nombre total de 53940 diamants, le ratio est de 126/53940 = 0.00400.
+Merci beaucoup à l'auteur Wickham, Hadley and Grolemund, Garrett. Grâce à de eux ce texte existe. 
+
+
+@book{wickham2016r,
+title={R for data science: import, tidy, transform, visualize, and model data},
+author={Wickham, Hadley and Grolemund, Garrett},
+year={2016},
+url={https://r4ds.had.co.nz/index.html},
+publisher={" O'Reilly Media, Inc."}
+

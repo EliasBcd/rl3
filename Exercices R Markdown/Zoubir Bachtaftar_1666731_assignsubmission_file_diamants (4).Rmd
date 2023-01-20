@@ -1,0 +1,37 @@
+---
+title: "Taille des diamants"
+author: zoubir
+date: "13 novembre 2022"
+output:  html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo=TRUE
+)
+
+library(ggplot2)
+library(dplyr)
+smaller <- diamonds |> 
+  filter(carat <= 2.5)
+
+``` 
+format(2,5)
+
+Nous avons des données sur  `r nrow(diamonds)` diamants. Seulement 
+`r nrow(diamonds) - nrow(smaller)` font plus de 
+2,5 carats. La répartition des *diamants* restants est indiquées **ci-dessous** :
+
+```{r, echo = FALSE}
+smaller |> 
+  ggplot(aes(carat)) + 
+  geom_freqpoly(binwidth = 0.01) +
+  ylab("Nombre")
+```
+
+ Nous avons des données sur 53940 diamants, seul 0,23% font plus de 2,5 carat, 5,56 font 0,7 carat
+ 
+ 
+                       author={Wickham, Hadley and Grolemund, Garrett},
+  
+  

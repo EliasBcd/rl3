@@ -1,0 +1,15 @@
+---
+title: "ulysse cv"
+author: ulesafre 
+date: "14 novembre 2022"
+output:  html_document
+---
+
+# Experiences professionnelles  
+ *2021/2022* :equipier polyvalent macdo
+ *2020/2022*livreur uber eat 
+
+# Parcours academiques  
+ *2018/2023* L3, Etudiant en économie finance - Paris VII  
+ *2017/2018* Bac S  
+ 

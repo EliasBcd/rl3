@@ -1,0 +1,29 @@
+---
+title: "CV"
+author: "Rebelo Cardoso Fabio"
+date: "2022-10-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Diplômes
+
+Bac S **2019**
+
+Licence Eco-Gestion(**2020**-)
+
+## Expériences professionnelles
+
+
+Preparateur de commandes **2022/07/01**-**2022/09/01**
+
+Gérant de portefeuille **2025**
+
+
+
+
+

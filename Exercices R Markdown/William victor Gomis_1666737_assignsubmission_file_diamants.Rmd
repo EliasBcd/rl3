@@ -1,0 +1,32 @@
+---
+title: "Taille des diamants"
+author: theugliest
+date: "8 novembre 2022"
+output:  html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo=TRUE
+)
+
+library(ggplot2)
+library(dplyr)
+smaller <- diamonds |> 
+  filter(carat <= 2.5)
+```
+
+Nous avons des donnÃ©es sur  `r nrow(diamonds)` diamants. Seulement 
+`r nrow(diamonds) - nrow(smaller)` font plus de 
+2,5 carats. La rÃ©partition des *diamants* restants est indiquÃ©es **ci-dessous** :
+
+```{r, echo = FALSE}
+smaller |> 
+  ggplot(aes(carat)) + 
+  geom_freqpoly(binwidth = 0.01) +
+  ylab("Nombre")
+```
+
+le graphique indique que la taille des diamants au fil du temps baisse.
+
+

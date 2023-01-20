@@ -1,0 +1,41 @@
+---
+title: "MOHAMMAD Riyan"
+author: 
+date: "25 octobre 2022"
+output: html_document
+bibliography: BibliographieExercice.bib
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo=TRUE
+)
+
+library(ggplot2)
+library(dplyr)
+smaller <- diamonds |> 
+  filter(carat <= 2.5)
+```
+
+Nous avons des données sur  `r nrow(diamonds)` diamants. Seulement 
+`r nrow(diamonds) - nrow(smaller)` font plus de 
+2,5 carats. La répartition des *diamants* restants est indiquées **ci-dessous** :
+
+```{r, echo = FALSE}
+smaller |> 
+  ggplot(aes(carat)) + 
+  geom_freqpoly(binwidth = 0.01) +
+  ylab("Nombre")
+```
+
+Il a une grande concentration pour les diamants de 0.3 carat
+
+# Nouvelle section
+
+Nous avons des données sur  `r format( nrow(diamonds),big.mark=' ')` diamants. Seulement 
+`r format((nrow(diamonds) - nrow(smaller))/nrow(diamonds)*100,digits=2) `% font plus de 
+2,5 carats.
+
+Cet exerice vient de @wickham2016r
+
+# Blib

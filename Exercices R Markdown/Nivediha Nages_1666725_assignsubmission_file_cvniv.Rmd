@@ -1,0 +1,54 @@
+---
+title: "CV"
+author: "Nivediha"
+date: "2022-11-14"
+output: html_document
+---
+### FORMATIONS
+#### Licence d'économie et de gestion (Mention finance)
+*Université paris 8*
+
+**2020-présent**
+
+- Monnaie financière internationale
+- Introduction à R
+- Economie du travail
+- Initiation à la comptabilité
+- Techniques quantitatives
+- Anglais financier 
+
+#### Licence de Mathématiques et d'informatique
+*Université de paris*
+
+**2018-2020**
+
+- Mathématiques et calcul
+- Introduction à la programmation
+- Progrmmation fonctionnelle
+
+#### Lycée 
+*Lycée Arago*
+
+**2018**
+
+- Economie et sociale
+- Option mathématiuqes (Terminale)
+
+
+
+### Expériences profesionnelles
+#### Employée polyvalente| Bureau de change
+**2019**
+
+- Transfert d'argent
+- Acceuil des clients 
+- Enregistrements des dossiers
+- Rédaction de lettre, courriers et mail
+
+#### Stagiaire| Pharmacie wizman
+**2015**
+
+- mise en rayons des médicaments 
+- gestion des stocks
+- vente 
+- préparationn des ordonnances

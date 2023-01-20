@@ -1,0 +1,28 @@
+---
+title: " CV El-Merraoui Yasmine"
+author: "El-Merraoui Yasmine"
+date: "14 novembre 2022"
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+---
+# Experiences professionnelles 
+ **2021/2022** : Préparateur de commande, OCP Saint-Ouen
+ 
+ **2021** : Réceptionniste nuit, EasyHotel Tremblay en France 
+ 
+ **2020/2021** : Serveuse restauration, Fratelini Roissy-en-France 
+ 
+# Parcours académiques
+ **2022/2023** : L3, Economie Finance, Université Paris 8
+ 
+ **2019/2020** : Baccalauréat Scientifique, Mention Bien
+ 
+ **2016/2017** : Brevet des collèges, Mention Bien 
+ 
+# Loisirs
+-  Sport
+-  Voyages
+-  Automobiles
+ 
