@@ -2,12 +2,14 @@
 title: "Données et fonctions"
 subtitle: "L3 économie-finance"
 author: "Elias Bouacida"
-format: revealjs
+format: 
+  revealjs:
+    embed-resources: true
 lang: fr
 institute: "Université Paris 8"
 scrollable: true
-date: today
-self-contained: true
+date: 20/09/2023
+date-format: long
 ---
 
 ```{r setup, include=F}

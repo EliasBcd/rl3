@@ -51,4 +51,4 @@ select_language('french', append_rprofile = TRUE)
 swirl()
 ```
 
-Suivez ensuite les instructions qui apparaissent dans la console
+Suivez ensuite les instructions qui apparaissent dans la console.
