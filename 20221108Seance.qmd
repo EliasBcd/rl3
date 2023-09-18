@@ -1,35 +1,19 @@
 ---
-title: "Séance du 8 novembre"
+title: "Exercices"
 author: "Elias Bouacida"
-format: revealjs
-date: "8 novembre 2022"
-self-contained: true
-scrollable: true
+format: 
+  html:
+    embed-resources: true
+date: last-modified
+date-format: long
+lang: fr
 ---
 
-## Aujourd'hui
-
-Objectif : Que tout le monde soit arriver au même point au début de la prochaine séance
-
-## Ce que vous devez avoir déposer sur Moodle avant le 15 novembre 
-
-- Dans le cours swirl `InitiationR` (dans cet ordre) :
-    1. Manipulations simples (facultatif)
-    2. Assignations et objets (facultatif)
-    3. Types (facultatif)
-    4. Vecteurs
-    5. Fichiers et espace de travail
-    6. Logique
-    7. Valeurs manquantes
-    8. Vecteurs numériques
-    9. Dataframes
-    10. Scripts et fonctions
-- Faire les exercices sur RMarkdown (CV en `.Rmd` et diamants en `.Rmd`)
 
 
 ## Utilisation de `swirl` 
 
-Si la librairie swirl n'est pas installée, installez-là à l'aide de la commande suivante dans la console
+Si le paquet swirl n'est pas installé, installez-le à l'aide de la commande suivante dans la console
 
 ```{r}
 #| echo: true
@@ -52,3 +36,16 @@ swirl()
 ```
 
 Suivez ensuite les instructions qui apparaissent dans la console.
+Utilisez toujours le même nom.
+
+## Rendu des exercices
+
+Vous devez déposés à la fin de chaque leçon swirl le fichier .txt généré sur Moodle, [ici](https://moodle.univ-paris8.fr/mod/assign/view.php?id=271762)
+
+Le fichier s'appelle en général `nom_de_la_leçon.txt` et apparaît à la racine de votre dossier personnel.
+Ici, par exemple, le fichier `Exercice_1.txt`. On le trouve sur l'onglet en bas à droite, dans l'onglet File.
+
+![Exemple avec Exercice_1.txt](resources/RenduExercice.png)
+
+Vous pouvez ensuite le déposer sur Moodle, dans le devoir "Suivi de la Progression".
+Vous pouvez déposer plusieurs fichiers, cela ne pose pas de problème, tant qu'ils ont des noms différents.
