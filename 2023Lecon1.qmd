@@ -539,7 +539,7 @@ swirl()
 
 - L'invite de commande dialogue avec vous ! Elle vous demande un nom.  
 - Tapez-le et gardez-le même tout au long du cours.^[Votre numéro d'étudiant, ou votre prénom et votre nom, il faut que je puisse vous identifier par la suite.] Appuyez sur `Entrée`.  
-- Lisez bien ce que `R` vous raconte et suivez ces instructions.
+- Lisez bien ce qui apparait dans la console.
 - Quand `R` vous demande choisir un cours, tapez le nombre correspondant au cours "InitiationR" et appuyez sur `Entrée`.
 - Ensuite choisissez la première leçon (qui devrait être "Manipulations simples").
 - Suivez maintenant les instructions de R dans l'invite de commande.
@@ -556,11 +556,18 @@ Tapez le numéro correspondant à "Oui", `R` devrait ouvrir votre navigateur int
 
 Si pour une raison ou pour une autre il y a besoin de réinstaller le cours, tapez les commande suivante :
 
-```{r reinstallation}
+```{r reinstallation1}
 #| eval: false
 uninstall_course("InitiationR")
+```
+
+Si `swirl` vous demande de confirmer, choisissez Oui.
+
+```{r reinstallation2}
+#| eval: false
 install_course_github("EliasBcd", "InitiationR")
 ```
+
 
 # Devoirs
 

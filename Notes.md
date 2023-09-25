@@ -22,11 +22,11 @@ Construit à partir de <https://juba.github.io/tidyverse/>
 1. Introduction à R
     - Chapitre 2 (long)
     - Chapitre 3, sans les représentations graphiques (intermédiaire)
-    - Chpaitre 5, principalement à lire, pas d'exercice dessus (court)
+    - Chapitre 5, principalement à lire, pas d'exercice dessus (court)
 2. Aller plus loin
     - Chapitre 14, écrire ses propres fonctions (long)
     - Chapitre 16, structure de données (long)
-    - Chapitre 17, execution conditionnelle et boucle (long)
+    - Chapitre 17, exécution conditionnelle et boucle (long)
 3. Tidyverse
     - Chapitre 6 (court)
     - Chapitre 7 (intermédiaire)
