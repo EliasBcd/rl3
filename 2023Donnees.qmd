@@ -1,19 +1,22 @@
 ---
-title: "Paquets et analyse de données"
+title: "Premières analyses de données"
 subtitle: "L3 économie-finance"
 author: "Elias Bouacida"
-format: revealjs
+format: 
+  revealjs:
+    embed-resources: true
 lang: fr
 institute: "Université Paris 8"
 scrollable: true
-date: today
-self-contained: true
+date: 04/10/2023
+date-format: long
+execute: 
+  echo: true
 ---
 
 
 ```{r setup}
 #| include: false
-knitr::opts_chunk$set(echo = TRUE)
 
 library(ggplot2)
 library(haven)
@@ -27,25 +30,26 @@ library(tidyr)
 
 Nous utiliserons dans ce cours des données issues de l'INSEE : la base "[Histoires de vie 2003](https://www.insee.fr/fr/statistiques/2532244)"
 
-La base est disponible au format `.csv` à l'adresse suivante [https://raw.githubusercontent.com/EliasBcd/rl3/main/bases/hdv3.csv](https://raw.githubusercontent.com/EliasBcd/rl3/main/bases/hdv3.csv)
+La base est disponible dans la librairie `questionr`.
+Il faut donc d'abord installer la librairie `questionr`, puis la charger à l'aide de la commande `library(questionr)`.
 
-Vous pouvez la charger directement dans `R` à l'aide de la commande `read.csv()`. On va la placer dans un objet nommé `hv3` : 
 
-```{r}
-hv3 <- read.csv("https://raw.githubusercontent.com/EliasBcd/rl3/main/bases/hdv3.csv")
-```
 
-Alternativement, vous pouvez enregistrer le fichier sur votre disque dur, puis le charger dans `R` avec :
+Pour dire à R de l'utiliser, on utilise la fonction `data`:
 
-```{r eval=FALSE}
-hv3 <- read.csv("chemin_vers_le_fichier/hdv3.csv")
+```{r load}
+library(questionr)
+
+data(hdv2003)
 ```
 
 Vous pouvez voir dans l'onglet "Environment" que la base de donnée comprend 2000 observations, et 21 variables.
 
 Si vous souhaitez voir le contenu de la base, vous pouvez utiliser la commande `View()` : 
-```{r eval=FALSE}
-View(hv3)
+```{r view}
+#| eval: false
+
+View(hdv2003)
 ```
 
 
@@ -56,22 +60,22 @@ Par exemple, `nrow()` et `ncol()` retournent le nombre de lignes et de colonnes 
 `dim()` renvoie les deux :
 
 ```{r}
-nrow(hv3)
-ncol(hv3)
-dim(hv3)
+nrow(hdv2003)
+ncol(hdv2003)
+dim(hdv2003)
 ```
 
 La fonction `names()` retourne les noms des colonnes du tableau, c'est-à-dire la liste de nos variables.
 
 ```{r}
-names(hv3)
+names(hdv2003)
 ```
 
 Enfin, la fonction `str()` renvoie un descriptif plus détaillé de la structure du tableau. 
 Elle liste les différentes variables, indique leur type et affiche les premières valeurs.
 
 ```{r}
-str(hv3)
+str(hdv2003)
 ```
 
 
@@ -80,10 +84,10 @@ str(hv3)
 On se réfère aux variables à l'aide de l'opérateur `$`, qui permet d'accéder aux colonnes du tableau. 
 On utilisera la syntaxe `nom_de_la_base$nom_de_la_variable` pour désigner une variable particulière d'une base de données.
 
-Par exemple, on peut utiliser la fonction `head()` pour afficher les premières valeurs de la variable `age` de la base stockée dans l'objet `hv3`.
+Par exemple, on peut utiliser la fonction `head()` pour afficher les premières valeurs de la variable `age` de la base stockée dans l'objet `hdv2003`.
 
 ```{r}
-head(hv3$age)
+head(hdv2003$age)
 ```
 
 On peut aussi utiliser l'opérateur `$` pour créer une nouvelle variable dans notre base : pour cela, il suffit de lui assigner une valeur.
@@ -91,7 +95,7 @@ On peut aussi utiliser l'opérateur `$` pour créer une nouvelle variable dans n
 Par exemple, la variable `heures.tv` contient le nombre d'heures passées quotidiennement devant la télé.
 
 ```{r}
-head(hv3$heures.tv)
+head(hdv2003$heures.tv)
 ```
 
 On peut vouloir créer une nouvelle variable dans notre tableau qui contienne la même durée convertie en minutes. 
@@ -99,13 +103,13 @@ On peut vouloir créer une nouvelle variable dans notre tableau qui contienne la
 On va donc créer une nouvelle variables `minutes.tv` de la manière suivante :
 
 ```{r}
-hv3$minutes.tv <- hv3$heures.tv * 60
+hdv2003$minutes.tv <- hdv2003$heures.tv * 60
 ```
 
 On peut alors constater, qu'une nouvelle variable (une nouvelle colonne) a bien été ajoutée à la base de données.
 
 ```{r}
-head(hv3$minutes.tv)
+head(hdv2003$minutes.tv)
 ```
 
 
@@ -124,8 +128,8 @@ Une variable quantitative est une variable de type numérique (un nombre) qui pe
 Pour obtenir un résumé numérique concis d'une variable numérique, on peut utiliser la commande `summary()` : 
 
 ```{r}
-summary(hv3$heures.tv)
-summary(hv3$age)
+summary(hdv2003$heures.tv)
+summary(hdv2003$age)
 ```
 
 `summary()` donne le minimum, le maximum, la moyenne, les premier second (médiane) et troisième quartile de la distribution.
@@ -134,11 +138,11 @@ La dernière valeur donne, s'il y en a, le nombre de valeurs manquantes (`NA`) p
 On peut également obtenir (et, si on le souhaite, sauver dans un objet) les valeurs de chaque élément avec les fonction `min()`, `max()`, `median()`, `mean()` et `quantile()` : 
 
 ```{r}
-min(hv3$age)
-max(hv3$age)
-mean(hv3$age)
-median(hv3$age)
-quantile(hv3$age, prob=0.75) # l'option "prob=" permet de préciser le quantile souhaité
+min(hdv2003$age)
+max(hdv2003$age)
+mean(hdv2003$age)
+median(hdv2003$age)
+quantile(hdv2003$age, prob=0.75) # l'option "prob=" permet de préciser le quantile souhaité
 ```
 
 ---
@@ -146,8 +150,8 @@ quantile(hv3$age, prob=0.75) # l'option "prob=" permet de préciser le quantile 
 Si la variable examinée contient des valeurs manquante, il convient d'inclure l'option `na.rm=TRUE` dans l'appel de la fonction : 
 
 ```{r}
-mean(hv3$heures.tv)
-mean(hv3$heures.tv, na.rm=TRUE)
+mean(hdv2003$heures.tv)
+mean(hdv2003$heures.tv, na.rm=TRUE)
 ```
 
 On peut obtenir des indicateurs de dispersion (variance, écart-type) à l'aide des commandes `var()` et `sd()` : 
@@ -155,8 +159,8 @@ On peut obtenir des indicateurs de dispersion (variance, écart-type) à l'aide 
 
 
 ```{r}
-var(hv3$age)
-sd(hv3$age)
+var(hdv2003$age)
+sd(hdv2003$age)
 ```
 
 
@@ -185,25 +189,15 @@ On donne ensuite à `ggplot()` le type de graphique que l'on souhaite utiliser �
 
 Nous utiliserons dans ce cours des données issues de l'INSEE : la base "[Histoires de vie 2003](https://www.insee.fr/fr/statistiques/2532244)"
 
-La base est disponible au format `.csv` à l'adresse suivante [https://raw.githubusercontent.com/EliasBcd/rl3/main/bases/hdv3.csv](https://raw.githubusercontent.com/EliasBcd/rl3/main/bases/hdv3.csv)
+La base est disponible au format `.csv` à l'adresse suivante [https://raw.githubusercontent.com/EliasBcd/rl3/main/bases/hdv2003.csv](https://raw.githubusercontent.com/EliasBcd/rl3/main/bases/hdv2003.csv)
 
-Vous pouvez la charger directement dans `R` à l'aide de la commande `read.csv()`. On va la placer dans un objet nommé `hv3` : 
 
-```{r}
-hv3 <- read.csv("https://raw.githubusercontent.com/EliasBcd/rl3/main/bases/hdv3.csv")
-```
-
-Alternativement, vous pouvez enregistrer le fichier sur votre disque dur, puis le charger dans `R` avec :
-
-```{r eval=FALSE}
-hv3 <- read.csv("chemin_vers_le_fichier/hdv3.csv")
-```
 
 Vous pouvez voir dans l'onglet "Environment" que la base de donnée comprend 2000 observations, et 21 variables.
 
 Si vous souhaitez voir le contenu de la base, vous pouvez utiliser la commande `View()` : 
 ```{r eval=FALSE}
-View(hv3)
+View(hdv2003)
 ```
 
 ## Un histogramme
@@ -216,7 +210,7 @@ View(hv3)
 ```{r code-first, fig.show="hide", warning=FALSE}
 library(ggplot2)
 
-ggplot(hv3, aes(x=age)) +
+ggplot(hdv2003, aes(x=age)) +
   geom_histogram()
 ```
 :::
@@ -240,7 +234,7 @@ knitr::include_graphics(
 On peut faire varier le nombre de catégories.
 
 ```{r code-second, fig.show="hide", warning=FALSE}
-ggplot(hv3, aes(x=age)) +
+ggplot(hdv2003, aes(x=age)) +
   geom_histogram(bins=10)
 ```
 :::
@@ -261,7 +255,7 @@ knitr::include_graphics(
 Changer la couleur et ajouter un titre et une légende pour les axes (très importants pour comprendre un graphique)
 
 ```{r code-trois, fig.show="hide", warning=FALSE}
-ggplot(hv3, aes(x=age)) +
+ggplot(hdv2003, aes(x=age)) +
   geom_histogram(bins=30, fill="skyblue") +
   labs(title = "Répartition des âges des enquêtés") +
   xlab("Âge") +
@@ -288,7 +282,7 @@ Une autre représentation classique est la "Boîte à moustache", que l'on obtie
 
 ::: {.column width=60%}
 ```{r box1, fig.show="hide", warning=FALSE}
-ggplot(hv3, aes(y=age)) +
+ggplot(hdv2003, aes(y=age)) +
   geom_boxplot()  
 ```
 :::
@@ -306,7 +300,7 @@ knitr::include_graphics(
 :::: {.columns}
 ::: {.column width=60%}
 ```{r box2, fig.show="hide", warning=FALSE}
-ggplot(hv3, aes(x=sport, y=age)) +
+ggplot(hdv2003, aes(x=sport, y=age)) +
   geom_boxplot(fill = c("gold", "darkgreen")) +
   xlab("Pratique d'un sport") +
   ylab("Âge")
