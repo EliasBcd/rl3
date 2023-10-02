@@ -2,10 +2,10 @@ library(readr, include.only = 'read_csv')
 library(base64enc)
 
 decode_results <- function(path){
-  if(grepl(".txt.txt|Nivediha Nages_1637917_assignsubmission_file_Control_flow|Nivediha Nages_1637917_assignsubmission_file_Fichiers et espace de travail", path)){
+  if(grepl("Androw Daoud_1871270_assignsubmission_file_Manipulations_simples", path)){
     return(path)
   }
-  else if(grepl('Manipulations|Assignations|travail|Vecteurs|Scripts|Tirages_aleatoires|Types|Valeurs|Representations|Logique|Dataframes|Control', path)){
+  else if(grepl('Manipulations|Fonctions|Exercice', path)){
   
   encoded <- tryCatch(suppressMessages(suppressWarnings(read.csv(path))),
                       # error = function(){cat("Error reading file", path, "\n")}

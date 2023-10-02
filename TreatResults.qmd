@@ -12,10 +12,13 @@ execute:
 source("TreatResults.R")
 library(tidyverse)
 
-dir <-  "R-Exercices/"
+dir <-  "Suivi/"
 a <- list.files(dir, pattern = ".")
 b <- lapply(a, function(x) paste(dir, x, sep=""))
 c <- sapply(b, decode_results)
+
+tibble(names = a) %>% 
+  knitr::kable()
 ```
 
 ```{r}
@@ -62,7 +65,6 @@ knitr::kable(nquestions)
 ```{r}
 summary <- data %>%
   group_by(user, lesson_name) %>%
-  filter(!(lesson_name == 'Types' | lesson_name == 'Assignations et objets' |lesson_name == 'Manipulations simples')) %>% 
   summarise(skip = mean(skipped, na.rm = TRUE), attempt = mean(attempt), max = (max(question_number))) %>% 
   inner_join(nquestions, by = "lesson_name") %>% 
   mutate(finished = (max/max_all), max = NULL, max_all = NULL, n())
