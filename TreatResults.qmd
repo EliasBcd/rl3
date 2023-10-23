@@ -41,14 +41,23 @@ for (tab in c){
 
 
 
+
 ```
-Renommer les leçons correctement
+Renommer les utilisateurs correctement
 
 ```{r}
 data <- data %>% 
-  mutate(lesson_name = replace(lesson_name, lesson_name == "Vecteurs num<e9>riques", "Vecteurs numériques"),
-         lesson_name = replace(lesson_name, lesson_name == "InitiationR", "Dataframes"))
-
+  mutate( user = str_to_title(user),
+          user = case_match(
+    user,
+    "1" ~ "Alexia",
+    "Youcef£" ~ "Youcef",
+    "Chelda" ~ "Marie Chelda",
+    "Yao T" ~ "Yao",
+    "Zineb Salhi" ~ "Zineb",
+    .default = user
+    )
+    )
 ```
 
 Maximum par leçon
@@ -81,6 +90,7 @@ failures
 
 
 ## Exploring weird data
+
 
 
 

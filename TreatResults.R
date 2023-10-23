@@ -2,10 +2,10 @@ library(readr, include.only = 'read_csv')
 library(base64enc)
 
 decode_results <- function(path){
-  if(grepl("Androw Daoud_1871270_assignsubmission_file_Manipulations_simples", path)){
+  if(grepl("NotNow", path)){
     return(path)
   }
-  else if(grepl('Manipulations|Fonctions|Exercice', path)){
+  else if(grepl('Manipulations|Fonctions|Exercice|Analyse', path)){
   
   encoded <- tryCatch(suppressMessages(suppressWarnings(read.csv(path))),
                       # error = function(){cat("Error reading file", path, "\n")}
@@ -14,12 +14,15 @@ decode_results <- function(path){
   decoded <- list()
   # print(path)
   for(i in 1:nrow(encoded)){
-    # print(i)
-    decoded[[i]] <- tryCatch(suppressMessages(
+    # print(path)
+    decoded[[i]] <- tryCatch(
+      suppressMessages(
+      
       read_csv(
         rawToChar(
           base64decode(
-            as.character(encoded[i,]))))),
+            as.character(encoded[i,]))))) 
+    ,
       # error = function(e){cat("Error reading file", path, ", ", conditionMessage(e), "\n")})
       error = function(e){return(path)})
   }
