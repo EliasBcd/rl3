@@ -17,8 +17,8 @@ a <- list.files(dir, pattern = ".")
 b <- lapply(a, function(x) paste(dir, x, sep=""))
 c <- sapply(b, decode_results)
 
-tibble(names = a) %>% 
-  knitr::kable()
+#tibble(names = a)# %>% 
+#  knitr::kable()
 ```
 
 ```{r}
@@ -55,6 +55,7 @@ data <- data %>%
     "Chelda" ~ "Marie Chelda",
     "Yao T" ~ "Yao",
     "Zineb Salhi" ~ "Zineb",
+    "Zinev Salhi" ~ "Zineb",
     .default = user
     )
     )
@@ -76,13 +77,27 @@ summary <- data %>%
   group_by(user, lesson_name) %>%
   summarise(skip = mean(skipped, na.rm = TRUE), attempt = mean(attempt), max = (max(question_number))) %>% 
   inner_join(nquestions, by = "lesson_name") %>% 
-  mutate(finished = (max/max_all), max = NULL, max_all = NULL, n())
+  mutate(finished = (max/max_all), max = NULL, max_all = NULL, n = n())
 
 
   
 
 knitr::kable(summary)
 ```
+
+```{r}
+summary %>%
+  select(-c(skip, attempt)) %>% 
+  pivot_wider(names_from = "lesson_name", values_from = "finished")  %>% 
+  mutate(`Exercice 2` = as.integer(`Exercice 2`)) %>% 
+  relocate(`Manip Simples` = `Première manipulations de R`, .after = n) %>% 
+  relocate(`Fonctions et Scripts`, .after = `Manip Simples`) %>% 
+  rename(`Exercice 1` = `Exercices de la première partie.`) %>% 
+  relocate(`Analyse de données`, .after = `Exercice 1`) %>% 
+  relocate(`Exercice 2`, .after = `Analyse de données`) %>% 
+  knitr::kable()
+```
+
 
 ```{r}
 failures

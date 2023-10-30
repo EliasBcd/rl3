@@ -6,7 +6,6 @@ decode_results <- function(path){
     return(path)
   }
   else if(grepl('Manipulations|Fonctions|Exercice|Analyse', path)){
-  
   encoded <- tryCatch(suppressMessages(suppressWarnings(read.csv(path))),
                       # error = function(){cat("Error reading file", path, "\n")}
                       error = function(e){return(path)}
