@@ -8,6 +8,8 @@ execute:
   echo: false
 ---
 
+<!-- Exercice 1 de Yanis Medjnoun : il manque toujours une lettre. -->
+
 ```{r import}
 source("TreatResults.R")
 library(tidyverse)
