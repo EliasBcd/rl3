@@ -97,6 +97,7 @@ summary %>%
   rename(`Exercice 1` = `Exercices de la première partie.`) %>% 
   relocate(`Analyse de données`, .after = `Exercice 1`) %>% 
   relocate(`Exercice 2`, .after = `Analyse de données`) %>% 
+  relocate(`Exercice 3`, .befpre = Logique %>% 
   knitr::kable()
 ```
 

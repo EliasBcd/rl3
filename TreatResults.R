@@ -5,7 +5,7 @@ decode_results <- function(path){
   if(grepl("NotNow", path)){
     return(path)
   }
-  else if(grepl('Manipulations|Fonctions|Exercice|Analyse', path)){
+  else if(grepl('Manipulations|Fonctions|Exercice|Analyse|Logique|Control_Flow', path)){
   encoded <- tryCatch(suppressMessages(suppressWarnings(read.csv(path))),
                       # error = function(){cat("Error reading file", path, "\n")}
                       error = function(e){return(path)}
