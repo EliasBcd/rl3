@@ -5,7 +5,7 @@ format:
   revealjs:
     scrollable: true
     embed-resources: true
-date: 11-21-2023
+date: 11-22-2023
 lang: fr
 echo: true
 cache: true  
