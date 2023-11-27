@@ -3,17 +3,20 @@ title: "Resultats étudiants"
 author: "Elias"
 format: html
 execute: 
-  cache: false
+  cache: refresh
   warning: false
   echo: false
 ---
 
 <!-- Exercice 1 de Yanis Medjnoun : il manque toujours une lettre. -->
 
-```{r import}
+```{r setup}
+#| cache: false
 source("TreatResults.R")
 library(tidyverse)
+```
 
+```{r load}
 dir <-  "Suivi/"
 a <- list.files(dir, pattern = ".")
 b <- lapply(a, function(x) paste(dir, x, sep=""))
@@ -58,6 +61,9 @@ data <- data %>%
     "Yao T" ~ "Yao",
     "Zineb Salhi" ~ "Zineb",
     "Zinev Salhi" ~ "Zineb",
+    "David B" ~ "David Bouboutou",
+    "Niesh" ~ "Nivesh",
+    "Cedric" ~ "Cédric",
     .default = user
     )
     )
@@ -97,7 +103,7 @@ summary %>%
   rename(`Exercice 1` = `Exercices de la première partie.`) %>% 
   relocate(`Analyse de données`, .after = `Exercice 1`) %>% 
   relocate(`Exercice 2`, .after = `Analyse de données`) %>% 
-  relocate(`Exercice 3`, .befpre = Logique %>% 
+  relocate(`Exercice 3`, .before = Logique) %>% 
   knitr::kable()
 ```
 
