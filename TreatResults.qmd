@@ -58,6 +58,9 @@ data <- data %>%
     "Yao T" ~ "Yao",
     "Zineb Salhi" ~ "Zineb",
     "Zinev Salhi" ~ "Zineb",
+    "David B" ~ "David Bouboutou",
+    "Niesh" ~ "Nivesh",
+    "Cedric" ~ "Cédric",
     .default = user
     )
     )
@@ -92,12 +95,14 @@ summary %>%
   select(-c(skip, attempt)) %>% 
   pivot_wider(names_from = "lesson_name", values_from = "finished")  %>% 
   mutate(`Exercice 2` = as.integer(`Exercice 2`)) %>% 
-  relocate(`Manip Simples` = `Première manipulations de R`, .after = n) %>% 
-  relocate(`Fonctions et Scripts`, .after = `Manip Simples`) %>% 
+  relocate(`Manip Simples` = `Première manipulations de R`, .after = n) %>%
+  relocate(`Fonctions et Scripts`, .after = `Manip Simples`) %>%
   rename(`Exercice 1` = `Exercices de la première partie.`) %>% 
-  relocate(`Analyse de données`, .after = `Exercice 1`) %>% 
-  relocate(`Exercice 2`, .after = `Analyse de données`) %>% 
-  relocate(`Exercice 3`, .befpre = Logique %>% 
+  relocate(`Analyse de données`, .after = `Exercice 1`) %>%
+  relocate(`Exercice 2`, .after = `Analyse de données`) %>%
+  relocate(`Créer des fonctions - partie 1`, .after = `Exercice 2`) %>% 
+  relocate(`Créer des fonctions - partie 2`, .after = `Créer des fonctions - partie 1`) %>% 
+  relocate(`Exercice 3`, .before = Logique) %>%
   knitr::kable()
 ```
 
