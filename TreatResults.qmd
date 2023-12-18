@@ -9,6 +9,7 @@ execute:
 ---
 
 <!-- Exercice 1 de Yanis Medjnoun : il manque toujours une lettre. -->
+<!-- Saada a rendu un exercice de Pedro, mais j'ai bien vu le bon exercice rendu. -->
 
 ```{r setup}
 #| cache: false
@@ -64,6 +65,8 @@ data <- data %>%
     "David B" ~ "David Bouboutou",
     "Niesh" ~ "Nivesh",
     "Cedric" ~ "Cédric",
+    "Kininkong" ~ "Alex",
+    "Sarah" ~ "Saada",
     .default = user
     )
     )
