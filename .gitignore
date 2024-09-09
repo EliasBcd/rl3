@@ -27,3 +27,8 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 *.Rproj
+
+/.quarto/
+
+_site/
+libs/
