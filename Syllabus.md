@@ -2,9 +2,11 @@
 title: Introduction à R
 subtitle: Syllabus
 author: Elias Bouacida
-format: pdf
+format: html
 bibliography: Bibliographie.bib
 lang: fr
+date: last-modified
+date-format: long
 ---
 
 Syllabus du cours d'introduction à R, L3 économie-Finance à l'université Paris 8.
@@ -29,13 +31,13 @@ La principale ressource bibliographique pour le cours est @Barnier.
     - Scripts
     - Lectures de fichiers externes (script et données (`.R, .csv, .txt, .xls`))
 4. Introduction à l'analyse de donnée avec R (`data.frame` et `tibble`)
-9. Introduire `Rmarkdown` et `markdown` (pas étudié cette année)
 4. Graphique (librairie `ggplot`)
+9. Introduire `quarto` et `markdown` (si le temps le permet)
 6. Tirage aléatoire et fonctions liées au probabilités 
-(fonctions de type `dxxx, rxxx`, ...) (pas étudié cette année)
+(fonctions de type `dxxx, rxxx`, ...) (si le temps le permet)
 
 # Validation
 
-Cours à validation, qui se fait sur le rendu d'un nombre suffisant d'exercice (cette année, 11 sur 13 au minimum).
+Cours à validation, qui se fait sur le rendu d'un nombre suffisant d'exercice (cette année, probablement 11 sur 13 au minimum).
 
 # Références

@@ -1,0 +1,63 @@
+---
+title: "Exercices"
+author: "Elias Bouacida"
+format: 
+  html:
+    embed-resources: true
+date: last-modified
+date-format: long
+lang: fr
+---
+
+
+
+## Utilisation de `swirl` 
+
+Si le paquet swirl n'est pas installé, installez-le à l'aide de la commande suivante dans la console
+
+```{r}
+#| echo: true
+#| eval: false
+
+install.packages('swirl')
+```
+
+Quoiqu'il arrive, exécutez les lignes suivantes dans la console :
+
+```{r}
+#| echo: true
+#| eval: false
+
+library(swirl)
+uninstall_all_courses() 
+```
+
+Ici `R` vous demandera si vous voulez tout désinstaller, dites oui.
+Puis tapez les lignes suivantes.
+
+```{r}
+#| echo: true
+#| eval: false
+
+install_course_github('EliasBcd', 'InitiationR')
+select_language('french', append_rprofile = TRUE)
+swirl()
+```
+
+Suivez ensuite les instructions qui apparaissent dans la console.
+Utilisez toujours le même nom, il me permet de vous identifier.
+Sélectionnez le cours `InitiationR`. 
+C'est normalement le cours numéro 1.
+Sélectionnez enfin la leçon correspondant à votre progression dans le cours.
+
+## Rendu des exercices
+
+Vous devez déposés à la fin de chaque leçon swirl le fichier .txt généré sur Moodle, [ici](https://moodle.univ-paris8.fr/mod/assign/view.php?id=271762)
+
+Le fichier s'appelle en général `nom_de_la_leçon.txt` et apparaît à la racine de votre dossier personnel.
+Ici, par exemple, le fichier `Exercice_1.txt`. On le trouve sur l'onglet en bas à droite, dans l'onglet File.
+
+![Exemple avec Exercice_1.txt](resources/RenduExercice.png)
+
+Vous pouvez ensuite le déposer sur Moodle, dans le devoir "Suivi de la Progression".
+Vous pouvez déposer plusieurs fichiers, cela ne pose pas de problème, tant qu'ils ont des noms différents.

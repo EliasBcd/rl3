@@ -1,12 +1,14 @@
 ---
 title: "To-Do"
 author: "Elias Bouacida"
-date: 2023-09-08
+date: last-modified
+date-format: long
+lang: fr
 ---
 
 # Notes
 
-5 cours de 3h par groupe, mais le cours de la semaine de la Toussaint n'a pas lieu (1er octobre), donc il y aura cours pendant la semaine de rattrapage.
+5 cours de 3h par groupe, avec un groupe qui a cours les 5 permières semaines et un cours les 5 dernières.
 
 Librairies nécessaires pour le cours :
 

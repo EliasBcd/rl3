@@ -21,8 +21,8 @@ Cours d'introduction à R, L3 économie-Finance à l'université Paris 8
     - Scripts
     - Lectures de fichiers externes (script et données (`.R, .csv, .txt, .xls`))
 4. Introduction à l'analyse de donnée avec R (`data.frame` et `tibble`)
-9. Introduire `Rmarkdown` et `markdown` (pas étudié cette année)
 4. Graphique (librairie `ggplot`)
+9. Introduire `Rmarkdown` et `markdown` (pas étudié cette année)
 6. Tirage aléatoire et fonctions liées au probabilités 
 (fonctions de type `dxxx, rxxx`, ...) (pas étudié cette année)
 

@@ -1,0 +1,272 @@
+---
+title: "Premières analyses de données"
+subtitle: "L3 économie-finance"
+author: "Elias Bouacida"
+format: 
+  revealjs:
+    embed-resources: true
+lang: fr
+institute: "Université Paris 8"
+scrollable: true
+date: 10/04/2023
+date-format: long
+execute: 
+  echo: true
+---
+
+
+```{r setup}
+#| include: false
+
+library(ggplot2)
+library(haven)
+library(tidyr)
+```
+
+
+# Premier travail avec les données
+
+## Données d'exemple
+
+Nous utiliserons dans ce cours des données issues de l'INSEE : la base "[Histoires de vie 2003](https://www.insee.fr/fr/statistiques/2532244)"
+
+La base est disponible dans la librairie `questionr`.
+Il faut donc d'abord installer la librairie `questionr`, puis la charger à l'aide de la commande `library(questionr)`.
+
+```{r questionr}
+install.packages("questionr")
+library(questionr)
+```
+
+
+Pour dire à R de l'utiliser, on utilise la fonction `data` :
+
+```{r load}
+data(hdv2003)
+```
+
+## Visualiser les données
+
+Vous pouvez voir dans l'onglet "Environment" que la base de donnée comprend 2000 observations, et 21 variables.
+
+Si vous souhaitez voir le contenu de la base, vous pouvez utiliser la commande `View()` : 
+```{r view}
+#| eval: false
+
+View(hdv2003)
+```
+
+Cette base de donnée est un `data.frame` : un tableau de valeurs
+
+## Assignation
+
+Un `data.frame` est une valeur comme une autre, on peut donc l'assigner :
+
+```{r assign}
+d <- hdv2003
+```
+
+
+# Exploration des données
+
+
+## Structure du tableau
+
+Un tableau étant un objet comme un autre, on peut lui appliquer des fonctions. 
+Par exemple, `nrow()` et `ncol()` retournent le nombre de lignes et de colonnes du tableau.
+`dim()` renvoie les deux :
+
+```{r tailles_tableau}
+nrow(d)
+ncol(d)
+dim(d)
+```
+
+## Nom des colonnes {.smaller}
+
+La fonction `names()` retourne les noms des colonnes du tableau, c'est-à-dire la liste des *variables*.
+
+```{r nom_col}
+names(d)
+```
+
+Enfin, la fonction `str()` renvoie un descriptif plus détaillé de la structure du tableau. 
+Elle liste les différentes variables, indique leur type et affiche les premières valeurs.
+
+```{r structure_detaillee}
+str(d)
+```
+
+
+## Accéder aux variables {.smaller}
+
+On se réfère aux variables à l'aide de l'opérateur `$`, qui permet d'accéder aux colonnes du tableau. 
+On utilisera la syntaxe `nom_de_la_base$nom_de_la_variable` pour désigner une variable particulière d'une base de données.
+
+Par exemple, on peut utiliser la fonction `head()` pour afficher les premières valeurs de la variable `age` de la base stockée dans l'objet `hdv2003`.
+
+```{r haut_col}
+head(d$age)
+head(d$age, 10)
+```
+
+Le deuxième argument, permet d'indiquer le nombre de valeurs à afficher.
+
+## Création de variables {.smaller}
+
+On peut aussi utiliser l'opérateur `$` pour créer une nouvelle variable dans notre base : pour cela, il suffit de lui assigner une valeur.
+
+Par exemple, la variable `heures.tv` contient le nombre d'heures passées quotidiennement devant la télé.
+
+```{r haut_col2}
+head(d$heures.tv)
+```
+
+On peut vouloir créer une nouvelle variable dans notre tableau qui contienne la même durée convertie en minutes. 
+
+On va donc créer une nouvelle variables `minutes.tv` de la manière suivante :
+
+```{r}
+d$minutes.tv <- d$heures.tv * 60
+```
+
+On peut alors constater, qu'une nouvelle variable (une nouvelle colonne) a bien été ajoutée à la base de données.
+
+```{r}
+head(d$minutes.tv)
+```
+
+
+# Analyse univariée
+
+
+## Variable quantitative
+
+Une variable quantitative est une variable de type numérique (un nombre) qui peut prendre un grand nombre de valeurs. 
+On en a plusieurs dans notre jeu de données, notamment l'âge (variable `age`) ou le nombre d'heures passées devant la télé (`heures.tv`).
+
+## Indicateurs simples de centralités
+
+On peut obtenir (et, si on le souhaite, sauver dans un objet) les valeurs de chaque élément avec les fonction `min()`, `max()`, `median()`, `mean()` et `quantile()` : 
+
+```{r caracteristiques}
+min(d$age)
+max(d$age)
+mean(d$age)
+median(d$age)
+```
+
+## Indicateurs de dispersion {.smaller}
+
+Les indicateurs de dispersion permettent de mesurer si les valeurs sont plutôt regroupées ou au contraire plutôt dispersées.
+
+L'indicateur le plus simple est l'étendue de la distribution, qui décrit l'écart maximal observé entre les observations :
+
+```{r}
+max(d$age) - min(d$age)
+```
+
+
+Les indicateurs de dispersion les plus utilisés sont la variance ou, de manière équivalente, l'écart-type. On obtient la première avec la fonction `var`, et le second avec `sd` (abréviation de *standard deviation*).
+
+```{r}
+var(d$age)
+```
+
+```{r}
+sd(d$age)
+```
+
+
+## Quartiles {.smaller}
+
+Une autre manière de mesurer la dispersion est de calculer les quartiles :
+
+- le premier quartile est la valeur pour laquelle on a 25% des observations en dessous et 75% au dessus ;
+- le deuxième quartile est la valeur pour laquelle on a 50% des observations en dessous et 50% au dessus (c'est donc la médiane) ;
+- le troisième quartile est la valeur pour laquelle on a 75% des observations en dessous et 25% au dessus.
+
+On peut les calculer avec la fonction `quantile` :
+
+```{r}
+## Premier quartile
+quantile(d$age, prob = 0.25)
+```
+
+```{r}
+## Troisième quartile
+quantile(d$age, prob = 0.75)
+```
+
+`quantile` prend deux arguments principaux : le vecteur dont on veut calculer le quantile, et un argument `prob` qui indique quel quantile on souhaite obtenir. `prob` prend une valeur entre 0 et 1 : 0.5 est la médiane, 0.25 le premier quartile, 0.1 le premier décile, etc.
+
+
+## Indicateurs numériques
+
+Pour obtenir un résumé concis d'une variable, on peut utiliser la commande `summary()` : 
+
+```{r}
+summary(d$heures.tv)
+summary(d$age)
+```
+
+`summary()` donne le minimum, le maximum, la moyenne, les premier second (médiane) et troisième quartile de la distribution.
+La dernière valeur donne, s'il y en a, le nombre de valeurs manquantes (`NA`) pour la variable. 
+
+
+
+## Valeurs manquantes
+
+Si la variable examinée contient des valeurs manquante, il convient d'inclure l'option `na.rm=TRUE` dans l'appel de la fonction : 
+
+```{r}
+mean(d$heures.tv)
+mean(d$heures.tv, na.rm=TRUE)
+```
+
+# Variables qualitatives
+
+## Variable qualitative
+
+ Une variable qualitative est une variable qui ne peut prendre qu'un nombre limité de valeurs, appelées modalités. Dans notre jeu de données on trouvera par exemple le sexe (`sexe`), le niveau d'études (`nivetud`), la catégorie socio-professionnelle (`qualif`)...
+
+À noter qu'une variable qualitative peut tout-à-fait être numérique, et que certaines variables peuvent être traitées soit comme quantitatives, soit comme qualitatives : c'est le cas par exemple du nombre d'enfants ou du nombre de frères et sœurs.
+
+## Tri à plat {.smaller}
+
+L'outil le plus utilisé pour représenter la répartition des valeurs d'une variable qualitative est le *tri à plat* : il s'agit simplement de compter, pour chacune des valeurs possibles de la variable (pour chacune des modalités), le nombre d'observations ayant cette valeur. 
+Un tri à plat s'obtient sous R à l'aide de la fonction `table`.
+
+```{r table_seexe}
+table(d$sexe)
+```
+
+Ce tableau nous indique donc que parmi nos enquêtés on trouve 899 hommes et 1101 femmes.
+
+```{r table_qualif} 
+table(d$qualif)
+```
+
+## Tri {.smaller}
+
+Un tableau de ce type peut être affiché ou stocké dans un objet, et on peut à son tour lui appliquer des fonctions.
+Par exemple, la fonction `sort` permet de trier le tableau selon la valeur de l'effectif.
+
+```{r sort}
+tab <- table(d$qualif)
+sort(tab)
+```
+
+::: {.callout-warning}
+Attention, par défaut la fonction `table` n'affiche pas les valeurs manquantes (`NA`). Si on souhaite les inclure il faut utiliser l'argument `useNA = "always"`, soit : `table(d$qualif, useNA = "always")`.
+:::
+
+## Summary
+
+À noter qu'on peut aussi appliquer `summary` à une variable qualitative. Le résultat est également le tri à plat de la variable, avec en plus le nombre de valeurs manquantes éventuelles.
+
+```{r summary_qia;of}
+summary(d$qualif)
+```
+
+
