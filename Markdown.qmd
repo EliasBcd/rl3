@@ -1,0 +1,331 @@
+---
+title: "Rapports : Markdown et Quarto"
+subtitle: "L3 économie-finance"
+author: "Elias Bouacida"
+format:  
+  revealjs:
+    embed-resources: true
+lang: fr
+institute: "Université Paris 8"
+scrollable: true
+date: last-modified
+bibliography: Bibliographie.bib
+execute: 
+  eval: false
+  echo: true
+---
+
+
+# Paquets
+
+## Installer des extensions (paquets)
+
+
+```{r setup}
+#| eval: false
+#| message: false
+chunk <- "```"
+inline <- function(x = "") paste0("`` `r ", x, "` ``")
+date <- function(x="") paste0("`` `r ", x, "Sys.Date()` ``" )
+```
+
+- En plus de l'installation de base : extensions, appelées paquet (*package* en anglais) ou librairie
+- En majorité : développées et maintenues par la communauté des utilisateurs et utilisatrices de R
+- Diffusées via un réseau de serveurs nommé CRAN (Comprehensive R Archive Network).
+- Pour installer une extension, si on dispose d'une connexion Internet, on peut :
+    - Cliquer sur le bouton Install Packages de l'onglet Tools de RStudio.
+    Il suffit alors d'indiquer le nom de l'extension dans le champ Package et de cliquer sur Install.
+    - Utiliser la fonction `install.packages()` directement dans la console.
+    Par exemple, pour installer le paquet `ggplot2` on peut exécuter la commande    
+
+```{r ggplot2}
+
+install.packages(ggplot2)
+```
+
+
+## Charger des extensions
+
+Une fois installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu'elle propose.
+Ceci se fait avec la fonction `library()`. 
+Pour pouvoir utiliser les fonctions de `ggplot2`, vous devrez exécuter la commande suivante :
+
+```{r ggplot2_lib}
+library(ggplot2)
+```
+
+::: {.aside}
+Vous avez déjà rencontré ces commandes quand nous avons installé et utilisé le paquet `swirl`.
+:::
+
+## En pratique
+
+On regroupe en général en début de script toute une série de commandes `library()` qui permettent de charger tous les paquets utilisés dans le script.
+Quelque chose comme :
+
+```{r}
+library(ggplot2)
+library(haven)
+library(tidyr)
+```
+
+
+# Créer des documents avec du code : R Markdown
+
+## Introduction
+
+- Un atout important de R et Rstudio est R Markdown.
+- Format qui combine code et explications
+- Aide disponible [ici](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf)
+- Nécessite l'utilisation de Rstudio pour fonctionner correctement
+
+Cette partie est largement inspirée de [@wickham2016r, chapitre 27]
+
+## Structure d'un document
+
+Un document Quarto Markdown est un fichier texte avec une extension `.qmd` qui ressemble à ceci :
+
+```{r}
+#| comment: ""
+cat(readr::read_file("Diamants.qmd"))
+```
+
+Ce document est compilé afin de créer un document final, en général au format web `.html` ou au format `.pdf` ou encore au format `.docx`
+
+## Principaux éléments
+
+1. L'en tête YAML, comprise entre les `---`
+2. Des morceaux de code R, qui commencent par ```
+3. Du texte normal en (R) Markdown (avec des balises de formatages)
+
+## Actions possibles
+
+1. Lancer le code seul en cliquant sur la petite icône *run* en haut à droite de la fenêtre.
+2. Compiler tout le document en cliquant sur *knit* en haut. 
+3. Utiliser le raccourci Cmd/Ctrl + Shift + K pour compiler tout le document.
+
+Le document produit est par défaut en `.html` est apparaîtra à droite dans Rstudio.
+
+::: {.notes}
+Montrer ici aux étudiants les 3 possibilités à l'aide d'un document `.Rmd`
+:::
+
+
+
+# L'en-tête
+
+## YAML
+
+``` markdown
+---
+title: "Diamond sizes"
+date: 2016-08-25
+format: html
+---
+```
+
+Contient les options du documents, spécifie titre (`title`), auteur (`author`), date (`date`), format de sortie (`output`), etc.
+
+Code `R` dans l'en-tête : doit être dans des morceaux de code, avec des guillemets en plus `"` `r ""` `"`, par exemple  `"` `r date()` `"`
+
+# Corps du texte
+
+## Formatage du texte
+
+Le langage utilisé pour le texte écrit dans les `.Rmd` est le Markdown.
+C'est un ensemble de règles de formatage pour des fichier texte qui est simple à lire et à écrire.
+En voici les principales possibilités :
+
+``` markdown
+Text formatting 
+------------------------------------------------------------
+
+*italique*  ou _italique_
+**gras**   __gras__
+`code`
+exposant^2^ et indice~2~
+
+Titres
+------------------------------------------------------------
+
+# Titre de 1er niveau
+
+## De 2eme niveau
+
+### 3eme niveau
+
+Listes
+------------------------------------------------------------
+
+*   Liste avec des points item 1
+
+*   Item 2
+
+    * Item 2a
+
+    * Item 2b
+
+1.  Liste énuméré item 1
+
+1.  Item 2. Les nombres sont automatiquement incrementé à la compilation
+
+Liens et images
+------------------------------------------------------------
+
+<http://example.com>
+
+[Phrase avec un lien](http://example.com)
+
+![Légende d'une image (optionnelle)](chemin/de/image.png)
+
+Tableaux 
+------------------------------------------------------------
+
+Titre 1  | Titre 2
+-------- | ----------
+Contenu  | Contenu
+Contenu  | Contenu
+
+```
+
+Une version complète est résumé est disponible [ici](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown-2.0.pdf).
+
+## Morceaux de code
+
+3 façons d'insérer un morceau de code dans un document `.qmd` :
+
+1. Avec le raccourci clavier  Cmd/Ctrl + Alt + I
+2. Dans l'onglet "Code", "Insert Chunk"
+3. En tapant manuellement les délimiteurs  ```` ```{r} ```` et ```` ``` ````
+
+
+Titre d'un morceau de code :
+
+```` ```{r ```` suivi d'un nom (optionnel)`}`.
+
+Le bloc de code est fini par ```` ``` ````.
+
+::: {.notes}
+Conseil : donnez un nom à chaque morceau de code (ce nom doit être unique).
+:::
+
+
+## Options du morceau de code {.smaller}
+
+|Option | 	Lancer le code |	Montrer le code |	Sortie |	Graphique |	Messages |	Warnings |
+|-----|:------:|:--------:|:-----:|:-----:|:------:|:-----:|
+|`eval: false`     | -- |	  | -- | -- | -- | -- |
+|`include: false`  |	   | -- | -- | -- | -- | -- |
+|`echo: false` 		|    | -- |    |    |    | 	  |			
+|`results: "hide"` |    |    | -- |    |    |    |			
+|`fig.show: "hide"`| 	 |    |    | -- |    |    | 		
+|`message: false`  |		 |		|    |    |	-- |    |	
+|`warning: false`  |		 |		|		 |    |    | -- |
+
+: Que supprime chaque option ?
+
+::: {.notes}
+Revoir ces options
+:::
+
+
+## Tableaux {.smaller}
+
+- Par défaut, les dataframes ont le style de la console.
+- Pour les formater, on peut utiliser `knitr::kable` et des en-têtes débutants par `#|`
+
+``` r
+#| label: tbl-demo
+#| tbl-cap: "Un tableau produit à l'aide de `knitr::kable`."
+knitr::kable(
+  mtcars[1:5, ]
+)
+```
+
+```{r}
+#| label: tbl-demo
+#| tbl-cap: "Un tableau produit à l'aide de `knitr::kable`."
+#| eval: true
+#| echo: false
+knitr::kable(
+  mtcars[1:5, ]
+)
+```
+
+- La fonction `knitr::kable` a de multiples options que vous pouvez consulter à l'aide `?knitr::kable`
+
+## Options globales
+
+- Parfois utile de changer les options par défaut des morceaux de code : cela peut se faire dans l'en-tête `yaml`.
+
+Par exemple, 
+
+``` yml
+execute:
+  echo: false
+```
+
+Cachera le code dans le rapport.
+
+- On le fait en général au début du document, on peut les modifier indépendammant pour chaque morceau de code.
+
+## Code en ligne
+
+- Possible de mettre du code en ligne dans votre texte, à l'aide de `` `r ` ``
+- Permet de présenter les caractéristiques de vos données dans le corps du texte (nombre de ligne d'un tableau, par ex)
+
+> Nous avons les données de `` `r 'nrow(diamonds)'` `` diamants.
+> Seulement `` `r 'nrow(diamonds) - nrow(smaller)'` `` font plus que 2,5 carats.
+> La répartition du reste est montrée ci-dessous :
+
+Le résultat est compilé et apparaît ainsi dans le document final :
+
+> Nous avons les données de 53940 diamants.
+> Seulement 126 font plus que 2,5 carats.
+> La répartition du reste est montrée ci-dessous :
+
+
+- `format()` permet de contrôler l'apparence des nombres :
+    - L'option `digits` contrôle le nombre de décimales
+    - L'option `big.mark` contrôler les indicateurs de grand nombres
+
+# Bibliographie et citations
+
+## Bibliographie
+
+Génération automatique des bibliographies à partir de fichier de bibliographie à indiquer dans l'option `bibliography` de l'en-tête :
+
+``` markdown
+bibliography: rmarkdown.bib
+```
+
+Types de fichiers reconnus : BibLaTex, BibTex, endnote, medline
+
+## Citations
+
+Pour citer, il faut utiliser `@` suivi de la clé d'identification de la citation dans le fichier bibliographique.
+
+On peut ensuite mettre la citation entre crochets.
+
+``` markdown
+Séparation de citations multiples par `;`: Blah blah [@smith04; @doe99].
+
+Vous pouvez ajoutez n'importe quel commentaire dans les crochets :
+Blah blah [see @doe99, pp. 33-35; also @smith04, ch. 1].
+
+Pour obtenir une citation en ligne, enlever les crochets : @smith04 
+dit blah, ou @smith04 [p. 33] dit blah.
+
+Ajoutez un `-` avant la citation afin d'enlever le nom de l'auteur : 
+Smith dit blah [-@smith04].
+```
+
+R Markdown mettra automatiquement la bibliographie à la fin de votre document.
+
+::: {.notes}
+Montrer ici un fichier de bibliographie avec la clé de citation.
+
+:::
+
+# Références
+

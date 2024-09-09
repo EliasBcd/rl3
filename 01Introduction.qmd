@@ -4,6 +4,7 @@ subtitle: "L3 économie-finance"
 author: "Elias Bouacida"
 date: last-modified
 format: 
+  html: default
   revealjs:
     embed-resources: true
 editor: source
@@ -14,6 +15,7 @@ scrollable: true
 execute: 
   echo: true
 date-format: long
+format-links: [revealjs]
 ---
 
 

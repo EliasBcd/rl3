@@ -1,0 +1,36 @@
+project:
+  type: website
+
+website:
+  title: "Initiation à R"
+  sidebar:
+    style: "docked"
+    contents:
+      - text: "Syllabus"
+        href: Syllabus.md
+      - section: "Introduction à R et Rstudio"
+        contents:
+          - 01Introduction.qmd
+          - 02Lecon1.qmd
+      - section: "Analyse de données"
+        contents:
+          - 03Donnees.qmd
+          - 04RepresentationsGraphiques.qmd
+      - section: "Informations Utiles"
+        contents:
+          - Swirl.qmd
+          - Notes.md
+      - section: "Cours avancé"
+        contents:
+          - ControlFlow.qmd
+          - 
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+bibliography: 
+  - Bibliographie.bib
+  - BibliographieExercice.bib

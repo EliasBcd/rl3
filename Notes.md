@@ -8,7 +8,7 @@ lang: fr
 
 # Notes
 
-5 cours de 3h par groupe, avec un groupe qui a cours les 5 permières semaines et un cours les 5 dernières.
+5 cours de 3h par groupe, avec un groupe qui a cours les 5 premières semaines et un cours les 5 dernières.
 
 Librairies nécessaires pour le cours :
 
