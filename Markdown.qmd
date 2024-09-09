@@ -3,11 +3,13 @@ title: "Rapports : Markdown et Quarto"
 subtitle: "L3 économie-finance"
 author: "Elias Bouacida"
 format:  
+  html: default
   revealjs:
+    output-file: slides-markdown.html
     embed-resources: true
+    scrollable: true
 lang: fr
 institute: "Université Paris 8"
-scrollable: true
 date: last-modified
 bibliography: Bibliographie.bib
 execute: 
@@ -19,15 +21,6 @@ execute:
 # Paquets
 
 ## Installer des extensions (paquets)
-
-
-```{r setup}
-#| eval: false
-#| message: false
-chunk <- "```"
-inline <- function(x = "") paste0("`` `r ", x, "` ``")
-date <- function(x="") paste0("`` `r ", x, "Sys.Date()` ``" )
-```
 
 - En plus de l'installation de base : extensions, appelées paquet (*package* en anglais) ou librairie
 - En majorité : développées et maintenues par la communauté des utilisateurs et utilisatrices de R
@@ -76,7 +69,7 @@ library(tidyr)
 
 - Un atout important de R et Rstudio est R Markdown.
 - Format qui combine code et explications
-- Aide disponible [ici](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf)
+- Aide disponible [ici](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf) **Changer**
 - Nécessite l'utilisation de Rstudio pour fonctionner correctement
 
 Cette partie est largement inspirée de [@wickham2016r, chapitre 27]
@@ -107,7 +100,7 @@ Ce document est compilé afin de créer un document final, en général au forma
 Le document produit est par défaut en `.html` est apparaîtra à droite dans Rstudio.
 
 ::: {.notes}
-Montrer ici aux étudiants les 3 possibilités à l'aide d'un document `.Rmd`
+Montrer ici aux étudiants les 3 possibilités à l'aide d'un document `.qmd`
 :::
 
 
@@ -132,7 +125,7 @@ Code `R` dans l'en-tête : doit être dans des morceaux de code, avec des guille
 
 ## Formatage du texte
 
-Le langage utilisé pour le texte écrit dans les `.Rmd` est le Markdown.
+Le langage utilisé pour le texte écrit dans les `.qmd` est le Markdown.
 C'est un ensemble de règles de formatage pour des fichier texte qui est simple à lire et à écrire.
 En voici les principales possibilités :
 
@@ -188,7 +181,7 @@ Contenu  | Contenu
 
 ```
 
-Une version complète est résumé est disponible [ici](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown-2.0.pdf).
+Une version complète est résumé est disponible [ici](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown-2.0.pdf). **Changer**
 
 ## Morceaux de code
 

@@ -26,4 +26,9 @@ Cours d'introduction à R, L3 économie-Finance à l'université Paris 8
 6. Tirage aléatoire et fonctions liées au probabilités 
 (fonctions de type `dxxx, rxxx`, ...) (pas étudié cette année)
 
+# Librairies requises pour le cours
 
+- swirl
+- tydiverse
+- R dans sa dernière version
+- Rstudio dans sa dernière version

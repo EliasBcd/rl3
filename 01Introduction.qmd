@@ -6,12 +6,13 @@ date: last-modified
 format: 
   html: default
   revealjs:
+    output-file: slide-intro.html
     embed-resources: true
+    scrollable: true
 editor: source
 institute: "Université Paris 8"
 bibliography: "Bibliographie.bib"
 lang: fr
-scrollable: true
 execute: 
   echo: true
 date-format: long

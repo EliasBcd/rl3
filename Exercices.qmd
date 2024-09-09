@@ -1,11 +1,11 @@
 ---
 title: "Exercices"
 author: "Elias Bouacida"
-date: today
+date: last-modified
 institute: "Université Paris 8"
 format: html
 lang: fr
-self-contained: true
+date-format: long
 ---
 
 

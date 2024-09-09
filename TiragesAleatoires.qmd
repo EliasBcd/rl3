@@ -3,15 +3,17 @@ title: "Tirages aléatoires"
 subtitle: "L3 économie-finance"
 author: "Elias Bouacida"
 institute: "Université Paris 8"
-date: "29 novembre 2022"
+date: last-modified
 format: 
+  html: default
   revealjs:
+    output-file: slides-randomdraws.html
     embed-resources: true
     scrollable: true
 lang: fr
 execute: 
   echo: true
-bibliography: Bibliographie.bib
+date-format: long
 ---
 
 ```{r}

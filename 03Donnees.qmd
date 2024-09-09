@@ -3,11 +3,13 @@ title: "Premières analyses de données"
 subtitle: "L3 économie-finance"
 author: "Elias Bouacida"
 format: 
+  html: default
   revealjs:
+    output-file: slide-donnees.html
     embed-resources: true
+    scrollable: true
 lang: fr
 institute: "Université Paris 8"
-scrollable: true
 date: 10/04/2023
 date-format: long
 execute: 

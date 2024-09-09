@@ -2,18 +2,22 @@
 title: "Boucle et évaluation conditionnelle"
 subtitle: "L3 économie-finance"
 author: "Elias Bouacida"
-format: revealjs
+format: 
+  html: default
+  revealjs:
+    output-file: slides-controlflow.html
+    scrollable: true
+    embed-resources: true
+    width: 1920
+    height: 1080
 lang: fr
 institute: "Université Paris 8"
-scrollable: true
-date: Mardi 22 novembre
-self-contained: true
+date: last-modified
 execute: 
   eval: false
   echo: true
-width: 1920
-height: 1080
 code-overflow: wrap
+date-format: long
 ---
 
 ## Introduction

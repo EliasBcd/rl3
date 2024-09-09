@@ -2,7 +2,9 @@
 title: "Représentations graphiques"
 author: "Elias Bouacida"
 format: 
+  html: default
   revealjs:
+    output-file: slides-donnees.html
     scrollable: true
     embed-resources: true
 date: 11-22-2023

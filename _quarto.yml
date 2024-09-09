@@ -1,13 +1,20 @@
 project:
   type: website
+  output-dir: _site
+
+author: 
+  - name: Elias Bouacida
+    affiliation: "Université Paris 8"
+    orcid: 0000-0001-8656-6678
 
 website:
   title: "Initiation à R"
+  description: "Leçons pour le cours d'Initiation à R dispensé à l'université Paris 8 aux étudiants en licence 3 économie-finance."
   sidebar:
     style: "docked"
     contents:
-      - text: "Syllabus"
-        href: Syllabus.md
+      - text: "Index"
+        href: index.qmd
       - section: "Introduction à R et Rstudio"
         contents:
           - 01Introduction.qmd
@@ -16,18 +23,20 @@ website:
         contents:
           - 03Donnees.qmd
           - 04RepresentationsGraphiques.qmd
-      - section: "Informations Utiles"
+      - section: "Exercices"
         contents:
           - Swirl.qmd
-          - Notes.md
+          - Exercices.qmd
+          - Diamants.qmd
       - section: "Cours avancé"
         contents:
           - ControlFlow.qmd
-          - 
+          - Markdown.qmd
+          - TiragesAleatoires.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: default
     css: styles.css
     toc: true
 

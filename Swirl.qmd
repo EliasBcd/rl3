@@ -1,9 +1,7 @@
 ---
-title: "Exercices"
+title: "Utiliser Swir"
 author: "Elias Bouacida"
-format: 
-  html:
-    embed-resources: true
+format: html
 date: last-modified
 date-format: long
 lang: fr
