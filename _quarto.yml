@@ -6,6 +6,7 @@ author:
   - name: Elias Bouacida
     affiliation: "Université Paris 8"
     orcid: 0000-0001-8656-6678
+    email: elias.bouacida@univ-paris8.fr
 
 website:
   title: "Initiation à R"
@@ -43,3 +44,8 @@ format:
 bibliography: 
   - Bibliographie.bib
   - BibliographieExercice.bib
+
+date: last-modified
+date-format: long
+
+lang: fr
