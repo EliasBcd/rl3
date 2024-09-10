@@ -1,0 +1,2514 @@
+[
+  {
+    "objectID": "ControlFlow.html",
+    "href": "ControlFlow.html",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "",
+    "text": "2 outils pour contrôler l’évaluation :\n\nLes évaluations conditionnelles\nles boucles",
+    "crumbs": [
+      "Cours avancé",
+      "Boucle et évaluation conditionnelle"
+    ]
+  },
+  {
+    "objectID": "ControlFlow.html#introduction",
+    "href": "ControlFlow.html#introduction",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "",
+    "text": "2 outils pour contrôler l’évaluation :\n\nLes évaluations conditionnelles\nles boucles",
+    "crumbs": [
+      "Cours avancé",
+      "Boucle et évaluation conditionnelle"
+    ]
+  },
+  {
+    "objectID": "ControlFlow.html#condition-if",
+    "href": "ControlFlow.html#condition-if",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Condition if",
+    "text": "Condition if\nDeux types de conditions if :\n\nif (condition) action_true\nif (condition) action_true else action_false",
+    "crumbs": [
+      "Cours avancé",
+      "Boucle et évaluation conditionnelle"
+    ]
+  },
+  {
+    "objectID": "ControlFlow.html#condition-typique",
+    "href": "ControlFlow.html#condition-typique",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Condition typique",
+    "text": "Condition typique\nExemple :\n\nmention &lt;- function(x) {\n  if (x &gt; 16) {\n    \"Très bien\"\n  } else if (x &gt; 14) {\n    \"Bien\"\n  } else if (x &gt; 12) {\n    \"Assez bien\"\n  } else {\n    \"\"\n  }\n}\n\n\nif renvoie un résultat, il est donc possible d’assigner le résultat :\n\nx1 &lt;- if (TRUE) 1 else 2\nx2 &lt;- if (FALSE) 1 else 2\n\nc(x1, x2)\n\n[1] 1 2\n\n\nQuand else n’est pas explicitement renseigné mais la condition est fausse, if renvoie NULL.",
+    "crumbs": [
+      "Cours avancé",
+      "Boucle et évaluation conditionnelle"
+    ]
+  },
+  {
+    "objectID": "ControlFlow.html#et-si-condition-nest-pas-true-ou-false",
+    "href": "ControlFlow.html#et-si-condition-nest-pas-true-ou-false",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Et si condition n’est pas TRUE ou FALSE ?",
+    "text": "Et si condition n’est pas TRUE ou FALSE ?\n\nif (\"x\") 1\n\nError in if (\"x\") 1: argument is not interpretable as logical\n\nif (logical()) 1\n\nError in if (logical()) 1: argument is of length zero\n\nif (NA) 1\n\nError in if (NA) 1: missing value where TRUE/FALSE needed\n\nif (c(TRUE, FALSE)) 1\n\nError in if (c(TRUE, FALSE)) 1: the condition has length &gt; 1",
+    "crumbs": [
+      "Cours avancé",
+      "Boucle et évaluation conditionnelle"
+    ]
+  },
+  {
+    "objectID": "ControlFlow.html#if-vectoriel-ifelse",
+    "href": "ControlFlow.html#if-vectoriel-ifelse",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "if vectoriel : ifelse()",
+    "text": "if vectoriel : ifelse()\nDans le cas où vous avez besoin de conditions vectorielles, il faut utiliser ifelse() :\n\nx &lt;- 1:10\nifelse(x %% 5 == 0, \"XXX\", as.character(x))\n\n [1] \"1\"   \"2\"   \"3\"   \"4\"   \"XXX\" \"6\"   \"7\"   \"8\"   \"9\"   \"XXX\"\n\nifelse(x %% 2 == 0, \"even\", \"odd\")\n\n [1] \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\"\n\n\n\n\nLes valeurs manquantes seront propagées à la sortie",
+    "crumbs": [
+      "Cours avancé",
+      "Boucle et évaluation conditionnelle"
+    ]
+  },
+  {
+    "objectID": "ControlFlow.html#switch",
+    "href": "ControlFlow.html#switch",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "switch()",
+    "text": "switch()\nOn peut remplacer ceci :\n\nx_option &lt;- function(x) {\n  if (x == \"a\") {\n    \"option 1\"\n  } else if (x == \"b\") {\n    \"option 2\" \n  } else if (x == \"c\") {\n    \"option 3\"\n  } else {\n    stop(\"Invalid `x` value\")\n  }\n}\n\nPar ceci :\n\nx_option &lt;- function(x) {\n  switch(x,\n    a = \"option 1\",\n    b = \"option 2\",\n    c = \"option 3\",\n    stop(\"Invalid `x` value\") \n  )\n}\n\nLe dernier composant de switch() doit renvoyer une erreur, sinon les conditions non vérifiées renverront NULL, ce qui est rarement le comportement désiré. C’est à ça que sert stop().\n\nPréciser l’utilisation de stop()",
+    "crumbs": [
+      "Cours avancé",
+      "Boucle et évaluation conditionnelle"
+    ]
+  },
+  {
+    "objectID": "ControlFlow.html#boucles-for",
+    "href": "ControlFlow.html#boucles-for",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Boucles for",
+    "text": "Boucles for\nLa boucle la plus simple est la boucle for :\n\nfor (item in vecteur) action\n\nExemple :\n\nfor (i in 1:3) {\n  print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n\n\n\n\nAttention, contrairement à de nombreux langages, l’assignation à i se fait dans l’environnement courant, changeant la valeur de l’objet i s’il existe par ailleurs :\n\ni &lt;- 100\nfor (i in 1:3) {}\ni\n\n[1] 3",
+    "crumbs": [
+      "Cours avancé",
+      "Boucle et évaluation conditionnelle"
+    ]
+  },
+  {
+    "objectID": "ControlFlow.html#interruption-anticipée",
+    "href": "ControlFlow.html#interruption-anticipée",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Interruption anticipée",
+    "text": "Interruption anticipée\nOn peut interrompre l’exécution d’une boucle for de manière anticipée :\n\nnext sort de l’itération actuelle ;\nbreak sort de la boucle for en entier.\n\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5",
+    "crumbs": [
+      "Cours avancé",
+      "Boucle et évaluation conditionnelle"
+    ]
+  },
+  {
+    "objectID": "ControlFlow.html#boucles-alternatives",
+    "href": "ControlFlow.html#boucles-alternatives",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Boucles alternatives",
+    "text": "Boucles alternatives\nQuand on ne sait pas les valeurs sur lesquelles on itère, on utilise :\n\nwhile(condition) action : l’action est effectuée tant que la condition est TRUE\nrepeat(action) : répète l’action indéfiniment (tant que break n’apparaît pas)\n\nfor est moins flexible que while qui est moins flexible que repeat, mais il vaut mieux utiliser la version la moins flexible.\nLe grand danger des boucles while et repeat est la boucle infinie : une boucle qui n’est jamais interrompue, entraînant le plantage de l’ordinateur par manque de mémoire.",
+    "crumbs": [
+      "Cours avancé",
+      "Boucle et évaluation conditionnelle"
+    ]
+  },
+  {
+    "objectID": "ControlFlow.html#codes-alternatifs",
+    "href": "ControlFlow.html#codes-alternatifs",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "3 Codes alternatifs",
+    "text": "3 Codes alternatifs\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni = 0\nwhile (i &lt; 10) {\n  i = i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni = 0\nrepeat ({\n  i = i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break ## Attention à ne pas oublier break, sinon on crée une boucle infinie\n})\n\n[1] 3\n[1] 4\n[1] 5",
+    "crumbs": [
+      "Cours avancé",
+      "Boucle et évaluation conditionnelle"
+    ]
+  },
+  {
+    "objectID": "ControlFlow.html#une-boucle-while-ou-for-ne-fonctionne-pas",
+    "href": "ControlFlow.html#une-boucle-while-ou-for-ne-fonctionne-pas",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Une boucle while ou for ne fonctionne pas",
+    "text": "Une boucle while ou for ne fonctionne pas\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 223 jours avant de la vendre, au prix de 44€.\"",
+    "crumbs": [
+      "Cours avancé",
+      "Boucle et évaluation conditionnelle"
+    ]
+  },
+  {
+    "objectID": "slides-controlflow.html#introduction",
+    "href": "slides-controlflow.html#introduction",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Introduction",
+    "text": "Introduction\n2 outils pour contrôler l’évaluation :\n\nLes évaluations conditionnelles\nles boucles"
+  },
+  {
+    "objectID": "slides-controlflow.html#condition-if",
+    "href": "slides-controlflow.html#condition-if",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Condition if",
+    "text": "Condition if\nDeux types de conditions if :\n\nif (condition) action_true\nif (condition) action_true else action_false"
+  },
+  {
+    "objectID": "slides-controlflow.html#condition-typique",
+    "href": "slides-controlflow.html#condition-typique",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Condition typique",
+    "text": "Condition typique\nExemple :\n\nmention &lt;- function(x) {\n  if (x &gt; 16) {\n    \"Très bien\"\n  } else if (x &gt; 14) {\n    \"Bien\"\n  } else if (x &gt; 12) {\n    \"Assez bien\"\n  } else {\n    \"\"\n  }\n}"
+  },
+  {
+    "objectID": "slides-controlflow.html#et-si-condition-nest-pas-true-ou-false",
+    "href": "slides-controlflow.html#et-si-condition-nest-pas-true-ou-false",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Et si condition n’est pas TRUE ou FALSE ?",
+    "text": "Et si condition n’est pas TRUE ou FALSE ?\n\nif (\"x\") 1\n\nError in if (\"x\") 1: argument is not interpretable as logical\n\nif (logical()) 1\n\nError in if (logical()) 1: argument is of length zero\n\nif (NA) 1\n\nError in if (NA) 1: missing value where TRUE/FALSE needed\n\nif (c(TRUE, FALSE)) 1\n\nError in if (c(TRUE, FALSE)) 1: the condition has length &gt; 1"
+  },
+  {
+    "objectID": "slides-controlflow.html#if-vectoriel-ifelse",
+    "href": "slides-controlflow.html#if-vectoriel-ifelse",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "if vectoriel : ifelse()",
+    "text": "if vectoriel : ifelse()\nDans le cas où vous avez besoin de conditions vectorielles, il faut utiliser ifelse() :\n\nx &lt;- 1:10\nifelse(x %% 5 == 0, \"XXX\", as.character(x))\n\n [1] \"1\"   \"2\"   \"3\"   \"4\"   \"XXX\" \"6\"   \"7\"   \"8\"   \"9\"   \"XXX\"\n\nifelse(x %% 2 == 0, \"even\", \"odd\")\n\n [1] \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\"\n\n\n\n\nLes valeurs manquantes seront propagées à la sortie"
+  },
+  {
+    "objectID": "slides-controlflow.html#switch",
+    "href": "slides-controlflow.html#switch",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "switch()",
+    "text": "switch()\nOn peut remplacer ceci :\n\nx_option &lt;- function(x) {\n  if (x == \"a\") {\n    \"option 1\"\n  } else if (x == \"b\") {\n    \"option 2\" \n  } else if (x == \"c\") {\n    \"option 3\"\n  } else {\n    stop(\"Invalid `x` value\")\n  }\n}\n\nPar ceci :\n\nx_option &lt;- function(x) {\n  switch(x,\n    a = \"option 1\",\n    b = \"option 2\",\n    c = \"option 3\",\n    stop(\"Invalid `x` value\") \n  )\n}\n\nLe dernier composant de switch() doit renvoyer une erreur, sinon les conditions non vérifiées renverront NULL, ce qui est rarement le comportement désiré. C’est à ça que sert stop().\n\nPréciser l’utilisation de stop()"
+  },
+  {
+    "objectID": "slides-controlflow.html#boucles-for",
+    "href": "slides-controlflow.html#boucles-for",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Boucles for",
+    "text": "Boucles for\nLa boucle la plus simple est la boucle for :\n\nfor (item in vecteur) action\n\nExemple :\n\nfor (i in 1:3) {\n  print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n\n\n\n\nAttention, contrairement à de nombreux langages, l’assignation à i se fait dans l’environnement courant, changeant la valeur de l’objet i s’il existe par ailleurs :\n\ni &lt;- 100\nfor (i in 1:3) {}\ni\n\n[1] 3"
+  },
+  {
+    "objectID": "slides-controlflow.html#interruption-anticipée",
+    "href": "slides-controlflow.html#interruption-anticipée",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Interruption anticipée",
+    "text": "Interruption anticipée\nOn peut interrompre l’exécution d’une boucle for de manière anticipée :\n\nnext sort de l’itération actuelle ;\nbreak sort de la boucle for en entier.\n\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5"
+  },
+  {
+    "objectID": "slides-controlflow.html#boucles-alternatives",
+    "href": "slides-controlflow.html#boucles-alternatives",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Boucles alternatives",
+    "text": "Boucles alternatives\nQuand on ne sait pas les valeurs sur lesquelles on itère, on utilise :\n\nwhile(condition) action : l’action est effectuée tant que la condition est TRUE\nrepeat(action) : répète l’action indéfiniment (tant que break n’apparaît pas)\n\nfor est moins flexible que while qui est moins flexible que repeat, mais il vaut mieux utiliser la version la moins flexible.\nLe grand danger des boucles while et repeat est la boucle infinie : une boucle qui n’est jamais interrompue, entraînant le plantage de l’ordinateur par manque de mémoire."
+  },
+  {
+    "objectID": "slides-controlflow.html#codes-alternatifs",
+    "href": "slides-controlflow.html#codes-alternatifs",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "3 Codes alternatifs",
+    "text": "3 Codes alternatifs\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni = 0\nwhile (i &lt; 10) {\n  i = i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni = 0\nrepeat ({\n  i = i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break ## Attention à ne pas oublier break, sinon on crée une boucle infinie\n})\n\n[1] 3\n[1] 4\n[1] 5"
+  },
+  {
+    "objectID": "slides-controlflow.html#une-boucle-while-ou-for-ne-fonctionne-pas",
+    "href": "slides-controlflow.html#une-boucle-while-ou-for-ne-fonctionne-pas",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Une boucle while ou for ne fonctionne pas",
+    "text": "Une boucle while ou for ne fonctionne pas\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 7 jours avant de la vendre, au prix de 44€.\""
+  },
+  {
+    "objectID": "03Donnees.html",
+    "href": "03Donnees.html",
+    "title": "Premières analyses de données",
+    "section": "",
+    "text": "Nous utiliserons dans ce cours des données issues de l’INSEE : la base “Histoires de vie 2003”\nLa base est disponible dans la librairie questionr. Il faut donc d’abord installer la librairie questionr, puis la charger à l’aide de la commande library(questionr).\n\ninstall.packages(\"questionr\")\nlibrary(questionr)\n\nPour dire à R de l’utiliser, on utilise la fonction data :\n\ndata(hdv2003)\n\n\n\n\nVous pouvez voir dans l’onglet “Environment” que la base de donnée comprend 2000 observations, et 21 variables.\nSi vous souhaitez voir le contenu de la base, vous pouvez utiliser la commande View() :\n\nView(hdv2003)\n\nCette base de donnée est un data.frame : un tableau de valeurs\n\n\n\nUn data.frame est une valeur comme une autre, on peut donc l’assigner :\n\nd &lt;- hdv2003",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#données-dexemple",
+    "href": "03Donnees.html#données-dexemple",
+    "title": "Premières analyses de données",
+    "section": "",
+    "text": "Nous utiliserons dans ce cours des données issues de l’INSEE : la base “Histoires de vie 2003”\nLa base est disponible dans la librairie questionr. Il faut donc d’abord installer la librairie questionr, puis la charger à l’aide de la commande library(questionr).\n\ninstall.packages(\"questionr\")\nlibrary(questionr)\n\nPour dire à R de l’utiliser, on utilise la fonction data :\n\ndata(hdv2003)",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#visualiser-les-données",
+    "href": "03Donnees.html#visualiser-les-données",
+    "title": "Premières analyses de données",
+    "section": "",
+    "text": "Vous pouvez voir dans l’onglet “Environment” que la base de donnée comprend 2000 observations, et 21 variables.\nSi vous souhaitez voir le contenu de la base, vous pouvez utiliser la commande View() :\n\nView(hdv2003)\n\nCette base de donnée est un data.frame : un tableau de valeurs",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#assignation",
+    "href": "03Donnees.html#assignation",
+    "title": "Premières analyses de données",
+    "section": "",
+    "text": "Un data.frame est une valeur comme une autre, on peut donc l’assigner :\n\nd &lt;- hdv2003",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#structure-du-tableau",
+    "href": "03Donnees.html#structure-du-tableau",
+    "title": "Premières analyses de données",
+    "section": "Structure du tableau",
+    "text": "Structure du tableau\nUn tableau étant un objet comme un autre, on peut lui appliquer des fonctions. Par exemple, nrow() et ncol() retournent le nombre de lignes et de colonnes du tableau. dim() renvoie les deux :\n\nnrow(d)\n\n[1] 2000\n\nncol(d)\n\n[1] 20\n\ndim(d)\n\n[1] 2000   20",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#nom-des-colonnes",
+    "href": "03Donnees.html#nom-des-colonnes",
+    "title": "Premières analyses de données",
+    "section": "Nom des colonnes",
+    "text": "Nom des colonnes\nLa fonction names() retourne les noms des colonnes du tableau, c’est-à-dire la liste des variables.\n\nnames(d)\n\n [1] \"id\"            \"age\"           \"sexe\"          \"nivetud\"      \n [5] \"poids\"         \"occup\"         \"qualif\"        \"freres.soeurs\"\n [9] \"clso\"          \"relig\"         \"trav.imp\"      \"trav.satisf\"  \n[13] \"hard.rock\"     \"lecture.bd\"    \"peche.chasse\"  \"cuisine\"      \n[17] \"bricol\"        \"cinema\"        \"sport\"         \"heures.tv\"    \n\n\nEnfin, la fonction str() renvoie un descriptif plus détaillé de la structure du tableau. Elle liste les différentes variables, indique leur type et affiche les premières valeurs.\n\nstr(d)\n\n'data.frame':   2000 obs. of  20 variables:\n $ id           : int  1 2 3 4 5 6 7 8 9 10 ...\n $ age          : int  28 23 59 34 71 35 60 47 20 28 ...\n $ sexe         : Factor w/ 2 levels \"Homme\",\"Femme\": 2 2 1 1 2 2 2 1 2 1 ...\n $ nivetud      : Factor w/ 8 levels \"N'a jamais fait d'etudes\",..: 8 NA 3 8 3 6 3 6 NA 7 ...\n $ poids        : num  2634 9738 3994 5732 4329 ...\n $ occup        : Factor w/ 7 levels \"Exerce une profession\",..: 1 3 1 1 4 1 6 1 3 1 ...\n $ qualif       : Factor w/ 7 levels \"Ouvrier specialise\",..: 6 NA 3 3 6 6 2 2 NA 7 ...\n $ freres.soeurs: int  8 2 2 1 0 5 1 5 4 2 ...\n $ clso         : Factor w/ 3 levels \"Oui\",\"Non\",\"Ne sait pas\": 1 1 2 2 1 2 1 2 1 2 ...\n $ relig        : Factor w/ 6 levels \"Pratiquant regulier\",..: 4 4 4 3 1 4 3 4 3 2 ...\n $ trav.imp     : Factor w/ 4 levels \"Le plus important\",..: 4 NA 2 3 NA 1 NA 4 NA 3 ...\n $ trav.satisf  : Factor w/ 3 levels \"Satisfaction\",..: 2 NA 3 1 NA 3 NA 2 NA 1 ...\n $ hard.rock    : Factor w/ 2 levels \"Non\",\"Oui\": 1 1 1 1 1 1 1 1 1 1 ...\n $ lecture.bd   : Factor w/ 2 levels \"Non\",\"Oui\": 1 1 1 1 1 1 1 1 1 1 ...\n $ peche.chasse : Factor w/ 2 levels \"Non\",\"Oui\": 1 1 1 1 1 1 2 2 1 1 ...\n $ cuisine      : Factor w/ 2 levels \"Non\",\"Oui\": 2 1 1 2 1 1 2 2 1 1 ...\n $ bricol       : Factor w/ 2 levels \"Non\",\"Oui\": 1 1 1 2 1 1 1 2 1 1 ...\n $ cinema       : Factor w/ 2 levels \"Non\",\"Oui\": 1 2 1 2 1 2 1 1 2 2 ...\n $ sport        : Factor w/ 2 levels \"Non\",\"Oui\": 1 2 2 2 1 2 1 1 1 2 ...\n $ heures.tv    : num  0 1 0 2 3 2 2.9 1 2 2 ...",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#accéder-aux-variables",
+    "href": "03Donnees.html#accéder-aux-variables",
+    "title": "Premières analyses de données",
+    "section": "Accéder aux variables",
+    "text": "Accéder aux variables\nOn se réfère aux variables à l’aide de l’opérateur $, qui permet d’accéder aux colonnes du tableau. On utilisera la syntaxe nom_de_la_base$nom_de_la_variable pour désigner une variable particulière d’une base de données.\nPar exemple, on peut utiliser la fonction head() pour afficher les premières valeurs de la variable age de la base stockée dans l’objet hdv2003.\n\nhead(d$age)\n\n[1] 28 23 59 34 71 35\n\nhead(d$age, 10)\n\n [1] 28 23 59 34 71 35 60 47 20 28\n\n\nLe deuxième argument, permet d’indiquer le nombre de valeurs à afficher.",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#création-de-variables",
+    "href": "03Donnees.html#création-de-variables",
+    "title": "Premières analyses de données",
+    "section": "Création de variables",
+    "text": "Création de variables\nOn peut aussi utiliser l’opérateur $ pour créer une nouvelle variable dans notre base : pour cela, il suffit de lui assigner une valeur.\nPar exemple, la variable heures.tv contient le nombre d’heures passées quotidiennement devant la télé.\n\nhead(d$heures.tv)\n\n[1] 0 1 0 2 3 2\n\n\nOn peut vouloir créer une nouvelle variable dans notre tableau qui contienne la même durée convertie en minutes.\nOn va donc créer une nouvelle variables minutes.tv de la manière suivante :\n\nd$minutes.tv &lt;- d$heures.tv * 60\n\nOn peut alors constater, qu’une nouvelle variable (une nouvelle colonne) a bien été ajoutée à la base de données.\n\nhead(d$minutes.tv)\n\n[1]   0  60   0 120 180 120",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#variable-quantitative",
+    "href": "03Donnees.html#variable-quantitative",
+    "title": "Premières analyses de données",
+    "section": "Variable quantitative",
+    "text": "Variable quantitative\nUne variable quantitative est une variable de type numérique (un nombre) qui peut prendre un grand nombre de valeurs. On en a plusieurs dans notre jeu de données, notamment l’âge (variable age) ou le nombre d’heures passées devant la télé (heures.tv).",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#indicateurs-simples-de-centralités",
+    "href": "03Donnees.html#indicateurs-simples-de-centralités",
+    "title": "Premières analyses de données",
+    "section": "Indicateurs simples de centralités",
+    "text": "Indicateurs simples de centralités\nOn peut obtenir (et, si on le souhaite, sauver dans un objet) les valeurs de chaque élément avec les fonction min(), max(), median(), mean() et quantile() :\n\nmin(d$age)\n\n[1] 18\n\nmax(d$age)\n\n[1] 97\n\nmean(d$age)\n\n[1] 48.157\n\nmedian(d$age)\n\n[1] 48",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#indicateurs-de-dispersion",
+    "href": "03Donnees.html#indicateurs-de-dispersion",
+    "title": "Premières analyses de données",
+    "section": "Indicateurs de dispersion",
+    "text": "Indicateurs de dispersion\nLes indicateurs de dispersion permettent de mesurer si les valeurs sont plutôt regroupées ou au contraire plutôt dispersées.\nL’indicateur le plus simple est l’étendue de la distribution, qui décrit l’écart maximal observé entre les observations :\n\nmax(d$age) - min(d$age)\n\n[1] 79\n\n\nLes indicateurs de dispersion les plus utilisés sont la variance ou, de manière équivalente, l’écart-type. On obtient la première avec la fonction var, et le second avec sd (abréviation de standard deviation).\n\nvar(d$age)\n\n[1] 287.0249\n\n\n\nsd(d$age)\n\n[1] 16.94181",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#quartiles",
+    "href": "03Donnees.html#quartiles",
+    "title": "Premières analyses de données",
+    "section": "Quartiles",
+    "text": "Quartiles\nUne autre manière de mesurer la dispersion est de calculer les quartiles :\n\nle premier quartile est la valeur pour laquelle on a 25% des observations en dessous et 75% au dessus ;\nle deuxième quartile est la valeur pour laquelle on a 50% des observations en dessous et 50% au dessus (c’est donc la médiane) ;\nle troisième quartile est la valeur pour laquelle on a 75% des observations en dessous et 25% au dessus.\n\nOn peut les calculer avec la fonction quantile :\n\n## Premier quartile\nquantile(d$age, prob = 0.25)\n\n25% \n 35 \n\n\n\n## Troisième quartile\nquantile(d$age, prob = 0.75)\n\n75% \n 60 \n\n\nquantile prend deux arguments principaux : le vecteur dont on veut calculer le quantile, et un argument prob qui indique quel quantile on souhaite obtenir. prob prend une valeur entre 0 et 1 : 0.5 est la médiane, 0.25 le premier quartile, 0.1 le premier décile, etc.",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#indicateurs-numériques",
+    "href": "03Donnees.html#indicateurs-numériques",
+    "title": "Premières analyses de données",
+    "section": "Indicateurs numériques",
+    "text": "Indicateurs numériques\nPour obtenir un résumé concis d’une variable, on peut utiliser la commande summary() :\n\nsummary(d$heures.tv)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's \n  0.000   1.000   2.000   2.247   3.000  12.000       5 \n\nsummary(d$age)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  18.00   35.00   48.00   48.16   60.00   97.00 \n\n\nsummary() donne le minimum, le maximum, la moyenne, les premier second (médiane) et troisième quartile de la distribution. La dernière valeur donne, s’il y en a, le nombre de valeurs manquantes (NA) pour la variable.",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#valeurs-manquantes",
+    "href": "03Donnees.html#valeurs-manquantes",
+    "title": "Premières analyses de données",
+    "section": "Valeurs manquantes",
+    "text": "Valeurs manquantes\nSi la variable examinée contient des valeurs manquante, il convient d’inclure l’option na.rm=TRUE dans l’appel de la fonction :\n\nmean(d$heures.tv)\n\n[1] NA\n\nmean(d$heures.tv, na.rm=TRUE)\n\n[1] 2.246566",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#variable-qualitative",
+    "href": "03Donnees.html#variable-qualitative",
+    "title": "Premières analyses de données",
+    "section": "Variable qualitative",
+    "text": "Variable qualitative\nUne variable qualitative est une variable qui ne peut prendre qu’un nombre limité de valeurs, appelées modalités. Dans notre jeu de données on trouvera par exemple le sexe (sexe), le niveau d’études (nivetud), la catégorie socio-professionnelle (qualif)…\nÀ noter qu’une variable qualitative peut tout-à-fait être numérique, et que certaines variables peuvent être traitées soit comme quantitatives, soit comme qualitatives : c’est le cas par exemple du nombre d’enfants ou du nombre de frères et sœurs.",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#tri-à-plat",
+    "href": "03Donnees.html#tri-à-plat",
+    "title": "Premières analyses de données",
+    "section": "Tri à plat",
+    "text": "Tri à plat\nL’outil le plus utilisé pour représenter la répartition des valeurs d’une variable qualitative est le tri à plat : il s’agit simplement de compter, pour chacune des valeurs possibles de la variable (pour chacune des modalités), le nombre d’observations ayant cette valeur. Un tri à plat s’obtient sous R à l’aide de la fonction table.\n\ntable(d$sexe)\n\n\nHomme Femme \n  899  1101 \n\n\nCe tableau nous indique donc que parmi nos enquêtés on trouve 899 hommes et 1101 femmes.\n\ntable(d$qualif)\n\n\n      Ouvrier specialise         Ouvrier qualifie               Technicien \n                     203                      292                       86 \nProfession intermediaire                    Cadre                  Employe \n                     160                      260                      594 \n                   Autre \n                      58",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#tri",
+    "href": "03Donnees.html#tri",
+    "title": "Premières analyses de données",
+    "section": "Tri",
+    "text": "Tri\nUn tableau de ce type peut être affiché ou stocké dans un objet, et on peut à son tour lui appliquer des fonctions. Par exemple, la fonction sort permet de trier le tableau selon la valeur de l’effectif.\n\ntab &lt;- table(d$qualif)\nsort(tab)\n\n\n                   Autre               Technicien Profession intermediaire \n                      58                       86                      160 \n      Ouvrier specialise                    Cadre         Ouvrier qualifie \n                     203                      260                      292 \n                 Employe \n                     594 \n\n\n\n\n\n\n\n\nAvertissement\n\n\n\nAttention, par défaut la fonction table n’affiche pas les valeurs manquantes (NA). Si on souhaite les inclure il faut utiliser l’argument useNA = \"always\", soit : table(d$qualif, useNA = \"always\").",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "03Donnees.html#summary",
+    "href": "03Donnees.html#summary",
+    "title": "Premières analyses de données",
+    "section": "Summary",
+    "text": "Summary\nÀ noter qu’on peut aussi appliquer summary à une variable qualitative. Le résultat est également le tri à plat de la variable, avec en plus le nombre de valeurs manquantes éventuelles.\n\nsummary(d$qualif)\n\n      Ouvrier specialise         Ouvrier qualifie               Technicien \n                     203                      292                       86 \nProfession intermediaire                    Cadre                  Employe \n                     160                      260                      594 \n                   Autre                     NA's \n                      58                      347",
+    "crumbs": [
+      "Analyse de données",
+      "Premières analyses de données"
+    ]
+  },
+  {
+    "objectID": "slide-donnees.html#données-dexemple",
+    "href": "slide-donnees.html#données-dexemple",
+    "title": "Premières analyses de données",
+    "section": "Données d’exemple",
+    "text": "Données d’exemple\nNous utiliserons dans ce cours des données issues de l’INSEE : la base “Histoires de vie 2003”\nLa base est disponible dans la librairie questionr. Il faut donc d’abord installer la librairie questionr, puis la charger à l’aide de la commande library(questionr).\n\ninstall.packages(\"questionr\")\nlibrary(questionr)\n\nPour dire à R de l’utiliser, on utilise la fonction data :\n\ndata(hdv2003)"
+  },
+  {
+    "objectID": "slide-donnees.html#visualiser-les-données",
+    "href": "slide-donnees.html#visualiser-les-données",
+    "title": "Premières analyses de données",
+    "section": "Visualiser les données",
+    "text": "Visualiser les données\nVous pouvez voir dans l’onglet “Environment” que la base de donnée comprend 2000 observations, et 21 variables.\nSi vous souhaitez voir le contenu de la base, vous pouvez utiliser la commande View() :\n\nView(hdv2003)\n\nCette base de donnée est un data.frame : un tableau de valeurs"
+  },
+  {
+    "objectID": "slide-donnees.html#assignation",
+    "href": "slide-donnees.html#assignation",
+    "title": "Premières analyses de données",
+    "section": "Assignation",
+    "text": "Assignation\nUn data.frame est une valeur comme une autre, on peut donc l’assigner :\n\nd &lt;- hdv2003"
+  },
+  {
+    "objectID": "slide-donnees.html#structure-du-tableau",
+    "href": "slide-donnees.html#structure-du-tableau",
+    "title": "Premières analyses de données",
+    "section": "Structure du tableau",
+    "text": "Structure du tableau\nUn tableau étant un objet comme un autre, on peut lui appliquer des fonctions. Par exemple, nrow() et ncol() retournent le nombre de lignes et de colonnes du tableau. dim() renvoie les deux :\n\nnrow(d)\n\n[1] 2000\n\nncol(d)\n\n[1] 20\n\ndim(d)\n\n[1] 2000   20"
+  },
+  {
+    "objectID": "slide-donnees.html#nom-des-colonnes",
+    "href": "slide-donnees.html#nom-des-colonnes",
+    "title": "Premières analyses de données",
+    "section": "Nom des colonnes",
+    "text": "Nom des colonnes\nLa fonction names() retourne les noms des colonnes du tableau, c’est-à-dire la liste des variables.\n\nnames(d)\n\n [1] \"id\"            \"age\"           \"sexe\"          \"nivetud\"      \n [5] \"poids\"         \"occup\"         \"qualif\"        \"freres.soeurs\"\n [9] \"clso\"          \"relig\"         \"trav.imp\"      \"trav.satisf\"  \n[13] \"hard.rock\"     \"lecture.bd\"    \"peche.chasse\"  \"cuisine\"      \n[17] \"bricol\"        \"cinema\"        \"sport\"         \"heures.tv\"    \n\n\nEnfin, la fonction str() renvoie un descriptif plus détaillé de la structure du tableau. Elle liste les différentes variables, indique leur type et affiche les premières valeurs.\n\nstr(d)\n\n'data.frame':   2000 obs. of  20 variables:\n $ id           : int  1 2 3 4 5 6 7 8 9 10 ...\n $ age          : int  28 23 59 34 71 35 60 47 20 28 ...\n $ sexe         : Factor w/ 2 levels \"Homme\",\"Femme\": 2 2 1 1 2 2 2 1 2 1 ...\n $ nivetud      : Factor w/ 8 levels \"N'a jamais fait d'etudes\",..: 8 NA 3 8 3 6 3 6 NA 7 ...\n $ poids        : num  2634 9738 3994 5732 4329 ...\n $ occup        : Factor w/ 7 levels \"Exerce une profession\",..: 1 3 1 1 4 1 6 1 3 1 ...\n $ qualif       : Factor w/ 7 levels \"Ouvrier specialise\",..: 6 NA 3 3 6 6 2 2 NA 7 ...\n $ freres.soeurs: int  8 2 2 1 0 5 1 5 4 2 ...\n $ clso         : Factor w/ 3 levels \"Oui\",\"Non\",\"Ne sait pas\": 1 1 2 2 1 2 1 2 1 2 ...\n $ relig        : Factor w/ 6 levels \"Pratiquant regulier\",..: 4 4 4 3 1 4 3 4 3 2 ...\n $ trav.imp     : Factor w/ 4 levels \"Le plus important\",..: 4 NA 2 3 NA 1 NA 4 NA 3 ...\n $ trav.satisf  : Factor w/ 3 levels \"Satisfaction\",..: 2 NA 3 1 NA 3 NA 2 NA 1 ...\n $ hard.rock    : Factor w/ 2 levels \"Non\",\"Oui\": 1 1 1 1 1 1 1 1 1 1 ...\n $ lecture.bd   : Factor w/ 2 levels \"Non\",\"Oui\": 1 1 1 1 1 1 1 1 1 1 ...\n $ peche.chasse : Factor w/ 2 levels \"Non\",\"Oui\": 1 1 1 1 1 1 2 2 1 1 ...\n $ cuisine      : Factor w/ 2 levels \"Non\",\"Oui\": 2 1 1 2 1 1 2 2 1 1 ...\n $ bricol       : Factor w/ 2 levels \"Non\",\"Oui\": 1 1 1 2 1 1 1 2 1 1 ...\n $ cinema       : Factor w/ 2 levels \"Non\",\"Oui\": 1 2 1 2 1 2 1 1 2 2 ...\n $ sport        : Factor w/ 2 levels \"Non\",\"Oui\": 1 2 2 2 1 2 1 1 1 2 ...\n $ heures.tv    : num  0 1 0 2 3 2 2.9 1 2 2 ..."
+  },
+  {
+    "objectID": "slide-donnees.html#accéder-aux-variables",
+    "href": "slide-donnees.html#accéder-aux-variables",
+    "title": "Premières analyses de données",
+    "section": "Accéder aux variables",
+    "text": "Accéder aux variables\nOn se réfère aux variables à l’aide de l’opérateur $, qui permet d’accéder aux colonnes du tableau. On utilisera la syntaxe nom_de_la_base$nom_de_la_variable pour désigner une variable particulière d’une base de données.\nPar exemple, on peut utiliser la fonction head() pour afficher les premières valeurs de la variable age de la base stockée dans l’objet hdv2003.\n\nhead(d$age)\n\n[1] 28 23 59 34 71 35\n\nhead(d$age, 10)\n\n [1] 28 23 59 34 71 35 60 47 20 28\n\n\nLe deuxième argument, permet d’indiquer le nombre de valeurs à afficher."
+  },
+  {
+    "objectID": "slide-donnees.html#création-de-variables",
+    "href": "slide-donnees.html#création-de-variables",
+    "title": "Premières analyses de données",
+    "section": "Création de variables",
+    "text": "Création de variables\nOn peut aussi utiliser l’opérateur $ pour créer une nouvelle variable dans notre base : pour cela, il suffit de lui assigner une valeur.\nPar exemple, la variable heures.tv contient le nombre d’heures passées quotidiennement devant la télé.\n\nhead(d$heures.tv)\n\n[1] 0 1 0 2 3 2\n\n\nOn peut vouloir créer une nouvelle variable dans notre tableau qui contienne la même durée convertie en minutes.\nOn va donc créer une nouvelle variables minutes.tv de la manière suivante :\n\nd$minutes.tv &lt;- d$heures.tv * 60\n\nOn peut alors constater, qu’une nouvelle variable (une nouvelle colonne) a bien été ajoutée à la base de données.\n\nhead(d$minutes.tv)\n\n[1]   0  60   0 120 180 120"
+  },
+  {
+    "objectID": "slide-donnees.html#variable-quantitative",
+    "href": "slide-donnees.html#variable-quantitative",
+    "title": "Premières analyses de données",
+    "section": "Variable quantitative",
+    "text": "Variable quantitative\nUne variable quantitative est une variable de type numérique (un nombre) qui peut prendre un grand nombre de valeurs. On en a plusieurs dans notre jeu de données, notamment l’âge (variable age) ou le nombre d’heures passées devant la télé (heures.tv)."
+  },
+  {
+    "objectID": "slide-donnees.html#indicateurs-simples-de-centralités",
+    "href": "slide-donnees.html#indicateurs-simples-de-centralités",
+    "title": "Premières analyses de données",
+    "section": "Indicateurs simples de centralités",
+    "text": "Indicateurs simples de centralités\nOn peut obtenir (et, si on le souhaite, sauver dans un objet) les valeurs de chaque élément avec les fonction min(), max(), median(), mean() et quantile() :\n\nmin(d$age)\n\n[1] 18\n\nmax(d$age)\n\n[1] 97\n\nmean(d$age)\n\n[1] 48.157\n\nmedian(d$age)\n\n[1] 48"
+  },
+  {
+    "objectID": "slide-donnees.html#indicateurs-de-dispersion",
+    "href": "slide-donnees.html#indicateurs-de-dispersion",
+    "title": "Premières analyses de données",
+    "section": "Indicateurs de dispersion",
+    "text": "Indicateurs de dispersion\nLes indicateurs de dispersion permettent de mesurer si les valeurs sont plutôt regroupées ou au contraire plutôt dispersées.\nL’indicateur le plus simple est l’étendue de la distribution, qui décrit l’écart maximal observé entre les observations :\n\nmax(d$age) - min(d$age)\n\n[1] 79\n\n\nLes indicateurs de dispersion les plus utilisés sont la variance ou, de manière équivalente, l’écart-type. On obtient la première avec la fonction var, et le second avec sd (abréviation de standard deviation).\n\nvar(d$age)\n\n[1] 287.0249\n\n\n\nsd(d$age)\n\n[1] 16.94181"
+  },
+  {
+    "objectID": "slide-donnees.html#quartiles",
+    "href": "slide-donnees.html#quartiles",
+    "title": "Premières analyses de données",
+    "section": "Quartiles",
+    "text": "Quartiles\nUne autre manière de mesurer la dispersion est de calculer les quartiles :\n\nle premier quartile est la valeur pour laquelle on a 25% des observations en dessous et 75% au dessus ;\nle deuxième quartile est la valeur pour laquelle on a 50% des observations en dessous et 50% au dessus (c’est donc la médiane) ;\nle troisième quartile est la valeur pour laquelle on a 75% des observations en dessous et 25% au dessus.\n\nOn peut les calculer avec la fonction quantile :\n\n## Premier quartile\nquantile(d$age, prob = 0.25)\n\n25% \n 35 \n\n\n\n## Troisième quartile\nquantile(d$age, prob = 0.75)\n\n75% \n 60 \n\n\nquantile prend deux arguments principaux : le vecteur dont on veut calculer le quantile, et un argument prob qui indique quel quantile on souhaite obtenir. prob prend une valeur entre 0 et 1 : 0.5 est la médiane, 0.25 le premier quartile, 0.1 le premier décile, etc."
+  },
+  {
+    "objectID": "slide-donnees.html#indicateurs-numériques",
+    "href": "slide-donnees.html#indicateurs-numériques",
+    "title": "Premières analyses de données",
+    "section": "Indicateurs numériques",
+    "text": "Indicateurs numériques\nPour obtenir un résumé concis d’une variable, on peut utiliser la commande summary() :\n\nsummary(d$heures.tv)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's \n  0.000   1.000   2.000   2.247   3.000  12.000       5 \n\nsummary(d$age)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  18.00   35.00   48.00   48.16   60.00   97.00 \n\n\nsummary() donne le minimum, le maximum, la moyenne, les premier second (médiane) et troisième quartile de la distribution. La dernière valeur donne, s’il y en a, le nombre de valeurs manquantes (NA) pour la variable."
+  },
+  {
+    "objectID": "slide-donnees.html#valeurs-manquantes",
+    "href": "slide-donnees.html#valeurs-manquantes",
+    "title": "Premières analyses de données",
+    "section": "Valeurs manquantes",
+    "text": "Valeurs manquantes\nSi la variable examinée contient des valeurs manquante, il convient d’inclure l’option na.rm=TRUE dans l’appel de la fonction :\n\nmean(d$heures.tv)\n\n[1] NA\n\nmean(d$heures.tv, na.rm=TRUE)\n\n[1] 2.246566"
+  },
+  {
+    "objectID": "slide-donnees.html#variable-qualitative",
+    "href": "slide-donnees.html#variable-qualitative",
+    "title": "Premières analyses de données",
+    "section": "Variable qualitative",
+    "text": "Variable qualitative\nUne variable qualitative est une variable qui ne peut prendre qu’un nombre limité de valeurs, appelées modalités. Dans notre jeu de données on trouvera par exemple le sexe (sexe), le niveau d’études (nivetud), la catégorie socio-professionnelle (qualif)…\nÀ noter qu’une variable qualitative peut tout-à-fait être numérique, et que certaines variables peuvent être traitées soit comme quantitatives, soit comme qualitatives : c’est le cas par exemple du nombre d’enfants ou du nombre de frères et sœurs."
+  },
+  {
+    "objectID": "slide-donnees.html#tri-à-plat",
+    "href": "slide-donnees.html#tri-à-plat",
+    "title": "Premières analyses de données",
+    "section": "Tri à plat",
+    "text": "Tri à plat\nL’outil le plus utilisé pour représenter la répartition des valeurs d’une variable qualitative est le tri à plat : il s’agit simplement de compter, pour chacune des valeurs possibles de la variable (pour chacune des modalités), le nombre d’observations ayant cette valeur. Un tri à plat s’obtient sous R à l’aide de la fonction table.\n\ntable(d$sexe)\n\n\nHomme Femme \n  899  1101 \n\n\nCe tableau nous indique donc que parmi nos enquêtés on trouve 899 hommes et 1101 femmes.\n\ntable(d$qualif)\n\n\n      Ouvrier specialise         Ouvrier qualifie               Technicien \n                     203                      292                       86 \nProfession intermediaire                    Cadre                  Employe \n                     160                      260                      594 \n                   Autre \n                      58"
+  },
+  {
+    "objectID": "slide-donnees.html#tri",
+    "href": "slide-donnees.html#tri",
+    "title": "Premières analyses de données",
+    "section": "Tri",
+    "text": "Tri\nUn tableau de ce type peut être affiché ou stocké dans un objet, et on peut à son tour lui appliquer des fonctions. Par exemple, la fonction sort permet de trier le tableau selon la valeur de l’effectif.\n\ntab &lt;- table(d$qualif)\nsort(tab)\n\n\n                   Autre               Technicien Profession intermediaire \n                      58                       86                      160 \n      Ouvrier specialise                    Cadre         Ouvrier qualifie \n                     203                      260                      292 \n                 Employe \n                     594 \n\n\n\n\n\n\n\n\nAvertissement\n\n\nAttention, par défaut la fonction table n’affiche pas les valeurs manquantes (NA). Si on souhaite les inclure il faut utiliser l’argument useNA = \"always\", soit : table(d$qualif, useNA = \"always\")."
+  },
+  {
+    "objectID": "slide-donnees.html#summary",
+    "href": "slide-donnees.html#summary",
+    "title": "Premières analyses de données",
+    "section": "Summary",
+    "text": "Summary\nÀ noter qu’on peut aussi appliquer summary à une variable qualitative. Le résultat est également le tri à plat de la variable, avec en plus le nombre de valeurs manquantes éventuelles.\n\nsummary(d$qualif)\n\n      Ouvrier specialise         Ouvrier qualifie               Technicien \n                     203                      292                       86 \nProfession intermediaire                    Cadre                  Employe \n                     160                      260                      594 \n                   Autre                     NA's \n                      58                      347"
+  },
+  {
+    "objectID": "Rmarkdown.html",
+    "href": "Rmarkdown.html",
+    "title": "1st Level Header",
+    "section": "",
+    "text": "italic or italic bold bold code superscript2 and subscript2"
+  },
+  {
+    "objectID": "Rmarkdown.html#text-formatting",
+    "href": "Rmarkdown.html#text-formatting",
+    "title": "1st Level Header",
+    "section": "",
+    "text": "italic or italic bold bold code superscript2 and subscript2"
+  },
+  {
+    "objectID": "Rmarkdown.html#headings",
+    "href": "Rmarkdown.html#headings",
+    "title": "1st Level Header",
+    "section": "Headings",
+    "text": "Headings"
+  },
+  {
+    "objectID": "Rmarkdown.html#nd-level-header",
+    "href": "Rmarkdown.html#nd-level-header",
+    "title": "1st Level Header",
+    "section": "2nd Level Header",
+    "text": "2nd Level Header\n\n3rd Level Header"
+  },
+  {
+    "objectID": "Rmarkdown.html#lists",
+    "href": "Rmarkdown.html#lists",
+    "title": "1st Level Header",
+    "section": "Lists",
+    "text": "Lists\n\nBulleted list item 1\nItem 2\n\nItem 2a\nItem 2b\n\n\n\nNumbered list item 1\nItem 2. The numbers are incremented automatically in the output."
+  },
+  {
+    "objectID": "Rmarkdown.html#links-and-images",
+    "href": "Rmarkdown.html#links-and-images",
+    "title": "1st Level Header",
+    "section": "Links and images",
+    "text": "Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
+  },
+  {
+    "objectID": "Rmarkdown.html#tables",
+    "href": "Rmarkdown.html#tables",
+    "title": "1st Level Header",
+    "section": "Tables",
+    "text": "Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
+  },
+  {
+    "objectID": "Swirl.html",
+    "href": "Swirl.html",
+    "title": "Utiliser Swir",
+    "section": "",
+    "text": "Si le paquet swirl n’est pas installé, installez-le à l’aide de la commande suivante dans la console\n\ninstall.packages('swirl')\n\nQuoiqu’il arrive, exécutez les lignes suivantes dans la console :\n\nlibrary(swirl)\nuninstall_all_courses() \n\nIci R vous demandera si vous voulez tout désinstaller, dites oui. Puis tapez les lignes suivantes.\n\ninstall_course_github('EliasBcd', 'InitiationR')\nselect_language('french', append_rprofile = TRUE)\nswirl()\n\nSuivez ensuite les instructions qui apparaissent dans la console. Utilisez toujours le même nom, il me permet de vous identifier. Sélectionnez le cours InitiationR. C’est normalement le cours numéro 1. Sélectionnez enfin la leçon correspondant à votre progression dans le cours.",
+    "crumbs": [
+      "Exercices",
+      "Utiliser Swir"
+    ]
+  },
+  {
+    "objectID": "Swirl.html#utilisation-de-swirl",
+    "href": "Swirl.html#utilisation-de-swirl",
+    "title": "Utiliser Swir",
+    "section": "",
+    "text": "Si le paquet swirl n’est pas installé, installez-le à l’aide de la commande suivante dans la console\n\ninstall.packages('swirl')\n\nQuoiqu’il arrive, exécutez les lignes suivantes dans la console :\n\nlibrary(swirl)\nuninstall_all_courses() \n\nIci R vous demandera si vous voulez tout désinstaller, dites oui. Puis tapez les lignes suivantes.\n\ninstall_course_github('EliasBcd', 'InitiationR')\nselect_language('french', append_rprofile = TRUE)\nswirl()\n\nSuivez ensuite les instructions qui apparaissent dans la console. Utilisez toujours le même nom, il me permet de vous identifier. Sélectionnez le cours InitiationR. C’est normalement le cours numéro 1. Sélectionnez enfin la leçon correspondant à votre progression dans le cours.",
+    "crumbs": [
+      "Exercices",
+      "Utiliser Swir"
+    ]
+  },
+  {
+    "objectID": "Swirl.html#rendu-des-exercices",
+    "href": "Swirl.html#rendu-des-exercices",
+    "title": "Utiliser Swir",
+    "section": "Rendu des exercices",
+    "text": "Rendu des exercices\nVous devez déposés à la fin de chaque leçon swirl le fichier .txt généré sur Moodle, ici\nLe fichier s’appelle en général nom_de_la_leçon.txt et apparaît à la racine de votre dossier personnel. Ici, par exemple, le fichier Exercice_1.txt. On le trouve sur l’onglet en bas à droite, dans l’onglet File.\n\n\n\nExemple avec Exercice_1.txt\n\n\nVous pouvez ensuite le déposer sur Moodle, dans le devoir “Suivi de la Progression”. Vous pouvez déposer plusieurs fichiers, cela ne pose pas de problème, tant qu’ils ont des noms différents.",
+    "crumbs": [
+      "Exercices",
+      "Utiliser Swir"
+    ]
+  },
+  {
+    "objectID": "DiamantsCorrige.html",
+    "href": "DiamantsCorrige.html",
+    "title": "Taille des diamants",
+    "section": "",
+    "text": "Nous avons des données sur 53940 diamants. Seulement 126 font plus de 2,5 carats. La répartition des diamants restants est indiquées ci-dessous :\nIl y a des coupures aux tailles rondes, comme s’il y avait un arrondi à certaines tailles particulières."
+  },
+  {
+    "objectID": "DiamantsCorrige.html#tailles",
+    "href": "DiamantsCorrige.html#tailles",
+    "title": "Taille des diamants",
+    "section": "Tailles",
+    "text": "Tailles\nNous avons des données sur 53 940 diamants. Seulement 126 font plus de 2,5 carats. Il y a 0.23% de diamants de plus de 2,5 carats.\nCes exercices ont été proposés par Wickham et Grolemund (2016)."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction à R",
+    "section": "",
+    "text": "Ce site contient la plupart des présentations utilisées pour le cours d’introduction à R dispensé en L3 économie-finance à l’université Paris 8.",
+    "crumbs": [
+      "Index"
+    ]
+  },
+  {
+    "objectID": "index.html#plan-du-cours",
+    "href": "index.html#plan-du-cours",
+    "title": "Introduction à R",
+    "section": "Plan du cours",
+    "text": "Plan du cours\n\nInstallation et introduction à R / Rstudio et Posit.cloud\n\nInstaller R / Rstudio, utiliser Posit.cloud\nInstaller un paquet\nPrésenter l’interface de Rstudio (identique à celle de Posit.cloud)\n\nUtilisation basique de R\n\nPrésentation des différentes structures de données : Booléen, nombre, chaîne caractères, vecteur et matrice, data.frame et dérivés, listes\nOpérations sur les données : opérations classiques (+, -, *, /, ^) et pratiques (%%, %/%)\nOpérations booléennes (tests de vérités) : ==, !=, &gt;=, &lt;=, &gt;, &lt;, &, |, !, %in%\n\nUtilisation standard de R\n\nBoucles et évaluation conditionnelle (for, if ... else, while)\nFonctions (création et utilisation)\nScripts\nLectures de fichiers externes (script et données (.R, .csv, .txt, .xls))\n\nIntroduction à l’analyse de donnée avec R (data.frame et tibble)\nGraphique (librairie ggplot)\nIntroduire quarto et markdown (si le temps le permet)\nTirage aléatoire et fonctions liées au probabilités (fonctions de type dxxx, rxxx, …) (si le temps le permet)",
+    "crumbs": [
+      "Index"
+    ]
+  },
+  {
+    "objectID": "index.html#structuration-du-cours",
+    "href": "index.html#structuration-du-cours",
+    "title": "Introduction à R",
+    "section": "Structuration du cours",
+    "text": "Structuration du cours\nConstruit à partir de Barnier et Kauffmann (2023).\n\nIntroduction à R\n\nChapitre 2 (long)\nChapitre 3, sans les représentations graphiques (intermédiaire)\nChapitre 5, principalement à lire, pas d’exercice dessus (court)\n\nAller plus loin\n\nChapitre 14, écrire ses propres fonctions (long)\nChapitre 16, structure de données (long)\nChapitre 17, exécution conditionnelle et boucle (long)\n\nTidyverse\n\nChapitre 6 (court)\nChapitre 7 (intermédiaire)\nChapitre 8 (long, et à simplifier)",
+    "crumbs": [
+      "Index"
+    ]
+  },
+  {
+    "objectID": "index.html#validation",
+    "href": "index.html#validation",
+    "title": "Introduction à R",
+    "section": "Validation",
+    "text": "Validation\nCours à validation, qui se fait sur le rendu d’un nombre suffisant d’exercice (cette année, probablement 11 sur 13 au minimum).",
+    "crumbs": [
+      "Index"
+    ]
+  },
+  {
+    "objectID": "index.html#liens-entre-ces-notions",
+    "href": "index.html#liens-entre-ces-notions",
+    "title": "Introduction à R",
+    "section": "Liens entre ces notions",
+    "text": "Liens entre ces notions\nUne valeur est assignée à un objet.\nUne valeur peut être de différent type.\nUne commande est une instruction donnée à R.\nUn script rassemble un ensemble de commandes dans un fichier texte.\nUne fonction rassemble un ensemble de commandes effectuée sur des arguments et donne un résultat.\nUn type décrit la forme de la variable stockée en mémoire.\nUn paquet rassemble dans plusieurs scripts des objets et des fonctions.",
+    "crumbs": [
+      "Index"
+    ]
+  },
+  {
+    "objectID": "index.html#sec-types",
+    "href": "index.html#sec-types",
+    "title": "Introduction à R",
+    "section": "Les types",
+    "text": "Les types\n\nBooléen\nNumériques\nChaînes de caractères\nVecteurs\nTableau (tibble, data.frame)\n…",
+    "crumbs": [
+      "Index"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html",
+    "href": "02Lecon1.html",
+    "title": "Premiers pas avec R",
+    "section": "",
+    "text": "Au premier lancement de RStudio, l’interface est organisée en trois grandes zones.\n\n\n\n\n\n\n\n\nFigure 1: Accueil Rstudio\n\n\n\n\n\n\nLa zone de gauche se nomme la Console. À son démarrage, RStudio a lancé une nouvelle session de R et c’est dans cette fenêtre que nous allons pouvoir interagir avec lui.\nFaire la démonstration en direct.\n\n\n\n\nLa Console affiche un texte de bienvenue suivi d’une ligne commençant par le caractère &gt; (l’invite de commande).\nFournissons une première commande, en saisissant le texte suivant et en appuyant sur Entrée.\n\n2+2\n\n[1] 4\n\n\nLe symbole &gt; réapparaît, et nous pouvons lancer d’autres opérations :\n\n5-7\n\n[1] -2\n\n4*12\n\n[1] 48\n\n-10/3\n\n[1] -3.333333\n\n5^2\n\n[1] 25\n\n\n\n\n\n\nPrincipales opérations arithmétiques\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(3 + 2\\)\n3 + 2\n5\n\n\n\\(3 - 2\\)\n3 - 2\n1\n\n\n\\(3 \\times 2\\)\n3 * 2\n6\n\n\n\\(3 \\div 2\\)\n3 / 2\n1.5\n\n\n\n\n\n\n\nUtilisation des puissances\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(3^2\\)\n3 ^ 2\n9\n\n\n\\(2^{(-3)}\\)\n2 ^ (-3)\n0.125\n\n\n\\(100^{1/2}\\)\n100 ^ (1 / 2)\n10\n\n\n\\(10^2\\)\n1e2\n100\n\n\n\\(\\sqrt{100}\\)\nsqrt(100)\n10\n\n\n\n\n\n\n\nConstantes mathématiques\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(\\pi\\)\npi\n3.141593\n\n\n\\(e\\)\nexp(1)\n2.718282\n\n\n\n\n\n\nIl n’y a pas de ln() dans R, mais on utilise log() pour désigner le logarithme naturel.\nlog10() désigne le logarithme en base 10.\nlog(x, base) désigne le logarithme en base quelconque.\n\nLogarithmes dans R\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(\\ln(e)\\)\nlog(exp(1))\n1\n\n\n\\(\\log_{10}(1000)\\)\nlog10(1000)\n3\n\n\n\\(\\log_{10}(1000)\\)\nlog(1000, 10)\n3\n\n\n\n\n\n\n\nFonctions trigonométriques\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(\\sin(\\pi / 2)\\)\nsin(pi / 2)\n1\n\n\n\\(\\cos(0)\\)\ncos(0)\n1\n\n\n\n\n\n\nÀ de rares exceptions près, les espaces autour des commandes ne sont pas pris en compte. Les 3 commandes suivantes sont équivalentes :\n\n10+2\n10 + 2\n10       +         2\n\nLa pratique standard est d’utiliser la deuxième ligne, afin d’avoir un code lisible.\n\n\n\n\n&gt; 4 *\n+\n\n\nIl peut arriver qu’on saisisse une commande incomplète. R remplace alors l’invite de commande &gt; par un +. Il attend qu’on lui donne des instructions.\nOn peut compléter la commande et appuyer sur Entrée ou annuler tout et appuyer sur Echap pour retourner à une invite de commande normale",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#la-console",
+    "href": "02Lecon1.html#la-console",
+    "title": "Premiers pas avec R",
+    "section": "",
+    "text": "Au premier lancement de RStudio, l’interface est organisée en trois grandes zones.\n\n\n\n\n\n\n\n\nFigure 1: Accueil Rstudio\n\n\n\n\n\n\nLa zone de gauche se nomme la Console. À son démarrage, RStudio a lancé une nouvelle session de R et c’est dans cette fenêtre que nous allons pouvoir interagir avec lui.\nFaire la démonstration en direct.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#console",
+    "href": "02Lecon1.html#console",
+    "title": "Premiers pas avec R",
+    "section": "",
+    "text": "La Console affiche un texte de bienvenue suivi d’une ligne commençant par le caractère &gt; (l’invite de commande).\nFournissons une première commande, en saisissant le texte suivant et en appuyant sur Entrée.\n\n2+2\n\n[1] 4\n\n\nLe symbole &gt; réapparaît, et nous pouvons lancer d’autres opérations :\n\n5-7\n\n[1] -2\n\n4*12\n\n[1] 48\n\n-10/3\n\n[1] -3.333333\n\n5^2\n\n[1] 25",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#addition-sousraction-multiplication-et-division",
+    "href": "02Lecon1.html#addition-sousraction-multiplication-et-division",
+    "title": "Premiers pas avec R",
+    "section": "",
+    "text": "Principales opérations arithmétiques\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(3 + 2\\)\n3 + 2\n5\n\n\n\\(3 - 2\\)\n3 - 2\n1\n\n\n\\(3 \\times 2\\)\n3 * 2\n6\n\n\n\\(3 \\div 2\\)\n3 / 2\n1.5",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#exposants",
+    "href": "02Lecon1.html#exposants",
+    "title": "Premiers pas avec R",
+    "section": "",
+    "text": "Utilisation des puissances\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(3^2\\)\n3 ^ 2\n9\n\n\n\\(2^{(-3)}\\)\n2 ^ (-3)\n0.125\n\n\n\\(100^{1/2}\\)\n100 ^ (1 / 2)\n10\n\n\n\\(10^2\\)\n1e2\n100\n\n\n\\(\\sqrt{100}\\)\nsqrt(100)\n10",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#constantes-mathématiques",
+    "href": "02Lecon1.html#constantes-mathématiques",
+    "title": "Premiers pas avec R",
+    "section": "",
+    "text": "Constantes mathématiques\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(\\pi\\)\npi\n3.141593\n\n\n\\(e\\)\nexp(1)\n2.718282",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#logarithmes",
+    "href": "02Lecon1.html#logarithmes",
+    "title": "Premiers pas avec R",
+    "section": "",
+    "text": "Il n’y a pas de ln() dans R, mais on utilise log() pour désigner le logarithme naturel.\nlog10() désigne le logarithme en base 10.\nlog(x, base) désigne le logarithme en base quelconque.\n\nLogarithmes dans R\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(\\ln(e)\\)\nlog(exp(1))\n1\n\n\n\\(\\log_{10}(1000)\\)\nlog10(1000)\n3\n\n\n\\(\\log_{10}(1000)\\)\nlog(1000, 10)\n3",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#trigonometrie",
+    "href": "02Lecon1.html#trigonometrie",
+    "title": "Premiers pas avec R",
+    "section": "",
+    "text": "Fonctions trigonométriques\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(\\sin(\\pi / 2)\\)\nsin(pi / 2)\n1\n\n\n\\(\\cos(0)\\)\ncos(0)\n1",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#espaces-et-codage",
+    "href": "02Lecon1.html#espaces-et-codage",
+    "title": "Premiers pas avec R",
+    "section": "",
+    "text": "À de rares exceptions près, les espaces autour des commandes ne sont pas pris en compte. Les 3 commandes suivantes sont équivalentes :\n\n10+2\n10 + 2\n10       +         2\n\nLa pratique standard est d’utiliser la deuxième ligne, afin d’avoir un code lisible.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#r-bloqué",
+    "href": "02Lecon1.html#r-bloqué",
+    "title": "Premiers pas avec R",
+    "section": "",
+    "text": "&gt; 4 *\n+\n\n\nIl peut arriver qu’on saisisse une commande incomplète. R remplace alors l’invite de commande &gt; par un +. Il attend qu’on lui donne des instructions.\nOn peut compléter la commande et appuyer sur Entrée ou annuler tout et appuyer sur Echap pour retourner à une invite de commande normale",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#objets-1",
+    "href": "02Lecon1.html#objets-1",
+    "title": "Premiers pas avec R",
+    "section": "Objets",
+    "text": "Objets\nNous savons utiliser R comme une calculatrice, pour une utilisation plus avancée, on peut stocker le résultat d’un calcul dans un objet à l’aide de l’opérateur d’assignation &lt;-. Cette “flèche” stocke ce qu’il y a à sa droite dans un objet dont le nom est indiqué à sa gauche.\n\nx &lt;- 2\n\nSe lit “prend la valeur 2 et mets la dans un objet qui s’appelle x”.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#afficher-la-valeur-dun-objet",
+    "href": "02Lecon1.html#afficher-la-valeur-dun-objet",
+    "title": "Premiers pas avec R",
+    "section": "Afficher la valeur d’un objet",
+    "text": "Afficher la valeur d’un objet\n\nx\n\n[1] 2\n\n\n\nLors d’une opération d’assignation, R n’affiche pas le résultat de l’opération. Si on exécute une commande comportant juste le nom d’un objet, R affiche son contenu. Bien indiquer aux étudiants que l’assignation entraîne un non affichage du résultat.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#utilisation-dun-objet",
+    "href": "02Lecon1.html#utilisation-dun-objet",
+    "title": "Premiers pas avec R",
+    "section": "Utilisation d’un objet",
+    "text": "Utilisation d’un objet\nOn peut évidemment réutiliser cet objet dans d’autres opérations : R le remplacera alors par sa valeur.\n\nx+4\n\n[1] 6\n\n\n\nOn peut créer autant d’objets qu’on le souhaite.\n\nx &lt;- 2\ny &lt;- 5\nresultat &lt;- x + y\nresultat\n\n[1] 7\n\n\n\nSi on assigne une nouvelle valeur à un objet, la valeur précédente est perdue.\n\nx &lt;- 2\nx &lt;- 5\nx\n\n[1] 5\n\n\n\nAssigner un objet à un autre copie juste la valeur de l’objet de droite dans celui de gauche\n\nx &lt;- 1\ny &lt;- 3\nx &lt;- y\nx\n\n[1] 3",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#chaîne-de-caractères",
+    "href": "02Lecon1.html#chaîne-de-caractères",
+    "title": "Premiers pas avec R",
+    "section": "Chaîne de caractères",
+    "text": "Chaîne de caractères\nLes objets peuvent contenir tout un tas d’informations. Les valeurs prises peuvent être de différentes types.\nJusqu’ici on n’a stocké que des nombres, mais ils peuvent aussi contenir des chaînes de caractères (du texte), qu’on délimite avec des guillemets simples ou doubles (' ou \") :\n\nchien &lt;- \"Chihuahua\"\nchien\n\n[1] \"Chihuahua\"",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#conditions-logiques-booléens",
+    "href": "02Lecon1.html#conditions-logiques-booléens",
+    "title": "Premiers pas avec R",
+    "section": "Conditions logiques (booléens)",
+    "text": "Conditions logiques (booléens)\nOu des conditions logiques (TRUE ou FALSE) basées sur des comparaisons :\n\nvaleur &lt;- TRUE\nvaleur\n\n[1] TRUE\n\nchien == \"Doberman\"\n\n[1] FALSE\n\n3&lt;2\n\n[1] FALSE\n\n\nOn appelle TRUE et FALSE des booléens.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#opérateurs-logiques",
+    "href": "02Lecon1.html#opérateurs-logiques",
+    "title": "Premiers pas avec R",
+    "section": "Opérateurs logiques",
+    "text": "Opérateurs logiques\n\n\n\n\n\n\n\n\n\nOpérateur\nRésumé\nExemple\nRésultat\n\n\n\n\nx &lt; y\nx plus petit que y\n3 &lt; 42\nTRUE\n\n\nx &gt; y\nx plus grand que y\n3 &gt; 42\nFALSE\n\n\nx &lt;= y\nx plus petit ou égal à y\n3 &lt;= 42\nTRUE\n\n\nx &gt;= y\nx plus grand ou égal à y\n3 &gt;= 42\nFALSE\n\n\nx == y\nx égal à y\n3 == 42\nFALSE\n\n\nx != y\nx non égal à y\n3 != 42\nTRUE\n\n\n!x\nnon x\n!(3 &gt; 42)\nTRUE\n\n\nx | y\nx ou y\n(3 &gt; 42) || TRUE1\nTRUE\n\n\nx & y\nx et y\n(3 &lt; 4) && ( 42 &gt; 13)1\nTRUE",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#vecteurs",
+    "href": "02Lecon1.html#vecteurs",
+    "title": "Premiers pas avec R",
+    "section": "Vecteurs",
+    "text": "Vecteurs\nOu des vecteurs. Imaginons qu’on a demandé la taille en centimètres de 5 personnes et qu’on souhaite calculer leur taille moyenne. On stocke l’ensemble de nos tailles dans un seul objet, un vecteur, avec la syntaxe suivante :\n\ntailles &lt;- c(156, 164, 197, 147, 173)\n\noù le c() veut dire “combine les valeurs suivantes dans un vecteur”.\n\nSi on affiche le contenu de cet objet, on voit qu’il contient bien l’ensemble des tailles saisies.\n\ntailles\n\n[1] 156 164 197 147 173",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#opérations-sur-les-vecteurs",
+    "href": "02Lecon1.html#opérations-sur-les-vecteurs",
+    "title": "Premiers pas avec R",
+    "section": "Opérations sur les vecteurs",
+    "text": "Opérations sur les vecteurs\nL’avantage d’un vecteur est que lorsqu’on lui applique une opération, celle-ci s’applique à toutes les valeurs qu’il contient. Ainsi, si on veut la taille en mètres plutôt qu’en centimètres :\n\ntailles_m &lt;- tailles / 100\ntailles_m\n\n[1] 1.56 1.64 1.97 1.47 1.73\n\n\n…\nCela fonctionne pour toutes les opérations de base.\n\ntailles + 10\n\n[1] 166 174 207 157 183\n\ntailles^2\n\n[1] 24336 26896 38809 21609 29929",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#opérations-vectorielles",
+    "href": "02Lecon1.html#opérations-vectorielles",
+    "title": "Premiers pas avec R",
+    "section": "Opérations vectorielles",
+    "text": "Opérations vectorielles\nImaginons maintenant qu’on a aussi demandé aux cinq mêmes personnes leur poids en kilos. On peut créer un deuxième vecteur :\n\npoids &lt;- c(45, 59, 110, 44, 88)\n\n…\nOn peut alors effectuer des calculs utilisant nos deux vecteurs tailles et poids. On peut par exemple calculer l’indice de masse corporelle (IMC) de chacun de nos enquêtés en divisant leur poids en kilo par leur taille en mètre au carré :\n\nimc &lt;- poids / (tailles / 100) ^ 2\nimc\n\n[1] 18.49112 21.93635 28.34394 20.36189 29.40292",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#autre-type-dans-un-vecteur",
+    "href": "02Lecon1.html#autre-type-dans-un-vecteur",
+    "title": "Premiers pas avec R",
+    "section": "Autre type dans un vecteur",
+    "text": "Autre type dans un vecteur\nUn vecteur peut contenir n’importe quel type d’objet.\n\ndiplome &lt;- c(\"CAP\", \"Bac\", \"Bac+2\", \"CAP\", \"Bac+3\")\ndiplome\n\n[1] \"CAP\"   \"Bac\"   \"Bac+2\" \"CAP\"   \"Bac+3\"\n\n\n\nImaginons qu’on a demandé aux 5 mêmes personnes leur niveau de diplôme : on peut regrouper l’information dans un vecteur de chaînes de caractères. Une chaîne de caractère contient du texte libre, délimité par des guillemets simples ou doubles.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#vecteurs-de-nombres-consécutifs",
+    "href": "02Lecon1.html#vecteurs-de-nombres-consécutifs",
+    "title": "Premiers pas avec R",
+    "section": "Vecteurs de nombres consécutifs",
+    "text": "Vecteurs de nombres consécutifs\nL’opérateur :, lui, permet de générer rapidement un vecteur comprenant tous les nombres entre deux valeurs, opération assez courante sous R :\n\nx &lt;- 1:10\nx\n\n [1]  1  2  3  4  5  6  7  8  9 10",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#accès-à-un-élément",
+    "href": "02Lecon1.html#accès-à-un-élément",
+    "title": "Premiers pas avec R",
+    "section": "Accès à un élément",
+    "text": "Accès à un élément\nEnfin, notons qu’on peut accéder à un élément particulier d’un vecteur en faisant suivre le nom du vecteur de crochets contenant le numéro de l’élément désiré.\n\ndiplome[2]\n\n[1] \"Bac\"\n\n\nCette opération, qui utilise l’opérateur [], permet donc la sélection d’éléments d’un vecteur.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#vecteurs-dans-la-console",
+    "href": "02Lecon1.html#vecteurs-dans-la-console",
+    "title": "Premiers pas avec R",
+    "section": "Vecteurs dans la console",
+    "text": "Vecteurs dans la console\nDernière remarque, si on affiche dans la console un vecteur avec beaucoup d’éléments, ceux-ci seront répartis sur plusieurs lignes. Par exemple, si on a un vecteur de 50 nombres on peut obtenir quelque chose comme :\n [1] 294 425 339 914 114 896 716 648 915 587 181 926 489\n[14] 848 583 182 662 888 417 133 146 322 400 698 506 944\n[27] 237 324 333 443 487 658 793 288 897 588 697 439 697\n[40] 914 694 126 969 744 927 337 439 226 704 635\nR ajoute systématiquement un nombre entre crochets au début de chaque ligne : il s’agit en fait de la position du premier élément de la ligne dans le vecteur. Ainsi, le 848 de la deuxième ligne est le 14e élément du vecteur, le 914 de la dernière ligne est le 40e, etc.\nCeci explique le [1] qu’on obtient quand on affiche un simple nombre2 :\n [1] 4",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#listes",
+    "href": "02Lecon1.html#listes",
+    "title": "Premiers pas avec R",
+    "section": "Listes",
+    "text": "Listes\nLes éléments d’un vecteur sont forcément du même types. Si on veut mélanger le poids et le nom de différents chiens dans un même vecteur, le résultat n’est pas vraiment ce que vous attendez.\n\nchiens &lt;- c(\"Chihuahua\", 5, \"Doberman\", 15)\nchiens\n\n[1] \"Chihuahua\" \"5\"         \"Doberman\"  \"15\"       \n\n\n\nRemarquer que R met des guillemets autour des nombres : il les a transformés en chaînes de caractères.\n\n\nPour pouvoir combiner des nombres et des chaînes de caractères, il faut utiliser des listes, à l’aide de la fonction list().\n\nliste_chiens &lt;- list(\"Chihuahua\", 5, \"Doberman\", 15)\nliste_chiens\n\n[[1]]\n[1] \"Chihuahua\"\n\n[[2]]\n[1] 5\n\n[[3]]\n[1] \"Doberman\"\n\n[[4]]\n[1] 15\n\n\nNous verrons les listes plus en détails plus tard. Remarquez à ce stade la présence de double crochets [[ ]], qui nous indique que nous faisons face à une liste.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#une-fonction",
+    "href": "02Lecon1.html#une-fonction",
+    "title": "Premiers pas avec R",
+    "section": "Une fonction",
+    "text": "Une fonction\nFormellement, une fonction a un nom, prend en entrée entre parenthèses des arguments et retourne un résultat.\nPar exemple, la fonction length permet de connaître la taille d’un vecteur.\n\nlength(tailles)\n\n[1] 5",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#arguments",
+    "href": "02Lecon1.html#arguments",
+    "title": "Premiers pas avec R",
+    "section": "Arguments",
+    "text": "Arguments\nUne fonction prend entre parenthèses un ou plusieurs arguments. Par exemple, la fonction c combine plusieurs éléments en un vecteur, et contient plusieurs arguments.\n\ntailles &lt;- c(156, 164, 197, 147, 173)",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#aide-sur-une-fonction",
+    "href": "02Lecon1.html#aide-sur-une-fonction",
+    "title": "Premiers pas avec R",
+    "section": "Aide sur une fonction",
+    "text": "Aide sur une fonction\nOn peut obtenir de l’aide sur un objet ou une fonction à l’aide de la fonction help.\n\nhelp(\"mean\")\n\nOn peut aussi utiliser la version raccourcie ?mean",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#scripts-1",
+    "href": "02Lecon1.html#scripts-1",
+    "title": "Premiers pas avec R",
+    "section": "Scripts",
+    "text": "Scripts\nPour l’instant, nous avons tapé les commandes les unes après les autres dans la console (de manière “interactive”). Peu pratique pour réutiliser : on utilise un fichier, appeler script.\n\ntailles &lt;- c(156, 164, 197, 147, 173)\npoids &lt;- c(45, 59, 110, 44, 88)\n\nmean(tailles)\nmean(poids)\n\nimc &lt;- poids / (tailles / 100) ^ 2\nmin(imc)\nmax(imc)",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#sec-packages",
+    "href": "02Lecon1.html#sec-packages",
+    "title": "Premiers pas avec R",
+    "section": "Installer et charger des extensions (packages)",
+    "text": "Installer et charger des extensions (packages)\nExtension diffusées sur un réseau de de serveurs nommé CRAN (Comprehensive R Archive Network).\nPour installer une extension, si on dispose d’une connexion Internet, on peut utiliser le bouton Install de l’onglet Packages de RStudio.\n\n\n\nInstaller une extension\n\n\nIl suffit alors d’indiquer le nom de l’extension dans le champ Package et de cliquer sur Install.\n\n\n\nInstallation d’une extension",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#en-ligne-de-commande",
+    "href": "02Lecon1.html#en-ligne-de-commande",
+    "title": "Premiers pas avec R",
+    "section": "En ligne de commande",
+    "text": "En ligne de commande\nOn peut aussi installer des extensions en utilisant la fonction install.packages() directement dans la console. Par exemple, pour installer le package questionr on peut exécuter la commande :\n\ninstall.packages(\"questionr\")\n\nInstaller une extension via l’une des deux méthodes précédentes va télécharger l’ensemble des fichiers nécessaires depuis l’une des machines du CRAN, puis installer tout ça sur le disque dur de votre ordinateur. Vous n’avez besoin de le faire qu’une fois, comme vous le faites pour installer un programme sur votre Mac ou PC.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#charger-un-paquet",
+    "href": "02Lecon1.html#charger-un-paquet",
+    "title": "Premiers pas avec R",
+    "section": "Charger un paquet",
+    "text": "Charger un paquet\nUne fois l’extension installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu’elle propose. Ceci se fait avec la fonction library. Par exemple, pour pouvoir utiliser les fonctions de questionr, vous devrez exécuter la commande suivante :\n\nlibrary(questionr)\n\nAinsi, on regroupe en général en début de script toute une série d’appels à library qui permettent de charger tous les packages utilisés dans le script. Quelque chose comme :\n\nlibrary(readxl)\nlibrary(ggplot2)\nlibrary(questionr)\n\nSi vous essayez d’exécuter une fonction d’une extension et que vous obtenez le message d’erreur impossible de trouver la fonction, c’est certainement parce que vous n’avez pas exécuté la commande library correspondante.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#swirl",
+    "href": "02Lecon1.html#swirl",
+    "title": "Premiers pas avec R",
+    "section": "Swirl",
+    "text": "Swirl\nLe moment est venu de mettre en pratique ce que nous avons vu.\nLa première chose à faire est d’installer le paquet swirl. Pour cela, copier-coller les lignes suivantes dans la console et taper Entrée.\n\ninstall.packages('swirl')\nlibrary(swirl)\n\nNous allons maintenant indiquer à swirl que nous souhaitons le voir en français\n\nselect_language('french', append_rprofile = T)",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#cours-et-leçons-swirl",
+    "href": "02Lecon1.html#cours-et-leçons-swirl",
+    "title": "Premiers pas avec R",
+    "section": "Cours et leçons swirl",
+    "text": "Cours et leçons swirl\n\nswirl est un paquet R qui vous permet de vous exercer de manière interactive avec R.\nVous pouvez vous procurer le cours sur Github, à cette adresse https://github.com/EliasBcd/InitiationR. Vous pouvez le faire directement dans R, à l’aide de la commande suivante :\n\n\ninstall_course_github(\"EliasBcd\", \"InitiationR\")",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#lancer-une-leçon",
+    "href": "02Lecon1.html#lancer-une-leçon",
+    "title": "Premiers pas avec R",
+    "section": "Lancer une leçon",
+    "text": "Lancer une leçon\nVous pouvez ensuite lancer le cours en tapant la commande suivante :\n\nswirl()\n\n\nL’invite de commande dialogue avec vous ! Elle vous demande un nom.\n\nTapez-le et gardez-le même tout au long du cours.3 Appuyez sur Entrée.\n\nLisez bien ce qui apparait dans la console.\nQuand R vous demande choisir un cours, tapez le nombre correspondant au cours “InitiationR” et appuyez sur Entrée.\nEnsuite choisissez la première leçon (qui devrait être “Manipulations simples”).\nSuivez maintenant les instructions de R dans l’invite de commande.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#fin-dune-leçon",
+    "href": "02Lecon1.html#fin-dune-leçon",
+    "title": "Premiers pas avec R",
+    "section": "Fin d’une leçon",
+    "text": "Fin d’une leçon\nÀ la fin d’une leçon, swirl va vous proposer de soumettre votre progression.\nTapez le numéro correspondant à “Oui”, R devrait ouvrir votre navigateur internet sur une page Moodle ou vous pouvez soumettre le fichier .txt de la leçon que vous avez faites.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#réinstaller-un-cours",
+    "href": "02Lecon1.html#réinstaller-un-cours",
+    "title": "Premiers pas avec R",
+    "section": "Réinstaller un cours",
+    "text": "Réinstaller un cours\nSi pour une raison ou pour une autre il y a besoin de réinstaller le cours, tapez les commande suivante :\n\nuninstall_course(\"InitiationR\")\n\nSi swirl vous demande de confirmer, choisissez Oui.\n\ninstall_course_github(\"EliasBcd\", \"InitiationR\")",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "02Lecon1.html#footnotes",
+    "href": "02Lecon1.html#footnotes",
+    "title": "Premiers pas avec R",
+    "section": "Notes de bas de page",
+    "text": "Notes de bas de page\n\n\nOn peut en fait utiliser | ou || et & ou &&, mais leur comportement diffère avec des vecteurs. L’opérateur doublé est conçu pour les cas où il n’y a à gauche et a droite qu’une seule valeur logique (donc pas pour les vecteurs).↩︎\nEt permet de constater que pour R, un nombre est un vecteur à un seul élément.↩︎\nVotre numéro d’étudiant, ou votre prénom et votre nom, il faut que je puisse vous identifier par la suite.↩︎",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Premiers pas avec R"
+    ]
+  },
+  {
+    "objectID": "slide-lecon1.html#la-console",
+    "href": "slide-lecon1.html#la-console",
+    "title": "Premiers pas avec R",
+    "section": "La console",
+    "text": "La console\nAu premier lancement de RStudio, l’interface est organisée en trois grandes zones.\n\n\nFigure 1: Accueil Rstudio\n\nLa zone de gauche se nomme la Console. À son démarrage, RStudio a lancé une nouvelle session de R et c’est dans cette fenêtre que nous allons pouvoir interagir avec lui.\nFaire la démonstration en direct."
+  },
+  {
+    "objectID": "slide-lecon1.html#console",
+    "href": "slide-lecon1.html#console",
+    "title": "Premiers pas avec R",
+    "section": "Console",
+    "text": "Console\nLa Console affiche un texte de bienvenue suivi d’une ligne commençant par le caractère &gt; (l’invite de commande).\nFournissons une première commande, en saisissant le texte suivant et en appuyant sur Entrée.\n\n2+2\n\n[1] 4\n\n\nLe symbole &gt; réapparaît, et nous pouvons lancer d’autres opérations :\n\n5-7\n\n[1] -2\n\n4*12\n\n[1] 48\n\n-10/3\n\n[1] -3.333333\n\n5^2\n\n[1] 25"
+  },
+  {
+    "objectID": "slide-lecon1.html#addition-sousraction-multiplication-et-division",
+    "href": "slide-lecon1.html#addition-sousraction-multiplication-et-division",
+    "title": "Premiers pas avec R",
+    "section": "Addition, Sousraction, Multiplication et Division",
+    "text": "Addition, Sousraction, Multiplication et Division\n\nPrincipales opérations arithmétiques\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(3 + 2\\)\n3 + 2\n5\n\n\n\\(3 - 2\\)\n3 - 2\n1\n\n\n\\(3 \\times 2\\)\n3 * 2\n6\n\n\n\\(3 \\div 2\\)\n3 / 2\n1.5"
+  },
+  {
+    "objectID": "slide-lecon1.html#exposants",
+    "href": "slide-lecon1.html#exposants",
+    "title": "Premiers pas avec R",
+    "section": "Exposants",
+    "text": "Exposants\n\nUtilisation des puissances\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(3^2\\)\n3 ^ 2\n9\n\n\n\\(2^{(-3)}\\)\n2 ^ (-3)\n0.125\n\n\n\\(100^{1/2}\\)\n100 ^ (1 / 2)\n10\n\n\n\\(10^2\\)\n1e2\n100\n\n\n\\(\\sqrt{100}\\)\nsqrt(100)\n10"
+  },
+  {
+    "objectID": "slide-lecon1.html#constantes-mathématiques",
+    "href": "slide-lecon1.html#constantes-mathématiques",
+    "title": "Premiers pas avec R",
+    "section": "Constantes mathématiques",
+    "text": "Constantes mathématiques\n\nConstantes mathématiques\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(\\pi\\)\npi\n3.141593\n\n\n\\(e\\)\nexp(1)\n2.718282"
+  },
+  {
+    "objectID": "slide-lecon1.html#logarithmes",
+    "href": "slide-lecon1.html#logarithmes",
+    "title": "Premiers pas avec R",
+    "section": "Logarithmes",
+    "text": "Logarithmes\nIl n’y a pas de ln() dans R, mais on utilise log() pour désigner le logarithme naturel.\nlog10() désigne le logarithme en base 10.\nlog(x, base) désigne le logarithme en base quelconque.\n\nLogarithmes dans R\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(\\ln(e)\\)\nlog(exp(1))\n1\n\n\n\\(\\log_{10}(1000)\\)\nlog10(1000)\n3\n\n\n\\(\\log_{10}(1000)\\)\nlog(1000, 10)\n3"
+  },
+  {
+    "objectID": "slide-lecon1.html#trigonometrie",
+    "href": "slide-lecon1.html#trigonometrie",
+    "title": "Premiers pas avec R",
+    "section": "Trigonometrie",
+    "text": "Trigonometrie\n\nFonctions trigonométriques\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(\\sin(\\pi / 2)\\)\nsin(pi / 2)\n1\n\n\n\\(\\cos(0)\\)\ncos(0)\n1"
+  },
+  {
+    "objectID": "slide-lecon1.html#espaces-et-codage",
+    "href": "slide-lecon1.html#espaces-et-codage",
+    "title": "Premiers pas avec R",
+    "section": "Espaces et codage",
+    "text": "Espaces et codage\nÀ de rares exceptions près, les espaces autour des commandes ne sont pas pris en compte. Les 3 commandes suivantes sont équivalentes :\n\n10+2\n10 + 2\n10       +         2\n\nLa pratique standard est d’utiliser la deuxième ligne, afin d’avoir un code lisible."
+  },
+  {
+    "objectID": "slide-lecon1.html#r-bloqué",
+    "href": "slide-lecon1.html#r-bloqué",
+    "title": "Premiers pas avec R",
+    "section": "R bloqué",
+    "text": "R bloqué\n\n&gt; 4 *\n+\n\n\nIl peut arriver qu’on saisisse une commande incomplète. R remplace alors l’invite de commande &gt; par un +. Il attend qu’on lui donne des instructions.\nOn peut compléter la commande et appuyer sur Entrée ou annuler tout et appuyer sur Echap pour retourner à une invite de commande normale"
+  },
+  {
+    "objectID": "slide-lecon1.html#objets-1",
+    "href": "slide-lecon1.html#objets-1",
+    "title": "Premiers pas avec R",
+    "section": "Objets",
+    "text": "Objets\nNous savons utiliser R comme une calculatrice, pour une utilisation plus avancée, on peut stocker le résultat d’un calcul dans un objet à l’aide de l’opérateur d’assignation &lt;-. Cette “flèche” stocke ce qu’il y a à sa droite dans un objet dont le nom est indiqué à sa gauche.\n\nx &lt;- 2\n\nSe lit “prend la valeur 2 et mets la dans un objet qui s’appelle x”."
+  },
+  {
+    "objectID": "slide-lecon1.html#afficher-la-valeur-dun-objet",
+    "href": "slide-lecon1.html#afficher-la-valeur-dun-objet",
+    "title": "Premiers pas avec R",
+    "section": "Afficher la valeur d’un objet",
+    "text": "Afficher la valeur d’un objet\n\nx\n\n[1] 2\n\n\n\nLors d’une opération d’assignation, R n’affiche pas le résultat de l’opération. Si on exécute une commande comportant juste le nom d’un objet, R affiche son contenu. Bien indiquer aux étudiants que l’assignation entraîne un non affichage du résultat."
+  },
+  {
+    "objectID": "slide-lecon1.html#utilisation-dun-objet",
+    "href": "slide-lecon1.html#utilisation-dun-objet",
+    "title": "Premiers pas avec R",
+    "section": "Utilisation d’un objet",
+    "text": "Utilisation d’un objet\nOn peut évidemment réutiliser cet objet dans d’autres opérations : R le remplacera alors par sa valeur.\n\nx+4\n\n[1] 6"
+  },
+  {
+    "objectID": "slide-lecon1.html#chaîne-de-caractères",
+    "href": "slide-lecon1.html#chaîne-de-caractères",
+    "title": "Premiers pas avec R",
+    "section": "Chaîne de caractères",
+    "text": "Chaîne de caractères\nLes objets peuvent contenir tout un tas d’informations. Les valeurs prises peuvent être de différentes types.\nJusqu’ici on n’a stocké que des nombres, mais ils peuvent aussi contenir des chaînes de caractères (du texte), qu’on délimite avec des guillemets simples ou doubles (' ou \") :\n\nchien &lt;- \"Chihuahua\"\nchien\n\n[1] \"Chihuahua\""
+  },
+  {
+    "objectID": "slide-lecon1.html#conditions-logiques-booléens",
+    "href": "slide-lecon1.html#conditions-logiques-booléens",
+    "title": "Premiers pas avec R",
+    "section": "Conditions logiques (booléens)",
+    "text": "Conditions logiques (booléens)\nOu des conditions logiques (TRUE ou FALSE) basées sur des comparaisons :\n\nvaleur &lt;- TRUE\nvaleur\n\n[1] TRUE\n\nchien == \"Doberman\"\n\n[1] FALSE\n\n3&lt;2\n\n[1] FALSE\n\n\nOn appelle TRUE et FALSE des booléens."
+  },
+  {
+    "objectID": "slide-lecon1.html#opérateurs-logiques",
+    "href": "slide-lecon1.html#opérateurs-logiques",
+    "title": "Premiers pas avec R",
+    "section": "Opérateurs logiques",
+    "text": "Opérateurs logiques\n\n\n\n\n\n\n\n\n\nOpérateur\nRésumé\nExemple\nRésultat\n\n\n\n\nx &lt; y\nx plus petit que y\n3 &lt; 42\nTRUE\n\n\nx &gt; y\nx plus grand que y\n3 &gt; 42\nFALSE\n\n\nx &lt;= y\nx plus petit ou égal à y\n3 &lt;= 42\nTRUE\n\n\nx &gt;= y\nx plus grand ou égal à y\n3 &gt;= 42\nFALSE\n\n\nx == y\nx égal à y\n3 == 42\nFALSE\n\n\nx != y\nx non égal à y\n3 != 42\nTRUE\n\n\n!x\nnon x\n!(3 &gt; 42)\nTRUE\n\n\nx | y\nx ou y\n(3 &gt; 42) || TRUE1\nTRUE\n\n\nx & y\nx et y\n(3 &lt; 4) && ( 42 &gt; 13)1\nTRUE\n\n\n\nOn peut en fait utiliser | ou || et & ou &&, mais leur comportement diffère avec des vecteurs. L’opérateur doublé est conçu pour les cas où il n’y a à gauche et a droite qu’une seule valeur logique (donc pas pour les vecteurs)."
+  },
+  {
+    "objectID": "slide-lecon1.html#vecteurs",
+    "href": "slide-lecon1.html#vecteurs",
+    "title": "Premiers pas avec R",
+    "section": "Vecteurs",
+    "text": "Vecteurs\nOu des vecteurs. Imaginons qu’on a demandé la taille en centimètres de 5 personnes et qu’on souhaite calculer leur taille moyenne. On stocke l’ensemble de nos tailles dans un seul objet, un vecteur, avec la syntaxe suivante :\n\ntailles &lt;- c(156, 164, 197, 147, 173)\n\noù le c() veut dire “combine les valeurs suivantes dans un vecteur”."
+  },
+  {
+    "objectID": "slide-lecon1.html#opérations-sur-les-vecteurs",
+    "href": "slide-lecon1.html#opérations-sur-les-vecteurs",
+    "title": "Premiers pas avec R",
+    "section": "Opérations sur les vecteurs",
+    "text": "Opérations sur les vecteurs\nL’avantage d’un vecteur est que lorsqu’on lui applique une opération, celle-ci s’applique à toutes les valeurs qu’il contient. Ainsi, si on veut la taille en mètres plutôt qu’en centimètres :\n\ntailles_m &lt;- tailles / 100\ntailles_m\n\n[1] 1.56 1.64 1.97 1.47 1.73\n\n\n…\nCela fonctionne pour toutes les opérations de base.\n\ntailles + 10\n\n[1] 166 174 207 157 183\n\ntailles^2\n\n[1] 24336 26896 38809 21609 29929"
+  },
+  {
+    "objectID": "slide-lecon1.html#opérations-vectorielles",
+    "href": "slide-lecon1.html#opérations-vectorielles",
+    "title": "Premiers pas avec R",
+    "section": "Opérations vectorielles",
+    "text": "Opérations vectorielles\nImaginons maintenant qu’on a aussi demandé aux cinq mêmes personnes leur poids en kilos. On peut créer un deuxième vecteur :\n\npoids &lt;- c(45, 59, 110, 44, 88)\n\n…\nOn peut alors effectuer des calculs utilisant nos deux vecteurs tailles et poids. On peut par exemple calculer l’indice de masse corporelle (IMC) de chacun de nos enquêtés en divisant leur poids en kilo par leur taille en mètre au carré :\n\nimc &lt;- poids / (tailles / 100) ^ 2\nimc\n\n[1] 18.49112 21.93635 28.34394 20.36189 29.40292"
+  },
+  {
+    "objectID": "slide-lecon1.html#autre-type-dans-un-vecteur",
+    "href": "slide-lecon1.html#autre-type-dans-un-vecteur",
+    "title": "Premiers pas avec R",
+    "section": "Autre type dans un vecteur",
+    "text": "Autre type dans un vecteur\nUn vecteur peut contenir n’importe quel type d’objet.\n\ndiplome &lt;- c(\"CAP\", \"Bac\", \"Bac+2\", \"CAP\", \"Bac+3\")\ndiplome\n\n[1] \"CAP\"   \"Bac\"   \"Bac+2\" \"CAP\"   \"Bac+3\"\n\n\n\nImaginons qu’on a demandé aux 5 mêmes personnes leur niveau de diplôme : on peut regrouper l’information dans un vecteur de chaînes de caractères. Une chaîne de caractère contient du texte libre, délimité par des guillemets simples ou doubles."
+  },
+  {
+    "objectID": "slide-lecon1.html#vecteurs-de-nombres-consécutifs",
+    "href": "slide-lecon1.html#vecteurs-de-nombres-consécutifs",
+    "title": "Premiers pas avec R",
+    "section": "Vecteurs de nombres consécutifs",
+    "text": "Vecteurs de nombres consécutifs\nL’opérateur :, lui, permet de générer rapidement un vecteur comprenant tous les nombres entre deux valeurs, opération assez courante sous R :\n\nx &lt;- 1:10\nx\n\n [1]  1  2  3  4  5  6  7  8  9 10"
+  },
+  {
+    "objectID": "slide-lecon1.html#accès-à-un-élément",
+    "href": "slide-lecon1.html#accès-à-un-élément",
+    "title": "Premiers pas avec R",
+    "section": "Accès à un élément",
+    "text": "Accès à un élément\nEnfin, notons qu’on peut accéder à un élément particulier d’un vecteur en faisant suivre le nom du vecteur de crochets contenant le numéro de l’élément désiré.\n\ndiplome[2]\n\n[1] \"Bac\"\n\n\nCette opération, qui utilise l’opérateur [], permet donc la sélection d’éléments d’un vecteur."
+  },
+  {
+    "objectID": "slide-lecon1.html#vecteurs-dans-la-console",
+    "href": "slide-lecon1.html#vecteurs-dans-la-console",
+    "title": "Premiers pas avec R",
+    "section": "Vecteurs dans la console",
+    "text": "Vecteurs dans la console\nDernière remarque, si on affiche dans la console un vecteur avec beaucoup d’éléments, ceux-ci seront répartis sur plusieurs lignes. Par exemple, si on a un vecteur de 50 nombres on peut obtenir quelque chose comme :\n [1] 294 425 339 914 114 896 716 648 915 587 181 926 489\n[14] 848 583 182 662 888 417 133 146 322 400 698 506 944\n[27] 237 324 333 443 487 658 793 288 897 588 697 439 697\n[40] 914 694 126 969 744 927 337 439 226 704 635\nR ajoute systématiquement un nombre entre crochets au début de chaque ligne : il s’agit en fait de la position du premier élément de la ligne dans le vecteur. Ainsi, le 848 de la deuxième ligne est le 14e élément du vecteur, le 914 de la dernière ligne est le 40e, etc.\nCeci explique le [1] qu’on obtient quand on affiche un simple nombre1 :\n [1] 4\nEt permet de constater que pour R, un nombre est un vecteur à un seul élément."
+  },
+  {
+    "objectID": "slide-lecon1.html#listes",
+    "href": "slide-lecon1.html#listes",
+    "title": "Premiers pas avec R",
+    "section": "Listes",
+    "text": "Listes\nLes éléments d’un vecteur sont forcément du même types. Si on veut mélanger le poids et le nom de différents chiens dans un même vecteur, le résultat n’est pas vraiment ce que vous attendez.\n\nchiens &lt;- c(\"Chihuahua\", 5, \"Doberman\", 15)\nchiens\n\n[1] \"Chihuahua\" \"5\"         \"Doberman\"  \"15\"       \n\n\n\nRemarquer que R met des guillemets autour des nombres : il les a transformés en chaînes de caractères."
+  },
+  {
+    "objectID": "slide-lecon1.html#une-fonction",
+    "href": "slide-lecon1.html#une-fonction",
+    "title": "Premiers pas avec R",
+    "section": "Une fonction",
+    "text": "Une fonction\nFormellement, une fonction a un nom, prend en entrée entre parenthèses des arguments et retourne un résultat.\nPar exemple, la fonction length permet de connaître la taille d’un vecteur.\n\nlength(tailles)\n\n[1] 5"
+  },
+  {
+    "objectID": "slide-lecon1.html#arguments",
+    "href": "slide-lecon1.html#arguments",
+    "title": "Premiers pas avec R",
+    "section": "Arguments",
+    "text": "Arguments\nUne fonction prend entre parenthèses un ou plusieurs arguments. Par exemple, la fonction c combine plusieurs éléments en un vecteur, et contient plusieurs arguments.\n\ntailles &lt;- c(156, 164, 197, 147, 173)"
+  },
+  {
+    "objectID": "slide-lecon1.html#aide-sur-une-fonction",
+    "href": "slide-lecon1.html#aide-sur-une-fonction",
+    "title": "Premiers pas avec R",
+    "section": "Aide sur une fonction",
+    "text": "Aide sur une fonction\nOn peut obtenir de l’aide sur un objet ou une fonction à l’aide de la fonction help.\n\nhelp(\"mean\")\n\nOn peut aussi utiliser la version raccourcie ?mean"
+  },
+  {
+    "objectID": "slide-lecon1.html#scripts-1",
+    "href": "slide-lecon1.html#scripts-1",
+    "title": "Premiers pas avec R",
+    "section": "Scripts",
+    "text": "Scripts\nPour l’instant, nous avons tapé les commandes les unes après les autres dans la console (de manière “interactive”). Peu pratique pour réutiliser : on utilise un fichier, appeler script.\n\ntailles &lt;- c(156, 164, 197, 147, 173)\npoids &lt;- c(45, 59, 110, 44, 88)\n\nmean(tailles)\nmean(poids)\n\nimc &lt;- poids / (tailles / 100) ^ 2\nmin(imc)\nmax(imc)"
+  },
+  {
+    "objectID": "slide-lecon1.html#sec-packages",
+    "href": "slide-lecon1.html#sec-packages",
+    "title": "Premiers pas avec R",
+    "section": "Installer et charger des extensions (packages)",
+    "text": "Installer et charger des extensions (packages)\nExtension diffusées sur un réseau de de serveurs nommé CRAN (Comprehensive R Archive Network).\nPour installer une extension, si on dispose d’une connexion Internet, on peut utiliser le bouton Install de l’onglet Packages de RStudio.\n\n\n\nInstaller une extension\n\n\nIl suffit alors d’indiquer le nom de l’extension dans le champ Package et de cliquer sur Install.\n\n\n\nInstallation d’une extension"
+  },
+  {
+    "objectID": "slide-lecon1.html#en-ligne-de-commande",
+    "href": "slide-lecon1.html#en-ligne-de-commande",
+    "title": "Premiers pas avec R",
+    "section": "En ligne de commande",
+    "text": "En ligne de commande\nOn peut aussi installer des extensions en utilisant la fonction install.packages() directement dans la console. Par exemple, pour installer le package questionr on peut exécuter la commande :\n\ninstall.packages(\"questionr\")\n\nInstaller une extension via l’une des deux méthodes précédentes va télécharger l’ensemble des fichiers nécessaires depuis l’une des machines du CRAN, puis installer tout ça sur le disque dur de votre ordinateur. Vous n’avez besoin de le faire qu’une fois, comme vous le faites pour installer un programme sur votre Mac ou PC."
+  },
+  {
+    "objectID": "slide-lecon1.html#charger-un-paquet",
+    "href": "slide-lecon1.html#charger-un-paquet",
+    "title": "Premiers pas avec R",
+    "section": "Charger un paquet",
+    "text": "Charger un paquet\nUne fois l’extension installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu’elle propose. Ceci se fait avec la fonction library. Par exemple, pour pouvoir utiliser les fonctions de questionr, vous devrez exécuter la commande suivante :\n\nlibrary(questionr)\n\nAinsi, on regroupe en général en début de script toute une série d’appels à library qui permettent de charger tous les packages utilisés dans le script. Quelque chose comme :\n\nlibrary(readxl)\nlibrary(ggplot2)\nlibrary(questionr)\n\nSi vous essayez d’exécuter une fonction d’une extension et que vous obtenez le message d’erreur impossible de trouver la fonction, c’est certainement parce que vous n’avez pas exécuté la commande library correspondante."
+  },
+  {
+    "objectID": "slide-lecon1.html#swirl",
+    "href": "slide-lecon1.html#swirl",
+    "title": "Premiers pas avec R",
+    "section": "Swirl",
+    "text": "Swirl\nLe moment est venu de mettre en pratique ce que nous avons vu.\nLa première chose à faire est d’installer le paquet swirl. Pour cela, copier-coller les lignes suivantes dans la console et taper Entrée.\n\ninstall.packages('swirl')\nlibrary(swirl)\n\nNous allons maintenant indiquer à swirl que nous souhaitons le voir en français\n\nselect_language('french', append_rprofile = T)"
+  },
+  {
+    "objectID": "slide-lecon1.html#cours-et-leçons-swirl",
+    "href": "slide-lecon1.html#cours-et-leçons-swirl",
+    "title": "Premiers pas avec R",
+    "section": "Cours et leçons swirl",
+    "text": "Cours et leçons swirl\n\nswirl est un paquet R qui vous permet de vous exercer de manière interactive avec R.\nVous pouvez vous procurer le cours sur Github, à cette adresse https://github.com/EliasBcd/InitiationR. Vous pouvez le faire directement dans R, à l’aide de la commande suivante :\n\n\ninstall_course_github(\"EliasBcd\", \"InitiationR\")"
+  },
+  {
+    "objectID": "slide-lecon1.html#lancer-une-leçon",
+    "href": "slide-lecon1.html#lancer-une-leçon",
+    "title": "Premiers pas avec R",
+    "section": "Lancer une leçon",
+    "text": "Lancer une leçon\nVous pouvez ensuite lancer le cours en tapant la commande suivante :\n\nswirl()\n\n\nL’invite de commande dialogue avec vous ! Elle vous demande un nom.\n\nTapez-le et gardez-le même tout au long du cours.1 Appuyez sur Entrée.\n\nLisez bien ce qui apparait dans la console.\nQuand R vous demande choisir un cours, tapez le nombre correspondant au cours “InitiationR” et appuyez sur Entrée.\nEnsuite choisissez la première leçon (qui devrait être “Manipulations simples”).\nSuivez maintenant les instructions de R dans l’invite de commande.\n\nVotre numéro d’étudiant, ou votre prénom et votre nom, il faut que je puisse vous identifier par la suite."
+  },
+  {
+    "objectID": "slide-lecon1.html#fin-dune-leçon",
+    "href": "slide-lecon1.html#fin-dune-leçon",
+    "title": "Premiers pas avec R",
+    "section": "Fin d’une leçon",
+    "text": "Fin d’une leçon\nÀ la fin d’une leçon, swirl va vous proposer de soumettre votre progression.\nTapez le numéro correspondant à “Oui”, R devrait ouvrir votre navigateur internet sur une page Moodle ou vous pouvez soumettre le fichier .txt de la leçon que vous avez faites."
+  },
+  {
+    "objectID": "slide-lecon1.html#réinstaller-un-cours",
+    "href": "slide-lecon1.html#réinstaller-un-cours",
+    "title": "Premiers pas avec R",
+    "section": "Réinstaller un cours",
+    "text": "Réinstaller un cours\nSi pour une raison ou pour une autre il y a besoin de réinstaller le cours, tapez les commande suivante :\n\nuninstall_course(\"InitiationR\")\n\nSi swirl vous demande de confirmer, choisissez Oui.\n\ninstall_course_github(\"EliasBcd\", \"InitiationR\")"
+  },
+  {
+    "objectID": "Diamants.html",
+    "href": "Diamants.html",
+    "title": "Taille des diamants",
+    "section": "",
+    "text": "Nous avons des données sur 53940 diamants. Seulement 126 font plus de 2,5 carats. La répartition des diamants restants est indiquées ci-dessous :",
+    "crumbs": [
+      "Exercices",
+      "Taille des diamants"
+    ]
+  },
+  {
+    "objectID": "Exercices.html",
+    "href": "Exercices.html",
+    "title": "Exercices",
+    "section": "",
+    "text": "Construire le vecteur x suivant :\n\n\n[1] 120 134 256  12\n\n\nUtiliser ce vecteur x pour générer les deux vecteurs suivants :\n\n\n[1] 220 234 356 112\n\n\n[1] 240 268 512  24\n\n\n\n\n\nOn a demandé à 4 ménages le revenu des deux conjoints, et le nombre de personnes du ménage :\n\nconjoint1 &lt;- c(1200, 1180, 1750, 2100)\nconjoint2 &lt;- c(1450, 1870, 1690, 0)\nnb_personnes &lt;- c(4, 2, 3, 2)\n\nCalculer le revenu total de chaque ménage, puis diviser par le nombre de personnes pour obtenir le revenu par personne de chaque ménage.\n\n\n\nDans l’exercice précédent, calculer le revenu minimum et maximum parmi ceux du premier conjoint.\n\nconjoint1 &lt;- c(1200, 1180, 1750, 2100)\n\nRecommencer avec les revenus suivants, parmi lesquels l’un des enquêtés n’a pas voulu répondre :\n\nconjoint1 &lt;- c(1200, 1180, 1750, NA)\n\n\n\n\nLes deux vecteurs suivants représentent les précipitations (en mm) et les températures moyennes (en °C) pour chaque mois de l’année pour la ville de Lyon (moyennes calculées sur la période 1981-2010) :\n\ntemperature &lt;- c(3.4, 4.8, 8.4, 11.4, 15.8, 19.4, 22.2, 21.6, 17.6, 13.4, 7.6, 4.4)\nprecipitations &lt;- c(47.2, 44.1, 50.4, 74.9, 90.8, 75.6, 63.7, 62, 87.5, 98.6, 81.9, 55.2)\n\nCalculer la température moyenne sur l’année.\nCalculer la quantité totale de précipitations sur l’année.\nÀ quoi correspond et comment peut-on interpréter le résultat de la fonction suivante ? Vous pouvez vous aider de la page d’aide de la fonction si nécessaire.\n\ncumsum(precipitations)\n\n [1]  47.2  91.3 141.7 216.6 307.4 383.0 446.7 508.7 596.2 694.8 776.7 831.9\n\n\nMême question pour :\n\ndiff(temperature)\n\n [1]  1.4  3.6  3.0  4.4  3.6  2.8 -0.6 -4.0 -4.2 -5.8 -3.2\n\n\n\n\n\nOn a relevé les notes en maths, anglais et sport d’une classe de 6 élèves et on a stocké ces données dans trois vecteurs :\n\nmaths &lt;- c(12, 16, 8, 18, 6, 10)\nanglais &lt;- c(14, 9, 13, 15, 17, 11)\nsport &lt;- c(18, 11, 14, 10, 8, 12)\n\nCalculer la moyenne des élèves de la classe en anglais.\nCalculer la moyenne générale de chaque élève (la moyenne des ses notes dans les trois matières).\nEssayez de comprendre le résultat des deux fonctions suivantes (vous pouvez vous aider de la page d’aide de ces fonctions) :\n\npmin(maths, anglais, sport)\n\n[1] 12  9  8 10  6 10\n\npmax(maths, anglais, sport)\n\n[1] 18 16 14 18 17 12",
+    "crumbs": [
+      "Exercices",
+      "Exercices"
+    ]
+  },
+  {
+    "objectID": "Exercices.html#exercice-1",
+    "href": "Exercices.html#exercice-1",
+    "title": "Exercices",
+    "section": "",
+    "text": "Construire le vecteur x suivant :\n\n\n[1] 120 134 256  12\n\n\nUtiliser ce vecteur x pour générer les deux vecteurs suivants :\n\n\n[1] 220 234 356 112\n\n\n[1] 240 268 512  24",
+    "crumbs": [
+      "Exercices",
+      "Exercices"
+    ]
+  },
+  {
+    "objectID": "Exercices.html#exercice-2",
+    "href": "Exercices.html#exercice-2",
+    "title": "Exercices",
+    "section": "",
+    "text": "On a demandé à 4 ménages le revenu des deux conjoints, et le nombre de personnes du ménage :\n\nconjoint1 &lt;- c(1200, 1180, 1750, 2100)\nconjoint2 &lt;- c(1450, 1870, 1690, 0)\nnb_personnes &lt;- c(4, 2, 3, 2)\n\nCalculer le revenu total de chaque ménage, puis diviser par le nombre de personnes pour obtenir le revenu par personne de chaque ménage.",
+    "crumbs": [
+      "Exercices",
+      "Exercices"
+    ]
+  },
+  {
+    "objectID": "Exercices.html#exercice-3",
+    "href": "Exercices.html#exercice-3",
+    "title": "Exercices",
+    "section": "",
+    "text": "Dans l’exercice précédent, calculer le revenu minimum et maximum parmi ceux du premier conjoint.\n\nconjoint1 &lt;- c(1200, 1180, 1750, 2100)\n\nRecommencer avec les revenus suivants, parmi lesquels l’un des enquêtés n’a pas voulu répondre :\n\nconjoint1 &lt;- c(1200, 1180, 1750, NA)",
+    "crumbs": [
+      "Exercices",
+      "Exercices"
+    ]
+  },
+  {
+    "objectID": "Exercices.html#exercice-4",
+    "href": "Exercices.html#exercice-4",
+    "title": "Exercices",
+    "section": "",
+    "text": "Les deux vecteurs suivants représentent les précipitations (en mm) et les températures moyennes (en °C) pour chaque mois de l’année pour la ville de Lyon (moyennes calculées sur la période 1981-2010) :\n\ntemperature &lt;- c(3.4, 4.8, 8.4, 11.4, 15.8, 19.4, 22.2, 21.6, 17.6, 13.4, 7.6, 4.4)\nprecipitations &lt;- c(47.2, 44.1, 50.4, 74.9, 90.8, 75.6, 63.7, 62, 87.5, 98.6, 81.9, 55.2)\n\nCalculer la température moyenne sur l’année.\nCalculer la quantité totale de précipitations sur l’année.\nÀ quoi correspond et comment peut-on interpréter le résultat de la fonction suivante ? Vous pouvez vous aider de la page d’aide de la fonction si nécessaire.\n\ncumsum(precipitations)\n\n [1]  47.2  91.3 141.7 216.6 307.4 383.0 446.7 508.7 596.2 694.8 776.7 831.9\n\n\nMême question pour :\n\ndiff(temperature)\n\n [1]  1.4  3.6  3.0  4.4  3.6  2.8 -0.6 -4.0 -4.2 -5.8 -3.2",
+    "crumbs": [
+      "Exercices",
+      "Exercices"
+    ]
+  },
+  {
+    "objectID": "Exercices.html#exercice-5",
+    "href": "Exercices.html#exercice-5",
+    "title": "Exercices",
+    "section": "",
+    "text": "On a relevé les notes en maths, anglais et sport d’une classe de 6 élèves et on a stocké ces données dans trois vecteurs :\n\nmaths &lt;- c(12, 16, 8, 18, 6, 10)\nanglais &lt;- c(14, 9, 13, 15, 17, 11)\nsport &lt;- c(18, 11, 14, 10, 8, 12)\n\nCalculer la moyenne des élèves de la classe en anglais.\nCalculer la moyenne générale de chaque élève (la moyenne des ses notes dans les trois matières).\nEssayez de comprendre le résultat des deux fonctions suivantes (vous pouvez vous aider de la page d’aide de ces fonctions) :\n\npmin(maths, anglais, sport)\n\n[1] 12  9  8 10  6 10\n\npmax(maths, anglais, sport)\n\n[1] 18 16 14 18 17 12",
+    "crumbs": [
+      "Exercices",
+      "Exercices"
+    ]
+  },
+  {
+    "objectID": "slide-intro.html#r",
+    "href": "slide-intro.html#r",
+    "title": "Initiation à R",
+    "section": "R ?",
+    "text": "R ?\n\nEst un langage de programmation tourné principalement vers l’analyse des données et les statistiques. https://fr.wikipedia.org/wiki/R_(langage)\nDérive d’un langage antérieur appelé S https://fr.wikipedia.org/wiki/S_(langage)\nEst un logiciel libre"
+  },
+  {
+    "objectID": "slide-intro.html#objectif-du-cours",
+    "href": "slide-intro.html#objectif-du-cours",
+    "title": "Initiation à R",
+    "section": "Objectif du cours",
+    "text": "Objectif du cours\n\nApprendre à utiliser R et Rstudio\nApprendre à utiliser les principales librairies (aussi appelées paquets) de R pour l’analyse de données et les statistiques (le tidyverse)\nVous préparez à utiliser R dans d’autres cours (économétrie, séries temporelles, économie du travail, projet tutoré)"
+  },
+  {
+    "objectID": "slide-intro.html#déroulement-du-cours",
+    "href": "slide-intro.html#déroulement-du-cours",
+    "title": "Initiation à R",
+    "section": "Déroulement du cours",
+    "text": "Déroulement du cours\n\nUne partie théorique à lire chez vous, où nous discuterons des notions de programmation (en R) et des commandes\nUne partie pratique où vous travaillerez sur machine\nLe seul prérequis pour suivre ce cours est d’avoir accès à R et RStudio sur un ordinateur."
+  },
+  {
+    "objectID": "slide-intro.html#validation",
+    "href": "slide-intro.html#validation",
+    "title": "Initiation à R",
+    "section": "Validation",
+    "text": "Validation\n\nLe cours n’est pas noté, mais est validé par l’envoi de votre travail sur ordinateur."
+  },
+  {
+    "objectID": "slide-intro.html#cours",
+    "href": "slide-intro.html#cours",
+    "title": "Initiation à R",
+    "section": "Cours",
+    "text": "Cours\nLe cours est construit à partir de deux ressources :\n\nLe manuel de Barnier et Kauffmann (2023) (en français), que vous devez lire au fur et à mesure pour la séance suivante. Il est disponible sur Moodle et en ligne.\nLes exercices développés par l’équipe swirldev (2022) (en anglais) et traduits et adaptés pour le cours, et d’autres élaborés par moi-même. Il sont disponibles sur ce dépôt Github. Il faut m’envoyer les fichiers de ces exercices pour la validation.\n\nQuand vous avez un problème avec R, vous pouvez généralement trouver sur internet la réponse à votre question. Stackoverflow est une bonne ressource pour commencer. Les assistants par IA type ChatGPT ou Claude peuvent en général fournir des réponses, mais il est sont parfois fausses et il n’est pas toujours simple de les comprendre."
+  },
+  {
+    "objectID": "slide-intro.html#installation-de-r",
+    "href": "slide-intro.html#installation-de-r",
+    "title": "Initiation à R",
+    "section": "Installation de R",
+    "text": "Installation de R\nR et Rstudio sont deux logiciels libres, gratuits, téléchargeables en ligne et fonctionnant sous Windows, Mac et Linux.\nPour installer R, il suffit de se rendre sur une des pages suivantes :\n\nWindows\nMac 1\nPour Linux, vous pouvez utiliser le gestionnaire de paquet du système ou bien suivre les instructions ici pour obtenir la dernière version de R (pour Ubuntu/Debian)\n\nPour les possesseurs de Mac récents, à processeurs M1 ou plus récents, il faut utiliser la version arm64, les autres doivent prendre la version classique"
+  },
+  {
+    "objectID": "slide-intro.html#rstudio",
+    "href": "slide-intro.html#rstudio",
+    "title": "Initiation à R",
+    "section": "RStudio",
+    "text": "RStudio\n\nPour installer RStudio, rendez-vous sur ici et installez la version Desktop (gratuite) adaptée à votre système.\nIl faut installer R avant d’installer RStudio, sinon RStudio vous enverra une erreur.\nVous pouvez aussi utiliser la version en ligne posit Cloud, qui est très similaire à Rstudio.\nVous trouverez plus d’informations sur l’installation de R et Rstudio sur le page Moodle du cours."
+  },
+  {
+    "objectID": "slide-intro.html#lancement-de-rstudio",
+    "href": "slide-intro.html#lancement-de-rstudio",
+    "title": "Initiation à R",
+    "section": "Lancement de Rstudio",
+    "text": "Lancement de Rstudio\nUne fois installé, pour lancer Rstudio, vous pouvez cliquer sur l’icône correspondante  ou bien rechercher l’application RStudio sur votre ordinateur."
+  },
+  {
+    "objectID": "slide-intro.html#bibliographie",
+    "href": "slide-intro.html#bibliographie",
+    "title": "Initiation à R",
+    "section": "Bibliographie",
+    "text": "Bibliographie\n\n\n\n\n\n\n\n\nBarnier, Julien, et Mayeul Kauffmann. 2023. « \"Introduction à R et au tydiverse\" ». Zenodo. https://doi.org/10.5281/zenodo.6382598.\n\n\nswirldev. 2022. « Basic R programming ». https://github.com/swirldev/R_Programming_E."
+  },
+  {
+    "objectID": "01Introduction.html",
+    "href": "01Introduction.html",
+    "title": "Initiation à R",
+    "section": "",
+    "text": "Est un langage de programmation tourné principalement vers l’analyse des données et les statistiques. https://fr.wikipedia.org/wiki/R_(langage)\nDérive d’un langage antérieur appelé S https://fr.wikipedia.org/wiki/S_(langage)\nEst un logiciel libre\n\n\n\n\n\nApprendre à utiliser R et Rstudio\nApprendre à utiliser les principales librairies (aussi appelées paquets) de R pour l’analyse de données et les statistiques (le tidyverse)\nVous préparez à utiliser R dans d’autres cours (économétrie, séries temporelles, économie du travail, projet tutoré)\n\n\n\n\n\nUne partie théorique à lire chez vous, où nous discuterons des notions de programmation (en R) et des commandes\nUne partie pratique où vous travaillerez sur machine\nLe seul prérequis pour suivre ce cours est d’avoir accès à R et RStudio sur un ordinateur.\n\n\n\n\n\nLe cours n’est pas noté, mais est validé par l’envoi de votre travail sur ordinateur.\n\n\n\n\nLe cours est construit à partir de deux ressources :\n\nLe manuel de Barnier et Kauffmann (2023) (en français), que vous devez lire au fur et à mesure pour la séance suivante. Il est disponible sur Moodle et en ligne.\nLes exercices développés par l’équipe swirldev (2022) (en anglais) et traduits et adaptés pour le cours, et d’autres élaborés par moi-même. Il sont disponibles sur ce dépôt Github. Il faut m’envoyer les fichiers de ces exercices pour la validation.\n\nQuand vous avez un problème avec R, vous pouvez généralement trouver sur internet la réponse à votre question. Stackoverflow est une bonne ressource pour commencer. Les assistants par IA type ChatGPT ou Claude peuvent en général fournir des réponses, mais il est sont parfois fausses et il n’est pas toujours simple de les comprendre.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Initiation à R"
+    ]
+  },
+  {
+    "objectID": "01Introduction.html#r",
+    "href": "01Introduction.html#r",
+    "title": "Initiation à R",
+    "section": "",
+    "text": "Est un langage de programmation tourné principalement vers l’analyse des données et les statistiques. https://fr.wikipedia.org/wiki/R_(langage)\nDérive d’un langage antérieur appelé S https://fr.wikipedia.org/wiki/S_(langage)\nEst un logiciel libre",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Initiation à R"
+    ]
+  },
+  {
+    "objectID": "01Introduction.html#objectif-du-cours",
+    "href": "01Introduction.html#objectif-du-cours",
+    "title": "Initiation à R",
+    "section": "",
+    "text": "Apprendre à utiliser R et Rstudio\nApprendre à utiliser les principales librairies (aussi appelées paquets) de R pour l’analyse de données et les statistiques (le tidyverse)\nVous préparez à utiliser R dans d’autres cours (économétrie, séries temporelles, économie du travail, projet tutoré)",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Initiation à R"
+    ]
+  },
+  {
+    "objectID": "01Introduction.html#déroulement-du-cours",
+    "href": "01Introduction.html#déroulement-du-cours",
+    "title": "Initiation à R",
+    "section": "",
+    "text": "Une partie théorique à lire chez vous, où nous discuterons des notions de programmation (en R) et des commandes\nUne partie pratique où vous travaillerez sur machine\nLe seul prérequis pour suivre ce cours est d’avoir accès à R et RStudio sur un ordinateur.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Initiation à R"
+    ]
+  },
+  {
+    "objectID": "01Introduction.html#validation",
+    "href": "01Introduction.html#validation",
+    "title": "Initiation à R",
+    "section": "",
+    "text": "Le cours n’est pas noté, mais est validé par l’envoi de votre travail sur ordinateur.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Initiation à R"
+    ]
+  },
+  {
+    "objectID": "01Introduction.html#cours",
+    "href": "01Introduction.html#cours",
+    "title": "Initiation à R",
+    "section": "",
+    "text": "Le cours est construit à partir de deux ressources :\n\nLe manuel de Barnier et Kauffmann (2023) (en français), que vous devez lire au fur et à mesure pour la séance suivante. Il est disponible sur Moodle et en ligne.\nLes exercices développés par l’équipe swirldev (2022) (en anglais) et traduits et adaptés pour le cours, et d’autres élaborés par moi-même. Il sont disponibles sur ce dépôt Github. Il faut m’envoyer les fichiers de ces exercices pour la validation.\n\nQuand vous avez un problème avec R, vous pouvez généralement trouver sur internet la réponse à votre question. Stackoverflow est une bonne ressource pour commencer. Les assistants par IA type ChatGPT ou Claude peuvent en général fournir des réponses, mais il est sont parfois fausses et il n’est pas toujours simple de les comprendre.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Initiation à R"
+    ]
+  },
+  {
+    "objectID": "01Introduction.html#installation-de-r",
+    "href": "01Introduction.html#installation-de-r",
+    "title": "Initiation à R",
+    "section": "Installation de R",
+    "text": "Installation de R\nR et Rstudio sont deux logiciels libres, gratuits, téléchargeables en ligne et fonctionnant sous Windows, Mac et Linux.\nPour installer R, il suffit de se rendre sur une des pages suivantes :\n\nWindows\nMac 1\nPour Linux, vous pouvez utiliser le gestionnaire de paquet du système ou bien suivre les instructions ici pour obtenir la dernière version de R (pour Ubuntu/Debian)",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Initiation à R"
+    ]
+  },
+  {
+    "objectID": "01Introduction.html#rstudio",
+    "href": "01Introduction.html#rstudio",
+    "title": "Initiation à R",
+    "section": "RStudio",
+    "text": "RStudio\n\nPour installer RStudio, rendez-vous sur ici et installez la version Desktop (gratuite) adaptée à votre système.\nIl faut installer R avant d’installer RStudio, sinon RStudio vous enverra une erreur.\nVous pouvez aussi utiliser la version en ligne posit Cloud, qui est très similaire à Rstudio.\nVous trouverez plus d’informations sur l’installation de R et Rstudio sur le page Moodle du cours.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Initiation à R"
+    ]
+  },
+  {
+    "objectID": "01Introduction.html#lancement-de-rstudio",
+    "href": "01Introduction.html#lancement-de-rstudio",
+    "title": "Initiation à R",
+    "section": "Lancement de Rstudio",
+    "text": "Lancement de Rstudio\nUne fois installé, pour lancer Rstudio, vous pouvez cliquer sur l’icône correspondante  ou bien rechercher l’application RStudio sur votre ordinateur.",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Initiation à R"
+    ]
+  },
+  {
+    "objectID": "01Introduction.html#footnotes",
+    "href": "01Introduction.html#footnotes",
+    "title": "Initiation à R",
+    "section": "Notes de bas de page",
+    "text": "Notes de bas de page\n\n\nPour les possesseurs de Mac récents, à processeurs M1 ou plus récents, il faut utiliser la version arm64, les autres doivent prendre la version classique↩︎",
+    "crumbs": [
+      "Introduction à R et Rstudio",
+      "Initiation à R"
+    ]
+  },
+  {
+    "objectID": "AdvancedR.html",
+    "href": "AdvancedR.html",
+    "title": "R Programming advanced",
+    "section": "",
+    "text": "To start up with, you should be doing the R_Programming_E course using swirl(). You can say that you want to tell me what you did at the end, sending me a message at elias.bouacida@univ-paris8.fr.\nThis should give you the basics to move around R."
+  },
+  {
+    "objectID": "AdvancedR.html#basics",
+    "href": "AdvancedR.html#basics",
+    "title": "R Programming advanced",
+    "section": "",
+    "text": "To start up with, you should be doing the R_Programming_E course using swirl(). You can say that you want to tell me what you did at the end, sending me a message at elias.bouacida@univ-paris8.fr.\nThis should give you the basics to move around R."
+  },
+  {
+    "objectID": "AdvancedR.html#control-flow",
+    "href": "AdvancedR.html#control-flow",
+    "title": "R Programming advanced",
+    "section": "Control flow",
+    "text": "Control flow\nChapter 5 of Advanced R programming Do the exercises in it and send them to me afterwards."
+  },
+  {
+    "objectID": "AdvancedR.html#rmarkdown",
+    "href": "AdvancedR.html#rmarkdown",
+    "title": "R Programming advanced",
+    "section": "RMarkdown",
+    "text": "RMarkdown\nThe second important part of the learning is to learn how to use Rmarkdown to produce nice reports. There are many great resources to do so. The most comprehensive is the Rmarkdown Cookbook. I ask you to send me the exercises from this page."
+  },
+  {
+    "objectID": "AdvancedR.html#ggplot2",
+    "href": "AdvancedR.html#ggplot2",
+    "title": "R Programming advanced",
+    "section": "ggplot2",
+    "text": "ggplot2\nYou also need to learn how to plot data with R, using the ggplot2 package. Do the x first lessons offered here : https://wilkelab.org/SDS375/"
+  },
+  {
+    "objectID": "AdvancedR.html#random-generation",
+    "href": "AdvancedR.html#random-generation",
+    "title": "R Programming advanced",
+    "section": "Random generation",
+    "text": "Random generation\nIncluded in R_Programming_E\nAdditional resource: Chapter 5.3 of the Pirate Guide to R https://bookdown.org/ndphillips/YaRrr/generating-random-data.html"
+  },
+  {
+    "objectID": "AdvancedR.html#solving-non-liner-equation",
+    "href": "AdvancedR.html#solving-non-liner-equation",
+    "title": "R Programming advanced",
+    "section": "Solving non-liner equation",
+    "text": "Solving non-liner equation\nTBD"
+  },
+  {
+    "objectID": "slides-markdown.html#installer-des-extensions-paquets",
+    "href": "slides-markdown.html#installer-des-extensions-paquets",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Installer des extensions (paquets)",
+    "text": "Installer des extensions (paquets)\n\nEn plus de l’installation de base : extensions, appelées paquet (package en anglais) ou librairie\nEn majorité : développées et maintenues par la communauté des utilisateurs et utilisatrices de R\nDiffusées via un réseau de serveurs nommé CRAN (Comprehensive R Archive Network).\nPour installer une extension, si on dispose d’une connexion Internet, on peut :\n\nCliquer sur le bouton Install Packages de l’onglet Tools de RStudio. Il suffit alors d’indiquer le nom de l’extension dans le champ Package et de cliquer sur Install.\nUtiliser la fonction install.packages() directement dans la console. Par exemple, pour installer le paquet ggplot2 on peut exécuter la commande\n\n\n\ninstall.packages(ggplot2)"
+  },
+  {
+    "objectID": "slides-markdown.html#charger-des-extensions",
+    "href": "slides-markdown.html#charger-des-extensions",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Charger des extensions",
+    "text": "Charger des extensions\nUne fois installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu’elle propose. Ceci se fait avec la fonction library(). Pour pouvoir utiliser les fonctions de ggplot2, vous devrez exécuter la commande suivante :\n\nlibrary(ggplot2)\n\n\n\nVous avez déjà rencontré ces commandes quand nous avons installé et utilisé le paquet swirl."
+  },
+  {
+    "objectID": "slides-markdown.html#en-pratique",
+    "href": "slides-markdown.html#en-pratique",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "En pratique",
+    "text": "En pratique\nOn regroupe en général en début de script toute une série de commandes library() qui permettent de charger tous les paquets utilisés dans le script. Quelque chose comme :\n\nlibrary(ggplot2)\nlibrary(haven)\nlibrary(tidyr)"
+  },
+  {
+    "objectID": "slides-markdown.html#introduction",
+    "href": "slides-markdown.html#introduction",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Introduction",
+    "text": "Introduction\n\nUn atout important de R et Rstudio est R Markdown.\nFormat qui combine code et explications\nAide disponible ici Changer\nNécessite l’utilisation de Rstudio pour fonctionner correctement\n\nCette partie est largement inspirée de (Wickham et Grolemund 2016, chap. 27)"
+  },
+  {
+    "objectID": "slides-markdown.html#structure-dun-document",
+    "href": "slides-markdown.html#structure-dun-document",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Structure d’un document",
+    "text": "Structure d’un document\nUn document Quarto Markdown est un fichier texte avec une extension .qmd qui ressemble à ceci :\n\ncat(readr::read_file(\"Diamants.qmd\"))\n\nCe document est compilé afin de créer un document final, en général au format web .html ou au format .pdf ou encore au format .docx"
+  },
+  {
+    "objectID": "slides-markdown.html#principaux-éléments",
+    "href": "slides-markdown.html#principaux-éléments",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Principaux éléments",
+    "text": "Principaux éléments\n\nL’en tête YAML, comprise entre les ---\nDes morceaux de code R, qui commencent par ```\nDu texte normal en (R) Markdown (avec des balises de formatages)"
+  },
+  {
+    "objectID": "slides-markdown.html#actions-possibles",
+    "href": "slides-markdown.html#actions-possibles",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Actions possibles",
+    "text": "Actions possibles\n\nLancer le code seul en cliquant sur la petite icône run en haut à droite de la fenêtre.\nCompiler tout le document en cliquant sur knit en haut.\nUtiliser le raccourci Cmd/Ctrl + Shift + K pour compiler tout le document.\n\nLe document produit est par défaut en .html est apparaîtra à droite dans Rstudio.\n\nMontrer ici aux étudiants les 3 possibilités à l’aide d’un document .qmd"
+  },
+  {
+    "objectID": "slides-markdown.html#yaml",
+    "href": "slides-markdown.html#yaml",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "YAML",
+    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Tue Sep 10 09:01:52 2024 \""
+  },
+  {
+    "objectID": "slides-markdown.html#formatage-du-texte",
+    "href": "slides-markdown.html#formatage-du-texte",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Formatage du texte",
+    "text": "Formatage du texte\nLe langage utilisé pour le texte écrit dans les .qmd est le Markdown. C’est un ensemble de règles de formatage pour des fichier texte qui est simple à lire et à écrire. En voici les principales possibilités :\nText formatting \n------------------------------------------------------------\n\n*italique*  ou _italique_\n**gras**   __gras__\n`code`\nexposant^2^ et indice~2~\n\nTitres\n------------------------------------------------------------\n\n# Titre de 1er niveau\n\n## De 2eme niveau\n\n### 3eme niveau\n\nListes\n------------------------------------------------------------\n\n*   Liste avec des points item 1\n\n*   Item 2\n\n    * Item 2a\n\n    * Item 2b\n\n1.  Liste énuméré item 1\n\n1.  Item 2. Les nombres sont automatiquement incrementé à la compilation\n\nLiens et images\n------------------------------------------------------------\n\n&lt;http://example.com&gt;\n\n[Phrase avec un lien](http://example.com)\n\n![Légende d'une image (optionnelle)](chemin/de/image.png)\n\nTableaux \n------------------------------------------------------------\n\nTitre 1  | Titre 2\n-------- | ----------\nContenu  | Contenu\nContenu  | Contenu\nUne version complète est résumé est disponible ici. Changer"
+  },
+  {
+    "objectID": "slides-markdown.html#morceaux-de-code",
+    "href": "slides-markdown.html#morceaux-de-code",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Morceaux de code",
+    "text": "Morceaux de code\n3 façons d’insérer un morceau de code dans un document .qmd :\n\nAvec le raccourci clavier Cmd/Ctrl + Alt + I\nDans l’onglet “Code”, “Insert Chunk”\nEn tapant manuellement les délimiteurs ```{r} et ```\n\nTitre d’un morceau de code :\n```{r suivi d’un nom (optionnel)}.\nLe bloc de code est fini par ```.\n\nConseil : donnez un nom à chaque morceau de code (ce nom doit être unique)."
+  },
+  {
+    "objectID": "slides-markdown.html#options-du-morceau-de-code",
+    "href": "slides-markdown.html#options-du-morceau-de-code",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Options du morceau de code",
+    "text": "Options du morceau de code\n\nQue supprime chaque option ?\n\n\n\n\n\n\n\n\n\n\n\nOption\nLancer le code\nMontrer le code\nSortie\nGraphique\nMessages\nWarnings\n\n\n\n\neval: false\n–\n\n–\n–\n–\n–\n\n\ninclude: false\n\n–\n–\n–\n–\n–\n\n\necho: false\n\n–\n\n\n\n\n\n\nresults: \"hide\"\n\n\n–\n\n\n\n\n\nfig.show: \"hide\"\n\n\n\n–\n\n\n\n\nmessage: false\n\n\n\n\n–\n\n\n\nwarning: false\n\n\n\n\n\n–\n\n\n\n\nRevoir ces options"
+  },
+  {
+    "objectID": "slides-markdown.html#tableaux",
+    "href": "slides-markdown.html#tableaux",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Tableaux",
+    "text": "Tableaux\n\nPar défaut, les dataframes ont le style de la console.\nPour les formater, on peut utiliser knitr::kable et des en-têtes débutants par #|\n\n#| label: tbl-demo\n#| tbl-cap: \"Un tableau produit à l'aide de `knitr::kable`.\"\nknitr::kable(\n  mtcars[1:5, ]\n)\n\n\n\n\nTable 1: Un tableau produit à l’aide de knitr::kable.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\n\n\n\n\n\n\n\nLa fonction knitr::kable a de multiples options que vous pouvez consulter à l’aide ?knitr::kable"
+  },
+  {
+    "objectID": "slides-markdown.html#options-globales",
+    "href": "slides-markdown.html#options-globales",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Options globales",
+    "text": "Options globales\n\nParfois utile de changer les options par défaut des morceaux de code : cela peut se faire dans l’en-tête yaml.\n\nPar exemple,\nexecute:\n  echo: false\nCachera le code dans le rapport.\n\nOn le fait en général au début du document, on peut les modifier indépendammant pour chaque morceau de code."
+  },
+  {
+    "objectID": "slides-markdown.html#code-en-ligne",
+    "href": "slides-markdown.html#code-en-ligne",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Code en ligne",
+    "text": "Code en ligne\n\nPossible de mettre du code en ligne dans votre texte, à l’aide de `r `\nPermet de présenter les caractéristiques de vos données dans le corps du texte (nombre de ligne d’un tableau, par ex)\n\n\nNous avons les données de nrow(diamonds) diamants. Seulement nrow(diamonds) - nrow(smaller) font plus que 2,5 carats. La répartition du reste est montrée ci-dessous :\n\nLe résultat est compilé et apparaît ainsi dans le document final :\n\nNous avons les données de 53940 diamants. Seulement 126 font plus que 2,5 carats. La répartition du reste est montrée ci-dessous :\n\n\nformat() permet de contrôler l’apparence des nombres :\n\nL’option digits contrôle le nombre de décimales\nL’option big.mark contrôler les indicateurs de grand nombres"
+  },
+  {
+    "objectID": "slides-markdown.html#bibliographie",
+    "href": "slides-markdown.html#bibliographie",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Bibliographie",
+    "text": "Bibliographie\nGénération automatique des bibliographies à partir de fichier de bibliographie à indiquer dans l’option bibliography de l’en-tête :\nbibliography: rmarkdown.bib\nTypes de fichiers reconnus : BibLaTex, BibTex, endnote, medline"
+  },
+  {
+    "objectID": "slides-markdown.html#citations",
+    "href": "slides-markdown.html#citations",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Citations",
+    "text": "Citations\nPour citer, il faut utiliser @ suivi de la clé d’identification de la citation dans le fichier bibliographique.\nOn peut ensuite mettre la citation entre crochets.\nSéparation de citations multiples par `;`: Blah blah [@smith04; @doe99].\n\nVous pouvez ajoutez n'importe quel commentaire dans les crochets :\nBlah blah [see @doe99, pp. 33-35; also @smith04, ch. 1].\n\nPour obtenir une citation en ligne, enlever les crochets : @smith04 \ndit blah, ou @smith04 [p. 33] dit blah.\n\nAjoutez un `-` avant la citation afin d'enlever le nom de l'auteur : \nSmith dit blah [-@smith04].\nR Markdown mettra automatiquement la bibliographie à la fin de votre document.\n\nMontrer ici un fichier de bibliographie avec la clé de citation."
+  },
+  {
+    "objectID": "Markdown.html",
+    "href": "Markdown.html",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "",
+    "text": "En plus de l’installation de base : extensions, appelées paquet (package en anglais) ou librairie\nEn majorité : développées et maintenues par la communauté des utilisateurs et utilisatrices de R\nDiffusées via un réseau de serveurs nommé CRAN (Comprehensive R Archive Network).\nPour installer une extension, si on dispose d’une connexion Internet, on peut :\n\nCliquer sur le bouton Install Packages de l’onglet Tools de RStudio. Il suffit alors d’indiquer le nom de l’extension dans le champ Package et de cliquer sur Install.\nUtiliser la fonction install.packages() directement dans la console. Par exemple, pour installer le paquet ggplot2 on peut exécuter la commande\n\n\n\ninstall.packages(ggplot2)\n\n\n\n\nUne fois installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu’elle propose. Ceci se fait avec la fonction library(). Pour pouvoir utiliser les fonctions de ggplot2, vous devrez exécuter la commande suivante :\n\nlibrary(ggplot2)\n\n\n\nVous avez déjà rencontré ces commandes quand nous avons installé et utilisé le paquet swirl.\n\n\n\nOn regroupe en général en début de script toute une série de commandes library() qui permettent de charger tous les paquets utilisés dans le script. Quelque chose comme :\n\nlibrary(ggplot2)\nlibrary(haven)\nlibrary(tidyr)",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#installer-des-extensions-paquets",
+    "href": "Markdown.html#installer-des-extensions-paquets",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "",
+    "text": "En plus de l’installation de base : extensions, appelées paquet (package en anglais) ou librairie\nEn majorité : développées et maintenues par la communauté des utilisateurs et utilisatrices de R\nDiffusées via un réseau de serveurs nommé CRAN (Comprehensive R Archive Network).\nPour installer une extension, si on dispose d’une connexion Internet, on peut :\n\nCliquer sur le bouton Install Packages de l’onglet Tools de RStudio. Il suffit alors d’indiquer le nom de l’extension dans le champ Package et de cliquer sur Install.\nUtiliser la fonction install.packages() directement dans la console. Par exemple, pour installer le paquet ggplot2 on peut exécuter la commande\n\n\n\ninstall.packages(ggplot2)",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#charger-des-extensions",
+    "href": "Markdown.html#charger-des-extensions",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "",
+    "text": "Une fois installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu’elle propose. Ceci se fait avec la fonction library(). Pour pouvoir utiliser les fonctions de ggplot2, vous devrez exécuter la commande suivante :\n\nlibrary(ggplot2)\n\n\n\nVous avez déjà rencontré ces commandes quand nous avons installé et utilisé le paquet swirl.",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#en-pratique",
+    "href": "Markdown.html#en-pratique",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "",
+    "text": "On regroupe en général en début de script toute une série de commandes library() qui permettent de charger tous les paquets utilisés dans le script. Quelque chose comme :\n\nlibrary(ggplot2)\nlibrary(haven)\nlibrary(tidyr)",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#introduction",
+    "href": "Markdown.html#introduction",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Introduction",
+    "text": "Introduction\n\nUn atout important de R et Rstudio est R Markdown.\nFormat qui combine code et explications\nAide disponible ici Changer\nNécessite l’utilisation de Rstudio pour fonctionner correctement\n\nCette partie est largement inspirée de (Wickham et Grolemund 2016, chap. 27)",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#structure-dun-document",
+    "href": "Markdown.html#structure-dun-document",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Structure d’un document",
+    "text": "Structure d’un document\nUn document Quarto Markdown est un fichier texte avec une extension .qmd qui ressemble à ceci :\n\ncat(readr::read_file(\"Diamants.qmd\"))\n\nCe document est compilé afin de créer un document final, en général au format web .html ou au format .pdf ou encore au format .docx",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#principaux-éléments",
+    "href": "Markdown.html#principaux-éléments",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Principaux éléments",
+    "text": "Principaux éléments\n\nL’en tête YAML, comprise entre les ---\nDes morceaux de code R, qui commencent par ```\nDu texte normal en (R) Markdown (avec des balises de formatages)",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#actions-possibles",
+    "href": "Markdown.html#actions-possibles",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Actions possibles",
+    "text": "Actions possibles\n\nLancer le code seul en cliquant sur la petite icône run en haut à droite de la fenêtre.\nCompiler tout le document en cliquant sur knit en haut.\nUtiliser le raccourci Cmd/Ctrl + Shift + K pour compiler tout le document.\n\nLe document produit est par défaut en .html est apparaîtra à droite dans Rstudio.\n\nMontrer ici aux étudiants les 3 possibilités à l’aide d’un document .qmd",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#yaml",
+    "href": "Markdown.html#yaml",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "YAML",
+    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Tue Sep 10 09:01:49 2024 \"",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#formatage-du-texte",
+    "href": "Markdown.html#formatage-du-texte",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Formatage du texte",
+    "text": "Formatage du texte\nLe langage utilisé pour le texte écrit dans les .qmd est le Markdown. C’est un ensemble de règles de formatage pour des fichier texte qui est simple à lire et à écrire. En voici les principales possibilités :\nText formatting \n------------------------------------------------------------\n\n*italique*  ou _italique_\n**gras**   __gras__\n`code`\nexposant^2^ et indice~2~\n\nTitres\n------------------------------------------------------------\n\n# Titre de 1er niveau\n\n## De 2eme niveau\n\n### 3eme niveau\n\nListes\n------------------------------------------------------------\n\n*   Liste avec des points item 1\n\n*   Item 2\n\n    * Item 2a\n\n    * Item 2b\n\n1.  Liste énuméré item 1\n\n1.  Item 2. Les nombres sont automatiquement incrementé à la compilation\n\nLiens et images\n------------------------------------------------------------\n\n&lt;http://example.com&gt;\n\n[Phrase avec un lien](http://example.com)\n\n![Légende d'une image (optionnelle)](chemin/de/image.png)\n\nTableaux \n------------------------------------------------------------\n\nTitre 1  | Titre 2\n-------- | ----------\nContenu  | Contenu\nContenu  | Contenu\nUne version complète est résumé est disponible ici. Changer",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#morceaux-de-code",
+    "href": "Markdown.html#morceaux-de-code",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Morceaux de code",
+    "text": "Morceaux de code\n3 façons d’insérer un morceau de code dans un document .qmd :\n\nAvec le raccourci clavier Cmd/Ctrl + Alt + I\nDans l’onglet “Code”, “Insert Chunk”\nEn tapant manuellement les délimiteurs ```{r} et ```\n\nTitre d’un morceau de code :\n```{r suivi d’un nom (optionnel)}.\nLe bloc de code est fini par ```.\n\nConseil : donnez un nom à chaque morceau de code (ce nom doit être unique).",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#options-du-morceau-de-code",
+    "href": "Markdown.html#options-du-morceau-de-code",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Options du morceau de code",
+    "text": "Options du morceau de code\n\nQue supprime chaque option ?\n\n\n\n\n\n\n\n\n\n\n\nOption\nLancer le code\nMontrer le code\nSortie\nGraphique\nMessages\nWarnings\n\n\n\n\neval: false\n–\n\n–\n–\n–\n–\n\n\ninclude: false\n\n–\n–\n–\n–\n–\n\n\necho: false\n\n–\n\n\n\n\n\n\nresults: \"hide\"\n\n\n–\n\n\n\n\n\nfig.show: \"hide\"\n\n\n\n–\n\n\n\n\nmessage: false\n\n\n\n\n–\n\n\n\nwarning: false\n\n\n\n\n\n–\n\n\n\n\nRevoir ces options",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#tableaux",
+    "href": "Markdown.html#tableaux",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Tableaux",
+    "text": "Tableaux\n\nPar défaut, les dataframes ont le style de la console.\nPour les formater, on peut utiliser knitr::kable et des en-têtes débutants par #|\n\n#| label: tbl-demo\n#| tbl-cap: \"Un tableau produit à l'aide de `knitr::kable`.\"\nknitr::kable(\n  mtcars[1:5, ]\n)\n\n\n\n\nTable 1: Un tableau produit à l’aide de knitr::kable.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\n\n\n\n\n\n\n\nLa fonction knitr::kable a de multiples options que vous pouvez consulter à l’aide ?knitr::kable",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#options-globales",
+    "href": "Markdown.html#options-globales",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Options globales",
+    "text": "Options globales\n\nParfois utile de changer les options par défaut des morceaux de code : cela peut se faire dans l’en-tête yaml.\n\nPar exemple,\nexecute:\n  echo: false\nCachera le code dans le rapport.\n\nOn le fait en général au début du document, on peut les modifier indépendammant pour chaque morceau de code.",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#code-en-ligne",
+    "href": "Markdown.html#code-en-ligne",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Code en ligne",
+    "text": "Code en ligne\n\nPossible de mettre du code en ligne dans votre texte, à l’aide de `r `\nPermet de présenter les caractéristiques de vos données dans le corps du texte (nombre de ligne d’un tableau, par ex)\n\n\nNous avons les données de nrow(diamonds) diamants. Seulement nrow(diamonds) - nrow(smaller) font plus que 2,5 carats. La répartition du reste est montrée ci-dessous :\n\nLe résultat est compilé et apparaît ainsi dans le document final :\n\nNous avons les données de 53940 diamants. Seulement 126 font plus que 2,5 carats. La répartition du reste est montrée ci-dessous :\n\n\nformat() permet de contrôler l’apparence des nombres :\n\nL’option digits contrôle le nombre de décimales\nL’option big.mark contrôler les indicateurs de grand nombres",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#bibliographie",
+    "href": "Markdown.html#bibliographie",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Bibliographie",
+    "text": "Bibliographie\nGénération automatique des bibliographies à partir de fichier de bibliographie à indiquer dans l’option bibliography de l’en-tête :\nbibliography: rmarkdown.bib\nTypes de fichiers reconnus : BibLaTex, BibTex, endnote, medline",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "Markdown.html#citations",
+    "href": "Markdown.html#citations",
+    "title": "Rapports : Markdown et Quarto",
+    "section": "Citations",
+    "text": "Citations\nPour citer, il faut utiliser @ suivi de la clé d’identification de la citation dans le fichier bibliographique.\nOn peut ensuite mettre la citation entre crochets.\nSéparation de citations multiples par `;`: Blah blah [@smith04; @doe99].\n\nVous pouvez ajoutez n'importe quel commentaire dans les crochets :\nBlah blah [see @doe99, pp. 33-35; also @smith04, ch. 1].\n\nPour obtenir une citation en ligne, enlever les crochets : @smith04 \ndit blah, ou @smith04 [p. 33] dit blah.\n\nAjoutez un `-` avant la citation afin d'enlever le nom de l'auteur : \nSmith dit blah [-@smith04].\nR Markdown mettra automatiquement la bibliographie à la fin de votre document.\n\nMontrer ici un fichier de bibliographie avec la clé de citation.",
+    "crumbs": [
+      "Cours avancé",
+      "Rapports : Markdown et Quarto"
+    ]
+  },
+  {
+    "objectID": "slides-donnees.html#introduction-1",
+    "href": "slides-donnees.html#introduction-1",
+    "title": "Représentations graphiques",
+    "section": "Introduction",
+    "text": "Introduction\nggplot2 est une librairie qui permet de générer des graphiques avec une syntaxe cohérente et puissante. Elle nécessite l’apprentissage d’un “mini-langage” supplémentaire, mais permet la construction de graphiques complexes de manière efficace.\nUne des particularités de ggplot2 est qu’elle part du principe que les données relatives à un graphique sont stockées dans un tableau de données (data.frame, tibble ou autre).\nCe chapitre est élaboré à partir du chapitre 8 de Barnier et Kauffmann (2023)."
+  },
+  {
+    "objectID": "slides-donnees.html#préparation",
+    "href": "slides-donnees.html#préparation",
+    "title": "Représentations graphiques",
+    "section": "Préparation",
+    "text": "Préparation\nggplot2 est un paquet comme un autre, que l’on charge à l’aide de library\n\nlibrary(ggplot2)"
+  },
+  {
+    "objectID": "slides-donnees.html#données",
+    "href": "slides-donnees.html#données",
+    "title": "Représentations graphiques",
+    "section": "Données",
+    "text": "Données\nLes données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet questionr, que nous devons installer et charger.\n\ninstall.packages('questionr')\nlibrary(questionr)\n\nNous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction filter de la librairie tydiverse.\n\ndata(rp2018)\n\nrp &lt;- filter(\n  rp2018,\n  departement %in% c(\"Oise\", \"Rhône\", \"Hauts-de-Seine\", \"Lozère\", \"Bouches-du-Rhône\")\n)"
+  },
+  {
+    "objectID": "slides-donnees.html#initialisation-données-à-représenter",
+    "href": "slides-donnees.html#initialisation-données-à-représenter",
+    "title": "Représentations graphiques",
+    "section": "Initialisation : données à représenter",
+    "text": "Initialisation : données à représenter\nUn graphique ggplot2 s’initialise à l’aide de la fonction ggplot(). Les données sont toujours issues d’un tableau de données, qu’on passe en argument data à la fonction ggplot.\n\nggplot(data = rp)\nggplot(rp) ## Equivalent au premier et généralement utilisé"
+  },
+  {
+    "objectID": "slides-donnees.html#géométries-comment",
+    "href": "slides-donnees.html#géométries-comment",
+    "title": "Représentations graphiques",
+    "section": "Géométries : comment ?",
+    "text": "Géométries : comment ?\nIl faut ajouter des éléments de représentation graphique. Ces éléments sont appelés des geom et on les ajoute à l’objet graphique de base avec l’opérateur +.\nUne des geom les plus simples est geom_histogram :\n\nggplot(rp) + geom_histogram()"
+  },
+  {
+    "objectID": "slides-donnees.html#esthétiques-quelles-données-sont-représentées",
+    "href": "slides-donnees.html#esthétiques-quelles-données-sont-représentées",
+    "title": "Représentations graphiques",
+    "section": "Esthétiques : quelles données sont représentées ?",
+    "text": "Esthétiques : quelles données sont représentées ?\nReste à indiquer quelle donnée nous voulons représenter sous forme d’histogramme. Cela se fait à l’aide d’arguments passés via la fonction aes(). Ici, nous avons un paramètre à renseigner, x, qui indique la variable à représenter sur l’axe des x (l’axe horizontal).\n\n\nAinsi, si on souhaite représenter la distribution des communes du jeu de données selon le pourcentage de cadres dans leur population active (variable cadres) :\n\nggplot(rp) + geom_histogram(aes(x = cadres))\n\n\n\n\n\n\n\n\n\nSi on veut représenter une autre variable, il suffit de changer la valeur de x :\n\nggplot(rp) + geom_histogram(aes(x = ouvr))"
+  },
+  {
+    "objectID": "slides-donnees.html#en-résumé",
+    "href": "slides-donnees.html#en-résumé",
+    "title": "Représentations graphiques",
+    "section": "En résumé",
+    "text": "En résumé\nPour représenter un graphique, il faut :\n\nDes données (argument data de ggplot())\nUn type de représentation (histogramme, ligne, point, etc) donné par geom_xxxx où xxxx est le type de représentation recherché.\nUne ou des variables à représenter (argument aes() dans geom_xxxx)\n\nOn lie les différentes commandes à l’aide de l’opérateur +."
+  },
+  {
+    "objectID": "slides-donnees.html#nuage-de-points",
+    "href": "slides-donnees.html#nuage-de-points",
+    "title": "Représentations graphiques",
+    "section": "Nuage de points",
+    "text": "Nuage de points\nCertaines geom prennent plusieurs paramètres. Ainsi, si on veut représenter un nuage de points, on peut le faire en ajoutant un geom_point. On doit alors indiquer à la fois la position en x (la variable sur l’axe horizontal) et en y (la variable sur l’axe vertical) de ces points, il faut donc passer ces deux arguments à aes() :\n\nggplot(rp) + geom_point(aes(x = dipl_sup, y = cadres))"
+  },
+  {
+    "objectID": "slides-donnees.html#apparence-des-géométries",
+    "href": "slides-donnees.html#apparence-des-géométries",
+    "title": "Représentations graphiques",
+    "section": "Apparence des géométries",
+    "text": "Apparence des géométries\nOn peut modifier certains attributs graphiques d’un geom en lui passant des arguments supplémentaires. Par exemple, pour un nuage de points, on peut modifier :\n\nla couleur avec l’argument color ;\nla taille avec l’argument size ;\nla transparence avec l’argument alpha.\n\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres),\n    color = \"darkgreen\", size = 3, alpha = 0.3\n  )\n\n\n\nOn notera que dans ce cas les arguments sont dans la fonction geom mais à l’extérieur du aes(). Plus d’explications sur ce point dans quelques instants."
+  },
+  {
+    "objectID": "slides-donnees.html#exemples-de-geom",
+    "href": "slides-donnees.html#exemples-de-geom",
+    "title": "Représentations graphiques",
+    "section": "Exemples de geom",
+    "text": "Exemples de geom\nIl existe un grand nombre de geom, décrits en détail dans la documentation officielle. Outre les geom_histogram et geom_point que l’on vient de voir, on pourra noter les geom suivantes :\n\ngeom_boxplot\ngeom_violin\ngeom_bar et geom_col\ngeom_text\ngeom_label\ngeom_density\ngeom_line\ngeom_hex et geom_bin2d"
+  },
+  {
+    "objectID": "slides-donnees.html#exemples-de-mappages",
+    "href": "slides-donnees.html#exemples-de-mappages",
+    "title": "Représentations graphiques",
+    "section": "Exemples de mappages",
+    "text": "Exemples de mappages\nOn a déjà vu les mappages x et y pour un nuage de points. Ceux-ci signifient que la position d’un point donné horizontalement (x) et verticalement (y) dépend de la valeur des variables passées comme arguments x et y dans aes().\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres)\n  )"
+  },
+  {
+    "objectID": "slides-donnees.html#couleur-color-ou-colour",
+    "href": "slides-donnees.html#couleur-color-ou-colour",
+    "title": "Représentations graphiques",
+    "section": "Couleur (color ou colour)",
+    "text": "Couleur (color ou colour)\nIl y en a d’autres. color permet de faire varier la couleur des points automatiquement en fonction des valeurs d’une troisième variable.\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement)\n  )"
+  },
+  {
+    "objectID": "slides-donnees.html#tailles-size",
+    "href": "slides-donnees.html#tailles-size",
+    "title": "Représentations graphiques",
+    "section": "Tailles (size)",
+    "text": "Tailles (size)\nOn peut aussi faire varier la taille des points avec size. Ici, la taille dépend de la population totale de la commune :\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement, size = pop_tot)\n  )"
+  },
+  {
+    "objectID": "slides-donnees.html#transparence-alpha",
+    "href": "slides-donnees.html#transparence-alpha",
+    "title": "Représentations graphiques",
+    "section": "Transparence (alpha)",
+    "text": "Transparence (alpha)\nOn peut même associer la transparence des points à une variable avec alpha :\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement, size = pop_tot, alpha = maison)\n  )\n\n\nChaque geom possède sa propre liste de mappages."
+  },
+  {
+    "objectID": "slides-donnees.html#aes-or-not-aes",
+    "href": "slides-donnees.html#aes-or-not-aes",
+    "title": "Représentations graphiques",
+    "section": "aes() or not aes() ?",
+    "text": "aes() or not aes() ?\nParfois on souhaite changer un attribut sans le relier à une variable : par exemple si on veut représenter tous les points en rouge. On utilise toujours l’attribut color, mais comme il ne s’agit pas d’un mappage, on le définit à l’extérieur de la fonction aes().\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres),\n    color = \"red\"\n  )\n\n\n\n\n\n\n\n\nPar contre, si on veut faire varier la couleur en fonction des valeurs prises par une variable, on réalise un mappage, et on doit donc placer l’attribut color à l’intérieur de aes().\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement)\n  )\n\n\n\n\n\n\n\n\nOn peut mélanger attributs liés à une variable (mappage, donc dans aes()) et attributs constants (donc à l’extérieur). Dans l’exemple suivant, la taille varie en fonction de la variable pop_tot, mais la couleur est constante pour tous les points.\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, size = pop_tot),\n    color = \"royalblue\"\n  )\n\n\n\n\n\n\n\n\nLa règle est donc simple mais très importante :\nSi on établit un lien entre les valeurs d’une variable et un attribut graphique, on définit un mappage, et on le déclare dans aes(). Sinon, on modifie l’attribut de la même manière pour tous les points, et on le définit en-dehors de la fonction aes()."
+  },
+  {
+    "objectID": "slides-donnees.html#scale_x-scale_y",
+    "href": "slides-donnees.html#scale_x-scale_y",
+    "title": "Représentations graphiques",
+    "section": "scale_x, scale_y",
+    "text": "scale_x, scale_y\nLes scales scale_x_&lt;type&gt; et scale_y_&lt;type&gt; modifient les axes x et y du graphique."
+  },
+  {
+    "objectID": "slides-donnees.html#continuous",
+    "href": "slides-donnees.html#continuous",
+    "title": "Représentations graphiques",
+    "section": "Continuous",
+    "text": "Continuous\nscale_x_continuous et scale_y_continuous s’appliquent lorsque la variable x ou y est numérique (quantitative).\nC’est le cas de notre nuage de points croisant part de cadres et part de diplômés du supérieur.\n\nggplot(rp) +\n  geom_point(aes(x = dipl_sup, y = cadres))"
+  },
+  {
+    "objectID": "slides-donnees.html#limits",
+    "href": "slides-donnees.html#limits",
+    "title": "Représentations graphiques",
+    "section": "Limits",
+    "text": "Limits\nComme on représente des pourcentages, on peut vouloir forcer les axes x et y à s’étendre des valeurs 0 à 100. On peut le faire en ajoutant un élément scale_x_continuous et un élément scale_y_continuous, et en utilisant leur argument limits.\n\nggplot(rp) +\n  geom_point(aes(x = dipl_sup, y = cadres)) +\n  scale_x_continuous(limits = c(0,100)) +\n  scale_y_continuous(limits = c(0,100))"
+  },
+  {
+    "objectID": "slides-donnees.html#légende",
+    "href": "slides-donnees.html#légende",
+    "title": "Représentations graphiques",
+    "section": "Légende",
+    "text": "Légende\nLà aussi, on peut modifier les étiquettes des axes en indiquant une chaîne de caractères en premier argument.\n\nggplot(rp) +\n  geom_point(aes(x = dipl_sup, y = cadres)) +\n  scale_x_continuous(\"Part des diplômés du supérieur (%)\", limits = c(0,100)) +\n  scale_y_continuous(\"Part des cadres (%)\", limits = c(0,100))"
+  },
+  {
+    "objectID": "slides-donnees.html#autres-scale_x_type",
+    "href": "slides-donnees.html#autres-scale_x_type",
+    "title": "Représentations graphiques",
+    "section": "Autres scale_x_<type>",
+    "text": "Autres scale_x_&lt;type&gt;\n\nOn peut utiliser scale_x_log10 et scale_y_log10 pour passer un axe à une échelle logarithmique.\nscale_x_discrete et scale_y_discrete s’appliquent lorsque l’axe correspond à une variable discrète (qualitative). C’est le cas par exemple de l’axe des x dans un diagramme en barres. L’argument limits de scale_x_discrete permet d’indiquer quelles valeurs sont affichées et dans quel ordre."
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html",
+    "href": "04RepresentationsGraphiques.html",
+    "title": "Représentations graphiques",
+    "section": "",
+    "text": "ggplot2 est une librairie qui permet de générer des graphiques avec une syntaxe cohérente et puissante. Elle nécessite l’apprentissage d’un “mini-langage” supplémentaire, mais permet la construction de graphiques complexes de manière efficace.\nUne des particularités de ggplot2 est qu’elle part du principe que les données relatives à un graphique sont stockées dans un tableau de données (data.frame, tibble ou autre).\nCe chapitre est élaboré à partir du chapitre 8 de Barnier et Kauffmann (2023).\n\n\n\nggplot2 est un paquet comme un autre, que l’on charge à l’aide de library\n\nlibrary(ggplot2)\n\n\n\n\nLes données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet questionr, que nous devons installer et charger.\n\ninstall.packages('questionr')\nlibrary(questionr)\n\nNous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction filter de la librairie tydiverse.\n\ndata(rp2018)\n\nrp &lt;- filter(\n  rp2018,\n  departement %in% c(\"Oise\", \"Rhône\", \"Hauts-de-Seine\", \"Lozère\", \"Bouches-du-Rhône\")\n)\n\n\n\n\nUn graphique ggplot2 s’initialise à l’aide de la fonction ggplot(). Les données sont toujours issues d’un tableau de données, qu’on passe en argument data à la fonction ggplot.\n\nggplot(data = rp)\nggplot(rp) ## Equivalent au premier et généralement utilisé\n\n\n\n\nIl faut ajouter des éléments de représentation graphique. Ces éléments sont appelés des geom et on les ajoute à l’objet graphique de base avec l’opérateur +.\nUne des geom les plus simples est geom_histogram :\n\nggplot(rp) + geom_histogram()\n\n\n\n\nReste à indiquer quelle donnée nous voulons représenter sous forme d’histogramme. Cela se fait à l’aide d’arguments passés via la fonction aes(). Ici, nous avons un paramètre à renseigner, x, qui indique la variable à représenter sur l’axe des x (l’axe horizontal).\n\n\nAinsi, si on souhaite représenter la distribution des communes du jeu de données selon le pourcentage de cadres dans leur population active (variable cadres) :\n\nggplot(rp) + geom_histogram(aes(x = cadres))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\n\nSi on veut représenter une autre variable, il suffit de changer la valeur de x :\n\nggplot(rp) + geom_histogram(aes(x = ouvr))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPour représenter un graphique, il faut :\n\nDes données (argument data de ggplot())\nUn type de représentation (histogramme, ligne, point, etc) donné par geom_xxxx où xxxx est le type de représentation recherché.\nUne ou des variables à représenter (argument aes() dans geom_xxxx)\n\nOn lie les différentes commandes à l’aide de l’opérateur +.",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#introduction-1",
+    "href": "04RepresentationsGraphiques.html#introduction-1",
+    "title": "Représentations graphiques",
+    "section": "",
+    "text": "ggplot2 est une librairie qui permet de générer des graphiques avec une syntaxe cohérente et puissante. Elle nécessite l’apprentissage d’un “mini-langage” supplémentaire, mais permet la construction de graphiques complexes de manière efficace.\nUne des particularités de ggplot2 est qu’elle part du principe que les données relatives à un graphique sont stockées dans un tableau de données (data.frame, tibble ou autre).\nCe chapitre est élaboré à partir du chapitre 8 de Barnier et Kauffmann (2023).",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#préparation",
+    "href": "04RepresentationsGraphiques.html#préparation",
+    "title": "Représentations graphiques",
+    "section": "",
+    "text": "ggplot2 est un paquet comme un autre, que l’on charge à l’aide de library\n\nlibrary(ggplot2)",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#données",
+    "href": "04RepresentationsGraphiques.html#données",
+    "title": "Représentations graphiques",
+    "section": "",
+    "text": "Les données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet questionr, que nous devons installer et charger.\n\ninstall.packages('questionr')\nlibrary(questionr)\n\nNous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction filter de la librairie tydiverse.\n\ndata(rp2018)\n\nrp &lt;- filter(\n  rp2018,\n  departement %in% c(\"Oise\", \"Rhône\", \"Hauts-de-Seine\", \"Lozère\", \"Bouches-du-Rhône\")\n)",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#initialisation-données-à-représenter",
+    "href": "04RepresentationsGraphiques.html#initialisation-données-à-représenter",
+    "title": "Représentations graphiques",
+    "section": "",
+    "text": "Un graphique ggplot2 s’initialise à l’aide de la fonction ggplot(). Les données sont toujours issues d’un tableau de données, qu’on passe en argument data à la fonction ggplot.\n\nggplot(data = rp)\nggplot(rp) ## Equivalent au premier et généralement utilisé",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#géométries-comment",
+    "href": "04RepresentationsGraphiques.html#géométries-comment",
+    "title": "Représentations graphiques",
+    "section": "",
+    "text": "Il faut ajouter des éléments de représentation graphique. Ces éléments sont appelés des geom et on les ajoute à l’objet graphique de base avec l’opérateur +.\nUne des geom les plus simples est geom_histogram :\n\nggplot(rp) + geom_histogram()",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#esthétiques-quelles-données-sont-représentées",
+    "href": "04RepresentationsGraphiques.html#esthétiques-quelles-données-sont-représentées",
+    "title": "Représentations graphiques",
+    "section": "",
+    "text": "Reste à indiquer quelle donnée nous voulons représenter sous forme d’histogramme. Cela se fait à l’aide d’arguments passés via la fonction aes(). Ici, nous avons un paramètre à renseigner, x, qui indique la variable à représenter sur l’axe des x (l’axe horizontal).\n\n\nAinsi, si on souhaite représenter la distribution des communes du jeu de données selon le pourcentage de cadres dans leur population active (variable cadres) :\n\nggplot(rp) + geom_histogram(aes(x = cadres))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\n\nSi on veut représenter une autre variable, il suffit de changer la valeur de x :\n\nggplot(rp) + geom_histogram(aes(x = ouvr))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#en-résumé",
+    "href": "04RepresentationsGraphiques.html#en-résumé",
+    "title": "Représentations graphiques",
+    "section": "",
+    "text": "Pour représenter un graphique, il faut :\n\nDes données (argument data de ggplot())\nUn type de représentation (histogramme, ligne, point, etc) donné par geom_xxxx où xxxx est le type de représentation recherché.\nUne ou des variables à représenter (argument aes() dans geom_xxxx)\n\nOn lie les différentes commandes à l’aide de l’opérateur +.",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#nuage-de-points",
+    "href": "04RepresentationsGraphiques.html#nuage-de-points",
+    "title": "Représentations graphiques",
+    "section": "Nuage de points",
+    "text": "Nuage de points\nCertaines geom prennent plusieurs paramètres. Ainsi, si on veut représenter un nuage de points, on peut le faire en ajoutant un geom_point. On doit alors indiquer à la fois la position en x (la variable sur l’axe horizontal) et en y (la variable sur l’axe vertical) de ces points, il faut donc passer ces deux arguments à aes() :\n\nggplot(rp) + geom_point(aes(x = dipl_sup, y = cadres))",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#apparence-des-géométries",
+    "href": "04RepresentationsGraphiques.html#apparence-des-géométries",
+    "title": "Représentations graphiques",
+    "section": "Apparence des géométries",
+    "text": "Apparence des géométries\nOn peut modifier certains attributs graphiques d’un geom en lui passant des arguments supplémentaires. Par exemple, pour un nuage de points, on peut modifier :\n\nla couleur avec l’argument color ;\nla taille avec l’argument size ;\nla transparence avec l’argument alpha.\n\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres),\n    color = \"darkgreen\", size = 3, alpha = 0.3\n  )\n\n\n\n\n\n\n\n\n\nOn notera que dans ce cas les arguments sont dans la fonction geom mais à l’extérieur du aes(). Plus d’explications sur ce point dans quelques instants.",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#exemples-de-geom",
+    "href": "04RepresentationsGraphiques.html#exemples-de-geom",
+    "title": "Représentations graphiques",
+    "section": "Exemples de geom",
+    "text": "Exemples de geom\nIl existe un grand nombre de geom, décrits en détail dans la documentation officielle. Outre les geom_histogram et geom_point que l’on vient de voir, on pourra noter les geom suivantes :\n\ngeom_boxplot\ngeom_violin\ngeom_bar et geom_col\ngeom_text\ngeom_label\ngeom_density\ngeom_line\ngeom_hex et geom_bin2d",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#exemples-de-mappages",
+    "href": "04RepresentationsGraphiques.html#exemples-de-mappages",
+    "title": "Représentations graphiques",
+    "section": "Exemples de mappages",
+    "text": "Exemples de mappages\nOn a déjà vu les mappages x et y pour un nuage de points. Ceux-ci signifient que la position d’un point donné horizontalement (x) et verticalement (y) dépend de la valeur des variables passées comme arguments x et y dans aes().\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres)\n  )",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#couleur-color-ou-colour",
+    "href": "04RepresentationsGraphiques.html#couleur-color-ou-colour",
+    "title": "Représentations graphiques",
+    "section": "Couleur (color ou colour)",
+    "text": "Couleur (color ou colour)\nIl y en a d’autres. color permet de faire varier la couleur des points automatiquement en fonction des valeurs d’une troisième variable.\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement)\n  )",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#tailles-size",
+    "href": "04RepresentationsGraphiques.html#tailles-size",
+    "title": "Représentations graphiques",
+    "section": "Tailles (size)",
+    "text": "Tailles (size)\nOn peut aussi faire varier la taille des points avec size. Ici, la taille dépend de la population totale de la commune :\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement, size = pop_tot)\n  )",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#transparence-alpha",
+    "href": "04RepresentationsGraphiques.html#transparence-alpha",
+    "title": "Représentations graphiques",
+    "section": "Transparence (alpha)",
+    "text": "Transparence (alpha)\nOn peut même associer la transparence des points à une variable avec alpha :\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement, size = pop_tot, alpha = maison)\n  )\n\n\n\n\n\n\n\n\nChaque geom possède sa propre liste de mappages.",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#aes-or-not-aes",
+    "href": "04RepresentationsGraphiques.html#aes-or-not-aes",
+    "title": "Représentations graphiques",
+    "section": "aes() or not aes() ?",
+    "text": "aes() or not aes() ?\nParfois on souhaite changer un attribut sans le relier à une variable : par exemple si on veut représenter tous les points en rouge. On utilise toujours l’attribut color, mais comme il ne s’agit pas d’un mappage, on le définit à l’extérieur de la fonction aes().\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres),\n    color = \"red\"\n  )\n\n\n\n\n\n\n\n\nPar contre, si on veut faire varier la couleur en fonction des valeurs prises par une variable, on réalise un mappage, et on doit donc placer l’attribut color à l’intérieur de aes().\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement)\n  )\n\n\n\n\n\n\n\n\nOn peut mélanger attributs liés à une variable (mappage, donc dans aes()) et attributs constants (donc à l’extérieur). Dans l’exemple suivant, la taille varie en fonction de la variable pop_tot, mais la couleur est constante pour tous les points.\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, size = pop_tot),\n    color = \"royalblue\"\n  )\n\n\n\n\n\n\n\n\nLa règle est donc simple mais très importante :\nSi on établit un lien entre les valeurs d’une variable et un attribut graphique, on définit un mappage, et on le déclare dans aes(). Sinon, on modifie l’attribut de la même manière pour tous les points, et on le définit en-dehors de la fonction aes().",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#scale_x-scale_y",
+    "href": "04RepresentationsGraphiques.html#scale_x-scale_y",
+    "title": "Représentations graphiques",
+    "section": "scale_x, scale_y",
+    "text": "scale_x, scale_y\nLes scales scale_x_&lt;type&gt; et scale_y_&lt;type&gt; modifient les axes x et y du graphique.",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#continuous",
+    "href": "04RepresentationsGraphiques.html#continuous",
+    "title": "Représentations graphiques",
+    "section": "Continuous",
+    "text": "Continuous\nscale_x_continuous et scale_y_continuous s’appliquent lorsque la variable x ou y est numérique (quantitative).\nC’est le cas de notre nuage de points croisant part de cadres et part de diplômés du supérieur.\n\nggplot(rp) +\n  geom_point(aes(x = dipl_sup, y = cadres))",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#limits",
+    "href": "04RepresentationsGraphiques.html#limits",
+    "title": "Représentations graphiques",
+    "section": "Limits",
+    "text": "Limits\nComme on représente des pourcentages, on peut vouloir forcer les axes x et y à s’étendre des valeurs 0 à 100. On peut le faire en ajoutant un élément scale_x_continuous et un élément scale_y_continuous, et en utilisant leur argument limits.\n\nggplot(rp) +\n  geom_point(aes(x = dipl_sup, y = cadres)) +\n  scale_x_continuous(limits = c(0,100)) +\n  scale_y_continuous(limits = c(0,100))",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#légende",
+    "href": "04RepresentationsGraphiques.html#légende",
+    "title": "Représentations graphiques",
+    "section": "Légende",
+    "text": "Légende\nLà aussi, on peut modifier les étiquettes des axes en indiquant une chaîne de caractères en premier argument.\n\nggplot(rp) +\n  geom_point(aes(x = dipl_sup, y = cadres)) +\n  scale_x_continuous(\"Part des diplômés du supérieur (%)\", limits = c(0,100)) +\n  scale_y_continuous(\"Part des cadres (%)\", limits = c(0,100))",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "04RepresentationsGraphiques.html#autres-scale_x_type",
+    "href": "04RepresentationsGraphiques.html#autres-scale_x_type",
+    "title": "Représentations graphiques",
+    "section": "Autres scale_x_<type>",
+    "text": "Autres scale_x_&lt;type&gt;\n\nOn peut utiliser scale_x_log10 et scale_y_log10 pour passer un axe à une échelle logarithmique.\nscale_x_discrete et scale_y_discrete s’appliquent lorsque l’axe correspond à une variable discrète (qualitative). C’est le cas par exemple de l’axe des x dans un diagramme en barres. L’argument limits de scale_x_discrete permet d’indiquer quelles valeurs sont affichées et dans quel ordre.",
+    "crumbs": [
+      "Analyse de données",
+      "Représentations graphiques"
+    ]
+  },
+  {
+    "objectID": "slides-randomdraws.html#les-tirages-aléatoires",
+    "href": "slides-randomdraws.html#les-tirages-aléatoires",
+    "title": "Tirages aléatoires",
+    "section": "Les tirages aléatoires",
+    "text": "Les tirages aléatoires\nR a de nombreuses fonctions qui permettent de faire des tirages aléatoires. Il connaît aussi beaucoup de distributions de probabilités “classiques” et il est donc possible d’échantillonner à partir de celle-ci.\nCe cours a été construit à l’aide du chapitre 5.3 de Phillips (2018). Les exercices swirl à partir de la leçon simulation de swirldev (2022)."
+  },
+  {
+    "objectID": "slides-randomdraws.html#sample",
+    "href": "slides-randomdraws.html#sample",
+    "title": "Tirages aléatoires",
+    "section": "sample()",
+    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1] 9 2 7 3 1\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1."
+  },
+  {
+    "objectID": "slides-randomdraws.html#exemple-simulation-de-pile-ou-face",
+    "href": "slides-randomdraws.html#exemple-simulation-de-pile-ou-face",
+    "title": "Tirages aléatoires",
+    "section": "Exemple : simulation de pile ou face",
+    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"F\" \"F\" \"F\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"F\" \"T\" \"F\" \"F\" \"P\" \"P\" \"F\" \"F\" \"F\" \"F\" \"T\" \"P\" \"P\"\n[20] \"P\" \"F\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"P\" \"F\" \"T\" \"P\" \"F\" \"P\" \"P\" \"P\" \"F\" \"P\"\n[39] \"P\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\""
+  },
+  {
+    "objectID": "slides-randomdraws.html#reproducibilité",
+    "href": "slides-randomdraws.html#reproducibilité",
+    "title": "Tirages aléatoires",
+    "section": "Reproducibilité",
+    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"F\" \"F\" \"F\" \"P\" \"P\" \"F\" \"F\" \"F\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"P\" \"F\" \"P\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\""
+  },
+  {
+    "objectID": "slides-randomdraws.html#contrôler-le-tirage",
+    "href": "slides-randomdraws.html#contrôler-le-tirage",
+    "title": "Tirages aléatoires",
+    "section": "Contrôler le tirage",
+    "text": "Contrôler le tirage\nIl y a des situations où vous souhaitez exercer un contrôle sur la procédure de tirage. Par exemple pour pouvoir reproduire exactement le même code. On utilise alors la fonction set.seed() et on lui donne un nombre.\n\nset.seed(0)\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\"\n\nset.seed(0)\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\"\n\n\nLes deux tirages sont exactement identiques !"
+  },
+  {
+    "objectID": "slides-randomdraws.html#loi-normale",
+    "href": "slides-randomdraws.html#loi-normale",
+    "title": "Tirages aléatoires",
+    "section": "Loi normale",
+    "text": "Loi normale\nOn utilise rnorm() pour tirer depuis une loi normale.\n\nTrois lois normales différentes"
+  },
+  {
+    "objectID": "slides-randomdraws.html#usage",
+    "href": "slides-randomdraws.html#usage",
+    "title": "Tirages aléatoires",
+    "section": "Usage",
+    "text": "Usage\n\n# 5 tirages depuis une loi Gaussienne\nrnorm(n = 5, mean = 0, sd = 1)\n\n[1]  0.5673637 -0.2140512 -0.4588069  1.9281552  1.3590606\n\n# 3 tirage d'une loi normale de moyenne -10 et d'écart-type 15\nrnorm(n = 3, mean = -10, sd = 15)\n\n[1]  -3.345111 -28.829361  -9.734962\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nn\nLe nombre de tirage à faire depuis la distribution\n\n\nmean\nLa moyenne de la distribution.\n\n\nsd\nL’écart type de la distribution."
+  },
+  {
+    "objectID": "slides-randomdraws.html#loi-binomiale",
+    "href": "slides-randomdraws.html#loi-binomiale",
+    "title": "Tirages aléatoires",
+    "section": "Loi binomiale",
+    "text": "Loi binomiale\nOn utilise rbinom() pour tirer depuis une loi binomiale.\n\nTrois lois binomiales différentes"
+  },
+  {
+    "objectID": "slides-randomdraws.html#usage-1",
+    "href": "slides-randomdraws.html#usage-1",
+    "title": "Tirages aléatoires",
+    "section": "Usage",
+    "text": "Usage\n\n# Répétition de 5 tirages à pile ou face\nrbinom(n = 5, size = 1, prob = 0.5)\n\n[1] 0 0 0 0 1\n\n# Répétition de 10 tirages à pile ou face avec une pièce biaisée\nrbinom(n = 10, size = 1, prob = 0.6)\n\n [1] 0 0 1 0 1 0 0 0 0 1\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nn\nLe nombre de tirages\n\n\nsize\nLe nombre d’essai possibles\n\n\nprob\nLa probabilité de succès sur un tirage"
+  },
+  {
+    "objectID": "slides-randomdraws.html#loi-uniforme",
+    "href": "slides-randomdraws.html#loi-uniforme",
+    "title": "Tirages aléatoires",
+    "section": "Loi uniforme",
+    "text": "Loi uniforme\n\nTrois lois uniformes différentes"
+  },
+  {
+    "objectID": "slides-randomdraws.html#usage-2",
+    "href": "slides-randomdraws.html#usage-2",
+    "title": "Tirages aléatoires",
+    "section": "Usage",
+    "text": "Usage\nLa loi uniforme utilise la même probabilité pour toutes les valeurs dans un intervalle.\n\n# 5 tirages uniformes entre 0 et 1\nrunif(n = 5, min = 0, max = 1)\n\n[1] 0.1665025 0.9357397 0.5146023 0.6649318 0.8899657\n\n# 10 tirages uniformes entre -100 et 100\nrunif(n = 10, min = -100, max = 100)\n\n [1]   6.227325  -9.246520 -23.410902 -30.509829 -17.776026  57.768386\n [7]  48.605395  68.676781  57.427986  50.841132\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nn\nLe nombre de tirages\n\n\nmin\nLe minimum de la distribution uniforme\n\n\nmax\nLe maximum de la distribution uniforme"
+  },
+  {
+    "objectID": "TiragesAleatoires.html",
+    "href": "TiragesAleatoires.html",
+    "title": "Tirages aléatoires",
+    "section": "",
+    "text": "R a de nombreuses fonctions qui permettent de faire des tirages aléatoires. Il connaît aussi beaucoup de distributions de probabilités “classiques” et il est donc possible d’échantillonner à partir de celle-ci.\nCe cours a été construit à l’aide du chapitre 5.3 de Phillips (2018). Les exercices swirl à partir de la leçon simulation de swirldev (2022).",
+    "crumbs": [
+      "Cours avancé",
+      "Tirages aléatoires"
+    ]
+  },
+  {
+    "objectID": "TiragesAleatoires.html#les-tirages-aléatoires",
+    "href": "TiragesAleatoires.html#les-tirages-aléatoires",
+    "title": "Tirages aléatoires",
+    "section": "",
+    "text": "R a de nombreuses fonctions qui permettent de faire des tirages aléatoires. Il connaît aussi beaucoup de distributions de probabilités “classiques” et il est donc possible d’échantillonner à partir de celle-ci.\nCe cours a été construit à l’aide du chapitre 5.3 de Phillips (2018). Les exercices swirl à partir de la leçon simulation de swirldev (2022).",
+    "crumbs": [
+      "Cours avancé",
+      "Tirages aléatoires"
+    ]
+  },
+  {
+    "objectID": "TiragesAleatoires.html#sample",
+    "href": "TiragesAleatoires.html#sample",
+    "title": "Tirages aléatoires",
+    "section": "sample()",
+    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1] 10  2  1  6  5\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1.",
+    "crumbs": [
+      "Cours avancé",
+      "Tirages aléatoires"
+    ]
+  },
+  {
+    "objectID": "TiragesAleatoires.html#exemple-simulation-de-pile-ou-face",
+    "href": "TiragesAleatoires.html#exemple-simulation-de-pile-ou-face",
+    "title": "Tirages aléatoires",
+    "section": "Exemple : simulation de pile ou face",
+    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"F\" \"F\" \"P\" \"P\" \"F\" \"F\" \"P\" \"P\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\" \"P\" \"T\" \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"P\" \"F\" \"F\"\n[20] \"F\" \"F\" \"F\" \"F\" \"F\" \"P\" \"P\" \"P\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"P\"\n[39] \"P\" \"P\" \"F\" \"F\" \"P\" \"P\" \"F\" \"P\" \"F\" \"P\" \"P\" \"F\"",
+    "crumbs": [
+      "Cours avancé",
+      "Tirages aléatoires"
+    ]
+  },
+  {
+    "objectID": "TiragesAleatoires.html#reproducibilité",
+    "href": "TiragesAleatoires.html#reproducibilité",
+    "title": "Tirages aléatoires",
+    "section": "Reproducibilité",
+    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"P\" \"P\" \"F\" \"F\" \"F\" \"P\" \"P\" \"F\" \"P\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"P\" \"P\" \"P\" \"F\" \"F\" \"F\" \"F\" \"F\"",
+    "crumbs": [
+      "Cours avancé",
+      "Tirages aléatoires"
+    ]
+  },
+  {
+    "objectID": "TiragesAleatoires.html#contrôler-le-tirage",
+    "href": "TiragesAleatoires.html#contrôler-le-tirage",
+    "title": "Tirages aléatoires",
+    "section": "Contrôler le tirage",
+    "text": "Contrôler le tirage\nIl y a des situations où vous souhaitez exercer un contrôle sur la procédure de tirage. Par exemple pour pouvoir reproduire exactement le même code. On utilise alors la fonction set.seed() et on lui donne un nombre.\n\nset.seed(0)\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\"\n\nset.seed(0)\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\"\n\n\nLes deux tirages sont exactement identiques !",
+    "crumbs": [
+      "Cours avancé",
+      "Tirages aléatoires"
+    ]
+  },
+  {
+    "objectID": "TiragesAleatoires.html#loi-normale",
+    "href": "TiragesAleatoires.html#loi-normale",
+    "title": "Tirages aléatoires",
+    "section": "Loi normale",
+    "text": "Loi normale\nOn utilise rnorm() pour tirer depuis une loi normale.\n\n\n\n\n\nTrois lois normales différentes",
+    "crumbs": [
+      "Cours avancé",
+      "Tirages aléatoires"
+    ]
+  },
+  {
+    "objectID": "TiragesAleatoires.html#usage",
+    "href": "TiragesAleatoires.html#usage",
+    "title": "Tirages aléatoires",
+    "section": "Usage",
+    "text": "Usage\n\n# 5 tirages depuis une loi Gaussienne\nrnorm(n = 5, mean = 0, sd = 1)\n\n[1]  0.5673637 -0.2140512 -0.4588069  1.9281552  1.3590606\n\n# 3 tirage d'une loi normale de moyenne -10 et d'écart-type 15\nrnorm(n = 3, mean = -10, sd = 15)\n\n[1]  -3.345111 -28.829361  -9.734962\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nn\nLe nombre de tirage à faire depuis la distribution\n\n\nmean\nLa moyenne de la distribution.\n\n\nsd\nL’écart type de la distribution.",
+    "crumbs": [
+      "Cours avancé",
+      "Tirages aléatoires"
+    ]
+  },
+  {
+    "objectID": "TiragesAleatoires.html#loi-binomiale",
+    "href": "TiragesAleatoires.html#loi-binomiale",
+    "title": "Tirages aléatoires",
+    "section": "Loi binomiale",
+    "text": "Loi binomiale\nOn utilise rbinom() pour tirer depuis une loi binomiale.\n\n\n\n\n\nTrois lois binomiales différentes",
+    "crumbs": [
+      "Cours avancé",
+      "Tirages aléatoires"
+    ]
+  },
+  {
+    "objectID": "TiragesAleatoires.html#usage-1",
+    "href": "TiragesAleatoires.html#usage-1",
+    "title": "Tirages aléatoires",
+    "section": "Usage",
+    "text": "Usage\n\n# Répétition de 5 tirages à pile ou face\nrbinom(n = 5, size = 1, prob = 0.5)\n\n[1] 0 0 0 0 1\n\n# Répétition de 10 tirages à pile ou face avec une pièce biaisée\nrbinom(n = 10, size = 1, prob = 0.6)\n\n [1] 0 0 1 0 1 0 0 0 0 1\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nn\nLe nombre de tirages\n\n\nsize\nLe nombre d’essai possibles\n\n\nprob\nLa probabilité de succès sur un tirage",
+    "crumbs": [
+      "Cours avancé",
+      "Tirages aléatoires"
+    ]
+  },
+  {
+    "objectID": "TiragesAleatoires.html#loi-uniforme",
+    "href": "TiragesAleatoires.html#loi-uniforme",
+    "title": "Tirages aléatoires",
+    "section": "Loi uniforme",
+    "text": "Loi uniforme\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nTrois lois uniformes différentes",
+    "crumbs": [
+      "Cours avancé",
+      "Tirages aléatoires"
+    ]
+  },
+  {
+    "objectID": "TiragesAleatoires.html#usage-2",
+    "href": "TiragesAleatoires.html#usage-2",
+    "title": "Tirages aléatoires",
+    "section": "Usage",
+    "text": "Usage\nLa loi uniforme utilise la même probabilité pour toutes les valeurs dans un intervalle.\n\n# 5 tirages uniformes entre 0 et 1\nrunif(n = 5, min = 0, max = 1)\n\n[1] 0.1665025 0.9357397 0.5146023 0.6649318 0.8899657\n\n# 10 tirages uniformes entre -100 et 100\nrunif(n = 10, min = -100, max = 100)\n\n [1]   6.227325  -9.246520 -23.410902 -30.509829 -17.776026  57.768386\n [7]  48.605395  68.676781  57.427986  50.841132\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nn\nLe nombre de tirages\n\n\nmin\nLe minimum de la distribution uniforme\n\n\nmax\nLe maximum de la distribution uniforme",
+    "crumbs": [
+      "Cours avancé",
+      "Tirages aléatoires"
+    ]
+  }
+]
