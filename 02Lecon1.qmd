@@ -5,7 +5,7 @@ date: last-modified
 format: 
   html: default
   revealjs:
-    output-dir: slide-lecon1.html
+    output-file: slide-lecon1.html
     embed-resources: true
     scrollable: true
 editor: source
