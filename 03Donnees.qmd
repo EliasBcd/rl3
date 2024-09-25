@@ -10,7 +10,7 @@ format:
     scrollable: true
 lang: fr
 institute: "Université Paris 8"
-date: 10/04/2023
+date: last-modified
 date-format: long
 execute: 
   echo: true
@@ -108,7 +108,7 @@ str(d)
 
 ## Accéder aux variables {.smaller}
 
-On se réfère aux variables à l'aide de l'opérateur `$`, qui permet d'accéder aux colonnes du tableau. 
+On se réfère aux variables (au sein du tableau) à l'aide de l'opérateur `$`, qui permet d'accéder aux colonnes du tableau. 
 On utilisera la syntaxe `nom_de_la_base$nom_de_la_variable` pour désigner une variable particulière d'une base de données.
 
 Par exemple, on peut utiliser la fonction `head()` pour afficher les premières valeurs de la variable `age` de la base stockée dans l'objet `hdv2003`.
@@ -277,4 +277,40 @@ Attention, par défaut la fonction `table` n'affiche pas les valeurs manquantes 
 summary(d$qualif)
 ```
 
+
+# Analyse bivariée
+
+
+
+## Croisement de deux variables qualitatives
+
+Faire une analyse bivariée, c'est étudier la relation entre deux variables : sont-elles liées ? les valeurs de l'une influencent-elles les valeurs de l'autre ? ou sont-elles au contraire indépendantes ?
+
+On étudie les corrélations entre variables.
+
+
+## Tableaux croisés {.scrollable}
+
+
+Quand on veut croiser deux variables qualitatives, on fait un *tableau croisé*. Comme pour un tri à plat ceci s'obtient avec la fonction `table` de R, mais à laquelle on passe cette fois deux variables en argument. Par exemple, si on veut croiser la catégorie socio-professionnelle et le sexe des enquêtés :
+
+```{r}
+table(d$qualif, d$sexe)
+```
+
+
+Pour pouvoir interpréter ce tableau on doit passer du tableau en effectifs au tableau en pourcentages ligne ou colonne. Pour cela, on peut utiliser les fonctions `lprop` et `cprop` de l'extension `questionr`, qu'on applique au tableau croisé précédent.
+
+Pour calculer les pourcentages ligne :
+
+```{r}
+tab <- table(d$qualif, d$sexe)
+lprop(tab)
+```
+
+Et pour les pourcentages colonne :
+
+```{r}
+cprop(tab)
+```
 
