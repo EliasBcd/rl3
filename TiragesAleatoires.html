@@ -334,7 +334,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">10 septembre 2024</p>
+      <p class="date">25 septembre 2024</p>
     </div>
   </div>
   
@@ -363,7 +363,7 @@ div.csl-indent {
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">size  =</span> <span class="dv">5</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  9  3  6 10  7</code></pre>
+<pre><code>[1] 7 5 8 3 6</code></pre>
 </div>
 </div>
 <table class="caption-top table">
@@ -405,7 +405,7 @@ div.csl-indent {
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">size =</span> <span class="dv">10</span>,  <span class="co"># 10 tirages</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="co"># Échantillonnage avec remise</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "P" "P" "P" "F" "F" "P" "F" "P" "F" "P"</code></pre>
+<pre><code> [1] "F" "P" "F" "P" "F" "P" "P" "P" "P" "P"</code></pre>
 </div>
 </div>
 <p>Notre pièce peut retomber sur la tranche, mais avec une faible probabilité</p>
@@ -415,9 +415,9 @@ div.csl-indent {
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">size =</span> <span class="dv">50</span>,</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "P" "T" "P" "P" "P" "P" "F" "F" "P" "P" "F" "F" "P" "P" "F" "P" "P" "P" "F"
-[20] "P" "F" "P" "P" "P" "F" "P" "P" "P" "P" "F" "P" "F" "F" "P" "P" "T" "P" "P"
-[39] "F" "F" "T" "P" "F" "P" "F" "P" "P" "T" "F" "F"</code></pre>
+<pre><code> [1] "P" "P" "F" "P" "P" "P" "F" "P" "P" "P" "F" "F" "P" "F" "F" "P" "P" "P" "F"
+[20] "P" "P" "T" "F" "F" "F" "F" "P" "P" "P" "F" "P" "F" "F" "P" "P" "P" "P" "P"
+[39] "P" "F" "F" "P" "P" "P" "T" "F" "T" "F" "P" "P"</code></pre>
 </div>
 </div>
 </section>
@@ -429,13 +429,13 @@ div.csl-indent {
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">size =</span> <span class="dv">10</span>,  <span class="co"># 10 tirages</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="co"># Échantillonnage avec remise</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "P" "P" "P" "F" "F" "P" "P" "P" "F" "F"</code></pre>
+<pre><code> [1] "P" "F" "P" "P" "P" "P" "F" "P" "F" "P"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"P"</span>), <span class="co"># les valeurs possibles de la pièce</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">size =</span> <span class="dv">10</span>,  <span class="co"># 10 tirages</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="co"># Échantillonnage avec remise</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "F" "P" "P" "F" "P" "F" "F" "F" "P" "P"</code></pre>
+<pre><code> [1] "F" "F" "F" "F" "F" "F" "P" "P" "P" "F"</code></pre>
 </div>
 </div>
 </section>

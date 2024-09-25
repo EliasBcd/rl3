@@ -289,6 +289,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#tri" id="toc-tri" class="nav-link" data-scroll-target="#tri">Tri</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul></li>
+  <li><a href="#analyse-bivariée" id="toc-analyse-bivariée" class="nav-link" data-scroll-target="#analyse-bivariée">Analyse bivariée</a>
+  <ul class="collapse">
+  <li><a href="#croisement-de-deux-variables-qualitatives" id="toc-croisement-de-deux-variables-qualitatives" class="nav-link" data-scroll-target="#croisement-de-deux-variables-qualitatives">Croisement de deux variables qualitatives</a></li>
+  <li><a href="#tableaux-croisés" id="toc-tableaux-croisés" class="nav-link" data-scroll-target="#tableaux-croisés">Tableaux croisés</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="slide-donnees.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
@@ -322,7 +327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">4 octobre 2023</p>
+      <p class="date">25 septembre 2024</p>
     </div>
   </div>
   
@@ -429,7 +434,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="accéder-aux-variables" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="accéder-aux-variables">Accéder aux variables</h2>
-<p>On se réfère aux variables à l’aide de l’opérateur <code>$</code>, qui permet d’accéder aux colonnes du tableau. On utilisera la syntaxe <code>nom_de_la_base$nom_de_la_variable</code> pour désigner une variable particulière d’une base de données.</p>
+<p>On se réfère aux variables (au sein du tableau) à l’aide de l’opérateur <code>$</code>, qui permet d’accéder aux colonnes du tableau. On utilisera la syntaxe <code>nom_de_la_base$nom_de_la_variable</code> pour désigner une variable particulière d’une base de données.</p>
 <p>Par exemple, on peut utiliser la fonction <code>head()</code> pour afficher les premières valeurs de la variable <code>age</code> de la base stockée dans l’objet <code>hdv2003</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(d<span class="sc">$</span>age)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -652,6 +657,66 @@ Profession intermediaire                    Cadre                  Employe
                      160                      260                      594 
                    Autre                     NA's 
                       58                      347 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="analyse-bivariée" class="level1">
+<h1>Analyse bivariée</h1>
+<section id="croisement-de-deux-variables-qualitatives" class="level2">
+<h2 class="anchored" data-anchor-id="croisement-de-deux-variables-qualitatives">Croisement de deux variables qualitatives</h2>
+<p>Faire une analyse bivariée, c’est étudier la relation entre deux variables&nbsp;: sont-elles liées ? les valeurs de l’une influencent-elles les valeurs de l’autre ? ou sont-elles au contraire indépendantes ?</p>
+<p>On étudie les corrélations entre variables.</p>
+</section>
+<section id="tableaux-croisés" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="tableaux-croisés">Tableaux croisés</h2>
+<p>Quand on veut croiser deux variables qualitatives, on fait un <em>tableau croisé</em>. Comme pour un tri à plat ceci s’obtient avec la fonction <code>table</code> de R, mais à laquelle on passe cette fois deux variables en argument. Par exemple, si on veut croiser la catégorie socio-professionnelle et le sexe des enquêtés&nbsp;:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(d<span class="sc">$</span>qualif, d<span class="sc">$</span>sexe)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                          
+                           Homme Femme
+  Ouvrier specialise          96   107
+  Ouvrier qualifie           229    63
+  Technicien                  66    20
+  Profession intermediaire    88    72
+  Cadre                      145   115
+  Employe                     96   498
+  Autre                       21    37</code></pre>
+</div>
+</div>
+<p>Pour pouvoir interpréter ce tableau on doit passer du tableau en effectifs au tableau en pourcentages ligne ou colonne. Pour cela, on peut utiliser les fonctions <code>lprop</code> et <code>cprop</code> de l’extension <code>questionr</code>, qu’on applique au tableau croisé précédent.</p>
+<p>Pour calculer les pourcentages ligne&nbsp;:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">table</span>(d<span class="sc">$</span>qualif, d<span class="sc">$</span>sexe)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lprop</span>(tab)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                          
+                           Homme Femme Total
+  Ouvrier specialise        47.3  52.7 100.0
+  Ouvrier qualifie          78.4  21.6 100.0
+  Technicien                76.7  23.3 100.0
+  Profession intermediaire  55.0  45.0 100.0
+  Cadre                     55.8  44.2 100.0
+  Employe                   16.2  83.8 100.0
+  Autre                     36.2  63.8 100.0
+  All                       44.8  55.2 100.0</code></pre>
+</div>
+</div>
+<p>Et pour les pourcentages colonne&nbsp;:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cprop</span>(tab)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                          
+                           Homme Femme All  
+  Ouvrier specialise        13.0  11.7  12.3
+  Ouvrier qualifie          30.9   6.9  17.7
+  Technicien                 8.9   2.2   5.2
+  Profession intermediaire  11.9   7.9   9.7
+  Cadre                     19.6  12.6  15.7
+  Employe                   13.0  54.6  35.9
+  Autre                      2.8   4.1   3.5
+  Total                    100.0 100.0 100.0</code></pre>
 </div>
 </div>
 
