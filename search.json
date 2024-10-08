@@ -6,7 +6,7 @@
     "section": "",
     "text": "En plus de l’installation de base : extensions, appelées paquet (package en anglais) ou librairie\nEn majorité : développées et maintenues par la communauté des utilisateurs et utilisatrices de R\nDiffusées via un réseau de serveurs nommé CRAN (Comprehensive R Archive Network).\nPour installer une extension, si on dispose d’une connexion Internet, on peut :\n\nCliquer sur le bouton Install Packages de l’onglet Tools de RStudio. Il suffit alors d’indiquer le nom de l’extension dans le champ Package et de cliquer sur Install.\nUtiliser la fonction install.packages() directement dans la console. Par exemple, pour installer le paquet ggplot2 on peut exécuter la commande\n\n\n\ninstall.packages(ggplot2)\n\n\n\n\nUne fois installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu’elle propose. Ceci se fait avec la fonction library(). Pour pouvoir utiliser les fonctions de ggplot2, vous devrez exécuter la commande suivante :\n\nlibrary(ggplot2)\n\n\n\nVous avez déjà rencontré ces commandes quand nous avons installé et utilisé le paquet swirl.\n\n\n\nOn regroupe en général en début de script toute une série de commandes library() qui permettent de charger tous les paquets utilisés dans le script. Quelque chose comme :\n\nlibrary(ggplot2)\nlibrary(haven)\nlibrary(tidyr)",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -17,7 +17,7 @@
     "section": "",
     "text": "En plus de l’installation de base : extensions, appelées paquet (package en anglais) ou librairie\nEn majorité : développées et maintenues par la communauté des utilisateurs et utilisatrices de R\nDiffusées via un réseau de serveurs nommé CRAN (Comprehensive R Archive Network).\nPour installer une extension, si on dispose d’une connexion Internet, on peut :\n\nCliquer sur le bouton Install Packages de l’onglet Tools de RStudio. Il suffit alors d’indiquer le nom de l’extension dans le champ Package et de cliquer sur Install.\nUtiliser la fonction install.packages() directement dans la console. Par exemple, pour installer le paquet ggplot2 on peut exécuter la commande\n\n\n\ninstall.packages(ggplot2)",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -28,7 +28,7 @@
     "section": "",
     "text": "Une fois installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu’elle propose. Ceci se fait avec la fonction library(). Pour pouvoir utiliser les fonctions de ggplot2, vous devrez exécuter la commande suivante :\n\nlibrary(ggplot2)\n\n\n\nVous avez déjà rencontré ces commandes quand nous avons installé et utilisé le paquet swirl.",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -39,7 +39,7 @@
     "section": "",
     "text": "On regroupe en général en début de script toute une série de commandes library() qui permettent de charger tous les paquets utilisés dans le script. Quelque chose comme :\n\nlibrary(ggplot2)\nlibrary(haven)\nlibrary(tidyr)",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -50,7 +50,7 @@
     "section": "Introduction",
     "text": "Introduction\n\nUn atout important de R et Rstudio est R Markdown.\nFormat qui combine code et explications\nAide disponible ici Changer\nNécessite l’utilisation de Rstudio pour fonctionner correctement\n\nCette partie est largement inspirée de (Wickham et Grolemund 2016, chap. 27)",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -61,7 +61,7 @@
     "section": "Structure d’un document",
     "text": "Structure d’un document\nUn document Quarto Markdown est un fichier texte avec une extension .qmd qui ressemble à ceci :\n\ncat(readr::read_file(\"Diamants.qmd\"))\n\nCe document est compilé afin de créer un document final, en général au format web .html ou au format .pdf ou encore au format .docx",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -72,7 +72,7 @@
     "section": "Principaux éléments",
     "text": "Principaux éléments\n\nL’en tête YAML, comprise entre les ---\nDes morceaux de code R, qui commencent par ```\nDu texte normal en (R) Markdown (avec des balises de formatages)",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -83,7 +83,7 @@
     "section": "Actions possibles",
     "text": "Actions possibles\n\nLancer le code seul en cliquant sur la petite icône run en haut à droite de la fenêtre.\nCompiler tout le document en cliquant sur knit en haut.\nUtiliser le raccourci Cmd/Ctrl + Shift + K pour compiler tout le document.\n\nLe document produit est par défaut en .html est apparaîtra à droite dans Rstudio.\n\nMontrer ici aux étudiants les 3 possibilités à l’aide d’un document .qmd",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -92,9 +92,9 @@
     "href": "Markdown.html#yaml",
     "title": "Rapports : Markdown et Quarto",
     "section": "YAML",
-    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Wed Sep 25 12:48:54 2024 \"",
+    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Tue Oct 8 15:57:39 2024 \"",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -105,7 +105,7 @@
     "section": "Formatage du texte",
     "text": "Formatage du texte\nLe langage utilisé pour le texte écrit dans les .qmd est le Markdown. C’est un ensemble de règles de formatage pour des fichier texte qui est simple à lire et à écrire. En voici les principales possibilités :\nText formatting \n------------------------------------------------------------\n\n*italique*  ou _italique_\n**gras**   __gras__\n`code`\nexposant^2^ et indice~2~\n\nTitres\n------------------------------------------------------------\n\n# Titre de 1er niveau\n\n## De 2eme niveau\n\n### 3eme niveau\n\nListes\n------------------------------------------------------------\n\n*   Liste avec des points item 1\n\n*   Item 2\n\n    * Item 2a\n\n    * Item 2b\n\n1.  Liste énuméré item 1\n\n1.  Item 2. Les nombres sont automatiquement incrementé à la compilation\n\nLiens et images\n------------------------------------------------------------\n\n&lt;http://example.com&gt;\n\n[Phrase avec un lien](http://example.com)\n\n![Légende d'une image (optionnelle)](chemin/de/image.png)\n\nTableaux \n------------------------------------------------------------\n\nTitre 1  | Titre 2\n-------- | ----------\nContenu  | Contenu\nContenu  | Contenu\nUne version complète est résumé est disponible ici. Changer",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -116,7 +116,7 @@
     "section": "Morceaux de code",
     "text": "Morceaux de code\n3 façons d’insérer un morceau de code dans un document .qmd :\n\nAvec le raccourci clavier Cmd/Ctrl + Alt + I\nDans l’onglet “Code”, “Insert Chunk”\nEn tapant manuellement les délimiteurs ```{r} et ```\n\nTitre d’un morceau de code :\n```{r suivi d’un nom (optionnel)}.\nLe bloc de code est fini par ```.\n\nConseil : donnez un nom à chaque morceau de code (ce nom doit être unique).",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -127,7 +127,7 @@
     "section": "Options du morceau de code",
     "text": "Options du morceau de code\n\nQue supprime chaque option ?\n\n\n\n\n\n\n\n\n\n\n\nOption\nLancer le code\nMontrer le code\nSortie\nGraphique\nMessages\nWarnings\n\n\n\n\neval: false\n–\n\n–\n–\n–\n–\n\n\ninclude: false\n\n–\n–\n–\n–\n–\n\n\necho: false\n\n–\n\n\n\n\n\n\nresults: \"hide\"\n\n\n–\n\n\n\n\n\nfig.show: \"hide\"\n\n\n\n–\n\n\n\n\nmessage: false\n\n\n\n\n–\n\n\n\nwarning: false\n\n\n\n\n\n–\n\n\n\n\nRevoir ces options",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -138,7 +138,7 @@
     "section": "Tableaux",
     "text": "Tableaux\n\nPar défaut, les dataframes ont le style de la console.\nPour les formater, on peut utiliser knitr::kable et des en-têtes débutants par #|\n\n#| label: tbl-demo\n#| tbl-cap: \"Un tableau produit à l'aide de `knitr::kable`.\"\nknitr::kable(\n  mtcars[1:5, ]\n)\n\n\n\n\nTable 1: Un tableau produit à l’aide de knitr::kable.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\n\n\n\n\n\n\n\nLa fonction knitr::kable a de multiples options que vous pouvez consulter à l’aide ?knitr::kable",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -149,7 +149,7 @@
     "section": "Options globales",
     "text": "Options globales\n\nParfois utile de changer les options par défaut des morceaux de code : cela peut se faire dans l’en-tête yaml.\n\nPar exemple,\nexecute:\n  echo: false\nCachera le code dans le rapport.\n\nOn le fait en général au début du document, on peut les modifier indépendammant pour chaque morceau de code.",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -160,7 +160,7 @@
     "section": "Code en ligne",
     "text": "Code en ligne\n\nPossible de mettre du code en ligne dans votre texte, à l’aide de `r `\nPermet de présenter les caractéristiques de vos données dans le corps du texte (nombre de ligne d’un tableau, par ex)\n\n\nNous avons les données de nrow(diamonds) diamants. Seulement nrow(diamonds) - nrow(smaller) font plus que 2,5 carats. La répartition du reste est montrée ci-dessous :\n\nLe résultat est compilé et apparaît ainsi dans le document final :\n\nNous avons les données de 53940 diamants. Seulement 126 font plus que 2,5 carats. La répartition du reste est montrée ci-dessous :\n\n\nformat() permet de contrôler l’apparence des nombres :\n\nL’option digits contrôle le nombre de décimales\nL’option big.mark contrôler les indicateurs de grand nombres",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -171,7 +171,7 @@
     "section": "Bibliographie",
     "text": "Bibliographie\nGénération automatique des bibliographies à partir de fichier de bibliographie à indiquer dans l’option bibliography de l’en-tête :\nbibliography: rmarkdown.bib\nTypes de fichiers reconnus : BibLaTex, BibTex, endnote, medline",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -182,7 +182,7 @@
     "section": "Citations",
     "text": "Citations\nPour citer, il faut utiliser @ suivi de la clé d’identification de la citation dans le fichier bibliographique.\nOn peut ensuite mettre la citation entre crochets.\nSéparation de citations multiples par `;`: Blah blah [@smith04; @doe99].\n\nVous pouvez ajoutez n'importe quel commentaire dans les crochets :\nBlah blah [see @doe99, pp. 33-35; also @smith04, ch. 1].\n\nPour obtenir une citation en ligne, enlever les crochets : @smith04 \ndit blah, ou @smith04 [p. 33] dit blah.\n\nAjoutez un `-` avant la citation afin d'enlever le nom de l'auteur : \nSmith dit blah [-@smith04].\nR Markdown mettra automatiquement la bibliographie à la fin de votre document.\n\nMontrer ici un fichier de bibliographie avec la clé de citation.",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Rapports : Markdown et Quarto"
     ]
   },
@@ -240,7 +240,7 @@
     "href": "slides-markdown.html#yaml",
     "title": "Rapports : Markdown et Quarto",
     "section": "YAML",
-    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Wed Sep 25 12:48:58 2024 \""
+    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Tue Oct 8 15:57:43 2024 \""
   },
   {
     "objectID": "slides-markdown.html#formatage-du-texte",
@@ -379,7 +379,7 @@
     "section": "",
     "text": "2 outils pour contrôler l’évaluation :\n\nLes évaluations conditionnelles\nles boucles",
     "crumbs": [
-      "Cours avancé",
+      "Introduction à R et Rstudio",
       "Boucle et évaluation conditionnelle"
     ]
   },
@@ -390,7 +390,7 @@
     "section": "",
     "text": "2 outils pour contrôler l’évaluation :\n\nLes évaluations conditionnelles\nles boucles",
     "crumbs": [
-      "Cours avancé",
+      "Introduction à R et Rstudio",
       "Boucle et évaluation conditionnelle"
     ]
   },
@@ -401,7 +401,7 @@
     "section": "Condition if",
     "text": "Condition if\nDeux types de conditions if :\n\nif (condition) action_true\nif (condition) action_true else action_false",
     "crumbs": [
-      "Cours avancé",
+      "Introduction à R et Rstudio",
       "Boucle et évaluation conditionnelle"
     ]
   },
@@ -412,7 +412,7 @@
     "section": "Condition typique",
     "text": "Condition typique\nExemple :\n\nmention &lt;- function(x) {\n  if (x &gt; 16) {\n    \"Très bien\"\n  } else if (x &gt; 14) {\n    \"Bien\"\n  } else if (x &gt; 12) {\n    \"Assez bien\"\n  } else {\n    \"\"\n  }\n}\n\n\nif renvoie un résultat, il est donc possible d’assigner le résultat :\n\nx1 &lt;- if (TRUE) 1 else 2\nx2 &lt;- if (FALSE) 1 else 2\n\nc(x1, x2)\n\n[1] 1 2\n\n\nQuand else n’est pas explicitement renseigné mais la condition est fausse, if renvoie NULL.",
     "crumbs": [
-      "Cours avancé",
+      "Introduction à R et Rstudio",
       "Boucle et évaluation conditionnelle"
     ]
   },
@@ -423,7 +423,7 @@
     "section": "Et si condition n’est pas TRUE ou FALSE ?",
     "text": "Et si condition n’est pas TRUE ou FALSE ?\n\nif (\"x\") 1\n\nError in if (\"x\") 1: argument is not interpretable as logical\n\nif (logical()) 1\n\nError in if (logical()) 1: argument is of length zero\n\nif (NA) 1\n\nError in if (NA) 1: missing value where TRUE/FALSE needed\n\nif (c(TRUE, FALSE)) 1\n\nError in if (c(TRUE, FALSE)) 1: the condition has length &gt; 1",
     "crumbs": [
-      "Cours avancé",
+      "Introduction à R et Rstudio",
       "Boucle et évaluation conditionnelle"
     ]
   },
@@ -434,7 +434,7 @@
     "section": "if vectoriel : ifelse()",
     "text": "if vectoriel : ifelse()\nDans le cas où vous avez besoin de conditions vectorielles, il faut utiliser ifelse() :\n\nx &lt;- 1:10\nifelse(x %% 5 == 0, \"XXX\", as.character(x))\n\n [1] \"1\"   \"2\"   \"3\"   \"4\"   \"XXX\" \"6\"   \"7\"   \"8\"   \"9\"   \"XXX\"\n\nifelse(x %% 2 == 0, \"even\", \"odd\")\n\n [1] \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\"\n\n\n\n\nLes valeurs manquantes seront propagées à la sortie",
     "crumbs": [
-      "Cours avancé",
+      "Introduction à R et Rstudio",
       "Boucle et évaluation conditionnelle"
     ]
   },
@@ -445,7 +445,7 @@
     "section": "switch()",
     "text": "switch()\nOn peut remplacer ceci :\n\nx_option &lt;- function(x) {\n  if (x == \"a\") {\n    \"option 1\"\n  } else if (x == \"b\") {\n    \"option 2\" \n  } else if (x == \"c\") {\n    \"option 3\"\n  } else {\n    stop(\"Invalid `x` value\")\n  }\n}\n\nPar ceci :\n\nx_option &lt;- function(x) {\n  switch(x,\n    a = \"option 1\",\n    b = \"option 2\",\n    c = \"option 3\",\n    stop(\"Invalid `x` value\") \n  )\n}\n\nLe dernier composant de switch() doit renvoyer une erreur, sinon les conditions non vérifiées renverront NULL, ce qui est rarement le comportement désiré. C’est à ça que sert stop().\n\nPréciser l’utilisation de stop()",
     "crumbs": [
-      "Cours avancé",
+      "Introduction à R et Rstudio",
       "Boucle et évaluation conditionnelle"
     ]
   },
@@ -456,7 +456,7 @@
     "section": "Boucles for",
     "text": "Boucles for\nLa boucle la plus simple est la boucle for :\n\nfor (item in vecteur) action\n\nExemple :\n\nfor (i in 1:3) {\n  print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n\n\n\n\nAttention, contrairement à de nombreux langages, l’assignation à i se fait dans l’environnement courant, changeant la valeur de l’objet i s’il existe par ailleurs :\n\ni &lt;- 100\nfor (i in 1:3) {}\ni\n\n[1] 3",
     "crumbs": [
-      "Cours avancé",
+      "Introduction à R et Rstudio",
       "Boucle et évaluation conditionnelle"
     ]
   },
@@ -467,7 +467,7 @@
     "section": "Interruption anticipée",
     "text": "Interruption anticipée\nOn peut interrompre l’exécution d’une boucle for de manière anticipée :\n\nnext sort de l’itération actuelle ;\nbreak sort de la boucle for en entier.\n\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5",
     "crumbs": [
-      "Cours avancé",
+      "Introduction à R et Rstudio",
       "Boucle et évaluation conditionnelle"
     ]
   },
@@ -478,7 +478,7 @@
     "section": "Boucles alternatives",
     "text": "Boucles alternatives\nQuand on ne sait pas les valeurs sur lesquelles on itère, on utilise :\n\nwhile(condition) action : l’action est effectuée tant que la condition est TRUE\nrepeat(action) : répète l’action indéfiniment (tant que break n’apparaît pas)\n\nfor est moins flexible que while qui est moins flexible que repeat, mais il vaut mieux utiliser la version la moins flexible.\nLe grand danger des boucles while et repeat est la boucle infinie : une boucle qui n’est jamais interrompue, entraînant le plantage de l’ordinateur par manque de mémoire.",
     "crumbs": [
-      "Cours avancé",
+      "Introduction à R et Rstudio",
       "Boucle et évaluation conditionnelle"
     ]
   },
@@ -489,18 +489,18 @@
     "section": "3 Codes alternatifs",
     "text": "3 Codes alternatifs\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni = 0\nwhile (i &lt; 10) {\n  i = i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni = 0\nrepeat ({\n  i = i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break ## Attention à ne pas oublier break, sinon on crée une boucle infinie\n})\n\n[1] 3\n[1] 4\n[1] 5",
     "crumbs": [
-      "Cours avancé",
+      "Introduction à R et Rstudio",
       "Boucle et évaluation conditionnelle"
     ]
   },
   {
-    "objectID": "ControlFlow.html#une-boucle-while-ou-for-ne-fonctionne-pas",
-    "href": "ControlFlow.html#une-boucle-while-ou-for-ne-fonctionne-pas",
+    "objectID": "ControlFlow.html#exemple-while-mais-pas-for",
+    "href": "ControlFlow.html#exemple-while-mais-pas-for",
     "title": "Boucle et évaluation conditionnelle",
-    "section": "Une boucle while ou for ne fonctionne pas",
-    "text": "Une boucle while ou for ne fonctionne pas\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 17 jours avant de la vendre, au prix de 56€.\"",
+    "section": "Exemple : while, mais pas for",
+    "text": "Exemple : while, mais pas for\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 95 jours avant de la vendre, au prix de 44€.\"",
     "crumbs": [
-      "Cours avancé",
+      "Introduction à R et Rstudio",
       "Boucle et évaluation conditionnelle"
     ]
   },
@@ -575,11 +575,11 @@
     "text": "3 Codes alternatifs\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni = 0\nwhile (i &lt; 10) {\n  i = i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni = 0\nrepeat ({\n  i = i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break ## Attention à ne pas oublier break, sinon on crée une boucle infinie\n})\n\n[1] 3\n[1] 4\n[1] 5"
   },
   {
-    "objectID": "slides-controlflow.html#une-boucle-while-ou-for-ne-fonctionne-pas",
-    "href": "slides-controlflow.html#une-boucle-while-ou-for-ne-fonctionne-pas",
+    "objectID": "slides-controlflow.html#exemple-while-mais-pas-for",
+    "href": "slides-controlflow.html#exemple-while-mais-pas-for",
     "title": "Boucle et évaluation conditionnelle",
-    "section": "Une boucle while ou for ne fonctionne pas",
-    "text": "Une boucle while ou for ne fonctionne pas\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 29 jours avant de la vendre, au prix de 56€.\""
+    "section": "Exemple : while, mais pas for",
+    "text": "Exemple : while, mais pas for\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 7 jours avant de la vendre, au prix de 56€.\""
   },
   {
     "objectID": "03Donnees.html",
@@ -1055,21 +1055,21 @@
     "href": "slides-randomdraws.html#sample",
     "title": "Tirages aléatoires",
     "section": "sample()",
-    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1]  6 10  7  8  1\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1."
+    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1] 2 8 3 6 9\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1."
   },
   {
     "objectID": "slides-randomdraws.html#exemple-simulation-de-pile-ou-face",
     "href": "slides-randomdraws.html#exemple-simulation-de-pile-ou-face",
     "title": "Tirages aléatoires",
     "section": "Exemple : simulation de pile ou face",
-    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"P\" \"P\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"P\" \"P\" \"F\" \"F\" \"P\" \"F\" \"P\" \"P\" \"F\" \"P\" \"P\" \"P\" \"F\"\n[20] \"P\" \"P\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"F\" \"F\" \"F\" \"P\"\n[39] \"P\" \"F\" \"P\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"P\""
+    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"P\" \"P\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"P\" \"F\" \"P\" \"P\" \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"F\" \"F\" \"F\" \"P\"\n[20] \"P\" \"F\" \"P\" \"P\" \"P\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"F\" \"P\" \"F\" \"F\"\n[39] \"P\" \"P\" \"F\" \"F\" \"F\" \"F\" \"P\" \"P\" \"P\" \"F\" \"P\" \"F\""
   },
   {
     "objectID": "slides-randomdraws.html#reproducibilité",
     "href": "slides-randomdraws.html#reproducibilité",
     "title": "Tirages aléatoires",
     "section": "Reproducibilité",
-    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"F\" \"F\" \"F\" \"F\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\""
+    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"F\" \"P\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"F\" \"F\" \"F\" \"F\" \"F\" \"F\" \"P\" \"P\""
   },
   {
     "objectID": "slides-randomdraws.html#contrôler-le-tirage",
@@ -1127,7 +1127,7 @@
     "section": "",
     "text": "R a de nombreuses fonctions qui permettent de faire des tirages aléatoires. Il connaît aussi beaucoup de distributions de probabilités “classiques” et il est donc possible d’échantillonner à partir de celle-ci.\nCe cours a été construit à l’aide du chapitre 5.3 de Phillips (2018). Les exercices swirl à partir de la leçon simulation de swirldev (2022).",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Tirages aléatoires"
     ]
   },
@@ -1138,7 +1138,7 @@
     "section": "",
     "text": "R a de nombreuses fonctions qui permettent de faire des tirages aléatoires. Il connaît aussi beaucoup de distributions de probabilités “classiques” et il est donc possible d’échantillonner à partir de celle-ci.\nCe cours a été construit à l’aide du chapitre 5.3 de Phillips (2018). Les exercices swirl à partir de la leçon simulation de swirldev (2022).",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Tirages aléatoires"
     ]
   },
@@ -1147,9 +1147,9 @@
     "href": "TiragesAleatoires.html#sample",
     "title": "Tirages aléatoires",
     "section": "sample()",
-    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1] 7 5 8 3 6\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1.",
+    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1]  1 10  4  7  8\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1.",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Tirages aléatoires"
     ]
   },
@@ -1158,9 +1158,9 @@
     "href": "TiragesAleatoires.html#exemple-simulation-de-pile-ou-face",
     "title": "Tirages aléatoires",
     "section": "Exemple : simulation de pile ou face",
-    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"P\" \"P\" \"F\" \"P\" \"P\" \"P\" \"F\" \"P\" \"P\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"P\" \"F\"\n[20] \"P\" \"P\" \"T\" \"F\" \"F\" \"F\" \"F\" \"P\" \"P\" \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\"\n[39] \"P\" \"F\" \"F\" \"P\" \"P\" \"P\" \"T\" \"F\" \"T\" \"F\" \"P\" \"P\"",
+    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"P\" \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"P\" \"F\" \"F\" \"F\" \"P\" \"P\" \"P\" \"F\" \"F\" \"P\" \"F\" \"T\" \"P\" \"P\" \"F\" \"P\" \"F\" \"F\" \"F\"\n[20] \"P\" \"T\" \"F\" \"P\" \"P\" \"P\" \"F\" \"F\" \"F\" \"F\" \"P\" \"P\" \"P\" \"F\" \"P\" \"T\" \"F\" \"F\" \"F\"\n[39] \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"P\" \"F\" \"P\"",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Tirages aléatoires"
     ]
   },
@@ -1169,9 +1169,9 @@
     "href": "TiragesAleatoires.html#reproducibilité",
     "title": "Tirages aléatoires",
     "section": "Reproducibilité",
-    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"P\" \"P\" \"P\" \"F\" \"P\" \"F\" \"P\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"F\" \"F\" \"F\" \"F\" \"P\" \"P\" \"P\" \"F\"",
+    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"F\" \"P\" \"P\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"P\" \"F\" \"P\"",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Tirages aléatoires"
     ]
   },
@@ -1182,7 +1182,7 @@
     "section": "Contrôler le tirage",
     "text": "Contrôler le tirage\nIl y a des situations où vous souhaitez exercer un contrôle sur la procédure de tirage. Par exemple pour pouvoir reproduire exactement le même code. On utilise alors la fonction set.seed() et on lui donne un nombre.\n\nset.seed(0)\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\"\n\nset.seed(0)\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\"\n\n\nLes deux tirages sont exactement identiques !",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Tirages aléatoires"
     ]
   },
@@ -1193,7 +1193,7 @@
     "section": "Loi normale",
     "text": "Loi normale\nOn utilise rnorm() pour tirer depuis une loi normale.\n\n\n\n\n\nTrois lois normales différentes",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Tirages aléatoires"
     ]
   },
@@ -1204,7 +1204,7 @@
     "section": "Usage",
     "text": "Usage\n\n# 5 tirages depuis une loi Gaussienne\nrnorm(n = 5, mean = 0, sd = 1)\n\n[1]  0.5673637 -0.2140512 -0.4588069  1.9281552  1.3590606\n\n# 3 tirage d'une loi normale de moyenne -10 et d'écart-type 15\nrnorm(n = 3, mean = -10, sd = 15)\n\n[1]  -3.345111 -28.829361  -9.734962\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nn\nLe nombre de tirage à faire depuis la distribution\n\n\nmean\nLa moyenne de la distribution.\n\n\nsd\nL’écart type de la distribution.",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Tirages aléatoires"
     ]
   },
@@ -1215,7 +1215,7 @@
     "section": "Loi binomiale",
     "text": "Loi binomiale\nOn utilise rbinom() pour tirer depuis une loi binomiale.\n\n\n\n\n\nTrois lois binomiales différentes",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Tirages aléatoires"
     ]
   },
@@ -1226,7 +1226,7 @@
     "section": "Usage",
     "text": "Usage\n\n# Répétition de 5 tirages à pile ou face\nrbinom(n = 5, size = 1, prob = 0.5)\n\n[1] 0 0 0 0 1\n\n# Répétition de 10 tirages à pile ou face avec une pièce biaisée\nrbinom(n = 10, size = 1, prob = 0.6)\n\n [1] 0 0 1 0 1 0 0 0 0 1\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nn\nLe nombre de tirages\n\n\nsize\nLe nombre d’essai possibles\n\n\nprob\nLa probabilité de succès sur un tirage",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Tirages aléatoires"
     ]
   },
@@ -1237,7 +1237,7 @@
     "section": "Loi uniforme",
     "text": "Loi uniforme\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nTrois lois uniformes différentes",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Tirages aléatoires"
     ]
   },
@@ -1248,7 +1248,7 @@
     "section": "Usage",
     "text": "Usage\nLa loi uniforme utilise la même probabilité pour toutes les valeurs dans un intervalle.\n\n# 5 tirages uniformes entre 0 et 1\nrunif(n = 5, min = 0, max = 1)\n\n[1] 0.1665025 0.9357397 0.5146023 0.6649318 0.8899657\n\n# 10 tirages uniformes entre -100 et 100\nrunif(n = 10, min = -100, max = 100)\n\n [1]   6.227325  -9.246520 -23.410902 -30.509829 -17.776026  57.768386\n [7]  48.605395  68.676781  57.427986  50.841132\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nn\nLe nombre de tirages\n\n\nmin\nLe minimum de la distribution uniforme\n\n\nmax\nLe maximum de la distribution uniforme",
     "crumbs": [
-      "Cours avancé",
+      "Cours avancés",
       "Tirages aléatoires"
     ]
   },
@@ -1907,34 +1907,34 @@
   {
     "objectID": "Swirl.html",
     "href": "Swirl.html",
-    "title": "Utiliser Swir",
+    "title": "Utiliser Swirl",
     "section": "",
     "text": "Si le paquet swirl n’est pas installé, installez-le à l’aide de la commande suivante dans la console\n\ninstall.packages('swirl')\n\nQuoiqu’il arrive, exécutez les lignes suivantes dans la console :\n\nlibrary(swirl)\nuninstall_all_courses() \n\nIci R vous demandera si vous voulez tout désinstaller, dites oui. Puis tapez les lignes suivantes.\n\ninstall_course_github('EliasBcd', 'InitiationR')\nselect_language('french', append_rprofile = TRUE)\nswirl()\n\nSuivez ensuite les instructions qui apparaissent dans la console. Utilisez toujours le même nom, il me permet de vous identifier. Sélectionnez le cours InitiationR. C’est normalement le cours numéro 1. Sélectionnez enfin la leçon correspondant à votre progression dans le cours.",
     "crumbs": [
       "Exercices",
-      "Utiliser Swir"
+      "Utiliser Swirl"
     ]
   },
   {
     "objectID": "Swirl.html#utilisation-de-swirl",
     "href": "Swirl.html#utilisation-de-swirl",
-    "title": "Utiliser Swir",
+    "title": "Utiliser Swirl",
     "section": "",
     "text": "Si le paquet swirl n’est pas installé, installez-le à l’aide de la commande suivante dans la console\n\ninstall.packages('swirl')\n\nQuoiqu’il arrive, exécutez les lignes suivantes dans la console :\n\nlibrary(swirl)\nuninstall_all_courses() \n\nIci R vous demandera si vous voulez tout désinstaller, dites oui. Puis tapez les lignes suivantes.\n\ninstall_course_github('EliasBcd', 'InitiationR')\nselect_language('french', append_rprofile = TRUE)\nswirl()\n\nSuivez ensuite les instructions qui apparaissent dans la console. Utilisez toujours le même nom, il me permet de vous identifier. Sélectionnez le cours InitiationR. C’est normalement le cours numéro 1. Sélectionnez enfin la leçon correspondant à votre progression dans le cours.",
     "crumbs": [
       "Exercices",
-      "Utiliser Swir"
+      "Utiliser Swirl"
     ]
   },
   {
     "objectID": "Swirl.html#rendu-des-exercices",
     "href": "Swirl.html#rendu-des-exercices",
-    "title": "Utiliser Swir",
+    "title": "Utiliser Swirl",
     "section": "Rendu des exercices",
     "text": "Rendu des exercices\nVous devez déposés à la fin de chaque leçon swirl le fichier .txt généré sur Moodle, ici\nLe fichier s’appelle en général nom_de_la_leçon.txt et apparaît à la racine de votre dossier personnel. Ici, par exemple, le fichier Exercice_1.txt. On le trouve sur l’onglet en bas à droite, dans l’onglet File.\n\n\n\nExemple avec Exercice_1.txt\n\n\nVous pouvez ensuite le déposer sur Moodle, dans le devoir “Suivi de la Progression”. Vous pouvez déposer plusieurs fichiers, cela ne pose pas de problème, tant qu’ils ont des noms différents.",
     "crumbs": [
       "Exercices",
-      "Utiliser Swir"
+      "Utiliser Swirl"
     ]
   },
   {

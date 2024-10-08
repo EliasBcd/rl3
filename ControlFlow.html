@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ControlFlow.html">Cours avancé</a></li><li class="breadcrumb-item"><a href="./ControlFlow.html">Boucle et évaluation conditionnelle</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01Introduction.html">Introduction à R et Rstudio</a></li><li class="breadcrumb-item"><a href="./ControlFlow.html">Boucle et évaluation conditionnelle</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
@@ -167,6 +167,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Premiers pas avec R</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ControlFlow.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Boucle et évaluation conditionnelle</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -204,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Swirl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Utiliser Swir</span></a>
+ <span class="menu-text">Utiliser Swirl</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -224,18 +230,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Cours avancé</span></a>
+ <span class="menu-text">Cours avancés</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./ControlFlow.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Boucle et évaluation conditionnelle</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Markdown.html" class="sidebar-item-text sidebar-link">
@@ -275,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#interruption-anticipée" id="toc-interruption-anticipée" class="nav-link" data-scroll-target="#interruption-anticipée">Interruption anticipée</a></li>
   <li><a href="#boucles-alternatives" id="toc-boucles-alternatives" class="nav-link" data-scroll-target="#boucles-alternatives">Boucles alternatives</a></li>
   <li><a href="#codes-alternatifs" id="toc-codes-alternatifs" class="nav-link" data-scroll-target="#codes-alternatifs">3 Codes alternatifs</a></li>
-  <li><a href="#une-boucle-while-ou-for-ne-fonctionne-pas" id="toc-une-boucle-while-ou-for-ne-fonctionne-pas" class="nav-link" data-scroll-target="#une-boucle-while-ou-for-ne-fonctionne-pas">Une boucle <code>while</code> ou <code>for</code> ne fonctionne pas</a></li>
+  <li><a href="#exemple-while-mais-pas-for" id="toc-exemple-while-mais-pas-for" class="nav-link" data-scroll-target="#exemple-while-mais-pas-for">Exemple : <code>while</code>, mais pas <code>for</code></a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="slides-controlflow.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -283,7 +283,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ControlFlow.html">Cours avancé</a></li><li class="breadcrumb-item"><a href="./ControlFlow.html">Boucle et évaluation conditionnelle</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01Introduction.html">Introduction à R et Rstudio</a></li><li class="breadcrumb-item"><a href="./ControlFlow.html">Boucle et évaluation conditionnelle</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Boucle et évaluation conditionnelle</h1>
 <p class="subtitle lead">L3 économie-finance</p>
@@ -310,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">25 septembre 2024</p>
+      <p class="date">8 octobre 2024</p>
     </div>
   </div>
   
@@ -561,8 +561,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="une-boucle-while-ou-for-ne-fonctionne-pas" class="level2">
-<h2 class="anchored" data-anchor-id="une-boucle-while-ou-for-ne-fonctionne-pas">Une boucle <code>while</code> ou <code>for</code> ne fonctionne pas</h2>
+<section id="exemple-while-mais-pas-for" class="level2">
+<h2 class="anchored" data-anchor-id="exemple-while-mais-pas-for">Exemple : <code>while</code>, mais pas <code>for</code></h2>
 <p>Vous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prix d'origine</span></span>
@@ -583,7 +583,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Nous avons gardé l'action "</span>,jour,<span class="st">" jours avant de la vendre, au prix de "</span>, prix, <span class="st">"€."</span>))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Nous avons gardé l'action 17 jours avant de la vendre, au prix de 56€."</code></pre>
+<pre><code>[1] "Nous avons gardé l'action 95 jours avant de la vendre, au prix de 44€."</code></pre>
 </div>
 </div>
 
