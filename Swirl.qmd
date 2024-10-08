@@ -1,5 +1,5 @@
 ---
-title: "Utiliser Swir"
+title: "Utiliser Swirl"
 author: "Elias Bouacida"
 format: html
 date: last-modified

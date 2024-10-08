@@ -20,6 +20,7 @@ website:
         contents:
           - 01Introduction.qmd
           - 02Lecon1.qmd
+          - ControlFlow.qmd
       - section: "Analyse de données"
         contents:
           - 03Donnees.qmd
@@ -29,9 +30,8 @@ website:
           - Swirl.qmd
           - Exercices.qmd
           - Diamants.qmd
-      - section: "Cours avancé"
+      - section: "Cours avancés"
         contents:
-          - ControlFlow.qmd
           - Markdown.qmd
           - TiragesAleatoires.qmd
 

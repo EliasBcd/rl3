@@ -242,7 +242,7 @@ repeat ({
 })
 ```
 
-## Une boucle `while` ou `for` ne fonctionne pas
+## Exemple : `while`, mais pas `for`
 
 Vous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. 
 On fait l'hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.
