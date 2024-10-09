@@ -8,8 +8,6 @@ format:
     output-file: slides-controlflow.html
     scrollable: true
     embed-resources: true
-    width: 1920
-    height: 1080
 lang: fr
 institute: "Université Paris 8"
 date: last-modified
@@ -214,9 +212,9 @@ for (i in 1:10) {
 
 ```{r}
 #| eval: true
-i = 0
+i <- 0
 while (i < 10) {
-  i = i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie
+  i <- i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie
   if (i < 3) 
     next
 
@@ -229,9 +227,9 @@ while (i < 10) {
 
 ```{r}
 #| eval: true
-i = 0
+i <- 0
 repeat ({
-  i = i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie
+  i <- i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie
   if (i < 3) 
     next
 
