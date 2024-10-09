@@ -1267,7 +1267,7 @@ Elias Bouacida
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres</span></span>
 <span id="cb1-2"><a></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">size  =</span> <span class="dv">5</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  5  7  8  1 10</code></pre>
+<pre><code>[1] 8 5 6 7 2</code></pre>
 </div>
 </div>
 <table class="caption-top">
@@ -1309,7 +1309,7 @@ Elias Bouacida
 <span id="cb3-2"><a></a>       <span class="at">size =</span> <span class="dv">10</span>,  <span class="co"># 10 tirages</span></span>
 <span id="cb3-3"><a></a>       <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="co"># Échantillonnage avec remise</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] &quot;P&quot; &quot;P&quot; &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;F&quot;</code></pre>
+<pre><code> [1] &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot;</code></pre>
 </div>
 </div>
 <p>Notre pièce peut retomber sur la tranche, mais avec une faible probabilité</p>
@@ -1319,9 +1319,9 @@ Elias Bouacida
 <span id="cb5-3"><a></a>       <span class="at">size =</span> <span class="dv">50</span>,</span>
 <span id="cb5-4"><a></a>       <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;T&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;T&quot; &quot;P&quot; &quot;P&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot;
-[20] &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;P&quot; &quot;F&quot;
-[39] &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;F&quot; &quot;P&quot;</code></pre>
+<pre><code> [1] &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;T&quot; &quot;P&quot;
+[20] &quot;P&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;P&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot;
+[39] &quot;P&quot; &quot;T&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot;</code></pre>
 </div>
 </div>
 </section>
@@ -1333,13 +1333,13 @@ Elias Bouacida
 <span id="cb7-2"><a></a>       <span class="at">size =</span> <span class="dv">10</span>,  <span class="co"># 10 tirages</span></span>
 <span id="cb7-3"><a></a>       <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="co"># Échantillonnage avec remise</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot;</code></pre>
+<pre><code> [1] &quot;F&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;F&quot; &quot;F&quot;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">&quot;F&quot;</span>, <span class="st">&quot;P&quot;</span>), <span class="co"># les valeurs possibles de la pièce</span></span>
 <span id="cb9-2"><a></a>       <span class="at">size =</span> <span class="dv">10</span>,  <span class="co"># 10 tirages</span></span>
 <span id="cb9-3"><a></a>       <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="co"># Échantillonnage avec remise</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot; &quot;P&quot;</code></pre>
+<pre><code> [1] &quot;F&quot; &quot;F&quot; &quot;P&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;F&quot; &quot;P&quot; &quot;P&quot; &quot;F&quot;</code></pre>
 </div>
 </div>
 </section>
