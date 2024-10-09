@@ -4,7 +4,7 @@ author: "Elias Bouacida"
 format: 
   html: default
   revealjs:
-    output-file: slides-donnees.html
+    output-file: slides-representations-graphiques.html
     scrollable: true
     embed-resources: true
 date: last-modified
