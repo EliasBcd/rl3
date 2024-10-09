@@ -7,10 +7,11 @@ format:
     output-file: slides-donnees.html
     scrollable: true
     embed-resources: true
-date: 11-22-2023
+date: last-modified
 lang: fr
-echo: true
-cache: true  
+execute:
+  echo: true
+  cache: true  
 bibliography: Bibliographie.bib
 self-contained: true
 # width: 1920
