@@ -32,7 +32,7 @@ library(questionr)
 ## Introduction
 
 `ggplot2` est une librairie qui permet de générer des graphiques avec une syntaxe cohérente et puissante. 
-Elle nécessite l'apprentissage d'un “mini-langage” supplémentaire, mais permet la construction de graphiques complexes de manière efficace.
+Elle nécessite l'apprentissage d'un "mini-langage" supplémentaire, mais permet la construction de graphiques complexes de manière efficace.
 
 Une des particularités de `ggplot2` est qu'elle part du principe que les données relatives à un graphique sont stockées dans un tableau de données (`data.frame`, `tibble` ou autre).
 
@@ -60,7 +60,7 @@ install.packages('questionr')
 library(questionr)
 ```
 
-Nous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction `filter` de la librairie `tydiverse`.
+Nous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction `filter` de la librairie `tidyverse`.
 
 ```{r}
 data(rp2018)
@@ -169,7 +169,7 @@ On notera que dans ce cas les arguments sont dans la fonction `geom` mais à l'e
 
 ## Exemples de `geom`
 
-Il existe un grand nombre de `geom`, décrits en détail dans la [documentation officielle](http://ggplot2.tidyverse.org/reference/). 
+Il existe un grand nombre de `geom`, décrites en détail dans la [documentation officielle](http://ggplot2.tidyverse.org/reference/). 
 Outre les `geom_histogram` et `geom_point` que l'on vient de voir, on pourra noter les `geom` suivantes :
 
 - `geom_boxplot`
@@ -185,7 +185,7 @@ Outre les `geom_histogram` et `geom_point` que l'on vient de voir, on pourra not
 
 Un *mappage*, dans `ggplot2`, est une mise en relation entre un **attribut graphique** du `geom` (position, couleur, taille...) et une **variable** du tableau de données.
 
-Ces mappages sont passés aux différents `geom` via la fonction `aes()` (abbréviation d'*aesthetic*).
+Ces mappages sont passés aux différents `geom` via la fonction `aes()`.
 
 ## Exemples de mappages
 
@@ -273,7 +273,7 @@ ggplot(rp) +
 
 **La règle est donc simple mais très importante :**  
 Si on établit un lien entre les valeurs d'une variable et un attribut graphique, on définit un mappage, et on le déclare dans `aes()`.
-Sinon, on modifie l'attribut de la même manière pour tous les points, et on le définit  en-dehors de la fonction `aes()`.
+Sinon, on modifie l'attribut de la même manière pour tous les points, et on le définit en-dehors de la fonction `aes()`.
 
 
 # Représentation de plusieurs `geom` {.smaller}
@@ -336,7 +336,7 @@ ggplot(rp, aes(x = dipl_sup, y = cadres)) +
 
 On a vu qu'avec `ggplot2` on définit des mappages entre des attributs graphiques (position, taille, couleur, etc.) et des variables d'un tableau de données. Ces mappages sont définis, pour chaque `geom`, via la fonction `aes()`.
 
-Les *scales* dans `ggplot2` permettent de modifier la manière dont un attribut graphique va être relié aux valeurs d'une variable, et dont la légende correspondante va être affichée.
+Les *scales* dans `ggplot2` permettent de modifier la manière dont un attribut graphique sera relié aux valeurs d'une variable, et dont la légende correspondante va être affichée.
 Par exemple, pour l'attribut `color`, on pourra définir la palette de couleur utilisée. 
 Pour `size`, les tailles minimales et maximales, etc.
 
@@ -387,7 +387,7 @@ ggplot(rp) +
 
 
 
-- On peut utiliser `scale_x_log10` et `scale_y_log10` pour passer un axe à une échelle logarithmique.
+- On utilise `scale_x_log10` et `scale_y_log10` pour passer un axe à une échelle logarithmique.
 - `scale_x_discrete` et `scale_y_discrete` s'appliquent lorsque l'axe correspond à une variable discrète (qualitative).
 C'est le cas par exemple de l'axe des `x` dans un diagramme en barres.
 L'argument `limits` de `scale_x_discrete` permet d'indiquer quelles valeurs sont affichées et dans quel ordre.

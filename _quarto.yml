@@ -48,4 +48,7 @@ bibliography:
 date: last-modified
 date-format: long
 
+execute: 
+  cache: true
+
 lang: fr
