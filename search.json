@@ -174,7 +174,7 @@
     "href": "ControlFlow.html#exemple-while-mais-pas-for",
     "title": "Boucle et évaluation conditionnelle",
     "section": "Exemple : while, mais pas for",
-    "text": "Exemple : while, mais pas for\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 21 jours avant de la vendre, au prix de 44€.\"",
+    "text": "Exemple : while, mais pas for\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 25 jours avant de la vendre, au prix de 56€.\"",
     "crumbs": [
       "Introduction à R et Rstudio",
       "Boucle et évaluation conditionnelle"
@@ -255,14 +255,14 @@
     "href": "slides-controlflow.html#exemple-while-mais-pas-for",
     "title": "Boucle et évaluation conditionnelle",
     "section": "Exemple : while, mais pas for",
-    "text": "Exemple : while, mais pas for\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 55 jours avant de la vendre, au prix de 56€.\""
+    "text": "Exemple : while, mais pas for\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 25 jours avant de la vendre, au prix de 44€.\""
   },
   {
     "objectID": "04RepresentationsGraphiques.html",
     "href": "04RepresentationsGraphiques.html",
     "title": "Représentations graphiques",
     "section": "",
-    "text": "ggplot2 est une librairie qui permet de générer des graphiques avec une syntaxe cohérente et puissante. Elle nécessite l’apprentissage d’un “mini-langage” supplémentaire, mais permet la construction de graphiques complexes de manière efficace.\nUne des particularités de ggplot2 est qu’elle part du principe que les données relatives à un graphique sont stockées dans un tableau de données (data.frame, tibble ou autre).\nCe chapitre est élaboré à partir du chapitre 8 de Barnier et Kauffmann (2023).\n\n\n\nggplot2 est un paquet comme un autre, que l’on charge à l’aide de library\n\nlibrary(ggplot2)\n\n\n\n\nLes données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet questionr, que nous devons installer et charger.\n\ninstall.packages('questionr')\nlibrary(questionr)\n\nNous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction filter de la librairie tydiverse.\n\ndata(rp2018)\n\nrp &lt;- filter(\n  rp2018,\n  departement %in% c(\"Oise\", \"Rhône\", \"Hauts-de-Seine\", \"Lozère\", \"Bouches-du-Rhône\")\n)\n\n\n\n\nUn graphique ggplot2 s’initialise à l’aide de la fonction ggplot(). Les données sont toujours issues d’un tableau de données, qu’on passe en argument data à la fonction ggplot.\n\nggplot(data = rp)\nggplot(rp) ## Equivalent au premier et généralement utilisé\n\n\n\n\nIl faut ajouter des éléments de représentation graphique. Ces éléments sont appelés des geom et on les ajoute à l’objet graphique de base avec l’opérateur +.\nUne des geom les plus simples est geom_histogram :\n\nggplot(rp) + geom_histogram()\n\n\n\n\nReste à indiquer quelle donnée nous voulons représenter sous forme d’histogramme. Cela se fait à l’aide d’arguments passés via la fonction aes(). Ici, nous avons un paramètre à renseigner, x, qui indique la variable à représenter sur l’axe des x (l’axe horizontal).\n\n\nAinsi, si on souhaite représenter la distribution des communes du jeu de données selon le pourcentage de cadres dans leur population active (variable cadres) :\n\nggplot(rp) + geom_histogram(aes(x = cadres))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\n\nSi on veut représenter une autre variable, il suffit de changer la valeur de x :\n\nggplot(rp) + geom_histogram(aes(x = ouvr))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPour représenter un graphique, il faut :\n\nDes données (argument data de ggplot())\nUn type de représentation (histogramme, ligne, point, etc) donné par geom_xxxx où xxxx est le type de représentation recherché.\nUne ou des variables à représenter (argument aes() dans geom_xxxx)\n\nOn lie les différentes commandes à l’aide de l’opérateur +.",
+    "text": "ggplot2 est une librairie qui permet de générer des graphiques avec une syntaxe cohérente et puissante. Elle nécessite l’apprentissage d’un “mini-langage” supplémentaire, mais permet la construction de graphiques complexes de manière efficace.\nUne des particularités de ggplot2 est qu’elle part du principe que les données relatives à un graphique sont stockées dans un tableau de données (data.frame, tibble ou autre).\nCe chapitre est élaboré à partir du chapitre 8 de Barnier et Kauffmann (2023).\n\n\n\nggplot2 est un paquet comme un autre, que l’on charge à l’aide de library\n\nlibrary(ggplot2)\n\n\n\n\nLes données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet questionr, que nous devons installer et charger.\n\ninstall.packages('questionr')\nlibrary(questionr)\n\nNous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction filter de la librairie tidyverse.\n\ndata(rp2018)\n\nrp &lt;- filter(\n  rp2018,\n  departement %in% c(\"Oise\", \"Rhône\", \"Hauts-de-Seine\", \"Lozère\", \"Bouches-du-Rhône\")\n)\n\n\n\n\nUn graphique ggplot2 s’initialise à l’aide de la fonction ggplot(). Les données sont toujours issues d’un tableau de données, qu’on passe en argument data à la fonction ggplot.\n\nggplot(data = rp)\nggplot(rp) ## Equivalent au premier et généralement utilisé\n\n\n\n\nIl faut ajouter des éléments de représentation graphique. Ces éléments sont appelés des geom et on les ajoute à l’objet graphique de base avec l’opérateur +.\nUne des geom les plus simples est geom_histogram :\n\nggplot(rp) + geom_histogram()\n\n\n\n\nReste à indiquer quelle donnée nous voulons représenter sous forme d’histogramme. Cela se fait à l’aide d’arguments passés via la fonction aes(). Ici, nous avons un paramètre à renseigner, x, qui indique la variable à représenter sur l’axe des x (l’axe horizontal).\n\n\nAinsi, si on souhaite représenter la distribution des communes du jeu de données selon le pourcentage de cadres dans leur population active (variable cadres) :\n\nggplot(rp) + geom_histogram(aes(x = cadres))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\n\nSi on veut représenter une autre variable, il suffit de changer la valeur de x :\n\nggplot(rp) + geom_histogram(aes(x = ouvr))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPour représenter un graphique, il faut :\n\nDes données (argument data de ggplot())\nUn type de représentation (histogramme, ligne, point, etc) donné par geom_xxxx où xxxx est le type de représentation recherché.\nUne ou des variables à représenter (argument aes() dans geom_xxxx)\n\nOn lie les différentes commandes à l’aide de l’opérateur +.",
     "crumbs": [
       "Analyse de données",
       "Représentations graphiques"
@@ -295,7 +295,7 @@
     "href": "04RepresentationsGraphiques.html#données",
     "title": "Représentations graphiques",
     "section": "",
-    "text": "Les données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet questionr, que nous devons installer et charger.\n\ninstall.packages('questionr')\nlibrary(questionr)\n\nNous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction filter de la librairie tydiverse.\n\ndata(rp2018)\n\nrp &lt;- filter(\n  rp2018,\n  departement %in% c(\"Oise\", \"Rhône\", \"Hauts-de-Seine\", \"Lozère\", \"Bouches-du-Rhône\")\n)",
+    "text": "Les données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet questionr, que nous devons installer et charger.\n\ninstall.packages('questionr')\nlibrary(questionr)\n\nNous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction filter de la librairie tidyverse.\n\ndata(rp2018)\n\nrp &lt;- filter(\n  rp2018,\n  departement %in% c(\"Oise\", \"Rhône\", \"Hauts-de-Seine\", \"Lozère\", \"Bouches-du-Rhône\")\n)",
     "crumbs": [
       "Analyse de données",
       "Représentations graphiques"
@@ -372,7 +372,7 @@
     "href": "04RepresentationsGraphiques.html#exemples-de-geom",
     "title": "Représentations graphiques",
     "section": "Exemples de geom",
-    "text": "Exemples de geom\nIl existe un grand nombre de geom, décrits en détail dans la documentation officielle. Outre les geom_histogram et geom_point que l’on vient de voir, on pourra noter les geom suivantes :\n\ngeom_boxplot\ngeom_violin\ngeom_bar et geom_col\ngeom_text\ngeom_label\ngeom_density\ngeom_line\ngeom_hex et geom_bin2d",
+    "text": "Exemples de geom\nIl existe un grand nombre de geom, décrites en détail dans la documentation officielle. Outre les geom_histogram et geom_point que l’on vient de voir, on pourra noter les geom suivantes :\n\ngeom_boxplot\ngeom_violin\ngeom_bar et geom_col\ngeom_text\ngeom_label\ngeom_density\ngeom_line\ngeom_hex et geom_bin2d",
     "crumbs": [
       "Analyse de données",
       "Représentations graphiques"
@@ -482,7 +482,7 @@
     "href": "04RepresentationsGraphiques.html#autres-scale_x_type",
     "title": "Représentations graphiques",
     "section": "Autres scale_x_<type>",
-    "text": "Autres scale_x_&lt;type&gt;\n\nOn peut utiliser scale_x_log10 et scale_y_log10 pour passer un axe à une échelle logarithmique.\nscale_x_discrete et scale_y_discrete s’appliquent lorsque l’axe correspond à une variable discrète (qualitative). C’est le cas par exemple de l’axe des x dans un diagramme en barres. L’argument limits de scale_x_discrete permet d’indiquer quelles valeurs sont affichées et dans quel ordre.",
+    "text": "Autres scale_x_&lt;type&gt;\n\nOn utilise scale_x_log10 et scale_y_log10 pour passer un axe à une échelle logarithmique.\nscale_x_discrete et scale_y_discrete s’appliquent lorsque l’axe correspond à une variable discrète (qualitative). C’est le cas par exemple de l’axe des x dans un diagramme en barres. L’argument limits de scale_x_discrete permet d’indiquer quelles valeurs sont affichées et dans quel ordre.",
     "crumbs": [
       "Analyse de données",
       "Représentations graphiques"
@@ -507,7 +507,7 @@
     "href": "slides-representations-graphiques.html#données",
     "title": "Représentations graphiques",
     "section": "Données",
-    "text": "Données\nLes données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet questionr, que nous devons installer et charger.\n\ninstall.packages('questionr')\nlibrary(questionr)\n\nNous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction filter de la librairie tydiverse.\n\ndata(rp2018)\n\nrp &lt;- filter(\n  rp2018,\n  departement %in% c(\"Oise\", \"Rhône\", \"Hauts-de-Seine\", \"Lozère\", \"Bouches-du-Rhône\")\n)"
+    "text": "Données\nLes données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet questionr, que nous devons installer et charger.\n\ninstall.packages('questionr')\nlibrary(questionr)\n\nNous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction filter de la librairie tidyverse.\n\ndata(rp2018)\n\nrp &lt;- filter(\n  rp2018,\n  departement %in% c(\"Oise\", \"Rhône\", \"Hauts-de-Seine\", \"Lozère\", \"Bouches-du-Rhône\")\n)"
   },
   {
     "objectID": "slides-representations-graphiques.html#initialisation-données-à-représenter",
@@ -556,7 +556,7 @@
     "href": "slides-representations-graphiques.html#exemples-de-geom",
     "title": "Représentations graphiques",
     "section": "Exemples de geom",
-    "text": "Exemples de geom\nIl existe un grand nombre de geom, décrits en détail dans la documentation officielle. Outre les geom_histogram et geom_point que l’on vient de voir, on pourra noter les geom suivantes :\n\ngeom_boxplot\ngeom_violin\ngeom_bar et geom_col\ngeom_text\ngeom_label\ngeom_density\ngeom_line\ngeom_hex et geom_bin2d"
+    "text": "Exemples de geom\nIl existe un grand nombre de geom, décrites en détail dans la documentation officielle. Outre les geom_histogram et geom_point que l’on vient de voir, on pourra noter les geom suivantes :\n\ngeom_boxplot\ngeom_violin\ngeom_bar et geom_col\ngeom_text\ngeom_label\ngeom_density\ngeom_line\ngeom_hex et geom_bin2d"
   },
   {
     "objectID": "slides-representations-graphiques.html#exemples-de-mappages",
@@ -626,7 +626,7 @@
     "href": "slides-representations-graphiques.html#autres-scale_x_type",
     "title": "Représentations graphiques",
     "section": "Autres scale_x_<type>",
-    "text": "Autres scale_x_&lt;type&gt;\n\nOn peut utiliser scale_x_log10 et scale_y_log10 pour passer un axe à une échelle logarithmique.\nscale_x_discrete et scale_y_discrete s’appliquent lorsque l’axe correspond à une variable discrète (qualitative). C’est le cas par exemple de l’axe des x dans un diagramme en barres. L’argument limits de scale_x_discrete permet d’indiquer quelles valeurs sont affichées et dans quel ordre."
+    "text": "Autres scale_x_&lt;type&gt;\n\nOn utilise scale_x_log10 et scale_y_log10 pour passer un axe à une échelle logarithmique.\nscale_x_discrete et scale_y_discrete s’appliquent lorsque l’axe correspond à une variable discrète (qualitative). C’est le cas par exemple de l’axe des x dans un diagramme en barres. L’argument limits de scale_x_discrete permet d’indiquer quelles valeurs sont affichées et dans quel ordre."
   },
   {
     "objectID": "Exercices.html",
@@ -787,7 +787,7 @@
     "href": "Markdown.html#yaml",
     "title": "Rapports : Markdown et Quarto",
     "section": "YAML",
-    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Wed Oct 9 12:02:15 2024 \"",
+    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Tue Oct 15 14:49:01 2024 \"",
     "crumbs": [
       "Cours avancés",
       "Rapports : Markdown et Quarto"
@@ -935,7 +935,7 @@
     "href": "slides-markdown.html#yaml",
     "title": "Rapports : Markdown et Quarto",
     "section": "YAML",
-    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Wed Oct 9 12:02:18 2024 \""
+    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Tue Oct 15 14:49:04 2024 \""
   },
   {
     "objectID": "slides-markdown.html#formatage-du-texte",
@@ -2350,21 +2350,21 @@
     "href": "slides-randomdraws.html#sample",
     "title": "Tirages aléatoires",
     "section": "sample()",
-    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1] 8 5 6 7 2\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1."
+    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1] 1 4 6 9 5\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1."
   },
   {
     "objectID": "slides-randomdraws.html#exemple-simulation-de-pile-ou-face",
     "href": "slides-randomdraws.html#exemple-simulation-de-pile-ou-face",
     "title": "Tirages aléatoires",
     "section": "Exemple : simulation de pile ou face",
-    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"F\" \"P\" \"P\" \"F\" \"P\" \"F\" \"F\" \"F\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"F\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\" \"T\" \"P\"\n[20] \"P\" \"F\" \"F\" \"F\" \"P\" \"P\" \"F\" \"F\" \"F\" \"P\" \"P\" \"P\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\" \"P\"\n[39] \"P\" \"T\" \"P\" \"P\" \"P\" \"F\" \"P\" \"P\" \"F\" \"P\" \"P\" \"P\""
+    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"F\" \"P\" \"F\" \"F\" \"T\" \"F\" \"P\" \"P\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"F\" \"F\"\n[20] \"P\" \"F\" \"F\" \"P\" \"F\" \"P\" \"P\" \"F\" \"P\" \"F\" \"P\" \"P\" \"F\" \"P\" \"P\" \"F\" \"F\" \"F\" \"P\"\n[39] \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"T\" \"F\" \"T\""
   },
   {
     "objectID": "slides-randomdraws.html#reproducibilité",
     "href": "slides-randomdraws.html#reproducibilité",
     "title": "Tirages aléatoires",
     "section": "Reproducibilité",
-    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"F\" \"F\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"P\" \"P\" \"F\" \"P\" \"F\" \"P\" \"P\" \"F\""
+    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"F\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\""
   },
   {
     "objectID": "slides-randomdraws.html#contrôler-le-tirage",
@@ -2442,7 +2442,7 @@
     "href": "TiragesAleatoires.html#sample",
     "title": "Tirages aléatoires",
     "section": "sample()",
-    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1]  2  1 10  8  6\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1.",
+    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1] 10  6  2  1  7\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1.",
     "crumbs": [
       "Cours avancés",
       "Tirages aléatoires"
@@ -2453,7 +2453,7 @@
     "href": "TiragesAleatoires.html#exemple-simulation-de-pile-ou-face",
     "title": "Tirages aléatoires",
     "section": "Exemple : simulation de pile ou face",
-    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"F\" \"F\" \"P\" \"F\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"F\" \"T\" \"F\" \"P\" \"P\" \"F\" \"F\" \"F\" \"F\" \"F\" \"F\" \"T\" \"P\" \"T\" \"P\" \"F\" \"P\" \"F\" \"F\"\n[20] \"F\" \"P\" \"P\" \"P\" \"T\" \"F\" \"F\" \"P\" \"F\" \"P\" \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\"\n[39] \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"P\" \"F\" \"P\" \"F\" \"P\" \"P\"",
+    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"P\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"P\" \"P\" \"F\" \"P\" \"F\" \"P\" \"P\" \"P\" \"F\" \"F\" \"P\" \"P\" \"P\" \"P\" \"F\" \"P\" \"P\" \"P\" \"T\"\n[20] \"F\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"F\" \"F\" \"P\" \"P\" \"F\" \"F\" \"P\" \"P\" \"P\" \"P\" \"F\" \"P\"\n[39] \"P\" \"F\" \"F\" \"T\" \"F\" \"F\" \"P\" \"P\" \"F\" \"P\" \"F\" \"F\"",
     "crumbs": [
       "Cours avancés",
       "Tirages aléatoires"
@@ -2464,7 +2464,7 @@
     "href": "TiragesAleatoires.html#reproducibilité",
     "title": "Tirages aléatoires",
     "section": "Reproducibilité",
-    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"P\" \"P\" \"P\" \"F\" \"P\" \"P\" \"P\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"P\" \"P\" \"P\" \"F\" \"P\" \"F\" \"P\" \"P\"",
+    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"F\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"F\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"F\" \"F\" \"F\"",
     "crumbs": [
       "Cours avancés",
       "Tirages aléatoires"
