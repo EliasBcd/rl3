@@ -24,7 +24,7 @@ format-links: [revealjs]
 
 Au premier lancement de RStudio, l'interface est organisée en trois grandes zones.
 
-```{r rstudio}
+```{r rstudio-fig}
 #| label: fig-rstudio
 #| out-width: '100%'
 #| echo: false

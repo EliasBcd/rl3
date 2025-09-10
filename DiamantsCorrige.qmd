@@ -6,6 +6,8 @@ bibliography: BibliographieExercice.bib
 output: html
 date-format: long
 lang: fr
+execute: 
+  cache: refresh
 ---
 
 ```{r setup}
