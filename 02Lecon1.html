@@ -104,37 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -146,7 +116,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01Introduction.html">Introduction à R et Rstudio</a></li><li class="breadcrumb-item"><a href="./02Lecon1.html">Premiers pas avec R</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01Introduction.html">Introduction à R et Rstudio et la programmation avec des LLMs</a></li><li class="breadcrumb-item"><a href="./02Lecon1.html">Premiers pas avec R</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
@@ -180,7 +150,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Introduction à R et Rstudio</span></a>
+ <span class="menu-text">Introduction à R et Rstudio et la programmation avec des LLMs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -189,94 +159,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01Introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Initiation à R</span></a>
+ <span class="menu-text">Apprendre la Programmation R avec les LLM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02Lecon1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Premiers pas avec R</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./ControlFlow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Boucle et évaluation conditionnelle</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Analyse de données</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03Donnees.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Premières analyses de données</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04RepresentationsGraphiques.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Représentations graphiques</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Exercices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Basculer la section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Swirl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Utiliser Swirl</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Exercices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercices</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Diamants.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Taille des diamants</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Cours avancés</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Basculer la section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rapports : Markdown et Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./TiragesAleatoires.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tirages aléatoires</span></a>
   </div>
 </li>
       </ul>
@@ -291,61 +180,15 @@ window.Quarto = {
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#introduction-à-r" id="toc-introduction-à-r" class="nav-link active" data-scroll-target="#introduction-à-r">Introduction à R</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
-  <li><a href="#la-console" id="toc-la-console" class="nav-link" data-scroll-target="#la-console">La console</a></li>
-  <li><a href="#console" id="toc-console" class="nav-link" data-scroll-target="#console">Console</a></li>
-  <li><a href="#addition-sousraction-multiplication-et-division" id="toc-addition-sousraction-multiplication-et-division" class="nav-link" data-scroll-target="#addition-sousraction-multiplication-et-division">Addition, Sousraction, Multiplication et Division</a></li>
-  <li><a href="#exposants" id="toc-exposants" class="nav-link" data-scroll-target="#exposants">Exposants</a></li>
-  <li><a href="#constantes-mathématiques" id="toc-constantes-mathématiques" class="nav-link" data-scroll-target="#constantes-mathématiques">Constantes mathématiques</a></li>
-  <li><a href="#logarithmes" id="toc-logarithmes" class="nav-link" data-scroll-target="#logarithmes">Logarithmes</a></li>
-  <li><a href="#trigonometrie" id="toc-trigonometrie" class="nav-link" data-scroll-target="#trigonometrie">Trigonometrie</a></li>
-  <li><a href="#espaces-et-codage" id="toc-espaces-et-codage" class="nav-link" data-scroll-target="#espaces-et-codage">Espaces et codage</a></li>
-  <li><a href="#r-bloqué" id="toc-r-bloqué" class="nav-link" data-scroll-target="#r-bloqué">R bloqué</a></li>
+  <li><a href="#à-vous-de-jouer" id="toc-à-vous-de-jouer" class="nav-link" data-scroll-target="#à-vous-de-jouer">À vous de jouer !</a></li>
+  <li><a href="#premiers-calculs" id="toc-premiers-calculs" class="nav-link" data-scroll-target="#premiers-calculs">Premiers calculs</a></li>
   </ul></li>
-  <li><a href="#objets" id="toc-objets" class="nav-link" data-scroll-target="#objets">Objets</a>
+  <li><a href="#notions" id="toc-notions" class="nav-link" data-scroll-target="#notions">Notions</a>
   <ul class="collapse">
-  <li><a href="#objets-1" id="toc-objets-1" class="nav-link" data-scroll-target="#objets-1">Objets</a></li>
-  <li><a href="#afficher-la-valeur-dun-objet" id="toc-afficher-la-valeur-dun-objet" class="nav-link" data-scroll-target="#afficher-la-valeur-dun-objet">Afficher la valeur d’un objet</a></li>
-  <li><a href="#utilisation-dun-objet" id="toc-utilisation-dun-objet" class="nav-link" data-scroll-target="#utilisation-dun-objet">Utilisation d’un objet</a></li>
-  </ul></li>
-  <li><a href="#types" id="toc-types" class="nav-link" data-scroll-target="#types">Types</a>
-  <ul class="collapse">
-  <li><a href="#chaîne-de-caractères" id="toc-chaîne-de-caractères" class="nav-link" data-scroll-target="#chaîne-de-caractères">Chaîne de caractères</a></li>
-  <li><a href="#conditions-logiques-booléens" id="toc-conditions-logiques-booléens" class="nav-link" data-scroll-target="#conditions-logiques-booléens">Conditions logiques (booléens)</a></li>
-  <li><a href="#opérateurs-logiques" id="toc-opérateurs-logiques" class="nav-link" data-scroll-target="#opérateurs-logiques">Opérateurs logiques</a></li>
-  <li><a href="#vecteurs" id="toc-vecteurs" class="nav-link" data-scroll-target="#vecteurs">Vecteurs</a></li>
-  <li><a href="#opérations-sur-les-vecteurs" id="toc-opérations-sur-les-vecteurs" class="nav-link" data-scroll-target="#opérations-sur-les-vecteurs">Opérations sur les vecteurs</a></li>
-  <li><a href="#opérations-vectorielles" id="toc-opérations-vectorielles" class="nav-link" data-scroll-target="#opérations-vectorielles">Opérations vectorielles</a></li>
-  <li><a href="#autre-type-dans-un-vecteur" id="toc-autre-type-dans-un-vecteur" class="nav-link" data-scroll-target="#autre-type-dans-un-vecteur">Autre type dans un vecteur</a></li>
-  <li><a href="#vecteurs-de-nombres-consécutifs" id="toc-vecteurs-de-nombres-consécutifs" class="nav-link" data-scroll-target="#vecteurs-de-nombres-consécutifs">Vecteurs de nombres consécutifs</a></li>
-  <li><a href="#accès-à-un-élément" id="toc-accès-à-un-élément" class="nav-link" data-scroll-target="#accès-à-un-élément">Accès à un élément</a></li>
-  <li><a href="#vecteurs-dans-la-console" id="toc-vecteurs-dans-la-console" class="nav-link" data-scroll-target="#vecteurs-dans-la-console">Vecteurs dans la console</a></li>
-  <li><a href="#listes" id="toc-listes" class="nav-link" data-scroll-target="#listes">Listes</a></li>
-  </ul></li>
-  <li><a href="#fonctions" id="toc-fonctions" class="nav-link" data-scroll-target="#fonctions">Fonctions</a>
-  <ul class="collapse">
-  <li><a href="#une-fonction" id="toc-une-fonction" class="nav-link" data-scroll-target="#une-fonction">Une fonction</a></li>
-  <li><a href="#arguments" id="toc-arguments" class="nav-link" data-scroll-target="#arguments">Arguments</a></li>
-  <li><a href="#aide-sur-une-fonction" id="toc-aide-sur-une-fonction" class="nav-link" data-scroll-target="#aide-sur-une-fonction">Aide sur une fonction</a></li>
-  </ul></li>
-  <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts">Scripts</a>
-  <ul class="collapse">
-  <li><a href="#scripts-1" id="toc-scripts-1" class="nav-link" data-scroll-target="#scripts-1">Scripts</a></li>
-  </ul></li>
-  <li><a href="#paquets" id="toc-paquets" class="nav-link" data-scroll-target="#paquets">Paquets</a>
-  <ul class="collapse">
-  <li><a href="#sec-packages" id="toc-sec-packages" class="nav-link" data-scroll-target="#sec-packages">Installer et charger des extensions (<em>packages</em>)</a></li>
-  <li><a href="#en-ligne-de-commande" id="toc-en-ligne-de-commande" class="nav-link" data-scroll-target="#en-ligne-de-commande">En ligne de commande</a></li>
-  <li><a href="#charger-un-paquet" id="toc-charger-un-paquet" class="nav-link" data-scroll-target="#charger-un-paquet">Charger un paquet</a></li>
-  </ul></li>
-  <li><a href="#à-vous" id="toc-à-vous" class="nav-link" data-scroll-target="#à-vous">À vous !</a>
-  <ul class="collapse">
-  <li><a href="#swirl" id="toc-swirl" class="nav-link" data-scroll-target="#swirl">Swirl</a></li>
-  <li><a href="#cours-et-leçons-swirl" id="toc-cours-et-leçons-swirl" class="nav-link" data-scroll-target="#cours-et-leçons-swirl">Cours et leçons swirl</a></li>
-  <li><a href="#lancer-une-leçon" id="toc-lancer-une-leçon" class="nav-link" data-scroll-target="#lancer-une-leçon">Lancer une leçon</a></li>
-  <li><a href="#fin-dune-leçon" id="toc-fin-dune-leçon" class="nav-link" data-scroll-target="#fin-dune-leçon">Fin d’une leçon</a></li>
-  <li><a href="#réinstaller-un-cours" id="toc-réinstaller-un-cours" class="nav-link" data-scroll-target="#réinstaller-un-cours">Réinstaller un cours</a></li>
+  <li><a href="#notions-1" id="toc-notions-1" class="nav-link" data-scroll-target="#notions-1">Notions</a></li>
+  <li><a href="#remarque" id="toc-remarque" class="nav-link" data-scroll-target="#remarque">Remarque</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="slide-lecon1.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -353,7 +196,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01Introduction.html">Introduction à R et Rstudio</a></li><li class="breadcrumb-item"><a href="./02Lecon1.html">Premiers pas avec R</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01Introduction.html">Introduction à R et Rstudio et la programmation avec des LLMs</a></li><li class="breadcrumb-item"><a href="./02Lecon1.html">Premiers pas avec R</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Premiers pas avec R</h1>
 </div>
@@ -379,7 +222,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">10 septembre 2025</p>
+      <p class="date">11 septembre 2025</p>
     </div>
   </div>
   
@@ -391,712 +234,59 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction-à-r" class="level1">
-<h1>Introduction à R</h1>
-<section id="la-console" class="level2">
-<h2 class="anchored" data-anchor-id="la-console">La console</h2>
-<p>Au premier lancement de RStudio, l’interface est organisée en trois grandes zones.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-rstudio" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="resources/fenetreRStudio.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Accueil Rstudio
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="{notes}">
-<p>La zone de gauche se nomme <strong>la Console</strong>. À son démarrage, RStudio a lancé une nouvelle session de R et c’est dans cette fenêtre que nous allons pouvoir interagir avec lui.</p>
-<p>Faire la démonstration en direct.</p>
-</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<section id="à-vous-de-jouer" class="level2">
+<h2 class="anchored" data-anchor-id="à-vous-de-jouer">À vous de jouer !</h2>
+<p>Demandez à votre LLM préférez comment utiliser R et Rstudio.</p>
+<p>Demandez lui de vous décrire l’interface.</p>
 </section>
-<section id="console" class="level2">
-<h2 class="anchored" data-anchor-id="console">Console</h2>
-<p>La Console affiche un texte de bienvenue suivi d’une ligne commençant par le caractère <code>&gt;</code> (l’invite de commande).</p>
-<p>Fournissons une première commande, en saisissant le texte suivant et en appuyant sur <code>Entrée</code>.</p>
+<section id="premiers-calculs" class="level2">
+<h2 class="anchored" data-anchor-id="premiers-calculs">Premiers calculs</h2>
+<p>Dans votre classe, les notes sont de 12, 15, 13 et 8.</p>
+<p>Calculez la moyenne.</p>
+<p>Expliquez le code produit.</p>
+<div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>notes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">13</span>, <span class="dv">8</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(notes)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
+<pre><code>[1] 12</code></pre>
 </div>
-</div>
-<p>Le symbole <code>&gt;</code> réapparaît, et nous pouvons lancer d’autres opérations :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5-7</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"La moyenne est de : "</span>, <span class="fu">mean</span>(notes))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -2</code></pre>
+<pre><code>[1] "La moyenne est de : "</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="sc">*</span><span class="dv">12</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 48</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">10</span><span class="sc">/</span><span class="dv">3</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -3.333333</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">^</span><span class="dv">2</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 25</code></pre>
-</div>
-</div>
-</section>
-<section id="addition-sousraction-multiplication-et-division" class="level2">
-<h2 class="anchored" data-anchor-id="addition-sousraction-multiplication-et-division">Addition, Sousraction, Multiplication et Division</h2>
-<table class="caption-top table">
-<caption>Principales opérations arithmétiques</caption>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Math</th>
-<th style="text-align: center;">code <code>R</code></th>
-<th style="text-align: center;">Résultat</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(3 + 2\)</span></td>
-<td style="text-align: center;"><code>3 + 2</code></td>
-<td style="text-align: center;">5</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(3 - 2\)</span></td>
-<td style="text-align: center;"><code>3 - 2</code></td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(3 \times 2\)</span></td>
-<td style="text-align: center;"><code>3 * 2</code></td>
-<td style="text-align: center;">6</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(3 \div 2\)</span></td>
-<td style="text-align: center;"><code>3 / 2</code></td>
-<td style="text-align: center;">1.5</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="exposants" class="level2">
-<h2 class="anchored" data-anchor-id="exposants">Exposants</h2>
-<table class="caption-top table">
-<caption>Utilisation des puissances</caption>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Math</th>
-<th style="text-align: center;">code <code>R</code></th>
-<th style="text-align: center;">Résultat</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(3^2\)</span></td>
-<td style="text-align: center;"><code>3 ^ 2</code></td>
-<td style="text-align: center;">9</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(2^{(-3)}\)</span></td>
-<td style="text-align: center;"><code>2 ^ (-3)</code></td>
-<td style="text-align: center;">0.125</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(100^{1/2}\)</span></td>
-<td style="text-align: center;"><code>100 ^ (1 / 2)</code></td>
-<td style="text-align: center;">10</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(10^2\)</span></td>
-<td style="text-align: center;"><code>1e2</code></td>
-<td style="text-align: center;">100</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\sqrt{100}\)</span></td>
-<td style="text-align: center;"><code>sqrt(100)</code></td>
-<td style="text-align: center;">10</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="constantes-mathématiques" class="level2">
-<h2 class="anchored" data-anchor-id="constantes-mathématiques">Constantes mathématiques</h2>
-<table class="caption-top table">
-<caption>Constantes mathématiques</caption>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Math</th>
-<th style="text-align: center;">code <code>R</code></th>
-<th style="text-align: center;">Résultat</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\pi\)</span></td>
-<td style="text-align: center;"><code>pi</code></td>
-<td style="text-align: center;"><code>3.141593</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(e\)</span></td>
-<td style="text-align: center;"><code>exp(1)</code></td>
-<td style="text-align: center;"><code>2.718282</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="logarithmes" class="level2">
-<h2 class="anchored" data-anchor-id="logarithmes">Logarithmes</h2>
-<p>Il n’y a pas de <code>ln()</code> dans <code>R</code>, mais on utilise <code>log()</code> pour désigner le logarithme naturel.<br>
-<code>log10()</code> désigne le logarithme en base 10.<br>
-<code>log(x, base)</code> désigne le logarithme en <code>base</code> quelconque.</p>
-<table class="caption-top table">
-<caption>Logarithmes dans R</caption>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Math</th>
-<th style="text-align: center;">code <code>R</code></th>
-<th style="text-align: center;">Résultat</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\ln(e)\)</span></td>
-<td style="text-align: center;"><code>log(exp(1))</code></td>
-<td style="text-align: center;"><code>1</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\log_{10}(1000)\)</span></td>
-<td style="text-align: center;"><code>log10(1000)</code></td>
-<td style="text-align: center;"><code>3</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\log_{10}(1000)\)</span></td>
-<td style="text-align: center;"><code>log(1000, 10)</code></td>
-<td style="text-align: center;"><code>3</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="trigonometrie" class="level2">
-<h2 class="anchored" data-anchor-id="trigonometrie">Trigonometrie</h2>
-<table class="caption-top table">
-<caption>Fonctions trigonométriques</caption>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Math</th>
-<th style="text-align: center;">code <code>R</code></th>
-<th style="text-align: center;">Résultat</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\sin(\pi / 2)\)</span></td>
-<td style="text-align: center;"><code>sin(pi / 2)</code></td>
-<td style="text-align: center;"><code>1</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\cos(0)\)</span></td>
-<td style="text-align: center;"><code>cos(0)</code></td>
-<td style="text-align: center;"><code>1</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="espaces-et-codage" class="level2">
-<h2 class="anchored" data-anchor-id="espaces-et-codage">Espaces et codage</h2>
-<p>À de rares exceptions près, les espaces autour des commandes ne sont pas pris en compte. Les 3 commandes suivantes sont équivalentes :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span><span class="sc">+</span><span class="dv">2</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>       <span class="sc">+</span>         <span class="dv">2</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>La pratique standard est d’utiliser la deuxième ligne, afin d’avoir un code lisible.</p>
-</section>
-<section id="r-bloqué" class="level2">
-<h2 class="anchored" data-anchor-id="r-bloqué">R bloqué</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">4</span> <span class="sc">*</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="{notes}">
-<p>Il peut arriver qu’on saisisse une commande incomplète. <code>R</code> remplace alors l’invite de commande <code>&gt;</code> par un <code>+</code>. Il attend qu’on lui donne des instructions.</p>
-<p>On peut compléter la commande et appuyer sur <code>Entrée</code> ou annuler tout et appuyer sur <code>Echap</code> pour retourner à une invite de commande normale</p>
-</div>
-</section>
-</section>
-<section id="objets" class="level1">
-<h1>Objets</h1>
-<section id="objets-1" class="level2">
-<h2 class="anchored" data-anchor-id="objets-1">Objets</h2>
-<p>Nous savons utiliser <code>R</code> comme une calculatrice, pour une utilisation plus avancée, on peut stocker le résultat d’un calcul dans un <strong>objet</strong> à l’aide de l’opérateur d’assignation <code>&lt;-</code>. Cette “flèche” stocke ce qu’il y a à sa droite dans un objet dont le nom est indiqué à sa gauche.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Se lit “prend la valeur 2 et mets la dans un objet qui s’appelle <code>x</code>”.</p>
-</section>
-<section id="afficher-la-valeur-dun-objet" class="level2">
-<h2 class="anchored" data-anchor-id="afficher-la-valeur-dun-objet">Afficher la valeur d’un objet</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<div class="notes">
-<p>Lors d’une opération d’assignation, R n’affiche pas le résultat de l’opération. Si on exécute une commande comportant juste le nom d’un objet, <code>R</code> affiche son contenu. Bien indiquer aux étudiants que l’assignation entraîne un non affichage du résultat.</p>
-</div>
-</section>
-<section id="utilisation-dun-objet" class="level2">
-<h2 class="anchored" data-anchor-id="utilisation-dun-objet">Utilisation d’un objet</h2>
-<p>On peut évidemment réutiliser cet objet dans d’autres opérations : <code>R</code> le remplacera alors par sa valeur.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x<span class="sc">+</span><span class="dv">4</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 6</code></pre>
-</div>
-</div>
-<hr>
-<p>On peut créer autant d’objets qu’on le souhaite.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>resultat <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>resultat</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 7</code></pre>
-</div>
-</div>
-<hr>
-<p>Si on assigne une nouvelle valeur à un objet, la valeur précédente est perdue.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
-</div>
-<hr>
-<p>Assigner un objet à un autre copie juste la valeur de l’objet de droite dans celui de gauche</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> y</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="types" class="level1">
-<h1>Types</h1>
-<section id="chaîne-de-caractères" class="level2">
-<h2 class="anchored" data-anchor-id="chaîne-de-caractères">Chaîne de caractères</h2>
-<p>Les objets peuvent contenir tout un tas d’informations. Les valeurs prises peuvent être de différentes <strong>types</strong>.</p>
-<p>Jusqu’ici on n’a stocké que des nombres, mais ils peuvent aussi contenir des <em>chaînes de caractères</em> (du texte), qu’on délimite avec des guillemets simples ou doubles (<code>'</code> ou <code>"</code>) :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>chien <span class="ot">&lt;-</span> <span class="st">"Chihuahua"</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>chien</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Chihuahua"</code></pre>
-</div>
-</div>
-</section>
-<section id="conditions-logiques-booléens" class="level2">
-<h2 class="anchored" data-anchor-id="conditions-logiques-booléens">Conditions logiques (booléens)</h2>
-<p>Ou des <em>conditions logiques</em> (<code>TRUE</code> ou <code>FALSE</code>) basées sur des comparaisons :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>valeur <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>valeur</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>chien <span class="sc">==</span> <span class="st">"Doberman"</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">&lt;</span><span class="dv">2</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-<p>On appelle <code>TRUE</code> et <code>FALSE</code> des booléens.</p>
-</section>
-<section id="opérateurs-logiques" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="opérateurs-logiques">Opérateurs logiques</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 35%">
-<col style="width: 35%">
-<col style="width: 13%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Opérateur</th>
-<th style="text-align: center;">Résumé</th>
-<th style="text-align: center;">Exemple</th>
-<th style="text-align: center;">Résultat</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>x &lt; y</code></td>
-<td style="text-align: center;"><code>x</code> plus petit que <code>y</code></td>
-<td style="text-align: center;"><code>3 &lt; 42</code></td>
-<td style="text-align: center;">TRUE</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>x &gt; y</code></td>
-<td style="text-align: center;"><code>x</code> plus grand que <code>y</code></td>
-<td style="text-align: center;"><code>3 &gt; 42</code></td>
-<td style="text-align: center;">FALSE</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>x &lt;= y</code></td>
-<td style="text-align: center;"><code>x</code> plus petit ou égal à <code>y</code></td>
-<td style="text-align: center;"><code>3 &lt;= 42</code></td>
-<td style="text-align: center;">TRUE</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>x &gt;= y</code></td>
-<td style="text-align: center;"><code>x</code> plus grand ou égal à <code>y</code></td>
-<td style="text-align: center;"><code>3 &gt;= 42</code></td>
-<td style="text-align: center;">FALSE</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>x == y</code></td>
-<td style="text-align: center;"><code>x</code> égal à <code>y</code></td>
-<td style="text-align: center;"><code>3 == 42</code></td>
-<td style="text-align: center;">FALSE</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>x != y</code></td>
-<td style="text-align: center;"><code>x</code> non égal à <code>y</code></td>
-<td style="text-align: center;"><code>3 != 42</code></td>
-<td style="text-align: center;">TRUE</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>!x</code></td>
-<td style="text-align: center;">non <code>x</code></td>
-<td style="text-align: center;"><code>!(3 &gt; 42)</code></td>
-<td style="text-align: center;">TRUE</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>x | y</code></td>
-<td style="text-align: center;"><code>x</code> ou <code>y</code></td>
-<td style="text-align: center;"><code>(3 &gt; 42) || TRUE</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
-<td style="text-align: center;">TRUE</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>x &amp; y</code></td>
-<td style="text-align: center;"><code>x</code> et <code>y</code></td>
-<td style="text-align: center;"><code>(3 &lt; 4) &amp;&amp; ( 42 &gt; 13)</code><sup>1</sup></td>
-<td style="text-align: center;">TRUE</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="vecteurs" class="level2">
-<h2 class="anchored" data-anchor-id="vecteurs">Vecteurs</h2>
-<p>Ou des <strong>vecteurs</strong>. Imaginons qu’on a demandé la taille en centimètres de 5 personnes et qu’on souhaite calculer leur taille moyenne. On stocke l’ensemble de nos tailles dans un seul objet, un <strong>vecteur</strong>, avec la syntaxe suivante :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>tailles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">164</span>, <span class="dv">197</span>, <span class="dv">147</span>, <span class="dv">173</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>où le <code>c()</code> veut dire “combine les valeurs suivantes dans un vecteur”.</p>
-<hr>
-<p>Si on affiche le contenu de cet objet, on voit qu’il contient bien l’ensemble des tailles saisies.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>tailles</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 156 164 197 147 173</code></pre>
-</div>
-</div>
-</section>
-<section id="opérations-sur-les-vecteurs" class="level2">
-<h2 class="anchored" data-anchor-id="opérations-sur-les-vecteurs">Opérations sur les vecteurs</h2>
-<p>L’avantage d’un vecteur est que lorsqu’on lui applique une opération, celle-ci s’applique à toutes les valeurs qu’il contient. Ainsi, si on veut la taille en mètres plutôt qu’en centimètres :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>tailles_m <span class="ot">&lt;-</span> tailles <span class="sc">/</span> <span class="dv">100</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>tailles_m</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.56 1.64 1.97 1.47 1.73</code></pre>
-</div>
-</div>
-<p>…</p>
-<p>Cela fonctionne pour toutes les opérations de base.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>tailles <span class="sc">+</span> <span class="dv">10</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 166 174 207 157 183</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>tailles<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 24336 26896 38809 21609 29929</code></pre>
-</div>
-</div>
-</section>
-<section id="opérations-vectorielles" class="level2">
-<h2 class="anchored" data-anchor-id="opérations-vectorielles">Opérations vectorielles</h2>
-<p>Imaginons maintenant qu’on a aussi demandé aux cinq mêmes personnes leur poids en kilos. On peut créer un deuxième vecteur :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>poids <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">59</span>, <span class="dv">110</span>, <span class="dv">44</span>, <span class="dv">88</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>…</p>
-<p>On peut alors effectuer des calculs utilisant nos deux vecteurs <code>tailles</code> et <code>poids</code>. On peut par exemple calculer l’indice de masse corporelle (IMC) de chacun de nos enquêtés en divisant leur poids en kilo par leur taille en mètre au carré :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>imc <span class="ot">&lt;-</span> poids <span class="sc">/</span> (tailles <span class="sc">/</span> <span class="dv">100</span>) <span class="sc">^</span> <span class="dv">2</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>imc</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 18.49112 21.93635 28.34394 20.36189 29.40292</code></pre>
-</div>
-</div>
-</section>
-<section id="autre-type-dans-un-vecteur" class="level2">
-<h2 class="anchored" data-anchor-id="autre-type-dans-un-vecteur">Autre type dans un vecteur</h2>
-<p>Un vecteur peut contenir n’importe quel type d’objet.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>diplome <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"CAP"</span>, <span class="st">"Bac"</span>, <span class="st">"Bac+2"</span>, <span class="st">"CAP"</span>, <span class="st">"Bac+3"</span>)</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>diplome</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "CAP"   "Bac"   "Bac+2" "CAP"   "Bac+3"</code></pre>
-</div>
-</div>
-<div class="notes">
-<p>Imaginons qu’on a demandé aux 5 mêmes personnes leur niveau de diplôme : on peut regrouper l’information dans un vecteur de <em>chaînes de caractères</em>. Une chaîne de caractère contient du texte libre, délimité par des guillemets simples ou doubles.</p>
-</div>
-</section>
-<section id="vecteurs-de-nombres-consécutifs" class="level2">
-<h2 class="anchored" data-anchor-id="vecteurs-de-nombres-consécutifs">Vecteurs de nombres consécutifs</h2>
-<p>L’opérateur <code>:</code>, lui, permet de générer rapidement un vecteur comprenant tous les nombres entre deux valeurs, opération assez courante sous R :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-</div>
-</div>
-</section>
-<section id="accès-à-un-élément" class="level2">
-<h2 class="anchored" data-anchor-id="accès-à-un-élément">Accès à un élément</h2>
-<p>Enfin, notons qu’on peut accéder à un élément particulier d’un vecteur en faisant suivre le nom du vecteur de crochets contenant le numéro de l’élément désiré.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>diplome[<span class="dv">2</span>]</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Bac"</code></pre>
-</div>
-</div>
-<p>Cette opération, qui utilise l’opérateur <code>[]</code>, permet donc la sélection d’éléments d’un vecteur.</p>
-</section>
-<section id="vecteurs-dans-la-console" class="level2">
-<h2 class="anchored" data-anchor-id="vecteurs-dans-la-console">Vecteurs dans la console</h2>
-<p>Dernière remarque, si on affiche dans la console un vecteur avec beaucoup d’éléments, ceux-ci seront répartis sur plusieurs lignes. Par exemple, si on a un vecteur de 50 nombres on peut obtenir quelque chose comme :</p>
-<pre><code> [1] 294 425 339 914 114 896 716 648 915 587 181 926 489
-[14] 848 583 182 662 888 417 133 146 322 400 698 506 944
-[27] 237 324 333 443 487 658 793 288 897 588 697 439 697
-[40] 914 694 126 969 744 927 337 439 226 704 635</code></pre>
-<p>R ajoute systématiquement un nombre entre crochets au début de chaque ligne : il s’agit en fait de la position du premier élément de la ligne dans le vecteur. Ainsi, le 848 de la deuxième ligne est le 14e élément du vecteur, le 914 de la dernière ligne est le 40e, etc.</p>
-<p>Ceci explique le <code>[1]</code> qu’on obtient quand on affiche un simple nombre<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> :</p>
-<pre><code> [1] 4</code></pre>
-</section>
-<section id="listes" class="level2">
-<h2 class="anchored" data-anchor-id="listes">Listes</h2>
-<p>Les éléments d’un vecteur sont forcément du même types. Si on veut mélanger le poids et le nom de différents chiens dans un même vecteur, le résultat n’est pas vraiment ce que vous attendez.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>chiens <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Chihuahua"</span>, <span class="dv">5</span>, <span class="st">"Doberman"</span>, <span class="dv">15</span>)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>chiens</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Chihuahua" "5"         "Doberman"  "15"       </code></pre>
-</div>
-</div>
-<div class="notes">
-<p>Remarquer que <code>R</code> met des guillemets autour des nombres : il les a transformés en chaînes de caractères.</p>
-</div>
-<hr>
-<p>Pour pouvoir combiner des nombres et des chaînes de caractères, il faut utiliser des listes, à l’aide de la fonction <code>list()</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>liste_chiens <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"Chihuahua"</span>, <span class="dv">5</span>, <span class="st">"Doberman"</span>, <span class="dv">15</span>)</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>liste_chiens</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[1]]
-[1] "Chihuahua"
-
-[[2]]
-[1] 5
-
-[[3]]
-[1] "Doberman"
-
-[[4]]
-[1] 15</code></pre>
-</div>
-</div>
-<p>Nous verrons les listes plus en détails plus tard. Remarquez à ce stade la présence de double crochets <code>[[ ]]</code>, qui nous indique que nous faisons face à une liste.</p>
-</section>
-</section>
-<section id="fonctions" class="level1">
-<h1>Fonctions</h1>
-<section id="une-fonction" class="level2">
-<h2 class="anchored" data-anchor-id="une-fonction">Une fonction</h2>
-<p>Formellement, une <strong>fonction</strong> a un <em>nom</em>, prend en entrée entre parenthèses des <em>arguments</em> et retourne un <em>résultat</em>.</p>
-<p>Par exemple, la fonction <em>length</em> permet de connaître la taille d’un vecteur.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(tailles)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
-</div>
-</section>
-<section id="arguments" class="level2">
-<h2 class="anchored" data-anchor-id="arguments">Arguments</h2>
-<p>Une fonction prend entre parenthèses un ou plusieurs <em>arguments</em>. Par exemple, la fonction <code>c</code> combine plusieurs éléments en un vecteur, et contient plusieurs arguments.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>tailles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">164</span>, <span class="dv">197</span>, <span class="dv">147</span>, <span class="dv">173</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="aide-sur-une-fonction" class="level2">
-<h2 class="anchored" data-anchor-id="aide-sur-une-fonction">Aide sur une fonction</h2>
-<p>On peut obtenir de l’aide sur un objet ou une fonction à l’aide de la fonction <code>help</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"mean"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>On peut aussi utiliser la version raccourcie <code>?mean</code></p>
-</section>
-</section>
-<section id="scripts" class="level1">
-<h1>Scripts</h1>
-<section id="scripts-1" class="level2">
-<h2 class="anchored" data-anchor-id="scripts-1">Scripts</h2>
-<p>Pour l’instant, nous avons tapé les commandes les unes après les autres dans la console (de manière “interactive”). Peu pratique pour réutiliser : on utilise un fichier, appeler script.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>tailles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">156</span>, <span class="dv">164</span>, <span class="dv">197</span>, <span class="dv">147</span>, <span class="dv">173</span>)</span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>poids <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">59</span>, <span class="dv">110</span>, <span class="dv">44</span>, <span class="dv">88</span>)</span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(tailles)</span>
-<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(poids)</span>
-<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>imc <span class="ot">&lt;-</span> poids <span class="sc">/</span> (tailles <span class="sc">/</span> <span class="dv">100</span>) <span class="sc">^</span> <span class="dv">2</span></span>
-<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(imc)</span>
-<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(imc)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-</section>
-<section id="paquets" class="level1">
-<h1>Paquets</h1>
-<section id="sec-packages" class="level2">
-<h2 class="anchored" data-anchor-id="sec-packages">Installer et charger des extensions (<em>packages</em>)</h2>
-<p>Extension diffusées sur un réseau de de serveurs nommé <a href="https://cran.r-project.org/">CRAN</a> (<em>Comprehensive R Archive Network</em>).</p>
-<p>Pour installer une extension, si on dispose d’une connexion Internet, on peut utiliser le bouton <em>Install</em> de l’onglet <em>Packages</em> de RStudio.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/rstudio_package_install.png" class="img-fluid figure-img"></p>
-<figcaption>Installer une extension</figcaption>
-</figure>
-</div>
-<p>Il suffit alors d’indiquer le nom de l’extension dans le champ <em>Package</em> et de cliquer sur <em>Install</em>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/rstudio_package_install2.png" class="img-fluid figure-img"></p>
-<figcaption>Installation d’une extension</figcaption>
-</figure>
-</div>
-</section>
-<section id="en-ligne-de-commande" class="level2">
-<h2 class="anchored" data-anchor-id="en-ligne-de-commande">En ligne de commande</h2>
-<p>On peut aussi installer des extensions en utilisant la fonction <code>install.packages()</code> directement dans la console. Par exemple, pour installer le <em>package</em> <code>questionr</code> on peut exécuter la commande :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"questionr"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Installer une extension via l’une des deux méthodes précédentes va télécharger l’ensemble des fichiers nécessaires depuis l’une des machines du CRAN, puis installer tout ça sur le disque dur de votre ordinateur. Vous n’avez besoin de le faire qu’une fois, comme vous le faites pour installer un programme sur votre Mac ou PC.</p>
-</section>
-<section id="charger-un-paquet" class="level2">
-<h2 class="anchored" data-anchor-id="charger-un-paquet">Charger un paquet</h2>
-<p>Une fois l’extension installée, il faut la “charger” avant de pouvoir utiliser les fonctions qu’elle propose. Ceci se fait avec la fonction <code>library</code>. Par exemple, pour pouvoir utiliser les fonctions de <code>questionr</code>, vous devrez exécuter la commande suivante :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(questionr)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Ainsi, on regroupe en général en début de script toute une série d’appels à <code>library</code> qui permettent de charger tous les packages utilisés dans le script. Quelque chose comme :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(questionr)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Si vous essayez d’exécuter une fonction d’une extension et que vous obtenez le message d’erreur <code>impossible de trouver la fonction</code>, c’est certainement parce que vous n’avez pas exécuté la commande <code>library</code> correspondante.</p>
-</section>
-</section>
-<section id="à-vous" class="level1">
-<h1>À vous !</h1>
-<section id="swirl" class="level2 scrollable">
-<h2 class="scrollable anchored" data-anchor-id="swirl">Swirl</h2>
-<p>Le moment est venu de mettre en pratique ce que nous avons vu.</p>
-<p>La première chose à faire est d’installer le paquet <code>swirl</code>. Pour cela, copier-coller les lignes suivantes dans la console et taper <code>Entrée</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'swirl'</span>)</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(swirl)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Nous allons maintenant indiquer à <code>swirl</code> que nous souhaitons le voir en français</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select_language</span>(<span class="st">'french'</span>, <span class="at">append_rprofile =</span> T)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="cours-et-leçons-swirl" class="level2">
-<h2 class="anchored" data-anchor-id="cours-et-leçons-swirl">Cours et leçons swirl</h2>
+<section id="notions" class="level1">
+<h1>Notions</h1>
+<section id="notions-1" class="level2 incremental">
+<h2 class="incremental anchored" data-anchor-id="notions-1">Notions</h2>
+<p>Ecrivez dans votre journal ce que vous avez compris (pas ce que vous a donné le LLM) aux notions suivantes :</p>
 <ul>
-<li><code>swirl</code> est un paquet <code>R</code> qui vous permet de vous exercer de manière interactive avec <code>R</code>.</li>
-<li>Vous pouvez vous procurer le cours sur Github, à cette adresse <a href="https://github.com/EliasBcd/InitiationR" class="uri">https://github.com/EliasBcd/InitiationR</a>. Vous pouvez le faire directement dans <code>R</code>, à l’aide de la commande suivante :</li>
+<li>Objet</li>
+<li>Assignation</li>
+<li>Types</li>
+<li>Fonctions</li>
+<li>Scripts</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install_course_github</span>(<span class="st">"EliasBcd"</span>, <span class="st">"InitiationR"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="notes">
+<p>Laissez du temps aux étudiants pour écrire et ensuite échangez sur ce qu’ils ont compris à ces différentes notions.</p>
 </div>
 </section>
-<section id="lancer-une-leçon" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="lancer-une-leçon">Lancer une leçon</h2>
-<p>Vous pouvez ensuite lancer le cours en tapant la commande suivante :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">swirl</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>L’invite de commande dialogue avec vous ! Elle vous demande un nom.<br>
-</li>
-<li>Tapez-le et gardez-le même tout au long du cours.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Appuyez sur <code>Entrée</code>.<br>
-</li>
-<li>Lisez bien ce qui apparait dans la console.</li>
-<li>Quand <code>R</code> vous demande choisir un cours, tapez le nombre correspondant au cours “InitiationR” et appuyez sur <code>Entrée</code>.</li>
-<li>Ensuite choisissez la première leçon (qui devrait être “Manipulations simples”).</li>
-<li>Suivez maintenant les instructions de R dans l’invite de commande.</li>
-</ul>
-</section>
-<section id="fin-dune-leçon" class="level2">
-<h2 class="anchored" data-anchor-id="fin-dune-leçon">Fin d’une leçon</h2>
-<p>À la fin d’une leçon, <code>swirl</code> va vous proposer de soumettre votre progression.</p>
-<p>Tapez le numéro correspondant à “Oui”, <code>R</code> devrait ouvrir votre navigateur internet sur une page Moodle ou vous pouvez soumettre le fichier <code>.txt</code> de la leçon que vous avez faites.</p>
-</section>
-<section id="réinstaller-un-cours" class="level2">
-<h2 class="anchored" data-anchor-id="réinstaller-un-cours">Réinstaller un cours</h2>
-<p>Si pour une raison ou pour une autre il y a besoin de réinstaller le cours, tapez les commande suivante :</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">uninstall_course</span>(<span class="st">"InitiationR"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Si <code>swirl</code> vous demande de confirmer, choisissez Oui.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install_course_github</span>(<span class="st">"EliasBcd"</span>, <span class="st">"InitiationR"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="remarque" class="level2">
+<h2 class="anchored" data-anchor-id="remarque">Remarque</h2>
+<p>Vous pouvez demander des exemples !</p>
 
 
 </section>
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notes de bas de page</h2>
-
-<ol>
-<li id="fn1"><p>On peut en fait utiliser <code>|</code> ou <code>||</code> et <code>&amp;</code> ou <code>&amp;&amp;</code>, mais leur comportement diffère avec des vecteurs. L’opérateur doublé est conçu pour les cas où il n’y a à gauche et a droite qu’une seule valeur logique (donc pas pour les vecteurs).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Et permet de constater que pour R, un nombre est un vecteur à un seul élément.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Votre numéro d’étudiant, ou votre prénom et votre nom, il faut que je puisse vous identifier par la suite.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
