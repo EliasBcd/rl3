@@ -16,29 +16,28 @@ website:
     contents:
       - text: "Index"
         href: index.qmd
-      - section: "Introduction à R et Rstudio"
+      - section: "Introduction à R et Rstudio et la programmation avec des LLMs"
         contents:
           - 01Introduction.qmd
           - 02Lecon1.qmd
-          - ControlFlow.qmd
-      - section: "Analyse de données"
-        contents:
-          - 03Donnees.qmd
-          - 04RepresentationsGraphiques.qmd
-      - section: "Exercices"
-        contents:
-          - Swirl.qmd
-          - Exercices.qmd
-          - Diamants.qmd
-      - section: "Cours avancés"
-        contents:
-          - Markdown.qmd
-          - TiragesAleatoires.qmd
+      #     - ControlFlow.qmd
+      # - section: "Analyse de données"
+      #   contents:
+      #     - 03Donnees.qmd
+      #     - 04RepresentationsGraphiques.qmd
+      # - section: "Exercices"
+      #   contents:
+      #     - Swirl.qmd
+      #     - Exercices.qmd
+      #     - Diamants.qmd
+      # - section: "Cours avancés"
+      #   contents:
+      #     - Markdown.qmd
+      #     - TiragesAleatoires.qmd
 
 format:
   html:
     theme: default
-    css: styles.css
     toc: true
 
 bibliography: 
