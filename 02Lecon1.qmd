@@ -50,9 +50,11 @@ print("La moyenne est de : ", mean(notes))
 
 # Notions
 
-## Notions {.incremental}
+## Notions
 
 Ecrivez dans votre journal ce que vous avez compris (pas ce que vous a donné le LLM) aux notions suivantes :
+
+:::  {.incremental}
 
 - Objet
 - Assignation
@@ -60,8 +62,14 @@ Ecrivez dans votre journal ce que vous avez compris (pas ce que vous a donné le
 - Fonctions
 - Scripts
 
+:::
+
 ::: {.notes}
+
 Laissez du temps aux étudiants pour écrire et ensuite échangez sur ce qu'ils ont compris à ces différentes notions.
+Diviser le temps entre les concepts.
+Discuter avec les étudiants de ce qu'ils demandent aux LLM, en particulier, demander si quelqu'un a pensé à demander une explication avec des exemples.
+
 :::
 
 ## Remarque

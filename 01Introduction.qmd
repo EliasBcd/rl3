@@ -14,8 +14,11 @@ format:
     smaller: false
     scrollable: true
     link-external-newwindow: true
+    output-file: slide-introduction.html
 execute: 
   cache: true
+format-links: [revealjs]
+lang: fr
 ---
 
 # Introduction 
