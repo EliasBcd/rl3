@@ -484,7 +484,7 @@
     "href": "ControlFlow.html#exemple-while-mais-pas-for",
     "title": "Boucle et évaluation conditionnelle",
     "section": "Exemple : while, mais pas for",
-    "text": "Exemple : while, mais pas for\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 53 jours avant de la vendre, au prix de 56€.\""
+    "text": "Exemple : while, mais pas for\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 19 jours avant de la vendre, au prix de 56€.\""
   },
   {
     "objectID": "slides-controlflow.html#introduction",
@@ -561,7 +561,7 @@
     "href": "slides-controlflow.html#exemple-while-mais-pas-for",
     "title": "Boucle et évaluation conditionnelle",
     "section": "Exemple : while, mais pas for",
-    "text": "Exemple : while, mais pas for\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 67 jours avant de la vendre, au prix de 44€.\""
+    "text": "Exemple : while, mais pas for\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 11 jours avant de la vendre, au prix de 56€.\""
   },
   {
     "objectID": "DiamantsCorrige.html",
@@ -771,7 +771,7 @@
     "href": "04RepresentationsGraphiques.html",
     "title": "Représentations graphiques",
     "section": "",
-    "text": "ggplot2 est une librairie qui permet de générer des graphiques avec une syntaxe cohérente et puissante. Elle nécessite l’apprentissage d’un “mini-langage” supplémentaire, mais permet la construction de graphiques complexes de manière efficace.\nUne des particularités de ggplot2 est qu’elle part du principe que les données relatives à un graphique sont stockées dans un tableau de données (data.frame, tibble ou autre).\nCe chapitre est élaboré à partir du chapitre 8 de Barnier et Kauffmann (2023).\n\n\n\nggplot2 est un paquet comme un autre, que l’on charge à l’aide de library\n\nlibrary(ggplot2)\n\n\n\n\nLes données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet questionr, que nous devons installer et charger.\n\ninstall.packages('questionr')\nlibrary(questionr)\n\nNous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction filter de la librairie tidyverse.\n\ndata(rp2018)\n\nrp &lt;- filter(\n  rp2018,\n  departement %in% c(\"Oise\", \"Rhône\", \"Hauts-de-Seine\", \"Lozère\", \"Bouches-du-Rhône\")\n)\n\n\n\n\nUn graphique ggplot2 s’initialise à l’aide de la fonction ggplot(). Les données sont toujours issues d’un tableau de données, qu’on passe en argument data à la fonction ggplot.\n\nggplot(data = rp)\nggplot(rp) ## Equivalent au premier et généralement utilisé\n\n\n\n\nIl faut ajouter des éléments de représentation graphique. Ces éléments sont appelés des geom et on les ajoute à l’objet graphique de base avec l’opérateur +.\nUne des geom les plus simples est geom_histogram :\n\nggplot(rp) + geom_histogram()\n\n\n\n\nReste à indiquer quelle donnée nous voulons représenter sous forme d’histogramme. Cela se fait à l’aide d’arguments passés via la fonction aes(). Ici, nous avons un paramètre à renseigner, x, qui indique la variable à représenter sur l’axe des x (l’axe horizontal).\n\n\nAinsi, si on souhaite représenter la distribution des communes du jeu de données selon le pourcentage de cadres dans leur population active (variable cadres) :\n\nggplot(rp) + geom_histogram(aes(x = cadres))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\n\nSi on veut représenter une autre variable, il suffit de changer la valeur de x :\n\nggplot(rp) + geom_histogram(aes(x = ouvr))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPour représenter un graphique, il faut :\n\nDes données (argument data de ggplot())\nUn type de représentation (histogramme, ligne, point, etc) donné par geom_xxxx où xxxx est le type de représentation recherché.\nUne ou des variables à représenter (argument aes() dans geom_xxxx)\n\nOn lie les différentes commandes à l’aide de l’opérateur +."
+    "text": "ggplot2 est une librairie qui permet de générer des graphiques avec une syntaxe cohérente et puissante. Elle nécessite l’apprentissage d’un “mini-langage” supplémentaire, mais permet la construction de graphiques complexes de manière efficace.\nUne des particularités de ggplot2 est qu’elle part du principe que les données relatives à un graphique sont stockées dans un tableau de données (data.frame, tibble ou autre).\nCe chapitre est élaboré à partir du chapitre 8 de Barnier et Kauffmann (2023).\n\n\n\nggplot2 est un paquet comme un autre, que l’on charge à l’aide de library\n\nlibrary(ggplot2)\n\n\n\n\nLes données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet questionr, que nous devons installer et charger.\n\ninstall.packages('questionr')\nlibrary(questionr)\n\nNous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction filter de la librairie tidyverse.\n\ndata(rp2018)\n\nrp &lt;- filter(\n  rp2018,\n  departement %in% c(\"Oise\", \"Rhône\", \"Hauts-de-Seine\", \"Lozère\", \"Bouches-du-Rhône\")\n)\n\n\n\n\nUn graphique ggplot2 s’initialise à l’aide de la fonction ggplot(). Les données sont toujours issues d’un tableau de données, qu’on passe en argument data à la fonction ggplot.\n\nggplot(data = rp)\nggplot(rp) ## Equivalent au premier et généralement utilisé\n\n\n\n\nIl faut ajouter des éléments de représentation graphique. Ces éléments sont appelés des geom et on les ajoute à l’objet graphique de base avec l’opérateur +.\nUne des geom les plus simples est geom_histogram :\n\nggplot(rp) + geom_histogram()\n\n\n\n\nReste à indiquer quelle donnée nous voulons représenter sous forme d’histogramme. Cela se fait à l’aide d’arguments passés via la fonction aes(). Ici, nous avons un paramètre à renseigner, x, qui indique la variable à représenter sur l’axe des x (l’axe horizontal).\n\n\nAinsi, si on souhaite représenter la distribution des communes du jeu de données selon le pourcentage de cadres dans leur population active (variable cadres) :\n\nggplot(rp) + geom_histogram(aes(x = cadres))\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\n\n\nSi on veut représenter une autre variable, il suffit de changer la valeur de x :\n\nggplot(rp) + geom_histogram(aes(x = ouvr))\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPour représenter un graphique, il faut :\n\nDes données (argument data de ggplot())\nUn type de représentation (histogramme, ligne, point, etc) donné par geom_xxxx où xxxx est le type de représentation recherché.\nUne ou des variables à représenter (argument aes() dans geom_xxxx)\n\nOn lie les différentes commandes à l’aide de l’opérateur +."
   },
   {
     "objectID": "04RepresentationsGraphiques.html#introduction-1",
@@ -813,7 +813,7 @@
     "href": "04RepresentationsGraphiques.html#esthétiques-quelles-données-sont-représentées",
     "title": "Représentations graphiques",
     "section": "",
-    "text": "Reste à indiquer quelle donnée nous voulons représenter sous forme d’histogramme. Cela se fait à l’aide d’arguments passés via la fonction aes(). Ici, nous avons un paramètre à renseigner, x, qui indique la variable à représenter sur l’axe des x (l’axe horizontal).\n\n\nAinsi, si on souhaite représenter la distribution des communes du jeu de données selon le pourcentage de cadres dans leur population active (variable cadres) :\n\nggplot(rp) + geom_histogram(aes(x = cadres))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\n\nSi on veut représenter une autre variable, il suffit de changer la valeur de x :\n\nggplot(rp) + geom_histogram(aes(x = ouvr))\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "Reste à indiquer quelle donnée nous voulons représenter sous forme d’histogramme. Cela se fait à l’aide d’arguments passés via la fonction aes(). Ici, nous avons un paramètre à renseigner, x, qui indique la variable à représenter sur l’axe des x (l’axe horizontal).\n\n\nAinsi, si on souhaite représenter la distribution des communes du jeu de données selon le pourcentage de cadres dans leur population active (variable cadres) :\n\nggplot(rp) + geom_histogram(aes(x = cadres))\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\n\n\nSi on veut représenter une autre variable, il suffit de changer la valeur de x :\n\nggplot(rp) + geom_histogram(aes(x = ouvr))\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`."
   },
   {
     "objectID": "04RepresentationsGraphiques.html#en-résumé",
@@ -929,7 +929,7 @@
     "href": "slide-introduction.html#sondage",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Sondage 📊",
-    "text": "Sondage 📊\nLevez la main si vous avez déjà…\n\nUtilisé un LLM (ChatGPT, Claude, etc) ? 🙋‍♀️\nDemandé leur aide pour un devoir ? 📝\nCopié-collé une de leur réponse sans la comprendre ? 😅\nFait confiance aveuglément à un LLM ? 🤖\nPayé pour un LLM ?\nProgrammé dans n’importe quel langage de programmation ? 💻\n\nPas de jugement ! 😊",
+    "text": "Sondage 📊\nLevez la main si vous avez déjà (Pas de jugement ! 😊)…\n\nUtilisé un LLM (ChatGPT, Claude, etc) ? 🙋‍♀️\nDemandé leur aide pour un devoir ? 📝\nCopié-collé une de leur réponse sans la comprendre ? 😅\nFait confiance aveuglément à un LLM ? 🤖\nPayé pour un LLM ?\nProgrammé dans n’importe quel langage de programmation ? 💻",
     "crumbs": [
       "Introduction à R et Rstudio et la programmation avec des LLMs",
       "Apprendre la Programmation R avec les LLM"
@@ -940,7 +940,7 @@
     "href": "slide-introduction.html#que-va-t-on-apprendre",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Que va-t-on apprendre ?",
-    "text": "Que va-t-on apprendre ?\nQue faites-vous ?\n\nL’approche ici\n\nPoser les BONNES questions\nVérifier et corriger les erreurs\nComprendre les réponses\nUtiliser le LLM comme partenaire\n\n\n\nObjectif : Autonomie et esprit critique\n\n\nIci, demander des exemples de ce qu’ils font",
+    "text": "Que va-t-on apprendre ?\nComment utilisez-vous des LLMs ?\n\nL’approche ici\n\nPoser les BONNES questions\nVérifier et corriger les erreurs\nComprendre les réponses\nUtiliser le LLM comme partenaire\n\n\n\nObjectif : Autonomie et esprit critique\n\n\nIci, demander des exemples de ce qu’ils font",
     "crumbs": [
       "Introduction à R et Rstudio et la programmation avec des LLMs",
       "Apprendre la Programmation R avec les LLM"
@@ -951,7 +951,7 @@
     "href": "slide-introduction.html#démonstration-prompt",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Démonstration : Prompt",
-    "text": "Démonstration : Prompt\n\n\nPrompt 1\n\"Fais-moi des statistiques sur mes données\"\n\nProblème : Trop vague !\nQuelles données ?\nQuelles statistiques ?\nQuel format de sortie ?\n\n\nPrompt 2\n\"J'ai 10 notes d'étudiants : \n12, 15, 18, 14, 16, 13, 17, 11, 19, 15.\nCalcule la moyenne, médiane, écart-type\nen R avec des commentaires explicatifs.\"\nRésultat : Code précis et commenté !\n\n\nProposer aux étudiants de le faire eux-même.",
+    "text": "Démonstration : Prompt\n\n\nPrompt 1 (Essayez !)\n\"Fais-moi des statistiques sur mes données\"\n\nProblème : Trop vague !\nQuelles données ?\nQuelles statistiques ?\nQuel format de sortie ?\n\n\nPrompt 2\n\"J'ai 10 notes d'étudiants : \n12, 15, 18, 14, 16, 13, 17, 11, 19, 15.\nCalcule la moyenne, médiane et l'écart-type\nen R avec des commentaires explicatifs.\"\nRésultat : Code précis et commenté !\n\n\nProposer aux étudiants de le faire eux-même. Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le problème.",
     "crumbs": [
       "Introduction à R et Rstudio et la programmation avec des LLMs",
       "Apprendre la Programmation R avec les LLM"
@@ -1198,7 +1198,7 @@
     "href": "slides-markdown.html#yaml",
     "title": "Rapports : Markdown et Quarto",
     "section": "YAML",
-    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Fri Sep 12 17:26:53 2025 \""
+    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Tue Sep 16 14:52:46 2025 \""
   },
   {
     "objectID": "slides-markdown.html#formatage-du-texte",
@@ -1317,7 +1317,7 @@
     "href": "Markdown.html#yaml",
     "title": "Rapports : Markdown et Quarto",
     "section": "YAML",
-    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Fri Sep 12 17:26:50 2025 \""
+    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Tue Sep 16 14:52:43 2025 \""
   },
   {
     "objectID": "Markdown.html#formatage-du-texte",
@@ -1436,28 +1436,28 @@
     "href": "slide-lecon1.html#premiers-calculs",
     "title": "Premiers pas avec R",
     "section": "Premiers calculs",
-    "text": "Premiers calculs\nDans votre classe, les notes sont de 12, 15, 13 et 8.\nCalculez la moyenne.\nExpliquez le code produit.\n\n\nnotes &lt;- c(12, 15, 13, 8)\n\nmean(notes)\n\n[1] 12\n\nprint(\"La moyenne est de : \", mean(notes))\n\n[1] \"La moyenne est de : \""
+    "text": "Premiers calculs\n\nDans votre classe, les notes sont de 12, 15, 13 et 8.\nUtilisez R pour calculer la moyenne.\nExpliquez le code produit.\n\n\n\nnotes &lt;- c(12, 15, 13, 8)\n\nmean(notes)\n\n[1] 12\n\nprint(\"La moyenne est de : \", mean(notes))\n\n[1] \"La moyenne est de : \""
   },
   {
     "objectID": "slide-lecon1.html#notions-1",
     "href": "slide-lecon1.html#notions-1",
     "title": "Premiers pas avec R",
     "section": "Notions",
-    "text": "Notions\nEcrivez dans votre journal ce que vous avez compris (pas ce que vous a donné le LLM) aux notions suivantes :\n\nObjet\nAssignation\nTypes\nFonctions\nScripts\n\n\nLaissez du temps aux étudiants pour écrire et ensuite échangez sur ce qu’ils ont compris à ces différentes notions. Diviser le temps entre les concepts. Discuter avec les étudiants de ce qu’ils demandent aux LLM, en particulier, demander si quelqu’un a pensé à demander une explication avec des exemples."
+    "text": "Notions\nEcrivez dans votre journal le prompt que vous utilisez, la réponse du LLM, et ce que vous avez compris pour chacune des notions suivantes :\n\nObjet\nAssignation\nTypes\nFonctions\nScripts\n\n\nLaissez du temps aux étudiants pour écrire et ensuite échangez sur ce qu’ils ont compris à ces différentes notions. Diviser le temps entre les concepts. Discuter avec les étudiants de ce qu’ils demandent aux LLM, en particulier, demander si quelqu’un a pensé à demander une explication avec des exemples. Si besoin, demandez ensuite aux étudiants de s’expliquer entre eux ce qu’ils ont compris. Demandez à quelqu’un d’écrire au tableau de résultat."
   },
   {
     "objectID": "slide-lecon1.html#remarque",
     "href": "slide-lecon1.html#remarque",
     "title": "Premiers pas avec R",
     "section": "Remarque",
-    "text": "Remarque\nVous pouvez demander des exemples !"
+    "text": "Remarque\nVous pouvez demander des exemples !\n\nLaissez du temps à la fin de la séance pour écrire le journal."
   },
   {
     "objectID": "02Lecon1.html",
     "href": "02Lecon1.html",
     "title": "Premiers pas avec R",
     "section": "",
-    "text": "Demandez à votre LLM préférez comment utiliser R et Rstudio.\nDemandez lui de vous décrire l’interface.\n\n\n\nDans votre classe, les notes sont de 12, 15, 13 et 8.\nCalculez la moyenne.\nExpliquez le code produit.\n\n\nnotes &lt;- c(12, 15, 13, 8)\n\nmean(notes)\n\n[1] 12\n\nprint(\"La moyenne est de : \", mean(notes))\n\n[1] \"La moyenne est de : \"",
+    "text": "Demandez à votre LLM préférez comment utiliser R et Rstudio.\nDemandez lui de vous décrire l’interface.\n\n\n\n\nDans votre classe, les notes sont de 12, 15, 13 et 8.\nUtilisez R pour calculer la moyenne.\nExpliquez le code produit.\n\n\n\nnotes &lt;- c(12, 15, 13, 8)\n\nmean(notes)\n\n[1] 12\n\nprint(\"La moyenne est de : \", mean(notes))\n\n[1] \"La moyenne est de : \"",
     "crumbs": [
       "Introduction à R et Rstudio et la programmation avec des LLMs",
       "Premiers pas avec R"
@@ -1479,7 +1479,7 @@
     "href": "02Lecon1.html#premiers-calculs",
     "title": "Premiers pas avec R",
     "section": "",
-    "text": "Dans votre classe, les notes sont de 12, 15, 13 et 8.\nCalculez la moyenne.\nExpliquez le code produit.\n\n\nnotes &lt;- c(12, 15, 13, 8)\n\nmean(notes)\n\n[1] 12\n\nprint(\"La moyenne est de : \", mean(notes))\n\n[1] \"La moyenne est de : \"",
+    "text": "Dans votre classe, les notes sont de 12, 15, 13 et 8.\nUtilisez R pour calculer la moyenne.\nExpliquez le code produit.\n\n\n\nnotes &lt;- c(12, 15, 13, 8)\n\nmean(notes)\n\n[1] 12\n\nprint(\"La moyenne est de : \", mean(notes))\n\n[1] \"La moyenne est de : \"",
     "crumbs": [
       "Introduction à R et Rstudio et la programmation avec des LLMs",
       "Premiers pas avec R"
@@ -1490,7 +1490,7 @@
     "href": "02Lecon1.html#notions-1",
     "title": "Premiers pas avec R",
     "section": "Notions",
-    "text": "Notions\nEcrivez dans votre journal ce que vous avez compris (pas ce que vous a donné le LLM) aux notions suivantes :\n\n\nObjet\nAssignation\nTypes\nFonctions\nScripts\n\n\n\nLaissez du temps aux étudiants pour écrire et ensuite échangez sur ce qu’ils ont compris à ces différentes notions. Diviser le temps entre les concepts. Discuter avec les étudiants de ce qu’ils demandent aux LLM, en particulier, demander si quelqu’un a pensé à demander une explication avec des exemples.",
+    "text": "Notions\nEcrivez dans votre journal le prompt que vous utilisez, la réponse du LLM, et ce que vous avez compris pour chacune des notions suivantes :\n\n\nObjet\nAssignation\nTypes\nFonctions\nScripts\n\n\n\nLaissez du temps aux étudiants pour écrire et ensuite échangez sur ce qu’ils ont compris à ces différentes notions. Diviser le temps entre les concepts. Discuter avec les étudiants de ce qu’ils demandent aux LLM, en particulier, demander si quelqu’un a pensé à demander une explication avec des exemples. Si besoin, demandez ensuite aux étudiants de s’expliquer entre eux ce qu’ils ont compris. Demandez à quelqu’un d’écrire au tableau de résultat.",
     "crumbs": [
       "Introduction à R et Rstudio et la programmation avec des LLMs",
       "Premiers pas avec R"
@@ -1501,7 +1501,7 @@
     "href": "02Lecon1.html#remarque",
     "title": "Premiers pas avec R",
     "section": "Remarque",
-    "text": "Remarque\nVous pouvez demander des exemples !",
+    "text": "Remarque\nVous pouvez demander des exemples !\n\nLaissez du temps à la fin de la séance pour écrire le journal.",
     "crumbs": [
       "Introduction à R et Rstudio et la programmation avec des LLMs",
       "Premiers pas avec R"
@@ -1519,21 +1519,21 @@
     "href": "slides-randomdraws.html#sample",
     "title": "Tirages aléatoires",
     "section": "sample()",
-    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1]  4  9 10  1  3\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1."
+    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1] 7 9 4 3 5\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1."
   },
   {
     "objectID": "slides-randomdraws.html#exemple-simulation-de-pile-ou-face",
     "href": "slides-randomdraws.html#exemple-simulation-de-pile-ou-face",
     "title": "Tirages aléatoires",
     "section": "Exemple : simulation de pile ou face",
-    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"F\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"P\" \"P\" \"F\" \"P\" \"F\" \"P\" \"P\" \"F\" \"F\" \"P\" \"T\" \"F\" \"F\" \"P\" \"F\" \"F\" \"T\" \"F\" \"P\"\n[20] \"P\" \"P\" \"P\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"P\" \"T\" \"F\" \"F\" \"P\"\n[39] \"F\" \"P\" \"P\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\""
+    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"P\" \"P\" \"P\" \"T\" \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"F\" \"F\" \"P\"\n[20] \"F\" \"F\" \"F\" \"P\" \"P\" \"F\" \"F\" \"F\" \"F\" \"F\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"T\" \"F\"\n[39] \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\""
   },
   {
     "objectID": "slides-randomdraws.html#reproducibilité",
     "href": "slides-randomdraws.html#reproducibilité",
     "title": "Tirages aléatoires",
     "section": "Reproducibilité",
-    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"P\" \"P\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"F\" \"F\""
+    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"P\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"F\" \"P\" \"F\""
   },
   {
     "objectID": "slides-randomdraws.html#contrôler-le-tirage",
@@ -1603,21 +1603,21 @@
     "href": "TiragesAleatoires.html#sample",
     "title": "Tirages aléatoires",
     "section": "sample()",
-    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1] 9 8 2 7 6\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1."
+    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1]  7 10  8  2  4\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1."
   },
   {
     "objectID": "TiragesAleatoires.html#exemple-simulation-de-pile-ou-face",
     "href": "TiragesAleatoires.html#exemple-simulation-de-pile-ou-face",
     "title": "Tirages aléatoires",
     "section": "Exemple : simulation de pile ou face",
-    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"F\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"P\" \"F\" \"P\" \"P\" \"P\" \"F\" \"F\" \"P\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"F\" \"F\" \"P\" \"F\"\n[20] \"P\" \"F\" \"P\" \"F\" \"P\" \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"F\"\n[39] \"P\" \"P\" \"P\" \"F\" \"F\" \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\""
+    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"F\" \"P\" \"F\" \"T\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"T\" \"F\" \"F\"\n[20] \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"T\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\"\n[39] \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"F\" \"F\" \"P\" \"P\" \"P\" \"P\""
   },
   {
     "objectID": "TiragesAleatoires.html#reproducibilité",
     "href": "TiragesAleatoires.html#reproducibilité",
     "title": "Tirages aléatoires",
     "section": "Reproducibilité",
-    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"P\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"P\" \"P\""
+    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"F\" \"F\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\""
   },
   {
     "objectID": "TiragesAleatoires.html#contrôler-le-tirage",
@@ -1659,7 +1659,7 @@
     "href": "TiragesAleatoires.html#loi-uniforme",
     "title": "Tirages aléatoires",
     "section": "Loi uniforme",
-    "text": "Loi uniforme\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\nTrois lois uniformes différentes"
+    "text": "Loi uniforme\n\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\nTrois lois uniformes différentes"
   },
   {
     "objectID": "TiragesAleatoires.html#usage-2",
