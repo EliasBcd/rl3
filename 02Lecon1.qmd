@@ -30,11 +30,9 @@ Demandez lui de vous décrire l'interface.
 
 ## Premiers calculs
 
-Dans votre classe, les notes sont de 12, 15, 13 et 8.
-
-Calculez la moyenne.
-
-Expliquez le code produit.
+- Dans votre classe, les notes sont de 12, 15, 13 et 8.
+- Utilisez R pour calculer la moyenne.
+- Expliquez le code produit.
 
 ::: {.fragment}
 
@@ -52,7 +50,7 @@ print("La moyenne est de : ", mean(notes))
 
 ## Notions
 
-Ecrivez dans votre journal ce que vous avez compris (pas ce que vous a donné le LLM) aux notions suivantes :
+Ecrivez dans votre journal le prompt que vous utilisez, la réponse du LLM, et ce que vous avez compris pour chacune des notions suivantes :
 
 :::  {.incremental}
 
@@ -69,6 +67,8 @@ Ecrivez dans votre journal ce que vous avez compris (pas ce que vous a donné le
 Laissez du temps aux étudiants pour écrire et ensuite échangez sur ce qu'ils ont compris à ces différentes notions.
 Diviser le temps entre les concepts.
 Discuter avec les étudiants de ce qu'ils demandent aux LLM, en particulier, demander si quelqu'un a pensé à demander une explication avec des exemples.
+Si besoin, demandez ensuite aux étudiants de s'expliquer entre eux ce qu'ils ont compris.
+Demandez à quelqu'un d'écrire au tableau de résultat.
 
 :::
 
@@ -76,4 +76,6 @@ Discuter avec les étudiants de ce qu'ils demandent aux LLM, en particulier, dem
 
 Vous pouvez demander des exemples !
 
-
+::: {.notes}
+Laissez du temps à la fin de la séance pour écrire le journal.
+:::

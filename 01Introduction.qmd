@@ -15,6 +15,7 @@ format:
     scrollable: true
     link-external-newwindow: true
     output-file: slide-introduction.html
+    embed-resources: true
 execute: 
   cache: true
 format-links: [revealjs]
@@ -52,7 +53,7 @@ Programmer AVEC l'IA générative intelligemment
 
 ## Sondage 📊
 
-**Levez la main si vous avez déjà...**
+**Levez la main si vous avez déjà (Pas de jugement ! 😊)...**
 
 - Utilisé un LLM (ChatGPT, Claude, etc) ? 🙋‍♀️
 - Demandé leur aide pour un devoir ? 📝
@@ -61,7 +62,6 @@ Programmer AVEC l'IA générative intelligemment
 - Payé pour un LLM ? 
 - Programmé dans n'importe quel langage de programmation ? 💻
 
-**Pas de jugement ! 😊**
 
 # Pourquoi ce cours ? 🎯
 
@@ -69,7 +69,7 @@ Programmer AVEC l'IA générative intelligemment
 
 
 
-### Que faites-vous ?
+### Comment utilisez-vous des LLMs ?
 
 
 
@@ -97,12 +97,12 @@ Ici, demander des exemples de ce qu'ils font
 
 :::: {.columns}
 ::: {.column width="50%" .fragment}
-### Prompt 1
+### Prompt 1 (Essayez !)
 
 ```
 "Fais-moi des statistiques sur mes données"
 ```
-
+ 
 - Problème : Trop vague !
 - Quelles données ?
 - Quelles statistiques ?
@@ -115,7 +115,7 @@ Ici, demander des exemples de ce qu'ils font
 ```
 "J'ai 10 notes d'étudiants : 
 12, 15, 18, 14, 16, 13, 17, 11, 19, 15.
-Calcule la moyenne, médiane, écart-type
+Calcule la moyenne, médiane et l'écart-type
 en R avec des commentaires explicatifs."
 ```
 
@@ -125,6 +125,7 @@ en R avec des commentaires explicatifs."
 
 ::: {.notes}
 Proposer aux étudiants de le faire eux-même.
+Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le problème.
 :::
 
 
@@ -137,28 +138,34 @@ Proposer aux étudiants de le faire eux-même.
 
 
 
-# R ? 📊
+# R et Rstudio ? 📊
 
 ## R et RStudio : Vos nouveaux outils
 
 :::: {.columns}
-::: {.column width="50%"}
+
+::: {.column width="50%" .fragment }
+
 ### R = Le Moteur 🚗
 
 - Langage de programmation
 - Spécialisé en analyse de données
 - Dérive d'un langage antérieur appelé S <https://fr.wikipedia.org/wiki/S_(langage)>
 - Est un [logiciel libre](https://fr.wikipedia.org/wiki/Logiciel_libre)
+
 :::
 
-::: {.column width="50%"}
+::: {.column width="50%" .fragment }
+
 ### RStudio = L'Interface 🖥️
 
 - Environnement convivial
 - Facilite l'écriture de code R
 - Intègre tout en un endroit
 - Comme Word pour l'écriture
+
 :::
+
 ::::
 
 ## Exemples concrets d'usage 🌟
