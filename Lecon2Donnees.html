@@ -8,7 +8,7 @@
 
 <meta name="author" content="Elias Bouacida">
 
-<title>R Programming advanced – Initiation à R</title>
+<title>Séance 2 : Données et fonctions intégrées – Initiation à R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">R Programming advanced</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./slide-introduction.html">Introduction à R et Rstudio et la programmation avec des LLMs</a></li><li class="breadcrumb-item"><a href="./Lecon2Donnees.html">Séance 2 : Données et fonctions intégrées</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
@@ -135,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Lecon2Donnees.html" class="sidebar-item-text sidebar-link">
+  <a href="./Lecon2Donnees.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Séance 2 : Données et fonctions intégrées</span></a>
   </div>
 </li>
@@ -151,21 +151,27 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#basics" id="toc-basics" class="nav-link active" data-scroll-target="#basics">Basics</a></li>
-  <li><a href="#control-flow" id="toc-control-flow" class="nav-link" data-scroll-target="#control-flow">Control flow</a></li>
-  <li><a href="#rmarkdown" id="toc-rmarkdown" class="nav-link" data-scroll-target="#rmarkdown">RMarkdown</a></li>
-  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2">ggplot2</a></li>
-  <li><a href="#random-generation" id="toc-random-generation" class="nav-link" data-scroll-target="#random-generation">Random generation</a></li>
-  <li><a href="#solving-non-liner-equation" id="toc-solving-non-liner-equation" class="nav-link" data-scroll-target="#solving-non-liner-equation">Solving non-liner equation</a></li>
+  <li><a href="#plan-de-la-séance" id="toc-plan-de-la-séance" class="nav-link active" data-scroll-target="#plan-de-la-séance">Plan de la séance</a></li>
+  <li><a href="#objectif-de-la-séance" id="toc-objectif-de-la-séance" class="nav-link" data-scroll-target="#objectif-de-la-séance">Objectif de la séance</a></li>
+  <li><a href="#récap-et-partage" id="toc-récap-et-partage" class="nav-link" data-scroll-target="#récap-et-partage">Récap et partage</a>
+  <ul class="collapse">
+  <li><a href="#retours-sur-vos-premières-expériences" id="toc-retours-sur-vos-premières-expériences" class="nav-link" data-scroll-target="#retours-sur-vos-premières-expériences">Retours sur vos premières expériences</a></li>
+  </ul></li>
+  <li><a href="#données" id="toc-données" class="nav-link" data-scroll-target="#données">Données</a>
+  <ul class="collapse">
+  <li><a href="#données-météo" id="toc-données-météo" class="nav-link" data-scroll-target="#données-météo">Données météo</a></li>
+  <li><a href="#données-au-choix" id="toc-données-au-choix" class="nav-link" data-scroll-target="#données-au-choix">Données au choix</a></li>
+  </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="slide-lecon2.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./slide-introduction.html">Introduction à R et Rstudio et la programmation avec des LLMs</a></li><li class="breadcrumb-item"><a href="./Lecon2Donnees.html">Séance 2 : Données et fonctions intégrées</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">R Programming advanced</h1>
+<h1 class="title">Séance 2 : Données et fonctions intégrées</h1>
+<p class="subtitle lead">Apprendre R avec les LLMs</p>
 </div>
 
 
@@ -182,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">18 septembre 2025</p>
+      <p class="date">24 septembre 2025</p>
     </div>
   </div>
   
@@ -194,33 +200,72 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="basics" class="level2">
-<h2 class="anchored" data-anchor-id="basics">Basics</h2>
-<p>To start up with, you should be doing the <a href="https://github.com/swirldev/R_Programming_E">R_Programming_E</a> course using swirl(). You can say that you want to tell me what you did at the end, sending me a message at <a href="mailto:elias.bouacida@univ-paris8.fr">elias.bouacida@univ-paris8.fr</a>.</p>
-<p>This should give you the basics to move around R.</p>
+<section id="plan-de-la-séance" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="plan-de-la-séance">Plan de la séance</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Récap et partage</strong> (20min) : Retours sur ce que vous avez appris la semaine dernière</li>
+<li><strong>Dataset</strong> (60min) : Données météo</li>
+<li><strong>Debugging collectif</strong> (40min) :</li>
+<li><strong>Exploration fonctions built-in</strong> (60min) : <code>sum()</code>, <code>length()</code>, <code>min()</code>, <code>max()</code></li>
+<li><strong>Mini-projet individuel</strong> (40min) : Analyser des données de votre choix</li>
+</ul>
+</div>
+<p><strong>Production attendue :</strong> Analyse météo commentée + 3 fonctions maîtrisées</p>
 </section>
-<section id="control-flow" class="level2">
-<h2 class="anchored" data-anchor-id="control-flow">Control flow</h2>
-<p>Chapter 5 of <a href="https://adv-r.hadley.nz/control-flow.html">Advanced R programming</a> Do the exercises in it and send them to me afterwards.</p>
+<section id="objectif-de-la-séance" class="level2">
+<h2 class="anchored" data-anchor-id="objectif-de-la-séance">Objectif de la séance</h2>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Manipuler des collections de données et comprendre le concept de fonction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="incremental">
+<ul class="incremental">
+<li>Travailler avec des <strong>vecteurs</strong> (collections de données)</li>
+<li>Découvrir les <strong>fonctions built-in</strong> de R</li>
+<li>Apprendre à <strong>débugger</strong> avec l’aide des LLMs</li>
+<li>Gérer les <strong>données manquantes</strong> (NA)</li>
+</ul>
+</div>
 </section>
-<section id="rmarkdown" class="level2">
-<h2 class="anchored" data-anchor-id="rmarkdown">RMarkdown</h2>
-<p>The second important part of the learning is to learn how to use Rmarkdown to produce nice reports. There are many great resources to do so. The most comprehensive is the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/">Rmarkdown Cookbook</a>. I ask you to send me the exercises from this <a href="https://r4ds.had.co.nz/r-markdown.html">page</a>.</p>
+<section id="récap-et-partage" class="level1" data-background-color="#2E8B57">
+<h1 data-background-color="#2E8B57">Récap et partage</h1>
+<section id="retours-sur-vos-premières-expériences" class="level2">
+<h2 class="anchored" data-anchor-id="retours-sur-vos-premières-expériences">Retours sur vos premières expériences</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Qu’avez-vous compris des concepts de la semaine dernière ?</li>
+</ul>
+</div>
 </section>
-<section id="ggplot2" class="level2">
-<h2 class="anchored" data-anchor-id="ggplot2">ggplot2</h2>
-<p>You also need to learn how to plot data with R, using the ggplot2 package. Do the x first lessons offered here : <a href="https://wilkelab.org/SDS375/" class="uri">https://wilkelab.org/SDS375/</a></p>
 </section>
-<section id="random-generation" class="level2">
-<h2 class="anchored" data-anchor-id="random-generation">Random generation</h2>
-<p>Included in R_Programming_E</p>
-<p>Additional resource: Chapter 5.3 of the Pirate Guide to R <a href="https://bookdown.org/ndphillips/YaRrr/generating-random-data.html" class="uri">https://bookdown.org/ndphillips/YaRrr/generating-random-data.html</a></p>
+<section id="données" class="level1">
+<h1>Données</h1>
+<section id="données-météo" class="level2">
+<h2 class="anchored" data-anchor-id="données-météo">Données météo</h2>
+<p>Connectez-vous sur Moodle et téléchargez les données météo.</p>
+<p>Vous devez maintenant :</p>
+<ul>
+<li>Chargez les données dans Rstudio</li>
+<li>Calculez des statistiques sur la température : moyenne, médiane, minimum, maximum et écart-type.</li>
+<li>Quels autres variables sont présentes ?</li>
+</ul>
 </section>
-<section id="solving-non-liner-equation" class="level2">
-<h2 class="anchored" data-anchor-id="solving-non-liner-equation">Solving non-liner equation</h2>
-<p>TBD</p>
+<section id="données-au-choix" class="level2">
+<h2 class="anchored" data-anchor-id="données-au-choix">Données au choix</h2>
+<p>Aller sur <a href="https://www.data.gouv.fr/datasets">Data gouv</a> et choisissez des données à analyser.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

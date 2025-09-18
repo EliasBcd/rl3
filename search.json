@@ -403,368 +403,105 @@
     ]
   },
   {
-    "objectID": "ControlFlow.html",
-    "href": "ControlFlow.html",
-    "title": "Boucle et évaluation conditionnelle",
+    "objectID": "Lecon2Donnees.html",
+    "href": "Lecon2Donnees.html",
+    "title": "Séance 2 : Données et fonctions intégrées",
     "section": "",
-    "text": "2 outils pour contrôler l’évaluation :\n\nLes évaluations conditionnelles\nles boucles"
+    "text": "Récap et partage (20min) : Retours sur ce que vous avez appris la semaine dernière\nDataset (60min) : Données météo\nDebugging collectif (40min) :\nExploration fonctions built-in (60min) : sum(), length(), min(), max()\nMini-projet individuel (40min) : Analyser des données de votre choix\n\n\nProduction attendue : Analyse météo commentée + 3 fonctions maîtrisées",
+    "crumbs": [
+      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Séance 2 : Données et fonctions intégrées"
+    ]
   },
   {
-    "objectID": "ControlFlow.html#introduction",
-    "href": "ControlFlow.html#introduction",
-    "title": "Boucle et évaluation conditionnelle",
+    "objectID": "Lecon2Donnees.html#plan-de-la-séance",
+    "href": "Lecon2Donnees.html#plan-de-la-séance",
+    "title": "Séance 2 : Données et fonctions intégrées",
     "section": "",
-    "text": "2 outils pour contrôler l’évaluation :\n\nLes évaluations conditionnelles\nles boucles"
+    "text": "Récap et partage (20min) : Retours sur ce que vous avez appris la semaine dernière\nDataset (60min) : Données météo\nDebugging collectif (40min) :\nExploration fonctions built-in (60min) : sum(), length(), min(), max()\nMini-projet individuel (40min) : Analyser des données de votre choix\n\n\nProduction attendue : Analyse météo commentée + 3 fonctions maîtrisées",
+    "crumbs": [
+      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Séance 2 : Données et fonctions intégrées"
+    ]
   },
   {
-    "objectID": "ControlFlow.html#condition-if",
-    "href": "ControlFlow.html#condition-if",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Condition if",
-    "text": "Condition if\nDeux types de conditions if :\n\nif (condition) action_true\nif (condition) action_true else action_false"
+    "objectID": "Lecon2Donnees.html#objectif-de-la-séance",
+    "href": "Lecon2Donnees.html#objectif-de-la-séance",
+    "title": "Séance 2 : Données et fonctions intégrées",
+    "section": "Objectif de la séance",
+    "text": "Objectif de la séance\n\n\n\n\n\n\nAstuceManipuler des collections de données et comprendre le concept de fonction\n\n\n\n\n\n\n\n\nTravailler avec des vecteurs (collections de données)\nDécouvrir les fonctions built-in de R\nApprendre à débugger avec l’aide des LLMs\nGérer les données manquantes (NA)",
+    "crumbs": [
+      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Séance 2 : Données et fonctions intégrées"
+    ]
   },
   {
-    "objectID": "ControlFlow.html#condition-typique",
-    "href": "ControlFlow.html#condition-typique",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Condition typique",
-    "text": "Condition typique\nExemple :\n\nmention &lt;- function(x) {\n  if (x &gt; 16) {\n    \"Très bien\"\n  } else if (x &gt; 14) {\n    \"Bien\"\n  } else if (x &gt; 12) {\n    \"Assez bien\"\n  } else {\n    \"\"\n  }\n}\n\n\nif renvoie un résultat, il est donc possible d’assigner le résultat :\n\nx1 &lt;- if (TRUE) 1 else 2\nx2 &lt;- if (FALSE) 1 else 2\n\nc(x1, x2)\n\n[1] 1 2\n\n\nQuand else n’est pas explicitement renseigné mais la condition est fausse, if renvoie NULL."
+    "objectID": "Lecon2Donnees.html#retours-sur-vos-premières-expériences",
+    "href": "Lecon2Donnees.html#retours-sur-vos-premières-expériences",
+    "title": "Séance 2 : Données et fonctions intégrées",
+    "section": "Retours sur vos premières expériences",
+    "text": "Retours sur vos premières expériences\n\n\nQu’avez-vous compris des concepts de la semaine dernière ?",
+    "crumbs": [
+      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Séance 2 : Données et fonctions intégrées"
+    ]
   },
   {
-    "objectID": "ControlFlow.html#et-si-condition-nest-pas-true-ou-false",
-    "href": "ControlFlow.html#et-si-condition-nest-pas-true-ou-false",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Et si condition n’est pas TRUE ou FALSE ?",
-    "text": "Et si condition n’est pas TRUE ou FALSE ?\n\nif (\"x\") 1\n\nError in if (\"x\") 1: argument is not interpretable as logical\n\nif (logical()) 1\n\nError in if (logical()) 1: argument is of length zero\n\nif (NA) 1\n\nError in if (NA) 1: missing value where TRUE/FALSE needed\n\nif (c(TRUE, FALSE)) 1\n\nError in if (c(TRUE, FALSE)) 1: the condition has length &gt; 1"
+    "objectID": "Lecon2Donnees.html#données-météo",
+    "href": "Lecon2Donnees.html#données-météo",
+    "title": "Séance 2 : Données et fonctions intégrées",
+    "section": "Données météo",
+    "text": "Données météo\nConnectez-vous sur Moodle et téléchargez les données météo.\nVous devez maintenant :\n\nChargez les données dans Rstudio\nCalculez des statistiques sur la température : moyenne, médiane, minimum, maximum et écart-type.\nQuels autres variables sont présentes ?",
+    "crumbs": [
+      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Séance 2 : Données et fonctions intégrées"
+    ]
   },
   {
-    "objectID": "ControlFlow.html#if-vectoriel-ifelse",
-    "href": "ControlFlow.html#if-vectoriel-ifelse",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "if vectoriel : ifelse()",
-    "text": "if vectoriel : ifelse()\nDans le cas où vous avez besoin de conditions vectorielles, il faut utiliser ifelse() :\n\nx &lt;- 1:10\nifelse(x %% 5 == 0, \"XXX\", as.character(x))\n\n [1] \"1\"   \"2\"   \"3\"   \"4\"   \"XXX\" \"6\"   \"7\"   \"8\"   \"9\"   \"XXX\"\n\nifelse(x %% 2 == 0, \"even\", \"odd\")\n\n [1] \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\"\n\n\n\n\nLes valeurs manquantes seront propagées à la sortie"
+    "objectID": "Lecon2Donnees.html#données-au-choix",
+    "href": "Lecon2Donnees.html#données-au-choix",
+    "title": "Séance 2 : Données et fonctions intégrées",
+    "section": "Données au choix",
+    "text": "Données au choix\nAller sur Data gouv et choisissez des données à analyser.",
+    "crumbs": [
+      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Séance 2 : Données et fonctions intégrées"
+    ]
   },
   {
-    "objectID": "ControlFlow.html#switch",
-    "href": "ControlFlow.html#switch",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "switch()",
-    "text": "switch()\nOn peut remplacer ceci :\n\nx_option &lt;- function(x) {\n  if (x == \"a\") {\n    \"option 1\"\n  } else if (x == \"b\") {\n    \"option 2\" \n  } else if (x == \"c\") {\n    \"option 3\"\n  } else {\n    stop(\"Invalid `x` value\")\n  }\n}\n\nPar ceci :\n\nx_option &lt;- function(x) {\n  switch(x,\n    a = \"option 1\",\n    b = \"option 2\",\n    c = \"option 3\",\n    stop(\"Invalid `x` value\") \n  )\n}\n\nLe dernier composant de switch() doit renvoyer une erreur, sinon les conditions non vérifiées renverront NULL, ce qui est rarement le comportement désiré. C’est à ça que sert stop().\n\nPréciser l’utilisation de stop()"
+    "objectID": "slide-lecon2.html#plan-de-la-séance",
+    "href": "slide-lecon2.html#plan-de-la-séance",
+    "title": "Séance 2 : Données et fonctions intégrées",
+    "section": "Plan de la séance",
+    "text": "Plan de la séance\n\nRécap et partage (20min) : Retours sur ce que vous avez appris la semaine dernière\nDataset (60min) : Données météo\nDebugging collectif (40min) :\nExploration fonctions built-in (60min) : sum(), length(), min(), max()\nMini-projet individuel (40min) : Analyser des données de votre choix\n\nProduction attendue : Analyse météo commentée + 3 fonctions maîtrisées"
   },
   {
-    "objectID": "ControlFlow.html#boucles-for",
-    "href": "ControlFlow.html#boucles-for",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Boucles for",
-    "text": "Boucles for\nLa boucle la plus simple est la boucle for :\n\nfor (item in vecteur) action\n\nExemple :\n\nfor (i in 1:3) {\n  print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n\n\n\n\nAttention, contrairement à de nombreux langages, l’assignation à i se fait dans l’environnement courant, changeant la valeur de l’objet i s’il existe par ailleurs :\n\ni &lt;- 100\nfor (i in 1:3) {}\ni\n\n[1] 3"
+    "objectID": "slide-lecon2.html#objectif-de-la-séance",
+    "href": "slide-lecon2.html#objectif-de-la-séance",
+    "title": "Séance 2 : Données et fonctions intégrées",
+    "section": "Objectif de la séance",
+    "text": "Objectif de la séance\n\n\n\n\n\n\nManipuler des collections de données et comprendre le concept de fonction\n\n\n\n\n\n\n\nTravailler avec des vecteurs (collections de données)\nDécouvrir les fonctions built-in de R\nApprendre à débugger avec l’aide des LLMs\nGérer les données manquantes (NA)"
   },
   {
-    "objectID": "ControlFlow.html#interruption-anticipée",
-    "href": "ControlFlow.html#interruption-anticipée",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Interruption anticipée",
-    "text": "Interruption anticipée\nOn peut interrompre l’exécution d’une boucle for de manière anticipée :\n\nnext sort de l’itération actuelle ;\nbreak sort de la boucle for en entier.\n\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5"
+    "objectID": "slide-lecon2.html#retours-sur-vos-premières-expériences",
+    "href": "slide-lecon2.html#retours-sur-vos-premières-expériences",
+    "title": "Séance 2 : Données et fonctions intégrées",
+    "section": "Retours sur vos premières expériences",
+    "text": "Retours sur vos premières expériences\n\nQu’avez-vous compris des concepts de la semaine dernière ?"
   },
   {
-    "objectID": "ControlFlow.html#boucles-alternatives",
-    "href": "ControlFlow.html#boucles-alternatives",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Boucles alternatives",
-    "text": "Boucles alternatives\nQuand on ne sait pas les valeurs sur lesquelles on itère, on utilise :\n\nwhile(condition) action : l’action est effectuée tant que la condition est TRUE\nrepeat(action) : répète l’action indéfiniment (tant que break n’apparaît pas)\n\nfor est moins flexible que while qui est moins flexible que repeat, mais il vaut mieux utiliser la version la moins flexible.\nLe grand danger des boucles while et repeat est la boucle infinie : une boucle qui n’est jamais interrompue, entraînant le plantage de l’ordinateur par manque de mémoire."
+    "objectID": "slide-lecon2.html#données-météo",
+    "href": "slide-lecon2.html#données-météo",
+    "title": "Séance 2 : Données et fonctions intégrées",
+    "section": "Données météo",
+    "text": "Données météo\nConnectez-vous sur Moodle et téléchargez les données météo.\nVous devez maintenant :\n\nChargez les données dans Rstudio\nCalculez des statistiques sur la température : moyenne, médiane, minimum, maximum et écart-type.\nQuels autres variables sont présentes ?"
   },
   {
-    "objectID": "ControlFlow.html#codes-alternatifs",
-    "href": "ControlFlow.html#codes-alternatifs",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "3 Codes alternatifs",
-    "text": "3 Codes alternatifs\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni &lt;- 0\nwhile (i &lt; 10) {\n  i &lt;- i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni &lt;- 0\nrepeat ({\n  i &lt;- i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break ## Attention à ne pas oublier break, sinon on crée une boucle infinie\n})\n\n[1] 3\n[1] 4\n[1] 5"
-  },
-  {
-    "objectID": "ControlFlow.html#exemple-while-mais-pas-for",
-    "href": "ControlFlow.html#exemple-while-mais-pas-for",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Exemple : while, mais pas for",
-    "text": "Exemple : while, mais pas for\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 19 jours avant de la vendre, au prix de 56€.\""
-  },
-  {
-    "objectID": "slides-controlflow.html#introduction",
-    "href": "slides-controlflow.html#introduction",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Introduction",
-    "text": "Introduction\n2 outils pour contrôler l’évaluation :\n\nLes évaluations conditionnelles\nles boucles"
-  },
-  {
-    "objectID": "slides-controlflow.html#condition-if",
-    "href": "slides-controlflow.html#condition-if",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Condition if",
-    "text": "Condition if\nDeux types de conditions if :\n\nif (condition) action_true\nif (condition) action_true else action_false"
-  },
-  {
-    "objectID": "slides-controlflow.html#condition-typique",
-    "href": "slides-controlflow.html#condition-typique",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Condition typique",
-    "text": "Condition typique\nExemple :\n\nmention &lt;- function(x) {\n  if (x &gt; 16) {\n    \"Très bien\"\n  } else if (x &gt; 14) {\n    \"Bien\"\n  } else if (x &gt; 12) {\n    \"Assez bien\"\n  } else {\n    \"\"\n  }\n}"
-  },
-  {
-    "objectID": "slides-controlflow.html#et-si-condition-nest-pas-true-ou-false",
-    "href": "slides-controlflow.html#et-si-condition-nest-pas-true-ou-false",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Et si condition n’est pas TRUE ou FALSE ?",
-    "text": "Et si condition n’est pas TRUE ou FALSE ?\n\nif (\"x\") 1\n\nError in if (\"x\") 1: argument is not interpretable as logical\n\nif (logical()) 1\n\nError in if (logical()) 1: argument is of length zero\n\nif (NA) 1\n\nError in if (NA) 1: missing value where TRUE/FALSE needed\n\nif (c(TRUE, FALSE)) 1\n\nError in if (c(TRUE, FALSE)) 1: the condition has length &gt; 1"
-  },
-  {
-    "objectID": "slides-controlflow.html#if-vectoriel-ifelse",
-    "href": "slides-controlflow.html#if-vectoriel-ifelse",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "if vectoriel : ifelse()",
-    "text": "if vectoriel : ifelse()\nDans le cas où vous avez besoin de conditions vectorielles, il faut utiliser ifelse() :\n\nx &lt;- 1:10\nifelse(x %% 5 == 0, \"XXX\", as.character(x))\n\n [1] \"1\"   \"2\"   \"3\"   \"4\"   \"XXX\" \"6\"   \"7\"   \"8\"   \"9\"   \"XXX\"\n\nifelse(x %% 2 == 0, \"even\", \"odd\")\n\n [1] \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\"\n\n\n\n\nLes valeurs manquantes seront propagées à la sortie"
-  },
-  {
-    "objectID": "slides-controlflow.html#switch",
-    "href": "slides-controlflow.html#switch",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "switch()",
-    "text": "switch()\nOn peut remplacer ceci :\n\nx_option &lt;- function(x) {\n  if (x == \"a\") {\n    \"option 1\"\n  } else if (x == \"b\") {\n    \"option 2\" \n  } else if (x == \"c\") {\n    \"option 3\"\n  } else {\n    stop(\"Invalid `x` value\")\n  }\n}\n\nPar ceci :\n\nx_option &lt;- function(x) {\n  switch(x,\n    a = \"option 1\",\n    b = \"option 2\",\n    c = \"option 3\",\n    stop(\"Invalid `x` value\") \n  )\n}\n\nLe dernier composant de switch() doit renvoyer une erreur, sinon les conditions non vérifiées renverront NULL, ce qui est rarement le comportement désiré. C’est à ça que sert stop().\n\nPréciser l’utilisation de stop()"
-  },
-  {
-    "objectID": "slides-controlflow.html#boucles-for",
-    "href": "slides-controlflow.html#boucles-for",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Boucles for",
-    "text": "Boucles for\nLa boucle la plus simple est la boucle for :\n\nfor (item in vecteur) action\n\nExemple :\n\nfor (i in 1:3) {\n  print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n\n\n\n\nAttention, contrairement à de nombreux langages, l’assignation à i se fait dans l’environnement courant, changeant la valeur de l’objet i s’il existe par ailleurs :\n\ni &lt;- 100\nfor (i in 1:3) {}\ni\n\n[1] 3"
-  },
-  {
-    "objectID": "slides-controlflow.html#interruption-anticipée",
-    "href": "slides-controlflow.html#interruption-anticipée",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Interruption anticipée",
-    "text": "Interruption anticipée\nOn peut interrompre l’exécution d’une boucle for de manière anticipée :\n\nnext sort de l’itération actuelle ;\nbreak sort de la boucle for en entier.\n\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5"
-  },
-  {
-    "objectID": "slides-controlflow.html#boucles-alternatives",
-    "href": "slides-controlflow.html#boucles-alternatives",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Boucles alternatives",
-    "text": "Boucles alternatives\nQuand on ne sait pas les valeurs sur lesquelles on itère, on utilise :\n\nwhile(condition) action : l’action est effectuée tant que la condition est TRUE\nrepeat(action) : répète l’action indéfiniment (tant que break n’apparaît pas)\n\nfor est moins flexible que while qui est moins flexible que repeat, mais il vaut mieux utiliser la version la moins flexible.\nLe grand danger des boucles while et repeat est la boucle infinie : une boucle qui n’est jamais interrompue, entraînant le plantage de l’ordinateur par manque de mémoire."
-  },
-  {
-    "objectID": "slides-controlflow.html#codes-alternatifs",
-    "href": "slides-controlflow.html#codes-alternatifs",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "3 Codes alternatifs",
-    "text": "3 Codes alternatifs\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni &lt;- 0\nwhile (i &lt; 10) {\n  i &lt;- i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni &lt;- 0\nrepeat ({\n  i &lt;- i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break ## Attention à ne pas oublier break, sinon on crée une boucle infinie\n})\n\n[1] 3\n[1] 4\n[1] 5"
-  },
-  {
-    "objectID": "slides-controlflow.html#exemple-while-mais-pas-for",
-    "href": "slides-controlflow.html#exemple-while-mais-pas-for",
-    "title": "Boucle et évaluation conditionnelle",
-    "section": "Exemple : while, mais pas for",
-    "text": "Exemple : while, mais pas for\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 11 jours avant de la vendre, au prix de 56€.\""
-  },
-  {
-    "objectID": "DiamantsCorrige.html",
-    "href": "DiamantsCorrige.html",
-    "title": "Taille des diamants",
-    "section": "",
-    "text": "Nous avons des données sur 53940 diamants. Seulement 126 font plus de 2,5 carats. La répartition des diamants restants est indiquées ci-dessous :\nIl y a des coupures aux tailles rondes, comme s’il y avait un arrondi à certaines tailles particulières."
-  },
-  {
-    "objectID": "DiamantsCorrige.html#tailles",
-    "href": "DiamantsCorrige.html#tailles",
-    "title": "Taille des diamants",
-    "section": "Tailles",
-    "text": "Tailles\nNous avons des données sur 53 940 diamants. Seulement 126 font plus de 2,5 carats. Il y a 0.23% de diamants de plus de 2,5 carats.\nCes exercices ont été proposés par Wickham et Grolemund (2016)."
-  },
-  {
-    "objectID": "Rmarkdown.html",
-    "href": "Rmarkdown.html",
-    "title": "1st Level Header",
-    "section": "",
-    "text": "italic or italic bold bold code superscript2 and subscript2"
-  },
-  {
-    "objectID": "Rmarkdown.html#text-formatting",
-    "href": "Rmarkdown.html#text-formatting",
-    "title": "1st Level Header",
-    "section": "",
-    "text": "italic or italic bold bold code superscript2 and subscript2"
-  },
-  {
-    "objectID": "Rmarkdown.html#headings",
-    "href": "Rmarkdown.html#headings",
-    "title": "1st Level Header",
-    "section": "Headings",
-    "text": "Headings"
-  },
-  {
-    "objectID": "Rmarkdown.html#nd-level-header",
-    "href": "Rmarkdown.html#nd-level-header",
-    "title": "1st Level Header",
-    "section": "2nd Level Header",
-    "text": "2nd Level Header\n\n3rd Level Header"
-  },
-  {
-    "objectID": "Rmarkdown.html#lists",
-    "href": "Rmarkdown.html#lists",
-    "title": "1st Level Header",
-    "section": "Lists",
-    "text": "Lists\n\nBulleted list item 1\nItem 2\n\nItem 2a\nItem 2b\n\n\n\nNumbered list item 1\nItem 2. The numbers are incremented automatically in the output."
-  },
-  {
-    "objectID": "Rmarkdown.html#links-and-images",
-    "href": "Rmarkdown.html#links-and-images",
-    "title": "1st Level Header",
-    "section": "Links and images",
-    "text": "Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
-  },
-  {
-    "objectID": "Rmarkdown.html#tables",
-    "href": "Rmarkdown.html#tables",
-    "title": "1st Level Header",
-    "section": "Tables",
-    "text": "Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#introduction-1",
-    "href": "slides-representations-graphiques.html#introduction-1",
-    "title": "Représentations graphiques",
-    "section": "Introduction",
-    "text": "Introduction\nggplot2 est une librairie qui permet de générer des graphiques avec une syntaxe cohérente et puissante. Elle nécessite l’apprentissage d’un “mini-langage” supplémentaire, mais permet la construction de graphiques complexes de manière efficace.\nUne des particularités de ggplot2 est qu’elle part du principe que les données relatives à un graphique sont stockées dans un tableau de données (data.frame, tibble ou autre).\nCe chapitre est élaboré à partir du chapitre 8 de Barnier et Kauffmann (2023)."
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#préparation",
-    "href": "slides-representations-graphiques.html#préparation",
-    "title": "Représentations graphiques",
-    "section": "Préparation",
-    "text": "Préparation\nggplot2 est un paquet comme un autre, que l’on charge à l’aide de library\n\nlibrary(ggplot2)"
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#données",
-    "href": "slides-representations-graphiques.html#données",
-    "title": "Représentations graphiques",
-    "section": "Données",
-    "text": "Données\nLes données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet questionr, que nous devons installer et charger.\n\ninstall.packages('questionr')\nlibrary(questionr)\n\nNous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction filter de la librairie tidyverse.\n\ndata(rp2018)\n\nrp &lt;- filter(\n  rp2018,\n  departement %in% c(\"Oise\", \"Rhône\", \"Hauts-de-Seine\", \"Lozère\", \"Bouches-du-Rhône\")\n)"
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#initialisation-données-à-représenter",
-    "href": "slides-representations-graphiques.html#initialisation-données-à-représenter",
-    "title": "Représentations graphiques",
-    "section": "Initialisation : données à représenter",
-    "text": "Initialisation : données à représenter\nUn graphique ggplot2 s’initialise à l’aide de la fonction ggplot(). Les données sont toujours issues d’un tableau de données, qu’on passe en argument data à la fonction ggplot.\n\nggplot(data = rp)\nggplot(rp) ## Equivalent au premier et généralement utilisé"
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#géométries-comment",
-    "href": "slides-representations-graphiques.html#géométries-comment",
-    "title": "Représentations graphiques",
-    "section": "Géométries : comment ?",
-    "text": "Géométries : comment ?\nIl faut ajouter des éléments de représentation graphique. Ces éléments sont appelés des geom et on les ajoute à l’objet graphique de base avec l’opérateur +.\nUne des geom les plus simples est geom_histogram :\n\nggplot(rp) + geom_histogram()"
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#esthétiques-quelles-données-sont-représentées",
-    "href": "slides-representations-graphiques.html#esthétiques-quelles-données-sont-représentées",
-    "title": "Représentations graphiques",
-    "section": "Esthétiques : quelles données sont représentées ?",
-    "text": "Esthétiques : quelles données sont représentées ?\nReste à indiquer quelle donnée nous voulons représenter sous forme d’histogramme. Cela se fait à l’aide d’arguments passés via la fonction aes(). Ici, nous avons un paramètre à renseigner, x, qui indique la variable à représenter sur l’axe des x (l’axe horizontal).\n\n\nAinsi, si on souhaite représenter la distribution des communes du jeu de données selon le pourcentage de cadres dans leur population active (variable cadres) :\n\nggplot(rp) + geom_histogram(aes(x = cadres))\n\n\n\n\n\n\n\n\n\nSi on veut représenter une autre variable, il suffit de changer la valeur de x :\n\nggplot(rp) + geom_histogram(aes(x = ouvr))"
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#en-résumé",
-    "href": "slides-representations-graphiques.html#en-résumé",
-    "title": "Représentations graphiques",
-    "section": "En résumé",
-    "text": "En résumé\nPour représenter un graphique, il faut :\n\nDes données (argument data de ggplot())\nUn type de représentation (histogramme, ligne, point, etc) donné par geom_xxxx où xxxx est le type de représentation recherché.\nUne ou des variables à représenter (argument aes() dans geom_xxxx)\n\nOn lie les différentes commandes à l’aide de l’opérateur +."
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#nuage-de-points",
-    "href": "slides-representations-graphiques.html#nuage-de-points",
-    "title": "Représentations graphiques",
-    "section": "Nuage de points",
-    "text": "Nuage de points\nCertaines geom prennent plusieurs paramètres. Ainsi, si on veut représenter un nuage de points, on peut le faire en ajoutant un geom_point. On doit alors indiquer à la fois la position en x (la variable sur l’axe horizontal) et en y (la variable sur l’axe vertical) de ces points, il faut donc passer ces deux arguments à aes() :\n\nggplot(rp) + geom_point(aes(x = dipl_sup, y = cadres))"
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#apparence-des-géométries",
-    "href": "slides-representations-graphiques.html#apparence-des-géométries",
-    "title": "Représentations graphiques",
-    "section": "Apparence des géométries",
-    "text": "Apparence des géométries\nOn peut modifier certains attributs graphiques d’un geom en lui passant des arguments supplémentaires. Par exemple, pour un nuage de points, on peut modifier :\n\nla couleur avec l’argument color ;\nla taille avec l’argument size ;\nla transparence avec l’argument alpha.\n\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres),\n    color = \"darkgreen\", size = 3, alpha = 0.3\n  )\n\n\n\nOn notera que dans ce cas les arguments sont dans la fonction geom mais à l’extérieur du aes(). Plus d’explications sur ce point dans quelques instants."
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#exemples-de-geom",
-    "href": "slides-representations-graphiques.html#exemples-de-geom",
-    "title": "Représentations graphiques",
-    "section": "Exemples de geom",
-    "text": "Exemples de geom\nIl existe un grand nombre de geom, décrites en détail dans la documentation officielle. Outre les geom_histogram et geom_point que l’on vient de voir, on pourra noter les geom suivantes :\n\ngeom_boxplot\ngeom_violin\ngeom_bar et geom_col\ngeom_text\ngeom_label\ngeom_density\ngeom_line\ngeom_hex et geom_bin2d"
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#exemples-de-mappages",
-    "href": "slides-representations-graphiques.html#exemples-de-mappages",
-    "title": "Représentations graphiques",
-    "section": "Exemples de mappages",
-    "text": "Exemples de mappages\nOn a déjà vu les mappages x et y pour un nuage de points. Ceux-ci signifient que la position d’un point donné horizontalement (x) et verticalement (y) dépend de la valeur des variables passées comme arguments x et y dans aes().\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres)\n  )"
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#couleur-color-ou-colour",
-    "href": "slides-representations-graphiques.html#couleur-color-ou-colour",
-    "title": "Représentations graphiques",
-    "section": "Couleur (color ou colour)",
-    "text": "Couleur (color ou colour)\nIl y en a d’autres. color permet de faire varier la couleur des points automatiquement en fonction des valeurs d’une troisième variable.\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement)\n  )"
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#tailles-size",
-    "href": "slides-representations-graphiques.html#tailles-size",
-    "title": "Représentations graphiques",
-    "section": "Tailles (size)",
-    "text": "Tailles (size)\nOn peut aussi faire varier la taille des points avec size. Ici, la taille dépend de la population totale de la commune :\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement, size = pop_tot)\n  )"
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#transparence-alpha",
-    "href": "slides-representations-graphiques.html#transparence-alpha",
-    "title": "Représentations graphiques",
-    "section": "Transparence (alpha)",
-    "text": "Transparence (alpha)\nOn peut même associer la transparence des points à une variable avec alpha :\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement, size = pop_tot, alpha = maison)\n  )\n\n\nChaque geom possède sa propre liste de mappages."
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#aes-or-not-aes",
-    "href": "slides-representations-graphiques.html#aes-or-not-aes",
-    "title": "Représentations graphiques",
-    "section": "aes() or not aes() ?",
-    "text": "aes() or not aes() ?\nParfois on souhaite changer un attribut sans le relier à une variable : par exemple si on veut représenter tous les points en rouge. On utilise toujours l’attribut color, mais comme il ne s’agit pas d’un mappage, on le définit à l’extérieur de la fonction aes().\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres),\n    color = \"red\"\n  )\n\n\n\n\n\n\n\n\nPar contre, si on veut faire varier la couleur en fonction des valeurs prises par une variable, on réalise un mappage, et on doit donc placer l’attribut color à l’intérieur de aes().\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement)\n  )\n\n\n\n\n\n\n\n\nOn peut mélanger attributs liés à une variable (mappage, donc dans aes()) et attributs constants (donc à l’extérieur). Dans l’exemple suivant, la taille varie en fonction de la variable pop_tot, mais la couleur est constante pour tous les points.\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, size = pop_tot),\n    color = \"royalblue\"\n  )\n\n\n\n\n\n\n\n\nLa règle est donc simple mais très importante :\nSi on établit un lien entre les valeurs d’une variable et un attribut graphique, on définit un mappage, et on le déclare dans aes(). Sinon, on modifie l’attribut de la même manière pour tous les points, et on le définit en-dehors de la fonction aes()."
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#scale_x-scale_y",
-    "href": "slides-representations-graphiques.html#scale_x-scale_y",
-    "title": "Représentations graphiques",
-    "section": "scale_x, scale_y",
-    "text": "scale_x, scale_y\nLes scales scale_x_&lt;type&gt; et scale_y_&lt;type&gt; modifient les axes x et y du graphique."
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#continuous",
-    "href": "slides-representations-graphiques.html#continuous",
-    "title": "Représentations graphiques",
-    "section": "Continuous",
-    "text": "Continuous\nscale_x_continuous et scale_y_continuous s’appliquent lorsque la variable x ou y est numérique (quantitative).\nC’est le cas de notre nuage de points croisant part de cadres et part de diplômés du supérieur.\n\nggplot(rp) +\n  geom_point(aes(x = dipl_sup, y = cadres))"
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#limits",
-    "href": "slides-representations-graphiques.html#limits",
-    "title": "Représentations graphiques",
-    "section": "Limits",
-    "text": "Limits\nComme on représente des pourcentages, on peut vouloir forcer les axes x et y à s’étendre des valeurs 0 à 100. On peut le faire en ajoutant un élément scale_x_continuous et un élément scale_y_continuous, et en utilisant leur argument limits.\n\nggplot(rp) +\n  geom_point(aes(x = dipl_sup, y = cadres)) +\n  scale_x_continuous(limits = c(0,100)) +\n  scale_y_continuous(limits = c(0,100))"
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#légende",
-    "href": "slides-representations-graphiques.html#légende",
-    "title": "Représentations graphiques",
-    "section": "Légende",
-    "text": "Légende\nLà aussi, on peut modifier les étiquettes des axes en indiquant une chaîne de caractères en premier argument.\n\nggplot(rp) +\n  geom_point(aes(x = dipl_sup, y = cadres)) +\n  scale_x_continuous(\"Part des diplômés du supérieur (%)\", limits = c(0,100)) +\n  scale_y_continuous(\"Part des cadres (%)\", limits = c(0,100))"
-  },
-  {
-    "objectID": "slides-representations-graphiques.html#autres-scale_x_type",
-    "href": "slides-representations-graphiques.html#autres-scale_x_type",
-    "title": "Représentations graphiques",
-    "section": "Autres scale_x_<type>",
-    "text": "Autres scale_x_&lt;type&gt;\n\nOn utilise scale_x_log10 et scale_y_log10 pour passer un axe à une échelle logarithmique.\nscale_x_discrete et scale_y_discrete s’appliquent lorsque l’axe correspond à une variable discrète (qualitative). C’est le cas par exemple de l’axe des x dans un diagramme en barres. L’argument limits de scale_x_discrete permet d’indiquer quelles valeurs sont affichées et dans quel ordre."
+    "objectID": "slide-lecon2.html#données-au-choix",
+    "href": "slide-lecon2.html#données-au-choix",
+    "title": "Séance 2 : Données et fonctions intégrées",
+    "section": "Données au choix",
+    "text": "Données au choix\nAller sur Data gouv et choisissez des données à analyser."
   },
   {
     "objectID": "04RepresentationsGraphiques.html",
@@ -912,6 +649,370 @@
     "title": "Représentations graphiques",
     "section": "Autres scale_x_<type>",
     "text": "Autres scale_x_&lt;type&gt;\n\nOn utilise scale_x_log10 et scale_y_log10 pour passer un axe à une échelle logarithmique.\nscale_x_discrete et scale_y_discrete s’appliquent lorsque l’axe correspond à une variable discrète (qualitative). C’est le cas par exemple de l’axe des x dans un diagramme en barres. L’argument limits de scale_x_discrete permet d’indiquer quelles valeurs sont affichées et dans quel ordre."
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#introduction-1",
+    "href": "slides-representations-graphiques.html#introduction-1",
+    "title": "Représentations graphiques",
+    "section": "Introduction",
+    "text": "Introduction\nggplot2 est une librairie qui permet de générer des graphiques avec une syntaxe cohérente et puissante. Elle nécessite l’apprentissage d’un “mini-langage” supplémentaire, mais permet la construction de graphiques complexes de manière efficace.\nUne des particularités de ggplot2 est qu’elle part du principe que les données relatives à un graphique sont stockées dans un tableau de données (data.frame, tibble ou autre).\nCe chapitre est élaboré à partir du chapitre 8 de Barnier et Kauffmann (2023)."
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#préparation",
+    "href": "slides-representations-graphiques.html#préparation",
+    "title": "Représentations graphiques",
+    "section": "Préparation",
+    "text": "Préparation\nggplot2 est un paquet comme un autre, que l’on charge à l’aide de library\n\nlibrary(ggplot2)"
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#données",
+    "href": "slides-representations-graphiques.html#données",
+    "title": "Représentations graphiques",
+    "section": "Données",
+    "text": "Données\nLes données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet questionr, que nous devons installer et charger.\n\ninstall.packages('questionr')\nlibrary(questionr)\n\nNous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction filter de la librairie tidyverse.\n\ndata(rp2018)\n\nrp &lt;- filter(\n  rp2018,\n  departement %in% c(\"Oise\", \"Rhône\", \"Hauts-de-Seine\", \"Lozère\", \"Bouches-du-Rhône\")\n)"
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#initialisation-données-à-représenter",
+    "href": "slides-representations-graphiques.html#initialisation-données-à-représenter",
+    "title": "Représentations graphiques",
+    "section": "Initialisation : données à représenter",
+    "text": "Initialisation : données à représenter\nUn graphique ggplot2 s’initialise à l’aide de la fonction ggplot(). Les données sont toujours issues d’un tableau de données, qu’on passe en argument data à la fonction ggplot.\n\nggplot(data = rp)\nggplot(rp) ## Equivalent au premier et généralement utilisé"
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#géométries-comment",
+    "href": "slides-representations-graphiques.html#géométries-comment",
+    "title": "Représentations graphiques",
+    "section": "Géométries : comment ?",
+    "text": "Géométries : comment ?\nIl faut ajouter des éléments de représentation graphique. Ces éléments sont appelés des geom et on les ajoute à l’objet graphique de base avec l’opérateur +.\nUne des geom les plus simples est geom_histogram :\n\nggplot(rp) + geom_histogram()"
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#esthétiques-quelles-données-sont-représentées",
+    "href": "slides-representations-graphiques.html#esthétiques-quelles-données-sont-représentées",
+    "title": "Représentations graphiques",
+    "section": "Esthétiques : quelles données sont représentées ?",
+    "text": "Esthétiques : quelles données sont représentées ?\nReste à indiquer quelle donnée nous voulons représenter sous forme d’histogramme. Cela se fait à l’aide d’arguments passés via la fonction aes(). Ici, nous avons un paramètre à renseigner, x, qui indique la variable à représenter sur l’axe des x (l’axe horizontal).\n\n\nAinsi, si on souhaite représenter la distribution des communes du jeu de données selon le pourcentage de cadres dans leur population active (variable cadres) :\n\nggplot(rp) + geom_histogram(aes(x = cadres))\n\n\n\n\n\n\n\n\n\nSi on veut représenter une autre variable, il suffit de changer la valeur de x :\n\nggplot(rp) + geom_histogram(aes(x = ouvr))"
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#en-résumé",
+    "href": "slides-representations-graphiques.html#en-résumé",
+    "title": "Représentations graphiques",
+    "section": "En résumé",
+    "text": "En résumé\nPour représenter un graphique, il faut :\n\nDes données (argument data de ggplot())\nUn type de représentation (histogramme, ligne, point, etc) donné par geom_xxxx où xxxx est le type de représentation recherché.\nUne ou des variables à représenter (argument aes() dans geom_xxxx)\n\nOn lie les différentes commandes à l’aide de l’opérateur +."
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#nuage-de-points",
+    "href": "slides-representations-graphiques.html#nuage-de-points",
+    "title": "Représentations graphiques",
+    "section": "Nuage de points",
+    "text": "Nuage de points\nCertaines geom prennent plusieurs paramètres. Ainsi, si on veut représenter un nuage de points, on peut le faire en ajoutant un geom_point. On doit alors indiquer à la fois la position en x (la variable sur l’axe horizontal) et en y (la variable sur l’axe vertical) de ces points, il faut donc passer ces deux arguments à aes() :\n\nggplot(rp) + geom_point(aes(x = dipl_sup, y = cadres))"
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#apparence-des-géométries",
+    "href": "slides-representations-graphiques.html#apparence-des-géométries",
+    "title": "Représentations graphiques",
+    "section": "Apparence des géométries",
+    "text": "Apparence des géométries\nOn peut modifier certains attributs graphiques d’un geom en lui passant des arguments supplémentaires. Par exemple, pour un nuage de points, on peut modifier :\n\nla couleur avec l’argument color ;\nla taille avec l’argument size ;\nla transparence avec l’argument alpha.\n\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres),\n    color = \"darkgreen\", size = 3, alpha = 0.3\n  )\n\n\n\nOn notera que dans ce cas les arguments sont dans la fonction geom mais à l’extérieur du aes(). Plus d’explications sur ce point dans quelques instants."
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#exemples-de-geom",
+    "href": "slides-representations-graphiques.html#exemples-de-geom",
+    "title": "Représentations graphiques",
+    "section": "Exemples de geom",
+    "text": "Exemples de geom\nIl existe un grand nombre de geom, décrites en détail dans la documentation officielle. Outre les geom_histogram et geom_point que l’on vient de voir, on pourra noter les geom suivantes :\n\ngeom_boxplot\ngeom_violin\ngeom_bar et geom_col\ngeom_text\ngeom_label\ngeom_density\ngeom_line\ngeom_hex et geom_bin2d"
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#exemples-de-mappages",
+    "href": "slides-representations-graphiques.html#exemples-de-mappages",
+    "title": "Représentations graphiques",
+    "section": "Exemples de mappages",
+    "text": "Exemples de mappages\nOn a déjà vu les mappages x et y pour un nuage de points. Ceux-ci signifient que la position d’un point donné horizontalement (x) et verticalement (y) dépend de la valeur des variables passées comme arguments x et y dans aes().\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres)\n  )"
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#couleur-color-ou-colour",
+    "href": "slides-representations-graphiques.html#couleur-color-ou-colour",
+    "title": "Représentations graphiques",
+    "section": "Couleur (color ou colour)",
+    "text": "Couleur (color ou colour)\nIl y en a d’autres. color permet de faire varier la couleur des points automatiquement en fonction des valeurs d’une troisième variable.\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement)\n  )"
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#tailles-size",
+    "href": "slides-representations-graphiques.html#tailles-size",
+    "title": "Représentations graphiques",
+    "section": "Tailles (size)",
+    "text": "Tailles (size)\nOn peut aussi faire varier la taille des points avec size. Ici, la taille dépend de la population totale de la commune :\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement, size = pop_tot)\n  )"
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#transparence-alpha",
+    "href": "slides-representations-graphiques.html#transparence-alpha",
+    "title": "Représentations graphiques",
+    "section": "Transparence (alpha)",
+    "text": "Transparence (alpha)\nOn peut même associer la transparence des points à une variable avec alpha :\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement, size = pop_tot, alpha = maison)\n  )\n\n\nChaque geom possède sa propre liste de mappages."
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#aes-or-not-aes",
+    "href": "slides-representations-graphiques.html#aes-or-not-aes",
+    "title": "Représentations graphiques",
+    "section": "aes() or not aes() ?",
+    "text": "aes() or not aes() ?\nParfois on souhaite changer un attribut sans le relier à une variable : par exemple si on veut représenter tous les points en rouge. On utilise toujours l’attribut color, mais comme il ne s’agit pas d’un mappage, on le définit à l’extérieur de la fonction aes().\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres),\n    color = \"red\"\n  )\n\n\n\n\n\n\n\n\nPar contre, si on veut faire varier la couleur en fonction des valeurs prises par une variable, on réalise un mappage, et on doit donc placer l’attribut color à l’intérieur de aes().\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, color = departement)\n  )\n\n\n\n\n\n\n\n\nOn peut mélanger attributs liés à une variable (mappage, donc dans aes()) et attributs constants (donc à l’extérieur). Dans l’exemple suivant, la taille varie en fonction de la variable pop_tot, mais la couleur est constante pour tous les points.\n\nggplot(rp) +\n  geom_point(\n    aes(x = dipl_sup, y = cadres, size = pop_tot),\n    color = \"royalblue\"\n  )\n\n\n\n\n\n\n\n\nLa règle est donc simple mais très importante :\nSi on établit un lien entre les valeurs d’une variable et un attribut graphique, on définit un mappage, et on le déclare dans aes(). Sinon, on modifie l’attribut de la même manière pour tous les points, et on le définit en-dehors de la fonction aes()."
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#scale_x-scale_y",
+    "href": "slides-representations-graphiques.html#scale_x-scale_y",
+    "title": "Représentations graphiques",
+    "section": "scale_x, scale_y",
+    "text": "scale_x, scale_y\nLes scales scale_x_&lt;type&gt; et scale_y_&lt;type&gt; modifient les axes x et y du graphique."
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#continuous",
+    "href": "slides-representations-graphiques.html#continuous",
+    "title": "Représentations graphiques",
+    "section": "Continuous",
+    "text": "Continuous\nscale_x_continuous et scale_y_continuous s’appliquent lorsque la variable x ou y est numérique (quantitative).\nC’est le cas de notre nuage de points croisant part de cadres et part de diplômés du supérieur.\n\nggplot(rp) +\n  geom_point(aes(x = dipl_sup, y = cadres))"
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#limits",
+    "href": "slides-representations-graphiques.html#limits",
+    "title": "Représentations graphiques",
+    "section": "Limits",
+    "text": "Limits\nComme on représente des pourcentages, on peut vouloir forcer les axes x et y à s’étendre des valeurs 0 à 100. On peut le faire en ajoutant un élément scale_x_continuous et un élément scale_y_continuous, et en utilisant leur argument limits.\n\nggplot(rp) +\n  geom_point(aes(x = dipl_sup, y = cadres)) +\n  scale_x_continuous(limits = c(0,100)) +\n  scale_y_continuous(limits = c(0,100))"
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#légende",
+    "href": "slides-representations-graphiques.html#légende",
+    "title": "Représentations graphiques",
+    "section": "Légende",
+    "text": "Légende\nLà aussi, on peut modifier les étiquettes des axes en indiquant une chaîne de caractères en premier argument.\n\nggplot(rp) +\n  geom_point(aes(x = dipl_sup, y = cadres)) +\n  scale_x_continuous(\"Part des diplômés du supérieur (%)\", limits = c(0,100)) +\n  scale_y_continuous(\"Part des cadres (%)\", limits = c(0,100))"
+  },
+  {
+    "objectID": "slides-representations-graphiques.html#autres-scale_x_type",
+    "href": "slides-representations-graphiques.html#autres-scale_x_type",
+    "title": "Représentations graphiques",
+    "section": "Autres scale_x_<type>",
+    "text": "Autres scale_x_&lt;type&gt;\n\nOn utilise scale_x_log10 et scale_y_log10 pour passer un axe à une échelle logarithmique.\nscale_x_discrete et scale_y_discrete s’appliquent lorsque l’axe correspond à une variable discrète (qualitative). C’est le cas par exemple de l’axe des x dans un diagramme en barres. L’argument limits de scale_x_discrete permet d’indiquer quelles valeurs sont affichées et dans quel ordre."
+  },
+  {
+    "objectID": "Rmarkdown.html",
+    "href": "Rmarkdown.html",
+    "title": "1st Level Header",
+    "section": "",
+    "text": "italic or italic bold bold code superscript2 and subscript2"
+  },
+  {
+    "objectID": "Rmarkdown.html#text-formatting",
+    "href": "Rmarkdown.html#text-formatting",
+    "title": "1st Level Header",
+    "section": "",
+    "text": "italic or italic bold bold code superscript2 and subscript2"
+  },
+  {
+    "objectID": "Rmarkdown.html#headings",
+    "href": "Rmarkdown.html#headings",
+    "title": "1st Level Header",
+    "section": "Headings",
+    "text": "Headings"
+  },
+  {
+    "objectID": "Rmarkdown.html#nd-level-header",
+    "href": "Rmarkdown.html#nd-level-header",
+    "title": "1st Level Header",
+    "section": "2nd Level Header",
+    "text": "2nd Level Header\n\n3rd Level Header"
+  },
+  {
+    "objectID": "Rmarkdown.html#lists",
+    "href": "Rmarkdown.html#lists",
+    "title": "1st Level Header",
+    "section": "Lists",
+    "text": "Lists\n\nBulleted list item 1\nItem 2\n\nItem 2a\nItem 2b\n\n\n\nNumbered list item 1\nItem 2. The numbers are incremented automatically in the output."
+  },
+  {
+    "objectID": "Rmarkdown.html#links-and-images",
+    "href": "Rmarkdown.html#links-and-images",
+    "title": "1st Level Header",
+    "section": "Links and images",
+    "text": "Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
+  },
+  {
+    "objectID": "Rmarkdown.html#tables",
+    "href": "Rmarkdown.html#tables",
+    "title": "1st Level Header",
+    "section": "Tables",
+    "text": "Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
+  },
+  {
+    "objectID": "DiamantsCorrige.html",
+    "href": "DiamantsCorrige.html",
+    "title": "Taille des diamants",
+    "section": "",
+    "text": "Nous avons des données sur 53940 diamants. Seulement 126 font plus de 2,5 carats. La répartition des diamants restants est indiquées ci-dessous :\nIl y a des coupures aux tailles rondes, comme s’il y avait un arrondi à certaines tailles particulières."
+  },
+  {
+    "objectID": "DiamantsCorrige.html#tailles",
+    "href": "DiamantsCorrige.html#tailles",
+    "title": "Taille des diamants",
+    "section": "Tailles",
+    "text": "Tailles\nNous avons des données sur 53 940 diamants. Seulement 126 font plus de 2,5 carats. Il y a 0.23% de diamants de plus de 2,5 carats.\nCes exercices ont été proposés par Wickham et Grolemund (2016)."
+  },
+  {
+    "objectID": "slides-controlflow.html#introduction",
+    "href": "slides-controlflow.html#introduction",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Introduction",
+    "text": "Introduction\n2 outils pour contrôler l’évaluation :\n\nLes évaluations conditionnelles\nles boucles"
+  },
+  {
+    "objectID": "slides-controlflow.html#condition-if",
+    "href": "slides-controlflow.html#condition-if",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Condition if",
+    "text": "Condition if\nDeux types de conditions if :\n\nif (condition) action_true\nif (condition) action_true else action_false"
+  },
+  {
+    "objectID": "slides-controlflow.html#condition-typique",
+    "href": "slides-controlflow.html#condition-typique",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Condition typique",
+    "text": "Condition typique\nExemple :\n\nmention &lt;- function(x) {\n  if (x &gt; 16) {\n    \"Très bien\"\n  } else if (x &gt; 14) {\n    \"Bien\"\n  } else if (x &gt; 12) {\n    \"Assez bien\"\n  } else {\n    \"\"\n  }\n}"
+  },
+  {
+    "objectID": "slides-controlflow.html#et-si-condition-nest-pas-true-ou-false",
+    "href": "slides-controlflow.html#et-si-condition-nest-pas-true-ou-false",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Et si condition n’est pas TRUE ou FALSE ?",
+    "text": "Et si condition n’est pas TRUE ou FALSE ?\n\nif (\"x\") 1\n\nError in if (\"x\") 1: argument is not interpretable as logical\n\nif (logical()) 1\n\nError in if (logical()) 1: argument is of length zero\n\nif (NA) 1\n\nError in if (NA) 1: missing value where TRUE/FALSE needed\n\nif (c(TRUE, FALSE)) 1\n\nError in if (c(TRUE, FALSE)) 1: the condition has length &gt; 1"
+  },
+  {
+    "objectID": "slides-controlflow.html#if-vectoriel-ifelse",
+    "href": "slides-controlflow.html#if-vectoriel-ifelse",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "if vectoriel : ifelse()",
+    "text": "if vectoriel : ifelse()\nDans le cas où vous avez besoin de conditions vectorielles, il faut utiliser ifelse() :\n\nx &lt;- 1:10\nifelse(x %% 5 == 0, \"XXX\", as.character(x))\n\n [1] \"1\"   \"2\"   \"3\"   \"4\"   \"XXX\" \"6\"   \"7\"   \"8\"   \"9\"   \"XXX\"\n\nifelse(x %% 2 == 0, \"even\", \"odd\")\n\n [1] \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\"\n\n\n\n\nLes valeurs manquantes seront propagées à la sortie"
+  },
+  {
+    "objectID": "slides-controlflow.html#switch",
+    "href": "slides-controlflow.html#switch",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "switch()",
+    "text": "switch()\nOn peut remplacer ceci :\n\nx_option &lt;- function(x) {\n  if (x == \"a\") {\n    \"option 1\"\n  } else if (x == \"b\") {\n    \"option 2\" \n  } else if (x == \"c\") {\n    \"option 3\"\n  } else {\n    stop(\"Invalid `x` value\")\n  }\n}\n\nPar ceci :\n\nx_option &lt;- function(x) {\n  switch(x,\n    a = \"option 1\",\n    b = \"option 2\",\n    c = \"option 3\",\n    stop(\"Invalid `x` value\") \n  )\n}\n\nLe dernier composant de switch() doit renvoyer une erreur, sinon les conditions non vérifiées renverront NULL, ce qui est rarement le comportement désiré. C’est à ça que sert stop().\n\nPréciser l’utilisation de stop()"
+  },
+  {
+    "objectID": "slides-controlflow.html#boucles-for",
+    "href": "slides-controlflow.html#boucles-for",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Boucles for",
+    "text": "Boucles for\nLa boucle la plus simple est la boucle for :\n\nfor (item in vecteur) action\n\nExemple :\n\nfor (i in 1:3) {\n  print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n\n\n\n\nAttention, contrairement à de nombreux langages, l’assignation à i se fait dans l’environnement courant, changeant la valeur de l’objet i s’il existe par ailleurs :\n\ni &lt;- 100\nfor (i in 1:3) {}\ni\n\n[1] 3"
+  },
+  {
+    "objectID": "slides-controlflow.html#interruption-anticipée",
+    "href": "slides-controlflow.html#interruption-anticipée",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Interruption anticipée",
+    "text": "Interruption anticipée\nOn peut interrompre l’exécution d’une boucle for de manière anticipée :\n\nnext sort de l’itération actuelle ;\nbreak sort de la boucle for en entier.\n\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5"
+  },
+  {
+    "objectID": "slides-controlflow.html#boucles-alternatives",
+    "href": "slides-controlflow.html#boucles-alternatives",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Boucles alternatives",
+    "text": "Boucles alternatives\nQuand on ne sait pas les valeurs sur lesquelles on itère, on utilise :\n\nwhile(condition) action : l’action est effectuée tant que la condition est TRUE\nrepeat(action) : répète l’action indéfiniment (tant que break n’apparaît pas)\n\nfor est moins flexible que while qui est moins flexible que repeat, mais il vaut mieux utiliser la version la moins flexible.\nLe grand danger des boucles while et repeat est la boucle infinie : une boucle qui n’est jamais interrompue, entraînant le plantage de l’ordinateur par manque de mémoire."
+  },
+  {
+    "objectID": "slides-controlflow.html#codes-alternatifs",
+    "href": "slides-controlflow.html#codes-alternatifs",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "3 Codes alternatifs",
+    "text": "3 Codes alternatifs\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni &lt;- 0\nwhile (i &lt; 10) {\n  i &lt;- i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni &lt;- 0\nrepeat ({\n  i &lt;- i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break ## Attention à ne pas oublier break, sinon on crée une boucle infinie\n})\n\n[1] 3\n[1] 4\n[1] 5"
+  },
+  {
+    "objectID": "slides-controlflow.html#exemple-while-mais-pas-for",
+    "href": "slides-controlflow.html#exemple-while-mais-pas-for",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Exemple : while, mais pas for",
+    "text": "Exemple : while, mais pas for\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 13 jours avant de la vendre, au prix de 56€.\""
+  },
+  {
+    "objectID": "ControlFlow.html",
+    "href": "ControlFlow.html",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "",
+    "text": "2 outils pour contrôler l’évaluation :\n\nLes évaluations conditionnelles\nles boucles"
+  },
+  {
+    "objectID": "ControlFlow.html#introduction",
+    "href": "ControlFlow.html#introduction",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "",
+    "text": "2 outils pour contrôler l’évaluation :\n\nLes évaluations conditionnelles\nles boucles"
+  },
+  {
+    "objectID": "ControlFlow.html#condition-if",
+    "href": "ControlFlow.html#condition-if",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Condition if",
+    "text": "Condition if\nDeux types de conditions if :\n\nif (condition) action_true\nif (condition) action_true else action_false"
+  },
+  {
+    "objectID": "ControlFlow.html#condition-typique",
+    "href": "ControlFlow.html#condition-typique",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Condition typique",
+    "text": "Condition typique\nExemple :\n\nmention &lt;- function(x) {\n  if (x &gt; 16) {\n    \"Très bien\"\n  } else if (x &gt; 14) {\n    \"Bien\"\n  } else if (x &gt; 12) {\n    \"Assez bien\"\n  } else {\n    \"\"\n  }\n}\n\n\nif renvoie un résultat, il est donc possible d’assigner le résultat :\n\nx1 &lt;- if (TRUE) 1 else 2\nx2 &lt;- if (FALSE) 1 else 2\n\nc(x1, x2)\n\n[1] 1 2\n\n\nQuand else n’est pas explicitement renseigné mais la condition est fausse, if renvoie NULL."
+  },
+  {
+    "objectID": "ControlFlow.html#et-si-condition-nest-pas-true-ou-false",
+    "href": "ControlFlow.html#et-si-condition-nest-pas-true-ou-false",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Et si condition n’est pas TRUE ou FALSE ?",
+    "text": "Et si condition n’est pas TRUE ou FALSE ?\n\nif (\"x\") 1\n\nError in if (\"x\") 1: argument is not interpretable as logical\n\nif (logical()) 1\n\nError in if (logical()) 1: argument is of length zero\n\nif (NA) 1\n\nError in if (NA) 1: missing value where TRUE/FALSE needed\n\nif (c(TRUE, FALSE)) 1\n\nError in if (c(TRUE, FALSE)) 1: the condition has length &gt; 1"
+  },
+  {
+    "objectID": "ControlFlow.html#if-vectoriel-ifelse",
+    "href": "ControlFlow.html#if-vectoriel-ifelse",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "if vectoriel : ifelse()",
+    "text": "if vectoriel : ifelse()\nDans le cas où vous avez besoin de conditions vectorielles, il faut utiliser ifelse() :\n\nx &lt;- 1:10\nifelse(x %% 5 == 0, \"XXX\", as.character(x))\n\n [1] \"1\"   \"2\"   \"3\"   \"4\"   \"XXX\" \"6\"   \"7\"   \"8\"   \"9\"   \"XXX\"\n\nifelse(x %% 2 == 0, \"even\", \"odd\")\n\n [1] \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\" \"odd\"  \"even\"\n\n\n\n\nLes valeurs manquantes seront propagées à la sortie"
+  },
+  {
+    "objectID": "ControlFlow.html#switch",
+    "href": "ControlFlow.html#switch",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "switch()",
+    "text": "switch()\nOn peut remplacer ceci :\n\nx_option &lt;- function(x) {\n  if (x == \"a\") {\n    \"option 1\"\n  } else if (x == \"b\") {\n    \"option 2\" \n  } else if (x == \"c\") {\n    \"option 3\"\n  } else {\n    stop(\"Invalid `x` value\")\n  }\n}\n\nPar ceci :\n\nx_option &lt;- function(x) {\n  switch(x,\n    a = \"option 1\",\n    b = \"option 2\",\n    c = \"option 3\",\n    stop(\"Invalid `x` value\") \n  )\n}\n\nLe dernier composant de switch() doit renvoyer une erreur, sinon les conditions non vérifiées renverront NULL, ce qui est rarement le comportement désiré. C’est à ça que sert stop().\n\nPréciser l’utilisation de stop()"
+  },
+  {
+    "objectID": "ControlFlow.html#boucles-for",
+    "href": "ControlFlow.html#boucles-for",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Boucles for",
+    "text": "Boucles for\nLa boucle la plus simple est la boucle for :\n\nfor (item in vecteur) action\n\nExemple :\n\nfor (i in 1:3) {\n  print(i)\n}\n\n[1] 1\n[1] 2\n[1] 3\n\n\n\n\nAttention, contrairement à de nombreux langages, l’assignation à i se fait dans l’environnement courant, changeant la valeur de l’objet i s’il existe par ailleurs :\n\ni &lt;- 100\nfor (i in 1:3) {}\ni\n\n[1] 3"
+  },
+  {
+    "objectID": "ControlFlow.html#interruption-anticipée",
+    "href": "ControlFlow.html#interruption-anticipée",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Interruption anticipée",
+    "text": "Interruption anticipée\nOn peut interrompre l’exécution d’une boucle for de manière anticipée :\n\nnext sort de l’itération actuelle ;\nbreak sort de la boucle for en entier.\n\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5"
+  },
+  {
+    "objectID": "ControlFlow.html#boucles-alternatives",
+    "href": "ControlFlow.html#boucles-alternatives",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Boucles alternatives",
+    "text": "Boucles alternatives\nQuand on ne sait pas les valeurs sur lesquelles on itère, on utilise :\n\nwhile(condition) action : l’action est effectuée tant que la condition est TRUE\nrepeat(action) : répète l’action indéfiniment (tant que break n’apparaît pas)\n\nfor est moins flexible que while qui est moins flexible que repeat, mais il vaut mieux utiliser la version la moins flexible.\nLe grand danger des boucles while et repeat est la boucle infinie : une boucle qui n’est jamais interrompue, entraînant le plantage de l’ordinateur par manque de mémoire."
+  },
+  {
+    "objectID": "ControlFlow.html#codes-alternatifs",
+    "href": "ControlFlow.html#codes-alternatifs",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "3 Codes alternatifs",
+    "text": "3 Codes alternatifs\n\nfor (i in 1:10) {\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni &lt;- 0\nwhile (i &lt; 10) {\n  i &lt;- i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break\n}\n\n[1] 3\n[1] 4\n[1] 5\n\n\n\ni &lt;- 0\nrepeat ({\n  i &lt;- i + 1 ## Attention à ne pas oublier l'incrémentation, sinon on crée une boucle infinie\n  if (i &lt; 3) \n    next\n\n  print(i)\n  \n  if (i &gt;= 5)\n    break ## Attention à ne pas oublier break, sinon on crée une boucle infinie\n})\n\n[1] 3\n[1] 4\n[1] 5"
+  },
+  {
+    "objectID": "ControlFlow.html#exemple-while-mais-pas-for",
+    "href": "ControlFlow.html#exemple-while-mais-pas-for",
+    "title": "Boucle et évaluation conditionnelle",
+    "section": "Exemple : while, mais pas for",
+    "text": "Exemple : while, mais pas for\nVous avez acheté une action au prix de 50€ et vous voulez la vendre dès que le prix dépasse les 55€ ou descend sous les 45€. On fait l’hypothèse que le prix change chaque jour de manière aléatoire de +1 ou -1.\n\n# Prix d'origine\nprix &lt;- 50\n\n# L'objet jour nous sert à compter le nombre de jours\njour &lt;- 1\n\n# Conditions utilisées dans while, remarquez le &&\nwhile ((45 &lt;= prix) && (prix &lt;= 55)){\n  \n  # Evolution du prix de +1 ou -1 chaque jour\n  prix &lt;- prix + sample(c(-1, 1), 1)\n  \n  # Compte le nombre de jours et ajoute un jour supplémentaire\n  jour = jour + 1 \n}\n\nprint(paste0(\"Nous avons gardé l'action \",jour,\" jours avant de la vendre, au prix de \", prix, \"€.\"))\n\n[1] \"Nous avons gardé l'action 19 jours avant de la vendre, au prix de 44€.\""
   },
   {
     "objectID": "slide-introduction.html#bienvenue",
@@ -1198,7 +1299,7 @@
     "href": "slides-markdown.html#yaml",
     "title": "Rapports : Markdown et Quarto",
     "section": "YAML",
-    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Tue Sep 16 14:52:46 2025 \""
+    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Thu Sep 18 14:42:31 2025 \""
   },
   {
     "objectID": "slides-markdown.html#formatage-du-texte",
@@ -1317,7 +1418,7 @@
     "href": "Markdown.html#yaml",
     "title": "Rapports : Markdown et Quarto",
     "section": "YAML",
-    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Tue Sep 16 14:52:43 2025 \""
+    "text": "YAML\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat: html\n---\nContient les options du documents, spécifie titre (title), auteur (author), date (date), format de sortie (output), etc.\nCode R dans l’en-tête : doit être dans des morceaux de code, avec des guillemets en plus \" \", par exemple \" Thu Sep 18 14:42:27 2025 \""
   },
   {
     "objectID": "Markdown.html#formatage-du-texte",
@@ -1519,21 +1620,21 @@
     "href": "slides-randomdraws.html#sample",
     "title": "Tirages aléatoires",
     "section": "sample()",
-    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1] 7 9 4 3 5\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1."
+    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1] 1 2 7 8 4\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1."
   },
   {
     "objectID": "slides-randomdraws.html#exemple-simulation-de-pile-ou-face",
     "href": "slides-randomdraws.html#exemple-simulation-de-pile-ou-face",
     "title": "Tirages aléatoires",
     "section": "Exemple : simulation de pile ou face",
-    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"P\" \"P\" \"P\" \"T\" \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"F\" \"F\" \"P\"\n[20] \"F\" \"F\" \"F\" \"P\" \"P\" \"F\" \"F\" \"F\" \"F\" \"F\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"T\" \"F\"\n[39] \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\""
+    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"P\" \"P\" \"P\" \"F\" \"P\" \"P\" \"F\" \"F\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"P\" \"P\" \"P\" \"P\" \"F\" \"F\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\"\n[20] \"T\" \"P\" \"F\" \"P\" \"P\" \"P\" \"F\" \"P\" \"F\" \"P\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"T\" \"P\"\n[39] \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"P\" \"F\" \"F\" \"P\" \"P\" \"P\""
   },
   {
     "objectID": "slides-randomdraws.html#reproducibilité",
     "href": "slides-randomdraws.html#reproducibilité",
     "title": "Tirages aléatoires",
     "section": "Reproducibilité",
-    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"P\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"F\" \"P\" \"F\""
+    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"P\" \"P\" \"P\" \"P\" \"F\" \"F\" \"F\" \"F\" \"P\" \"F\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"F\" \"P\""
   },
   {
     "objectID": "slides-randomdraws.html#contrôler-le-tirage",
@@ -1603,21 +1704,21 @@
     "href": "TiragesAleatoires.html#sample",
     "title": "Tirages aléatoires",
     "section": "sample()",
-    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1]  7 10  8  2  4\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1."
+    "text": "sample()\nLa fonction sample() permet d’échantillonner à partir d’un vecteur connu :\n\n# Parmi les entiers compris entre 1 et 10, tirer aléatoirement 5 nombres\nsample(x = 1:10, size  = 5)\n\n[1]  7 10  5  2  4\n\n\n\n\n\n\n\n\n\nArgument\nDéfinition\n\n\n\n\nx\nLe vecteur que l’on souhaite échantillonner. Par exemple, pour simuler des tirages à pile ou face : x = c(\"P\", \"F\")\n\n\nsize\nLa taille de l’échantillon. La valeur par défaut est la longueur de x.\n\n\nreplace\nEst-ce que le tirage se fait avec remise ? Si FALSE, alors une valeur ne peut être tirée qu’une seule fois. Si TRUE, chaque valeur peut être tirée plusieurs fois.\n\n\nprob\nUn vecteur de probabilités de la même longueur que x qui indique la probabilité de chaque valeur dans x. Si l’argument n’est pas spécifié, chaque valeur à la même probabilité. Si la somme n’est pas 1, R va normalisé le vecteur pour que la somme soit 1."
   },
   {
     "objectID": "TiragesAleatoires.html#exemple-simulation-de-pile-ou-face",
     "href": "TiragesAleatoires.html#exemple-simulation-de-pile-ou-face",
     "title": "Tirages aléatoires",
     "section": "Exemple : simulation de pile ou face",
-    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"F\" \"P\" \"F\" \"T\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"T\" \"F\" \"F\"\n[20] \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"T\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\"\n[39] \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"F\" \"F\" \"P\" \"P\" \"P\" \"P\""
+    "text": "Exemple : simulation de pile ou face\nAvec une pièce non-biaisée\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"P\" \"F\"\n\n\nNotre pièce peut retomber sur la tranche, mais avec une faible probabilité\n\nsample(x = c(\"F\", \"P\", \"T\"),\n       prob = c(.48, .48, 0.04), # Pièce avec des tranches épaisses\n       size = 50,\n       replace = TRUE)\n\n [1] \"P\" \"P\" \"P\" \"P\" \"F\" \"F\" \"P\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"P\"\n[20] \"P\" \"P\" \"F\" \"P\" \"P\" \"T\" \"F\" \"F\" \"P\" \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"P\" \"P\" \"P\"\n[39] \"F\" \"P\" \"P\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\" \"P\" \"F\" \"P\""
   },
   {
     "objectID": "TiragesAleatoires.html#reproducibilité",
     "href": "TiragesAleatoires.html#reproducibilité",
     "title": "Tirages aléatoires",
     "section": "Reproducibilité",
-    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"F\" \"F\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"P\" \"F\" \"P\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\""
+    "text": "Reproducibilité\nLe résultat d’un tirage aléatoire est toujours différent ! En reprenant le tirage précédent :\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"F\" \"P\" \"F\" \"F\" \"F\" \"P\" \"F\" \"P\"\n\nsample(x = c(\"F\", \"P\"), # les valeurs possibles de la pièce\n       size = 10,  # 10 tirages\n       replace = TRUE) # Échantillonnage avec remise\n\n [1] \"F\" \"F\" \"P\" \"P\" \"F\" \"P\" \"P\" \"F\" \"F\" \"P\""
   },
   {
     "objectID": "TiragesAleatoires.html#contrôler-le-tirage",
