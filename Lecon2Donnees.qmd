@@ -1,0 +1,67 @@
+---
+title: "Séance 2 : Données et fonctions intégrées"
+subtitle: "Apprendre R avec les LLMs"
+author: "Elias Bouacida"
+date: 09-24-2025
+date-format: long
+format: 
+  html: default
+  revealjs:
+    scrollable: true
+    slide-number: true
+    output-file: slide-lecon2.html
+    embed-resources: true
+    footer: "Séance 2 - Données et fonctions"
+format-links: [revealjs]
+lang: fr
+---
+
+## Plan de la séance {.smaller}
+
+::: {.incremental}
+- **Récap et partage** (20min) : Retours sur ce que vous avez appris la semaine dernière
+- **Dataset** (60min) : Données météo 
+- **Debugging collectif** (40min) : 
+- **Exploration fonctions built-in** (60min) : `sum()`, `length()`, `min()`, `max()`
+- **Mini-projet individuel** (40min) : Analyser des données de votre choix
+:::
+
+**Production attendue :** Analyse météo commentée + 3 fonctions maîtrisées
+
+## Objectif de la séance
+
+::: {.callout-tip}
+## Manipuler des collections de données et comprendre le concept de fonction
+:::
+
+::: {.incremental}
+- Travailler avec des **vecteurs** (collections de données)
+- Découvrir les **fonctions built-in** de R
+- Apprendre à **débugger** avec l'aide des LLMs
+- Gérer les **données manquantes** (NA)
+:::
+
+# Récap et partage {background-color="#2E8B57"}
+
+## Retours sur vos premières expériences
+
+::: {.incremental}
+- Qu'avez-vous compris des concepts de la semaine dernière ?
+:::
+
+
+# Données 
+
+## Données météo
+
+Connectez-vous sur Moodle et téléchargez les données météo.
+
+Vous devez maintenant :
+
+- Chargez les données dans Rstudio
+- Calculez des statistiques sur la température : moyenne, médiane, minimum, maximum et écart-type.
+- Quels autres variables sont présentes ?
+
+## Données au choix
+
+Aller sur [Data gouv](https://www.data.gouv.fr/datasets) et choisissez des données à analyser.

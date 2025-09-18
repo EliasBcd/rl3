@@ -20,6 +20,7 @@ website:
         contents:
           - 01Introduction.qmd
           - 02Lecon1.qmd
+          - Lecon2Donnees.qmd
       #     - ControlFlow.qmd
       # - section: "Analyse de données"
       #   contents:
