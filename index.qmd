@@ -9,7 +9,7 @@ date: last-modified
 date-format: long
 ---
 
-Ce site contient la plupart des présentations utilisées pour le cours d'introduction à R dispensé en L3 économie-finance à l'université Paris 8.
+Ce site contient la plupart des présentations utilisées pour le cours d'introduction à R à l'aide d'un LLM dispensé en L3 économie-finance à l'université Paris 8.
 
 
 # Syllabus 
@@ -18,88 +18,20 @@ La principale ressource bibliographique pour le cours est @Barnier.
 
 ## Plan du cours
 
-1. Installation et introduction à R / Rstudio et Posit.cloud
+1. Installation et introduction à R / Rstudio et aux LLMs
     - Installer R / Rstudio, utiliser Posit.cloud
     - Installer un paquet
     - Présenter l'interface de Rstudio (identique à celle de Posit.cloud)
-2. Utilisation basique de R
-    - Présentation des différentes structures de données : Booléen, nombre, chaîne 
-    caractères, vecteur et matrice, data.frame et dérivés, listes
-    - Opérations sur les données : opérations classiques (`+, -, *, /, ^`) et pratiques 
-    (`%%, %/%`)
-    - Opérations booléennes (tests de vérités) : `==, !=, >=, <=, >, <, &, |, !,
-%in%`
-3. Utilisation standard de R
-    - Boucles et évaluation conditionnelle (`for`, `if ... else`, `while`)
-    - Fonctions (création et utilisation)
-    - Scripts
-    - Lectures de fichiers externes (script et données (`.R, .csv, .txt, .xls`))
-4. Introduction à l'analyse de donnée avec R (`data.frame` et `tibble`)
-4. Graphique (librairie `ggplot`)
-9. Introduire `quarto` et `markdown` (si le temps le permet)
-6. Tirage aléatoire et fonctions liées au probabilités 
-(fonctions de type `dxxx, rxxx`, ...) (si le temps le permet)
+    - Les LLMs
+2. Premières utilisations de prompts pour coder en R
+3. Premières analyses de données à l'aide de R
 
 
-## Structuration du cours
-
-Construit à partir de @Barnier.
-
-1. Introduction à R
-    - Chapitre 2 (long)
-    - Chapitre 3, sans les représentations graphiques (intermédiaire)
-    - Chapitre 5, principalement à lire, pas d'exercice dessus (court)
-2. Aller plus loin
-    - Chapitre 14, écrire ses propres fonctions (long)
-    - Chapitre 16, structure de données (long)
-    - Chapitre 17, exécution conditionnelle et boucle (long)
-3. Tidyverse
-    - Chapitre 6 (court)
-    - Chapitre 7 (intermédiaire)
-    - Chapitre 8 (long, et à simplifier)
 
 ## Validation
 
-Cours à validation, qui se fait sur le rendu d'un nombre suffisant d'exercice (cette année, probablement 11 sur 13 au minimum).
-
-# Librairies requises pour le cours
-
-- swirl
-- tydiverse
-- R dans sa dernière version
-- Rstudio dans sa dernière version
+Cours à validation, qui se fait sur le rendu d'un journal de bord
 
 
-# Notions principales
-
-- Objet
-- Fonction (argument, expression, résultat)
-- Assignation
-- Type (voir @sec-types)
-- Valeur
-- Commande
-- Script
-- Paquet (ou librairie)
-- Espace de nommage
-
-## Liens entre ces notions
-
-Une valeur est assignée à un objet.  
-Une valeur peut être de différent type.  
-Une commande est une instruction donnée à R.  
-Un script rassemble un ensemble de commandes dans un fichier texte.  
-Une fonction rassemble un ensemble de commandes effectuée sur des arguments et donne un résultat.  
-Un type décrit la forme de la variable stockée en mémoire.  
-Un paquet rassemble dans plusieurs scripts des objets et des fonctions.  
-
-
-## Les types {#sec-types}
-
-- Booléen
-- Numériques
-- Chaînes de caractères
-- Vecteurs
-- Tableau (tibble, data.frame)
-- ...
 
 # Références
