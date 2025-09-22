@@ -5,10 +5,8 @@ author: "Elias Bouacida"
 date: last-modified
 date-format: long
 format:
+  html: default
   revealjs:
-    theme: simple
-    # transition: slide
-    highlight-style: github
     slide-number: true
     incremental: true
     smaller: false
@@ -16,8 +14,6 @@ format:
     link-external-newwindow: true
     output-file: slide-introduction.html
     embed-resources: true
-execute: 
-  cache: true
 format-links: [revealjs]
 lang: fr
 ---
