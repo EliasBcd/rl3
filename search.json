@@ -117,48 +117,206 @@
     "href": "slide-introduction.html#bienvenue",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Bienvenue ! 🚀",
-    "text": "Bienvenue ! 🚀\nApprendre la Programmation R avec les LLM\n\n\n🤖 LLM = Votre Assistant\nLLM : Large Language Model, aussi connu sous le nom d’IA générative\nEx : ChatGPT, Claude, Mistral, etc.\n\n📊 R = Langage Statistique\nPour analyser, visualiser, calculer\n\n🎯 Objectif = Collaboration\nProgrammer AVEC l’IA générative intelligemment",
-    "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
-      "Apprendre la Programmation R avec les LLM"
-    ]
+    "text": "Bienvenue ! 🚀\nApprendre la Programmation R avec les LLM\n\n\n🤖 LLM = Votre Assistant\nLLM : Large Language Model, aussi connu sous le nom d’IA générative\nEx : ChatGPT, Claude, Mistral, etc.\n\n📊 R = Langage Statistique\nPour analyser, visualiser, calculer\n\n🎯 Objectif = Collaboration\nProgrammer AVEC l’IA générative intelligemment"
   },
   {
     "objectID": "slide-introduction.html#sondage",
     "href": "slide-introduction.html#sondage",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Sondage 📊",
-    "text": "Sondage 📊\nLevez la main si vous avez déjà (Pas de jugement ! 😊)…\n\nUtilisé un LLM (ChatGPT, Claude, etc) ? 🙋‍♀️\nDemandé leur aide pour un devoir ? 📝\nCopié-collé une de leur réponse sans la comprendre ? 😅\nFait confiance aveuglément à un LLM ? 🤖\nPayé pour un LLM ?\nProgrammé dans n’importe quel langage de programmation ? 💻",
-    "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
-      "Apprendre la Programmation R avec les LLM"
-    ]
+    "text": "Sondage 📊\nLevez la main si vous avez déjà (Pas de jugement ! 😊)…\n\nUtilisé un LLM (ChatGPT, Claude, etc) ? 🙋‍♀️\nDemandé leur aide pour un devoir ? 📝\nCopié-collé une de leur réponse sans la comprendre ? 😅\nFait confiance aveuglément à un LLM ? 🤖\nPayé pour un LLM ?\nProgrammé dans n’importe quel langage de programmation ? 💻"
   },
   {
     "objectID": "slide-introduction.html#que-va-t-on-apprendre",
     "href": "slide-introduction.html#que-va-t-on-apprendre",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Que va-t-on apprendre ?",
-    "text": "Que va-t-on apprendre ?\nComment utilisez-vous des LLMs ?\n\nL’approche ici\n\nPoser les BONNES questions\nVérifier et corriger les erreurs\nComprendre les réponses\nUtiliser le LLM comme partenaire\n\n\n\nObjectif : Autonomie et esprit critique\n\n\nIci, demander des exemples de ce qu’ils font",
-    "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
-      "Apprendre la Programmation R avec les LLM"
-    ]
+    "text": "Que va-t-on apprendre ?\nComment utilisez-vous des LLMs ?\n\nL’approche ici\n\nPoser les BONNES questions\nVérifier et corriger les erreurs\nComprendre les réponses\nUtiliser le LLM comme partenaire\n\n\n\nObjectif : Autonomie et esprit critique\n\n\nIci, demander des exemples de ce qu’ils font"
   },
   {
     "objectID": "slide-introduction.html#démonstration-prompt",
     "href": "slide-introduction.html#démonstration-prompt",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Démonstration : Prompt",
-    "text": "Démonstration : Prompt\n\n\nPrompt 1 (Essayez !)\n\"Fais-moi des statistiques sur mes données\"\n\nProblème : Trop vague !\nQuelles données ?\nQuelles statistiques ?\nQuel format de sortie ?\n\n\nPrompt 2\n\"J'ai 10 notes d'étudiants : \n12, 15, 18, 14, 16, 13, 17, 11, 19, 15.\nCalcule la moyenne, médiane et l'écart-type\nen R avec des commentaires explicatifs.\"\nRésultat : Code précis et commenté !\n\n\nProposer aux étudiants de le faire eux-même. Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le problème.",
+    "text": "Démonstration : Prompt\n\n\nPrompt 1 (Essayez !)\n\"Fais-moi des statistiques sur mes données\"\n\nProblème : Trop vague !\nQuelles données ?\nQuelles statistiques ?\nQuel format de sortie ?\n\n\nPrompt 2\n\"J'ai 10 notes d'étudiants : \n12, 15, 18, 14, 16, 13, 17, 11, 19, 15.\nCalcule la moyenne, médiane et l'écart-type\nen R avec des commentaires explicatifs.\"\nRésultat : Code précis et commenté !\n\n\nProposer aux étudiants de le faire eux-même. Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le problème."
+  },
+  {
+    "objectID": "slide-introduction.html#objectif-du-cours",
+    "href": "slide-introduction.html#objectif-du-cours",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Objectif du cours",
+    "text": "Objectif du cours\n\nApprendre à utiliser R et Rstudio\nApprendre à utiliser les principales librairies (aussi appelées paquets) de R pour l’analyse de données et les statistiques (le tidyverse)\nVous préparez à utiliser R dans d’autres cours (économétrie, séries temporelles, économie du travail, projet tutorés)\nVous apprendre à utiliser des LLMs pour faire cela"
+  },
+  {
+    "objectID": "slide-introduction.html#r-et-rstudio-vos-nouveaux-outils",
+    "href": "slide-introduction.html#r-et-rstudio-vos-nouveaux-outils",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "R et RStudio : Vos nouveaux outils",
+    "text": "R et RStudio : Vos nouveaux outils\n\n\nR = Le Moteur 🚗\n\nLangage de programmation\nSpécialisé en analyse de données\nDérive d’un langage antérieur appelé S https://fr.wikipedia.org/wiki/S_(langage)\nEst un logiciel libre\n\n\nRStudio = L’Interface 🖥️\n\nEnvironnement convivial\nFacilite l’écriture de code R\nIntègre tout en un endroit\nComme Word pour l’écriture"
+  },
+  {
+    "objectID": "slide-introduction.html#exemples-concrets-dusage",
+    "href": "slide-introduction.html#exemples-concrets-dusage",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Exemples concrets d’usage 🌟",
+    "text": "Exemples concrets d’usage 🌟\n\n📈 Analyser un sondage : “Quel pourcentage préfère le chocolat ?”\n📊 Créer des graphiques : Histogrammes, courbes, diagrammes\n🧮 Calculs statistiques : Moyennes, corrélations, tests, économétrie\n🏃 Données sportives : Performance des équipes, évolutions\n📋 Nettoyer des données : Corriger, organiser, structurer\n🎯 Prédictions simples : “Quelle sera la prochaine tendance ?”"
+  },
+  {
+    "objectID": "slide-introduction.html#premier-aperçu-du-code-r",
+    "href": "slide-introduction.html#premier-aperçu-du-code-r",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Premier aperçu du code R",
+    "text": "Premier aperçu du code R\n\n# Créer une liste de notes\nnotes &lt;- c(15, 12, 18, 14, 16, 13, 17)\n# Calculer la moyenne\nmoyenne &lt;- mean(notes)\n# Afficher le résultat\nprint(paste(\"La moyenne est :\", moyenne))\n\n[1] \"La moyenne est : 15\"\n\n\nC’est tout ! Pas si compliqué, non ? 😊"
+  },
+  {
+    "objectID": "slide-introduction.html#le-processus-en-4-étapes",
+    "href": "slide-introduction.html#le-processus-en-4-étapes",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Le processus en 4 étapes",
+    "text": "Le processus en 4 étapes\n\n🎯 Formuler une question précise\n\nAu lieu de “fais-moi des calculs”\nDire “calcule la moyenne de ces 5 notes : 12, 15, 18, 14, 16”\n\n🤖 Recevoir et comprendre la réponse\n\nLe LLM vous donne du code + des explications (si vous lui demandez)\n\n🧪 Tester et vérifier\n\nExécuter le code, voir si ça marche, comprendre pourquoi\n\n✨ Améliorer si nécessaire\n\nCorriger les erreurs, adapter à vos besoins"
+  },
+  {
+    "objectID": "slide-introduction.html#exemple",
+    "href": "slide-introduction.html#exemple",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Exemple",
+    "text": "Exemple\nVotre demande (à votre LLM préféré)\n\"J'ai des données de vente par mois :\nJanvier : 1500€, Février : 2000€, Mars : 1800€\nCrée un graphique en barres avec R\"\nEssayez !"
+  },
+  {
+    "objectID": "slide-introduction.html#exemple-réponse-possible",
+    "href": "slide-introduction.html#exemple-réponse-possible",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Exemple (réponse possible)",
+    "text": "Exemple (réponse possible)\n\n# Données de vente\nmois &lt;- c(\"Janvier\", \"Février\", \"Mars\")\nventes &lt;- c(1500, 2000, 1800)\n\n# Créer le graphique\nbarplot(ventes, names.arg = mois, \n        main = \"Ventes par mois\",\n        ylab = \"Montant (€)\")"
+  },
+  {
+    "objectID": "slide-introduction.html#le-résultat",
+    "href": "slide-introduction.html#le-résultat",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Le résultat",
+    "text": "Le résultat\n\n# Testons le code !\nmois &lt;- c(\"Janvier\", \"Février\", \"Mars\")\nventes &lt;- c(1500, 2000, 1800)\n\nbarplot(ventes, names.arg = mois, \n        main = \"Ventes par mois\",\n        ylab = \"Montant (€)\",\n        col = \"steelblue\")"
+  },
+  {
+    "objectID": "slide-introduction.html#pourquoi-on-va-faire-exprès-de-commettre-des-erreurs",
+    "href": "slide-introduction.html#pourquoi-on-va-faire-exprès-de-commettre-des-erreurs",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Pourquoi on va faire exprès de commettre des erreurs",
+    "text": "Pourquoi on va faire exprès de commettre des erreurs\nPrincipe pédagogique : Les erreurs sont des occasions d’apprentissage, pas des échecs !\n\n🎯 Développer votre esprit critique\n🔍 Apprendre à déboguer\n🤖 Comprendre les limites des LLM\n💪 Gagner en autonomie\n🧠 Mémoriser par l’expérience"
+  },
+  {
+    "objectID": "slide-introduction.html#séances-2-phases",
+    "href": "slide-introduction.html#séances-2-phases",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "5 Séances, 2 Phases",
+    "text": "5 Séances, 2 Phases\nPhase 1 : Fondations 🌱 (Séances 1-3)\n\nSéance 1 : Premier contact LLM + Variables R\nSéance 2 : Vecteurs et fonctions built-in\nSéance 3 : Créer ses propres fonctions\n\n\nObjectif : Maîtriser le dialogue avec un LLM et les concepts R de base\n\n\nPhase 2 : Application 🚀 (Séances 4-5)\n\nSéance 4 : Tableaux de données et graphiques\nSéance 5 : Projet personnel libre\n\n\n\nObjectif : Analyser de vraies données en autonomie"
+  },
+  {
+    "objectID": "slide-introduction.html#structure-dune-séance-type",
+    "href": "slide-introduction.html#structure-dune-séance-type",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Structure d’une séance type",
+    "text": "Structure d’une séance type\n\n\n🎭 Présentation\n30-60 min\n\nConcepts du jour\nDémonstrations en direct\nExemples concrets\n\n\n💻 Pratique\n90-120 min\n\nExercices sur machine\nAide individuelle\nDebugging collectif\n\n\n🤝 Partage\n30 min\n\nRetours d’expérience\nSolutions créatives"
+  },
+  {
+    "objectID": "slide-introduction.html#évaluation-continue",
+    "href": "slide-introduction.html#évaluation-continue",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Évaluation continue",
+    "text": "Évaluation continue\nL’objectif : évaluer votre progression, pas vous piéger !\nCours à validation."
+  },
+  {
+    "objectID": "slide-introduction.html#vos-interrogations",
+    "href": "slide-introduction.html#vos-interrogations",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Vos interrogations",
+    "text": "Vos interrogations\nQuelles sont vos questions ? 🤔\n\n🤖 Sur l’utilisation des LLM ?\n📊 Sur le langage R ?\n📅 Sur l’organisation du cours ?\n📝 Sur l’évaluation ?\n\nPas de question bête ! Nous sommes tous là pour apprendre ensemble 😊"
+  },
+  {
+    "objectID": "slide-introduction.html#maintenant",
+    "href": "slide-introduction.html#maintenant",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Maintenant",
+    "text": "Maintenant\n\n📥 Installer R et RStudio (tutoriel fourni, si sur votre machine, démarrez Rstudio sinon)\n🔐 Créer un compte LLM (facultatif)\n🧪 Essayer un premier prompt simple"
+  },
+  {
+    "objectID": "slide-introduction.html#merci",
+    "href": "slide-introduction.html#merci",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Merci !",
+    "text": "Merci !\nN’oubliez pas : l’erreur est votre amie ! 😊\n\n\n📚 Apprenez\n\n🔍 Explorez\n\n🎉 Réussissez"
+  },
+  {
+    "objectID": "slide-introduction.html#ressources-disponibles",
+    "href": "slide-introduction.html#ressources-disponibles",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Ressources disponibles",
+    "text": "Ressources disponibles\n🔗 Liens utiles\n\nInstallation R/RStudio : https://moodle.univ-paris8.fr/mod/page/view.php?id=272504\nUtilisation de R/Rstudio en ligne : https://datalab.sspcloud.fr/ (Utilisez votre compte étudiant Paris 8 pour vous connecter)\nGuide des prompts efficaces : https://www.francenum.gouv.fr/guides-et-conseils/intelligence-artificielle/generation-de-contenus-texte-image-son-video/comment-0\nForum d’entraide étudiant"
+  },
+  {
+    "objectID": "slide-introduction.html#contact-et-ressources",
+    "href": "slide-introduction.html#contact-et-ressources",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Contact et ressources",
+    "text": "Contact et ressources\n\n📧 Email : elias.bouacida@univ-paris8.fr\n🌐 Espace de cours : Moodle\n🌐 Cours : Cours\nBureau : Bâtiment D, Salle D115\nPermanences : Mardi 14h-16h, Mercredi 14h-16h"
+  },
+  {
+    "objectID": "01Introduction.html",
+    "href": "01Introduction.html",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "",
+    "text": "Apprendre la Programmation R avec les LLM\n\n\n🤖 LLM = Votre Assistant\nLLM : Large Language Model, aussi connu sous le nom d’IA générative\nEx : ChatGPT, Claude, Mistral, etc.\n\n📊 R = Langage Statistique\nPour analyser, visualiser, calculer\n\n🎯 Objectif = Collaboration\nProgrammer AVEC l’IA générative intelligemment\n\n\n\n\n\nLevez la main si vous avez déjà (Pas de jugement ! 😊)…\n\nUtilisé un LLM (ChatGPT, Claude, etc) ? 🙋‍♀️\nDemandé leur aide pour un devoir ? 📝\nCopié-collé une de leur réponse sans la comprendre ? 😅\nFait confiance aveuglément à un LLM ? 🤖\nPayé pour un LLM ?\nProgrammé dans n’importe quel langage de programmation ? 💻",
     "crumbs": [
       "Introduction à R et Rstudio et la programmation avec des LLMs",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "slide-introduction.html#objectif-du-cours",
-    "href": "slide-introduction.html#objectif-du-cours",
+    "objectID": "01Introduction.html#bienvenue",
+    "href": "01Introduction.html#bienvenue",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "",
+    "text": "Apprendre la Programmation R avec les LLM\n\n\n🤖 LLM = Votre Assistant\nLLM : Large Language Model, aussi connu sous le nom d’IA générative\nEx : ChatGPT, Claude, Mistral, etc.\n\n📊 R = Langage Statistique\nPour analyser, visualiser, calculer\n\n🎯 Objectif = Collaboration\nProgrammer AVEC l’IA générative intelligemment",
+    "crumbs": [
+      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Apprendre la Programmation R avec les LLM"
+    ]
+  },
+  {
+    "objectID": "01Introduction.html#sondage",
+    "href": "01Introduction.html#sondage",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "",
+    "text": "Levez la main si vous avez déjà (Pas de jugement ! 😊)…\n\nUtilisé un LLM (ChatGPT, Claude, etc) ? 🙋‍♀️\nDemandé leur aide pour un devoir ? 📝\nCopié-collé une de leur réponse sans la comprendre ? 😅\nFait confiance aveuglément à un LLM ? 🤖\nPayé pour un LLM ?\nProgrammé dans n’importe quel langage de programmation ? 💻",
+    "crumbs": [
+      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Apprendre la Programmation R avec les LLM"
+    ]
+  },
+  {
+    "objectID": "01Introduction.html#que-va-t-on-apprendre",
+    "href": "01Introduction.html#que-va-t-on-apprendre",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Que va-t-on apprendre ?",
+    "text": "Que va-t-on apprendre ?\n\nComment utilisez-vous des LLMs ?\n\n\n\nL’approche ici\n\nPoser les BONNES questions\nVérifier et corriger les erreurs\nComprendre les réponses\nUtiliser le LLM comme partenaire\n\n\n\n\nObjectif : Autonomie et esprit critique\n\n\nIci, demander des exemples de ce qu’ils font",
+    "crumbs": [
+      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Apprendre la Programmation R avec les LLM"
+    ]
+  },
+  {
+    "objectID": "01Introduction.html#démonstration-prompt",
+    "href": "01Introduction.html#démonstration-prompt",
+    "title": "Apprendre la Programmation R avec les LLM",
+    "section": "Démonstration : Prompt",
+    "text": "Démonstration : Prompt\n\n\n\nPrompt 1 (Essayez !)\n\"Fais-moi des statistiques sur mes données\"\n\nProblème : Trop vague !\nQuelles données ?\nQuelles statistiques ?\nQuel format de sortie ?\n\n\n\n\nPrompt 2\n\"J'ai 10 notes d'étudiants : \n12, 15, 18, 14, 16, 13, 17, 11, 19, 15.\nCalcule la moyenne, médiane et l'écart-type\nen R avec des commentaires explicatifs.\"\nRésultat : Code précis et commenté !\n\n\n\n\nProposer aux étudiants de le faire eux-même. Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le problème.",
+    "crumbs": [
+      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Apprendre la Programmation R avec les LLM"
+    ]
+  },
+  {
+    "objectID": "01Introduction.html#objectif-du-cours",
+    "href": "01Introduction.html#objectif-du-cours",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Objectif du cours",
     "text": "Objectif du cours\n\nApprendre à utiliser R et Rstudio\nApprendre à utiliser les principales librairies (aussi appelées paquets) de R pour l’analyse de données et les statistiques (le tidyverse)\nVous préparez à utiliser R dans d’autres cours (économétrie, séries temporelles, économie du travail, projet tutorés)\nVous apprendre à utiliser des LLMs pour faire cela",
@@ -168,19 +326,19 @@
     ]
   },
   {
-    "objectID": "slide-introduction.html#r-et-rstudio-vos-nouveaux-outils",
-    "href": "slide-introduction.html#r-et-rstudio-vos-nouveaux-outils",
+    "objectID": "01Introduction.html#r-et-rstudio-vos-nouveaux-outils",
+    "href": "01Introduction.html#r-et-rstudio-vos-nouveaux-outils",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "R et RStudio : Vos nouveaux outils",
-    "text": "R et RStudio : Vos nouveaux outils\n\n\nR = Le Moteur 🚗\n\nLangage de programmation\nSpécialisé en analyse de données\nDérive d’un langage antérieur appelé S https://fr.wikipedia.org/wiki/S_(langage)\nEst un logiciel libre\n\n\nRStudio = L’Interface 🖥️\n\nEnvironnement convivial\nFacilite l’écriture de code R\nIntègre tout en un endroit\nComme Word pour l’écriture",
+    "text": "R et RStudio : Vos nouveaux outils\n\n\n\nR = Le Moteur 🚗\n\nLangage de programmation\nSpécialisé en analyse de données\nDérive d’un langage antérieur appelé S https://fr.wikipedia.org/wiki/S_(langage)\nEst un logiciel libre\n\n\n\n\nRStudio = L’Interface 🖥️\n\nEnvironnement convivial\nFacilite l’écriture de code R\nIntègre tout en un endroit\nComme Word pour l’écriture",
     "crumbs": [
       "Introduction à R et Rstudio et la programmation avec des LLMs",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "slide-introduction.html#exemples-concrets-dusage",
-    "href": "slide-introduction.html#exemples-concrets-dusage",
+    "objectID": "01Introduction.html#exemples-concrets-dusage",
+    "href": "01Introduction.html#exemples-concrets-dusage",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Exemples concrets d’usage 🌟",
     "text": "Exemples concrets d’usage 🌟\n\n📈 Analyser un sondage : “Quel pourcentage préfère le chocolat ?”\n📊 Créer des graphiques : Histogrammes, courbes, diagrammes\n🧮 Calculs statistiques : Moyennes, corrélations, tests, économétrie\n🏃 Données sportives : Performance des équipes, évolutions\n📋 Nettoyer des données : Corriger, organiser, structurer\n🎯 Prédictions simples : “Quelle sera la prochaine tendance ?”",
@@ -190,8 +348,8 @@
     ]
   },
   {
-    "objectID": "slide-introduction.html#premier-aperçu-du-code-r",
-    "href": "slide-introduction.html#premier-aperçu-du-code-r",
+    "objectID": "01Introduction.html#premier-aperçu-du-code-r",
+    "href": "01Introduction.html#premier-aperçu-du-code-r",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Premier aperçu du code R",
     "text": "Premier aperçu du code R\n\n# Créer une liste de notes\nnotes &lt;- c(15, 12, 18, 14, 16, 13, 17)\n# Calculer la moyenne\nmoyenne &lt;- mean(notes)\n# Afficher le résultat\nprint(paste(\"La moyenne est :\", moyenne))\n\n[1] \"La moyenne est : 15\"\n\n\nC’est tout ! Pas si compliqué, non ? 😊",
@@ -201,8 +359,8 @@
     ]
   },
   {
-    "objectID": "slide-introduction.html#le-processus-en-4-étapes",
-    "href": "slide-introduction.html#le-processus-en-4-étapes",
+    "objectID": "01Introduction.html#le-processus-en-4-étapes",
+    "href": "01Introduction.html#le-processus-en-4-étapes",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Le processus en 4 étapes",
     "text": "Le processus en 4 étapes\n\n🎯 Formuler une question précise\n\nAu lieu de “fais-moi des calculs”\nDire “calcule la moyenne de ces 5 notes : 12, 15, 18, 14, 16”\n\n🤖 Recevoir et comprendre la réponse\n\nLe LLM vous donne du code + des explications (si vous lui demandez)\n\n🧪 Tester et vérifier\n\nExécuter le code, voir si ça marche, comprendre pourquoi\n\n✨ Améliorer si nécessaire\n\nCorriger les erreurs, adapter à vos besoins",
@@ -212,8 +370,8 @@
     ]
   },
   {
-    "objectID": "slide-introduction.html#exemple",
-    "href": "slide-introduction.html#exemple",
+    "objectID": "01Introduction.html#exemple",
+    "href": "01Introduction.html#exemple",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Exemple",
     "text": "Exemple\nVotre demande (à votre LLM préféré)\n\"J'ai des données de vente par mois :\nJanvier : 1500€, Février : 2000€, Mars : 1800€\nCrée un graphique en barres avec R\"\nEssayez !",
@@ -223,8 +381,8 @@
     ]
   },
   {
-    "objectID": "slide-introduction.html#exemple-réponse-possible",
-    "href": "slide-introduction.html#exemple-réponse-possible",
+    "objectID": "01Introduction.html#exemple-réponse-possible",
+    "href": "01Introduction.html#exemple-réponse-possible",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Exemple (réponse possible)",
     "text": "Exemple (réponse possible)\n\n# Données de vente\nmois &lt;- c(\"Janvier\", \"Février\", \"Mars\")\nventes &lt;- c(1500, 2000, 1800)\n\n# Créer le graphique\nbarplot(ventes, names.arg = mois, \n        main = \"Ventes par mois\",\n        ylab = \"Montant (€)\")",
@@ -234,8 +392,8 @@
     ]
   },
   {
-    "objectID": "slide-introduction.html#le-résultat",
-    "href": "slide-introduction.html#le-résultat",
+    "objectID": "01Introduction.html#le-résultat",
+    "href": "01Introduction.html#le-résultat",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Le résultat",
     "text": "Le résultat\n\n# Testons le code !\nmois &lt;- c(\"Janvier\", \"Février\", \"Mars\")\nventes &lt;- c(1500, 2000, 1800)\n\nbarplot(ventes, names.arg = mois, \n        main = \"Ventes par mois\",\n        ylab = \"Montant (€)\",\n        col = \"steelblue\")",
@@ -245,8 +403,8 @@
     ]
   },
   {
-    "objectID": "slide-introduction.html#pourquoi-on-va-faire-exprès-de-commettre-des-erreurs",
-    "href": "slide-introduction.html#pourquoi-on-va-faire-exprès-de-commettre-des-erreurs",
+    "objectID": "01Introduction.html#pourquoi-on-va-faire-exprès-de-commettre-des-erreurs",
+    "href": "01Introduction.html#pourquoi-on-va-faire-exprès-de-commettre-des-erreurs",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Pourquoi on va faire exprès de commettre des erreurs",
     "text": "Pourquoi on va faire exprès de commettre des erreurs\nPrincipe pédagogique : Les erreurs sont des occasions d’apprentissage, pas des échecs !\n\n🎯 Développer votre esprit critique\n🔍 Apprendre à déboguer\n🤖 Comprendre les limites des LLM\n💪 Gagner en autonomie\n🧠 Mémoriser par l’expérience",
@@ -256,30 +414,30 @@
     ]
   },
   {
-    "objectID": "slide-introduction.html#séances-2-phases",
-    "href": "slide-introduction.html#séances-2-phases",
+    "objectID": "01Introduction.html#séances-2-phases",
+    "href": "01Introduction.html#séances-2-phases",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "5 Séances, 2 Phases",
-    "text": "5 Séances, 2 Phases\nPhase 1 : Fondations 🌱 (Séances 1-3)\n\nSéance 1 : Premier contact LLM + Variables R\nSéance 2 : Vecteurs et fonctions built-in\nSéance 3 : Créer ses propres fonctions\n\n\nObjectif : Maîtriser le dialogue avec un LLM et les concepts R de base\n\n\nPhase 2 : Application 🚀 (Séances 4-5)\n\nSéance 4 : Tableaux de données et graphiques\nSéance 5 : Projet personnel libre\n\n\n\nObjectif : Analyser de vraies données en autonomie",
+    "text": "5 Séances, 2 Phases\n\nPhase 1 : Fondations 🌱 (Séances 1-3)\n\nSéance 1 : Premier contact LLM + Variables R\nSéance 2 : Vecteurs et fonctions built-in\nSéance 3 : Créer ses propres fonctions\n\n\nObjectif : Maîtriser le dialogue avec un LLM et les concepts R de base\n\n\n\n\nPhase 2 : Application 🚀 (Séances 4-5)\n\nSéance 4 : Tableaux de données et graphiques\nSéance 5 : Projet personnel libre\n\n\n\n\nObjectif : Analyser de vraies données en autonomie",
     "crumbs": [
       "Introduction à R et Rstudio et la programmation avec des LLMs",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "slide-introduction.html#structure-dune-séance-type",
-    "href": "slide-introduction.html#structure-dune-séance-type",
+    "objectID": "01Introduction.html#structure-dune-séance-type",
+    "href": "01Introduction.html#structure-dune-séance-type",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Structure d’une séance type",
-    "text": "Structure d’une séance type\n\n\n🎭 Présentation\n30-60 min\n\nConcepts du jour\nDémonstrations en direct\nExemples concrets\n\n\n💻 Pratique\n90-120 min\n\nExercices sur machine\nAide individuelle\nDebugging collectif\n\n\n🤝 Partage\n30 min\n\nRetours d’expérience\nSolutions créatives",
+    "text": "Structure d’une séance type\n\n\n\n🎭 Présentation\n30-60 min\n\nConcepts du jour\nDémonstrations en direct\nExemples concrets\n\n\n\n\n💻 Pratique\n90-120 min\n\nExercices sur machine\nAide individuelle\nDebugging collectif\n\n\n\n\n🤝 Partage\n30 min\n\nRetours d’expérience\nSolutions créatives",
     "crumbs": [
       "Introduction à R et Rstudio et la programmation avec des LLMs",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "slide-introduction.html#évaluation-continue",
-    "href": "slide-introduction.html#évaluation-continue",
+    "objectID": "01Introduction.html#évaluation-continue",
+    "href": "01Introduction.html#évaluation-continue",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Évaluation continue",
     "text": "Évaluation continue\nL’objectif : évaluer votre progression, pas vous piéger !\nCours à validation.",
@@ -289,8 +447,8 @@
     ]
   },
   {
-    "objectID": "slide-introduction.html#vos-interrogations",
-    "href": "slide-introduction.html#vos-interrogations",
+    "objectID": "01Introduction.html#vos-interrogations",
+    "href": "01Introduction.html#vos-interrogations",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Vos interrogations",
     "text": "Vos interrogations\nQuelles sont vos questions ? 🤔\n\n🤖 Sur l’utilisation des LLM ?\n📊 Sur le langage R ?\n📅 Sur l’organisation du cours ?\n📝 Sur l’évaluation ?\n\nPas de question bête ! Nous sommes tous là pour apprendre ensemble 😊",
@@ -300,8 +458,8 @@
     ]
   },
   {
-    "objectID": "slide-introduction.html#maintenant",
-    "href": "slide-introduction.html#maintenant",
+    "objectID": "01Introduction.html#maintenant",
+    "href": "01Introduction.html#maintenant",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Maintenant",
     "text": "Maintenant\n\n📥 Installer R et RStudio (tutoriel fourni, si sur votre machine, démarrez Rstudio sinon)\n🔐 Créer un compte LLM (facultatif)\n🧪 Essayer un premier prompt simple",
@@ -311,8 +469,8 @@
     ]
   },
   {
-    "objectID": "slide-introduction.html#merci",
-    "href": "slide-introduction.html#merci",
+    "objectID": "01Introduction.html#merci",
+    "href": "01Introduction.html#merci",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Merci !",
     "text": "Merci !\nN’oubliez pas : l’erreur est votre amie ! 😊\n\n\n📚 Apprenez\n\n🔍 Explorez\n\n🎉 Réussissez",
@@ -322,22 +480,22 @@
     ]
   },
   {
-    "objectID": "slide-introduction.html#ressources-disponibles",
-    "href": "slide-introduction.html#ressources-disponibles",
+    "objectID": "01Introduction.html#ressources-disponibles",
+    "href": "01Introduction.html#ressources-disponibles",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Ressources disponibles",
-    "text": "Ressources disponibles\n🔗 Liens utiles\n\nInstallation R/RStudio : https://moodle.univ-paris8.fr/mod/page/view.php?id=272504\nUtilisation de R/Rstudio en ligne : https://datalab.sspcloud.fr/ (Utilisez votre compte étudiant Paris 8 pour vous connecter)\nGuide des prompts efficaces : https://www.francenum.gouv.fr/guides-et-conseils/intelligence-artificielle/generation-de-contenus-texte-image-son-video/comment-0\nForum d’entraide étudiant",
+    "text": "Ressources disponibles\n\n🔗 Liens utiles\n\n\nInstallation R/RStudio : https://moodle.univ-paris8.fr/mod/page/view.php?id=272504\nUtilisation de R/Rstudio en ligne : https://datalab.sspcloud.fr/ (Utilisez votre compte étudiant Paris 8 pour vous connecter)\nGuide des prompts efficaces : https://www.francenum.gouv.fr/guides-et-conseils/intelligence-artificielle/generation-de-contenus-texte-image-son-video/comment-0\nForum d’entraide étudiant",
     "crumbs": [
       "Introduction à R et Rstudio et la programmation avec des LLMs",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "slide-introduction.html#contact-et-ressources",
-    "href": "slide-introduction.html#contact-et-ressources",
+    "objectID": "01Introduction.html#contact-et-ressources",
+    "href": "01Introduction.html#contact-et-ressources",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Contact et ressources",
-    "text": "Contact et ressources\n\n📧 Email : elias.bouacida@univ-paris8.fr\n🌐 Espace de cours : Moodle\n🌐 Cours : Cours\nBureau : Bâtiment D, Salle D115\nPermanences : Mardi 14h-16h, Mercredi 14h-16h",
+    "text": "Contact et ressources\n\n\n📧 Email : elias.bouacida@univ-paris8.fr\n🌐 Espace de cours : Moodle\n🌐 Cours : Cours\nBureau : Bâtiment D, Salle D115\nPermanences : Mardi 14h-16h, Mercredi 14h-16h",
     "crumbs": [
       "Introduction à R et Rstudio et la programmation avec des LLMs",
       "Apprendre la Programmation R avec les LLM"
