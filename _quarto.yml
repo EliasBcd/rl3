@@ -1,7 +1,10 @@
 project:
   type: website
   output-dir: _site
-
+  render:
+    - "*.qmd"
+    - "!JournalBord.qmd"
+  
 author: 
   - name: Elias Bouacida
     affiliation: "Université Paris 8"
@@ -20,21 +23,14 @@ website:
         contents:
           - 01Introduction.qmd
           - 02Lecon1.qmd
-          - Lecon2Donnees.qmd
-      #     - ControlFlow.qmd
-      # - section: "Analyse de données"
-      #   contents:
-      #     - 03Donnees.qmd
-      #     - 04RepresentationsGraphiques.qmd
-      # - section: "Exercices"
-      #   contents:
-      #     - Swirl.qmd
-      #     - Exercices.qmd
-      #     - Diamants.qmd
-      # - section: "Cours avancés"
-      #   contents:
-      #     - Markdown.qmd
-      #     - TiragesAleatoires.qmd
+          - 03Lecon2Donnees.qmd
+      - section: "Annexe"
+        contents: 
+          - text: "Modèle de journal de bord"
+            href: JournalBord.qmd
+          - text: "Données Météo"
+            href: donnees/donnees_meteo.csv
+
 
 format:
   html:

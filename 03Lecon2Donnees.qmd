@@ -1,0 +1,92 @@
+---
+title: "Séance 2 : Données et fonctions intégrées"
+subtitle: "Apprendre R avec les LLMs"
+author: "Elias Bouacida"
+date: 09-24-2025
+date-format: long
+format: 
+  html: default
+  revealjs:
+    scrollable: true
+    slide-number: true
+    output-file: slide-lecon2.html
+    embed-resources: true
+    footer: "Séance 2 - Données et fonctions"
+format-links: [revealjs]
+lang: fr
+---
+
+## Plan de la séance {.smaller}
+
+::: {.incremental}
+- **Récap et partage** (20min) : Retours sur ce que vous avez appris la semaine dernière
+- **Dataset** (60min) : Données météo 
+- **Debugging collectif** (40min) : 
+- **Exploration fonctions built-in** (60min) : `sum()`, `length()`, `min()`, `max()`
+- **Mini-projet individuel** (40min) : Analyser les données du PIB de l'INSEE
+:::
+
+::: {.fragment}
+**Production attendue :** Analyse météo commentée + 3 fonctions maîtrisées
+:::
+
+
+## Objectif de la séance
+
+::: {.callout-tip}
+## Manipuler des collections de données et comprendre le concept de fonction
+:::
+
+::: {.incremental}
+- Travailler avec des **vecteurs** (collections de données)
+- Découvrir les **fonctions built-in** de R
+- Apprendre à **débugger** avec l'aide des LLMs
+- Gérer les **données manquantes** (NA)
+:::
+
+# Récap et partage {background-color="#2E8B57"}
+
+## Retours sur vos premières expériences
+
+::: {.incremental}
+- Qu'avez-vous compris des concepts de la semaine dernière ?
+:::
+
+## Mes retours sur vos journaux
+
+::: {.incremental}
+
+- Modèle disponible ici : <https://moodle.univ-paris8.fr/mod/assign/view.php?id=271762>
+- Ce que vous avez appris : c'est vous qui devez l'écrire
+- Eviter les impressions d'écran
+- Copier/coller les prompts que vous utilisez et les évolutions de vos prompts si besoin
+- Copier/coller les réponses du LLM
+- Eviter d'enregistrer en format .pages (format propriétaire Apple)
+
+:::
+
+# Données 
+
+## Données météo
+
+Connectez-vous sur Moodle et téléchargez les données météo.
+
+Vous devez maintenant :
+
+- Chargez les données dans Rstudio
+- Calculez des statistiques sur la température : moyenne, médiane, minimum, maximum et écart-type.
+- Question : quelles autres variables sont présentes ?
+
+## Représentation graphique
+
+- Représentez également l'évolution de la température dans le temps
+
+
+## Données PIB
+
+Allez sur le site de l'INSEE téléchargez les données du PIB 
+
+<https://www.insee.fr/fr/statistiques/2830613>
+
+Faites-moi un rapport sur ces données
+

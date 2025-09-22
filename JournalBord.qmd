@@ -1,0 +1,84 @@
+---
+title: "Journal de bord cours Initiation à R avec un LLM"
+subtitle: "Modèle à reproduire"
+author: "Nom Prénom"
+date: last-modified
+lang: fr
+format: html
+---
+
+```{r}
+
+```
+
+# Instructions d'utilisation
+
+1. Copiez ce template pour chaque session de travail
+2. Remplissez une nouvelle entrée pour chaque interaction avec un LLM
+3. Prenez le temps de réfléchir après chaque interaction
+4. Revisitez vos anciens logs pour identifier des patterns et progresser
+
+# Entrée #[Numéro]
+
+## 📝 Prompt utilisé
+
+``` {md}
+[Copiez ici exactement le prompt que vous avez utilisé avec le LLM]
+```
+
+## 🤖 Réponse du LLM
+
+```{md}
+[Copiez ici la réponse complète du LLM]
+```
+
+## 🔄 Prompt amélioré (si besoin)
+
+```{md}
+[Si vous refaisiez ce prompt, comment l'écririez-vous? Pourquoi?]
+```
+
+## 🤖 Réponse au prompt amélioré du LLM
+
+```{md}
+[Copiez ici la réponse complète du LLM]
+```
+
+## 💭 Vos réflexions sur le prompt
+
+- **Clarté du prompt :** _[Le prompt était-il clair et précis?]_
+- **Résultat attendu vs obtenu :** _[La réponse correspondait-elle à vos attentes?]_
+- **Points positifs :** _[Qu'est-ce qui a bien fonctionné?]_
+- **Points à améliorer :** _[Comment pourriez-vous améliorer ce prompt?]_
+- **Apprentissages :** _[Qu'avez-vous appris de cette interaction?]_
+
+
+
+
+# 📊 Bilan de session
+
+### Résumé des interactions
+
+_[Nombre total d'interactions, thèmes abordés]_
+
+### Évolution des compétences de prompting
+
+_[Comment vos prompts ont-ils évolué au cours de cette session?]_
+
+
+
+### Stratégies efficaces identifiées
+
+_[Quelles approches de prompting ont le mieux fonctionné?]_
+
+### Objectifs pour la prochaine session
+
+_[Quels aspects du prompting voulez-vous améliorer?]_
+
+
+### Évolution des compétences de R
+
+_[Comment votre compréhension de R a progressé ?]_
+
+---
+
