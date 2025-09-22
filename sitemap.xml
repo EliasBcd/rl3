@@ -1,91 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://EliasBcd.github.io/rl3/Swirl.html</loc>
-    <lastmod>2025-09-18T14:38:43.935Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/Exercices.html</loc>
-    <lastmod>2025-09-18T14:38:43.935Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/03Donnees.html</loc>
-    <lastmod>2025-09-18T14:38:43.924Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/slide-donnees.html</loc>
-    <lastmod>2025-09-18T14:38:43.924Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/Diamants.html</loc>
-    <lastmod>2025-09-18T14:38:43.935Z</lastmod>
-  </url>
-  <url>
     <loc>https://EliasBcd.github.io/rl3/index.html</loc>
-    <lastmod>2025-09-18T14:38:43.977Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/Lecon2Donnees.html</loc>
-    <lastmod>2025-09-18T14:38:43.935Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/slide-lecon2.html</loc>
-    <lastmod>2025-09-18T14:38:43.935Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/04RepresentationsGraphiques.html</loc>
-    <lastmod>2025-09-18T14:38:43.924Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/slides-representations-graphiques.html</loc>
-    <lastmod>2025-09-18T14:38:43.924Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/Rmarkdown.html</loc>
-    <lastmod>2025-09-18T14:38:43.935Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/DiamantsCorrige.html</loc>
-    <lastmod>2025-09-18T14:38:43.935Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/slides-controlflow.html</loc>
-    <lastmod>2025-09-18T14:38:43.935Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/ControlFlow.html</loc>
-    <lastmod>2025-09-18T14:38:43.935Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/slide-introduction.html</loc>
-    <lastmod>2025-09-18T14:38:43.924Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/slides-markdown.html</loc>
-    <lastmod>2025-09-18T14:38:43.935Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/Markdown.html</loc>
-    <lastmod>2025-09-18T14:38:43.935Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/AdvancedR.html</loc>
-    <lastmod>2025-09-18T14:38:43.934Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/slide-lecon1.html</loc>
-    <lastmod>2025-09-18T14:38:43.924Z</lastmod>
+    <lastmod>2025-09-22T09:30:59.827Z</lastmod>
   </url>
   <url>
     <loc>https://EliasBcd.github.io/rl3/02Lecon1.html</loc>
-    <lastmod>2025-09-18T14:38:43.924Z</lastmod>
+    <lastmod>2025-09-22T09:30:59.784Z</lastmod>
   </url>
   <url>
-    <loc>https://EliasBcd.github.io/rl3/slides-randomdraws.html</loc>
-    <lastmod>2025-09-18T14:38:43.935Z</lastmod>
+    <loc>https://EliasBcd.github.io/rl3/slide-lecon1.html</loc>
+    <lastmod>2025-09-22T09:30:59.784Z</lastmod>
   </url>
   <url>
-    <loc>https://EliasBcd.github.io/rl3/TiragesAleatoires.html</loc>
-    <lastmod>2025-09-18T14:38:43.935Z</lastmod>
+    <loc>https://EliasBcd.github.io/rl3/slide-introduction.html</loc>
+    <lastmod>2025-09-22T09:30:59.784Z</lastmod>
+  </url>
+  <url>
+    <loc>https://EliasBcd.github.io/rl3/slide-lecon2.html</loc>
+    <lastmod>2025-09-22T09:30:59.784Z</lastmod>
+  </url>
+  <url>
+    <loc>https://EliasBcd.github.io/rl3/03Lecon2Donnees.html</loc>
+    <lastmod>2025-09-22T09:30:59.784Z</lastmod>
   </url>
 </urlset>

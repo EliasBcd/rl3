@@ -155,8 +155,31 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Lecon2Donnees.html" class="sidebar-item-text sidebar-link">
+  <a href="./03Lecon2Donnees.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Séance 2 : Données et fonctions intégrées</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexe</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./JournalBord.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modèle de journal de bord</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./donnees/donnees_meteo.csv" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Données Météo</span></a>
   </div>
 </li>
       </ul>
@@ -174,14 +197,7 @@ div.csl-indent {
   <li><a href="#syllabus" id="toc-syllabus" class="nav-link active" data-scroll-target="#syllabus">Syllabus</a>
   <ul class="collapse">
   <li><a href="#plan-du-cours" id="toc-plan-du-cours" class="nav-link" data-scroll-target="#plan-du-cours">Plan du cours</a></li>
-  <li><a href="#structuration-du-cours" id="toc-structuration-du-cours" class="nav-link" data-scroll-target="#structuration-du-cours">Structuration du cours</a></li>
   <li><a href="#validation" id="toc-validation" class="nav-link" data-scroll-target="#validation">Validation</a></li>
-  </ul></li>
-  <li><a href="#librairies-requises-pour-le-cours" id="toc-librairies-requises-pour-le-cours" class="nav-link" data-scroll-target="#librairies-requises-pour-le-cours">Librairies requises pour le cours</a></li>
-  <li><a href="#notions-principales" id="toc-notions-principales" class="nav-link" data-scroll-target="#notions-principales">Notions principales</a>
-  <ul class="collapse">
-  <li><a href="#liens-entre-ces-notions" id="toc-liens-entre-ces-notions" class="nav-link" data-scroll-target="#liens-entre-ces-notions">Liens entre ces notions</a></li>
-  <li><a href="#sec-types" id="toc-sec-types" class="nav-link" data-scroll-target="#sec-types">Les types</a></li>
   </ul></li>
   <li><a href="#références" id="toc-références" class="nav-link" data-scroll-target="#références">Références</a></li>
   </ul>
@@ -210,7 +226,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">18 septembre 2025</p>
+      <p class="date">22 septembre 2025</p>
     </div>
   </div>
   
@@ -222,109 +238,27 @@ div.csl-indent {
 </header>
 
 
-<p>Ce site contient la plupart des présentations utilisées pour le cours d’introduction à R dispensé en L3 économie-finance à l’université Paris 8.</p>
+<p>Ce site contient la plupart des présentations utilisées pour le cours d’introduction à R à l’aide d’un LLM dispensé en L3 économie-finance à l’université Paris 8.</p>
 <section id="syllabus" class="level1">
 <h1>Syllabus</h1>
 <p>La principale ressource bibliographique pour le cours est <span class="citation" data-cites="Barnier">Barnier et Kauffmann (<a href="#ref-Barnier" role="doc-biblioref">2023</a>)</span>.</p>
 <section id="plan-du-cours" class="level2">
 <h2 class="anchored" data-anchor-id="plan-du-cours">Plan du cours</h2>
 <ol type="1">
-<li>Installation et introduction à R / Rstudio et Posit.cloud
+<li>Installation et introduction à R / Rstudio et aux LLMs
 <ul>
 <li>Installer R / Rstudio, utiliser Posit.cloud</li>
 <li>Installer un paquet</li>
 <li>Présenter l’interface de Rstudio (identique à celle de Posit.cloud)</li>
+<li>Les LLMs</li>
 </ul></li>
-<li>Utilisation basique de R
-<ul>
-<li>Présentation des différentes structures de données : Booléen, nombre, chaîne caractères, vecteur et matrice, data.frame et dérivés, listes</li>
-<li>Opérations sur les données : opérations classiques (<code>+, -, *, /, ^</code>) et pratiques (<code>%%, %/%</code>)</li>
-<li>Opérations booléennes (tests de vérités) : <code>==, !=, &gt;=, &lt;=, &gt;, &lt;, &amp;, |, !, %in%</code></li>
-</ul></li>
-<li>Utilisation standard de R
-<ul>
-<li>Boucles et évaluation conditionnelle (<code>for</code>, <code>if ... else</code>, <code>while</code>)</li>
-<li>Fonctions (création et utilisation)</li>
-<li>Scripts</li>
-<li>Lectures de fichiers externes (script et données (<code>.R, .csv, .txt, .xls</code>))</li>
-</ul></li>
-<li>Introduction à l’analyse de donnée avec R (<code>data.frame</code> et <code>tibble</code>)</li>
-<li>Graphique (librairie <code>ggplot</code>)</li>
-<li>Introduire <code>quarto</code> et <code>markdown</code> (si le temps le permet)</li>
-<li>Tirage aléatoire et fonctions liées au probabilités (fonctions de type <code>dxxx, rxxx</code>, …) (si le temps le permet)</li>
-</ol>
-</section>
-<section id="structuration-du-cours" class="level2">
-<h2 class="anchored" data-anchor-id="structuration-du-cours">Structuration du cours</h2>
-<p>Construit à partir de <span class="citation" data-cites="Barnier">Barnier et Kauffmann (<a href="#ref-Barnier" role="doc-biblioref">2023</a>)</span>.</p>
-<ol type="1">
-<li>Introduction à R
-<ul>
-<li>Chapitre 2 (long)</li>
-<li>Chapitre 3, sans les représentations graphiques (intermédiaire)</li>
-<li>Chapitre 5, principalement à lire, pas d’exercice dessus (court)</li>
-</ul></li>
-<li>Aller plus loin
-<ul>
-<li>Chapitre 14, écrire ses propres fonctions (long)</li>
-<li>Chapitre 16, structure de données (long)</li>
-<li>Chapitre 17, exécution conditionnelle et boucle (long)</li>
-</ul></li>
-<li>Tidyverse
-<ul>
-<li>Chapitre 6 (court)</li>
-<li>Chapitre 7 (intermédiaire)</li>
-<li>Chapitre 8 (long, et à simplifier)</li>
-</ul></li>
+<li>Premières utilisations de prompts pour coder en R</li>
+<li>Premières analyses de données à l’aide de R</li>
 </ol>
 </section>
 <section id="validation" class="level2">
 <h2 class="anchored" data-anchor-id="validation">Validation</h2>
-<p>Cours à validation, qui se fait sur le rendu d’un nombre suffisant d’exercice (cette année, probablement 11 sur 13 au minimum).</p>
-</section>
-</section>
-<section id="librairies-requises-pour-le-cours" class="level1">
-<h1>Librairies requises pour le cours</h1>
-<ul>
-<li>swirl</li>
-<li>tydiverse</li>
-<li>R dans sa dernière version</li>
-<li>Rstudio dans sa dernière version</li>
-</ul>
-</section>
-<section id="notions-principales" class="level1">
-<h1>Notions principales</h1>
-<ul>
-<li>Objet</li>
-<li>Fonction (argument, expression, résultat)</li>
-<li>Assignation</li>
-<li>Type (voir <a href="#sec-types" class="quarto-xref">Section&nbsp;3.2</a>)</li>
-<li>Valeur</li>
-<li>Commande</li>
-<li>Script</li>
-<li>Paquet (ou librairie)</li>
-<li>Espace de nommage</li>
-</ul>
-<section id="liens-entre-ces-notions" class="level2">
-<h2 class="anchored" data-anchor-id="liens-entre-ces-notions">Liens entre ces notions</h2>
-<p>Une valeur est assignée à un objet.<br>
-Une valeur peut être de différent type.<br>
-Une commande est une instruction donnée à R.<br>
-Un script rassemble un ensemble de commandes dans un fichier texte.<br>
-Une fonction rassemble un ensemble de commandes effectuée sur des arguments et donne un résultat.<br>
-Un type décrit la forme de la variable stockée en mémoire.<br>
-Un paquet rassemble dans plusieurs scripts des objets et des fonctions.</p>
-</section>
-<section id="sec-types" class="level2">
-<h2 class="anchored" data-anchor-id="sec-types">Les types</h2>
-<ul>
-<li>Booléen</li>
-<li>Numériques</li>
-<li>Chaînes de caractères</li>
-<li>Vecteurs</li>
-<li>Tableau (tibble, data.frame)</li>
-<li>…</li>
-</ul>
+<p>Cours à validation, qui se fait sur le rendu d’un journal de bord</p>
 </section>
 </section>
 <section id="références" class="level1">
