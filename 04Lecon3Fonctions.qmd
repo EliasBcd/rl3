@@ -1,0 +1,478 @@
+---
+title: "Séance 3 : Fonctions, conditions et boucles"
+subtitle: "Apprendre R avec les LLMs"
+author: "Elias Bouacida"
+date: last-modified
+date-format: long
+format:
+  html: default
+  revealjs:
+    scrollable: true
+    slide-number: true
+    output-file: slide-lecon3.html
+    embed-resources: true
+    footer: "Séance 3 - Fonctions, conditions et boucles"
+format-links: [revealjs]
+lang: fr
+execute:
+  echo: true
+---
+
+## Plan de la séance {.smaller}
+
+::: {.incremental}
+- **Récap et partage** (15min) : Retours sur les données
+- **Conditions if/else** (45min) : Prendre des décisions dans le code
+- **Boucles** (45min) : Répéter des opérations
+- **Créer ses propres fonctions** (60min) : Structurer son code
+- **Mini-projet** (45min) : Analyser des données avec vos fonctions
+:::
+
+::: {.fragment}
+**Production attendue :** 3 fonctions personnalisées avec conditions et/ou boucles
+:::
+
+## Objectifs de la séance
+
+::: {.callout-tip}
+## Automatiser et structurer son code
+:::
+
+::: {.incremental}
+- Utiliser des **conditions** pour adapter le comportement du code
+- Utiliser des **boucles** pour répéter des opérations
+- **Créer des fonctions** réutilisables
+- **Combiner** ces concepts pour résoudre des problèmes réels
+:::
+
+# Récap et partage {background-color="#2E8B57"}
+
+## Retours sur vos analyses de données
+
+::: {.incremental}
+- Quelles difficultés avez-vous rencontrées ?
+- Quelles fonctions intégrées avez-vous découvertes ?
+- Comment les LLMs vous ont-ils aidé ?
+:::
+
+# Conditions if/else {background-color="#4169E1"}
+
+## Pourquoi des conditions ?
+
+::: {.callout-note}
+## Question
+Imaginez que vous analysez des températures. Comment indiquer s'il fait chaud ou froid ?
+:::
+
+::: {.fragment}
+On a besoin de **tester une condition** et agir différemment selon le résultat.
+:::
+
+## Exercice 1 : Première condition {.smaller}
+
+Demandez à votre LLM de vous expliquer la structure `if/else` en R avec un exemple simple.
+
+**Ensuite, testez ce code :**
+
+```{r}
+#| eval: false
+temperature <- 25
+
+if (temperature > 20) {
+  print("Il fait chaud")
+}
+```
+
+**Questions à explorer avec votre LLM :**
+
+1. Que se passe-t-il si `temperature <- 15` ?
+2. Comment ajouter un message pour "Il fait froid" ?
+3. Qu'est-ce qu'un opérateur de comparaison ? (`>`, `<`, `==`, `!=`, `>=`, `<=`)
+
+::: {.notes}
+Laisser 10 minutes. Circuler pour vérifier la compréhension. Insister sur le fait que le LLM peut se tromper - tester le code est essentiel.
+:::
+
+## Exercice 2 : if/else complet {.smaller}
+
+Créez un code qui :
+
+- Prend une note (0-20)
+- Affiche "Réussite" si la note est >= 10
+- Affiche "Échec" sinon
+
+::: {.fragment}
+**Extension :** Ajoutez une troisième catégorie avec `else if` :
+
+- "Excellent" si >= 16
+- "Réussite" si >= 10
+- "Échec" sinon
+:::
+
+::: {.notes}
+10 minutes. Faire un débriefing collectif. Demander à un étudiant de partager son code et son prompt.
+:::
+
+## Exercice 3 : Conditions et vecteurs {.smaller}
+
+**Problème :** Vous avez plusieurs notes :
+
+```{r}
+#| eval: false
+notes <- c(8, 12, 15, 9, 18)
+```
+
+**Question :** Comment classifier TOUTES ces notes ?
+
+Demandez à votre LLM comment appliquer une condition à un vecteur.
+
+::: {.fragment}
+**Indices à explorer :**
+
+- La fonction `ifelse()`
+- La différence entre `if` et `ifelse()`
+:::
+
+::: {.notes}
+15 minutes. C'est un concept important. Les étudiants découvriront la vectorisation. Certains LLMs proposeront des boucles, d'autres `ifelse()`. Discuter les deux approches.
+:::
+
+# Boucles {background-color="#FF8C00"}
+
+## Pourquoi des boucles ?
+
+::: {.callout-note}
+## Situation
+Vous avez 100 températures à classifier. Écrire 100 fois `if/else` ?
+:::
+
+::: {.fragment}
+Les **boucles** permettent de répéter automatiquement des opérations.
+:::
+
+## Exercice 4 : Boucle for simple {.smaller}
+
+Demandez à votre LLM d'expliquer la boucle `for` en R avec un exemple.
+
+**Testez ce code :**
+
+```{r}
+#| eval: false
+for (i in 1:5) {
+  print(i)
+}
+```
+
+**Questions :**
+
+1. Que fait `1:5` ?
+2. Que représente `i` ?
+3. Comment afficher les nombres de 10 à 20 ?
+
+::: {.notes}
+10 minutes. Concept fondamental mais peut être abstrait pour certains.
+:::
+
+## Exercice 5 : Boucle sur un vecteur {.smaller}
+
+Reprenez vos notes de l'exercice 3 :
+
+```{r}
+#| eval: false
+notes <- c(8, 12, 15, 9, 18)
+```
+
+Utilisez une boucle `for` pour :
+
+1. Afficher chaque note
+2. Afficher chaque note avec son classement (Réussite/Échec)
+
+::: {.fragment}
+**Astuce :** Combinez `for` et `if/else` !
+:::
+
+::: {.notes}
+15 minutes. Les étudiants vont combiner les deux concepts. Anticiper les confusions entre i (indice) et notes[i] (valeur).
+:::
+
+## Exercice 6 : Accumuler des résultats {.smaller}
+
+**Nouveau défi :** Calculez la somme des notes **sans utiliser** `sum()`.
+
+**Indices :**
+
+1. Créez une variable `total <- 0`
+2. Utilisez une boucle pour ajouter chaque note à `total`
+3. Affichez le résultat final
+
+::: {.fragment}
+**Vérification :** Comparez avec `sum(notes)`
+:::
+
+::: {.notes}
+10 minutes. Introduit le concept d'accumulation. Utile pour comprendre ce que font réellement les fonctions intégrées.
+:::
+
+## Boucle while (optionnel) {.smaller}
+
+Demandez à votre LLM la différence entre `for` et `while`.
+
+**Exemple à tester :**
+
+```{r}
+#| eval: false
+compteur <- 1
+while (compteur <= 5) {
+  print(compteur)
+  compteur <- compteur + 1
+}
+```
+
+::: {.callout-warning}
+## Attention !
+Que se passe-t-il si vous oubliez `compteur <- compteur + 1` ?
+:::
+
+::: {.notes}
+Optionnel car `while` est moins utilisé en R. Mais bon pour comprendre les concepts de programmation. Attention aux boucles infinies !
+:::
+
+# Créer ses fonctions {background-color="#8B008B"}
+
+## Pourquoi créer des fonctions ?
+
+Jusqu'ici, vous avez **utilisé** des fonctions : `mean()`, `sum()`, `print()`...
+
+::: {.fragment}
+Maintenant, vous allez **créer** vos propres fonctions !
+:::
+
+::: {.fragment}
+::: {.callout-tip}
+## Avantages
+- Réutiliser du code
+- Éviter la répétition
+- Rendre le code plus lisible
+- Partager avec d'autres
+:::
+:::
+
+## Exercice 7 : Première fonction {.smaller}
+
+Demandez à votre LLM d'expliquer comment créer une fonction en R.
+
+**Créez une fonction simple :**
+
+```{r}
+#| eval: false
+dire_bonjour <- function(nom) {
+  message <- paste("Bonjour", nom)
+  return(message)
+}
+
+# Test
+dire_bonjour("Alice")
+```
+
+**Questions :**
+
+1. À quoi sert `function()` ?
+2. Qu'est-ce qu'un **paramètre** / **argument** ?
+3. À quoi sert `return()` ?
+
+::: {.notes}
+15 minutes. Première fonction. Bien distinguer définition (function) et appel (dire_bonjour("Alice")).
+:::
+
+## Exercice 8 : Fonction avec condition {.smaller}
+
+Créez une fonction `classifier_note()` qui :
+
+- Prend une note en paramètre
+- Retourne "Excellent" si >= 16
+- Retourne "Réussite" si >= 10
+- Retourne "Échec" sinon
+
+**Testez avec plusieurs valeurs.**
+
+::: {.fragment}
+**Extension :** Que se passe-t-il si on passe une note négative ou > 20 ? Comment améliorer la fonction ?
+:::
+
+::: {.notes}
+15 minutes. Première fonction "utile". L'extension introduit la validation des paramètres (concept important).
+:::
+
+## Exercice 9 : Fonction avec boucle {.smaller}
+
+Créez une fonction `calculer_moyenne()` qui :
+
+- Prend un vecteur de nombres
+- Utilise une boucle pour calculer la moyenne
+- Retourne le résultat
+
+**Testez :**
+
+```{r}
+#| eval: false
+mes_notes <- c(12, 15, 8, 14)
+calculer_moyenne(mes_notes)
+```
+
+::: {.fragment}
+**Questions :**
+
+1. Comment gérer les valeurs manquantes (`NA`) ?
+2. Comparez votre résultat avec `mean()`
+:::
+
+::: {.notes}
+15 minutes. Fonction plus complexe. Les étudiants réutilisent l'exercice 6. Discussion sur NA importante.
+:::
+
+## Exercice 10 : Fonction complète {.smaller}
+
+Créez une fonction `analyser_vecteur()` qui prend un vecteur et retourne :
+
+- Le minimum
+- Le maximum
+- La moyenne
+- Le nombre d'éléments
+
+::: {.fragment}
+**Défi :** Comment retourner plusieurs valeurs ? Demandez au LLM !
+
+*Indice : liste ou vecteur nommé*
+:::
+
+::: {.notes}
+15 minutes. Fonction avancée. Introduit le concept de retourner des structures de données complexes. Les étudiants découvriront les listes.
+:::
+
+# Mini-projet {background-color="#DC143C"}
+
+## Projet : Analyse de températures {.smaller}
+
+Vous allez créer un petit système d'analyse météo.
+
+**Données :**
+
+```{r}
+#| eval: false
+temperatures <- c(15, 22, 18, 25, 12, 28, 20, 16, 24, 19)
+```
+
+**Créez les fonctions suivantes :**
+
+1. `classifier_temperature(temp)` : retourne "Froid", "Doux" ou "Chaud"
+2. `compter_par_categorie(vecteur_temp)` : compte combien de jours froids/doux/chauds
+3. `rapport_meteo(vecteur_temp)` : génère un rapport complet (min, max, moyenne, catégories)
+
+::: {.callout-note}
+## Utilisez tout ce que vous avez appris
+Conditions, boucles, fonctions !
+:::
+
+::: {.notes}
+45 minutes. Projet synthèse. Les étudiants combinent tous les concepts. Circuler beaucoup. Encourager l'aide entre pairs. Certains iront plus loin (graphiques, etc.).
+:::
+
+## Critères du mini-projet {.smaller}
+
+Votre code doit :
+
+::: {.incremental}
+- ✅ Fonctionner sans erreur
+- ✅ Contenir au moins 3 fonctions
+- ✅ Utiliser des conditions (`if/else`)
+- ✅ Utiliser au moins une boucle
+- ✅ Être commenté (expliquez ce que fait chaque fonction)
+:::
+
+::: {.fragment}
+**Bonus :**
+
+- Gérer les cas d'erreur (NA, vecteur vide, etc.)
+- Créer des visualisations
+- Tester avec d'autres données
+:::
+
+::: {.notes}
+Afficher les critères clairement. Certains étudiants auront besoin de plus de temps - c'est OK.
+:::
+
+# Retour sur l'utilisation des LLMs {background-color="#2F4F4F"}
+
+## Pièges courants avec les LLMs
+
+::: {.callout-warning}
+## Attention !
+Les LLMs peuvent :
+
+- Proposer du code qui ne fonctionne pas
+- Utiliser des fonctions qui n'existent pas
+- Mélanger différentes versions de R
+- Donner des explications approximatives
+:::
+
+::: {.fragment}
+**Votre responsabilité :** TOUJOURS tester le code !
+:::
+
+## Exercice réflexif : Journal de bord {.smaller}
+
+Dans votre journal, documentez :
+
+1. **Un prompt qui a bien fonctionné** : Pourquoi ?
+2. **Une erreur du LLM** : Comment l'avez-vous détectée ? Corrigée ?
+3. **Votre code le plus complexe** : Expliquez-le avec vos mots
+4. **Une chose que vous ne comprenez pas encore** : À approfondir
+
+::: {.fragment}
+::: {.callout-tip}
+## Conseil
+Plus vous serez précis dans vos prompts, meilleures seront les réponses. Donnez du contexte !
+:::
+:::
+
+::: {.notes}
+10 dernières minutes. Moment réflexif important. Les étudiants prennent du recul sur leur apprentissage.
+:::
+
+# Ressources et prochaines étapes {background-color="#2E8B57"}
+
+## Pour aller plus loin
+
+::: {.incremental}
+- **Documentation R :** `?function`, `?if`, `?for`
+- **Pratiquez :** La programmation s'apprend en codant !
+- **Debuggez :** Les erreurs sont normales et instructives
+- **Partagez :** Discutez de vos solutions avec vos pairs
+:::
+
+## Préparation prochaine séance
+
+::: {.callout-note}
+## Devoirs
+1. Terminez le mini-projet si besoin
+2. Mettez à jour votre journal de bord
+3. Créez au moins une fonction originale qui vous serait utile
+:::
+
+::: {.fragment}
+**Questions à explorer :** Comment sauvegarder ses fonctions ? Comment les partager ? (→ scripts, packages)
+:::
+
+## Questions ?
+
+::: {.callout-tip}
+## N'oubliez pas
+- Testez votre code
+- Commentez votre code
+- Documentez votre apprentissage
+- Utilisez les LLMs comme **assistants**, pas comme **rédacteurs**
+:::
+
+::: {.fragment}
+**Bon courage et bon code ! 🚀**
+:::

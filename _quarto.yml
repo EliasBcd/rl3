@@ -24,6 +24,7 @@ website:
           - 01Introduction.qmd
           - 02Lecon1.qmd
           - 03Lecon2Donnees.qmd
+          - 04Lecon3Fonctions.qmd
       - section: "Annexe"
         contents: 
           - text: "Modèle de journal de bord"
