@@ -2,30 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://EliasBcd.github.io/rl3/index.html</loc>
-    <lastmod>2025-09-22T09:33:13.688Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/02Lecon1.html</loc>
-    <lastmod>2025-09-22T09:33:13.646Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/slide-lecon1.html</loc>
-    <lastmod>2025-09-22T09:33:13.646Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/slide-introduction.html</loc>
-    <lastmod>2025-09-22T09:33:13.646Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/01Introduction.html</loc>
-    <lastmod>2025-09-22T09:33:13.646Z</lastmod>
-  </url>
-  <url>
-    <loc>https://EliasBcd.github.io/rl3/slide-lecon2.html</loc>
-    <lastmod>2025-09-22T09:33:13.646Z</lastmod>
+    <lastmod>2025-09-30T15:01:08.904Z</lastmod>
   </url>
   <url>
     <loc>https://EliasBcd.github.io/rl3/03Lecon2Donnees.html</loc>
-    <lastmod>2025-09-22T09:33:13.646Z</lastmod>
+    <lastmod>2025-09-30T15:01:08.862Z</lastmod>
+  </url>
+  <url>
+    <loc>https://EliasBcd.github.io/rl3/slide-lecon2.html</loc>
+    <lastmod>2025-09-30T15:01:08.862Z</lastmod>
+  </url>
+  <url>
+    <loc>https://EliasBcd.github.io/rl3/01Introduction.html</loc>
+    <lastmod>2025-09-30T15:01:08.862Z</lastmod>
+  </url>
+  <url>
+    <loc>https://EliasBcd.github.io/rl3/slide-introduction.html</loc>
+    <lastmod>2025-09-30T15:01:08.862Z</lastmod>
+  </url>
+  <url>
+    <loc>https://EliasBcd.github.io/rl3/slide-lecon1.html</loc>
+    <lastmod>2025-09-30T15:01:08.862Z</lastmod>
+  </url>
+  <url>
+    <loc>https://EliasBcd.github.io/rl3/02Lecon1.html</loc>
+    <lastmod>2025-09-30T15:01:08.862Z</lastmod>
+  </url>
+  <url>
+    <loc>https://EliasBcd.github.io/rl3/slide-lecon3.html</loc>
+    <lastmod>2025-09-30T15:01:08.862Z</lastmod>
+  </url>
+  <url>
+    <loc>https://EliasBcd.github.io/rl3/04Lecon3Fonctions.html</loc>
+    <lastmod>2025-09-30T15:01:08.862Z</lastmod>
   </url>
 </urlset>
