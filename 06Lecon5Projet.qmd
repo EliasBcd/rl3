@@ -1,0 +1,504 @@
+---
+title: "Séance 5 : Projet personnel intégré"
+subtitle: "Apprendre R avec les LLMs"
+author: "Elias Bouacida"
+date: last-modified
+date-format: long
+format:
+  html: default
+  revealjs:
+    scrollable: true
+    slide-number: true
+    output-file: slide-lecon5.html
+    embed-resources: true
+    footer: "Séance 5 - Projet personnel intégré"
+format-links: [revealjs]
+lang: fr
+execute:
+  echo: true
+---
+
+## Plan de la séance {.smaller}
+
+::: {.incremental}
+- **Présentation du projet** (15min) : Cadrage et attentes
+- **Choix et préparation** (30min) : Sélection du dataset et définition des questions
+- **Travail autonome supervisé** (120min) : Analyse libre avec consultations individuelles
+- **Présentations courtes** (45min) : Partage des résultats (5min/étudiant)
+:::
+
+::: {.fragment}
+**Production attendue :** Analyse complète avec code, graphiques et interprétation
+:::
+
+## Objectifs de la séance
+
+::: {.callout-tip}
+## Mener une analyse complète en autonomie
+:::
+
+::: {.incremental}
+- **Choisir** et cadrer un sujet d'analyse personnel
+- **Appliquer** toutes les compétences acquises
+- Travailler en **autonomie** avec le LLM comme assistant
+- **Communiquer** ses résultats de manière claire
+- **Recevoir** et donner du feedback constructif
+:::
+
+# Présentation du projet {background-color="#2E8B57"}
+
+## Qu'est-ce qu'un projet intégré ?
+
+C'est une analyse complète qui combine **TOUT** ce que vous avez appris :
+
+::: {.incremental}
+- ✅ Import et nettoyage de données
+- ✅ Statistiques descriptives
+- ✅ Fonctions personnalisées
+- ✅ Conditions et boucles si nécessaire
+- ✅ Visualisations avec ggplot2
+- ✅ Interprétation des résultats
+- ✅ Utilisation efficace des LLMs
+:::
+
+## Structure attendue
+
+Votre projet doit contenir :
+
+::: {.incremental}
+1. **Introduction** : Quel sujet ? Quelles questions ?
+2. **Données** : Source, description, nettoyage
+3. **Analyse** : Statistiques, visualisations
+4. **Fonctions** : Au moins 2 fonctions personnalisées
+5. **Résultats** : Interprétation claire
+6. **Code** : Commenté et organisé
+:::
+
+## Critères d'évaluation {.smaller}
+
+::: {.incremental}
+**Excellence technique (40%) :**
+
+- Code fonctionnel et robuste
+- Nettoyage approprié des données
+- Utilisation correcte des fonctions
+- Visualisations claires
+
+**Analyse (30%) :**
+
+- Questions pertinentes
+- Statistiques appropriées
+- Interprétation correcte
+
+**Communication (20%) :**
+
+- Code commenté
+- Présentation structurée
+- Graphiques lisibles
+
+**Utilisation des LLMs (10%) :**
+
+- Prompts efficaces
+- Validation critique des réponses
+:::
+
+# Choix et cadrage {background-color="#4169E1"}
+
+## Étape 1 : Choisir un dataset
+
+::: {.callout-note}
+## Sources de données possibles
+:::
+
+::: {.incremental}
+- **Données personnelles** : vos propres observations, sondages
+- **Données publiques** : INSEE, data.gouv.fr, Kaggle
+- **Données du cours** : datasets fournis sur Moodle
+- **Données de votre domaine** : économie, psychologie, sport, santé
+:::
+
+::: {.fragment}
+::: {.callout-warning}
+## Critères de choix
+- Pas trop volumineux (< 10 000 lignes)
+- Au moins 3-4 variables
+- Vous intéresse vraiment !
+:::
+:::
+
+## Exercice 1 : Exploration initiale {.smaller}
+
+**Une fois votre dataset choisi :**
+
+1. **Importez-le** dans R
+2. **Explorez-le** :
+
+```{r}
+#| eval: false
+# Premières lignes
+head(mes_donnees)
+
+# Structure
+str(mes_donnees)
+
+# Résumé
+summary(mes_donnees)
+
+# Dimensions
+dim(mes_donnees)
+```
+
+3. **Identifiez** les problèmes potentiels (NA, types, incohérences)
+
+::: {.notes}
+15 minutes. Les étudiants découvrent leurs données.
+:::
+
+## Étape 2 : Définir ses questions
+
+**Avant d'analyser, définissez 2-3 questions claires.**
+
+::: {.fragment}
+**Exemples de bonnes questions :**
+
+- "Quelle est l'évolution des ventes au fil du temps ?"
+- "Y a-t-il une différence de salaire entre les groupes ?"
+- "Quels facteurs influencent le plus la note finale ?"
+:::
+
+::: {.fragment}
+**Mauvaises questions (trop vagues) :**
+
+- "Qu'est-ce qu'il y a dans ces données ?"
+- "Fais une analyse"
+:::
+
+## Exercice 2 : Cadrage du projet {.smaller}
+
+**Remplissez ce cadre (écrivez-le !) :**
+
+```
+PROJET : [Titre court]
+
+DONNÉES :
+- Source :
+- Nombre de lignes :
+- Variables principales :
+
+QUESTIONS :
+1.
+2.
+3.
+
+ANALYSES PRÉVUES :
+- Statistiques :
+- Graphiques :
+- Fonctions à créer :
+```
+
+::: {.fragment}
+**Montrez votre cadre à l'enseignant avant de commencer !**
+:::
+
+::: {.notes}
+15 minutes. Validation du cadrage. Éviter que les étudiants se lancent sans direction.
+:::
+
+# Travail autonome {background-color="#FF8C00"}
+
+## Phase de travail (2h)
+
+::: {.callout-tip}
+## Vous êtes maintenant autonome !
+:::
+
+**Utilisez tout ce que vous avez appris :**
+
+- Les LLMs pour vous aider
+- La documentation R
+- Votre journal de bord
+- Vos camarades
+- L'enseignant (consultations individuelles)
+
+::: {.fragment}
+::: {.callout-warning}
+## Attention !
+- Testez votre code régulièrement
+- Commentez au fur et à mesure
+- Sauvegardez souvent
+- Documentez vos prompts LLM
+:::
+:::
+
+## Checklist de progression {.smaller}
+
+::: {.nonincremental}
+**Pendant votre travail, vérifiez que vous avez :**
+
+☐ Importé et vérifié les données
+☐ Nettoyé les données (NA, types, casse)
+☐ Calculé des statistiques descriptives
+☐ Créé au moins 3 graphiques ggplot2
+☐ Écrit au moins 2 fonctions personnalisées
+☐ Commenté votre code
+☐ Répondu à vos questions initiales
+☐ Testé que tout fonctionne
+
+:::
+
+## Stratégies pour avancer
+
+**Si vous êtes bloqué :**
+
+::: {.incremental}
+1. **Décomposez** le problème en étapes plus petites
+2. **Demandez au LLM** une étape à la fois
+3. **Testez** chaque étape avant de passer à la suivante
+4. **Consultez** votre journal des séances précédentes
+5. **Demandez** de l'aide à un camarade ou l'enseignant
+:::
+
+::: {.fragment}
+**Si vous avancez vite :**
+
+- Créez des visualisations plus sophistiquées
+- Ajoutez des fonctions bonus
+- Explorez des analyses supplémentaires
+- Aidez vos camarades
+:::
+
+## Consultations individuelles
+
+::: {.callout-note}
+## L'enseignant circule
+:::
+
+Vous pouvez demander :
+
+- Validation de votre approche
+- Aide sur un bug précis
+- Conseils sur les visualisations
+- Vérification de votre code
+
+::: {.fragment}
+::: {.callout-tip}
+## Préparez votre question
+Avant d'appeler l'enseignant, préparez :
+
+- Ce que vous essayez de faire
+- Ce que vous avez déjà essayé
+- Le message d'erreur exact (si erreur)
+:::
+:::
+
+## Exemples de projets réussis {.smaller}
+
+**Pour vous inspirer :**
+
+::: {.incremental}
+**Analyse de données sportives :**
+
+- Évolution des performances d'une équipe
+- Comparaison entre joueurs
+- Fonction : calculer et visualiser les statistiques d'un joueur
+
+**Analyse économique :**
+
+- Évolution du PIB par pays
+- Comparaison de secteurs économiques
+- Fonction : calculer la croissance sur différentes périodes
+
+**Données de santé :**
+
+- Relation entre facteurs et résultats de santé
+- Distribution des variables
+- Fonction : classifier les risques selon des critères
+
+**Analyse de sondage :**
+
+- Pourcentages par catégorie
+- Comparaisons entre groupes
+- Fonction : créer des graphiques standardisés
+:::
+
+# Présentations {background-color="#8B008B"}
+
+## Format de présentation
+
+**5 minutes par personne** :
+
+::: {.incremental}
+1. **Sujet et questions** (30 sec) : Quoi et pourquoi ?
+2. **Données** (30 sec) : Source, nettoyage
+3. **Résultats** (3 min) : Montrez 2-3 graphiques clés
+4. **Fonctions créées** (1 min) : Vos outils personnalisés
+5. **Questions** (30 sec) : Discussions avec les pairs
+:::
+
+::: {.fragment}
+::: {.callout-warning}
+## Contrainte
+Montrez votre code R en LIVE (pas de PowerPoint) !
+:::
+:::
+
+## Exercice 3 : Préparer sa présentation {.smaller}
+
+**Dans les 10 dernières minutes de travail :**
+
+1. **Sélectionnez** vos 2-3 graphiques les plus importants
+2. **Préparez** votre script pour montrer :
+   - L'import des données
+   - Un exemple de nettoyage
+   - Les graphiques principaux
+   - Une fonction en action
+3. **Testez** que tout s'exécute sans erreur
+4. **Notez** les points clés à mentionner
+
+::: {.fragment}
+**Astuce :** Créez un script de présentation séparé avec juste l'essentiel
+:::
+
+## Grille d'écoute {.smaller}
+
+**Pendant les présentations des autres, notez :**
+
+::: {.nonincremental}
+- Une **approche intéressante** que vous pourriez réutiliser
+- Une **visualisation** particulièrement réussie
+- Une **question** ou suggestion constructive
+- Un **problème** similaire à ce que vous avez rencontré
+:::
+
+::: {.fragment}
+::: {.callout-tip}
+## Feedback constructif
+Donnez des retours bienveillants et constructifs. Vous êtes tous en apprentissage !
+:::
+:::
+
+## Célébration des réussites
+
+::: {.callout-note}
+## Vous avez réussi votre premier projet complet !
+:::
+
+::: {.incremental}
+**Réfléchissez :**
+
+- Qu'est-ce qui a été le plus difficile ?
+- Qu'est-ce qui vous a le plus surpris ?
+- Qu'est-ce qui vous a le plus appris ?
+- Qu'est-ce qui vous a le plus plu ?
+:::
+
+# Retour réflexif {background-color="#DC143C"}
+
+## Exercice réflexif : Journal de bord {.smaller}
+
+**Documentez en détail dans votre journal :**
+
+1. **Votre projet** :
+   - Sujet choisi et pourquoi
+   - Questions posées
+   - Résultats principaux
+
+2. **Défis techniques** :
+   - Problèmes rencontrés
+   - Solutions trouvées
+   - Rôle du LLM dans la résolution
+
+3. **Apprentissages** :
+   - Ce que vous maîtrisez maintenant
+   - Ce qui reste difficile
+   - Progression depuis la séance 1
+
+4. **Prompts LLM** :
+   - Vos prompts les plus efficaces
+   - Erreurs du LLM et comment vous les avez corrigées
+
+::: {.notes}
+15 minutes. Documentation importante de ce projet majeur.
+:::
+
+## Auto-évaluation
+
+**Évaluez votre propre projet :**
+
+::: {.nonincremental}
+| Critère | 🔴 Faible | 🟡 Moyen | 🟢 Bon | 🟢🟢 Excellent |
+|---------|----------|---------|-------|--------------|
+| Code fonctionnel | | | | |
+| Nettoyage données | | | | |
+| Qualité graphiques | | | | |
+| Interprétation | | | | |
+| Commentaires | | | | |
+| Utilisation LLM | | | | |
+:::
+
+::: {.fragment}
+**Identifiez vos axes d'amélioration pour la suite du cours.**
+:::
+
+# Ressources et prochaines étapes {background-color="#2E8B57"}
+
+## Ce que vous avez accompli
+
+::: {.incremental}
+✅ Choisi et cadré un projet d'analyse personnalisé
+✅ Mené une analyse complète en autonomie
+✅ Créé des fonctions personnalisées et réutilisables
+✅ Produit des visualisations professionnelles
+✅ Communiqué vos résultats à vos pairs
+✅ Utilisé les LLMs comme partenaires d'analyse
+✅ Développé votre autonomie en programmation
+:::
+
+::: {.fragment}
+**🎉 Félicitations ! Vous êtes maintenant capables d'analyser des données en autonomie !**
+:::
+
+## Compétences à ce stade
+
+**Vous savez maintenant :**
+
+::: {.incremental}
+- Analyser des données de A à Z
+- Choisir les bonnes analyses et visualisations
+- Créer des fonctions adaptées à vos besoins
+- Nettoyer et préparer des données réelles
+- Interpréter et communiquer des résultats
+- Utiliser les LLMs efficacement
+- Débugger de manière autonome
+:::
+
+## Préparation prochaine séance
+
+::: {.callout-note}
+## Devoirs
+
+1. **Finalisez votre projet** si besoin
+2. **Mettez à jour votre journal** avec tous les détails
+3. **Améliorez** un aspect de votre projet suite aux feedbacks
+4. **Réfléchissez** : quelles parties de votre code pourraient être mieux organisées ?
+:::
+
+::: {.fragment}
+**Prochaine séance :** Organisation et modularité - structurer son code comme un professionnel !
+:::
+
+## Questions ?
+
+::: {.callout-tip}
+## Points clés à retenir
+
+- Vous êtes **capables** d'analyser des données en autonomie
+- Le **cadrage** initial est crucial pour la réussite
+- Les **LLMs** sont des assistants, mais c'est **vous** qui dirigez
+- **Tester** et **commenter** au fur et à mesure est essentiel
+- Le **feedback** des pairs enrichit votre apprentissage
+:::
+
+::: {.fragment}
+**Bravo pour ce projet ! 🚀**
+:::

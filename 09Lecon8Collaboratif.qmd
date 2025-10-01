@@ -1,0 +1,825 @@
+---
+title: "Séance 8 : Projet collaboratif final"
+subtitle: "Apprendre R avec les LLMs"
+author: "Elias Bouacida"
+date: last-modified
+date-format: long
+format:
+  html: default
+  revealjs:
+    scrollable: true
+    slide-number: true
+    output-file: slide-lecon8.html
+    embed-resources: true
+    footer: "Séance 8 - Projet collaboratif final"
+format-links: [revealjs]
+lang: fr
+execute:
+  echo: true
+---
+
+## Plan de la séance {.smaller}
+
+::: {.incremental}
+- **Présentation du projet collaboratif** (15min) : Organisation et objectifs
+- **Constitution des équipes et répartition** (30min) : Former les groupes, assigner les angles d'analyse
+- **Code review croisé** (45min) : Analyser et améliorer le code d'une autre équipe
+- **Travail collaboratif** (90min) : Développement des analyses en équipe
+- **Intégration collaborative** (30min) : Faire fonctionner ensemble les analyses
+- **Présentation finale** (30min) : Synthèse collective des résultats
+:::
+
+::: {.fragment}
+**Production attendue :** Analyse collaborative intégrée + code review documenté
+:::
+
+## Objectifs de la séance
+
+::: {.callout-tip}
+## Collaborer comme des professionnels
+:::
+
+::: {.incremental}
+- **Travailler en équipe** sur un projet d'analyse
+- **Communiquer** efficacement sur le code
+- **Intégrer** différentes analyses
+- **Réviser** le code des autres (code review)
+- **Appliquer** toutes les bonnes pratiques apprises
+- **Présenter** des résultats de manière professionnelle
+:::
+
+# Présentation du projet {background-color="#2E8B57"}
+
+## Le défi collaboratif
+
+**Situation réelle :**
+
+Une organisation vous confie un grand dataset et vous demande une analyse complète sous différents angles.
+
+::: {.fragment}
+**4 équipes, 1 dataset, 4 perspectives complémentaires**
+:::
+
+::: {.fragment}
+::: {.callout-note}
+## Objectif final
+Produire une analyse intégrée qui combine les 4 perspectives pour une vision complète.
+:::
+:::
+
+## Structure du projet
+
+**Le dataset commun :** Données COVID, économiques, ou climatiques (fourni sur Moodle)
+
+**4 équipes, 4 angles d'analyse :**
+
+::: {.incremental}
+1. **Équipe 1 - Évolution temporelle** : Comment les variables évoluent dans le temps ?
+2. **Équipe 2 - Comparaisons géographiques** : Quelles différences entre régions/pays ?
+3. **Équipe 3 - Facteurs socio-économiques** : Quels facteurs influencent les résultats ?
+4. **Équipe 4 - Patterns et tendances** : Quels patterns émergent ? Prédictions simples ?
+:::
+
+## Livrables par équipe {.smaller}
+
+**Chaque équipe doit produire :**
+
+::: {.incremental}
+1. **Code R modulaire** (fichiers séparés)
+   - `fonctions_equipe_X.R` : vos fonctions
+   - `analyse_equipe_X.R` : script principal
+   - `README_equipe_X.md` : documentation
+
+2. **Rapport d'analyse** (R Markdown → HTML)
+   - Introduction et questions
+   - Méthodologie
+   - Résultats (graphiques + tableaux)
+   - Interprétation
+   - Conclusion
+
+3. **Présentation orale** (5 min)
+   - Résultats clés
+   - Contribution à la vision globale
+:::
+
+## Livrable collectif final
+
+**Toutes les équipes ensemble produiront :**
+
+::: {.incremental}
+- **Synthèse intégrée** : document combinant les 4 analyses
+- **Code unifié** : fonctions compatibles entre équipes
+- **Recommandations communes** : conclusions tirées de l'analyse complète
+- **Présentation collective** : vision d'ensemble
+:::
+
+## Critères d'évaluation {.smaller}
+
+**Note d'équipe (60%) :**
+
+- Qualité technique du code
+- Pertinence de l'analyse
+- Clarté du rapport
+- Qualité de la présentation
+
+**Note individuelle (40%) :**
+
+- Contribution identifiable (commits, fonctions créées)
+- Qualité du code review
+- Participation active
+- Collaboration avec les autres équipes
+
+::: {.fragment}
+::: {.callout-tip}
+## Tous ensemble !
+Le succès du projet dépend de la collaboration entre les équipes !
+:::
+:::
+
+# Constitution des équipes {background-color="#4169E1"}
+
+## Formation des équipes
+
+**L'enseignant forme 4 équipes de 4-5 personnes**
+
+::: {.incremental}
+**Critères de formation :**
+
+- Diversité des niveaux
+- Complémentarité des compétences
+- Mixité si possible
+:::
+
+::: {.fragment}
+**Chaque équipe se voit assigner un angle d'analyse**
+:::
+
+## Exercice 1 : Organisation interne {.smaller}
+
+**Dans chaque équipe (15 min) :**
+
+1. **Désignez un coordinateur** (interface avec les autres équipes)
+2. **Répartissez les rôles** :
+   - Responsable nettoyage des données
+   - Responsable analyses statistiques
+   - Responsable visualisations
+   - Responsable documentation
+
+3. **Définissez 3 questions précises** liées à votre angle d'analyse
+
+4. **Planifiez votre travail** :
+   - Quelles fonctions créer ?
+   - Quelle structure de code ?
+   - Comment vous répartir le travail ?
+
+::: {.notes}
+15 minutes. Chaque équipe s'organise.
+:::
+
+## Exercice 2 : Charte de collaboration {.smaller}
+
+**Chaque équipe définit sa charte :**
+
+```markdown
+CHARTE D'ÉQUIPE X
+
+OBJECTIF : [Angle d'analyse]
+
+QUESTIONS À RÉPONDRE :
+1.
+2.
+3.
+
+RÉPARTITION DES TÂCHES :
+- Membre A : [responsabilité]
+- Membre B : [responsabilité]
+- ...
+
+CONVENTIONS DE CODE :
+- Nommage des fonctions : equipe_X_nom_fonction()
+- Nommage des variables : snake_case
+- Commentaires : en français
+
+COMMUNICATION :
+- Coordination : [nom du coordinateur]
+- Fréquence des points : toutes les 30 minutes
+```
+
+::: {.notes}
+15 minutes. Établir les règles de collaboration.
+:::
+
+# Code Review Croisé {background-color="#FF8C00"}
+
+## Qu'est-ce qu'un code review ?
+
+**Code review** = Relecture critique du code par les pairs
+
+::: {.incremental}
+**Objectifs :**
+
+- Trouver des **bugs** potentiels
+- Améliorer la **lisibilité**
+- Partager les **bonnes pratiques**
+- Apprendre des **autres**
+:::
+
+::: {.fragment}
+::: {.callout-note}
+## Dans l'industrie
+Le code review est une pratique standard dans toutes les entreprises tech !
+:::
+:::
+
+## Que regarder dans un code review ?
+
+::: {.incremental}
+**Fonctionnalité :**
+
+- Le code fait-il ce qu'il est censé faire ?
+- Gère-t-il les cas d'erreur ?
+
+**Lisibilité :**
+
+- Les noms de variables/fonctions sont-ils clairs ?
+- Le code est-il bien commenté ?
+- La structure est-elle logique ?
+
+**Efficacité :**
+
+- Y a-t-il des répétitions inutiles ?
+- Les calculs sont-ils optimisés ?
+- Les fonctions sont-elles réutilisables ?
+:::
+
+## Exercice 3 : Code review d'une autre équipe {.smaller}
+
+**Organisation :**
+
+- Équipe 1 ↔ Équipe 2
+- Équipe 3 ↔ Équipe 4
+
+**Chaque équipe examine le code d'une autre équipe (provenant d'un projet précédent)**
+
+**Grille de review :**
+
+```markdown
+CODE REVIEW - Équipe X par Équipe Y
+
+POINTS POSITIFS :
+- [Ce qui est bien fait]
+
+PROBLÈMES IDENTIFIÉS :
+- [Bugs, erreurs logiques]
+
+SUGGESTIONS D'AMÉLIORATION :
+- [Comment améliorer le code]
+
+CODE EXEMPLAIRE :
+- [Un bout de code particulièrement bon]
+
+NOTE GLOBALE : [Sur 10]
+```
+
+::: {.notes}
+45 minutes. Code review sérieux et constructif.
+:::
+
+## Donner du feedback constructif
+
+::: {.callout-tip}
+## Règles d'or du code review
+:::
+
+::: {.incremental}
+**À FAIRE ✅ :**
+
+- Être spécifique : "Cette boucle pourrait être remplacée par `lapply()`"
+- Être constructif : "Et si on ajoutait une vérification ici ?"
+- Reconnaître ce qui est bon : "Excellente documentation !"
+- Suggérer, ne pas imposer : "Une alternative serait..."
+
+**À ÉVITER ❌ :**
+
+- Critiquer la personne : "Tu ne sais pas coder"
+- Être vague : "C'est mauvais"
+- Imposer son style : "Je fais toujours comme ça"
+:::
+
+# Travail Collaboratif {background-color="#8B008B"}
+
+## Phase de développement (90 min)
+
+**Chaque équipe travaille sur son analyse :**
+
+::: {.incremental}
+1. **Import et nettoyage** des données (commun à toutes les équipes)
+2. **Analyses spécifiques** à votre angle
+3. **Création de fonctions** réutilisables
+4. **Visualisations** claires et informatives
+5. **Rédaction du rapport** R Markdown
+:::
+
+::: {.fragment}
+::: {.callout-warning}
+## Attention !
+Vos fonctions doivent être **compatibles** avec celles des autres équipes !
+:::
+:::
+
+## Conventions entre équipes
+
+**Toutes les équipes doivent se mettre d'accord sur :**
+
+::: {.incremental}
+**Noms des objets principaux :**
+
+```{r}
+#| eval: false
+donnees_brutes    # Dataset original
+donnees_propres   # Dataset nettoyé
+resultats_equipe_X  # Résultats de chaque équipe
+```
+
+**Structure des fonctions :**
+
+```{r}
+#| eval: false
+# Chaque équipe préfixe ses fonctions
+equipe1_analyser_temporel()
+equipe2_analyser_geographique()
+equipe3_analyser_facteurs()
+equipe4_analyser_patterns()
+```
+
+**Format des sorties :**
+
+- Toutes les fonctions retournent des data.frames
+- Même structure : colonnes standardisées
+:::
+
+## Exercice 4 : Réunion inter-équipes {.smaller}
+
+**Les 4 coordinateurs se réunissent (10 min) pour :**
+
+1. S'accorder sur les **conventions de nommage**
+2. Définir la **structure commune** des données nettoyées
+3. Planifier l'**intégration finale**
+4. Identifier les **dépendances** entre équipes
+
+**Résultat : Un document de conventions partagé**
+
+```markdown
+CONVENTIONS INTER-ÉQUIPES
+
+OBJETS COMMUNS :
+- donnees_brutes : dataset original
+- donnees_propres : dataset nettoyé (structure : ...)
+
+PRÉFIXES DE FONCTIONS :
+- Équipe 1 : e1_
+- Équipe 2 : e2_
+- Équipe 3 : e3_
+- Équipe 4 : e4_
+
+FORMAT DES SORTIES :
+Toutes les fonctions d'analyse retournent un data.frame avec :
+- variable, valeur, interpretation
+```
+
+::: {.notes}
+10 minutes. Coordination essentielle entre équipes.
+:::
+
+## Checkpoints intermédiaires
+
+**Après 30 minutes :**
+
+- Chaque équipe présente son avancement (2 min/équipe)
+- Identification des blocages
+- Ajustements si nécessaire
+
+**Après 60 minutes :**
+
+- Vérification de la compatibilité du code
+- Premiers tests d'intégration
+- Corrections des incompatibilités
+
+## Consultations avec l'enseignant
+
+**L'enseignant circule pour :**
+
+- Débloquer les équipes en difficulté
+- Valider les choix méthodologiques
+- Suggérer des améliorations
+- Vérifier la compatibilité inter-équipes
+
+::: {.fragment}
+::: {.callout-tip}
+## N'attendez pas !
+Appelez l'enseignant dès qu'un problème bloque toute l'équipe.
+:::
+:::
+
+# Intégration Collaborative {background-color="#DC143C"}
+
+## Le défi de l'intégration
+
+**Maintenant que chaque équipe a son analyse, il faut tout combiner !**
+
+::: {.fragment}
+**Objectif :**
+
+Créer un script `analyse_integree.R` qui :
+
+1. Charge toutes les fonctions des 4 équipes
+2. Exécute les 4 analyses
+3. Combine les résultats
+4. Produit une synthèse globale
+:::
+
+## Exercice 5 : Script d'intégration {.smaller}
+
+**Les coordinateurs créent ensemble :**
+
+```{r}
+#| eval: false
+# === ANALYSE INTÉGRÉE - 4 ÉQUIPES ===
+
+# Charger toutes les fonctions
+source("equipe1/fonctions_equipe1.R")
+source("equipe2/fonctions_equipe2.R")
+source("equipe3/fonctions_equipe3.R")
+source("equipe4/fonctions_equipe4.R")
+
+# Importer et nettoyer les données (commun)
+donnees_brutes <- read.csv("dataset_commun.csv")
+donnees_propres <- nettoyer_donnees(donnees_brutes)
+
+# Exécuter les 4 analyses
+resultats_e1 <- e1_analyser_temporel(donnees_propres)
+resultats_e2 <- e2_analyser_geographique(donnees_propres)
+resultats_e3 <- e3_analyser_facteurs(donnees_propres)
+resultats_e4 <- e4_analyser_patterns(donnees_propres)
+
+# Combiner les résultats
+synthese <- combiner_resultats(
+  temporel = resultats_e1,
+  geo = resultats_e2,
+  facteurs = resultats_e3,
+  patterns = resultats_e4
+)
+
+# Sauvegarder
+saveRDS(synthese, "synthese_complete.rds")
+write.csv(synthese, "synthese_complete.csv")
+```
+
+::: {.notes}
+20 minutes. Travail collectif d'intégration.
+:::
+
+## Gestion des conflits
+
+**Problèmes courants :**
+
+::: {.incremental}
+**Fonctions avec le même nom :**
+
+```{r}
+#| eval: false
+# Solution : préfixer ou spécifier le package/source
+equipe1::analyser()
+equipe2::analyser()
+```
+
+**Structures de données incompatibles :**
+
+```{r}
+#| eval: false
+# Solution : créer des fonctions de conversion
+convertir_format_equipe1_vers_equipe2 <- function(data) {
+  # Transformation ici
+}
+```
+
+**Dépendances manquantes :**
+
+```{r}
+#| eval: false
+# Solution : documenter toutes les dépendances
+# Créer un script setup.R
+packages <- c("dplyr", "ggplot2", "lubridate")
+install.packages(packages)
+```
+:::
+
+## Test de l'intégration
+
+**Vérifications essentielles :**
+
+```{r}
+#| eval: false
+# Le script complet s'exécute sans erreur ?
+source("analyse_integree.R")
+
+# Les résultats sont cohérents ?
+str(synthese)
+summary(synthese)
+
+# Les graphiques s'affichent ?
+# Les fichiers de sortie sont créés ?
+```
+
+::: {.fragment}
+**Si ça casse, débuggez ensemble !**
+:::
+
+# Présentations Finales {background-color="#2E8B57"}
+
+## Format de présentation
+
+**Présentations par équipe (5 min chacune) :**
+
+::: {.incremental}
+1. **Angle d'analyse** (30 sec) : Quelle perspective ?
+2. **Méthodologie** (1 min) : Comment avez-vous procédé ?
+3. **Résultats clés** (2 min) : 2-3 insights majeurs avec graphiques
+4. **Contribution à la synthèse** (1 min) : Qu'apportez-vous au tout ?
+5. **Défis et apprentissages** (30 sec) : Qu'avez-vous appris ?
+:::
+
+## Présentation de la synthèse intégrée
+
+**Présentation collective (10 min) :**
+
+- **Vision d'ensemble** : Comment les 4 analyses se complètent ?
+- **Insights croisés** : Ce qu'on voit en combinant tout
+- **Recommandations** : Conclusions basées sur l'analyse complète
+- **Démo du code intégré** : Montrer que tout fonctionne ensemble
+
+::: {.fragment}
+**Tous les coordinateurs présentent ensemble !**
+:::
+
+## Exercice 6 : Préparer la présentation {.smaller}
+
+**Chaque équipe prépare (10 min) :**
+
+1. **Sélectionner** les 2-3 graphiques les plus importants
+2. **Rédiger** les messages clés (3 bullets maximum)
+3. **Préparer** une démo live de votre code
+4. **Répéter** le timing (max 5 min !)
+
+**Pour la synthèse collective :**
+
+- Les coordinateurs se réunissent
+- Créent une présentation intégrée
+- Se répartissent la parole
+
+::: {.notes}
+10 minutes de préparation avant les présentations.
+:::
+
+## Feedback et questions
+
+**Après chaque présentation :**
+
+- 2 minutes de questions/commentaires
+- Feedback constructif des autres équipes
+- Points d'amélioration suggérés
+
+::: {.fragment}
+::: {.callout-tip}
+## Célébrons les réussites !
+Identifiez ce qui a été particulièrement bien fait dans chaque équipe.
+:::
+:::
+
+# Célébration et Bilan {background-color="#4169E1"}
+
+## Vous avez réussi ! 🎉
+
+**Félicitations, vous avez :**
+
+::: {.incremental}
+✅ Collaboré en équipe sur un projet complexe
+✅ Intégré différentes analyses en un tout cohérent
+✅ Pratiqué le code review professionnel
+✅ Géré les conflits et incompatibilités
+✅ Communiqué efficacement sur du code
+✅ Produit une analyse complète et documentée
+✅ Présenté des résultats de manière professionnelle
+:::
+
+## Exercice final : Rétrospective {.smaller}
+
+**Individuellement, réfléchissez (5 min) :**
+
+::: {.nonincremental}
+**Ce qui a bien fonctionné :**
+
+- Dans votre équipe ?
+- Dans la collaboration inter-équipes ?
+- Dans votre propre contribution ?
+
+**Ce qui a été difficile :**
+
+- Quels obstacles avez-vous rencontrés ?
+- Comment les avez-vous surmontés ?
+
+**Ce que vous avez appris :**
+
+- Sur R et la programmation ?
+- Sur le travail en équipe ?
+- Sur vous-même ?
+
+**Ce que vous allez réutiliser :**
+
+- Quelles compétences acquises ?
+- Quelles méthodes de travail ?
+:::
+
+## Partage collectif {.smaller}
+
+**Tour de table (1 min/personne) :**
+
+Partagez **UNE** chose que vous retenez de ce cours :
+
+- Une compétence technique
+- Une méthode de travail
+- Un moment marquant
+- Une prise de conscience
+
+::: {.fragment}
+::: {.callout-note}
+## Votre parcours
+De la séance 1 (découverte de R) à aujourd'hui (projet collaboratif complexe) : vous avez parcouru un chemin immense ! 🚀
+:::
+:::
+
+# Bilan du cours complet {background-color="#8B008B"}
+
+## Compétences acquises en 8 séances
+
+**Techniques :**
+
+::: {.incremental}
+- ✅ Programmation R : variables, fonctions, conditions, boucles
+- ✅ Manipulation de données : import, nettoyage, transformation (dplyr)
+- ✅ Visualisation : ggplot2, graphiques professionnels
+- ✅ Organisation : code modulaire, packages, fonctions réutilisables
+- ✅ Automatisation : traitement par lots, rapports paramétrés
+- ✅ Documentation : R Markdown, commentaires, documentation
+:::
+
+## Compétences transversales
+
+**Méthodologiques :**
+
+::: {.incremental}
+- ✅ Résolution de problèmes par décomposition
+- ✅ Debugging systématique
+- ✅ Tests et validation du code
+- ✅ Gestion d'erreurs et cas particuliers
+:::
+
+**Collaboration :**
+
+::: {.incremental}
+- ✅ Travail en équipe sur du code
+- ✅ Code review constructif
+- ✅ Communication technique
+- ✅ Intégration de travaux multiples
+:::
+
+## Utilisation des LLMs
+
+**Vous savez maintenant :**
+
+::: {.incremental}
+- ✅ Formuler des prompts **précis** et **contextualisés**
+- ✅ **Valider** critiquement les réponses
+- ✅ **Itérer** pour améliorer les résultats
+- ✅ **Identifier** les erreurs et limites des LLMs
+- ✅ Utiliser les LLMs comme **partenaires**, pas comme **oracle**
+:::
+
+::: {.fragment}
+::: {.callout-tip}
+## L'esprit critique
+La compétence la plus importante que vous avez développée !
+:::
+:::
+
+## Votre progression
+
+::: {.nonincremental}
+**Séance 1 :**
+"Qu'est-ce que R ?"
+
+**Séance 2 :**
+"Comment importer des données ?"
+
+**Séance 3 :**
+"Comment créer une fonction ?"
+
+**Séance 4 :**
+"Comment faire de beaux graphiques ?"
+
+**Séance 5 :**
+"Analyse complète en autonomie !"
+
+**Séance 6 :**
+"Organisation professionnelle du code"
+
+**Séance 7 :**
+"Automatisation et rapports"
+
+**Séance 8 :**
+"Projet collaboratif complexe !" ✨
+:::
+
+## Et maintenant ?
+
+**Vous êtes capables de :**
+
+::: {.incremental}
+- Analyser des données **en autonomie**
+- Créer des **outils réutilisables**
+- **Automatiser** des tâches répétitives
+- **Collaborer** sur des projets data
+- **Continuer à apprendre** par vous-même avec les LLMs
+:::
+
+::: {.fragment}
+::: {.callout-note}
+## Le plus important
+Vous n'avez plus peur du code ! 🎓
+:::
+:::
+
+# Ressources pour continuer {background-color="#2E8B57"}
+
+## Poursuivre votre apprentissage
+
+**Ressources en ligne :**
+
+- [R for Data Science](https://r4ds.hadley.nz/) - livre gratuit
+- [RStudio Cheatsheets](https://posit.co/resources/cheatsheets/)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/r) - communauté
+- Votre journal de bord - vos propres notes !
+
+**Pratiquer :**
+
+- Kaggle - datasets et compétitions
+- TidyTuesday - défis hebdomadaires
+- Vos propres projets - le meilleur apprentissage !
+
+## Rester en contact
+
+**Communauté :**
+
+- Continuez à échanger avec vos camarades
+- Partagez vos projets
+- Aidez les nouveaux arrivants
+- Contribuez à des projets open source
+
+**Avec les LLMs :**
+
+- Continuez à les utiliser **critiquement**
+- Documentez vos meilleures pratiques
+- Partagez vos découvertes
+
+## Merci ! 🙏
+
+**Merci pour :**
+
+- Votre **engagement** tout au long du cours
+- Votre **curiosité** et vos questions
+- Votre **collaboration** avec vos pairs
+- Votre **persévérance** face aux difficultés
+
+::: {.fragment}
+**Vous êtes maintenant des programmeurs R capables ! 🚀**
+:::
+
+::: {.fragment}
+**Continuez à coder, continuez à apprendre, continuez à créer !**
+:::
+
+## Questions finales ?
+
+::: {.callout-tip}
+## N'oubliez jamais
+
+- Le **code** est un outil, pas une fin en soi
+- Les **erreurs** sont des opportunités d'apprentissage
+- La **collaboration** enrichit vos compétences
+- L'**apprentissage** ne s'arrête jamais
+- Les **LLMs** sont des assistants, vous êtes le cerveau !
+:::
+
+::: {.fragment}
+**Bon courage pour vos futurs projets ! 🎉**
+:::

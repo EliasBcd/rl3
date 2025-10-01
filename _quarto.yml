@@ -25,6 +25,11 @@ website:
           - 02Lecon1.qmd
           - 03Lecon2Donnees.qmd
           - 04Lecon3Fonctions.qmd
+          - 05Lecon4Dataframes.qmd
+          - 06Lecon5Projet.qmd
+          - 07Lecon6Organisation.qmd
+          - 08Lecon7Automatisation.qmd
+          - 09Lecon8Collaboratif.qmd
       - section: "Annexe"
         contents: 
           - text: "Modèle de journal de bord"

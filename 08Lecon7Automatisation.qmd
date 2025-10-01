@@ -1,0 +1,733 @@
+---
+title: "Séance 7 : Automatisation et rapports"
+subtitle: "Apprendre R avec les LLMs"
+author: "Elias Bouacida"
+date: last-modified
+date-format: long
+format:
+  html: default
+  revealjs:
+    scrollable: true
+    slide-number: true
+    output-file: slide-lecon7.html
+    embed-resources: true
+    footer: "Séance 7 - Automatisation et rapports"
+format-links: [revealjs]
+lang: fr
+execute:
+  echo: true
+---
+
+## Plan de la séance {.smaller}
+
+::: {.incremental}
+- **Récap et partage** (15min) : Retours sur l'organisation du code
+- **Traitement par lots** (60min) : Analyser plusieurs fichiers automatiquement
+- **Introduction à R Markdown** (60min) : Mélanger code, texte et résultats
+- **Rapport paramétré** (65min) : Créer un template d'analyse réutilisable
+:::
+
+::: {.fragment}
+**Production attendue :** Rapport automatisé fonctionnel au format PDF/HTML
+:::
+
+## Objectifs de la séance
+
+::: {.callout-tip}
+## Automatiser pour gagner du temps
+:::
+
+::: {.incremental}
+- **Automatiser** le traitement de plusieurs fichiers
+- **Créer** des rapports reproductibles
+- **Maîtriser** R Markdown pour mélanger code et texte
+- **Paramétrer** ses analyses pour la réutilisation
+- **Générer** des documents professionnels
+:::
+
+# Récap et partage {background-color="#2E8B57"}
+
+## Retours sur l'organisation
+
+::: {.incremental}
+- Comment avez-vous organisé votre code ?
+- Quelles difficultés avec les packages ?
+- Une fonction utile que vous avez créée ?
+:::
+
+## Le défi de l'échelle
+
+**Situation réelle :**
+
+::: {.fragment}
+Vous avez analysé les ventes de janvier...
+:::
+
+::: {.fragment}
+Maintenant on vous demande d'analyser janvier, février, mars, avril, mai, juin... 📊
+:::
+
+::: {.fragment}
+::: {.callout-warning}
+## Problème
+Copier-coller votre code 12 fois ? Non ! Il faut **automatiser**.
+:::
+:::
+
+# Traitement par lots {background-color="#4169E1"}
+
+## Principe de l'automatisation
+
+**Au lieu de :**
+
+```{r}
+#| eval: false
+ventes_jan <- read.csv("ventes_janvier.csv")
+analyse_jan <- analyser(ventes_jan)
+
+ventes_fev <- read.csv("ventes_fevrier.csv")
+analyse_fev <- analyser(ventes_fev)
+
+# ... répéter 10 fois ...
+```
+
+**On fait :**
+
+```{r}
+#| eval: false
+fichiers <- list.files(pattern = ".csv")
+
+for (fichier in fichiers) {
+  donnees <- read.csv(fichier)
+  analyse <- analyser(donnees)
+  sauvegarder_resultat(analyse, fichier)
+}
+```
+
+## Exercice 1 : Lister des fichiers {.smaller}
+
+**Demandez au LLM :**
+
+> "Comment lister tous les fichiers CSV d'un dossier en R ?"
+
+::: {.fragment}
+Vous découvrirez :
+
+```{r}
+#| eval: false
+# Lister tous les fichiers CSV du dossier courant
+fichiers <- list.files(pattern = "\\.csv$")
+
+# Lister avec le chemin complet
+fichiers <- list.files(path = "donnees/", pattern = "\\.csv$",
+                       full.names = TRUE)
+
+# Voir les fichiers
+print(fichiers)
+```
+:::
+
+::: {.fragment}
+**Testez avec vos propres fichiers !**
+:::
+
+::: {.notes}
+15 minutes. Première étape de l'automatisation.
+:::
+
+## Exercice 2 : Boucle sur des fichiers {.smaller}
+
+**Créez un script qui traite plusieurs fichiers :**
+
+```{r}
+#| eval: false
+# Lister les fichiers
+fichiers <- list.files(path = "donnees/", pattern = "\\.csv$",
+                       full.names = TRUE)
+
+# Créer une liste pour stocker les résultats
+resultats <- list()
+
+# Boucle sur chaque fichier
+for (fichier in fichiers) {
+  # Lire le fichier
+  donnees <- read.csv(fichier)
+
+  # Calculer des statistiques
+  stats <- data.frame(
+    fichier = basename(fichier),
+    n_lignes = nrow(donnees),
+    moyenne = mean(donnees$valeur, na.rm = TRUE)
+  )
+
+  # Stocker le résultat
+  resultats[[fichier]] <- stats
+}
+
+# Combiner tous les résultats
+resultats_final <- do.call(rbind, resultats)
+```
+
+::: {.notes}
+20 minutes. Pattern essentiel pour l'automatisation.
+:::
+
+## Exercice 3 : Fonction d'analyse par lots {.smaller}
+
+**Créez une fonction réutilisable :**
+
+```{r}
+#| eval: false
+analyser_dossier <- function(chemin, pattern = "\\.csv$") {
+  # Lister les fichiers
+  fichiers <- list.files(path = chemin, pattern = pattern,
+                         full.names = TRUE)
+
+  if (length(fichiers) == 0) {
+    stop("Aucun fichier trouvé !")
+  }
+
+  # Analyser chaque fichier
+  resultats <- lapply(fichiers, function(f) {
+    donnees <- read.csv(f)
+    data.frame(
+      fichier = basename(f),
+      n_lignes = nrow(donnees),
+      n_colonnes = ncol(donnees),
+      moyenne_valeur = mean(donnees$valeur, na.rm = TRUE)
+    )
+  })
+
+  # Combiner et retourner
+  do.call(rbind, resultats)
+}
+
+# Utilisation
+resultats <- analyser_dossier("donnees/ventes/")
+```
+
+::: {.notes}
+25 minutes. Fonction professionnelle d'automatisation.
+:::
+
+## Gestion des erreurs dans les boucles
+
+**Problème :** Un fichier corrompu plante tout !
+
+```{r}
+#| eval: false
+# Mauvais : tout plante au premier problème
+for (fichier in fichiers) {
+  donnees <- read.csv(fichier)  # Erreur ici = tout s'arrête
+  analyser(donnees)
+}
+
+# Bon : gérer les erreurs
+for (fichier in fichiers) {
+  resultat <- tryCatch({
+    donnees <- read.csv(fichier)
+    analyser(donnees)
+  }, error = function(e) {
+    message("Erreur avec ", fichier, ": ", e$message)
+    NULL  # Retourner NULL en cas d'erreur
+  })
+}
+```
+
+::: {.fragment}
+**Demandez au LLM d'expliquer `tryCatch()` !**
+:::
+
+# Introduction à R Markdown {background-color="#FF8C00"}
+
+## Qu'est-ce que R Markdown ?
+
+**R Markdown** permet de créer des documents qui mélangent :
+
+::: {.incremental}
+- Du **texte** (explications, interprétations)
+- Du **code R** (analyses)
+- Des **résultats** (tableaux, graphiques)
+- Des **formules** mathématiques
+:::
+
+::: {.fragment}
+**Formats de sortie :**
+
+- PDF, HTML, Word
+- Présentations (comme ce cours !)
+- Sites web, livres
+:::
+
+## Pourquoi R Markdown ?
+
+::: {.incremental}
+**Avantages :**
+
+- **Reproductibilité** : tout est dans un seul fichier
+- **Cohérence** : résultats toujours à jour avec le code
+- **Communication** : rapports professionnels
+- **Gain de temps** : pas de copier-coller de résultats
+:::
+
+::: {.fragment}
+::: {.callout-note}
+## Important
+Si vos données changent, votre rapport se met à jour automatiquement !
+:::
+:::
+
+## Structure d'un document R Markdown {.smaller}
+
+**Un fichier `.Rmd` contient :**
+
+````markdown
+---
+title: "Mon Rapport"
+author: "Votre Nom"
+date: "2025-01-15"
+output: html_document
+---
+
+# Introduction
+
+Ceci est du texte normal.
+
+```{{r}}
+# Ceci est du code R
+donnees <- read.csv("data.csv")
+mean(donnees$valeur)
+```
+
+## Résultats
+
+Le graphique ci-dessous montre...
+
+```{{r}}
+plot(donnees$x, donnees$y)
+```
+````
+
+## Exercice 4 : Premier document R Markdown {.smaller}
+
+**Créez un nouveau fichier R Markdown :**
+
+1. Dans RStudio : File > New File > R Markdown
+2. Donnez un titre et choisissez HTML
+3. Cliquez sur "Knit" pour générer le document
+
+::: {.fragment}
+**Observez :**
+
+- L'en-tête YAML (entre les `---`)
+- Les blocs de code R (entre les ` ```{r} ` )
+- Le texte Markdown
+- Le résultat généré
+:::
+
+::: {.fragment}
+**Demandez au LLM :**
+
+> "Explique-moi la syntaxe de base de Markdown (titres, listes, gras, italique)"
+:::
+
+::: {.notes}
+20 minutes. Première découverte de R Markdown.
+:::
+
+## Options des blocs de code {.smaller}
+
+**On peut contrôler ce qui apparaît dans le rapport :**
+
+````markdown
+```{{r, echo=TRUE, eval=TRUE}}
+# echo=TRUE : montrer le code
+# eval=TRUE : exécuter le code
+x <- 1:10
+mean(x)
+```
+
+```{{r, echo=FALSE, eval=TRUE}}
+# echo=FALSE : cacher le code, montrer seulement le résultat
+plot(x, x^2)
+```
+
+```{{r, eval=FALSE}}
+# eval=FALSE : montrer le code mais ne pas l'exécuter
+# Utile pour montrer des exemples
+install.packages("monpackage")
+```
+````
+
+::: {.fragment}
+**Autres options utiles :**
+
+- `message=FALSE` : cacher les messages
+- `warning=FALSE` : cacher les avertissements
+- `fig.width=8, fig.height=5` : taille des graphiques
+:::
+
+## Exercice 5 : Rapport d'analyse simple {.smaller}
+
+**Créez un rapport R Markdown qui :**
+
+1. Importe un jeu de données
+2. Affiche les premières lignes (avec `head()`)
+3. Calcule des statistiques (moyenne, médiane, etc.)
+4. Crée 2 graphiques
+5. Interprète les résultats en texte
+
+**Structure suggérée :**
+
+````markdown
+# Introduction
+Description du dataset...
+
+# Exploration des données
+```{{r}}
+donnees <- read.csv("data.csv")
+head(donnees)
+summary(donnees)
+```
+
+# Analyse
+```{{r, echo=FALSE}}
+# Graphiques sans montrer le code
+```
+
+# Conclusion
+Les résultats montrent que...
+````
+
+::: {.notes}
+30 minutes. Premier rapport complet.
+:::
+
+## Markdown pour le formatage {.smaller}
+
+**Syntaxe de base :**
+
+```markdown
+# Titre niveau 1
+## Titre niveau 2
+### Titre niveau 3
+
+**Texte en gras**
+*Texte en italique*
+
+- Liste à puces
+- Deuxième élément
+
+1. Liste numérotée
+2. Deuxième élément
+
+[Lien](https://www.example.com)
+
+![Image](chemin/vers/image.png)
+```
+
+::: {.fragment}
+**Demandez au LLM de vous montrer plus d'options de formatage !**
+:::
+
+# Rapport paramétré {background-color="#8B008B"}
+
+## Pourquoi paramétrer ?
+
+**Problème :** Vous voulez le même rapport pour différents datasets
+
+**Solution :** Créer un template paramétrable
+
+```markdown
+---
+title: "Rapport de ventes"
+params:
+  fichier: "ventes_janvier.csv"
+  seuil: 1000
+---
+
+```{{r}}
+donnees <- read.csv(params$fichier)
+ventes_importantes <- donnees[donnees$montant > params$seuil, ]
+```
+```
+
+## Exercice 6 : Premier rapport paramétré {.smaller}
+
+**Créez un rapport avec paramètres :**
+
+````markdown
+---
+title: "Analyse automatisée"
+params:
+  dataset: "data.csv"
+  variable: "valeur"
+  titre_graphique: "Distribution des valeurs"
+output: html_document
+---
+
+# Analyse de `r params$variable`
+
+```{{r}}
+donnees <- read.csv(params$dataset)
+variable_data <- donnees[[params$variable]]
+
+# Statistiques
+cat("Moyenne:", mean(variable_data, na.rm = TRUE), "\n")
+cat("Médiane:", median(variable_data, na.rm = TRUE), "\n")
+
+# Graphique
+hist(variable_data, main = params$titre_graphique)
+```
+````
+
+::: {.notes}
+25 minutes. Introduction aux paramètres.
+:::
+
+## Générer des rapports par programme {.smaller}
+
+**Vous pouvez générer des rapports depuis R :**
+
+```{r}
+#| eval: false
+library(rmarkdown)
+
+# Générer un rapport avec des paramètres spécifiques
+render("template.Rmd",
+       params = list(
+         dataset = "ventes_janvier.csv",
+         variable = "montant",
+         titre_graphique = "Ventes de janvier"
+       ),
+       output_file = "rapport_janvier.html")
+
+# Boucle pour générer plusieurs rapports
+fichiers <- c("ventes_janvier.csv", "ventes_fevrier.csv", "ventes_mars.csv")
+
+for (f in fichiers) {
+  mois <- tools::file_path_sans_ext(basename(f))
+
+  render("template.Rmd",
+         params = list(
+           dataset = f,
+           variable = "montant",
+           titre_graphique = paste("Ventes de", mois)
+         ),
+         output_file = paste0("rapport_", mois, ".html"))
+}
+```
+
+::: {.notes}
+20 minutes. Automatisation complète.
+:::
+
+## Exercice 7 : Fonction de génération de rapport {.smaller}
+
+**Créez une fonction qui génère des rapports automatiquement :**
+
+```{r}
+#| eval: false
+generer_rapport <- function(fichier_donnees, output_dir = "rapports/") {
+  # Extraire le nom du fichier sans extension
+  nom_base <- tools::file_path_sans_ext(basename(fichier_donnees))
+
+  # Créer le dossier de sortie si nécessaire
+  if (!dir.exists(output_dir)) {
+    dir.create(output_dir, recursive = TRUE)
+  }
+
+  # Générer le rapport
+  output_file <- file.path(output_dir, paste0("rapport_", nom_base, ".html"))
+
+  rmarkdown::render(
+    "template_analyse.Rmd",
+    params = list(
+      dataset = fichier_donnees,
+      titre = paste("Analyse de", nom_base)
+    ),
+    output_file = output_file
+  )
+
+  message("Rapport généré : ", output_file)
+  return(output_file)
+}
+
+# Utilisation
+fichiers <- list.files("donnees/", pattern = "\\.csv$", full.names = TRUE)
+rapports <- lapply(fichiers, generer_rapport)
+```
+
+::: {.notes}
+30 minutes. Fonction professionnelle de génération de rapports.
+:::
+
+## Formats de sortie multiples
+
+**R Markdown peut générer différents formats :**
+
+````markdown
+---
+title: "Mon Rapport"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+  pdf_document:
+    toc: true
+  word_document: default
+---
+````
+
+::: {.fragment}
+**Pour générer un format spécifique :**
+
+```{r}
+#| eval: false
+render("rapport.Rmd", output_format = "pdf_document")
+```
+:::
+
+# Mini-projet : Système de rapports {background-color="#DC143C"}
+
+## Projet final : Rapports automatisés {.smaller}
+
+**Objectif :** Créer un système complet de génération de rapports
+
+**Spécifications :**
+
+1. Un **template R Markdown** paramétrable
+2. Une **fonction** qui génère des rapports pour plusieurs fichiers
+3. Les rapports doivent inclure :
+   - Import et nettoyage automatique
+   - Statistiques descriptives
+   - Au moins 3 graphiques
+   - Interprétation textuelle
+4. Gestion des erreurs (fichiers manquants, colonnes manquantes)
+5. Génération en HTML
+
+::: {.callout-note}
+## Utilisez tout ce que vous avez appris
+Fonctions, dplyr, ggplot2, gestion d'erreurs, R Markdown !
+:::
+
+::: {.notes}
+65 minutes. Projet de synthèse final.
+:::
+
+## Critères du projet {.smaller}
+
+::: {.incremental}
+- ✅ Template R Markdown **paramétrable** et réutilisable
+- ✅ Fonction de génération **robuste** (gère les erreurs)
+- ✅ Rapports **complets** (stats + graphiques + texte)
+- ✅ Code **commenté** et **organisé**
+- ✅ **Fonctionne** avec différents fichiers de données
+:::
+
+::: {.fragment}
+**Bonus :**
+
+- Génération automatique d'un index de tous les rapports
+- Graphiques interactifs avec `plotly`
+- Rapport au format PDF
+- Envoi automatique par email (avancé !)
+:::
+
+# Retour réflexif {background-color="#2F4F4F"}
+
+## Exercice réflexif : Journal de bord {.smaller}
+
+**Documentez :**
+
+1. **Automatisation** :
+   - Comment automatiser un traitement répétitif ?
+   - Votre fonction d'analyse par lots
+   - Une erreur que vous avez gérée avec `tryCatch()`
+
+2. **R Markdown** :
+   - Différences avec un script R normal
+   - Avantages pour vos analyses
+   - Options de blocs de code les plus utiles
+
+3. **Rapports paramétrés** :
+   - Votre template réutilisable
+   - Comment vous allez l'utiliser à l'avenir
+   - Difficultés rencontrées et solutions
+
+::: {.notes}
+15 minutes. Documentation des apprentissages avancés.
+:::
+
+## Ce que vous avez accompli
+
+::: {.incremental}
+✅ Automatiser le traitement de plusieurs fichiers
+✅ Créer des rapports reproductibles avec R Markdown
+✅ Paramétrer des analyses pour la réutilisation
+✅ Générer des documents professionnels automatiquement
+✅ Gérer les erreurs dans les processus automatisés
+✅ Combiner toutes vos compétences en R
+:::
+
+# Ressources et prochaines étapes {background-color="#2E8B57"}
+
+## Concepts clés de la séance
+
+**Automatisation :**
+
+- `list.files()` : lister des fichiers
+- Boucles `for` et `lapply()` sur plusieurs fichiers
+- `tryCatch()` : gestion des erreurs
+
+**R Markdown :**
+
+- Structure : YAML + Markdown + code R
+- Options de blocs : `echo`, `eval`, `message`, `warning`
+- `render()` : générer des rapports par programme
+
+**Paramètres :**
+
+- `params` dans le YAML
+- Accès avec `params$nom_parametre`
+
+## Pour aller plus loin
+
+::: {.incremental}
+- **Explorez** d'autres formats de sortie (PDF, Word, slides)
+- **Créez** une bibliothèque de templates pour différents types d'analyses
+- **Automatisez** la génération régulière de rapports (tâches planifiées)
+- **Partagez** vos templates avec vos collègues
+:::
+
+## Préparation séance finale
+
+::: {.callout-note}
+## Devoirs
+
+1. Finalisez votre système de rapports automatisés
+2. Testez-le avec au moins 3 fichiers différents
+3. **Mettez à jour votre journal** en détail
+4. Préparez-vous pour le projet collaboratif final
+5. Réfléchissez aux bonnes pratiques pour travailler en équipe sur du code
+:::
+
+::: {.fragment}
+**Séance finale :** Projet collaboratif - intégrer vos compétences en équipe !
+:::
+
+## Questions ?
+
+::: {.callout-tip}
+## Points clés à retenir
+
+- **Automatiser** évite la répétition et les erreurs
+- **R Markdown** garantit la reproductibilité
+- Les **paramètres** rendent vos analyses réutilisables
+- La **gestion d'erreurs** est essentielle en production
+- Vous êtes maintenant capables de créer des **systèmes professionnels** !
+:::
+
+::: {.fragment}
+**Bravo pour ces compétences avancées ! 🎓**
+:::

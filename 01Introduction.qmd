@@ -1,6 +1,6 @@
 ---
-title: "Apprendre la Programmation R avec les LLM"
-subtitle: "Méthodologie de Projet Personnel et Professionnel"
+title: "Apprendre la Programmation (en R) avec les LLMs"
+subtitle: ""
 author: "Elias Bouacida"
 date: last-modified
 date-format: long
@@ -22,7 +22,7 @@ lang: fr
 
 ## Bienvenue ! 🚀
 
-**Apprendre la Programmation R avec les LLM**
+**Apprendre la Programmation (en R) avec les LLMs**
 
 
 :::: {.columns}
@@ -266,46 +266,106 @@ barplot(ventes, names.arg = mois,
 
 
 
-# Organisation du Cours 
+# Organisation du Cours
 
-## 5 Séances, 2 Phases
+## 8 Séances de 3 heures 📅
 
-
+Le cours est structuré en 3 phases progressives sur 8 séances de 3h.
 
 ### Phase 1 : Fondations 🌱 (Séances 1-3)
 
-- **Séance 1** : Premier contact LLM + Variables R
-- **Séance 2** : Vecteurs et fonctions built-in
-- **Séance 3** : Créer ses propres fonctions
-
-::: {.fragment}
-
 **Objectif :** Maîtriser le dialogue avec un LLM et les concepts R de base
 
+#### Séance 1 : Premiers pas avec R
+
+::: {.nonincremental}
+- Découvrir RStudio et son interface
+- Comprendre les concepts de base : objets, types, vecteurs
+- Utiliser des fonctions intégrées
+- Créer son premier script
+- Commencer son journal de bord
 :::
 
-::: {.fragment}
+#### Séance 2 : Données et visualisations
+
+::: {.nonincremental}
+- Importer des données réelles (fichiers CSV)
+- Explorer des data frames
+- Calculer des statistiques descriptives
+- Créer des visualisations simples
+- Apprendre à débugger efficacement
+:::
+
+#### Séance 3 : Automatisation et fonctions
+
+::: {.nonincremental}
+- Utiliser des conditions (`if/else`)
+- Créer des boucles (`for`, `while`)
+- Écrire vos propres fonctions
+- Combiner tous les concepts appris
+:::
 
 ### Phase 2 : Application 🚀 (Séances 4-5)
 
-- **Séance 4** : Tableaux de données et graphiques
-- **Séance 5** : Projet personnel libre
+**Objectif :** Analyser de vraies données en autonomie
 
+#### Séance 4 : Données tabulaires et graphiques avancés
+
+::: {.nonincremental}
+- Maîtriser les dataframes complexes
+- Nettoyage de données (casse, formats, incohérences)
+- Visualisations avec ggplot2
+- Créer des fonctions de visualisation réutilisables
+:::
+
+#### Séance 5 : Projet personnel intégré
+
+::: {.nonincremental}
+- Choix et cadrage d'un projet personnel
+- Analyse complète de A à Z en autonomie
+- Présentation des résultats aux pairs
+:::
+
+### Phase 3 : Expertise ⭐ (Séances 6-8)
+
+**Objectif :** Devenir autonome et collaborer efficacement
+
+#### Séance 6 : Organisation et modularité
+
+::: {.nonincremental}
+- Structurer son code en modules
+- Découvrir l'écosystème des packages (dplyr, lubridate)
+- Organiser ses fonctions en scripts thématiques
+:::
+
+#### Séance 7 : Automatisation et rapports
+
+::: {.nonincremental}
+- Automatiser des analyses répétitives
+- Traiter plusieurs fichiers à la fois
+- Créer des rapports reproductibles avec R Markdown
+:::
+
+#### Séance 8 : Projet collaboratif final
+
+::: {.nonincremental}
+- Travailler en équipe sur un grand dataset
+- Code review croisé entre équipes
+- Intégrer les bonnes pratiques de développement
+- Présentation finale
+:::
+
+## Progression pédagogique
+
+::: {.incremental}
+- **Séances 1-3** → Bases : concepts fondamentaux et autonomie technique
+- **Séances 4-5** → Application : projets personnels et analyses complètes
+- **Séances 6-8** → Expertise : organisation, automatisation et collaboration
 :::
 
 ::: {.fragment}
-
-**Objectif :** Analyser de vraies données en autonomie
-
+**À la fin du cours, vous serez capable de :** analyser des données en autonomie, créer vos propres outils, automatiser vos analyses, collaborer sur du code, et utiliser les LLMs comme de véritables partenaires de travail.
 :::
-
-<!-- ## Phase 3 : Expertise ⭐ (Séances 6-8) -->
-
-<!-- - **Séance 6** : Organisation du code en modules -->
-<!-- - **Séance 7** : Automatisation et rapports -->
-<!-- - **Séance 8** : Projet collaboratif final -->
-
-<!-- **Objectif :** Devenir autonome et collaborer efficacement -->
 
 ## Structure d'une séance type
 
@@ -339,13 +399,13 @@ barplot(ventes, names.arg = mois,
 
 # Évaluation 📊
 
-## Évaluation continue
+## Une évaluation bienveillante
 
-L'objectif : évaluer votre progression, pas vous piéger !
+**Cours noté** : L'objectif est d'évaluer votre progression, pas de vous piéger !
 
-Cours à validation.
+### Composition de la note
 
-
+Votre note finale est répartie en 3 composantes :
 
 ```{r notes}
 #| echo: false
@@ -357,19 +417,74 @@ Cours à validation.
 # Création d'un graphique des évaluations
 library(ggplot2)
 evaluations <- data.frame(
-  Type = c("Journal LLM", "Mini-projets", "Participation"),
-  Poids = c(50, 30, 20),
-  Description = c("Évolution prompts", "5 analyses", "Debugging collectif")
+  Type = c("Journal de bord", "Mini-projets", "Participation"),
+  Poids = c(40, 40, 20),
+  Description = c("Apprentissage", "Rendus", "En classe")
 )
 
-ggplot(evaluations, aes(x = Type, y = Poids, fill = Type)) +
+ggplot(evaluations, aes(x = reorder(Type, -Poids), y = Poids, fill = Type)) +
   geom_bar(stat = "identity") +
-  geom_text(aes(label = paste(Poids, "%")), vjust = -0.5, size = 5) +
-  labs(y = "Pourcentage", x = "") +
+  geom_text(aes(label = paste(Poids, "%")), vjust = -0.5, size = 6) +
+  labs(y = "Pourcentage de la note", x = "") +
   theme_minimal() +
   theme(legend.position = "none",
-        text = element_text(size = 12))
+        text = element_text(size = 14),
+        axis.text.x = element_text(size = 12))
 ```
+
+## 📓 Journal de bord (40%) {.smaller}
+
+Document votre apprentissage tout au long du semestre.
+
+**Pour chaque séance, notez :**
+
+::: {.nonincremental}
+- Les **prompts** utilisés avec les LLMs (copier-coller exact)
+- Les **réponses** obtenues (copier-coller, pas de captures d'écran)
+- Votre **compréhension** avec vos propres mots
+- Les **difficultés** et erreurs rencontrées
+- Les **solutions** trouvées
+- Le **code** produit et commenté
+:::
+
+::: {.fragment}
+::: {.callout-tip}
+## Soyez honnête !
+Documentez vos échecs comme vos réussites. C'est votre progression qui compte.
+:::
+:::
+
+## 🎯 Mini-projets (40%) {.smaller}
+
+Rendus de fin de séance à soumettre sur Moodle.
+
+::: {.nonincremental}
+- **Séance 1** : Script commenté avec analyse de données simple
+- **Séance 2** : Analyse de données INSEE avec visualisations
+- **Séance 3** : Fonctions personnalisées pour analyse de températures
+:::
+
+::: {.fragment}
+**Critères :** Code fonctionnel, commenté, résout le problème posé
+:::
+
+## 👥 Participation (20%) {.smaller}
+
+Votre engagement pendant les séances.
+
+::: {.incremental}
+- **Présence active** : Vous travaillez sur les exercices
+- **Entraide** : Vous aidez vos camarades ou demandez de l'aide
+- **Debugging collectif** : Vous partagez vos solutions
+- **Questions** : Vous posez des questions pertinentes
+:::
+
+::: {.fragment}
+::: {.callout-note}
+## Pas de stress !
+La participation, ce n'est pas parler beaucoup, c'est être engagé dans votre apprentissage.
+:::
+:::
 
 
 # Questions & Discussion 💬
@@ -417,7 +532,7 @@ ggplot(evaluations, aes(x = Type, y = Poids, fill = Type)) +
 
 ::: {.nonincremental}
 
-- Installation R/RStudio : <https://moodle.univ-paris8.fr/mod/page/view.php?id=272504>
+- Installation R/RStudio : <https://moodle.univ-paris8.fr/course/section.php?id=134073>
 - Utilisation de R/Rstudio en ligne : <https://datalab.sspcloud.fr/> (Utilisez votre compte étudiant Paris 8 pour vous connecter)
 - Guide des prompts efficaces : <https://www.francenum.gouv.fr/guides-et-conseils/intelligence-artificielle/generation-de-contenus-texte-image-son-video/comment-0>
 - [Forum d'entraide étudiant](https://moodle.univ-paris8.fr/mod/forum/view.php?id=415534)

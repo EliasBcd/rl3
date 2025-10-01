@@ -2,9 +2,9 @@
 title: "Séance 2 : Données et fonctions intégrées"
 subtitle: "Apprendre R avec les LLMs"
 author: "Elias Bouacida"
-date: 09-24-2025
+date: last-modified
 date-format: long
-format: 
+format:
   html: default
   revealjs:
     scrollable: true
@@ -14,79 +14,706 @@ format:
     footer: "Séance 2 - Données et fonctions"
 format-links: [revealjs]
 lang: fr
+execute:
+  echo: true
 ---
 
 ## Plan de la séance {.smaller}
 
 ::: {.incremental}
-- **Récap et partage** (20min) : Retours sur ce que vous avez appris la semaine dernière
-- **Dataset** (60min) : Données météo 
-- **Debugging collectif** (40min) : 
-- **Exploration fonctions built-in** (60min) : `sum()`, `length()`, `min()`, `max()`
-- **Mini-projet individuel** (40min) : Analyser les données du PIB de l'INSEE
+- **Récap et partage** (20min) : Retours sur vos journaux
+- **Charger des données** (45min) : Importer des fichiers CSV
+- **Exploration de données** (45min) : Structure et types de données
+- **Statistiques descriptives** (45min) : Analyser les données
+- **Visualisations de base** (45min) : Créer des graphiques
+- **Mini-projet** (50min) : Analyser des données réelles
 :::
 
 ::: {.fragment}
-**Production attendue :** Analyse météo commentée + 3 fonctions maîtrisées
+**Production attendue :** Analyse commentée de données avec graphiques
 :::
 
-
-## Objectif de la séance
+## Objectifs de la séance
 
 ::: {.callout-tip}
-## Manipuler des collections de données et comprendre le concept de fonction
+## Manipuler de vraies données
 :::
 
 ::: {.incremental}
-- Travailler avec des **vecteurs** (collections de données)
-- Découvrir les **fonctions built-in** de R
-- Apprendre à **débugger** avec l'aide des LLMs
-- Gérer les **données manquantes** (NA)
+- **Importer** des données depuis des fichiers
+- **Explorer** la structure des données (data frames)
+- Calculer des **statistiques descriptives**
+- Créer des **visualisations** simples
+- Gérer les **données manquantes**
+- **Débugger** avec l'aide des LLMs
 :::
 
 # Récap et partage {background-color="#2E8B57"}
 
-## Retours sur vos premières expériences
+## Retours sur la séance 1
 
 ::: {.incremental}
-- Qu'avez-vous compris des concepts de la semaine dernière ?
+- Qu'avez-vous retenu de la semaine dernière ?
+- Quels concepts restent flous ?
+- Avez-vous pratiqué entre les séances ?
 :::
 
-## Mes retours sur vos journaux
+## Retours sur vos journaux {.smaller}
+
+::: {.callout-note}
+## Conseils pour améliorer vos journaux
+:::
 
 ::: {.incremental}
-
-- Modèle disponible ici : <https://moodle.univ-paris8.fr/mod/assign/view.php?id=271762>
-- Ce que vous avez appris : c'est vous qui devez l'écrire
-- Eviter les impressions d'écran
-- Copier/coller les prompts que vous utilisez et les évolutions de vos prompts si besoin
-- Copier/coller les réponses du LLM
-- Eviter d'enregistrer en format .pages (format propriétaire Apple)
-
+- **Copier-coller** les prompts exacts que vous utilisez
+- **Documenter** les réponses du LLM (pas juste des captures d'écran)
+- **Expliquer avec vos propres mots** ce que vous avez compris
+- **Noter les erreurs** rencontrées et comment vous les avez résolues
+- **Éviter** les formats propriétaires (.pages) - préférer .docx ou .pdf
 :::
 
-# Données 
+::: {.notes}
+10 minutes. Discuter des journaux. Montrer des exemples anonymisés (bons et moins bons).
+:::
 
-## Données météo
+## Exercice de révision {.smaller}
 
-Connectez-vous sur Moodle et téléchargez les données météo.
+**Sans utiliser le LLM, écrivez un script qui :**
 
-Vous devez maintenant :
+1. Crée un vecteur avec 5 nombres de votre choix
+2. Calcule la moyenne
+3. Trouve le maximum
+4. Affiche les résultats avec `print()`
 
-- Chargez les données dans Rstudio
-- Calculez des statistiques sur la température : moyenne, médiane, minimum, maximum et écart-type.
-- Question : quelles autres variables sont présentes ?
+::: {.fragment}
+**Ensuite, comparez avec votre voisin et discutez des différences.**
+:::
 
-## Représentation graphique
+::: {.notes}
+10 minutes. Révision active. Encourage la discussion entre étudiants.
+:::
 
-- Représentez également l'évolution de la température dans le temps
+# Charger des données {background-color="#4169E1"}
 
+## Des vecteurs aux données réelles
 
-## Données PIB
+Jusqu'ici, vous avez créé des données avec `c()` :
 
-Allez sur le site de l'INSEE téléchargez les données du PIB 
+```{r}
+#| eval: false
+notes <- c(12, 15, 13, 8)
+```
 
-<https://www.insee.fr/fr/statistiques/2830613>
+::: {.fragment}
+**Dans la vraie vie**, les données viennent souvent de fichiers : CSV, Excel, bases de données, etc.
+:::
 
-Faites-moi un rapport sur ces données
+## Le format CSV
+
+::: {.callout-note}
+## CSV = Comma Separated Values
+Un format simple et universel pour stocker des données tabulaires.
+:::
+
+::: {.fragment}
+**Exemple de contenu CSV :**
+
+```
+nom,age,note
+Alice,20,15
+Bob,22,12
+Charlie,21,14
+```
+:::
+
+## Exercice 1 : Télécharger les données {.smaller}
+
+1. Connectez-vous sur Moodle
+2. Téléchargez le fichier `donnees_meteo.csv`
+3. Placez-le dans votre dossier de travail
+
+::: {.fragment}
+**Comment connaître votre dossier de travail ?**
+
+```{r}
+#| eval: false
+getwd()  # "get working directory"
+```
+:::
+
+::: {.fragment}
+**Pour le changer :**
+
+```{r}
+#| eval: false
+setwd("/chemin/vers/votre/dossier")
+```
+
+Ou utilisez **Session > Set Working Directory** dans RStudio.
+:::
+
+::: {.notes}
+10 minutes. S'assurer que tout le monde a les données au bon endroit. Circuler pour aider.
+:::
+
+## Exercice 2 : Importer les données {.smaller}
+
+**Demandez à votre LLM :**
+
+> "Comment importer un fichier CSV en R ? Je débute en programmation."
+
+::: {.fragment}
+Vous devriez obtenir quelque chose comme :
+
+```{r}
+#| eval: false
+donnees_meteo <- read.csv("donnees_meteo.csv")
+```
+:::
+
+::: {.fragment}
+**Testez cette commande !**
+
+En cas d'erreur, demandez au LLM de vous aider à débugger.
+:::
+
+::: {.notes}
+15 minutes. Première importation de données. Anticiper les erreurs de chemin, d'encodage, etc.
+:::
+
+## Vérifier l'importation
+
+Une fois importé, vérifiez que ça a fonctionné :
+
+```{r}
+#| eval: false
+# Afficher les premières lignes
+head(donnees_meteo)
+
+# Afficher la structure
+str(donnees_meteo)
+```
+
+::: {.fragment}
+**Demandez au LLM d'expliquer ce que montrent ces fonctions.**
+:::
+
+# Exploration de données {background-color="#FF8C00"}
+
+## Les data frames
+
+Les données importées sont stockées dans un **data frame**.
+
+::: {.fragment}
+::: {.callout-tip}
+## Analogie
+Un data frame est comme un tableau Excel : des lignes (observations) et des colonnes (variables).
+:::
+:::
+
+## Exercice 3 : Explorer la structure {.smaller}
+
+**Avec vos données météo, testez :**
+
+```{r}
+#| eval: false
+# Nombre de lignes et colonnes
+nrow(donnees_meteo)
+ncol(donnees_meteo)
+dim(donnees_meteo)  # les deux à la fois
+
+# Noms des colonnes
+names(donnees_meteo)
+colnames(donnees_meteo)
+
+# Résumé rapide
+summary(donnees_meteo)
+```
+
+::: {.fragment}
+**Questions :**
+
+1. Combien d'observations avez-vous ?
+2. Quelles variables (colonnes) sont présentes ?
+3. Quel type de données contient chaque colonne ?
+:::
+
+::: {.notes}
+15 minutes. Découverte des fonctions d'exploration. Essentielles pour comprendre les données.
+:::
+
+## Accéder aux colonnes
+
+Pour accéder à une colonne spécifique, utilisez `$` :
+
+```{r}
+#| eval: false
+donnees_meteo$temperature
+donnees_meteo$date
+```
+
+::: {.fragment}
+**Cela retourne un vecteur !** Vous pouvez donc utiliser toutes les fonctions que vous connaissez :
+
+```{r}
+#| eval: false
+mean(donnees_meteo$temperature)
+max(donnees_meteo$temperature)
+```
+:::
+
+## Exercice 4 : Analyser les variables {.smaller}
+
+**Pour chaque variable numérique dans vos données, calculez :**
+
+1. La moyenne
+2. La médiane
+3. Le minimum
+4. Le maximum
+5. L'écart-type (`sd()`)
+
+::: {.fragment}
+**Demandez au LLM :**
+
+> "Comment calculer des statistiques descriptives sur une colonne d'un data frame en R ?"
+:::
+
+::: {.fragment}
+**Notez vos résultats dans un commentaire de votre script.**
+:::
+
+::: {.notes}
+15 minutes. Application pratique. Les étudiants utilisent $ et les fonctions statistiques.
+:::
+
+# Statistiques descriptives {background-color="#8B008B"}
+
+## La fonction `summary()`
+
+`summary()` donne un aperçu rapide :
+
+```{r}
+#| eval: false
+summary(donnees_meteo$temperature)
+```
+
+::: {.fragment}
+Elle affiche :
+
+- Minimum et maximum
+- 1er quartile, médiane, 3e quartile
+- Moyenne
+:::
+
+## Exercice 5 : Comparer avec vos calculs {.smaller}
+
+**Comparez vos calculs précédents avec `summary()` :**
+
+```{r}
+#| eval: false
+# Vos calculs
+mean(donnees_meteo$temperature)
+median(donnees_meteo$temperature)
+min(donnees_meteo$temperature)
+max(donnees_meteo$temperature)
+
+# Summary
+summary(donnees_meteo$temperature)
+```
+
+::: {.fragment}
+**Questions :**
+
+1. Les résultats correspondent-ils ?
+2. Que signifie "médiane" ? (Demandez au LLM si vous ne savez pas)
+3. Que signifient les quartiles ?
+:::
+
+::: {.notes}
+15 minutes. Vérification et approfondissement. Introduction aux quartiles.
+:::
+
+## Gérer les valeurs manquantes (NA) {.smaller}
+
+**Testez ce code :**
+
+```{r}
+#| eval: false
+# Y a-t-il des NA dans vos données ?
+sum(is.na(donnees_meteo$temperature))
+
+# Afficher les lignes avec des NA
+donnees_meteo[is.na(donnees_meteo$temperature), ]
+```
+
+::: {.fragment}
+**Demandez au LLM :**
+
+> "Comment gérer les valeurs manquantes (NA) lors du calcul de statistiques en R ?"
+:::
+
+::: {.fragment}
+Vous découvrirez le paramètre `na.rm = TRUE` :
+
+```{r}
+#| eval: false
+mean(donnees_meteo$temperature, na.rm = TRUE)
+```
+:::
+
+::: {.notes}
+15 minutes. Problème réel très fréquent. Important de comprendre na.rm.
+:::
+
+## Exercice 6 : Rapport statistique {.smaller}
+
+**Créez un script qui génère un rapport complet sur la variable température :**
+
+```{r}
+#| eval: false
+# Rapport sur la température
+print("=== ANALYSE DE LA TEMPÉRATURE ===")
+print(paste("Nombre d'observations :", length(donnees_meteo$temperature)))
+print(paste("Valeurs manquantes :", sum(is.na(donnees_meteo$temperature))))
+print(paste("Moyenne :", mean(donnees_meteo$temperature, na.rm = TRUE)))
+print(paste("Médiane :", median(donnees_meteo$temperature, na.rm = TRUE)))
+print(paste("Écart-type :", sd(donnees_meteo$temperature, na.rm = TRUE)))
+```
+
+::: {.fragment}
+**Extension :** Faites la même chose pour une autre variable.
+:::
+
+::: {.notes}
+15 minutes. Exercice de synthèse. Introduction à paste() pour formater.
+:::
+
+# Visualisations {background-color="#DC143C"}
+
+## Pourquoi visualiser ?
+
+::: {.incremental}
+- Les chiffres ne suffisent pas toujours
+- Un graphique révèle des **patterns** invisibles dans les tableaux
+- Communiquer plus efficacement
+:::
+
+## Exercice 7 : Premier graphique {.smaller}
+
+**Demandez au LLM :**
+
+> "Comment créer un graphique simple en R pour visualiser l'évolution d'une variable dans le temps ? Je débute."
+
+::: {.fragment}
+Vous découvrirez probablement `plot()` :
+
+```{r}
+#| eval: false
+plot(donnees_meteo$date, donnees_meteo$temperature)
+```
+:::
+
+::: {.fragment}
+**Testez ce code !**
+
+Si vous avez une erreur avec les dates, demandez au LLM comment les convertir au bon format.
+:::
+
+::: {.notes}
+15 minutes. Premier graphique. Les dates peuvent poser problème - bon exercice de debugging.
+:::
+
+## Améliorer le graphique {.smaller}
+
+Les graphiques de base peuvent être personnalisés :
+
+```{r}
+#| eval: false
+plot(donnees_meteo$date, donnees_meteo$temperature,
+     type = "l",  # ligne au lieu de points
+     col = "blue",
+     main = "Évolution de la température",
+     xlab = "Date",
+     ylab = "Température (°C)")
+```
+
+::: {.fragment}
+**Demandez au LLM d'expliquer chaque paramètre.**
+:::
+
+## Exercice 8 : Explorer d'autres graphiques {.smaller}
+
+**Demandez au LLM comment créer :**
+
+1. Un histogramme de la température
+2. Un boxplot (boîte à moustaches)
+3. Un graphique de points (scatter plot) si vous avez deux variables numériques
+
+::: {.fragment}
+**Testez chaque type et notez dans votre journal :**
+
+- La commande utilisée
+- Ce que montre le graphique
+- Quand l'utiliser
+:::
+
+::: {.notes}
+20 minutes. Exploration des types de graphiques. Encourager la curiosité.
+:::
+
+## Sauvegarder un graphique
+
+Pour sauvegarder un graphique :
+
+```{r}
+#| eval: false
+# Ouvrir un fichier
+png("mon_graphique.png", width = 800, height = 600)
+
+# Créer le graphique
+plot(donnees_meteo$date, donnees_meteo$temperature, type = "l")
+
+# Fermer le fichier
+dev.off()
+```
+
+::: {.fragment}
+Le fichier sera dans votre dossier de travail.
+:::
+
+# Debugging {background-color="#2F4F4F"}
+
+## Les erreurs sont normales !
+
+::: {.callout-warning}
+## Important
+Tout le monde rencontre des erreurs. C'est une partie essentielle de la programmation.
+:::
+
+::: {.fragment}
+**Stratégie de debugging :**
+
+1. **Lire** le message d'erreur (même s'il semble cryptique)
+2. **Identifier** la ligne problématique
+3. **Tester** des hypothèses
+4. **Demander** de l'aide (LLM, documentation, pairs)
+:::
+
+## Exercice 9 : Debugging collectif {.smaller}
+
+**Voici du code avec des erreurs. Trouvez-les et corrigez-les :**
+
+```{r}
+#| eval: false
+# Charger les données
+donnees <- read.csv(donnees_meteo.csv)
+
+# Calculer la moyenne
+moyenne_temp <- mean(donnees$Temperature)
+
+# Afficher
+print("La moyenne est" moyenne_temp)
+```
+
+::: {.fragment}
+**Travaillez par groupes de 2-3. Utilisez le LLM si nécessaire.**
+:::
+
+::: {.fragment}
+**Erreurs à trouver :**
+
+1. Guillemets manquants autour du nom de fichier
+2. Majuscule incorrecte dans le nom de colonne
+3. Virgule manquante dans `print()`
+:::
+
+::: {.notes}
+15 minutes. Exercice collectif. Discuter ensuite des types d'erreurs courantes.
+:::
+
+## Bien utiliser le LLM pour débugger {.smaller}
+
+::: {.callout-tip}
+## Comment demander de l'aide efficacement
+:::
+
+**Mauvais prompt :**
+> "Ça marche pas"
+
+**Bon prompt :**
+> "J'essaie d'importer un fichier CSV avec read.csv() mais j'obtiens cette erreur : [copier l'erreur exacte]. Voici mon code : [copier le code]. Que dois-je corriger ?"
+
+::: {.fragment}
+**Donnez toujours :**
+
+- Le code exact
+- L'erreur complète
+- Ce que vous essayez de faire
+- Votre niveau (débutant)
+:::
+
+# Mini-projet {background-color="#2E8B57"}
+
+## Projet : Analyse de données INSEE {.smaller}
+
+**Objectif :** Analyser des données économiques réelles.
+
+**Étapes :**
+
+1. Allez sur <https://www.insee.fr/fr/statistiques/2830613>
+2. Téléchargez les données du PIB (format CSV de préférence)
+3. Importez-les dans R
+4. Créez un rapport complet
+
+::: {.callout-note}
+## Rapport attendu
+- Import et vérification des données
+- Statistiques descriptives
+- Au moins 2 graphiques
+- Commentaires expliquant vos observations
+:::
+
+::: {.notes}
+50 minutes. Projet autonome. Circuler beaucoup. Les étudiants vont rencontrer des difficultés (format de données, etc.) - c'est normal et formateur.
+:::
+
+## Critères du mini-projet {.smaller}
+
+Votre analyse doit inclure :
+
+::: {.incremental}
+- ✅ Import réussi des données
+- ✅ Exploration de la structure (`str()`, `summary()`, etc.)
+- ✅ Au moins 5 statistiques descriptives calculées
+- ✅ Au moins 2 visualisations différentes
+- ✅ Code commenté et organisé
+- ✅ Interprétation des résultats (commentaires en français)
+:::
+
+::: {.fragment}
+**Bonus :**
+
+- Gestion des NA
+- Graphiques personnalisés
+- Comparaison entre plusieurs variables
+:::
+
+## Aide pour le projet {.smaller}
+
+**Si vous êtes bloqué :**
+
+1. Relisez les exercices précédents
+2. Consultez votre journal
+3. Demandez à votre voisin
+4. Utilisez le LLM avec un prompt précis
+5. Appelez l'enseignant
+
+::: {.fragment}
+::: {.callout-tip}
+## Conseil
+Procédez par étapes. Testez chaque ligne avant de passer à la suivante.
+:::
+:::
+
+# Retour réflexif {background-color="#4169E1"}
+
+## Exercice de synthèse : Journal de bord {.smaller}
+
+**Dans votre journal, documentez :**
+
+1. **Import de données** :
+   - Prompts utilisés pour apprendre à importer
+   - Difficultés rencontrées (chemins, formats, etc.)
+   - Solutions trouvées
+
+2. **Analyse et visualisation** :
+   - 3 fonctions nouvelles que vous maîtrisez maintenant
+   - Un graphique dont vous êtes fier (copier le code)
+   - Une chose que vous ne comprenez pas encore
+
+3. **Debugging** :
+   - Une erreur marquante et comment vous l'avez résolue
+   - Un bon prompt de debugging qui a fonctionné
+
+::: {.notes}
+15 minutes. Temps de réflexion calme. Important pour ancrer les apprentissages.
+:::
+
+## Évolution de vos compétences
+
+::: {.incremental}
+**Séance 1 :** Vous avez appris les bases (objets, fonctions, vecteurs)
+
+**Séance 2 :** Vous savez maintenant :
+
+- Importer des données réelles
+- Les explorer et les analyser
+- Créer des visualisations
+- Débugger efficacement
+:::
+
+::: {.fragment}
+**Vous êtes déjà capable d'analyser de vraies données ! 🎉**
+:::
+
+# Ressources et prochaines étapes {background-color="#8B008B"}
+
+## Fonctions clés de cette séance
+
+::: {.incremental}
+**Import et exploration :**
+
+- `read.csv()`, `getwd()`, `setwd()`
+- `head()`, `str()`, `summary()`, `dim()`, `names()`
+
+**Statistiques :**
+
+- `mean()`, `median()`, `sd()`, `min()`, `max()`
+- `na.rm = TRUE` pour gérer les NA
+
+**Visualisation :**
+
+- `plot()`, `hist()`, `boxplot()`
+- Paramètres : `type`, `col`, `main`, `xlab`, `ylab`
+:::
+
+## Pour aller plus loin
+
+::: {.incremental}
+- **Pratiquez** avec d'autres jeux de données
+- **Explorez** d'autres types de graphiques
+- **Découvrez** le package `ggplot2` (pour plus tard)
+- **Partagez** vos visualisations avec vos camarades
+:::
+
+## Préparation prochaine séance
+
+::: {.callout-note}
+## Devoirs
+
+1. Terminez le mini-projet INSEE si besoin
+2. **Mettez à jour votre journal** avec tous les détails de cette séance
+3. Trouvez un jeu de données qui vous intéresse et analysez-le
+4. Créez au moins 3 graphiques différents avec vos données
+:::
+
+::: {.fragment}
+**Prochaine séance :** Fonctions, conditions et boucles - automatiser vos analyses !
+:::
+
+## Questions ?
+
+::: {.callout-tip}
+## Points clés à retenir
+
+- Les **data frames** sont essentiels pour travailler avec des données réelles
+- `$` permet d'accéder aux colonnes
+- Toujours vérifier les **NA** avant de calculer
+- Les **visualisations** révèlent ce que les chiffres cachent
+- Le **debugging** fait partie du processus - soyez patient !
+:::
+
+::: {.fragment}
+**Bon courage et bonnes analyses ! 📊**
+:::
 

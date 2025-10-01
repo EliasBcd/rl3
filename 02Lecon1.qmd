@@ -1,81 +1,618 @@
 ---
-title: "Premiers pas avec R"
+title: "Séance 1 : Premiers pas avec R"
+subtitle: "Apprendre R avec les LLMs"
 author: "Elias Bouacida"
 date: last-modified
-format: 
+date-format: long
+format:
   html: default
   revealjs:
+    scrollable: true
+    slide-number: true
     output-file: slide-lecon1.html
     embed-resources: true
-    scrollable: true
-editor: source
-institute: "Université Paris 8"
-bibliography: "Bibliographie.bib"
-lang: fr
-execute: 
-  echo: true
-date-format: long
+    footer: "Séance 1 - Premiers pas avec R"
 format-links: [revealjs]
+lang: fr
+execute:
+  echo: true
 ---
 
+## Plan de la séance {.smaller}
 
-
-# Introduction
-
-## À vous de jouer !
-
-Demandez à votre LLM préférez comment utiliser R et Rstudio.
-
-Demandez lui de vous décrire l'interface.
-
-## Premiers calculs
-
-- Dans votre classe, les notes sont de 12, 15, 13 et 8.
-- Utilisez R pour calculer la moyenne.
-- Expliquez le code produit.
+::: {.incremental}
+- **Présentation** (15min) : Le cours et les outils
+- **Découverte de l'interface RStudio** (30min) : Se repérer dans l'environnement
+- **Premiers calculs** (30min) : R comme une calculatrice
+- **Concepts de base** (60min) : Objets, assignation, types
+- **Fonctions intégrées** (45min) : Utiliser des fonctions existantes
+- **Premier script** (30min) : Organiser son code
+:::
 
 ::: {.fragment}
+**Production attendue :** Journal de bord documentant votre découverte de R
+:::
+
+## Objectifs de la séance
+
+::: {.callout-tip}
+## Découvrir R et apprendre avec les LLMs
+:::
+
+::: {.incremental}
+- Comprendre ce qu'est R et à quoi il sert
+- Se familiariser avec **RStudio**
+- Maîtriser les **concepts fondamentaux** : objets, types, fonctions
+- Apprendre à **utiliser les LLMs** comme assistants d'apprentissage
+- Commencer son **journal de bord**
+:::
+
+# Présentation {background-color="#2E8B57"}
+
+## Bienvenue !
+
+::: {.callout-note}
+## Ce cours est différent
+Vous allez apprendre la programmation **avec l'aide d'intelligences artificielles** (LLMs comme ChatGPT, Claude, etc.)
+:::
+
+::: {.fragment}
+**Aucun prérequis nécessaire** - nous partons de zéro !
+:::
+
+## Pourquoi apprendre R ?
+
+::: {.incremental}
+- **Analyser des données** : statistiques, graphiques, rapports
+- **Automatiser des tâches** répétitives
+- **Compétence recherchée** dans de nombreux domaines
+- **Gratuit et open source**
+:::
+
+## Pourquoi avec des LLMs ?
+
+::: {.incremental}
+- Les LLMs sont des **assistants disponibles 24/7**
+- Ils expliquent, génèrent des exemples, corrigent des erreurs
+- **MAIS** : ils ne remplacent pas votre réflexion !
+:::
+
+::: {.fragment}
+::: {.callout-warning}
+## Règle d'or
+Les LLMs peuvent se tromper. Vous devez **toujours** tester et comprendre le code qu'ils proposent.
+:::
+:::
+
+# Découverte de RStudio {background-color="#4169E1"}
+
+## Exercice 1 : Explorer l'interface {.smaller}
+
+Ouvrez RStudio sur votre ordinateur.
+
+**Demandez à votre LLM préféré :**
+
+> "Peux-tu m'expliquer l'interface de RStudio ? Quelles sont les différentes zones et à quoi servent-elles ?"
+
+::: {.fragment}
+**Explorez ensuite :**
+
+1. La **console** (en bas à gauche généralement)
+2. L'**éditeur** de scripts (en haut à gauche)
+3. L'**environnement** (en haut à droite)
+4. Les **fichiers/graphiques** (en bas à droite)
+:::
+
+::: {.notes}
+10 minutes. Laisser les étudiants découvrir l'interface. Circuler pour aider. Vérifier que tout le monde a RStudio installé et fonctionnel.
+:::
+
+## Exercice 2 : La console interactive {.smaller}
+
+La **console** permet d'exécuter du code R directement.
+
+**Testez dans la console :**
 
 ```{r}
-notes <- c(12, 15, 13, 8)
-
-mean(notes)
-
-print("La moyenne est de : ", mean(notes))
+#| eval: false
+2 + 2
 ```
 
+::: {.fragment}
+**Ensuite, essayez :**
+
+```{r}
+#| eval: false
+10 - 3
+5 * 4
+20 / 5
+```
 :::
 
-# Notions
-
-## Notions
-
-Ecrivez dans votre journal le prompt que vous utilisez, la réponse du LLM, et ce que vous avez compris pour chacune des notions suivantes :
-
-:::  {.incremental}
-
-- Objet
-- Assignation
-- Types
-- Fonctions
-- Scripts
-
+::: {.fragment}
+::: {.callout-tip}
+## Astuce
+Appuyez sur **Entrée** pour exécuter. R affiche immédiatement le résultat !
+:::
 :::
 
 ::: {.notes}
-
-Laissez du temps aux étudiants pour écrire et ensuite échangez sur ce qu'ils ont compris à ces différentes notions.
-Diviser le temps entre les concepts.
-Discuter avec les étudiants de ce qu'ils demandent aux LLM, en particulier, demander si quelqu'un a pensé à demander une explication avec des exemples.
-Si besoin, demandez ensuite aux étudiants de s'expliquer entre eux ce qu'ils ont compris.
-Demandez à quelqu'un d'écrire au tableau de résultat.
-
+10 minutes. Concept simple mais fondamental. Insister sur l'aspect interactif.
 :::
 
-## Remarque
+# Premiers calculs {background-color="#FF8C00"}
 
-Vous pouvez demander des exemples !
+## R comme calculatrice
+
+R peut effectuer tous les calculs mathématiques de base.
+
+::: {.incremental}
+- Addition : `+`
+- Soustraction : `-`
+- Multiplication : `*`
+- Division : `/`
+- Puissance : `^`
+:::
+
+## Exercice 3 : Calculer une moyenne {.smaller}
+
+**Situation :** Dans votre classe, les notes sont 12, 15, 13 et 8.
+
+**Question :** Comment calculer la moyenne avec R ?
+
+::: {.fragment}
+Demandez à votre LLM :
+
+> "Comment calculer la moyenne de ces notes en R : 12, 15, 13, 8 ?"
+:::
+
+::: {.fragment}
+**Testez le code proposé dans la console.**
+:::
 
 ::: {.notes}
-Laissez du temps à la fin de la séance pour écrire le journal.
+15 minutes. Premier contact avec c() et mean(). Ne pas tout expliquer maintenant - laisser les étudiants découvrir avec le LLM.
+:::
+
+## Comprendre le code {.smaller}
+
+Vous avez probablement obtenu quelque chose comme :
+
+```{r}
+#| eval: false
+notes <- c(12, 15, 13, 8)
+mean(notes)
+```
+
+::: {.fragment}
+**Demandez au LLM d'expliquer :**
+
+1. Que fait `c()` ?
+2. Que signifie `<-` ?
+3. Que fait `mean()` ?
+:::
+
+::: {.fragment}
+::: {.callout-note}
+## Vocabulaire à découvrir
+- **Vecteur** : `c()` crée une collection de valeurs
+- **Assignation** : `<-` stocke une valeur dans un objet
+- **Fonction** : `mean()` calcule la moyenne
+:::
+:::
+
+# Concepts fondamentaux {background-color="#8B008B"}
+
+## Les objets en R
+
+En R, on stocke des valeurs dans des **objets** (aussi appelés **variables**).
+
+::: {.fragment}
+```{r}
+#| eval: false
+age <- 20
+nom <- "Alice"
+est_etudiant <- TRUE
+```
+:::
+
+::: {.fragment}
+::: {.callout-tip}
+## Analogie
+Un objet est comme une boîte avec une étiquette (son nom) qui contient une valeur.
+:::
+:::
+
+## Exercice 4 : Créer des objets {.smaller}
+
+**Créez les objets suivants :**
+
+```{r}
+#| eval: false
+votre_prenom <- "..."
+votre_age <- ...
+annee_naissance <- 2025 - votre_age
+```
+
+Ensuite, affichez-les en tapant simplement leur nom dans la console.
+
+::: {.fragment}
+**Questions à explorer avec le LLM :**
+
+1. Peut-on mettre des espaces dans les noms d'objets ?
+2. Quelle est la différence entre `<-` et `=` ?
+3. Comment supprimer un objet ?
+:::
+
+::: {.notes}
+15 minutes. Exercice pratique simple. Les étudiants découvrent les règles de nommage.
+:::
+
+## Les types de données
+
+R distingue différents **types** de données :
+
+::: {.incremental}
+- **Numérique** : `42`, `3.14`
+- **Caractère** (texte) : `"Bonjour"`, `"Paris"`
+- **Logique** : `TRUE`, `FALSE`
+:::
+
+::: {.fragment}
+**Pour vérifier le type :**
+
+```{r}
+#| eval: false
+age <- 20
+class(age)
+```
+:::
+
+## Exercice 5 : Explorer les types {.smaller}
+
+**Demandez au LLM :**
+
+> "Explique-moi les différents types de données en R avec des exemples simples."
+
+**Ensuite, testez ce code et observez :**
+
+```{r}
+#| eval: false
+nombre <- 42
+texte <- "Hello"
+vrai_faux <- TRUE
+
+class(nombre)
+class(texte)
+class(vrai_faux)
+```
+
+::: {.fragment}
+**Question bonus :** Que se passe-t-il si on essaie d'additionner un nombre et du texte ?
+:::
+
+::: {.notes}
+15 minutes. Concept important. Les erreurs de type sont fréquentes pour les débutants.
+:::
+
+## Les vecteurs
+
+Un **vecteur** est une collection de valeurs du même type.
+
+```{r}
+#| eval: false
+notes <- c(12, 15, 13, 8)
+prenoms <- c("Alice", "Bob", "Charlie")
+```
+
+::: {.fragment}
+::: {.callout-note}
+## Important
+`c()` signifie "**c**ombine" - elle regroupe plusieurs valeurs.
+:::
+:::
+
+## Exercice 6 : Manipuler des vecteurs {.smaller}
+
+**Créez un vecteur avec les températures de la semaine :**
+
+```{r}
+#| eval: false
+temperatures <- c(18, 20, 19, 22, 21, 17, 16)
+```
+
+**Demandez au LLM comment :**
+
+1. Afficher la première température
+2. Afficher les trois premières températures
+3. Calculer la température moyenne
+4. Trouver la température maximale
+
+::: {.fragment}
+**Testez les solutions proposées !**
+:::
+
+::: {.notes}
+15 minutes. Introduction à l'indexation. Les étudiants découvriront [1], [1:3], max(), etc.
+:::
+
+# Fonctions intégrées {background-color="#DC143C"}
+
+## Qu'est-ce qu'une fonction ?
+
+Une **fonction** est un outil qui prend des données en entrée et produit un résultat.
+
+::: {.fragment}
+**Analogie :** Une fonction est comme une machine :
+
+- Vous lui donnez quelque chose (l'**entrée**)
+- Elle effectue une opération
+- Elle vous rend un résultat (la **sortie**)
+:::
+
+## Exercice 7 : Découvrir des fonctions {.smaller}
+
+**Avec votre vecteur de températures, testez :**
+
+```{r}
+#| eval: false
+temperatures <- c(18, 20, 19, 22, 21, 17, 16)
+
+mean(temperatures)    # moyenne
+sum(temperatures)     # somme
+length(temperatures)  # nombre d'éléments
+min(temperatures)     # minimum
+max(temperatures)     # maximum
+```
+
+::: {.fragment}
+**Demandez au LLM :**
+
+> "Quelles autres fonctions statistiques utiles existent en R pour analyser un vecteur de nombres ?"
+:::
+
+::: {.notes}
+15 minutes. Les étudiants découvrent les fonctions intégrées. Encourager l'exploration.
+:::
+
+## Exercice 8 : L'aide en R {.smaller}
+
+Vous pouvez obtenir de l'aide sur n'importe quelle fonction avec `?` :
+
+```{r}
+#| eval: false
+?mean
+?sum
+```
+
+::: {.fragment}
+**Explorez :**
+
+1. Testez `?mean` dans la console
+2. Où apparaît l'aide ?
+3. Que signifie le paramètre `na.rm` ?
+:::
+
+::: {.fragment}
+::: {.callout-tip}
+## Double source d'aide
+- L'aide R (documentation officielle)
+- Les LLMs (explications en langage naturel)
+
+**Utilisez les deux !**
+:::
+:::
+
+::: {.notes}
+15 minutes. Concept important : devenir autonome. L'aide R est technique mais précise.
+:::
+
+## Exercice 9 : Gérer les valeurs manquantes {.smaller}
+
+**Testez ce code :**
+
+```{r}
+#| eval: false
+notes_avec_absence <- c(12, 15, NA, 13, 8)
+mean(notes_avec_absence)
+```
+
+::: {.fragment}
+**Que se passe-t-il ?**
+
+`NA` signifie "**N**ot **A**vailable" (donnée manquante).
+:::
+
+::: {.fragment}
+**Demandez au LLM comment calculer la moyenne en ignorant les NA.**
+
+*Indice : regardez dans l'aide de `mean()` le paramètre `na.rm`*
+:::
+
+::: {.notes}
+15 minutes. Problème réel et fréquent. Les étudiants découvrent na.rm = TRUE.
+:::
+
+# Premier script {background-color="#2F4F4F"}
+
+## Pourquoi un script ?
+
+Jusqu'ici, vous avez tapé dans la **console** (code éphémère).
+
+::: {.fragment}
+Un **script** permet de :
+
+- **Sauvegarder** votre code
+- Le **réutiliser**
+- Le **partager**
+- Le **commenter**
+:::
+
+## Exercice 10 : Créer un script {.smaller}
+
+1. Cliquez sur **File > New File > R Script**
+2. Dans ce nouveau fichier, écrivez :
+
+```{r}
+#| eval: false
+# Mon premier script R
+# Auteur : [Votre nom]
+
+# Calcul de moyennes
+notes <- c(12, 15, 13, 8)
+moyenne <- mean(notes)
+
+print("La moyenne est :")
+print(moyenne)
+```
+
+3. **Sauvegardez** (File > Save ou Ctrl+S)
+4. **Exécutez** ligne par ligne (Ctrl+Entrée)
+
+::: {.notes}
+20 minutes. Première sauvegarde de code. Insister sur les commentaires (#).
+:::
+
+## Les commentaires
+
+Les lignes commençant par `#` sont des **commentaires** :
+
+```{r}
+#| eval: false
+# Ceci est un commentaire - R l'ignore
+notes <- c(12, 15, 13, 8)  # Commentaire après du code
+```
+
+::: {.fragment}
+::: {.callout-tip}
+## Bonne pratique
+Commentez votre code pour expliquer **pourquoi** vous faites quelque chose, pas seulement **ce que** vous faites.
+:::
+:::
+
+## Exercice 11 : Script complet {.smaller}
+
+**Créez un script qui :**
+
+1. Crée un vecteur de températures sur 7 jours
+2. Calcule la moyenne, le minimum et le maximum
+3. Affiche ces résultats avec `print()`
+4. Commente chaque étape
+
+::: {.fragment}
+**Demandez au LLM de vous aider si nécessaire, mais essayez d'abord par vous-même !**
+:::
+
+::: {.notes}
+20 minutes. Exercice de synthèse. Les étudiants combinent tout ce qu'ils ont appris.
+:::
+
+# Journal de bord et réflexion {background-color="#2E8B57"}
+
+## Votre journal de bord
+
+::: {.callout-note}
+## Outil essentiel
+Tout au long de ce cours, vous tiendrez un **journal de bord** documentant votre apprentissage.
+:::
+
+::: {.incremental}
+**Pour chaque séance, notez :**
+
+1. Les **prompts** que vous avez utilisés avec les LLMs
+2. Les **réponses** obtenues (copier-coller)
+3. Ce que vous avez **compris**
+4. Les **difficultés** rencontrées
+5. Les **solutions** trouvées
+:::
+
+## Exercice 12 : Première entrée du journal {.smaller}
+
+**Dans votre journal, répondez à :**
+
+1. **Qu'est-ce qu'un objet en R ?** (avec vos propres mots)
+2. **Qu'est-ce qu'une fonction ?** (donnez 3 exemples)
+3. **Un prompt efficace** que vous avez utilisé aujourd'hui
+4. **Une erreur** que vous avez rencontrée et comment vous l'avez résolue
+5. **Une question** que vous vous posez encore
+
+::: {.fragment}
+::: {.callout-tip}
+## Conseil
+Soyez précis ! Plus votre journal est détaillé, plus il vous sera utile.
+:::
+:::
+
+::: {.notes}
+20 minutes. Moment réflexif important. Circuler pour voir les journaux. Donner des retours.
+:::
+
+## Conseils pour les prompts
+
+::: {.incremental}
+**Un bon prompt :**
+
+- Est **précis** : "Explique-moi les vecteurs en R" plutôt que "Parle-moi de R"
+- Donne du **contexte** : "Je débute en programmation"
+- Demande des **exemples** : "Avec un exemple simple"
+- Peut être **affiné** : Si la réponse ne convient pas, reformulez !
+:::
+
+## Exemples de bons prompts
+
+::: {.callout-tip}
+## Exemples
+
+- "Je débute en R. Peux-tu m'expliquer ce que fait c() avec un exemple concret ?"
+- "J'ai cette erreur [copier l'erreur]. Qu'est-ce que ça signifie et comment la corriger ?"
+- "Comment calculer la moyenne d'un vecteur contenant des NA en R ?"
+:::
+
+# Ressources et prochaines étapes {background-color="#4169E1"}
+
+## Ce que vous avez appris aujourd'hui
+
+::: {.incremental}
+✅ Utiliser RStudio
+✅ Créer des objets avec `<-`
+✅ Manipuler des vecteurs avec `c()`
+✅ Utiliser des fonctions : `mean()`, `sum()`, `max()`, etc.
+✅ Écrire et sauvegarder un script
+✅ Commenter son code
+✅ Utiliser les LLMs comme assistants
+:::
+
+## Pour aller plus loin
+
+::: {.incremental}
+- **Pratiquez** : La programmation s'apprend en faisant
+- **Expérimentez** : Testez des fonctions, cassez des choses !
+- **Documentez** : Tenez votre journal à jour
+- **Demandez** : Aux LLMs, à vos camarades, à l'enseignant
+:::
+
+## Préparation prochaine séance
+
+::: {.callout-note}
+## Devoirs
+
+1. Terminez les exercices si besoin
+2. **Mettez à jour votre journal de bord**
+3. Créez un script avec une petite analyse de votre choix (notes, prix, âges, etc.)
+4. Explorez 2 nouvelles fonctions et documentez-les dans votre journal
+:::
+
+## Questions ?
+
+::: {.callout-tip}
+## N'oubliez pas
+
+- R est un **outil** - il faut du temps pour le maîtriser
+- Les **erreurs sont normales** et font partie de l'apprentissage
+- Les LLMs sont des **assistants**, pas des remplaçants de votre cerveau
+- **Testez toujours** le code avant de l'utiliser
+:::
+
+::: {.fragment}
+**Bienvenue dans l'aventure R ! 🚀**
 :::

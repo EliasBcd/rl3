@@ -1,0 +1,660 @@
+---
+title: "Séance 6 : Organisation et modularité"
+subtitle: "Apprendre R avec les LLMs"
+author: "Elias Bouacida"
+date: last-modified
+date-format: long
+format:
+  html: default
+  revealjs:
+    scrollable: true
+    slide-number: true
+    output-file: slide-lecon6.html
+    embed-resources: true
+    footer: "Séance 6 - Organisation et modularité"
+format-links: [revealjs]
+lang: fr
+execute:
+  echo: true
+---
+
+## Plan de la séance {.smaller}
+
+::: {.incremental}
+- **Récap et partage** (15min) : Retours sur les projets
+- **Refactoring collectif** (45min) : Organiser un long script
+- **Packages et écosystème R** (60min) : dplyr, lubridate, stringr
+- **Gestion des erreurs courantes** (45min) : Packages manquants, conflits
+- **Mini-package personnel** (50min) : Organiser ses fonctions
+:::
+
+::: {.fragment}
+**Production attendue :** Code organisé en modules + maîtrise de 3 packages
+:::
+
+## Objectifs de la séance
+
+::: {.callout-tip}
+## Structurer son code comme un professionnel
+:::
+
+::: {.incremental}
+- **Organiser** son code en modules logiques
+- **Découvrir** l'écosystème des packages R
+- **Maîtriser** dplyr pour manipuler les données
+- **Gérer** les erreurs liées aux packages
+- **Créer** sa propre bibliothèque de fonctions
+:::
+
+# Récap et partage {background-color="#2E8B57"}
+
+## Retours sur vos projets
+
+::: {.incremental}
+- Quels retours avez-vous reçus ?
+- Qu'avez-vous amélioré dans votre projet ?
+- Une difficulté commune que vous avez observée ?
+:::
+
+## Le problème du code "spaghetti"
+
+**Observez ce type de code :**
+
+```{r}
+#| eval: false
+# 500 lignes de code dans un seul fichier...
+donnees <- read.csv("data.csv")
+donnees$nom <- tolower(donnees$nom)
+# ... 50 lignes de nettoyage ...
+moyenne1 <- mean(donnees$valeur1, na.rm = TRUE)
+# ... 30 lignes de calculs ...
+ggplot(donnees, aes(x = var1, y = var2)) + geom_point()
+# ... encore 400 lignes ...
+```
+
+::: {.fragment}
+::: {.callout-warning}
+## Problèmes
+- Difficile à lire
+- Difficile à maintenir
+- Impossible à réutiliser
+- Difficile à débugger
+:::
+:::
+
+# Refactoring collectif {background-color="#4169E1"}
+
+## Qu'est-ce que le refactoring ?
+
+**Refactoring** = Réorganiser le code sans changer son comportement
+
+::: {.incremental}
+**Objectifs :**
+
+- Améliorer la **lisibilité**
+- Faciliter la **réutilisation**
+- Simplifier la **maintenance**
+- Réduire la **duplication**
+:::
+
+## Exercice 1 : Analyser du code désordonné {.smaller}
+
+**Voici un script à améliorer :**
+
+```{r}
+#| eval: false
+d <- read.csv("ventes.csv")
+d$nom <- tolower(d$nom)
+d$date <- as.Date(d$date)
+m <- mean(d$montant, na.rm = TRUE)
+print(paste("Moyenne:", m))
+d2 <- d[d$montant > m, ]
+plot(d2$date, d2$montant)
+s <- sum(d$montant, na.rm = TRUE)
+print(paste("Total:", s))
+d3 <- d[d$categorie == "A", ]
+m2 <- mean(d3$montant, na.rm = TRUE)
+```
+
+**Demandez au LLM :**
+
+> "Quels sont les problèmes de ce code ? Comment pourrait-on l'améliorer ?"
+
+::: {.notes}
+15 minutes. Discussion collective sur les problèmes.
+:::
+
+## Principes d'organisation
+
+::: {.incremental}
+1. **Un fichier = une responsabilité**
+   - `01_import_donnees.R`
+   - `02_nettoyage.R`
+   - `03_fonctions_analyse.R`
+   - `04_visualisation.R`
+
+2. **Des noms explicites**
+   - `calculer_moyenne_par_groupe()` ✅
+   - `calc()` ❌
+
+3. **Des fonctions courtes**
+   - Une fonction = une tâche
+
+4. **Des commentaires utiles**
+   - Expliquer le "pourquoi", pas le "quoi"
+:::
+
+## Exercice 2 : Refactoring guidé {.smaller}
+
+**Transformons le code précédent ensemble :**
+
+**Étape 1 - Fonctions de nettoyage :**
+
+```{r}
+#| eval: false
+nettoyer_noms <- function(data) {
+  data$nom <- tolower(data$nom)
+  return(data)
+}
+
+convertir_dates <- function(data, colonne_date) {
+  data[[colonne_date]] <- as.Date(data[[colonne_date]])
+  return(data)
+}
+```
+
+**Étape 2 - Fonctions d'analyse :**
+
+```{r}
+#| eval: false
+calculer_statistiques <- function(data, colonne) {
+  list(
+    moyenne = mean(data[[colonne]], na.rm = TRUE),
+    total = sum(data[[colonne]], na.rm = TRUE),
+    n = length(data[[colonne]])
+  )
+}
+```
+
+::: {.notes}
+20 minutes. Refactoring collectif guidé.
+:::
+
+## Exercice 3 : Organisation en modules {.smaller}
+
+**Créez la structure suivante :**
+
+```
+mon_projet/
+├── donnees/
+│   └── ventes.csv
+├── scripts/
+│   ├── 01_fonctions_nettoyage.R
+│   ├── 02_fonctions_analyse.R
+│   └── 03_fonctions_visualisation.R
+└── analyse_principale.R
+```
+
+**Dans `analyse_principale.R` :**
+
+```{r}
+#| eval: false
+# Charger les fonctions
+source("scripts/01_fonctions_nettoyage.R")
+source("scripts/02_fonctions_analyse.R")
+source("scripts/03_fonctions_visualisation.R")
+
+# Utiliser les fonctions
+donnees <- read.csv("donnees/ventes.csv")
+donnees <- nettoyer_noms(donnees)
+stats <- calculer_statistiques(donnees, "montant")
+```
+
+::: {.notes}
+20 minutes. Les étudiants créent leur première structure modulaire.
+:::
+
+# Packages et écosystème R {background-color="#FF8C00"}
+
+## Qu'est-ce qu'un package ?
+
+Un **package** = Collection de fonctions réutilisables
+
+::: {.incremental}
+**Avantages :**
+
+- Fonctions **testées** et **documentées**
+- **Gain de temps** énorme
+- **Communauté** active
+- **Standards** professionnels
+:::
+
+::: {.fragment}
+**Exemples célèbres :**
+
+- `ggplot2` : graphiques (vous connaissez déjà !)
+- `dplyr` : manipulation de données
+- `tidyr` : restructuration de données
+- `lubridate` : dates et heures
+:::
+
+## Installer et charger un package
+
+**Installation (une seule fois) :**
+
+```{r}
+#| eval: false
+install.packages("dplyr")
+```
+
+**Chargement (à chaque session) :**
+
+```{r}
+#| eval: false
+library(dplyr)
+```
+
+::: {.fragment}
+::: {.callout-note}
+## Important
+`install.packages()` : télécharge depuis internet
+`library()` : active pour utilisation
+:::
+:::
+
+## Exercice 4 : Découvrir dplyr {.smaller}
+
+**dplyr simplifie la manipulation de données**
+
+**Demandez au LLM :**
+
+> "Explique-moi les principales fonctions de dplyr en R avec des exemples simples"
+
+::: {.fragment}
+**Fonctions principales :**
+
+- `filter()` : filtrer les lignes
+- `select()` : sélectionner les colonnes
+- `mutate()` : créer/modifier des colonnes
+- `summarise()` : calculer des résumés
+- `group_by()` : grouper par catégorie
+- `arrange()` : trier les lignes
+:::
+
+::: {.fragment}
+**Testez avec vos données !**
+:::
+
+::: {.notes}
+20 minutes. Première découverte de dplyr.
+:::
+
+## Le pipe `%>%` (ou `|>`)
+
+**dplyr introduit le pipe pour chaîner les opérations :**
+
+```{r}
+#| eval: false
+# Ancienne méthode (difficile à lire)
+resultat <- arrange(
+  summarise(
+    group_by(
+      filter(donnees, age > 18),
+      categorie
+    ),
+    moyenne = mean(valeur)
+  ),
+  moyenne
+)
+
+# Avec le pipe (facile à lire)
+resultat <- donnees %>%
+  filter(age > 18) %>%
+  group_by(categorie) %>%
+  summarise(moyenne = mean(valeur)) %>%
+  arrange(moyenne)
+```
+
+::: {.fragment}
+**Le pipe se lit comme : "puis"**
+:::
+
+## Exercice 5 : Pratiquer dplyr {.smaller}
+
+**Avec un dataset de ventes, utilisez dplyr pour :**
+
+```{r}
+#| eval: false
+library(dplyr)
+
+ventes %>%
+  filter(montant > 1000) %>%          # Garder montants > 1000
+  select(vendeur, montant, date) %>%  # Sélectionner colonnes
+  mutate(montant_ttc = montant * 1.2) %>%  # Ajouter TVA
+  group_by(vendeur) %>%               # Grouper par vendeur
+  summarise(
+    total = sum(montant_ttc),
+    moyenne = mean(montant_ttc),
+    n_ventes = n()
+  ) %>%
+  arrange(desc(total))                # Trier par total décroissant
+```
+
+**Demandez au LLM d'expliquer chaque ligne si besoin !**
+
+::: {.notes}
+20 minutes. Exercice pratique avec dplyr.
+:::
+
+## Exercice 6 : Autres packages utiles {.smaller}
+
+**Découvrez d'autres packages :**
+
+**lubridate (dates) :**
+
+```{r}
+#| eval: false
+library(lubridate)
+
+date <- "2023-01-15"
+d <- ymd(date)
+year(d)   # Extraire l'année
+month(d)  # Extraire le mois
+wday(d, label = TRUE)  # Jour de la semaine
+```
+
+**stringr (texte) :**
+
+```{r}
+#| eval: false
+library(stringr)
+
+texte <- "  Bonjour  "
+str_trim(texte)        # Enlever espaces
+str_to_upper(texte)    # Majuscules
+str_detect(texte, "Bon")  # Détecter motif
+```
+
+**Demandez au LLM des exemples pour chaque package !**
+
+::: {.notes}
+20 minutes. Découverte d'autres packages utiles.
+:::
+
+# Gestion des erreurs {background-color="#8B008B"}
+
+## Erreurs courantes avec les packages
+
+::: {.incremental}
+**1. Package non installé :**
+
+```
+Error: could not find function "filter"
+→ Avez-vous fait install.packages("dplyr") ?
+```
+
+**2. Package non chargé :**
+
+```
+Error: could not find function "filter"
+→ Avez-vous fait library(dplyr) ?
+```
+
+**3. Conflits de noms :**
+
+```
+filter() existe dans dplyr ET dans stats
+→ Utiliser dplyr::filter() pour être explicite
+```
+
+**4. Versions incompatibles :**
+
+```
+Le package nécessite R version 4.0 minimum
+→ Mettre à jour R
+```
+:::
+
+## Exercice 7 : Debugging de packages {.smaller}
+
+**Corrigez ces erreurs volontaires :**
+
+```{r}
+#| eval: false
+# Problème 1
+donnees %>%
+  filter(age > 18)
+# Erreur: could not find function "%>%"
+
+# Problème 2
+library(dplyr)
+select(iris, Species, Sepal.Length)
+# Marche, mais warning sur conflit avec MASS
+
+# Problème 3
+install.packages("monpackageinexistant")
+# Erreur: package not found
+```
+
+**Demandez au LLM de vous aider à comprendre et résoudre chaque erreur.**
+
+::: {.notes}
+15 minutes. Exercice de debugging.
+:::
+
+## Bonnes pratiques
+
+::: {.incremental}
+**Au début de chaque script :**
+
+```{r}
+#| eval: false
+# Charger les packages nécessaires
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+
+# Vérifier la version R si besoin
+if (getRversion() < "4.0.0") {
+  stop("Ce script nécessite R version 4.0 ou supérieure")
+}
+```
+
+**En cas de conflit :**
+
+```{r}
+#| eval: false
+# Spécifier explicitement le package
+dplyr::filter(donnees, age > 18)
+stats::filter(serie_temporelle, filtre)
+```
+:::
+
+# Mini-package personnel {background-color="#DC143C"}
+
+## Projet : Organiser vos fonctions
+
+**Objectif :** Créer une bibliothèque personnelle de fonctions réutilisables
+
+**Structure :**
+
+```
+ma_bibliotheque/
+├── nettoyage.R
+├── analyse.R
+├── visualisation.R
+└── utils.R
+```
+
+## Exercice 8 : Créer sa bibliothèque {.smaller}
+
+**Dans `nettoyage.R` :**
+
+```{r}
+#| eval: false
+#' Standardiser les noms en minuscules
+#' @param data Un dataframe
+#' @param colonne Nom de la colonne à nettoyer
+#' @return Le dataframe avec la colonne nettoyée
+standardiser_noms <- function(data, colonne) {
+  data[[colonne]] <- tolower(data[[colonne]])
+  return(data)
+}
+
+#' Supprimer les lignes avec NA
+supprimer_na <- function(data, colonnes = NULL) {
+  if (is.null(colonnes)) {
+    return(na.omit(data))
+  }
+  data[complete.cases(data[, colonnes]), ]
+}
+```
+
+**Créez au moins 3 fonctions dans chaque fichier !**
+
+::: {.notes}
+30 minutes. Les étudiants organisent leurs fonctions.
+:::
+
+## Documentation des fonctions
+
+**Utilisez les commentaires roxygen2 :**
+
+```{r}
+#| eval: false
+#' Titre court de la fonction
+#'
+#' Description détaillée de ce que fait la fonction.
+#'
+#' @param parametre1 Description du premier paramètre
+#' @param parametre2 Description du second paramètre
+#' @return Description de ce que retourne la fonction
+#' @examples
+#' ma_fonction(donnees, "colonne")
+ma_fonction <- function(parametre1, parametre2) {
+  # Code ici
+}
+```
+
+::: {.fragment}
+**Demandez au LLM de vous aider à documenter vos fonctions !**
+:::
+
+## Exercice 9 : Utiliser sa bibliothèque {.smaller}
+
+**Créez un script principal qui utilise votre bibliothèque :**
+
+```{r}
+#| eval: false
+# Charger toutes vos fonctions
+source("ma_bibliotheque/nettoyage.R")
+source("ma_bibliotheque/analyse.R")
+source("ma_bibliotheque/visualisation.R")
+
+# Utiliser vos fonctions
+donnees <- read.csv("data.csv")
+donnees <- standardiser_noms(donnees, "nom")
+donnees <- supprimer_na(donnees, c("age", "salaire"))
+
+stats <- calculer_statistiques_complete(donnees)
+plot_distribution(donnees, "salaire")
+```
+
+**Testez que tout fonctionne !**
+
+::: {.notes}
+20 minutes. Test d'intégration.
+:::
+
+# Retour réflexif {background-color="#2F4F4F"}
+
+## Exercice réflexif : Journal de bord {.smaller}
+
+**Documentez :**
+
+1. **Refactoring** :
+   - Avant/après : montrez un exemple de code que vous avez amélioré
+   - Qu'est-ce qui rend le code "après" meilleur ?
+
+2. **Packages** :
+   - Les 3 packages découverts aujourd'hui
+   - Fonction la plus utile de chaque package
+   - Une erreur de package que vous avez résolue
+
+3. **Organisation** :
+   - Structure de votre bibliothèque personnelle
+   - Vos fonctions les plus réutilisables
+   - Comment cette organisation vous aidera
+
+::: {.notes}
+15 minutes. Documentation des apprentissages.
+:::
+
+## Ce que vous avez appris
+
+::: {.incremental}
+✅ Organiser son code en modules logiques
+✅ Créer et documenter des fonctions réutilisables
+✅ Utiliser dplyr pour manipuler les données
+✅ Découvrir l'écosystème des packages R
+✅ Gérer les erreurs liées aux packages
+✅ Créer sa propre bibliothèque de fonctions
+✅ Adopter les bonnes pratiques professionnelles
+:::
+
+# Ressources et prochaines étapes {background-color="#2E8B57"}
+
+## Packages clés découverts
+
+**dplyr :**
+
+- `filter()`, `select()`, `mutate()`, `summarise()`, `group_by()`
+- Le pipe `%>%` (ou `|>`)
+
+**lubridate :**
+
+- `ymd()`, `year()`, `month()`, `wday()`
+
+**stringr :**
+
+- `str_trim()`, `str_to_upper()`, `str_detect()`
+
+## Pour aller plus loin
+
+::: {.incremental}
+- **Explorez** d'autres packages du tidyverse
+- **Organisez** vos anciens projets avec cette nouvelle structure
+- **Documentez** systématiquement vos fonctions
+- **Partagez** vos fonctions avec vos camarades
+:::
+
+## Préparation prochaine séance
+
+::: {.callout-note}
+## Devoirs
+
+1. Réorganisez un de vos anciens projets avec la structure modulaire
+2. Créez au moins 5 fonctions documentées dans votre bibliothèque
+3. Pratiquez dplyr avec vos propres données
+4. **Mettez à jour votre journal** avec tous les détails
+:::
+
+::: {.fragment}
+**Prochaine séance :** Automatisation et rapports - traiter plusieurs fichiers et créer des rapports reproductibles !
+:::
+
+## Questions ?
+
+::: {.callout-tip}
+## Points clés à retenir
+
+- Le **code organisé** est plus facile à maintenir et réutiliser
+- Les **packages** vous font gagner un temps précieux
+- **dplyr** est essentiel pour manipuler des données
+- **Documenter** ses fonctions est une bonne pratique
+- La **modularité** est la clé du code professionnel
+:::
+
+::: {.fragment}
+**Bon courage pour l'organisation ! 📚**
+:::
