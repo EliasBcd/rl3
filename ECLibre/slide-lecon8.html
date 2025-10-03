@@ -442,7 +442,7 @@
   <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Elias Bouacida">
-  <title>Initiation à R – Séance 2 : Données et fonctions intégrées</title>
+  <title>Initiation à R – Séance 8 : Projet collaboratif final</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1053,7 +1053,7 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Séance 2 : Données et fonctions intégrées</h1>
+  <h1 class="title">Séance 8 : Projet collaboratif final</h1>
   <p class="subtitle">Apprendre R avec les LLMs</p>
 
 <div class="quarto-title-authors">
@@ -1069,15 +1069,15 @@ Elias Bouacida
 <section id="plan-de-la-séance" class="slide level2 smaller">
 <h2>Plan de la séance</h2>
 <ul>
-<li class="fragment"><strong>Récap et partage</strong> (20min) : Retours sur vos journaux</li>
-<li class="fragment"><strong>Charger des données</strong> (45min) : Importer des fichiers CSV</li>
-<li class="fragment"><strong>Exploration de données</strong> (45min) : Structure et types de données</li>
-<li class="fragment"><strong>Statistiques descriptives</strong> (45min) : Analyser les données</li>
-<li class="fragment"><strong>Visualisations de base</strong> (45min) : Créer des graphiques</li>
-<li class="fragment"><strong>Mini-projet</strong> (50min) : Analyser des données réelles</li>
+<li class="fragment"><strong>Présentation du projet collaboratif</strong> (15min) : Organisation et objectifs</li>
+<li class="fragment"><strong>Constitution des équipes et répartition</strong> (30min) : Former les groupes, assigner les angles d’analyse</li>
+<li class="fragment"><strong>Code review croisé</strong> (45min) : Analyser et améliorer le code d’une autre équipe</li>
+<li class="fragment"><strong>Travail collaboratif</strong> (90min) : Développement des analyses en équipe</li>
+<li class="fragment"><strong>Intégration collaborative</strong> (30min) : Faire fonctionner ensemble les analyses</li>
+<li class="fragment"><strong>Présentation finale</strong> (30min) : Synthèse collective des résultats</li>
 </ul>
 <div class="fragment">
-<p><strong>Production attendue :</strong> Analyse commentée de données avec graphiques</p>
+<p><strong>Production attendue :</strong> Analyse collaborative intégrée + code review documenté</p>
 </div>
 </section>
 <section id="objectifs-de-la-séance" class="slide level2">
@@ -1088,7 +1088,7 @@ Elias Bouacida
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Manipuler de vraies données</strong></p>
+<p><strong>Collaborer comme des professionnels</strong></p>
 </div>
 <div class="callout-content">
 
@@ -1096,213 +1096,104 @@ Elias Bouacida
 </div>
 </div>
 <ul>
-<li class="fragment"><strong>Importer</strong> des données depuis des fichiers</li>
-<li class="fragment"><strong>Explorer</strong> la structure des données (data frames)</li>
-<li class="fragment">Calculer des <strong>statistiques descriptives</strong></li>
-<li class="fragment">Créer des <strong>visualisations</strong> simples</li>
-<li class="fragment">Gérer les <strong>données manquantes</strong></li>
-<li class="fragment"><strong>Débugger</strong> avec l’aide des LLMs</li>
+<li class="fragment"><strong>Travailler en équipe</strong> sur un projet d’analyse</li>
+<li class="fragment"><strong>Communiquer</strong> efficacement sur le code</li>
+<li class="fragment"><strong>Intégrer</strong> différentes analyses</li>
+<li class="fragment"><strong>Réviser</strong> le code des autres (code review)</li>
+<li class="fragment"><strong>Appliquer</strong> toutes les bonnes pratiques apprises</li>
+<li class="fragment"><strong>Présenter</strong> des résultats de manière professionnelle</li>
 </ul>
 </section>
 <section>
-<section id="récap-et-partage" class="title-slide slide level1 center" data-background-color="#2E8B57">
-<h1>Récap et partage</h1>
+<section id="présentation-du-projet" class="title-slide slide level1 center" data-background-color="#2E8B57">
+<h1>Présentation du projet</h1>
 
 </section>
-<section id="retours-sur-la-séance-1" class="slide level2">
-<h2>Retours sur la séance 1</h2>
-<ul>
-<li class="fragment">Qu’avez-vous retenu de la semaine dernière ?</li>
-<li class="fragment">Quels concepts restent flous ?</li>
-<li class="fragment">Avez-vous pratiqué entre les séances ?</li>
-</ul>
-</section>
-<section id="retours-sur-vos-journaux" class="slide level2 smaller">
-<h2>Retours sur vos journaux</h2>
+<section id="le-défi-collaboratif" class="slide level2">
+<h2>Le défi collaboratif</h2>
+<p><strong>Situation réelle :</strong></p>
+<p>Une organisation vous confie un grand dataset et vous demande une analyse complète sous différents angles.</p>
+<div class="fragment">
+<p><strong>4 équipes, 1 dataset, 4 perspectives complémentaires</strong></p>
+</div>
+<div class="fragment">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Conseils pour améliorer vos journaux</strong></p>
+<p><strong>Objectif final</strong></p>
 </div>
 <div class="callout-content">
-
+<p>Produire une analyse intégrée qui combine les 4 perspectives pour une vision complète.</p>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="structure-du-projet" class="slide level2 scrollable">
+<h2>Structure du projet</h2>
+<p><strong>Le dataset commun :</strong> Données COVID, économiques, ou climatiques (fourni sur Moodle)</p>
+<p><strong>4 équipes, 4 angles d’analyse :</strong></p>
+<ol type="1">
+<li class="fragment"><strong>Équipe 1 - Évolution temporelle</strong> : Comment les variables évoluent dans le temps ?</li>
+<li class="fragment"><strong>Équipe 2 - Comparaisons géographiques</strong> : Quelles différences entre régions/pays ?</li>
+<li class="fragment"><strong>Équipe 3 - Facteurs socio-économiques</strong> : Quels facteurs influencent les résultats ?</li>
+<li class="fragment"><strong>Équipe 4 - Patterns et tendances</strong> : Quels patterns émergent ? Prédictions simples ?</li>
+</ol>
+</section>
+<section id="livrables-par-équipe" class="slide level2 smaller scrollable">
+<h2>Livrables par équipe</h2>
+<p><strong>Chaque équipe doit produire :</strong></p>
+<ol type="1">
+<li class="fragment"><strong>Code R modulaire</strong> (fichiers séparés)
 <ul>
-<li class="fragment"><strong>Copier-coller</strong> les prompts exacts que vous utilisez</li>
-<li class="fragment"><strong>Documenter</strong> les réponses du LLM (pas juste des captures d’écran)</li>
-<li class="fragment"><strong>Expliquer avec vos propres mots</strong> ce que vous avez compris</li>
-<li class="fragment"><strong>Noter les erreurs</strong> rencontrées et comment vous les avez résolues</li>
-<li class="fragment"><strong>Éviter</strong> les formats propriétaires (.pages) - préférer .docx ou .pdf</li>
+<li class="fragment"><code>fonctions_equipe_X.R</code> : vos fonctions</li>
+<li class="fragment"><code>analyse_equipe_X.R</code> : script principal</li>
+<li class="fragment"><code>README_equipe_X.md</code> : documentation</li>
+</ul></li>
+<li class="fragment"><strong>Rapport d’analyse</strong> (R Markdown → HTML)
+<ul>
+<li class="fragment">Introduction et questions</li>
+<li class="fragment">Méthodologie</li>
+<li class="fragment">Résultats (graphiques + tableaux)</li>
+<li class="fragment">Interprétation</li>
+<li class="fragment">Conclusion</li>
+</ul></li>
+<li class="fragment"><strong>Présentation orale</strong> (5 min)
+<ul>
+<li class="fragment">Résultats clés</li>
+<li class="fragment">Contribution à la vision globale</li>
+</ul></li>
+</ol>
+</section>
+<section id="livrable-collectif-final" class="slide level2">
+<h2>Livrable collectif final</h2>
+<p><strong>Toutes les équipes ensemble produiront :</strong></p>
+<ul>
+<li class="fragment"><strong>Synthèse intégrée</strong> : document combinant les 4 analyses</li>
+<li class="fragment"><strong>Code unifié</strong> : fonctions compatibles entre équipes</li>
+<li class="fragment"><strong>Recommandations communes</strong> : conclusions tirées de l’analyse complète</li>
+<li class="fragment"><strong>Présentation collective</strong> : vision d’ensemble</li>
 </ul>
-<aside class="notes">
-<p>10 minutes. Discuter des journaux. Montrer des exemples anonymisés (bons et moins bons).</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
 </section>
-<section id="exercice-de-révision" class="slide level2 smaller scrollable">
-<h2>Exercice de révision</h2>
-<p><strong>Sans utiliser le LLM, écrivez un script qui :</strong></p>
-<ol type="1">
-<li>Crée un vecteur avec 5 nombres de votre choix</li>
-<li>Calcule la moyenne</li>
-<li>Trouve le maximum</li>
-<li>Affiche les résultats avec <code>print()</code></li>
-</ol>
-<div class="fragment">
-<p><strong>Ensuite, comparez avec votre voisin et discutez des différences.</strong></p>
-</div>
-<aside class="notes">
-<p>10 minutes. Révision active. Encourage la discussion entre étudiants.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section></section>
-<section>
-<section id="charger-des-données" class="title-slide slide level1 center" data-background-color="#4169E1">
-<h1>Charger des données</h1>
-
-</section>
-<section id="des-vecteurs-aux-données-réelles" class="slide level2">
-<h2>Des vecteurs aux données réelles</h2>
-<p>Jusqu’ici, vous avez créé des données avec <code>c()</code> :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>notes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">13</span>, <span class="dv">8</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Dans la vraie vie</strong>, les données viennent souvent de fichiers : CSV, Excel, bases de données, etc.</p>
-</div>
-</section>
-<section id="le-format-csv" class="slide level2">
-<h2>Le format CSV</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>CSV = Comma Separated Values</strong></p>
-</div>
-<div class="callout-content">
-<p>Un format simple et universel pour stocker des données tabulaires.</p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Exemple de contenu CSV :</strong></p>
-<pre><code>nom,age,note
-Alice,20,15
-Bob,22,12
-Charlie,21,14</code></pre>
-</div>
-</section>
-<section id="exercice-1-télécharger-les-données" class="slide level2 smaller scrollable">
-<h2>Exercice 1 : Télécharger les données</h2>
-<ol type="1">
-<li>Connectez-vous sur Moodle</li>
-<li>Téléchargez le fichier <code>donnees_meteo.csv</code></li>
-<li>Placez-le dans votre dossier de travail</li>
-</ol>
-<div class="fragment">
-<p><strong>Comment connaître votre dossier de travail ?</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">getwd</span>()  <span class="co"># &quot;get working directory&quot;</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Pour le changer :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">setwd</span>(<span class="st">&quot;/chemin/vers/votre/dossier&quot;</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Ou utilisez <strong>Session &gt; Set Working Directory</strong> dans RStudio.</p>
-</div>
-<aside class="notes">
-<p>10 minutes. S’assurer que tout le monde a les données au bon endroit. Circuler pour aider.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="exercice-2-importer-les-données" class="slide level2 smaller">
-<h2>Exercice 2 : Importer les données</h2>
-<p><strong>Demandez à votre LLM :</strong></p>
-<blockquote>
-<p>“Comment importer un fichier CSV en R ? Je débute en programmation.”</p>
-</blockquote>
-<div class="fragment">
-<p>Vous devriez obtenir quelque chose comme :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>donnees_meteo <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;donnees_meteo.csv&quot;</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Testez cette commande !</strong></p>
-<p>En cas d’erreur, demandez au LLM de vous aider à débugger.</p>
-</div>
-<aside class="notes">
-<p>15 minutes. Première importation de données. Anticiper les erreurs de chemin, d’encodage, etc.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="vérifier-limportation" class="slide level2">
-<h2>Vérifier l’importation</h2>
-<p>Une fois importé, vérifiez que ça a fonctionné :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># Afficher les premières lignes</span></span>
-<span id="cb6-2"><a></a><span class="fu">head</span>(donnees_meteo)</span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a><span class="co"># Afficher la structure</span></span>
-<span id="cb6-5"><a></a><span class="fu">str</span>(donnees_meteo)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Demandez au LLM d’expliquer ce que montrent ces fonctions.</strong></p>
-</div>
-</section></section>
-<section>
-<section id="exploration-de-données" class="title-slide slide level1 center" data-background-color="#FF8C00">
-<h1>Exploration de données</h1>
-
-</section>
-<section id="les-data-frames" class="slide level2">
-<h2>Les data frames</h2>
-<p>Les données importées sont stockées dans un <strong>data frame</strong>.</p>
+<section id="critères-dévaluation" class="slide level2 smaller">
+<h2>Critères d’évaluation</h2>
+<p><strong>Note d’équipe (60%) :</strong></p>
+<ul>
+<li>Qualité technique du code</li>
+<li>Pertinence de l’analyse</li>
+<li>Clarté du rapport</li>
+<li>Qualité de la présentation</li>
+</ul>
+<p><strong>Note individuelle (40%) :</strong></p>
+<ul>
+<li>Contribution identifiable (commits, fonctions créées)</li>
+<li>Qualité du code review</li>
+<li>Participation active</li>
+<li>Collaboration avec les autres équipes</li>
+</ul>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -1310,41 +1201,55 @@ display:block!important;
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Analogie</strong></p>
+<p><strong>Tous ensemble !</strong></p>
 </div>
 <div class="callout-content">
-<p>Un data frame est comme un tableau Excel : des lignes (observations) et des colonnes (variables).</p>
+<p>Le succès du projet dépend de la collaboration entre les équipes !</p>
 </div>
 </div>
 </div>
+</div>
+</section></section>
+<section>
+<section id="constitution-des-équipes" class="title-slide slide level1 center" data-background-color="#4169E1">
+<h1>Constitution des équipes</h1>
+
+</section>
+<section id="formation-des-équipes" class="slide level2">
+<h2>Formation des équipes</h2>
+<p><strong>L’enseignant forme 4 équipes de 4-5 personnes</strong></p>
+<p><strong>Critères de formation :</strong></p>
+<ul>
+<li class="fragment">Diversité des niveaux</li>
+<li class="fragment">Complémentarité des compétences</li>
+<li class="fragment">Mixité si possible</li>
+</ul>
+<div class="fragment">
+<p><strong>Chaque équipe se voit assigner un angle d’analyse</strong></p>
 </div>
 </section>
-<section id="exercice-3-explorer-la-structure" class="slide level2 smaller scrollable">
-<h2>Exercice 3 : Explorer la structure</h2>
-<p><strong>Avec vos données météo, testez :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># Nombre de lignes et colonnes</span></span>
-<span id="cb7-2"><a></a><span class="fu">nrow</span>(donnees_meteo)</span>
-<span id="cb7-3"><a></a><span class="fu">ncol</span>(donnees_meteo)</span>
-<span id="cb7-4"><a></a><span class="fu">dim</span>(donnees_meteo)  <span class="co"># les deux à la fois</span></span>
-<span id="cb7-5"><a></a></span>
-<span id="cb7-6"><a></a><span class="co"># Noms des colonnes</span></span>
-<span id="cb7-7"><a></a><span class="fu">names</span>(donnees_meteo)</span>
-<span id="cb7-8"><a></a><span class="fu">colnames</span>(donnees_meteo)</span>
-<span id="cb7-9"><a></a></span>
-<span id="cb7-10"><a></a><span class="co"># Résumé rapide</span></span>
-<span id="cb7-11"><a></a><span class="fu">summary</span>(donnees_meteo)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Questions :</strong></p>
+<section id="exercice-1-organisation-interne" class="slide level2 smaller scrollable">
+<h2>Exercice 1 : Organisation interne</h2>
+<p><strong>Dans chaque équipe (15 min) :</strong></p>
 <ol type="1">
-<li>Combien d’observations avez-vous ?</li>
-<li>Quelles variables (colonnes) sont présentes ?</li>
-<li>Quel type de données contient chaque colonne ?</li>
+<li><p><strong>Désignez un coordinateur</strong> (interface avec les autres équipes)</p></li>
+<li><p><strong>Répartissez les rôles</strong> :</p>
+<ul>
+<li>Responsable nettoyage des données</li>
+<li>Responsable analyses statistiques</li>
+<li>Responsable visualisations</li>
+<li>Responsable documentation</li>
+</ul></li>
+<li><p><strong>Définissez 3 questions précises</strong> liées à votre angle d’analyse</p></li>
+<li><p><strong>Planifiez votre travail</strong> :</p>
+<ul>
+<li>Quelles fonctions créer ?</li>
+<li>Quelle structure de code ?</li>
+<li>Comment vous répartir le travail ?</li>
+</ul></li>
 </ol>
-</div>
 <aside class="notes">
-<p>15 minutes. Découverte des fonctions d’exploration. Essentielles pour comprendre les données.</p>
+<p>15 minutes. Chaque équipe s’organise.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1357,42 +1262,33 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 </section>
-<section id="accéder-aux-colonnes" class="slide level2">
-<h2>Accéder aux colonnes</h2>
-<p>Pour accéder à une colonne spécifique, utilisez <code>$</code> :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>donnees_meteo<span class="sc">$</span>temperature</span>
-<span id="cb8-2"><a></a>donnees_meteo<span class="sc">$</span>date</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Cela retourne un vecteur !</strong> Vous pouvez donc utiliser toutes les fonctions que vous connaissez :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">mean</span>(donnees_meteo<span class="sc">$</span>temperature)</span>
-<span id="cb9-2"><a></a><span class="fu">max</span>(donnees_meteo<span class="sc">$</span>temperature)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</section>
-<section id="exercice-4-analyser-les-variables" class="slide level2 smaller scrollable">
-<h2>Exercice 4 : Analyser les variables</h2>
-<p><strong>Pour chaque variable numérique dans vos données, calculez :</strong></p>
-<ol type="1">
-<li>La moyenne</li>
-<li>La médiane</li>
-<li>Le minimum</li>
-<li>Le maximum</li>
-<li>L’écart-type (<code>sd()</code>)</li>
-</ol>
-<div class="fragment">
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote>
-<p>“Comment calculer des statistiques descriptives sur une colonne d’un data frame en R ?”</p>
-</blockquote>
-</div>
-<div class="fragment">
-<p><strong>Notez vos résultats dans un commentaire de votre script.</strong></p>
-</div>
+<section id="exercice-2-charte-de-collaboration" class="slide level2 smaller">
+<h2>Exercice 2 : Charte de collaboration</h2>
+<p><strong>Chaque équipe définit sa charte :</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a></a>CHARTE D&#39;ÉQUIPE X</span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>OBJECTIF : <span class="co">[</span><span class="ot">Angle d&#39;analyse</span><span class="co">]</span></span>
+<span id="cb1-4"><a></a></span>
+<span id="cb1-5"><a></a>QUESTIONS À RÉPONDRE :</span>
+<span id="cb1-6"><a></a>1.</span>
+<span id="cb1-7"><a></a>2.</span>
+<span id="cb1-8"><a></a>3.</span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a>RÉPARTITION DES TÂCHES :</span>
+<span id="cb1-11"><a></a><span class="ss">- </span>Membre A : <span class="co">[</span><span class="ot">responsabilité</span><span class="co">]</span></span>
+<span id="cb1-12"><a></a><span class="ss">- </span>Membre B : <span class="co">[</span><span class="ot">responsabilité</span><span class="co">]</span></span>
+<span id="cb1-13"><a></a><span class="ss">- </span>...</span>
+<span id="cb1-14"><a></a></span>
+<span id="cb1-15"><a></a>CONVENTIONS DE CODE :</span>
+<span id="cb1-16"><a></a><span class="ss">- </span>Nommage des fonctions : equipe_X_nom_fonction()</span>
+<span id="cb1-17"><a></a><span class="ss">- </span>Nommage des variables : snake_case</span>
+<span id="cb1-18"><a></a><span class="ss">- </span>Commentaires : en français</span>
+<span id="cb1-19"><a></a></span>
+<span id="cb1-20"><a></a>COMMUNICATION :</span>
+<span id="cb1-21"><a></a><span class="ss">- </span>Coordination : <span class="co">[</span><span class="ot">nom du coordinateur</span><span class="co">]</span></span>
+<span id="cb1-22"><a></a><span class="ss">- </span>Fréquence des points : toutes les 30 minutes</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
-<p>15 minutes. Application pratique. Les étudiants utilisent $ et les fonctions statistiques.</p>
+<p>15 minutes. Établir les règles de collaboration.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1406,48 +1302,82 @@ display:block!important;
 }</style></aside>
 </section></section>
 <section>
-<section id="statistiques-descriptives" class="title-slide slide level1 center" data-background-color="#8B008B">
-<h1>Statistiques descriptives</h1>
+<section id="code-review-croisé" class="title-slide slide level1 center" data-background-color="#FF8C00">
+<h1>Code Review Croisé</h1>
 
 </section>
-<section id="la-fonction-summary" class="slide level2">
-<h2>La fonction <code>summary()</code></h2>
-<p><code>summary()</code> donne un aperçu rapide :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">summary</span>(donnees_meteo<span class="sc">$</span>temperature)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p>Elle affiche :</p>
+<section id="quest-ce-quun-code-review" class="slide level2">
+<h2>Qu’est-ce qu’un code review ?</h2>
+<p><strong>Code review</strong> = Relecture critique du code par les pairs</p>
+<p><strong>Objectifs :</strong></p>
 <ul>
-<li>Minimum et maximum</li>
-<li>1er quartile, médiane, 3e quartile</li>
-<li>Moyenne</li>
+<li class="fragment">Trouver des <strong>bugs</strong> potentiels</li>
+<li class="fragment">Améliorer la <strong>lisibilité</strong></li>
+<li class="fragment">Partager les <strong>bonnes pratiques</strong></li>
+<li class="fragment">Apprendre des <strong>autres</strong></li>
 </ul>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dans l’industrie</strong></p>
+</div>
+<div class="callout-content">
+<p>Le code review est une pratique standard dans toutes les entreprises tech !</p>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="exercice-5-comparer-avec-vos-calculs" class="slide level2 smaller scrollable">
-<h2>Exercice 5 : Comparer avec vos calculs</h2>
-<p><strong>Comparez vos calculs précédents avec <code>summary()</code> :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># Vos calculs</span></span>
-<span id="cb11-2"><a></a><span class="fu">mean</span>(donnees_meteo<span class="sc">$</span>temperature)</span>
-<span id="cb11-3"><a></a><span class="fu">median</span>(donnees_meteo<span class="sc">$</span>temperature)</span>
-<span id="cb11-4"><a></a><span class="fu">min</span>(donnees_meteo<span class="sc">$</span>temperature)</span>
-<span id="cb11-5"><a></a><span class="fu">max</span>(donnees_meteo<span class="sc">$</span>temperature)</span>
-<span id="cb11-6"><a></a></span>
-<span id="cb11-7"><a></a><span class="co"># Summary</span></span>
-<span id="cb11-8"><a></a><span class="fu">summary</span>(donnees_meteo<span class="sc">$</span>temperature)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Questions :</strong></p>
-<ol type="1">
-<li>Les résultats correspondent-ils ?</li>
-<li>Que signifie “médiane” ? (Demandez au LLM si vous ne savez pas)</li>
-<li>Que signifient les quartiles ?</li>
-</ol>
-</div>
+<section id="que-regarder-dans-un-code-review" class="slide level2">
+<h2>Que regarder dans un code review ?</h2>
+<p><strong>Fonctionnalité :</strong></p>
+<ul>
+<li class="fragment">Le code fait-il ce qu’il est censé faire ?</li>
+<li class="fragment">Gère-t-il les cas d’erreur ?</li>
+</ul>
+<p><strong>Lisibilité :</strong></p>
+<ul>
+<li class="fragment">Les noms de variables/fonctions sont-ils clairs ?</li>
+<li class="fragment">Le code est-il bien commenté ?</li>
+<li class="fragment">La structure est-elle logique ?</li>
+</ul>
+<p><strong>Efficacité :</strong></p>
+<ul>
+<li class="fragment">Y a-t-il des répétitions inutiles ?</li>
+<li class="fragment">Les calculs sont-ils optimisés ?</li>
+<li class="fragment">Les fonctions sont-elles réutilisables ?</li>
+</ul>
+</section>
+<section id="exercice-3-code-review-dune-autre-équipe" class="slide level2 smaller">
+<h2>Exercice 3 : Code review d’une autre équipe</h2>
+<p><strong>Organisation :</strong></p>
+<ul>
+<li>Équipe 1 ↔︎ Équipe 2</li>
+<li>Équipe 3 ↔︎ Équipe 4</li>
+</ul>
+<p><strong>Chaque équipe examine le code d’une autre équipe (provenant d’un projet précédent)</strong></p>
+<p><strong>Grille de review :</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a></a>CODE REVIEW - Équipe X par Équipe Y</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a>POINTS POSITIFS :</span>
+<span id="cb2-4"><a></a><span class="ss">- </span><span class="co">[</span><span class="ot">Ce qui est bien fait</span><span class="co">]</span></span>
+<span id="cb2-5"><a></a></span>
+<span id="cb2-6"><a></a>PROBLÈMES IDENTIFIÉS :</span>
+<span id="cb2-7"><a></a><span class="ss">- </span><span class="co">[</span><span class="ot">Bugs, erreurs logiques</span><span class="co">]</span></span>
+<span id="cb2-8"><a></a></span>
+<span id="cb2-9"><a></a>SUGGESTIONS D&#39;AMÉLIORATION :</span>
+<span id="cb2-10"><a></a><span class="ss">- </span><span class="co">[</span><span class="ot">Comment améliorer le code</span><span class="co">]</span></span>
+<span id="cb2-11"><a></a></span>
+<span id="cb2-12"><a></a>CODE EXEMPLAIRE :</span>
+<span id="cb2-13"><a></a><span class="ss">- </span><span class="co">[</span><span class="ot">Un bout de code particulièrement bon</span><span class="co">]</span></span>
+<span id="cb2-14"><a></a></span>
+<span id="cb2-15"><a></a>NOTE GLOBALE : <span class="co">[</span><span class="ot">Sur 10</span><span class="co">]</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
-<p>15 minutes. Vérification et approfondissement. Introduction aux quartiles.</p>
+<p>45 minutes. Code review sérieux et constructif.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1460,232 +1390,116 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 </section>
-<section id="gérer-les-valeurs-manquantes-na" class="slide level2 smaller">
-<h2>Gérer les valeurs manquantes (NA)</h2>
-<p><strong>Testez ce code :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># Y a-t-il des NA dans vos données ?</span></span>
-<span id="cb12-2"><a></a><span class="fu">sum</span>(<span class="fu">is.na</span>(donnees_meteo<span class="sc">$</span>temperature))</span>
-<span id="cb12-3"><a></a></span>
-<span id="cb12-4"><a></a><span class="co"># Afficher les lignes avec des NA</span></span>
-<span id="cb12-5"><a></a>donnees_meteo[<span class="fu">is.na</span>(donnees_meteo<span class="sc">$</span>temperature), ]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="donner-du-feedback-constructif" class="slide level2">
+<h2>Donner du feedback constructif</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="fragment">
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote>
-<p>“Comment gérer les valeurs manquantes (NA) lors du calcul de statistiques en R ?”</p>
-</blockquote>
+<p><strong>Règles d’or du code review</strong></p>
 </div>
-<div class="fragment">
-<p>Vous découvrirez le paramètre <code>na.rm = TRUE</code> :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">mean</span>(donnees_meteo<span class="sc">$</span>temperature, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout-content">
+
 </div>
 </div>
-<aside class="notes">
-<p>15 minutes. Problème réel très fréquent. Important de comprendre na.rm.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="exercice-6-rapport-statistique" class="slide level2 smaller">
-<h2>Exercice 6 : Rapport statistique</h2>
-<p><strong>Créez un script qui génère un rapport complet sur la variable température :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># Rapport sur la température</span></span>
-<span id="cb14-2"><a></a><span class="fu">print</span>(<span class="st">&quot;=== ANALYSE DE LA TEMPÉRATURE ===&quot;</span>)</span>
-<span id="cb14-3"><a></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Nombre d&#39;observations :&quot;</span>, <span class="fu">length</span>(donnees_meteo<span class="sc">$</span>temperature)))</span>
-<span id="cb14-4"><a></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Valeurs manquantes :&quot;</span>, <span class="fu">sum</span>(<span class="fu">is.na</span>(donnees_meteo<span class="sc">$</span>temperature))))</span>
-<span id="cb14-5"><a></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Moyenne :&quot;</span>, <span class="fu">mean</span>(donnees_meteo<span class="sc">$</span>temperature, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb14-6"><a></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Médiane :&quot;</span>, <span class="fu">median</span>(donnees_meteo<span class="sc">$</span>temperature, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb14-7"><a></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Écart-type :&quot;</span>, <span class="fu">sd</span>(donnees_meteo<span class="sc">$</span>temperature, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="fragment">
-<p><strong>Extension :</strong> Faites la même chose pour une autre variable.</p>
-</div>
-<aside class="notes">
-<p>15 minutes. Exercice de synthèse. Introduction à paste() pour formater.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
+<p><strong>À FAIRE ✅ :</strong></p>
+<ul>
+<li class="fragment">Être spécifique : “Cette boucle pourrait être remplacée par <code>lapply()</code>”</li>
+<li class="fragment">Être constructif : “Et si on ajoutait une vérification ici ?”</li>
+<li class="fragment">Reconnaître ce qui est bon : “Excellente documentation !”</li>
+<li class="fragment">Suggérer, ne pas imposer : “Une alternative serait…”</li>
+</ul>
+<p><strong>À ÉVITER ❌ :</strong></p>
+<ul>
+<li class="fragment">Critiquer la personne : “Tu ne sais pas coder”</li>
+<li class="fragment">Être vague : “C’est mauvais”</li>
+<li class="fragment">Imposer son style : “Je fais toujours comme ça”</li>
+</ul>
 </section></section>
 <section>
-<section id="visualisations" class="title-slide slide level1 center" data-background-color="#DC143C">
-<h1>Visualisations</h1>
+<section id="travail-collaboratif" class="title-slide slide level1 center" data-background-color="#8B008B">
+<h1>Travail Collaboratif</h1>
 
 </section>
-<section id="pourquoi-visualiser" class="slide level2">
-<h2>Pourquoi visualiser ?</h2>
-<ul>
-<li class="fragment">Les chiffres ne suffisent pas toujours</li>
-<li class="fragment">Un graphique révèle des <strong>patterns</strong> invisibles dans les tableaux</li>
-<li class="fragment">Communiquer plus efficacement</li>
-</ul>
-</section>
-<section id="exercice-7-premier-graphique" class="slide level2 smaller">
-<h2>Exercice 7 : Premier graphique</h2>
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote>
-<p>“Comment créer un graphique simple en R pour visualiser l’évolution d’une variable dans le temps ? Je débute.”</p>
-</blockquote>
-<div class="fragment">
-<p>Vous découvrirez probablement <code>plot()</code> :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">plot</span>(donnees_meteo<span class="sc">$</span>date, donnees_meteo<span class="sc">$</span>temperature)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Testez ce code !</strong></p>
-<p>Si vous avez une erreur avec les dates, demandez au LLM comment les convertir au bon format.</p>
-</div>
-<aside class="notes">
-<p>15 minutes. Premier graphique. Les dates peuvent poser problème - bon exercice de debugging.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="améliorer-le-graphique" class="slide level2 smaller">
-<h2>Améliorer le graphique</h2>
-<p>Les graphiques de base peuvent être personnalisés :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">plot</span>(donnees_meteo<span class="sc">$</span>date, donnees_meteo<span class="sc">$</span>temperature,</span>
-<span id="cb16-2"><a></a>     <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,  <span class="co"># ligne au lieu de points</span></span>
-<span id="cb16-3"><a></a>     <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb16-4"><a></a>     <span class="at">main =</span> <span class="st">&quot;Évolution de la température&quot;</span>,</span>
-<span id="cb16-5"><a></a>     <span class="at">xlab =</span> <span class="st">&quot;Date&quot;</span>,</span>
-<span id="cb16-6"><a></a>     <span class="at">ylab =</span> <span class="st">&quot;Température (°C)&quot;</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Demandez au LLM d’expliquer chaque paramètre.</strong></p>
-</div>
-</section>
-<section id="exercice-8-explorer-dautres-graphiques" class="slide level2 smaller scrollable">
-<h2>Exercice 8 : Explorer d’autres graphiques</h2>
-<p><strong>Demandez au LLM comment créer :</strong></p>
+<section id="phase-de-développement-90-min" class="slide level2 scrollable">
+<h2>Phase de développement (90 min)</h2>
+<p><strong>Chaque équipe travaille sur son analyse :</strong></p>
 <ol type="1">
-<li>Un histogramme de la température</li>
-<li>Un boxplot (boîte à moustaches)</li>
-<li>Un graphique de points (scatter plot) si vous avez deux variables numériques</li>
+<li class="fragment"><strong>Import et nettoyage</strong> des données (commun à toutes les équipes)</li>
+<li class="fragment"><strong>Analyses spécifiques</strong> à votre angle</li>
+<li class="fragment"><strong>Création de fonctions</strong> réutilisables</li>
+<li class="fragment"><strong>Visualisations</strong> claires et informatives</li>
+<li class="fragment"><strong>Rédaction du rapport</strong> R Markdown</li>
 </ol>
 <div class="fragment">
-<p><strong>Testez chaque type et notez dans votre journal :</strong></p>
-<ul>
-<li>La commande utilisée</li>
-<li>Ce que montre le graphique</li>
-<li>Quand l’utiliser</li>
-</ul>
-</div>
-<aside class="notes">
-<p>20 minutes. Exploration des types de graphiques. Encourager la curiosité.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="sauvegarder-un-graphique" class="slide level2">
-<h2>Sauvegarder un graphique</h2>
-<p>Pour sauvegarder un graphique :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># Ouvrir un fichier</span></span>
-<span id="cb17-2"><a></a><span class="fu">png</span>(<span class="st">&quot;mon_graphique.png&quot;</span>, <span class="at">width =</span> <span class="dv">800</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
-<span id="cb17-3"><a></a></span>
-<span id="cb17-4"><a></a><span class="co"># Créer le graphique</span></span>
-<span id="cb17-5"><a></a><span class="fu">plot</span>(donnees_meteo<span class="sc">$</span>date, donnees_meteo<span class="sc">$</span>temperature, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>)</span>
-<span id="cb17-6"><a></a></span>
-<span id="cb17-7"><a></a><span class="co"># Fermer le fichier</span></span>
-<span id="cb17-8"><a></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p>Le fichier sera dans votre dossier de travail.</p>
-</div>
-</section></section>
-<section>
-<section id="debugging" class="title-slide slide level1 center" data-background-color="#2F4F4F">
-<h1>Debugging</h1>
-
-</section>
-<section id="les-erreurs-sont-normales" class="slide level2 scrollable">
-<h2>Les erreurs sont normales !</h2>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Important</strong></p>
+<p><strong>Attention !</strong></p>
 </div>
 <div class="callout-content">
-<p>Tout le monde rencontre des erreurs. C’est une partie essentielle de la programmation.</p>
+<p>Vos fonctions doivent être <strong>compatibles</strong> avec celles des autres équipes !</p>
 </div>
 </div>
 </div>
-<div class="fragment">
-<p><strong>Stratégie de debugging :</strong></p>
-<ol type="1">
-<li><strong>Lire</strong> le message d’erreur (même s’il semble cryptique)</li>
-<li><strong>Identifier</strong> la ligne problématique</li>
-<li><strong>Tester</strong> des hypothèses</li>
-<li><strong>Demander</strong> de l’aide (LLM, documentation, pairs)</li>
-</ol>
 </div>
 </section>
-<section id="exercice-9-debugging-collectif" class="slide level2 smaller scrollable">
-<h2>Exercice 9 : Debugging collectif</h2>
-<p><strong>Voici du code avec des erreurs. Trouvez-les et corrigez-les :</strong></p>
+<section id="conventions-entre-équipes" class="slide level2">
+<h2>Conventions entre équipes</h2>
+<p><strong>Toutes les équipes doivent se mettre d’accord sur :</strong></p>
+<p><strong>Noms des objets principaux :</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># Charger les données</span></span>
-<span id="cb18-2"><a></a>donnees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(donnees_meteo.csv)</span>
-<span id="cb18-3"><a></a></span>
-<span id="cb18-4"><a></a><span class="co"># Calculer la moyenne</span></span>
-<span id="cb18-5"><a></a>moyenne_temp <span class="ot">&lt;-</span> <span class="fu">mean</span>(donnees<span class="sc">$</span>Temperature)</span>
-<span id="cb18-6"><a></a></span>
-<span id="cb18-7"><a></a><span class="co"># Afficher</span></span>
-<span id="cb18-8"><a></a><span class="fu">print</span>(<span class="st">&quot;La moyenne est&quot;</span> moyenne_temp)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>donnees_brutes    <span class="co"># Dataset original</span></span>
+<span id="cb3-2"><a></a>donnees_propres   <span class="co"># Dataset nettoyé</span></span>
+<span id="cb3-3"><a></a>resultats_equipe_X  <span class="co"># Résultats de chaque équipe</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="fragment">
-<p><strong>Travaillez par groupes de 2-3. Utilisez le LLM si nécessaire.</strong></p>
+<p><strong>Structure des fonctions :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Chaque équipe préfixe ses fonctions</span></span>
+<span id="cb4-2"><a></a><span class="fu">equipe1_analyser_temporel</span>()</span>
+<span id="cb4-3"><a></a><span class="fu">equipe2_analyser_geographique</span>()</span>
+<span id="cb4-4"><a></a><span class="fu">equipe3_analyser_facteurs</span>()</span>
+<span id="cb4-5"><a></a><span class="fu">equipe4_analyser_patterns</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="fragment">
-<p><strong>Erreurs à trouver :</strong></p>
+<p><strong>Format des sorties :</strong></p>
+<ul>
+<li class="fragment">Toutes les fonctions retournent des data.frames</li>
+<li class="fragment">Même structure : colonnes standardisées</li>
+</ul>
+</section>
+<section id="exercice-4-réunion-inter-équipes" class="slide level2 smaller scrollable">
+<h2>Exercice 4 : Réunion inter-équipes</h2>
+<p><strong>Les 4 coordinateurs se réunissent (10 min) pour :</strong></p>
 <ol type="1">
-<li>Guillemets manquants autour du nom de fichier</li>
-<li>Majuscule incorrecte dans le nom de colonne</li>
-<li>Virgule manquante dans <code>print()</code></li>
+<li>S’accorder sur les <strong>conventions de nommage</strong></li>
+<li>Définir la <strong>structure commune</strong> des données nettoyées</li>
+<li>Planifier l’<strong>intégration finale</strong></li>
+<li>Identifier les <strong>dépendances</strong> entre équipes</li>
 </ol>
-</div>
+<p><strong>Résultat : Un document de conventions partagé</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a></a>CONVENTIONS INTER-ÉQUIPES</span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a>OBJETS COMMUNS :</span>
+<span id="cb5-4"><a></a><span class="ss">- </span>donnees_brutes : dataset original</span>
+<span id="cb5-5"><a></a><span class="ss">- </span>donnees_propres : dataset nettoyé (structure : ...)</span>
+<span id="cb5-6"><a></a></span>
+<span id="cb5-7"><a></a>PRÉFIXES DE FONCTIONS :</span>
+<span id="cb5-8"><a></a><span class="ss">- </span>Équipe 1 : e1_</span>
+<span id="cb5-9"><a></a><span class="ss">- </span>Équipe 2 : e2_</span>
+<span id="cb5-10"><a></a><span class="ss">- </span>Équipe 3 : e3_</span>
+<span id="cb5-11"><a></a><span class="ss">- </span>Équipe 4 : e4_</span>
+<span id="cb5-12"><a></a></span>
+<span id="cb5-13"><a></a>FORMAT DES SORTIES :</span>
+<span id="cb5-14"><a></a>Toutes les fonctions d&#39;analyse retournent un data.frame avec :</span>
+<span id="cb5-15"><a></a><span class="ss">- </span>variable, valeur, interpretation</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
-<p>15 minutes. Exercice collectif. Discuter ensuite des types d’erreurs courantes.</p>
+<p>10 minutes. Coordination essentielle entre équipes.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1698,110 +1512,343 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 </section>
-<section id="bien-utiliser-le-llm-pour-débugger" class="slide level2 smaller">
-<h2>Bien utiliser le LLM pour débugger</h2>
+<section id="checkpoints-intermédiaires" class="slide level2">
+<h2>Checkpoints intermédiaires</h2>
+<p><strong>Après 30 minutes :</strong></p>
+<ul>
+<li>Chaque équipe présente son avancement (2 min/équipe)</li>
+<li>Identification des blocages</li>
+<li>Ajustements si nécessaire</li>
+</ul>
+<p><strong>Après 60 minutes :</strong></p>
+<ul>
+<li>Vérification de la compatibilité du code</li>
+<li>Premiers tests d’intégration</li>
+<li>Corrections des incompatibilités</li>
+</ul>
+</section>
+<section id="consultations-avec-lenseignant" class="slide level2">
+<h2>Consultations avec l’enseignant</h2>
+<p><strong>L’enseignant circule pour :</strong></p>
+<ul>
+<li>Débloquer les équipes en difficulté</li>
+<li>Valider les choix méthodologiques</li>
+<li>Suggérer des améliorations</li>
+<li>Vérifier la compatibilité inter-équipes</li>
+</ul>
+<div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Comment demander de l’aide efficacement</strong></p>
+<p><strong>N’attendez pas !</strong></p>
 </div>
 <div class="callout-content">
-
+<p>Appelez l’enseignant dès qu’un problème bloque toute l’équipe.</p>
 </div>
 </div>
 </div>
-<p><strong>Mauvais prompt :</strong> &gt; “Ça marche pas”</p>
-<p><strong>Bon prompt :</strong> &gt; “J’essaie d’importer un fichier CSV avec read.csv() mais j’obtiens cette erreur : [copier l’erreur exacte]. Voici mon code : [copier le code]. Que dois-je corriger ?”</p>
-<div class="fragment">
-<p><strong>Donnez toujours :</strong></p>
-<ul>
-<li>Le code exact</li>
-<li>L’erreur complète</li>
-<li>Ce que vous essayez de faire</li>
-<li>Votre niveau (débutant)</li>
-</ul>
 </div>
 </section></section>
 <section>
-<section id="mini-projet" class="title-slide slide level1 center" data-background-color="#2E8B57">
-<h1>Mini-projet</h1>
+<section id="intégration-collaborative" class="title-slide slide level1 center" data-background-color="#DC143C">
+<h1>Intégration Collaborative</h1>
 
 </section>
-<section id="projet-analyse-de-données-insee" class="slide level2 smaller scrollable">
-<h2>Projet : Analyse de données INSEE</h2>
-<p><strong>Objectif :</strong> Analyser des données économiques réelles.</p>
-<p><strong>Étapes :</strong></p>
+<section id="le-défi-de-lintégration" class="slide level2 scrollable">
+<h2>Le défi de l’intégration</h2>
+<p><strong>Maintenant que chaque équipe a son analyse, il faut tout combiner !</strong></p>
+<div class="fragment">
+<p><strong>Objectif :</strong></p>
+<p>Créer un script <code>analyse_integree.R</code> qui :</p>
 <ol type="1">
-<li>Allez sur <a href="https://www.insee.fr/fr/statistiques/2830613" class="uri">https://www.insee.fr/fr/statistiques/2830613</a></li>
-<li>Téléchargez les données du PIB (format CSV de préférence)</li>
-<li>Importez-les dans R</li>
-<li>Créez un rapport complet</li>
+<li>Charge toutes les fonctions des 4 équipes</li>
+<li>Exécute les 4 analyses</li>
+<li>Combine les résultats</li>
+<li>Produit une synthèse globale</li>
 </ol>
+</div>
+</section>
+<section id="exercice-5-script-dintégration" class="slide level2 smaller">
+<h2>Exercice 5 : Script d’intégration</h2>
+<p><strong>Les coordinateurs créent ensemble :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># === ANALYSE INTÉGRÉE - 4 ÉQUIPES ===</span></span>
+<span id="cb6-2"><a></a></span>
+<span id="cb6-3"><a></a><span class="co"># Charger toutes les fonctions</span></span>
+<span id="cb6-4"><a></a><span class="fu">source</span>(<span class="st">&quot;equipe1/fonctions_equipe1.R&quot;</span>)</span>
+<span id="cb6-5"><a></a><span class="fu">source</span>(<span class="st">&quot;equipe2/fonctions_equipe2.R&quot;</span>)</span>
+<span id="cb6-6"><a></a><span class="fu">source</span>(<span class="st">&quot;equipe3/fonctions_equipe3.R&quot;</span>)</span>
+<span id="cb6-7"><a></a><span class="fu">source</span>(<span class="st">&quot;equipe4/fonctions_equipe4.R&quot;</span>)</span>
+<span id="cb6-8"><a></a></span>
+<span id="cb6-9"><a></a><span class="co"># Importer et nettoyer les données (commun)</span></span>
+<span id="cb6-10"><a></a>donnees_brutes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;dataset_commun.csv&quot;</span>)</span>
+<span id="cb6-11"><a></a>donnees_propres <span class="ot">&lt;-</span> <span class="fu">nettoyer_donnees</span>(donnees_brutes)</span>
+<span id="cb6-12"><a></a></span>
+<span id="cb6-13"><a></a><span class="co"># Exécuter les 4 analyses</span></span>
+<span id="cb6-14"><a></a>resultats_e1 <span class="ot">&lt;-</span> <span class="fu">e1_analyser_temporel</span>(donnees_propres)</span>
+<span id="cb6-15"><a></a>resultats_e2 <span class="ot">&lt;-</span> <span class="fu">e2_analyser_geographique</span>(donnees_propres)</span>
+<span id="cb6-16"><a></a>resultats_e3 <span class="ot">&lt;-</span> <span class="fu">e3_analyser_facteurs</span>(donnees_propres)</span>
+<span id="cb6-17"><a></a>resultats_e4 <span class="ot">&lt;-</span> <span class="fu">e4_analyser_patterns</span>(donnees_propres)</span>
+<span id="cb6-18"><a></a></span>
+<span id="cb6-19"><a></a><span class="co"># Combiner les résultats</span></span>
+<span id="cb6-20"><a></a>synthese <span class="ot">&lt;-</span> <span class="fu">combiner_resultats</span>(</span>
+<span id="cb6-21"><a></a>  <span class="at">temporel =</span> resultats_e1,</span>
+<span id="cb6-22"><a></a>  <span class="at">geo =</span> resultats_e2,</span>
+<span id="cb6-23"><a></a>  <span class="at">facteurs =</span> resultats_e3,</span>
+<span id="cb6-24"><a></a>  <span class="at">patterns =</span> resultats_e4</span>
+<span id="cb6-25"><a></a>)</span>
+<span id="cb6-26"><a></a></span>
+<span id="cb6-27"><a></a><span class="co"># Sauvegarder</span></span>
+<span id="cb6-28"><a></a><span class="fu">saveRDS</span>(synthese, <span class="st">&quot;synthese_complete.rds&quot;</span>)</span>
+<span id="cb6-29"><a></a><span class="fu">write.csv</span>(synthese, <span class="st">&quot;synthese_complete.csv&quot;</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<aside class="notes">
+<p>20 minutes. Travail collectif d’intégration.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="gestion-des-conflits" class="slide level2">
+<h2>Gestion des conflits</h2>
+<p><strong>Problèmes courants :</strong></p>
+<p><strong>Fonctions avec le même nom :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># Solution : préfixer ou spécifier le package/source</span></span>
+<span id="cb7-2"><a></a>equipe1<span class="sc">::</span><span class="fu">analyser</span>()</span>
+<span id="cb7-3"><a></a>equipe2<span class="sc">::</span><span class="fu">analyser</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Structures de données incompatibles :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># Solution : créer des fonctions de conversion</span></span>
+<span id="cb8-2"><a></a>convertir_format_equipe1_vers_equipe2 <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb8-3"><a></a>  <span class="co"># Transformation ici</span></span>
+<span id="cb8-4"><a></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Dépendances manquantes :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># Solution : documenter toutes les dépendances</span></span>
+<span id="cb9-2"><a></a><span class="co"># Créer un script setup.R</span></span>
+<span id="cb9-3"><a></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;lubridate&quot;</span>)</span>
+<span id="cb9-4"><a></a><span class="fu">install.packages</span>(packages)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="test-de-lintégration" class="slide level2">
+<h2>Test de l’intégration</h2>
+<p><strong>Vérifications essentielles :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># Le script complet s&#39;exécute sans erreur ?</span></span>
+<span id="cb10-2"><a></a><span class="fu">source</span>(<span class="st">&quot;analyse_integree.R&quot;</span>)</span>
+<span id="cb10-3"><a></a></span>
+<span id="cb10-4"><a></a><span class="co"># Les résultats sont cohérents ?</span></span>
+<span id="cb10-5"><a></a><span class="fu">str</span>(synthese)</span>
+<span id="cb10-6"><a></a><span class="fu">summary</span>(synthese)</span>
+<span id="cb10-7"><a></a></span>
+<span id="cb10-8"><a></a><span class="co"># Les graphiques s&#39;affichent ?</span></span>
+<span id="cb10-9"><a></a><span class="co"># Les fichiers de sortie sont créés ?</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><strong>Si ça casse, débuggez ensemble !</strong></p>
+</div>
+</section></section>
+<section>
+<section id="présentations-finales" class="title-slide slide level1 center" data-background-color="#2E8B57">
+<h1>Présentations Finales</h1>
+
+</section>
+<section id="format-de-présentation" class="slide level2 scrollable">
+<h2>Format de présentation</h2>
+<p><strong>Présentations par équipe (5 min chacune) :</strong></p>
+<ol type="1">
+<li class="fragment"><strong>Angle d’analyse</strong> (30 sec) : Quelle perspective ?</li>
+<li class="fragment"><strong>Méthodologie</strong> (1 min) : Comment avez-vous procédé ?</li>
+<li class="fragment"><strong>Résultats clés</strong> (2 min) : 2-3 insights majeurs avec graphiques</li>
+<li class="fragment"><strong>Contribution à la synthèse</strong> (1 min) : Qu’apportez-vous au tout ?</li>
+<li class="fragment"><strong>Défis et apprentissages</strong> (30 sec) : Qu’avez-vous appris ?</li>
+</ol>
+</section>
+<section id="présentation-de-la-synthèse-intégrée" class="slide level2">
+<h2>Présentation de la synthèse intégrée</h2>
+<p><strong>Présentation collective (10 min) :</strong></p>
+<ul>
+<li><strong>Vision d’ensemble</strong> : Comment les 4 analyses se complètent ?</li>
+<li><strong>Insights croisés</strong> : Ce qu’on voit en combinant tout</li>
+<li><strong>Recommandations</strong> : Conclusions basées sur l’analyse complète</li>
+<li><strong>Démo du code intégré</strong> : Montrer que tout fonctionne ensemble</li>
+</ul>
+<div class="fragment">
+<p><strong>Tous les coordinateurs présentent ensemble !</strong></p>
+</div>
+</section>
+<section id="exercice-6-préparer-la-présentation" class="slide level2 smaller scrollable">
+<h2>Exercice 6 : Préparer la présentation</h2>
+<p><strong>Chaque équipe prépare (10 min) :</strong></p>
+<ol type="1">
+<li><strong>Sélectionner</strong> les 2-3 graphiques les plus importants</li>
+<li><strong>Rédiger</strong> les messages clés (3 bullets maximum)</li>
+<li><strong>Préparer</strong> une démo live de votre code</li>
+<li><strong>Répéter</strong> le timing (max 5 min !)</li>
+</ol>
+<p><strong>Pour la synthèse collective :</strong></p>
+<ul>
+<li>Les coordinateurs se réunissent</li>
+<li>Créent une présentation intégrée</li>
+<li>Se répartissent la parole</li>
+</ul>
+<aside class="notes">
+<p>10 minutes de préparation avant les présentations.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="feedback-et-questions" class="slide level2">
+<h2>Feedback et questions</h2>
+<p><strong>Après chaque présentation :</strong></p>
+<ul>
+<li>2 minutes de questions/commentaires</li>
+<li>Feedback constructif des autres équipes</li>
+<li>Points d’amélioration suggérés</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Célébrons les réussites !</strong></p>
+</div>
+<div class="callout-content">
+<p>Identifiez ce qui a été particulièrement bien fait dans chaque équipe.</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="célébration-et-bilan" class="title-slide slide level1 center" data-background-color="#4169E1">
+<h1>Célébration et Bilan</h1>
+
+</section>
+<section id="vous-avez-réussi" class="slide level2">
+<h2>Vous avez réussi ! 🎉</h2>
+<p><strong>Félicitations, vous avez :</strong></p>
+<p>✅ Collaboré en équipe sur un projet complexe ✅ Intégré différentes analyses en un tout cohérent ✅ Pratiqué le code review professionnel ✅ Géré les conflits et incompatibilités ✅ Communiqué efficacement sur du code ✅ Produit une analyse complète et documentée ✅ Présenté des résultats de manière professionnelle</p>
+</section>
+<section id="exercice-final-rétrospective" class="slide level2 smaller">
+<h2>Exercice final : Rétrospective</h2>
+<p><strong>Individuellement, réfléchissez (5 min) :</strong></p>
+<p><strong>Ce qui a bien fonctionné :</strong></p>
+<ul>
+<li>Dans votre équipe ?</li>
+<li>Dans la collaboration inter-équipes ?</li>
+<li>Dans votre propre contribution ?</li>
+</ul>
+<p><strong>Ce qui a été difficile :</strong></p>
+<ul>
+<li>Quels obstacles avez-vous rencontrés ?</li>
+<li>Comment les avez-vous surmontés ?</li>
+</ul>
+<p><strong>Ce que vous avez appris :</strong></p>
+<ul>
+<li>Sur R et la programmation ?</li>
+<li>Sur le travail en équipe ?</li>
+<li>Sur vous-même ?</li>
+</ul>
+<p><strong>Ce que vous allez réutiliser :</strong></p>
+<ul>
+<li>Quelles compétences acquises ?</li>
+<li>Quelles méthodes de travail ?</li>
+</ul>
+</section>
+<section id="partage-collectif" class="slide level2 smaller">
+<h2>Partage collectif</h2>
+<p><strong>Tour de table (1 min/personne) :</strong></p>
+<p>Partagez <strong>UNE</strong> chose que vous retenez de ce cours :</p>
+<ul>
+<li>Une compétence technique</li>
+<li>Une méthode de travail</li>
+<li>Un moment marquant</li>
+<li>Une prise de conscience</li>
+</ul>
+<div class="fragment">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Rapport attendu</strong></p>
+<p><strong>Votre parcours</strong></p>
 </div>
 <div class="callout-content">
-<ul>
-<li>Import et vérification des données</li>
-<li>Statistiques descriptives</li>
-<li>Au moins 2 graphiques</li>
-<li>Commentaires expliquant vos observations</li>
-</ul>
+<p>De la séance 1 (découverte de R) à aujourd’hui (projet collaboratif complexe) : vous avez parcouru un chemin immense ! 🚀</p>
 </div>
 </div>
 </div>
-<aside class="notes">
-<p>50 minutes. Projet autonome. Circuler beaucoup. Les étudiants vont rencontrer des difficultés (format de données, etc.) - c’est normal et formateur.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
+</div>
+</section></section>
+<section>
+<section id="bilan-du-cours-complet" class="title-slide slide level1 center" data-background-color="#8B008B">
+<h1>Bilan du cours complet</h1>
+
 </section>
-<section id="critères-du-mini-projet" class="slide level2 smaller">
-<h2>Critères du mini-projet</h2>
-<p>Votre analyse doit inclure :</p>
+<section id="compétences-acquises-en-8-séances" class="slide level2">
+<h2>Compétences acquises en 8 séances</h2>
+<p><strong>Techniques :</strong></p>
 <ul>
-<li class="fragment">✅ Import réussi des données</li>
-<li class="fragment">✅ Exploration de la structure (<code>str()</code>, <code>summary()</code>, etc.)</li>
-<li class="fragment">✅ Au moins 5 statistiques descriptives calculées</li>
-<li class="fragment">✅ Au moins 2 visualisations différentes</li>
-<li class="fragment">✅ Code commenté et organisé</li>
-<li class="fragment">✅ Interprétation des résultats (commentaires en français)</li>
+<li class="fragment">✅ Programmation R : variables, fonctions, conditions, boucles</li>
+<li class="fragment">✅ Manipulation de données : import, nettoyage, transformation (dplyr)</li>
+<li class="fragment">✅ Visualisation : ggplot2, graphiques professionnels</li>
+<li class="fragment">✅ Organisation : code modulaire, packages, fonctions réutilisables</li>
+<li class="fragment">✅ Automatisation : traitement par lots, rapports paramétrés</li>
+<li class="fragment">✅ Documentation : R Markdown, commentaires, documentation</li>
 </ul>
-<div class="fragment">
-<p><strong>Bonus :</strong></p>
-<ul>
-<li>Gestion des NA</li>
-<li>Graphiques personnalisés</li>
-<li>Comparaison entre plusieurs variables</li>
-</ul>
-</div>
 </section>
-<section id="aide-pour-le-projet" class="slide level2 smaller scrollable">
-<h2>Aide pour le projet</h2>
-<p><strong>Si vous êtes bloqué :</strong></p>
-<ol type="1">
-<li>Relisez les exercices précédents</li>
-<li>Consultez votre journal</li>
-<li>Demandez à votre voisin</li>
-<li>Utilisez le LLM avec un prompt précis</li>
-<li>Appelez l’enseignant</li>
-</ol>
+<section id="compétences-transversales" class="slide level2">
+<h2>Compétences transversales</h2>
+<p><strong>Méthodologiques :</strong></p>
+<ul>
+<li class="fragment">✅ Résolution de problèmes par décomposition</li>
+<li class="fragment">✅ Debugging systématique</li>
+<li class="fragment">✅ Tests et validation du code</li>
+<li class="fragment">✅ Gestion d’erreurs et cas particuliers</li>
+</ul>
+<p><strong>Collaboration :</strong></p>
+<ul>
+<li class="fragment">✅ Travail en équipe sur du code</li>
+<li class="fragment">✅ Code review constructif</li>
+<li class="fragment">✅ Communication technique</li>
+<li class="fragment">✅ Intégration de travaux multiples</li>
+</ul>
+</section>
+<section id="utilisation-des-llms" class="slide level2">
+<h2>Utilisation des LLMs</h2>
+<p><strong>Vous savez maintenant :</strong></p>
+<ul>
+<li class="fragment">✅ Formuler des prompts <strong>précis</strong> et <strong>contextualisés</strong></li>
+<li class="fragment">✅ <strong>Valider</strong> critiquement les réponses</li>
+<li class="fragment">✅ <strong>Itérer</strong> pour améliorer les résultats</li>
+<li class="fragment">✅ <strong>Identifier</strong> les erreurs et limites des LLMs</li>
+<li class="fragment">✅ Utiliser les LLMs comme <strong>partenaires</strong>, pas comme <strong>oracle</strong></li>
+</ul>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -1809,149 +1856,128 @@ display:block!important;
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Conseil</strong></p>
+<p><strong>L’esprit critique</strong></p>
 </div>
 <div class="callout-content">
-<p>Procédez par étapes. Testez chaque ligne avant de passer à la suivante.</p>
+<p>La compétence la plus importante que vous avez développée !</p>
 </div>
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="retour-réflexif" class="title-slide slide level1 center" data-background-color="#4169E1">
-<h1>Retour réflexif</h1>
-
 </section>
-<section id="exercice-de-synthèse-journal-de-bord" class="slide level2 smaller scrollable">
-<h2>Exercice de synthèse : Journal de bord</h2>
-<p><strong>Dans votre journal, documentez :</strong></p>
-<ol type="1">
-<li><strong>Import de données</strong> :
-<ul>
-<li>Prompts utilisés pour apprendre à importer</li>
-<li>Difficultés rencontrées (chemins, formats, etc.)</li>
-<li>Solutions trouvées</li>
-</ul></li>
-<li><strong>Analyse et visualisation</strong> :
-<ul>
-<li>3 fonctions nouvelles que vous maîtrisez maintenant</li>
-<li>Un graphique dont vous êtes fier (copier le code)</li>
-<li>Une chose que vous ne comprenez pas encore</li>
-</ul></li>
-<li><strong>Debugging</strong> :
-<ul>
-<li>Une erreur marquante et comment vous l’avez résolue</li>
-<li>Un bon prompt de debugging qui a fonctionné</li>
-</ul></li>
-</ol>
-<aside class="notes">
-<p>15 minutes. Temps de réflexion calme. Important pour ancrer les apprentissages.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
+<section id="votre-progression" class="slide level2">
+<h2>Votre progression</h2>
+<p><strong>Séance 1 :</strong> “Qu’est-ce que R ?”</p>
+<p><strong>Séance 2 :</strong> “Comment importer des données ?”</p>
+<p><strong>Séance 3 :</strong> “Comment créer une fonction ?”</p>
+<p><strong>Séance 4 :</strong> “Comment faire de beaux graphiques ?”</p>
+<p><strong>Séance 5 :</strong> “Analyse complète en autonomie !”</p>
+<p><strong>Séance 6 :</strong> “Organisation professionnelle du code”</p>
+<p><strong>Séance 7 :</strong> “Automatisation et rapports”</p>
+<p><strong>Séance 8 :</strong> “Projet collaboratif complexe !” ✨</p>
 </section>
-<section id="évolution-de-vos-compétences" class="slide level2">
-<h2>Évolution de vos compétences</h2>
-<p><strong>Séance 1 :</strong> Vous avez appris les bases (objets, fonctions, vecteurs)</p>
-<p><strong>Séance 2 :</strong> Vous savez maintenant :</p>
+<section id="et-maintenant" class="slide level2">
+<h2>Et maintenant ?</h2>
+<p><strong>Vous êtes capables de :</strong></p>
 <ul>
-<li class="fragment">Importer des données réelles</li>
-<li class="fragment">Les explorer et les analyser</li>
-<li class="fragment">Créer des visualisations</li>
-<li class="fragment">Débugger efficacement</li>
+<li class="fragment">Analyser des données <strong>en autonomie</strong></li>
+<li class="fragment">Créer des <strong>outils réutilisables</strong></li>
+<li class="fragment"><strong>Automatiser</strong> des tâches répétitives</li>
+<li class="fragment"><strong>Collaborer</strong> sur des projets data</li>
+<li class="fragment"><strong>Continuer à apprendre</strong> par vous-même avec les LLMs</li>
 </ul>
 <div class="fragment">
-<p><strong>Vous êtes déjà capable d’analyser de vraies données ! 🎉</strong></p>
-</div>
-</section></section>
-<section>
-<section id="ressources-et-prochaines-étapes" class="title-slide slide level1 center" data-background-color="#8B008B">
-<h1>Ressources et prochaines étapes</h1>
-
-</section>
-<section id="fonctions-clés-de-cette-séance" class="slide level2">
-<h2>Fonctions clés de cette séance</h2>
-<p><strong>Import et exploration :</strong></p>
-<ul>
-<li class="fragment"><code>read.csv()</code>, <code>getwd()</code>, <code>setwd()</code></li>
-<li class="fragment"><code>head()</code>, <code>str()</code>, <code>summary()</code>, <code>dim()</code>, <code>names()</code></li>
-</ul>
-<p><strong>Statistiques :</strong></p>
-<ul>
-<li class="fragment"><code>mean()</code>, <code>median()</code>, <code>sd()</code>, <code>min()</code>, <code>max()</code></li>
-<li class="fragment"><code>na.rm = TRUE</code> pour gérer les NA</li>
-</ul>
-<p><strong>Visualisation :</strong></p>
-<ul>
-<li class="fragment"><code>plot()</code>, <code>hist()</code>, <code>boxplot()</code></li>
-<li class="fragment">Paramètres : <code>type</code>, <code>col</code>, <code>main</code>, <code>xlab</code>, <code>ylab</code></li>
-</ul>
-</section>
-<section id="pour-aller-plus-loin" class="slide level2">
-<h2>Pour aller plus loin</h2>
-<ul>
-<li class="fragment"><strong>Pratiquez</strong> avec d’autres jeux de données</li>
-<li class="fragment"><strong>Explorez</strong> d’autres types de graphiques</li>
-<li class="fragment"><strong>Découvrez</strong> le package <code>ggplot2</code> (pour plus tard)</li>
-<li class="fragment"><strong>Partagez</strong> vos visualisations avec vos camarades</li>
-</ul>
-</section>
-<section id="préparation-prochaine-séance" class="slide level2 scrollable">
-<h2>Préparation prochaine séance</h2>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Devoirs</strong></p>
+<p><strong>Le plus important</strong></p>
 </div>
 <div class="callout-content">
-<ol type="1">
-<li>Terminez le mini-projet INSEE si besoin</li>
-<li><strong>Mettez à jour votre journal</strong> avec tous les détails de cette séance</li>
-<li>Trouvez un jeu de données qui vous intéresse et analysez-le</li>
-<li>Créez au moins 3 graphiques différents avec vos données</li>
-</ol>
+<p>Vous n’avez plus peur du code ! 🎓</p>
 </div>
 </div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="ressources-pour-continuer" class="title-slide slide level1 center" data-background-color="#2E8B57">
+<h1>Ressources pour continuer</h1>
+
+</section>
+<section id="poursuivre-votre-apprentissage" class="slide level2">
+<h2>Poursuivre votre apprentissage</h2>
+<p><strong>Ressources en ligne :</strong></p>
+<ul>
+<li><a href="https://r4ds.hadley.nz/">R for Data Science</a> - livre gratuit</li>
+<li><a href="https://posit.co/resources/cheatsheets/">RStudio Cheatsheets</a></li>
+<li><a href="https://stackoverflow.com/questions/tagged/r">Stack Overflow</a> - communauté</li>
+<li>Votre journal de bord - vos propres notes !</li>
+</ul>
+<p><strong>Pratiquer :</strong></p>
+<ul>
+<li>Kaggle - datasets et compétitions</li>
+<li>TidyTuesday - défis hebdomadaires</li>
+<li>Vos propres projets - le meilleur apprentissage !</li>
+</ul>
+</section>
+<section id="rester-en-contact" class="slide level2">
+<h2>Rester en contact</h2>
+<p><strong>Communauté :</strong></p>
+<ul>
+<li>Continuez à échanger avec vos camarades</li>
+<li>Partagez vos projets</li>
+<li>Aidez les nouveaux arrivants</li>
+<li>Contribuez à des projets open source</li>
+</ul>
+<p><strong>Avec les LLMs :</strong></p>
+<ul>
+<li>Continuez à les utiliser <strong>critiquement</strong></li>
+<li>Documentez vos meilleures pratiques</li>
+<li>Partagez vos découvertes</li>
+</ul>
+</section>
+<section id="merci" class="slide level2">
+<h2>Merci ! 🙏</h2>
+<p><strong>Merci pour :</strong></p>
+<ul>
+<li>Votre <strong>engagement</strong> tout au long du cours</li>
+<li>Votre <strong>curiosité</strong> et vos questions</li>
+<li>Votre <strong>collaboration</strong> avec vos pairs</li>
+<li>Votre <strong>persévérance</strong> face aux difficultés</li>
+</ul>
+<div class="fragment">
+<p><strong>Vous êtes maintenant des programmeurs R capables ! 🚀</strong></p>
 </div>
 <div class="fragment">
-<p><strong>Prochaine séance :</strong> Fonctions, conditions et boucles - automatiser vos analyses !</p>
+<p><strong>Continuez à coder, continuez à apprendre, continuez à créer !</strong></p>
 </div>
 </section>
-<section id="questions" class="slide level2">
-<h2>Questions ?</h2>
+<section id="questions-finales" class="slide level2">
+<h2>Questions finales ?</h2>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Points clés à retenir</strong></p>
+<p><strong>N’oubliez jamais</strong></p>
 </div>
 <div class="callout-content">
 <ul>
-<li>Les <strong>data frames</strong> sont essentiels pour travailler avec des données réelles</li>
-<li><code>$</code> permet d’accéder aux colonnes</li>
-<li>Toujours vérifier les <strong>NA</strong> avant de calculer</li>
-<li>Les <strong>visualisations</strong> révèlent ce que les chiffres cachent</li>
-<li>Le <strong>debugging</strong> fait partie du processus - soyez patient !</li>
+<li>Le <strong>code</strong> est un outil, pas une fin en soi</li>
+<li>Les <strong>erreurs</strong> sont des opportunités d’apprentissage</li>
+<li>La <strong>collaboration</strong> enrichit vos compétences</li>
+<li>L’<strong>apprentissage</strong> ne s’arrête jamais</li>
+<li>Les <strong>LLMs</strong> sont des assistants, vous êtes le cerveau !</li>
 </ul>
 </div>
 </div>
 </div>
 <div class="fragment">
-<p><strong>Bon courage et bonnes analyses ! 📊</strong></p>
+<p><strong>Bon courage pour vos futurs projets ! 🎉</strong></p>
 </div>
 
 
@@ -1959,7 +1985,7 @@ display:block!important;
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>Séance 2 - Données et fonctions</p>
+<p>Séance 8 - Projet collaboratif final</p>
 </div>
 </div></div>
 

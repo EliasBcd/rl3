@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Elias Bouacida">
+
+<title>Séance 4 : Données tabulaires et graphiques avancés – Initiation à R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f4f457e805d2b247f730789ca0bbc19f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">EC Libre : Introduction à la programmation (en R) avec des LLMs</li><li class="breadcrumb-item"><a href="../ECLibre/01Introduction.html">ECLibre</a></li><li class="breadcrumb-item"><a href="../ECLibre/05Lecon4Dataframes.html">Séance 4 : Données tabulaires et graphiques avancés</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">EC Libre : Introduction à la programmation (en R) avec des LLMs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">ECLibre</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/01Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apprendre la Programmation (en R) avec les LLMs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/02Lecon1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 1 : Premiers pas avec R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/03Lecon2Donnees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 2 : Données et fonctions intégrées</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/04Lecon3Fonctions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 3 : Fonctions, conditions et boucles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/05Lecon4Dataframes.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Séance 4 : Données tabulaires et graphiques avancés</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/06Lecon5Projet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 5 : Projet personnel intégré</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/07Lecon6Organisation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 6 : Organisation et modularité</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/08Lecon7Automatisation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 7 : Automatisation et rapports</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/09Lecon8Collaboratif.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 8 : Projet collaboratif final</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Méthodologie de Projet Personnel et Professionnel</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">M3P</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/01Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apprendre la Programmation (en R) avec les LLMs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/02Lecon1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 1 : Premiers pas avec R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/03Lecon2Donnees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 2 : Données et fonctions intégrées</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/04Lecon3Fonctions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 3 : Fonctions, conditions et boucles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/05Lecon4Dataframes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 4 : Données tabulaires et graphiques avancés</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexe</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../JournalBord.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modèle de journal de bord</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../donnees/donnees_meteo.csv" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Données Météo</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#plan-de-la-séance" id="toc-plan-de-la-séance" class="nav-link active" data-scroll-target="#plan-de-la-séance">Plan de la séance</a></li>
+  <li><a href="#objectifs-de-la-séance" id="toc-objectifs-de-la-séance" class="nav-link" data-scroll-target="#objectifs-de-la-séance">Objectifs de la séance</a></li>
+  <li><a href="#récap-et-partage" id="toc-récap-et-partage" class="nav-link" data-scroll-target="#récap-et-partage">Récap et partage</a>
+  <ul class="collapse">
+  <li><a href="#retours-sur-les-fonctions" id="toc-retours-sur-les-fonctions" class="nav-link" data-scroll-target="#retours-sur-les-fonctions">Retours sur les fonctions</a></li>
+  <li><a href="#exercice-de-révision" id="toc-exercice-de-révision" class="nav-link" data-scroll-target="#exercice-de-révision">Exercice de révision</a></li>
+  </ul></li>
+  <li><a href="#données-réelles-et-leurs-problèmes" id="toc-données-réelles-et-leurs-problèmes" class="nav-link" data-scroll-target="#données-réelles-et-leurs-problèmes">Données réelles et leurs problèmes</a>
+  <ul class="collapse">
+  <li><a href="#les-données-ne-sont-jamais-parfaites" id="toc-les-données-ne-sont-jamais-parfaites" class="nav-link" data-scroll-target="#les-données-ne-sont-jamais-parfaites">Les données ne sont jamais parfaites</a></li>
+  <li><a href="#exercice-1-découvrir-les-problèmes" id="toc-exercice-1-découvrir-les-problèmes" class="nav-link" data-scroll-target="#exercice-1-découvrir-les-problèmes">Exercice 1 : Découvrir les problèmes</a></li>
+  <li><a href="#exercice-2-nettoyer-la-casse" id="toc-exercice-2-nettoyer-la-casse" class="nav-link" data-scroll-target="#exercice-2-nettoyer-la-casse">Exercice 2 : Nettoyer la casse</a></li>
+  <li><a href="#exercice-3-gérer-les-valeurs-manquantes" id="toc-exercice-3-gérer-les-valeurs-manquantes" class="nav-link" data-scroll-target="#exercice-3-gérer-les-valeurs-manquantes">Exercice 3 : Gérer les valeurs manquantes</a></li>
+  <li><a href="#exercice-4-dataset-complexe-piégé" id="toc-exercice-4-dataset-complexe-piégé" class="nav-link" data-scroll-target="#exercice-4-dataset-complexe-piégé">Exercice 4 : Dataset complexe piégé</a></li>
+  </ul></li>
+  <li><a href="#introduction-à-ggplot2" id="toc-introduction-à-ggplot2" class="nav-link" data-scroll-target="#introduction-à-ggplot2">Introduction à ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#pourquoi-ggplot2" id="toc-pourquoi-ggplot2" class="nav-link" data-scroll-target="#pourquoi-ggplot2">Pourquoi ggplot2 ?</a></li>
+  <li><a href="#la-grammaire-des-graphiques" id="toc-la-grammaire-des-graphiques" class="nav-link" data-scroll-target="#la-grammaire-des-graphiques">La grammaire des graphiques</a></li>
+  <li><a href="#exercice-5-premier-graphique-ggplot2" id="toc-exercice-5-premier-graphique-ggplot2" class="nav-link" data-scroll-target="#exercice-5-premier-graphique-ggplot2">Exercice 5 : Premier graphique ggplot2</a></li>
+  <li><a href="#exercice-6-améliorer-le-graphique" id="toc-exercice-6-améliorer-le-graphique" class="nav-link" data-scroll-target="#exercice-6-améliorer-le-graphique">Exercice 6 : Améliorer le graphique</a></li>
+  <li><a href="#exercice-7-différents-types-de-graphiques" id="toc-exercice-7-différents-types-de-graphiques" class="nav-link" data-scroll-target="#exercice-7-différents-types-de-graphiques">Exercice 7 : Différents types de graphiques</a></li>
+  <li><a href="#exercice-8-graphiques-par-catégorie" id="toc-exercice-8-graphiques-par-catégorie" class="nav-link" data-scroll-target="#exercice-8-graphiques-par-catégorie">Exercice 8 : Graphiques par catégorie</a></li>
+  </ul></li>
+  <li><a href="#fonctions-de-visualisation" id="toc-fonctions-de-visualisation" class="nav-link" data-scroll-target="#fonctions-de-visualisation">Fonctions de visualisation</a>
+  <ul class="collapse">
+  <li><a href="#pourquoi-créer-des-fonctions-graphiques" id="toc-pourquoi-créer-des-fonctions-graphiques" class="nav-link" data-scroll-target="#pourquoi-créer-des-fonctions-graphiques">Pourquoi créer des fonctions graphiques ?</a></li>
+  <li><a href="#exercice-9-première-fonction-graphique" id="toc-exercice-9-première-fonction-graphique" class="nav-link" data-scroll-target="#exercice-9-première-fonction-graphique">Exercice 9 : Première fonction graphique</a></li>
+  <li><a href="#exercice-10-fonction-graphique-avancée" id="toc-exercice-10-fonction-graphique-avancée" class="nav-link" data-scroll-target="#exercice-10-fonction-graphique-avancée">Exercice 10 : Fonction graphique avancée</a></li>
+  </ul></li>
+  <li><a href="#mini-projet-dashboard" id="toc-mini-projet-dashboard" class="nav-link" data-scroll-target="#mini-projet-dashboard">Mini-projet : Dashboard</a>
+  <ul class="collapse">
+  <li><a href="#projet-analyse-de-ventes-complète" id="toc-projet-analyse-de-ventes-complète" class="nav-link" data-scroll-target="#projet-analyse-de-ventes-complète">Projet : Analyse de ventes complète</a></li>
+  <li><a href="#critères-du-mini-projet" id="toc-critères-du-mini-projet" class="nav-link" data-scroll-target="#critères-du-mini-projet">Critères du mini-projet</a></li>
+  </ul></li>
+  <li><a href="#retour-réflexif" id="toc-retour-réflexif" class="nav-link" data-scroll-target="#retour-réflexif">Retour réflexif</a>
+  <ul class="collapse">
+  <li><a href="#exercice-réflexif-journal-de-bord" id="toc-exercice-réflexif-journal-de-bord" class="nav-link" data-scroll-target="#exercice-réflexif-journal-de-bord">Exercice réflexif : Journal de bord</a></li>
+  <li><a href="#ce-que-vous-avez-appris-aujourdhui" id="toc-ce-que-vous-avez-appris-aujourdhui" class="nav-link" data-scroll-target="#ce-que-vous-avez-appris-aujourdhui">Ce que vous avez appris aujourd’hui</a></li>
+  </ul></li>
+  <li><a href="#ressources-et-prochaines-étapes" id="toc-ressources-et-prochaines-étapes" class="nav-link" data-scroll-target="#ressources-et-prochaines-étapes">Ressources et prochaines étapes</a>
+  <ul class="collapse">
+  <li><a href="#fonctions-clés-de-cette-séance" id="toc-fonctions-clés-de-cette-séance" class="nav-link" data-scroll-target="#fonctions-clés-de-cette-séance">Fonctions clés de cette séance</a></li>
+  <li><a href="#pour-aller-plus-loin" id="toc-pour-aller-plus-loin" class="nav-link" data-scroll-target="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+  <li><a href="#préparation-prochaine-séance" id="toc-préparation-prochaine-séance" class="nav-link" data-scroll-target="#préparation-prochaine-séance">Préparation prochaine séance</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions ?</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="slide-lecon4.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">EC Libre : Introduction à la programmation (en R) avec des LLMs</li><li class="breadcrumb-item"><a href="../ECLibre/01Introduction.html">ECLibre</a></li><li class="breadcrumb-item"><a href="../ECLibre/05Lecon4Dataframes.html">Séance 4 : Données tabulaires et graphiques avancés</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Séance 4 : Données tabulaires et graphiques avancés</h1>
+<p class="subtitle lead">Apprendre R avec les LLMs</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur·rice</div>
+    <div class="quarto-title-meta-contents">
+             <p>Elias Bouacida </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">3 octobre 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="plan-de-la-séance" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="plan-de-la-séance">Plan de la séance</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Récap et partage</strong> (15min) : Retours sur les fonctions</li>
+<li><strong>Nettoyage de données</strong> (60min) : Gérer les incohérences réelles</li>
+<li><strong>Introduction à ggplot2</strong> (75min) : Créer des graphiques sophistiqués</li>
+<li><strong>Fonctions de visualisation</strong> (40min) : Automatiser la création de graphiques</li>
+<li><strong>Mini-projet</strong> (40min) : Dashboard de visualisations</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Production attendue :</strong> Dashboard avec 4 graphiques + fonction de visualisation réutilisable</p>
+</div>
+</section>
+<section id="objectifs-de-la-séance" class="level2">
+<h2 class="anchored" data-anchor-id="objectifs-de-la-séance">Objectifs de la séance</h2>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Maîtriser les données complexes et la visualisation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Nettoyer</strong> des données avec incohérences (casse, formats)</li>
+<li>Maîtriser les <strong>dataframes</strong> avancés</li>
+<li>Créer des <strong>visualisations</strong> avec ggplot2</li>
+<li>Développer des <strong>fonctions graphiques</strong> réutilisables</li>
+<li>Combiner analyse et communication visuelle</li>
+</ul>
+</div>
+</section>
+<section id="récap-et-partage" class="level1" data-background-color="#2E8B57">
+<h1 data-background-color="#2E8B57">Récap et partage</h1>
+<section id="retours-sur-les-fonctions" class="level2">
+<h2 class="anchored" data-anchor-id="retours-sur-les-fonctions">Retours sur les fonctions</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Quelles fonctions avez-vous créées ?</li>
+<li>Quelles difficultés avec les conditions et boucles ?</li>
+<li>Un exemple de bug intéressant que vous avez résolu ?</li>
+</ul>
+</div>
+</section>
+<section id="exercice-de-révision" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-de-révision">Exercice de révision</h2>
+<p><strong>Créez rapidement une fonction qui :</strong></p>
+<ol type="1">
+<li>Prend un vecteur de nombres en paramètre</li>
+<li>Retourne “Positif” si la moyenne est &gt; 0</li>
+<li>Retourne “Négatif” sinon</li>
+<li>Gère les NA correctement</li>
+</ol>
+<div class="fragment">
+<p><strong>Testez avec :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>valeurs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">10</span>, <span class="cn">NA</span>, <span class="dv">8</span>, <span class="sc">-</span><span class="dv">3</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">classifier_moyenne</span>(valeurs)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="notes">
+<p>10 minutes. Révision rapide. Vérifier que les concepts de la séance 3 sont acquis.</p>
+</div>
+</section>
+</section>
+<section id="données-réelles-et-leurs-problèmes" class="level1" data-background-color="#4169E1">
+<h1 data-background-color="#4169E1">Données réelles et leurs problèmes</h1>
+<section id="les-données-ne-sont-jamais-parfaites" class="level2">
+<h2 class="anchored" data-anchor-id="les-données-ne-sont-jamais-parfaites">Les données ne sont jamais parfaites</h2>
+<p>Dans le monde réel, les données contiennent souvent :</p>
+<div class="incremental">
+<ul class="incremental">
+<li>Des <strong>problèmes de casse</strong> : “Alice”, “alice”, “ALICE”</li>
+<li>Des <strong>formats incohérents</strong> : “2023-01-15”, “15/01/2023”</li>
+<li>Des <strong>valeurs manquantes</strong> : NA, ““,”N/A”, “inconnu”</li>
+<li>Des <strong>doublons</strong></li>
+<li>Des <strong>erreurs de saisie</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Avertissement</span>Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le nettoyage des données représente souvent 80% du travail d’analyse !</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercice-1-découvrir-les-problèmes" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-1-découvrir-les-problèmes">Exercice 1 : Découvrir les problèmes</h2>
+<p><strong>Voici un jeu de données de ventes :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ventes <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">mois =</span> <span class="fu">c</span>(<span class="st">"Jan"</span>, <span class="st">"Fév"</span>, <span class="st">"Mar"</span>, <span class="st">"Avr"</span>, <span class="st">"Mai"</span>, <span class="st">"Jun"</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">montant =</span> <span class="fu">c</span>(<span class="dv">1500</span>, <span class="dv">2000</span>, <span class="cn">NA</span>, <span class="dv">1800</span>, <span class="dv">2200</span>, <span class="dv">1900</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">vendeur =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Alice"</span>, <span class="st">"bob"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Demandez au LLM :</strong></p>
+<blockquote class="blockquote">
+<p>“Quels sont les problèmes potentiels dans ce jeu de données pour une analyse ?”</p>
+</blockquote>
+<div class="fragment">
+<p><strong>Identifiez :</strong></p>
+<ol type="1">
+<li>Le problème de casse dans les noms</li>
+<li>La valeur manquante</li>
+<li>Les conséquences pour les calculs par vendeur</li>
+</ol>
+</div>
+<div class="notes">
+<p>15 minutes. Les étudiants découvrent les problèmes réels des données.</p>
+</div>
+</section>
+<section id="exercice-2-nettoyer-la-casse" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-2-nettoyer-la-casse">Exercice 2 : Nettoyer la casse</h2>
+<p><strong>Problème :</strong> Les noms “Alice”, “alice” et “Bob”, “bob” sont comptés séparément.</p>
+<p><strong>Demandez au LLM comment standardiser les noms.</strong></p>
+<div class="fragment">
+<p>Vous découvrirez probablement :</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ventes<span class="sc">$</span>vendeur <span class="ot">&lt;-</span> <span class="fu">tolower</span>(ventes<span class="sc">$</span>vendeur)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ou</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ventes<span class="sc">$</span>vendeur <span class="ot">&lt;-</span> <span class="fu">toupper</span>(ventes<span class="sc">$</span>vendeur)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Vérifiez le résultat :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(ventes<span class="sc">$</span>vendeur)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ventes<span class="sc">$</span>vendeur)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="notes">
+<p>15 minutes. Premier nettoyage simple mais essentiel.</p>
+</div>
+</section>
+<section id="exercice-3-gérer-les-valeurs-manquantes" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-3-gérer-les-valeurs-manquantes">Exercice 3 : Gérer les valeurs manquantes</h2>
+<p><strong>Plusieurs stratégies possibles :</strong></p>
+<p><strong>Demandez au LLM :</strong></p>
+<blockquote class="blockquote">
+<p>“Comment gérer les valeurs NA dans mes données de ventes ? Quelles sont les différentes approches ?”</p>
+</blockquote>
+<div class="fragment">
+<p><strong>Options principales :</strong></p>
+<ol type="1">
+<li><strong>Supprimer</strong> les lignes avec NA : <code>na.omit()</code></li>
+<li><strong>Remplacer</strong> par une valeur : moyenne, médiane, 0</li>
+<li><strong>Garder</strong> mais utiliser <code>na.rm = TRUE</code> dans les calculs</li>
+</ol>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Réflexion importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Quelle stratégie choisir dépend du contexte ! Supprimer des données peut introduire des biais.</p>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>15 minutes. Discussion importante sur les choix méthodologiques.</p>
+</div>
+</section>
+<section id="exercice-4-dataset-complexe-piégé" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-4-dataset-complexe-piégé">Exercice 4 : Dataset complexe piégé</h2>
+<p><strong>Nouveau challenge - Données étudiants :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>etudiants <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">nom =</span> <span class="fu">c</span>(<span class="st">"Dupont"</span>, <span class="st">"Martin"</span>, <span class="st">"Durand"</span>, <span class="st">""</span>, <span class="st">"Petit"</span>),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="st">"vingt-deux"</span>, <span class="dv">19</span>, <span class="dv">21</span>, <span class="dv">18</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">note_math =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="cn">NA</span>, <span class="dv">16</span>, <span class="dv">14</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">note_info =</span> <span class="fu">c</span>(<span class="dv">13</span>, <span class="cn">NA</span>, <span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">16</span>),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">filiere =</span> <span class="fu">c</span>(<span class="st">"Info"</span>, <span class="st">"info"</span>, <span class="st">"Maths"</span>, <span class="st">"INFO"</span>, <span class="st">"maths"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Mission :</strong></p>
+<ol type="1">
+<li>Identifiez TOUS les problèmes</li>
+<li>Nettoyez le dataset</li>
+<li>Calculez la moyenne par filière</li>
+</ol>
+<div class="fragment">
+<p><strong>Utilisez le LLM étape par étape !</strong></p>
+</div>
+<div class="notes">
+<p>30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver.</p>
+</div>
+</section>
+</section>
+<section id="introduction-à-ggplot2" class="level1" data-background-color="#FF8C00">
+<h1 data-background-color="#FF8C00">Introduction à ggplot2</h1>
+<section id="pourquoi-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="pourquoi-ggplot2">Pourquoi ggplot2 ?</h2>
+<p>Jusqu’ici vous avez utilisé <code>plot()</code>, <code>hist()</code>, <code>barplot()</code>…</p>
+<div class="fragment">
+<p><strong>ggplot2</strong> est un package puissant pour créer des graphiques :</p>
+<ul>
+<li>Syntaxe cohérente et logique</li>
+<li>Graphiques professionnels</li>
+<li>Très flexible et personnalisable</li>
+<li>Standard dans l’analyse de données en R</li>
+</ul>
+</div>
+</section>
+<section id="la-grammaire-des-graphiques" class="level2">
+<h2 class="anchored" data-anchor-id="la-grammaire-des-graphiques">La grammaire des graphiques</h2>
+<p><strong>ggplot2</strong> fonctionne par couches :</p>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><strong>Données</strong> : <code>ggplot(data = mes_donnees)</code></li>
+<li><strong>Esthétiques</strong> : <code>aes(x = variable1, y = variable2)</code></li>
+<li><strong>Géométries</strong> : <code>geom_point()</code>, <code>geom_line()</code>, <code>geom_bar()</code></li>
+<li><strong>Personnalisation</strong> : titres, couleurs, thèmes</li>
+</ol>
+</div>
+<div class="fragment">
+<p>On <strong>ajoute</strong> des couches avec <code>+</code></p>
+</div>
+</section>
+<section id="exercice-5-premier-graphique-ggplot2" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-5-premier-graphique-ggplot2">Exercice 5 : Premier graphique ggplot2</h2>
+<p><strong>Demandez au LLM :</strong></p>
+<blockquote class="blockquote">
+<p>“Comment créer un graphique simple avec ggplot2 en R ? Je débute avec ce package.”</p>
+</blockquote>
+<p><strong>Ensuite, testez avec vos données de ventes :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ventes, <span class="fu">aes</span>(<span class="at">x =</span> mois, <span class="at">y =</span> montant)) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><strong>Questions :</strong></p>
+<ol type="1">
+<li>Que fait <code>aes()</code> ?</li>
+<li>Pourquoi <code>geom_col()</code> et pas <code>geom_bar()</code> ?</li>
+<li>Comment changer la couleur des barres ?</li>
+</ol>
+</div>
+<div class="notes">
+<p>20 minutes. Première découverte de ggplot2. La syntaxe peut surprendre au début.</p>
+</div>
+</section>
+<section id="exercice-6-améliorer-le-graphique" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-6-améliorer-le-graphique">Exercice 6 : Améliorer le graphique</h2>
+<p><strong>Personnalisez votre graphique :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ventes, <span class="fu">aes</span>(<span class="at">x =</span> mois, <span class="at">y =</span> montant)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Ventes mensuelles"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Mois"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Montant (€)"</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><strong>Demandez au LLM :</strong></p>
+<blockquote class="blockquote">
+<p>“Comment personnaliser les couleurs, titres et thème d’un graphique ggplot2 ?”</p>
+</blockquote>
+</div>
+<div class="fragment">
+<p><strong>Explorez :</strong></p>
+<ul>
+<li>Différentes couleurs</li>
+<li>Différents thèmes : <code>theme_bw()</code>, <code>theme_classic()</code></li>
+<li>Ajout d’une ligne à un niveau spécifique avec <code>geom_hline()</code></li>
+</ul>
+</div>
+<div class="notes">
+<p>20 minutes. Exploration des options de personnalisation.</p>
+</div>
+</section>
+<section id="exercice-7-différents-types-de-graphiques" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-7-différents-types-de-graphiques">Exercice 7 : Différents types de graphiques</h2>
+<p><strong>Demandez au LLM de vous montrer comment créer :</strong></p>
+<ol type="1">
+<li>Un graphique en <strong>points</strong> (<code>geom_point()</code>)</li>
+<li>Un graphique en <strong>lignes</strong> (<code>geom_line()</code>)</li>
+<li>Un <strong>boxplot</strong> (<code>geom_boxplot()</code>)</li>
+<li>Un <strong>histogramme</strong> (<code>geom_histogram()</code>)</li>
+</ol>
+<div class="fragment">
+<p><strong>Testez chaque type avec des données adaptées.</strong></p>
+<p>Certains types nécessitent des données spécifiques !</p>
+</div>
+<div class="notes">
+<p>20 minutes. Découverte de la variété des géométries disponibles.</p>
+</div>
+</section>
+<section id="exercice-8-graphiques-par-catégorie" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-8-graphiques-par-catégorie">Exercice 8 : Graphiques par catégorie</h2>
+<p><strong>Challenge :</strong> Créez un graphique des ventes coloré par vendeur.</p>
+<p><strong>Demandez au LLM :</strong></p>
+<blockquote class="blockquote">
+<p>“Comment créer un graphique avec ggplot2 où chaque catégorie a une couleur différente ?”</p>
+</blockquote>
+<div class="fragment">
+<p>Vous découvrirez :</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ventes, <span class="fu">aes</span>(<span class="at">x =</span> mois, <span class="at">y =</span> montant, <span class="at">fill =</span> vendeur)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Ventes par vendeur et par mois"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Questions :</strong></p>
+<ol type="1">
+<li>Que fait <code>position = "dodge"</code> ?</li>
+<li>Que se passe-t-il sans ?</li>
+<li>Comment faire un graphique empilé ?</li>
+</ol>
+</div>
+<div class="notes">
+<p>20 minutes. Introduction aux graphiques multivariés.</p>
+</div>
+</section>
+</section>
+<section id="fonctions-de-visualisation" class="level1" data-background-color="#8B008B">
+<h1 data-background-color="#8B008B">Fonctions de visualisation</h1>
+<section id="pourquoi-créer-des-fonctions-graphiques" class="level2">
+<h2 class="anchored" data-anchor-id="pourquoi-créer-des-fonctions-graphiques">Pourquoi créer des fonctions graphiques ?</h2>
+<p>Si vous créez souvent le même type de graphique :</p>
+<div class="incremental">
+<ul class="incremental">
+<li>Éviter la <strong>répétition</strong> du code</li>
+<li>Garantir la <strong>cohérence</strong> visuelle</li>
+<li>Faciliter la <strong>maintenance</strong></li>
+<li>Permettre la <strong>réutilisation</strong></li>
+</ul>
+</div>
+</section>
+<section id="exercice-9-première-fonction-graphique" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-9-première-fonction-graphique">Exercice 9 : Première fonction graphique</h2>
+<p><strong>Créez une fonction qui génère un graphique en barres standard :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>graphique_barres <span class="ot">&lt;-</span> <span class="cf">function</span>(donnees, colonne_x, colonne_y, titre) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(donnees, <span class="fu">aes</span>(<span class="at">x =</span> .data[[colonne_x]], <span class="at">y =</span> .data[[colonne_y]])) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> titre) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">graphique_barres</span>(ventes, <span class="st">"mois"</span>, <span class="st">"montant"</span>, <span class="st">"Ventes mensuelles"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><strong>Demandez au LLM d’expliquer :</strong></p>
+<ol type="1">
+<li>À quoi sert <code>.data[[...]]</code> ?</li>
+<li>Comment passer des noms de colonnes comme paramètres ?</li>
+</ol>
+</div>
+<div class="notes">
+<p>20 minutes. Introduction aux fonctions avec ggplot2. Concept avancé mais important.</p>
+</div>
+</section>
+<section id="exercice-10-fonction-graphique-avancée" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-10-fonction-graphique-avancée">Exercice 10 : Fonction graphique avancée</h2>
+<p><strong>Améliorez votre fonction avec plus d’options :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>graphique_personnalise <span class="ot">&lt;-</span> <span class="cf">function</span>(donnees, x, y, titre,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">couleur =</span> <span class="st">"steelblue"</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">type =</span> <span class="st">"barres"</span>) {</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Créer le graphique de base</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(donnees, <span class="fu">aes</span>(<span class="at">x =</span> .data[[x]], <span class="at">y =</span> .data[[y]]))</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ajouter la géométrie selon le type</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (type <span class="sc">==</span> <span class="st">"barres"</span>) {</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="at">fill =</span> couleur)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (type <span class="sc">==</span> <span class="st">"points"</span>) {</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">color =</span> couleur, <span class="at">size =</span> <span class="dv">3</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ajouter titre et thème</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> titre) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(g)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><strong>Testez avec différentes options !</strong></p>
+</div>
+<div class="notes">
+<p>20 minutes. Fonction plus sophistiquée avec options et conditions.</p>
+</div>
+</section>
+</section>
+<section id="mini-projet-dashboard" class="level1" data-background-color="#DC143C">
+<h1 data-background-color="#DC143C">Mini-projet : Dashboard</h1>
+<section id="projet-analyse-de-ventes-complète" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="projet-analyse-de-ventes-complète">Projet : Analyse de ventes complète</h2>
+<p><strong>Objectif :</strong> Créer un dashboard d’analyse avec 4 graphiques différents.</p>
+<p><strong>Données :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Téléchargez le fichier ventes_annuelles.csv depuis Moodle</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ventes_annuelles <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"ventes_annuelles.csv"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Les 4 graphiques à créer :</strong></p>
+<ol type="1">
+<li>Évolution des ventes mensuelles (ligne)</li>
+<li>Ventes par vendeur (barres)</li>
+<li>Distribution des montants (histogramme)</li>
+<li>Comparaison par trimestre (boxplot)</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Utilisez ggplot2 pour tous les graphiques
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Personnalisez-les avec des couleurs et titres appropriés.</p>
+</div>
+</div>
+<div class="notes">
+<p>40 minutes. Projet de synthèse. Combine nettoyage, analyse et visualisation.</p>
+</div>
+</section>
+<section id="critères-du-mini-projet" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="critères-du-mini-projet">Critères du mini-projet</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>✅ Les données sont <strong>nettoyées</strong> (casse, NA gérés)</li>
+<li>✅ Les 4 graphiques sont <strong>créés avec ggplot2</strong></li>
+<li>✅ Chaque graphique a un <strong>titre et des labels</strong> appropriés</li>
+<li>✅ Le code est <strong>commenté</strong></li>
+<li>✅ Une <strong>fonction de visualisation</strong> réutilisable est créée</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Bonus :</strong></p>
+<ul>
+<li>Créer un 5ème graphique original</li>
+<li>Utiliser des facettes (<code>facet_wrap()</code>)</li>
+<li>Ajouter des annotations sur les graphiques</li>
+<li>Sauvegarder les graphiques avec <code>ggsave()</code></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="retour-réflexif" class="level1" data-background-color="#2F4F4F">
+<h1 data-background-color="#2F4F4F">Retour réflexif</h1>
+<section id="exercice-réflexif-journal-de-bord" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-réflexif-journal-de-bord">Exercice réflexif : Journal de bord</h2>
+<p><strong>Documentez dans votre journal :</strong></p>
+<ol type="1">
+<li><strong>Nettoyage de données</strong> :
+<ul>
+<li>Quels problèmes avez-vous rencontrés ?</li>
+<li>Comment les avez-vous résolus ?</li>
+<li>Un prompt efficace pour le nettoyage</li>
+</ul></li>
+<li><strong>ggplot2</strong> :
+<ul>
+<li>Différences avec <code>plot()</code> de base</li>
+<li>Votre graphique préféré créé aujourd’hui</li>
+<li>Un concept difficile à comprendre</li>
+</ul></li>
+<li><strong>Fonctions graphiques</strong> :
+<ul>
+<li>Pourquoi créer des fonctions pour les graphiques ?</li>
+<li>Code de votre fonction réutilisable</li>
+</ul></li>
+</ol>
+<div class="notes">
+<p>10 minutes. Moment de réflexion et documentation.</p>
+</div>
+</section>
+<section id="ce-que-vous-avez-appris-aujourdhui" class="level2">
+<h2 class="anchored" data-anchor-id="ce-que-vous-avez-appris-aujourdhui">Ce que vous avez appris aujourd’hui</h2>
+<div class="incremental">
+<p>✅ Nettoyer des données réelles avec incohérences ✅ Utiliser ggplot2 pour créer des graphiques professionnels ✅ Maîtriser différentes géométries (barres, points, lignes, boxplot) ✅ Personnaliser l’apparence des graphiques ✅ Créer des fonctions de visualisation réutilisables ✅ Combiner analyse et communication visuelle</p>
+</div>
+</section>
+</section>
+<section id="ressources-et-prochaines-étapes" class="level1" data-background-color="#2E8B57">
+<h1 data-background-color="#2E8B57">Ressources et prochaines étapes</h1>
+<section id="fonctions-clés-de-cette-séance" class="level2">
+<h2 class="anchored" data-anchor-id="fonctions-clés-de-cette-séance">Fonctions clés de cette séance</h2>
+<p><strong>Nettoyage :</strong></p>
+<ul>
+<li><code>tolower()</code>, <code>toupper()</code> : standardiser la casse</li>
+<li><code>na.omit()</code> : supprimer les NA</li>
+<li><code>unique()</code>, <code>table()</code> : explorer les valeurs</li>
+</ul>
+<p><strong>ggplot2 :</strong></p>
+<ul>
+<li><code>ggplot()</code> + <code>aes()</code> : base du graphique</li>
+<li><code>geom_col()</code>, <code>geom_point()</code>, <code>geom_line()</code> : géométries</li>
+<li><code>labs()</code> : titres et labels</li>
+<li><code>theme_minimal()</code>, <code>theme_bw()</code> : thèmes</li>
+</ul>
+</section>
+<section id="pour-aller-plus-loin" class="level2">
+<h2 class="anchored" data-anchor-id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Explorez</strong> d’autres géométries de ggplot2</li>
+<li><strong>Pratiquez</strong> avec vos propres données</li>
+<li><strong>Créez</strong> une bibliothèque de fonctions graphiques</li>
+<li><strong>Consultez</strong> la documentation : <code>?ggplot2</code></li>
+</ul>
+</div>
+</section>
+<section id="préparation-prochaine-séance" class="level2">
+<h2 class="anchored" data-anchor-id="préparation-prochaine-séance">Préparation prochaine séance</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Devoirs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Terminez le dashboard si besoin</li>
+<li><strong>Mettez à jour votre journal</strong> avec les détails de cette séance</li>
+<li>Trouvez un jeu de données qui vous intéresse pour le projet de la séance 5</li>
+<li>Créez au moins 2 fonctions graphiques réutilisables</li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Prochaine séance :</strong> Projet personnel intégré - vous allez mener une analyse complète en autonomie !</p>
+</div>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions ?</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Points clés à retenir
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Le <strong>nettoyage</strong> des données est essentiel et prend du temps</li>
+<li><strong>ggplot2</strong> permet de créer des graphiques professionnels de manière cohérente</li>
+<li>Les <strong>fonctions graphiques</strong> évitent la répétition et assurent la cohérence</li>
+<li>La <strong>visualisation</strong> est aussi importante que l’analyse</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Bon courage et belles visualisations ! 📊</strong></p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/EliasBcd\.github\.io\/rl3\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

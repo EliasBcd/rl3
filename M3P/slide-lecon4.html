@@ -442,7 +442,7 @@
   <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Elias Bouacida">
-  <title>Initiation à R – Séance 2 : Données et fonctions intégrées</title>
+  <title>Initiation à R – Séance 4 : Données tabulaires et graphiques avancés</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1053,7 +1053,7 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Séance 2 : Données et fonctions intégrées</h1>
+  <h1 class="title">Séance 4 : Données tabulaires et graphiques avancés</h1>
   <p class="subtitle">Apprendre R avec les LLMs</p>
 
 <div class="quarto-title-authors">
@@ -1069,15 +1069,14 @@ Elias Bouacida
 <section id="plan-de-la-séance" class="slide level2 smaller">
 <h2>Plan de la séance</h2>
 <ul>
-<li class="fragment"><strong>Récap et partage</strong> (20min) : Retours sur vos journaux</li>
-<li class="fragment"><strong>Charger des données</strong> (45min) : Importer des fichiers CSV</li>
-<li class="fragment"><strong>Exploration de données</strong> (45min) : Structure et types de données</li>
-<li class="fragment"><strong>Statistiques descriptives</strong> (45min) : Analyser les données</li>
-<li class="fragment"><strong>Visualisations de base</strong> (45min) : Créer des graphiques</li>
-<li class="fragment"><strong>Mini-projet</strong> (50min) : Analyser des données réelles</li>
+<li class="fragment"><strong>Récap et partage</strong> (15min) : Retours sur les fonctions</li>
+<li class="fragment"><strong>Nettoyage de données</strong> (60min) : Gérer les incohérences réelles</li>
+<li class="fragment"><strong>Introduction à ggplot2</strong> (75min) : Créer des graphiques sophistiqués</li>
+<li class="fragment"><strong>Fonctions de visualisation</strong> (40min) : Automatiser la création de graphiques</li>
+<li class="fragment"><strong>Mini-projet</strong> (40min) : Dashboard de visualisations</li>
 </ul>
 <div class="fragment">
-<p><strong>Production attendue :</strong> Analyse commentée de données avec graphiques</p>
+<p><strong>Production attendue :</strong> Dashboard avec 4 graphiques + fonction de visualisation réutilisable</p>
 </div>
 </section>
 <section id="objectifs-de-la-séance" class="slide level2">
@@ -1088,7 +1087,7 @@ Elias Bouacida
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Manipuler de vraies données</strong></p>
+<p><strong>Maîtriser les données complexes et la visualisation</strong></p>
 </div>
 <div class="callout-content">
 
@@ -1096,12 +1095,11 @@ Elias Bouacida
 </div>
 </div>
 <ul>
-<li class="fragment"><strong>Importer</strong> des données depuis des fichiers</li>
-<li class="fragment"><strong>Explorer</strong> la structure des données (data frames)</li>
-<li class="fragment">Calculer des <strong>statistiques descriptives</strong></li>
-<li class="fragment">Créer des <strong>visualisations</strong> simples</li>
-<li class="fragment">Gérer les <strong>données manquantes</strong></li>
-<li class="fragment"><strong>Débugger</strong> avec l’aide des LLMs</li>
+<li class="fragment"><strong>Nettoyer</strong> des données avec incohérences (casse, formats)</li>
+<li class="fragment">Maîtriser les <strong>dataframes</strong> avancés</li>
+<li class="fragment">Créer des <strong>visualisations</strong> avec ggplot2</li>
+<li class="fragment">Développer des <strong>fonctions graphiques</strong> réutilisables</li>
+<li class="fragment">Combiner analyse et communication visuelle</li>
 </ul>
 </section>
 <section>
@@ -1109,64 +1107,32 @@ Elias Bouacida
 <h1>Récap et partage</h1>
 
 </section>
-<section id="retours-sur-la-séance-1" class="slide level2">
-<h2>Retours sur la séance 1</h2>
+<section id="retours-sur-les-fonctions" class="slide level2">
+<h2>Retours sur les fonctions</h2>
 <ul>
-<li class="fragment">Qu’avez-vous retenu de la semaine dernière ?</li>
-<li class="fragment">Quels concepts restent flous ?</li>
-<li class="fragment">Avez-vous pratiqué entre les séances ?</li>
+<li class="fragment">Quelles fonctions avez-vous créées ?</li>
+<li class="fragment">Quelles difficultés avec les conditions et boucles ?</li>
+<li class="fragment">Un exemple de bug intéressant que vous avez résolu ?</li>
 </ul>
-</section>
-<section id="retours-sur-vos-journaux" class="slide level2 smaller">
-<h2>Retours sur vos journaux</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Conseils pour améliorer vos journaux</strong></p>
-</div>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment"><strong>Copier-coller</strong> les prompts exacts que vous utilisez</li>
-<li class="fragment"><strong>Documenter</strong> les réponses du LLM (pas juste des captures d’écran)</li>
-<li class="fragment"><strong>Expliquer avec vos propres mots</strong> ce que vous avez compris</li>
-<li class="fragment"><strong>Noter les erreurs</strong> rencontrées et comment vous les avez résolues</li>
-<li class="fragment"><strong>Éviter</strong> les formats propriétaires (.pages) - préférer .docx ou .pdf</li>
-</ul>
-<aside class="notes">
-<p>10 minutes. Discuter des journaux. Montrer des exemples anonymisés (bons et moins bons).</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
 </section>
 <section id="exercice-de-révision" class="slide level2 smaller scrollable">
 <h2>Exercice de révision</h2>
-<p><strong>Sans utiliser le LLM, écrivez un script qui :</strong></p>
+<p><strong>Créez rapidement une fonction qui :</strong></p>
 <ol type="1">
-<li>Crée un vecteur avec 5 nombres de votre choix</li>
-<li>Calcule la moyenne</li>
-<li>Trouve le maximum</li>
-<li>Affiche les résultats avec <code>print()</code></li>
+<li>Prend un vecteur de nombres en paramètre</li>
+<li>Retourne “Positif” si la moyenne est &gt; 0</li>
+<li>Retourne “Négatif” sinon</li>
+<li>Gère les NA correctement</li>
 </ol>
 <div class="fragment">
-<p><strong>Ensuite, comparez avec votre voisin et discutez des différences.</strong></p>
+<p><strong>Testez avec :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>valeurs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">10</span>, <span class="cn">NA</span>, <span class="dv">8</span>, <span class="sc">-</span><span class="dv">3</span>)</span>
+<span id="cb1-2"><a></a><span class="fu">classifier_moyenne</span>(valeurs)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </div>
 <aside class="notes">
-<p>10 minutes. Révision active. Encourage la discussion entre étudiants.</p>
+<p>10 minutes. Révision rapide. Vérifier que les concepts de la séance 3 sont acquis.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1180,463 +1146,21 @@ display:block!important;
 }</style></aside>
 </section></section>
 <section>
-<section id="charger-des-données" class="title-slide slide level1 center" data-background-color="#4169E1">
-<h1>Charger des données</h1>
+<section id="données-réelles-et-leurs-problèmes" class="title-slide slide level1 center" data-background-color="#4169E1">
+<h1>Données réelles et leurs problèmes</h1>
 
 </section>
-<section id="des-vecteurs-aux-données-réelles" class="slide level2">
-<h2>Des vecteurs aux données réelles</h2>
-<p>Jusqu’ici, vous avez créé des données avec <code>c()</code> :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>notes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">13</span>, <span class="dv">8</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Dans la vraie vie</strong>, les données viennent souvent de fichiers : CSV, Excel, bases de données, etc.</p>
-</div>
-</section>
-<section id="le-format-csv" class="slide level2">
-<h2>Le format CSV</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>CSV = Comma Separated Values</strong></p>
-</div>
-<div class="callout-content">
-<p>Un format simple et universel pour stocker des données tabulaires.</p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Exemple de contenu CSV :</strong></p>
-<pre><code>nom,age,note
-Alice,20,15
-Bob,22,12
-Charlie,21,14</code></pre>
-</div>
-</section>
-<section id="exercice-1-télécharger-les-données" class="slide level2 smaller scrollable">
-<h2>Exercice 1 : Télécharger les données</h2>
-<ol type="1">
-<li>Connectez-vous sur Moodle</li>
-<li>Téléchargez le fichier <code>donnees_meteo.csv</code></li>
-<li>Placez-le dans votre dossier de travail</li>
-</ol>
-<div class="fragment">
-<p><strong>Comment connaître votre dossier de travail ?</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">getwd</span>()  <span class="co"># &quot;get working directory&quot;</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Pour le changer :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">setwd</span>(<span class="st">&quot;/chemin/vers/votre/dossier&quot;</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Ou utilisez <strong>Session &gt; Set Working Directory</strong> dans RStudio.</p>
-</div>
-<aside class="notes">
-<p>10 minutes. S’assurer que tout le monde a les données au bon endroit. Circuler pour aider.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="exercice-2-importer-les-données" class="slide level2 smaller">
-<h2>Exercice 2 : Importer les données</h2>
-<p><strong>Demandez à votre LLM :</strong></p>
-<blockquote>
-<p>“Comment importer un fichier CSV en R ? Je débute en programmation.”</p>
-</blockquote>
-<div class="fragment">
-<p>Vous devriez obtenir quelque chose comme :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>donnees_meteo <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;donnees_meteo.csv&quot;</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Testez cette commande !</strong></p>
-<p>En cas d’erreur, demandez au LLM de vous aider à débugger.</p>
-</div>
-<aside class="notes">
-<p>15 minutes. Première importation de données. Anticiper les erreurs de chemin, d’encodage, etc.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="vérifier-limportation" class="slide level2">
-<h2>Vérifier l’importation</h2>
-<p>Une fois importé, vérifiez que ça a fonctionné :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># Afficher les premières lignes</span></span>
-<span id="cb6-2"><a></a><span class="fu">head</span>(donnees_meteo)</span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a><span class="co"># Afficher la structure</span></span>
-<span id="cb6-5"><a></a><span class="fu">str</span>(donnees_meteo)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Demandez au LLM d’expliquer ce que montrent ces fonctions.</strong></p>
-</div>
-</section></section>
-<section>
-<section id="exploration-de-données" class="title-slide slide level1 center" data-background-color="#FF8C00">
-<h1>Exploration de données</h1>
-
-</section>
-<section id="les-data-frames" class="slide level2">
-<h2>Les data frames</h2>
-<p>Les données importées sont stockées dans un <strong>data frame</strong>.</p>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Analogie</strong></p>
-</div>
-<div class="callout-content">
-<p>Un data frame est comme un tableau Excel : des lignes (observations) et des colonnes (variables).</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-3-explorer-la-structure" class="slide level2 smaller scrollable">
-<h2>Exercice 3 : Explorer la structure</h2>
-<p><strong>Avec vos données météo, testez :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># Nombre de lignes et colonnes</span></span>
-<span id="cb7-2"><a></a><span class="fu">nrow</span>(donnees_meteo)</span>
-<span id="cb7-3"><a></a><span class="fu">ncol</span>(donnees_meteo)</span>
-<span id="cb7-4"><a></a><span class="fu">dim</span>(donnees_meteo)  <span class="co"># les deux à la fois</span></span>
-<span id="cb7-5"><a></a></span>
-<span id="cb7-6"><a></a><span class="co"># Noms des colonnes</span></span>
-<span id="cb7-7"><a></a><span class="fu">names</span>(donnees_meteo)</span>
-<span id="cb7-8"><a></a><span class="fu">colnames</span>(donnees_meteo)</span>
-<span id="cb7-9"><a></a></span>
-<span id="cb7-10"><a></a><span class="co"># Résumé rapide</span></span>
-<span id="cb7-11"><a></a><span class="fu">summary</span>(donnees_meteo)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Questions :</strong></p>
-<ol type="1">
-<li>Combien d’observations avez-vous ?</li>
-<li>Quelles variables (colonnes) sont présentes ?</li>
-<li>Quel type de données contient chaque colonne ?</li>
-</ol>
-</div>
-<aside class="notes">
-<p>15 minutes. Découverte des fonctions d’exploration. Essentielles pour comprendre les données.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="accéder-aux-colonnes" class="slide level2">
-<h2>Accéder aux colonnes</h2>
-<p>Pour accéder à une colonne spécifique, utilisez <code>$</code> :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>donnees_meteo<span class="sc">$</span>temperature</span>
-<span id="cb8-2"><a></a>donnees_meteo<span class="sc">$</span>date</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Cela retourne un vecteur !</strong> Vous pouvez donc utiliser toutes les fonctions que vous connaissez :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">mean</span>(donnees_meteo<span class="sc">$</span>temperature)</span>
-<span id="cb9-2"><a></a><span class="fu">max</span>(donnees_meteo<span class="sc">$</span>temperature)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</section>
-<section id="exercice-4-analyser-les-variables" class="slide level2 smaller scrollable">
-<h2>Exercice 4 : Analyser les variables</h2>
-<p><strong>Pour chaque variable numérique dans vos données, calculez :</strong></p>
-<ol type="1">
-<li>La moyenne</li>
-<li>La médiane</li>
-<li>Le minimum</li>
-<li>Le maximum</li>
-<li>L’écart-type (<code>sd()</code>)</li>
-</ol>
-<div class="fragment">
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote>
-<p>“Comment calculer des statistiques descriptives sur une colonne d’un data frame en R ?”</p>
-</blockquote>
-</div>
-<div class="fragment">
-<p><strong>Notez vos résultats dans un commentaire de votre script.</strong></p>
-</div>
-<aside class="notes">
-<p>15 minutes. Application pratique. Les étudiants utilisent $ et les fonctions statistiques.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section></section>
-<section>
-<section id="statistiques-descriptives" class="title-slide slide level1 center" data-background-color="#8B008B">
-<h1>Statistiques descriptives</h1>
-
-</section>
-<section id="la-fonction-summary" class="slide level2">
-<h2>La fonction <code>summary()</code></h2>
-<p><code>summary()</code> donne un aperçu rapide :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">summary</span>(donnees_meteo<span class="sc">$</span>temperature)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p>Elle affiche :</p>
+<section id="les-données-ne-sont-jamais-parfaites" class="slide level2">
+<h2>Les données ne sont jamais parfaites</h2>
+<p>Dans le monde réel, les données contiennent souvent :</p>
 <ul>
-<li>Minimum et maximum</li>
-<li>1er quartile, médiane, 3e quartile</li>
-<li>Moyenne</li>
+<li class="fragment">Des <strong>problèmes de casse</strong> : “Alice”, “alice”, “ALICE”</li>
+<li class="fragment">Des <strong>formats incohérents</strong> : “2023-01-15”, “15/01/2023”</li>
+<li class="fragment">Des <strong>valeurs manquantes</strong> : NA, ““,”N/A”, “inconnu”</li>
+<li class="fragment">Des <strong>doublons</strong></li>
+<li class="fragment">Des <strong>erreurs de saisie</strong></li>
 </ul>
-</div>
-</section>
-<section id="exercice-5-comparer-avec-vos-calculs" class="slide level2 smaller scrollable">
-<h2>Exercice 5 : Comparer avec vos calculs</h2>
-<p><strong>Comparez vos calculs précédents avec <code>summary()</code> :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># Vos calculs</span></span>
-<span id="cb11-2"><a></a><span class="fu">mean</span>(donnees_meteo<span class="sc">$</span>temperature)</span>
-<span id="cb11-3"><a></a><span class="fu">median</span>(donnees_meteo<span class="sc">$</span>temperature)</span>
-<span id="cb11-4"><a></a><span class="fu">min</span>(donnees_meteo<span class="sc">$</span>temperature)</span>
-<span id="cb11-5"><a></a><span class="fu">max</span>(donnees_meteo<span class="sc">$</span>temperature)</span>
-<span id="cb11-6"><a></a></span>
-<span id="cb11-7"><a></a><span class="co"># Summary</span></span>
-<span id="cb11-8"><a></a><span class="fu">summary</span>(donnees_meteo<span class="sc">$</span>temperature)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 <div class="fragment">
-<p><strong>Questions :</strong></p>
-<ol type="1">
-<li>Les résultats correspondent-ils ?</li>
-<li>Que signifie “médiane” ? (Demandez au LLM si vous ne savez pas)</li>
-<li>Que signifient les quartiles ?</li>
-</ol>
-</div>
-<aside class="notes">
-<p>15 minutes. Vérification et approfondissement. Introduction aux quartiles.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="gérer-les-valeurs-manquantes-na" class="slide level2 smaller">
-<h2>Gérer les valeurs manquantes (NA)</h2>
-<p><strong>Testez ce code :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># Y a-t-il des NA dans vos données ?</span></span>
-<span id="cb12-2"><a></a><span class="fu">sum</span>(<span class="fu">is.na</span>(donnees_meteo<span class="sc">$</span>temperature))</span>
-<span id="cb12-3"><a></a></span>
-<span id="cb12-4"><a></a><span class="co"># Afficher les lignes avec des NA</span></span>
-<span id="cb12-5"><a></a>donnees_meteo[<span class="fu">is.na</span>(donnees_meteo<span class="sc">$</span>temperature), ]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote>
-<p>“Comment gérer les valeurs manquantes (NA) lors du calcul de statistiques en R ?”</p>
-</blockquote>
-</div>
-<div class="fragment">
-<p>Vous découvrirez le paramètre <code>na.rm = TRUE</code> :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">mean</span>(donnees_meteo<span class="sc">$</span>temperature, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<aside class="notes">
-<p>15 minutes. Problème réel très fréquent. Important de comprendre na.rm.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="exercice-6-rapport-statistique" class="slide level2 smaller">
-<h2>Exercice 6 : Rapport statistique</h2>
-<p><strong>Créez un script qui génère un rapport complet sur la variable température :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># Rapport sur la température</span></span>
-<span id="cb14-2"><a></a><span class="fu">print</span>(<span class="st">&quot;=== ANALYSE DE LA TEMPÉRATURE ===&quot;</span>)</span>
-<span id="cb14-3"><a></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Nombre d&#39;observations :&quot;</span>, <span class="fu">length</span>(donnees_meteo<span class="sc">$</span>temperature)))</span>
-<span id="cb14-4"><a></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Valeurs manquantes :&quot;</span>, <span class="fu">sum</span>(<span class="fu">is.na</span>(donnees_meteo<span class="sc">$</span>temperature))))</span>
-<span id="cb14-5"><a></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Moyenne :&quot;</span>, <span class="fu">mean</span>(donnees_meteo<span class="sc">$</span>temperature, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb14-6"><a></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Médiane :&quot;</span>, <span class="fu">median</span>(donnees_meteo<span class="sc">$</span>temperature, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb14-7"><a></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Écart-type :&quot;</span>, <span class="fu">sd</span>(donnees_meteo<span class="sc">$</span>temperature, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Extension :</strong> Faites la même chose pour une autre variable.</p>
-</div>
-<aside class="notes">
-<p>15 minutes. Exercice de synthèse. Introduction à paste() pour formater.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section></section>
-<section>
-<section id="visualisations" class="title-slide slide level1 center" data-background-color="#DC143C">
-<h1>Visualisations</h1>
-
-</section>
-<section id="pourquoi-visualiser" class="slide level2">
-<h2>Pourquoi visualiser ?</h2>
-<ul>
-<li class="fragment">Les chiffres ne suffisent pas toujours</li>
-<li class="fragment">Un graphique révèle des <strong>patterns</strong> invisibles dans les tableaux</li>
-<li class="fragment">Communiquer plus efficacement</li>
-</ul>
-</section>
-<section id="exercice-7-premier-graphique" class="slide level2 smaller">
-<h2>Exercice 7 : Premier graphique</h2>
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote>
-<p>“Comment créer un graphique simple en R pour visualiser l’évolution d’une variable dans le temps ? Je débute.”</p>
-</blockquote>
-<div class="fragment">
-<p>Vous découvrirez probablement <code>plot()</code> :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">plot</span>(donnees_meteo<span class="sc">$</span>date, donnees_meteo<span class="sc">$</span>temperature)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Testez ce code !</strong></p>
-<p>Si vous avez une erreur avec les dates, demandez au LLM comment les convertir au bon format.</p>
-</div>
-<aside class="notes">
-<p>15 minutes. Premier graphique. Les dates peuvent poser problème - bon exercice de debugging.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="améliorer-le-graphique" class="slide level2 smaller">
-<h2>Améliorer le graphique</h2>
-<p>Les graphiques de base peuvent être personnalisés :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">plot</span>(donnees_meteo<span class="sc">$</span>date, donnees_meteo<span class="sc">$</span>temperature,</span>
-<span id="cb16-2"><a></a>     <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,  <span class="co"># ligne au lieu de points</span></span>
-<span id="cb16-3"><a></a>     <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb16-4"><a></a>     <span class="at">main =</span> <span class="st">&quot;Évolution de la température&quot;</span>,</span>
-<span id="cb16-5"><a></a>     <span class="at">xlab =</span> <span class="st">&quot;Date&quot;</span>,</span>
-<span id="cb16-6"><a></a>     <span class="at">ylab =</span> <span class="st">&quot;Température (°C)&quot;</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Demandez au LLM d’expliquer chaque paramètre.</strong></p>
-</div>
-</section>
-<section id="exercice-8-explorer-dautres-graphiques" class="slide level2 smaller scrollable">
-<h2>Exercice 8 : Explorer d’autres graphiques</h2>
-<p><strong>Demandez au LLM comment créer :</strong></p>
-<ol type="1">
-<li>Un histogramme de la température</li>
-<li>Un boxplot (boîte à moustaches)</li>
-<li>Un graphique de points (scatter plot) si vous avez deux variables numériques</li>
-</ol>
-<div class="fragment">
-<p><strong>Testez chaque type et notez dans votre journal :</strong></p>
-<ul>
-<li>La commande utilisée</li>
-<li>Ce que montre le graphique</li>
-<li>Quand l’utiliser</li>
-</ul>
-</div>
-<aside class="notes">
-<p>20 minutes. Exploration des types de graphiques. Encourager la curiosité.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="sauvegarder-un-graphique" class="slide level2">
-<h2>Sauvegarder un graphique</h2>
-<p>Pour sauvegarder un graphique :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># Ouvrir un fichier</span></span>
-<span id="cb17-2"><a></a><span class="fu">png</span>(<span class="st">&quot;mon_graphique.png&quot;</span>, <span class="at">width =</span> <span class="dv">800</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
-<span id="cb17-3"><a></a></span>
-<span id="cb17-4"><a></a><span class="co"># Créer le graphique</span></span>
-<span id="cb17-5"><a></a><span class="fu">plot</span>(donnees_meteo<span class="sc">$</span>date, donnees_meteo<span class="sc">$</span>temperature, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>)</span>
-<span id="cb17-6"><a></a></span>
-<span id="cb17-7"><a></a><span class="co"># Fermer le fichier</span></span>
-<span id="cb17-8"><a></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p>Le fichier sera dans votre dossier de travail.</p>
-</div>
-</section></section>
-<section>
-<section id="debugging" class="title-slide slide level1 center" data-background-color="#2F4F4F">
-<h1>Debugging</h1>
-
-</section>
-<section id="les-erreurs-sont-normales" class="slide level2 scrollable">
-<h2>Les erreurs sont normales !</h2>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1646,46 +1170,36 @@ display:block!important;
 <p><strong>Important</strong></p>
 </div>
 <div class="callout-content">
-<p>Tout le monde rencontre des erreurs. C’est une partie essentielle de la programmation.</p>
+<p>Le nettoyage des données représente souvent 80% du travail d’analyse !</p>
 </div>
 </div>
 </div>
-<div class="fragment">
-<p><strong>Stratégie de debugging :</strong></p>
-<ol type="1">
-<li><strong>Lire</strong> le message d’erreur (même s’il semble cryptique)</li>
-<li><strong>Identifier</strong> la ligne problématique</li>
-<li><strong>Tester</strong> des hypothèses</li>
-<li><strong>Demander</strong> de l’aide (LLM, documentation, pairs)</li>
-</ol>
 </div>
 </section>
-<section id="exercice-9-debugging-collectif" class="slide level2 smaller scrollable">
-<h2>Exercice 9 : Debugging collectif</h2>
-<p><strong>Voici du code avec des erreurs. Trouvez-les et corrigez-les :</strong></p>
+<section id="exercice-1-découvrir-les-problèmes" class="slide level2 smaller scrollable">
+<h2>Exercice 1 : Découvrir les problèmes</h2>
+<p><strong>Voici un jeu de données de ventes :</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># Charger les données</span></span>
-<span id="cb18-2"><a></a>donnees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(donnees_meteo.csv)</span>
-<span id="cb18-3"><a></a></span>
-<span id="cb18-4"><a></a><span class="co"># Calculer la moyenne</span></span>
-<span id="cb18-5"><a></a>moyenne_temp <span class="ot">&lt;-</span> <span class="fu">mean</span>(donnees<span class="sc">$</span>Temperature)</span>
-<span id="cb18-6"><a></a></span>
-<span id="cb18-7"><a></a><span class="co"># Afficher</span></span>
-<span id="cb18-8"><a></a><span class="fu">print</span>(<span class="st">&quot;La moyenne est&quot;</span> moyenne_temp)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>ventes <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-2"><a></a>  <span class="at">mois =</span> <span class="fu">c</span>(<span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;Fév&quot;</span>, <span class="st">&quot;Mar&quot;</span>, <span class="st">&quot;Avr&quot;</span>, <span class="st">&quot;Mai&quot;</span>, <span class="st">&quot;Jun&quot;</span>),</span>
+<span id="cb2-3"><a></a>  <span class="at">montant =</span> <span class="fu">c</span>(<span class="dv">1500</span>, <span class="dv">2000</span>, <span class="cn">NA</span>, <span class="dv">1800</span>, <span class="dv">2200</span>, <span class="dv">1900</span>),</span>
+<span id="cb2-4"><a></a>  <span class="at">vendeur =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;bob&quot;</span>)</span>
+<span id="cb2-5"><a></a>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p><strong>Demandez au LLM :</strong></p>
+<blockquote>
+<p>“Quels sont les problèmes potentiels dans ce jeu de données pour une analyse ?”</p>
+</blockquote>
 <div class="fragment">
-<p><strong>Travaillez par groupes de 2-3. Utilisez le LLM si nécessaire.</strong></p>
-</div>
-<div class="fragment">
-<p><strong>Erreurs à trouver :</strong></p>
+<p><strong>Identifiez :</strong></p>
 <ol type="1">
-<li>Guillemets manquants autour du nom de fichier</li>
-<li>Majuscule incorrecte dans le nom de colonne</li>
-<li>Virgule manquante dans <code>print()</code></li>
+<li>Le problème de casse dans les noms</li>
+<li>La valeur manquante</li>
+<li>Les conséquences pour les calculs par vendeur</li>
 </ol>
 </div>
 <aside class="notes">
-<p>15 minutes. Exercice collectif. Discuter ensuite des types d’erreurs courantes.</p>
+<p>15 minutes. Les étudiants découvrent les problèmes réels des données.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1698,47 +1212,398 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 </section>
-<section id="bien-utiliser-le-llm-pour-débugger" class="slide level2 smaller">
-<h2>Bien utiliser le LLM pour débugger</h2>
-<div class="callout callout-tip callout-titled callout-style-default">
+<section id="exercice-2-nettoyer-la-casse" class="slide level2 smaller">
+<h2>Exercice 2 : Nettoyer la casse</h2>
+<p><strong>Problème :</strong> Les noms “Alice”, “alice” et “Bob”, “bob” sont comptés séparément.</p>
+<p><strong>Demandez au LLM comment standardiser les noms.</strong></p>
+<div class="fragment">
+<p>Vous découvrirez probablement :</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>ventes<span class="sc">$</span>vendeur <span class="ot">&lt;-</span> <span class="fu">tolower</span>(ventes<span class="sc">$</span>vendeur)</span>
+<span id="cb3-2"><a></a><span class="co"># ou</span></span>
+<span id="cb3-3"><a></a>ventes<span class="sc">$</span>vendeur <span class="ot">&lt;-</span> <span class="fu">toupper</span>(ventes<span class="sc">$</span>vendeur)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Vérifiez le résultat :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">unique</span>(ventes<span class="sc">$</span>vendeur)</span>
+<span id="cb4-2"><a></a><span class="fu">table</span>(ventes<span class="sc">$</span>vendeur)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<aside class="notes">
+<p>15 minutes. Premier nettoyage simple mais essentiel.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="exercice-3-gérer-les-valeurs-manquantes" class="slide level2 smaller scrollable">
+<h2>Exercice 3 : Gérer les valeurs manquantes</h2>
+<p><strong>Plusieurs stratégies possibles :</strong></p>
+<p><strong>Demandez au LLM :</strong></p>
+<blockquote>
+<p>“Comment gérer les valeurs NA dans mes données de ventes ? Quelles sont les différentes approches ?”</p>
+</blockquote>
+<div class="fragment">
+<p><strong>Options principales :</strong></p>
+<ol type="1">
+<li><strong>Supprimer</strong> les lignes avec NA : <code>na.omit()</code></li>
+<li><strong>Remplacer</strong> par une valeur : moyenne, médiane, 0</li>
+<li><strong>Garder</strong> mais utiliser <code>na.rm = TRUE</code> dans les calculs</li>
+</ol>
+</div>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Comment demander de l’aide efficacement</strong></p>
+<p><strong>Réflexion importante</strong></p>
 </div>
 <div class="callout-content">
-
+<p>Quelle stratégie choisir dépend du contexte ! Supprimer des données peut introduire des biais.</p>
 </div>
 </div>
 </div>
-<p><strong>Mauvais prompt :</strong> &gt; “Ça marche pas”</p>
-<p><strong>Bon prompt :</strong> &gt; “J’essaie d’importer un fichier CSV avec read.csv() mais j’obtiens cette erreur : [copier l’erreur exacte]. Voici mon code : [copier le code]. Que dois-je corriger ?”</p>
+</div>
+<aside class="notes">
+<p>15 minutes. Discussion importante sur les choix méthodologiques.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="exercice-4-dataset-complexe-piégé" class="slide level2 smaller scrollable">
+<h2>Exercice 4 : Dataset complexe piégé</h2>
+<p><strong>Nouveau challenge - Données étudiants :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>etudiants <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-2"><a></a>  <span class="at">nom =</span> <span class="fu">c</span>(<span class="st">&quot;Dupont&quot;</span>, <span class="st">&quot;Martin&quot;</span>, <span class="st">&quot;Durand&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;Petit&quot;</span>),</span>
+<span id="cb5-3"><a></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="st">&quot;vingt-deux&quot;</span>, <span class="dv">19</span>, <span class="dv">21</span>, <span class="dv">18</span>),</span>
+<span id="cb5-4"><a></a>  <span class="at">note_math =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="cn">NA</span>, <span class="dv">16</span>, <span class="dv">14</span>),</span>
+<span id="cb5-5"><a></a>  <span class="at">note_info =</span> <span class="fu">c</span>(<span class="dv">13</span>, <span class="cn">NA</span>, <span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">16</span>),</span>
+<span id="cb5-6"><a></a>  <span class="at">filiere =</span> <span class="fu">c</span>(<span class="st">&quot;Info&quot;</span>, <span class="st">&quot;info&quot;</span>, <span class="st">&quot;Maths&quot;</span>, <span class="st">&quot;INFO&quot;</span>, <span class="st">&quot;maths&quot;</span>)</span>
+<span id="cb5-7"><a></a>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Mission :</strong></p>
+<ol type="1">
+<li>Identifiez TOUS les problèmes</li>
+<li>Nettoyez le dataset</li>
+<li>Calculez la moyenne par filière</li>
+</ol>
 <div class="fragment">
-<p><strong>Donnez toujours :</strong></p>
-<ul>
-<li>Le code exact</li>
-<li>L’erreur complète</li>
-<li>Ce que vous essayez de faire</li>
-<li>Votre niveau (débutant)</li>
-</ul>
+<p><strong>Utilisez le LLM étape par étape !</strong></p>
 </div>
+<aside class="notes">
+<p>30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section></section>
 <section>
-<section id="mini-projet" class="title-slide slide level1 center" data-background-color="#2E8B57">
-<h1>Mini-projet</h1>
+<section id="introduction-à-ggplot2" class="title-slide slide level1 center" data-background-color="#FF8C00">
+<h1>Introduction à ggplot2</h1>
 
 </section>
-<section id="projet-analyse-de-données-insee" class="slide level2 smaller scrollable">
-<h2>Projet : Analyse de données INSEE</h2>
-<p><strong>Objectif :</strong> Analyser des données économiques réelles.</p>
-<p><strong>Étapes :</strong></p>
+<section id="pourquoi-ggplot2" class="slide level2">
+<h2>Pourquoi ggplot2 ?</h2>
+<p>Jusqu’ici vous avez utilisé <code>plot()</code>, <code>hist()</code>, <code>barplot()</code>…</p>
+<div class="fragment">
+<p><strong>ggplot2</strong> est un package puissant pour créer des graphiques :</p>
+<ul>
+<li>Syntaxe cohérente et logique</li>
+<li>Graphiques professionnels</li>
+<li>Très flexible et personnalisable</li>
+<li>Standard dans l’analyse de données en R</li>
+</ul>
+</div>
+</section>
+<section id="la-grammaire-des-graphiques" class="slide level2 scrollable">
+<h2>La grammaire des graphiques</h2>
+<p><strong>ggplot2</strong> fonctionne par couches :</p>
 <ol type="1">
-<li>Allez sur <a href="https://www.insee.fr/fr/statistiques/2830613" class="uri">https://www.insee.fr/fr/statistiques/2830613</a></li>
-<li>Téléchargez les données du PIB (format CSV de préférence)</li>
-<li>Importez-les dans R</li>
-<li>Créez un rapport complet</li>
+<li class="fragment"><strong>Données</strong> : <code>ggplot(data = mes_donnees)</code></li>
+<li class="fragment"><strong>Esthétiques</strong> : <code>aes(x = variable1, y = variable2)</code></li>
+<li class="fragment"><strong>Géométries</strong> : <code>geom_point()</code>, <code>geom_line()</code>, <code>geom_bar()</code></li>
+<li class="fragment"><strong>Personnalisation</strong> : titres, couleurs, thèmes</li>
+</ol>
+<div class="fragment">
+<p>On <strong>ajoute</strong> des couches avec <code>+</code></p>
+</div>
+</section>
+<section id="exercice-5-premier-graphique-ggplot2" class="slide level2 smaller scrollable">
+<h2>Exercice 5 : Premier graphique ggplot2</h2>
+<p><strong>Demandez au LLM :</strong></p>
+<blockquote>
+<p>“Comment créer un graphique simple avec ggplot2 en R ? Je débute avec ce package.”</p>
+</blockquote>
+<p><strong>Ensuite, testez avec vos données de ventes :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-2"><a></a></span>
+<span id="cb6-3"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> ventes, <span class="fu">aes</span>(<span class="at">x =</span> mois, <span class="at">y =</span> montant)) <span class="sc">+</span></span>
+<span id="cb6-4"><a></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><strong>Questions :</strong></p>
+<ol type="1">
+<li>Que fait <code>aes()</code> ?</li>
+<li>Pourquoi <code>geom_col()</code> et pas <code>geom_bar()</code> ?</li>
+<li>Comment changer la couleur des barres ?</li>
+</ol>
+</div>
+<aside class="notes">
+<p>20 minutes. Première découverte de ggplot2. La syntaxe peut surprendre au début.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="exercice-6-améliorer-le-graphique" class="slide level2 smaller">
+<h2>Exercice 6 : Améliorer le graphique</h2>
+<p><strong>Personnalisez votre graphique :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> ventes, <span class="fu">aes</span>(<span class="at">x =</span> mois, <span class="at">y =</span> montant)) <span class="sc">+</span></span>
+<span id="cb7-2"><a></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb7-3"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-4"><a></a>    <span class="at">title =</span> <span class="st">&quot;Ventes mensuelles&quot;</span>,</span>
+<span id="cb7-5"><a></a>    <span class="at">x =</span> <span class="st">&quot;Mois&quot;</span>,</span>
+<span id="cb7-6"><a></a>    <span class="at">y =</span> <span class="st">&quot;Montant (€)&quot;</span></span>
+<span id="cb7-7"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb7-8"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><strong>Demandez au LLM :</strong></p>
+<blockquote>
+<p>“Comment personnaliser les couleurs, titres et thème d’un graphique ggplot2 ?”</p>
+</blockquote>
+</div>
+<div class="fragment">
+<p><strong>Explorez :</strong></p>
+<ul>
+<li>Différentes couleurs</li>
+<li>Différents thèmes : <code>theme_bw()</code>, <code>theme_classic()</code></li>
+<li>Ajout d’une ligne à un niveau spécifique avec <code>geom_hline()</code></li>
+</ul>
+</div>
+<aside class="notes">
+<p>20 minutes. Exploration des options de personnalisation.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="exercice-7-différents-types-de-graphiques" class="slide level2 smaller scrollable">
+<h2>Exercice 7 : Différents types de graphiques</h2>
+<p><strong>Demandez au LLM de vous montrer comment créer :</strong></p>
+<ol type="1">
+<li>Un graphique en <strong>points</strong> (<code>geom_point()</code>)</li>
+<li>Un graphique en <strong>lignes</strong> (<code>geom_line()</code>)</li>
+<li>Un <strong>boxplot</strong> (<code>geom_boxplot()</code>)</li>
+<li>Un <strong>histogramme</strong> (<code>geom_histogram()</code>)</li>
+</ol>
+<div class="fragment">
+<p><strong>Testez chaque type avec des données adaptées.</strong></p>
+<p>Certains types nécessitent des données spécifiques !</p>
+</div>
+<aside class="notes">
+<p>20 minutes. Découverte de la variété des géométries disponibles.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="exercice-8-graphiques-par-catégorie" class="slide level2 smaller scrollable">
+<h2>Exercice 8 : Graphiques par catégorie</h2>
+<p><strong>Challenge :</strong> Créez un graphique des ventes coloré par vendeur.</p>
+<p><strong>Demandez au LLM :</strong></p>
+<blockquote>
+<p>“Comment créer un graphique avec ggplot2 où chaque catégorie a une couleur différente ?”</p>
+</blockquote>
+<div class="fragment">
+<p>Vous découvrirez :</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(ventes, <span class="fu">aes</span>(<span class="at">x =</span> mois, <span class="at">y =</span> montant, <span class="at">fill =</span> vendeur)) <span class="sc">+</span></span>
+<span id="cb8-2"><a></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb8-3"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ventes par vendeur et par mois&quot;</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Questions :</strong></p>
+<ol type="1">
+<li>Que fait <code>position = &quot;dodge&quot;</code> ?</li>
+<li>Que se passe-t-il sans ?</li>
+<li>Comment faire un graphique empilé ?</li>
+</ol>
+</div>
+<aside class="notes">
+<p>20 minutes. Introduction aux graphiques multivariés.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section></section>
+<section>
+<section id="fonctions-de-visualisation" class="title-slide slide level1 center" data-background-color="#8B008B">
+<h1>Fonctions de visualisation</h1>
+
+</section>
+<section id="pourquoi-créer-des-fonctions-graphiques" class="slide level2">
+<h2>Pourquoi créer des fonctions graphiques ?</h2>
+<p>Si vous créez souvent le même type de graphique :</p>
+<ul>
+<li class="fragment">Éviter la <strong>répétition</strong> du code</li>
+<li class="fragment">Garantir la <strong>cohérence</strong> visuelle</li>
+<li class="fragment">Faciliter la <strong>maintenance</strong></li>
+<li class="fragment">Permettre la <strong>réutilisation</strong></li>
+</ul>
+</section>
+<section id="exercice-9-première-fonction-graphique" class="slide level2 smaller scrollable">
+<h2>Exercice 9 : Première fonction graphique</h2>
+<p><strong>Créez une fonction qui génère un graphique en barres standard :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>graphique_barres <span class="ot">&lt;-</span> <span class="cf">function</span>(donnees, colonne_x, colonne_y, titre) {</span>
+<span id="cb9-2"><a></a>  <span class="fu">ggplot</span>(donnees, <span class="fu">aes</span>(<span class="at">x =</span> .data[[colonne_x]], <span class="at">y =</span> .data[[colonne_y]])) <span class="sc">+</span></span>
+<span id="cb9-3"><a></a>    <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-4"><a></a>    <span class="fu">labs</span>(<span class="at">title =</span> titre) <span class="sc">+</span></span>
+<span id="cb9-5"><a></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb9-6"><a></a>}</span>
+<span id="cb9-7"><a></a></span>
+<span id="cb9-8"><a></a><span class="co"># Utilisation</span></span>
+<span id="cb9-9"><a></a><span class="fu">graphique_barres</span>(ventes, <span class="st">&quot;mois&quot;</span>, <span class="st">&quot;montant&quot;</span>, <span class="st">&quot;Ventes mensuelles&quot;</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><strong>Demandez au LLM d’expliquer :</strong></p>
+<ol type="1">
+<li>À quoi sert <code>.data[[...]]</code> ?</li>
+<li>Comment passer des noms de colonnes comme paramètres ?</li>
+</ol>
+</div>
+<aside class="notes">
+<p>20 minutes. Introduction aux fonctions avec ggplot2. Concept avancé mais important.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="exercice-10-fonction-graphique-avancée" class="slide level2 smaller">
+<h2>Exercice 10 : Fonction graphique avancée</h2>
+<p><strong>Améliorez votre fonction avec plus d’options :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>graphique_personnalise <span class="ot">&lt;-</span> <span class="cf">function</span>(donnees, x, y, titre,</span>
+<span id="cb10-2"><a></a>                                   <span class="at">couleur =</span> <span class="st">&quot;steelblue&quot;</span>,</span>
+<span id="cb10-3"><a></a>                                   <span class="at">type =</span> <span class="st">&quot;barres&quot;</span>) {</span>
+<span id="cb10-4"><a></a>  <span class="co"># Créer le graphique de base</span></span>
+<span id="cb10-5"><a></a>  g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(donnees, <span class="fu">aes</span>(<span class="at">x =</span> .data[[x]], <span class="at">y =</span> .data[[y]]))</span>
+<span id="cb10-6"><a></a></span>
+<span id="cb10-7"><a></a>  <span class="co"># Ajouter la géométrie selon le type</span></span>
+<span id="cb10-8"><a></a>  <span class="cf">if</span> (type <span class="sc">==</span> <span class="st">&quot;barres&quot;</span>) {</span>
+<span id="cb10-9"><a></a>    g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="at">fill =</span> couleur)</span>
+<span id="cb10-10"><a></a>  } <span class="cf">else</span> <span class="cf">if</span> (type <span class="sc">==</span> <span class="st">&quot;points&quot;</span>) {</span>
+<span id="cb10-11"><a></a>    g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">color =</span> couleur, <span class="at">size =</span> <span class="dv">3</span>)</span>
+<span id="cb10-12"><a></a>  }</span>
+<span id="cb10-13"><a></a></span>
+<span id="cb10-14"><a></a>  <span class="co"># Ajouter titre et thème</span></span>
+<span id="cb10-15"><a></a>  g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> titre) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
+<span id="cb10-16"><a></a></span>
+<span id="cb10-17"><a></a>  <span class="fu">return</span>(g)</span>
+<span id="cb10-18"><a></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><strong>Testez avec différentes options !</strong></p>
+</div>
+<aside class="notes">
+<p>20 minutes. Fonction plus sophistiquée avec options et conditions.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section></section>
+<section>
+<section id="mini-projet-dashboard" class="title-slide slide level1 center" data-background-color="#DC143C">
+<h1>Mini-projet : Dashboard</h1>
+
+</section>
+<section id="projet-analyse-de-ventes-complète" class="slide level2 smaller scrollable">
+<h2>Projet : Analyse de ventes complète</h2>
+<p><strong>Objectif :</strong> Créer un dashboard d’analyse avec 4 graphiques différents.</p>
+<p><strong>Données :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># Téléchargez le fichier ventes_annuelles.csv depuis Moodle</span></span>
+<span id="cb11-2"><a></a>ventes_annuelles <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;ventes_annuelles.csv&quot;</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Les 4 graphiques à créer :</strong></p>
+<ol type="1">
+<li>Évolution des ventes mensuelles (ligne)</li>
+<li>Ventes par vendeur (barres)</li>
+<li>Distribution des montants (histogramme)</li>
+<li>Comparaison par trimestre (boxplot)</li>
 </ol>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -1746,20 +1611,15 @@ display:block!important;
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Rapport attendu</strong></p>
+<p><strong>Utilisez ggplot2 pour tous les graphiques</strong></p>
 </div>
 <div class="callout-content">
-<ul>
-<li>Import et vérification des données</li>
-<li>Statistiques descriptives</li>
-<li>Au moins 2 graphiques</li>
-<li>Commentaires expliquant vos observations</li>
-</ul>
+<p>Personnalisez-les avec des couleurs et titres appropriés.</p>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>50 minutes. Projet autonome. Circuler beaucoup. Les étudiants vont rencontrer des difficultés (format de données, etc.) - c’est normal et formateur.</p>
+<p>40 minutes. Projet de synthèse. Combine nettoyage, analyse et visualisation.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1774,79 +1634,52 @@ display:block!important;
 </section>
 <section id="critères-du-mini-projet" class="slide level2 smaller">
 <h2>Critères du mini-projet</h2>
-<p>Votre analyse doit inclure :</p>
 <ul>
-<li class="fragment">✅ Import réussi des données</li>
-<li class="fragment">✅ Exploration de la structure (<code>str()</code>, <code>summary()</code>, etc.)</li>
-<li class="fragment">✅ Au moins 5 statistiques descriptives calculées</li>
-<li class="fragment">✅ Au moins 2 visualisations différentes</li>
-<li class="fragment">✅ Code commenté et organisé</li>
-<li class="fragment">✅ Interprétation des résultats (commentaires en français)</li>
+<li class="fragment">✅ Les données sont <strong>nettoyées</strong> (casse, NA gérés)</li>
+<li class="fragment">✅ Les 4 graphiques sont <strong>créés avec ggplot2</strong></li>
+<li class="fragment">✅ Chaque graphique a un <strong>titre et des labels</strong> appropriés</li>
+<li class="fragment">✅ Le code est <strong>commenté</strong></li>
+<li class="fragment">✅ Une <strong>fonction de visualisation</strong> réutilisable est créée</li>
 </ul>
 <div class="fragment">
 <p><strong>Bonus :</strong></p>
 <ul>
-<li>Gestion des NA</li>
-<li>Graphiques personnalisés</li>
-<li>Comparaison entre plusieurs variables</li>
+<li>Créer un 5ème graphique original</li>
+<li>Utiliser des facettes (<code>facet_wrap()</code>)</li>
+<li>Ajouter des annotations sur les graphiques</li>
+<li>Sauvegarder les graphiques avec <code>ggsave()</code></li>
 </ul>
-</div>
-</section>
-<section id="aide-pour-le-projet" class="slide level2 smaller scrollable">
-<h2>Aide pour le projet</h2>
-<p><strong>Si vous êtes bloqué :</strong></p>
-<ol type="1">
-<li>Relisez les exercices précédents</li>
-<li>Consultez votre journal</li>
-<li>Demandez à votre voisin</li>
-<li>Utilisez le LLM avec un prompt précis</li>
-<li>Appelez l’enseignant</li>
-</ol>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Conseil</strong></p>
-</div>
-<div class="callout-content">
-<p>Procédez par étapes. Testez chaque ligne avant de passer à la suivante.</p>
-</div>
-</div>
-</div>
 </div>
 </section></section>
 <section>
-<section id="retour-réflexif" class="title-slide slide level1 center" data-background-color="#4169E1">
+<section id="retour-réflexif" class="title-slide slide level1 center" data-background-color="#2F4F4F">
 <h1>Retour réflexif</h1>
 
 </section>
-<section id="exercice-de-synthèse-journal-de-bord" class="slide level2 smaller scrollable">
-<h2>Exercice de synthèse : Journal de bord</h2>
-<p><strong>Dans votre journal, documentez :</strong></p>
+<section id="exercice-réflexif-journal-de-bord" class="slide level2 smaller scrollable">
+<h2>Exercice réflexif : Journal de bord</h2>
+<p><strong>Documentez dans votre journal :</strong></p>
 <ol type="1">
-<li><strong>Import de données</strong> :
+<li><strong>Nettoyage de données</strong> :
 <ul>
-<li>Prompts utilisés pour apprendre à importer</li>
-<li>Difficultés rencontrées (chemins, formats, etc.)</li>
-<li>Solutions trouvées</li>
+<li>Quels problèmes avez-vous rencontrés ?</li>
+<li>Comment les avez-vous résolus ?</li>
+<li>Un prompt efficace pour le nettoyage</li>
 </ul></li>
-<li><strong>Analyse et visualisation</strong> :
+<li><strong>ggplot2</strong> :
 <ul>
-<li>3 fonctions nouvelles que vous maîtrisez maintenant</li>
-<li>Un graphique dont vous êtes fier (copier le code)</li>
-<li>Une chose que vous ne comprenez pas encore</li>
+<li>Différences avec <code>plot()</code> de base</li>
+<li>Votre graphique préféré créé aujourd’hui</li>
+<li>Un concept difficile à comprendre</li>
 </ul></li>
-<li><strong>Debugging</strong> :
+<li><strong>Fonctions graphiques</strong> :
 <ul>
-<li>Une erreur marquante et comment vous l’avez résolue</li>
-<li>Un bon prompt de debugging qui a fonctionné</li>
+<li>Pourquoi créer des fonctions pour les graphiques ?</li>
+<li>Code de votre fonction réutilisable</li>
 </ul></li>
 </ol>
 <aside class="notes">
-<p>15 minutes. Temps de réflexion calme. Important pour ancrer les apprentissages.</p>
+<p>10 minutes. Moment de réflexion et documentation.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1859,50 +1692,38 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 </section>
-<section id="évolution-de-vos-compétences" class="slide level2">
-<h2>Évolution de vos compétences</h2>
-<p><strong>Séance 1 :</strong> Vous avez appris les bases (objets, fonctions, vecteurs)</p>
-<p><strong>Séance 2 :</strong> Vous savez maintenant :</p>
-<ul>
-<li class="fragment">Importer des données réelles</li>
-<li class="fragment">Les explorer et les analyser</li>
-<li class="fragment">Créer des visualisations</li>
-<li class="fragment">Débugger efficacement</li>
-</ul>
-<div class="fragment">
-<p><strong>Vous êtes déjà capable d’analyser de vraies données ! 🎉</strong></p>
-</div>
+<section id="ce-que-vous-avez-appris-aujourdhui" class="slide level2">
+<h2>Ce que vous avez appris aujourd’hui</h2>
+<p>✅ Nettoyer des données réelles avec incohérences ✅ Utiliser ggplot2 pour créer des graphiques professionnels ✅ Maîtriser différentes géométries (barres, points, lignes, boxplot) ✅ Personnaliser l’apparence des graphiques ✅ Créer des fonctions de visualisation réutilisables ✅ Combiner analyse et communication visuelle</p>
 </section></section>
 <section>
-<section id="ressources-et-prochaines-étapes" class="title-slide slide level1 center" data-background-color="#8B008B">
+<section id="ressources-et-prochaines-étapes" class="title-slide slide level1 center" data-background-color="#2E8B57">
 <h1>Ressources et prochaines étapes</h1>
 
 </section>
 <section id="fonctions-clés-de-cette-séance" class="slide level2">
 <h2>Fonctions clés de cette séance</h2>
-<p><strong>Import et exploration :</strong></p>
+<p><strong>Nettoyage :</strong></p>
 <ul>
-<li class="fragment"><code>read.csv()</code>, <code>getwd()</code>, <code>setwd()</code></li>
-<li class="fragment"><code>head()</code>, <code>str()</code>, <code>summary()</code>, <code>dim()</code>, <code>names()</code></li>
+<li><code>tolower()</code>, <code>toupper()</code> : standardiser la casse</li>
+<li><code>na.omit()</code> : supprimer les NA</li>
+<li><code>unique()</code>, <code>table()</code> : explorer les valeurs</li>
 </ul>
-<p><strong>Statistiques :</strong></p>
+<p><strong>ggplot2 :</strong></p>
 <ul>
-<li class="fragment"><code>mean()</code>, <code>median()</code>, <code>sd()</code>, <code>min()</code>, <code>max()</code></li>
-<li class="fragment"><code>na.rm = TRUE</code> pour gérer les NA</li>
-</ul>
-<p><strong>Visualisation :</strong></p>
-<ul>
-<li class="fragment"><code>plot()</code>, <code>hist()</code>, <code>boxplot()</code></li>
-<li class="fragment">Paramètres : <code>type</code>, <code>col</code>, <code>main</code>, <code>xlab</code>, <code>ylab</code></li>
+<li><code>ggplot()</code> + <code>aes()</code> : base du graphique</li>
+<li><code>geom_col()</code>, <code>geom_point()</code>, <code>geom_line()</code> : géométries</li>
+<li><code>labs()</code> : titres et labels</li>
+<li><code>theme_minimal()</code>, <code>theme_bw()</code> : thèmes</li>
 </ul>
 </section>
 <section id="pour-aller-plus-loin" class="slide level2">
 <h2>Pour aller plus loin</h2>
 <ul>
-<li class="fragment"><strong>Pratiquez</strong> avec d’autres jeux de données</li>
-<li class="fragment"><strong>Explorez</strong> d’autres types de graphiques</li>
-<li class="fragment"><strong>Découvrez</strong> le package <code>ggplot2</code> (pour plus tard)</li>
-<li class="fragment"><strong>Partagez</strong> vos visualisations avec vos camarades</li>
+<li class="fragment"><strong>Explorez</strong> d’autres géométries de ggplot2</li>
+<li class="fragment"><strong>Pratiquez</strong> avec vos propres données</li>
+<li class="fragment"><strong>Créez</strong> une bibliothèque de fonctions graphiques</li>
+<li class="fragment"><strong>Consultez</strong> la documentation : <code>?ggplot2</code></li>
 </ul>
 </section>
 <section id="préparation-prochaine-séance" class="slide level2 scrollable">
@@ -1917,16 +1738,16 @@ display:block!important;
 </div>
 <div class="callout-content">
 <ol type="1">
-<li>Terminez le mini-projet INSEE si besoin</li>
-<li><strong>Mettez à jour votre journal</strong> avec tous les détails de cette séance</li>
-<li>Trouvez un jeu de données qui vous intéresse et analysez-le</li>
-<li>Créez au moins 3 graphiques différents avec vos données</li>
+<li>Terminez le dashboard si besoin</li>
+<li><strong>Mettez à jour votre journal</strong> avec les détails de cette séance</li>
+<li>Trouvez un jeu de données qui vous intéresse pour le projet de la séance 5</li>
+<li>Créez au moins 2 fonctions graphiques réutilisables</li>
 </ol>
 </div>
 </div>
 </div>
 <div class="fragment">
-<p><strong>Prochaine séance :</strong> Fonctions, conditions et boucles - automatiser vos analyses !</p>
+<p><strong>Prochaine séance :</strong> Projet personnel intégré - vous allez mener une analyse complète en autonomie !</p>
 </div>
 </section>
 <section id="questions" class="slide level2">
@@ -1941,17 +1762,16 @@ display:block!important;
 </div>
 <div class="callout-content">
 <ul>
-<li>Les <strong>data frames</strong> sont essentiels pour travailler avec des données réelles</li>
-<li><code>$</code> permet d’accéder aux colonnes</li>
-<li>Toujours vérifier les <strong>NA</strong> avant de calculer</li>
-<li>Les <strong>visualisations</strong> révèlent ce que les chiffres cachent</li>
-<li>Le <strong>debugging</strong> fait partie du processus - soyez patient !</li>
+<li>Le <strong>nettoyage</strong> des données est essentiel et prend du temps</li>
+<li><strong>ggplot2</strong> permet de créer des graphiques professionnels de manière cohérente</li>
+<li>Les <strong>fonctions graphiques</strong> évitent la répétition et assurent la cohérence</li>
+<li>La <strong>visualisation</strong> est aussi importante que l’analyse</li>
 </ul>
 </div>
 </div>
 </div>
 <div class="fragment">
-<p><strong>Bon courage et bonnes analyses ! 📊</strong></p>
+<p><strong>Bon courage et belles visualisations ! 📊</strong></p>
 </div>
 
 
@@ -1959,7 +1779,7 @@ display:block!important;
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>Séance 2 - Données et fonctions</p>
+<p>Séance 4 - Données tabulaires et graphiques avancés</p>
 </div>
 </div></div>
 

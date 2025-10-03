@@ -8,7 +8,7 @@
 
 <meta name="author" content="Elias Bouacida">
 
-<title>Séance 3 : Fonctions, conditions et boucles – Initiation à R</title>
+<title>Séance 5 : Projet personnel intégré – Initiation à R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Méthodologie de Projet Personnel et Professionnel</li><li class="breadcrumb-item"><a href="../M3P/01Introduction.html">M3P</a></li><li class="breadcrumb-item"><a href="../M3P/04Lecon3Fonctions.html">Séance 3 : Fonctions, conditions et boucles</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">EC Libre : Introduction à la programmation (en R) avec des LLMs</li><li class="breadcrumb-item"><a href="../ECLibre/01Introduction.html">ECLibre</a></li><li class="breadcrumb-item"><a href="../ECLibre/06Lecon5Projet.html">Séance 5 : Projet personnel intégré</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
@@ -158,13 +158,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">ECLibre</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Basculer la section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ECLibre/01Introduction.html" class="sidebar-item-text sidebar-link">
@@ -197,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ECLibre/06Lecon5Projet.html" class="sidebar-item-text sidebar-link">
+  <a href="../ECLibre/06Lecon5Projet.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Séance 5 : Projet personnel intégré</span></a>
   </div>
 </li>
@@ -234,13 +234,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">M3P</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../M3P/01Introduction.html" class="sidebar-item-text sidebar-link">
@@ -261,7 +261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../M3P/04Lecon3Fonctions.html" class="sidebar-item-text sidebar-link active">
+  <a href="../M3P/04Lecon3Fonctions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Séance 3 : Fonctions, conditions et boucles</span></a>
   </div>
 </li>
@@ -310,58 +310,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#plan-de-la-séance" id="toc-plan-de-la-séance" class="nav-link active" data-scroll-target="#plan-de-la-séance">Plan de la séance</a></li>
   <li><a href="#objectifs-de-la-séance" id="toc-objectifs-de-la-séance" class="nav-link" data-scroll-target="#objectifs-de-la-séance">Objectifs de la séance</a></li>
-  <li><a href="#récap-et-partage" id="toc-récap-et-partage" class="nav-link" data-scroll-target="#récap-et-partage">Récap et partage</a>
+  <li><a href="#présentation-du-projet" id="toc-présentation-du-projet" class="nav-link" data-scroll-target="#présentation-du-projet">Présentation du projet</a>
   <ul class="collapse">
-  <li><a href="#retours-sur-vos-analyses-de-données" id="toc-retours-sur-vos-analyses-de-données" class="nav-link" data-scroll-target="#retours-sur-vos-analyses-de-données">Retours sur vos analyses de données</a></li>
+  <li><a href="#quest-ce-quun-projet-intégré" id="toc-quest-ce-quun-projet-intégré" class="nav-link" data-scroll-target="#quest-ce-quun-projet-intégré">Qu’est-ce qu’un projet intégré ?</a></li>
+  <li><a href="#structure-attendue" id="toc-structure-attendue" class="nav-link" data-scroll-target="#structure-attendue">Structure attendue</a></li>
+  <li><a href="#critères-dévaluation" id="toc-critères-dévaluation" class="nav-link" data-scroll-target="#critères-dévaluation">Critères d’évaluation</a></li>
   </ul></li>
-  <li><a href="#conditions-ifelse" id="toc-conditions-ifelse" class="nav-link" data-scroll-target="#conditions-ifelse">Conditions if/else</a>
+  <li><a href="#choix-et-cadrage" id="toc-choix-et-cadrage" class="nav-link" data-scroll-target="#choix-et-cadrage">Choix et cadrage</a>
   <ul class="collapse">
-  <li><a href="#pourquoi-des-conditions" id="toc-pourquoi-des-conditions" class="nav-link" data-scroll-target="#pourquoi-des-conditions">Pourquoi des conditions ?</a></li>
-  <li><a href="#exercice-1-première-condition" id="toc-exercice-1-première-condition" class="nav-link" data-scroll-target="#exercice-1-première-condition">Exercice 1 : Première condition</a></li>
-  <li><a href="#exercice-2-ifelse-complet" id="toc-exercice-2-ifelse-complet" class="nav-link" data-scroll-target="#exercice-2-ifelse-complet">Exercice 2 : if/else complet</a></li>
-  <li><a href="#exercice-3-conditions-et-vecteurs" id="toc-exercice-3-conditions-et-vecteurs" class="nav-link" data-scroll-target="#exercice-3-conditions-et-vecteurs">Exercice 3 : Conditions et vecteurs</a></li>
+  <li><a href="#étape-1-choisir-un-dataset" id="toc-étape-1-choisir-un-dataset" class="nav-link" data-scroll-target="#étape-1-choisir-un-dataset">Étape 1 : Choisir un dataset</a></li>
+  <li><a href="#exercice-1-exploration-initiale" id="toc-exercice-1-exploration-initiale" class="nav-link" data-scroll-target="#exercice-1-exploration-initiale">Exercice 1 : Exploration initiale</a></li>
+  <li><a href="#étape-2-définir-ses-questions" id="toc-étape-2-définir-ses-questions" class="nav-link" data-scroll-target="#étape-2-définir-ses-questions">Étape 2 : Définir ses questions</a></li>
+  <li><a href="#exercice-2-cadrage-du-projet" id="toc-exercice-2-cadrage-du-projet" class="nav-link" data-scroll-target="#exercice-2-cadrage-du-projet">Exercice 2 : Cadrage du projet</a></li>
   </ul></li>
-  <li><a href="#boucles" id="toc-boucles" class="nav-link" data-scroll-target="#boucles">Boucles</a>
+  <li><a href="#travail-autonome" id="toc-travail-autonome" class="nav-link" data-scroll-target="#travail-autonome">Travail autonome</a>
   <ul class="collapse">
-  <li><a href="#pourquoi-des-boucles" id="toc-pourquoi-des-boucles" class="nav-link" data-scroll-target="#pourquoi-des-boucles">Pourquoi des boucles ?</a></li>
-  <li><a href="#exercice-4-boucle-for-simple" id="toc-exercice-4-boucle-for-simple" class="nav-link" data-scroll-target="#exercice-4-boucle-for-simple">Exercice 4 : Boucle for simple</a></li>
-  <li><a href="#exercice-5-boucle-sur-un-vecteur" id="toc-exercice-5-boucle-sur-un-vecteur" class="nav-link" data-scroll-target="#exercice-5-boucle-sur-un-vecteur">Exercice 5 : Boucle sur un vecteur</a></li>
-  <li><a href="#exercice-6-accumuler-des-résultats" id="toc-exercice-6-accumuler-des-résultats" class="nav-link" data-scroll-target="#exercice-6-accumuler-des-résultats">Exercice 6 : Accumuler des résultats</a></li>
-  <li><a href="#boucle-while-optionnel" id="toc-boucle-while-optionnel" class="nav-link" data-scroll-target="#boucle-while-optionnel">Boucle while (optionnel)</a></li>
+  <li><a href="#phase-de-travail-2h" id="toc-phase-de-travail-2h" class="nav-link" data-scroll-target="#phase-de-travail-2h">Phase de travail (2h)</a></li>
+  <li><a href="#checklist-de-progression" id="toc-checklist-de-progression" class="nav-link" data-scroll-target="#checklist-de-progression">Checklist de progression</a></li>
+  <li><a href="#stratégies-pour-avancer" id="toc-stratégies-pour-avancer" class="nav-link" data-scroll-target="#stratégies-pour-avancer">Stratégies pour avancer</a></li>
+  <li><a href="#consultations-individuelles" id="toc-consultations-individuelles" class="nav-link" data-scroll-target="#consultations-individuelles">Consultations individuelles</a></li>
+  <li><a href="#exemples-de-projets-réussis" id="toc-exemples-de-projets-réussis" class="nav-link" data-scroll-target="#exemples-de-projets-réussis">Exemples de projets réussis</a></li>
   </ul></li>
-  <li><a href="#créer-ses-fonctions" id="toc-créer-ses-fonctions" class="nav-link" data-scroll-target="#créer-ses-fonctions">Créer ses fonctions</a>
+  <li><a href="#présentations" id="toc-présentations" class="nav-link" data-scroll-target="#présentations">Présentations</a>
   <ul class="collapse">
-  <li><a href="#pourquoi-créer-des-fonctions" id="toc-pourquoi-créer-des-fonctions" class="nav-link" data-scroll-target="#pourquoi-créer-des-fonctions">Pourquoi créer des fonctions ?</a></li>
-  <li><a href="#exercice-7-première-fonction" id="toc-exercice-7-première-fonction" class="nav-link" data-scroll-target="#exercice-7-première-fonction">Exercice 7 : Première fonction</a></li>
-  <li><a href="#exercice-8-fonction-avec-condition" id="toc-exercice-8-fonction-avec-condition" class="nav-link" data-scroll-target="#exercice-8-fonction-avec-condition">Exercice 8 : Fonction avec condition</a></li>
-  <li><a href="#exercice-9-fonction-avec-boucle" id="toc-exercice-9-fonction-avec-boucle" class="nav-link" data-scroll-target="#exercice-9-fonction-avec-boucle">Exercice 9 : Fonction avec boucle</a></li>
-  <li><a href="#exercice-10-fonction-complète" id="toc-exercice-10-fonction-complète" class="nav-link" data-scroll-target="#exercice-10-fonction-complète">Exercice 10 : Fonction complète</a></li>
+  <li><a href="#format-de-présentation" id="toc-format-de-présentation" class="nav-link" data-scroll-target="#format-de-présentation">Format de présentation</a></li>
+  <li><a href="#exercice-3-préparer-sa-présentation" id="toc-exercice-3-préparer-sa-présentation" class="nav-link" data-scroll-target="#exercice-3-préparer-sa-présentation">Exercice 3 : Préparer sa présentation</a></li>
+  <li><a href="#grille-découte" id="toc-grille-découte" class="nav-link" data-scroll-target="#grille-découte">Grille d’écoute</a></li>
+  <li><a href="#célébration-des-réussites" id="toc-célébration-des-réussites" class="nav-link" data-scroll-target="#célébration-des-réussites">Célébration des réussites</a></li>
   </ul></li>
-  <li><a href="#mini-projet" id="toc-mini-projet" class="nav-link" data-scroll-target="#mini-projet">Mini-projet</a>
+  <li><a href="#retour-réflexif" id="toc-retour-réflexif" class="nav-link" data-scroll-target="#retour-réflexif">Retour réflexif</a>
   <ul class="collapse">
-  <li><a href="#projet-analyse-de-températures" id="toc-projet-analyse-de-températures" class="nav-link" data-scroll-target="#projet-analyse-de-températures">Projet : Analyse de températures</a></li>
-  <li><a href="#critères-du-mini-projet" id="toc-critères-du-mini-projet" class="nav-link" data-scroll-target="#critères-du-mini-projet">Critères du mini-projet</a></li>
-  </ul></li>
-  <li><a href="#retour-sur-lutilisation-des-llms" id="toc-retour-sur-lutilisation-des-llms" class="nav-link" data-scroll-target="#retour-sur-lutilisation-des-llms">Retour sur l’utilisation des LLMs</a>
-  <ul class="collapse">
-  <li><a href="#pièges-courants-avec-les-llms" id="toc-pièges-courants-avec-les-llms" class="nav-link" data-scroll-target="#pièges-courants-avec-les-llms">Pièges courants avec les LLMs</a></li>
   <li><a href="#exercice-réflexif-journal-de-bord" id="toc-exercice-réflexif-journal-de-bord" class="nav-link" data-scroll-target="#exercice-réflexif-journal-de-bord">Exercice réflexif : Journal de bord</a></li>
+  <li><a href="#auto-évaluation" id="toc-auto-évaluation" class="nav-link" data-scroll-target="#auto-évaluation">Auto-évaluation</a></li>
   </ul></li>
   <li><a href="#ressources-et-prochaines-étapes" id="toc-ressources-et-prochaines-étapes" class="nav-link" data-scroll-target="#ressources-et-prochaines-étapes">Ressources et prochaines étapes</a>
   <ul class="collapse">
-  <li><a href="#pour-aller-plus-loin" id="toc-pour-aller-plus-loin" class="nav-link" data-scroll-target="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+  <li><a href="#ce-que-vous-avez-accompli" id="toc-ce-que-vous-avez-accompli" class="nav-link" data-scroll-target="#ce-que-vous-avez-accompli">Ce que vous avez accompli</a></li>
+  <li><a href="#compétences-à-ce-stade" id="toc-compétences-à-ce-stade" class="nav-link" data-scroll-target="#compétences-à-ce-stade">Compétences à ce stade</a></li>
   <li><a href="#préparation-prochaine-séance" id="toc-préparation-prochaine-séance" class="nav-link" data-scroll-target="#préparation-prochaine-séance">Préparation prochaine séance</a></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions ?</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="slide-lecon3.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="slide-lecon5.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Méthodologie de Projet Personnel et Professionnel</li><li class="breadcrumb-item"><a href="../M3P/01Introduction.html">M3P</a></li><li class="breadcrumb-item"><a href="../M3P/04Lecon3Fonctions.html">Séance 3 : Fonctions, conditions et boucles</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">EC Libre : Introduction à la programmation (en R) avec des LLMs</li><li class="breadcrumb-item"><a href="../ECLibre/01Introduction.html">ECLibre</a></li><li class="breadcrumb-item"><a href="../ECLibre/06Lecon5Projet.html">Séance 5 : Projet personnel intégré</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Séance 3 : Fonctions, conditions et boucles</h1>
+<h1 class="title">Séance 5 : Projet personnel intégré</h1>
 <p class="subtitle lead">Apprendre R avec les LLMs</p>
 </div>
 
@@ -395,15 +392,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="smaller anchored" data-anchor-id="plan-de-la-séance">Plan de la séance</h2>
 <div class="incremental">
 <ul class="incremental">
-<li><strong>Récap et partage</strong> (15min) : Retours sur les données</li>
-<li><strong>Conditions if/else</strong> (45min) : Prendre des décisions dans le code</li>
-<li><strong>Boucles</strong> (45min) : Répéter des opérations</li>
-<li><strong>Créer ses propres fonctions</strong> (60min) : Structurer son code</li>
-<li><strong>Mini-projet</strong> (45min) : Analyser des données avec vos fonctions</li>
+<li><strong>Présentation du projet</strong> (15min) : Cadrage et attentes</li>
+<li><strong>Choix et préparation</strong> (30min) : Sélection du dataset et définition des questions</li>
+<li><strong>Travail autonome supervisé</strong> (120min) : Analyse libre avec consultations individuelles</li>
+<li><strong>Présentations courtes</strong> (45min) : Partage des résultats (5min/étudiant)</li>
 </ul>
 </div>
 <div class="fragment">
-<p><strong>Production attendue :</strong> 3 fonctions personnalisées avec conditions et/ou boucles</p>
+<p><strong>Production attendue :</strong> Analyse complète avec code, graphiques et interprétation</p>
 </div>
 </section>
 <section id="objectifs-de-la-séance" class="level2">
@@ -414,7 +410,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Astuce</span>Automatiser et structurer son code
+<span class="screen-reader-only">Astuce</span>Mener une analyse complète en autonomie
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -423,193 +419,219 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="incremental">
 <ul class="incremental">
-<li>Utiliser des <strong>conditions</strong> pour adapter le comportement du code</li>
-<li>Utiliser des <strong>boucles</strong> pour répéter des opérations</li>
-<li><strong>Créer des fonctions</strong> réutilisables</li>
-<li><strong>Combiner</strong> ces concepts pour résoudre des problèmes réels</li>
+<li><strong>Choisir</strong> et cadrer un sujet d’analyse personnel</li>
+<li><strong>Appliquer</strong> toutes les compétences acquises</li>
+<li>Travailler en <strong>autonomie</strong> avec le LLM comme assistant</li>
+<li><strong>Communiquer</strong> ses résultats de manière claire</li>
+<li><strong>Recevoir</strong> et donner du feedback constructif</li>
 </ul>
 </div>
 </section>
-<section id="récap-et-partage" class="level1" data-background-color="#2E8B57">
-<h1 data-background-color="#2E8B57">Récap et partage</h1>
-<section id="retours-sur-vos-analyses-de-données" class="level2">
-<h2 class="anchored" data-anchor-id="retours-sur-vos-analyses-de-données">Retours sur vos analyses de données</h2>
+<section id="présentation-du-projet" class="level1" data-background-color="#2E8B57">
+<h1 data-background-color="#2E8B57">Présentation du projet</h1>
+<section id="quest-ce-quun-projet-intégré" class="level2">
+<h2 class="anchored" data-anchor-id="quest-ce-quun-projet-intégré">Qu’est-ce qu’un projet intégré ?</h2>
+<p>C’est une analyse complète qui combine <strong>TOUT</strong> ce que vous avez appris :</p>
 <div class="incremental">
 <ul class="incremental">
-<li>Quelles difficultés avez-vous rencontrées ?</li>
-<li>Quelles fonctions intégrées avez-vous découvertes ?</li>
-<li>Comment les LLMs vous ont-ils aidé ?</li>
+<li>✅ Import et nettoyage de données</li>
+<li>✅ Statistiques descriptives</li>
+<li>✅ Fonctions personnalisées</li>
+<li>✅ Conditions et boucles si nécessaire</li>
+<li>✅ Visualisations avec ggplot2</li>
+<li>✅ Interprétation des résultats</li>
+<li>✅ Utilisation efficace des LLMs</li>
+</ul>
+</div>
+</section>
+<section id="structure-attendue" class="level2">
+<h2 class="anchored" data-anchor-id="structure-attendue">Structure attendue</h2>
+<p>Votre projet doit contenir :</p>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><strong>Introduction</strong> : Quel sujet ? Quelles questions ?</li>
+<li><strong>Données</strong> : Source, description, nettoyage</li>
+<li><strong>Analyse</strong> : Statistiques, visualisations</li>
+<li><strong>Fonctions</strong> : Au moins 2 fonctions personnalisées</li>
+<li><strong>Résultats</strong> : Interprétation claire</li>
+<li><strong>Code</strong> : Commenté et organisé</li>
+</ol>
+</div>
+</section>
+<section id="critères-dévaluation" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="critères-dévaluation">Critères d’évaluation</h2>
+<div class="incremental">
+<p><strong>Excellence technique (40%) :</strong></p>
+<ul class="incremental">
+<li>Code fonctionnel et robuste</li>
+<li>Nettoyage approprié des données</li>
+<li>Utilisation correcte des fonctions</li>
+<li>Visualisations claires</li>
+</ul>
+<p><strong>Analyse (30%) :</strong></p>
+<ul class="incremental">
+<li>Questions pertinentes</li>
+<li>Statistiques appropriées</li>
+<li>Interprétation correcte</li>
+</ul>
+<p><strong>Communication (20%) :</strong></p>
+<ul class="incremental">
+<li>Code commenté</li>
+<li>Présentation structurée</li>
+<li>Graphiques lisibles</li>
+</ul>
+<p><strong>Utilisation des LLMs (10%) :</strong></p>
+<ul class="incremental">
+<li>Prompts efficaces</li>
+<li>Validation critique des réponses</li>
 </ul>
 </div>
 </section>
 </section>
-<section id="conditions-ifelse" class="level1" data-background-color="#4169E1">
-<h1 data-background-color="#4169E1">Conditions if/else</h1>
-<section id="pourquoi-des-conditions" class="level2">
-<h2 class="anchored" data-anchor-id="pourquoi-des-conditions">Pourquoi des conditions ?</h2>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="choix-et-cadrage" class="level1" data-background-color="#4169E1">
+<h1 data-background-color="#4169E1">Choix et cadrage</h1>
+<section id="étape-1-choisir-un-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="étape-1-choisir-un-dataset">Étape 1 : Choisir un dataset</h2>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Question
+<span class="screen-reader-only">Note</span>Sources de données possibles
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Imaginez que vous analysez des températures. Comment indiquer s’il fait chaud ou froid ?</p>
+
 </div>
 </div>
-<div class="fragment">
-<p>On a besoin de <strong>tester une condition</strong> et agir différemment selon le résultat.</p>
-</div>
-</section>
-<section id="exercice-1-première-condition" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exercice-1-première-condition">Exercice 1 : Première condition</h2>
-<p>Demandez à votre LLM de vous expliquer la structure <code>if/else</code> en R avec un exemple simple.</p>
-<p><strong>Ensuite, testez ce code :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="ot">&lt;-</span> <span class="dv">25</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (temperature <span class="sc">&gt;</span> <span class="dv">20</span>) {</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Il fait chaud"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Questions à explorer avec votre LLM :</strong></p>
-<ol type="1">
-<li>Que se passe-t-il si <code>temperature &lt;- 15</code> ?</li>
-<li>Comment ajouter un message pour “Il fait froid” ?</li>
-<li>Qu’est-ce qu’un opérateur de comparaison ? (<code>&gt;</code>, <code>&lt;</code>, <code>==</code>, <code>!=</code>, <code>&gt;=</code>, <code>&lt;=</code>)</li>
-</ol>
-<div class="notes">
-<p>Laisser 10 minutes. Circuler pour vérifier la compréhension. Insister sur le fait que le LLM peut se tromper - tester le code est essentiel.</p>
-</div>
-</section>
-<section id="exercice-2-ifelse-complet" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exercice-2-ifelse-complet">Exercice 2 : if/else complet</h2>
-<p>Créez un code qui :</p>
-<ul>
-<li>Prend une note (0-20)</li>
-<li>Affiche “Réussite” si la note est &gt;= 10</li>
-<li>Affiche “Échec” sinon</li>
-</ul>
-<div class="fragment">
-<p><strong>Extension :</strong> Ajoutez une troisième catégorie avec <code>else if</code> :</p>
-<ul>
-<li>“Excellent” si &gt;= 16</li>
-<li>“Réussite” si &gt;= 10</li>
-<li>“Échec” sinon</li>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Données personnelles</strong> : vos propres observations, sondages</li>
+<li><strong>Données publiques</strong> : INSEE, data.gouv.fr, Kaggle</li>
+<li><strong>Données du cours</strong> : datasets fournis sur Moodle</li>
+<li><strong>Données de votre domaine</strong> : économie, psychologie, sport, santé</li>
 </ul>
 </div>
-<div class="notes">
-<p>10 minutes. Faire un débriefing collectif. Demander à un étudiant de partager son code et son prompt.</p>
-</div>
-</section>
-<section id="exercice-3-conditions-et-vecteurs" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exercice-3-conditions-et-vecteurs">Exercice 3 : Conditions et vecteurs</h2>
-<p><strong>Problème :</strong> Vous avez plusieurs notes :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>notes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">18</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Question :</strong> Comment classifier TOUTES ces notes ?</p>
-<p>Demandez à votre LLM comment appliquer une condition à un vecteur.</p>
 <div class="fragment">
-<p><strong>Indices à explorer :</strong></p>
-<ul>
-<li>La fonction <code>ifelse()</code></li>
-<li>La différence entre <code>if</code> et <code>ifelse()</code></li>
-</ul>
-</div>
-<div class="notes">
-<p>15 minutes. C’est un concept important. Les étudiants découvriront la vectorisation. Certains LLMs proposeront des boucles, d’autres <code>ifelse()</code>. Discuter les deux approches.</p>
-</div>
-</section>
-</section>
-<section id="boucles" class="level1" data-background-color="#FF8C00">
-<h1 data-background-color="#FF8C00">Boucles</h1>
-<section id="pourquoi-des-boucles" class="level2">
-<h2 class="anchored" data-anchor-id="pourquoi-des-boucles">Pourquoi des boucles ?</h2>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Situation
+<span class="screen-reader-only">Avertissement</span>Critères de choix
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Vous avez 100 températures à classifier. Écrire 100 fois <code>if/else</code> ?</p>
+<ul>
+<li>Pas trop volumineux (&lt; 10 000 lignes)</li>
+<li>Au moins 3-4 variables</li>
+<li>Vous intéresse vraiment !</li>
+</ul>
 </div>
 </div>
-<div class="fragment">
-<p>Les <strong>boucles</strong> permettent de répéter automatiquement des opérations.</p>
 </div>
 </section>
-<section id="exercice-4-boucle-for-simple" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exercice-4-boucle-for-simple">Exercice 4 : Boucle for simple</h2>
-<p>Demandez à votre LLM d’expliquer la boucle <code>for</code> en R avec un exemple.</p>
-<p><strong>Testez ce code :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Questions :</strong></p>
+<section id="exercice-1-exploration-initiale" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-1-exploration-initiale">Exercice 1 : Exploration initiale</h2>
+<p><strong>Une fois votre dataset choisi :</strong></p>
 <ol type="1">
-<li>Que fait <code>1:5</code> ?</li>
-<li>Que représente <code>i</code> ?</li>
-<li>Comment afficher les nombres de 10 à 20 ?</li>
+<li><strong>Importez-le</strong> dans R</li>
+<li><strong>Explorez-le</strong> :</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Premières lignes</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mes_donnees)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Structure</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mes_donnees)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Résumé</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mes_donnees)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Dimensions</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(mes_donnees)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="3" type="1">
+<li><strong>Identifiez</strong> les problèmes potentiels (NA, types, incohérences)</li>
 </ol>
 <div class="notes">
-<p>10 minutes. Concept fondamental mais peut être abstrait pour certains.</p>
+<p>15 minutes. Les étudiants découvrent leurs données.</p>
 </div>
 </section>
-<section id="exercice-5-boucle-sur-un-vecteur" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exercice-5-boucle-sur-un-vecteur">Exercice 5 : Boucle sur un vecteur</h2>
-<p>Reprenez vos notes de l’exercice 3 :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>notes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">18</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Utilisez une boucle <code>for</code> pour :</p>
-<ol type="1">
-<li>Afficher chaque note</li>
-<li>Afficher chaque note avec son classement (Réussite/Échec)</li>
-</ol>
+<section id="étape-2-définir-ses-questions" class="level2">
+<h2 class="anchored" data-anchor-id="étape-2-définir-ses-questions">Étape 2 : Définir ses questions</h2>
+<p><strong>Avant d’analyser, définissez 2-3 questions claires.</strong></p>
 <div class="fragment">
-<p><strong>Astuce :</strong> Combinez <code>for</code> et <code>if/else</code> !</p>
+<p><strong>Exemples de bonnes questions :</strong></p>
+<ul>
+<li>“Quelle est l’évolution des ventes au fil du temps ?”</li>
+<li>“Y a-t-il une différence de salaire entre les groupes ?”</li>
+<li>“Quels facteurs influencent le plus la note finale ?”</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Mauvaises questions (trop vagues) :</strong></p>
+<ul>
+<li>“Qu’est-ce qu’il y a dans ces données ?”</li>
+<li>“Fais une analyse”</li>
+</ul>
+</div>
+</section>
+<section id="exercice-2-cadrage-du-projet" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-2-cadrage-du-projet">Exercice 2 : Cadrage du projet</h2>
+<p><strong>Remplissez ce cadre (écrivez-le !) :</strong></p>
+<pre><code>PROJET : [Titre court]
+
+DONNÉES :
+- Source :
+- Nombre de lignes :
+- Variables principales :
+
+QUESTIONS :
+1.
+2.
+3.
+
+ANALYSES PRÉVUES :
+- Statistiques :
+- Graphiques :
+- Fonctions à créer :</code></pre>
+<div class="fragment">
+<p><strong>Montrez votre cadre à l’enseignant avant de commencer !</strong></p>
 </div>
 <div class="notes">
-<p>15 minutes. Les étudiants vont combiner les deux concepts. Anticiper les confusions entre i (indice) et notes[i] (valeur).</p>
+<p>15 minutes. Validation du cadrage. Éviter que les étudiants se lancent sans direction.</p>
 </div>
 </section>
-<section id="exercice-6-accumuler-des-résultats" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exercice-6-accumuler-des-résultats">Exercice 6 : Accumuler des résultats</h2>
-<p><strong>Nouveau défi :</strong> Calculez la somme des notes <strong>sans utiliser</strong> <code>sum()</code>.</p>
-<p><strong>Indices :</strong></p>
-<ol type="1">
-<li>Créez une variable <code>total &lt;- 0</code></li>
-<li>Utilisez une boucle pour ajouter chaque note à <code>total</code></li>
-<li>Affichez le résultat final</li>
-</ol>
+</section>
+<section id="travail-autonome" class="level1" data-background-color="#FF8C00">
+<h1 data-background-color="#FF8C00">Travail autonome</h1>
+<section id="phase-de-travail-2h" class="level2">
+<h2 class="anchored" data-anchor-id="phase-de-travail-2h">Phase de travail (2h)</h2>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Vous êtes maintenant autonome !
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<p><strong>Utilisez tout ce que vous avez appris :</strong></p>
+<ul>
+<li>Les LLMs pour vous aider</li>
+<li>La documentation R</li>
+<li>Votre journal de bord</li>
+<li>Vos camarades</li>
+<li>L’enseignant (consultations individuelles)</li>
+</ul>
 <div class="fragment">
-<p><strong>Vérification :</strong> Comparez avec <code>sum(notes)</code></p>
-</div>
-<div class="notes">
-<p>10 minutes. Introduit le concept d’accumulation. Utile pour comprendre ce que font réellement les fonctions intégrées.</p>
-</div>
-</section>
-<section id="boucle-while-optionnel" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="boucle-while-optionnel">Boucle while (optionnel)</h2>
-<p>Demandez à votre LLM la différence entre <code>for</code> et <code>while</code>.</p>
-<p><strong>Exemple à tester :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>compteur <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (compteur <span class="sc">&lt;=</span> <span class="dv">5</span>) {</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(compteur)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  compteur <span class="ot">&lt;-</span> compteur <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -620,21 +642,178 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Que se passe-t-il si vous oubliez <code>compteur &lt;- compteur + 1</code> ?</p>
+<ul>
+<li>Testez votre code régulièrement</li>
+<li>Commentez au fur et à mesure</li>
+<li>Sauvegardez souvent</li>
+<li>Documentez vos prompts LLM</li>
+</ul>
 </div>
 </div>
-<div class="notes">
-<p>Optionnel car <code>while</code> est moins utilisé en R. Mais bon pour comprendre les concepts de programmation. Attention aux boucles infinies !</p>
 </div>
 </section>
+<section id="checklist-de-progression" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="checklist-de-progression">Checklist de progression</h2>
+<div class="nonincremental">
+<p><strong>Pendant votre travail, vérifiez que vous avez :</strong></p>
+<p>☐ Importé et vérifié les données ☐ Nettoyé les données (NA, types, casse) ☐ Calculé des statistiques descriptives ☐ Créé au moins 3 graphiques ggplot2 ☐ Écrit au moins 2 fonctions personnalisées ☐ Commenté votre code ☐ Répondu à vos questions initiales ☐ Testé que tout fonctionne</p>
+</div>
 </section>
-<section id="créer-ses-fonctions" class="level1" data-background-color="#8B008B">
-<h1 data-background-color="#8B008B">Créer ses fonctions</h1>
-<section id="pourquoi-créer-des-fonctions" class="level2">
-<h2 class="anchored" data-anchor-id="pourquoi-créer-des-fonctions">Pourquoi créer des fonctions ?</h2>
-<p>Jusqu’ici, vous avez <strong>utilisé</strong> des fonctions : <code>mean()</code>, <code>sum()</code>, <code>print()</code>…</p>
+<section id="stratégies-pour-avancer" class="level2">
+<h2 class="anchored" data-anchor-id="stratégies-pour-avancer">Stratégies pour avancer</h2>
+<p><strong>Si vous êtes bloqué :</strong></p>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><strong>Décomposez</strong> le problème en étapes plus petites</li>
+<li><strong>Demandez au LLM</strong> une étape à la fois</li>
+<li><strong>Testez</strong> chaque étape avant de passer à la suivante</li>
+<li><strong>Consultez</strong> votre journal des séances précédentes</li>
+<li><strong>Demandez</strong> de l’aide à un camarade ou l’enseignant</li>
+</ol>
+</div>
 <div class="fragment">
-<p>Maintenant, vous allez <strong>créer</strong> vos propres fonctions !</p>
+<p><strong>Si vous avancez vite :</strong></p>
+<ul>
+<li>Créez des visualisations plus sophistiquées</li>
+<li>Ajoutez des fonctions bonus</li>
+<li>Explorez des analyses supplémentaires</li>
+<li>Aidez vos camarades</li>
+</ul>
+</div>
+</section>
+<section id="consultations-individuelles" class="level2">
+<h2 class="anchored" data-anchor-id="consultations-individuelles">Consultations individuelles</h2>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>L’enseignant circule
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<p>Vous pouvez demander :</p>
+<ul>
+<li>Validation de votre approche</li>
+<li>Aide sur un bug précis</li>
+<li>Conseils sur les visualisations</li>
+<li>Vérification de votre code</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Préparez votre question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Avant d’appeler l’enseignant, préparez :</p>
+<ul>
+<li>Ce que vous essayez de faire</li>
+<li>Ce que vous avez déjà essayé</li>
+<li>Le message d’erreur exact (si erreur)</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="exemples-de-projets-réussis" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exemples-de-projets-réussis">Exemples de projets réussis</h2>
+<p><strong>Pour vous inspirer :</strong></p>
+<div class="incremental">
+<p><strong>Analyse de données sportives :</strong></p>
+<ul class="incremental">
+<li>Évolution des performances d’une équipe</li>
+<li>Comparaison entre joueurs</li>
+<li>Fonction : calculer et visualiser les statistiques d’un joueur</li>
+</ul>
+<p><strong>Analyse économique :</strong></p>
+<ul class="incremental">
+<li>Évolution du PIB par pays</li>
+<li>Comparaison de secteurs économiques</li>
+<li>Fonction : calculer la croissance sur différentes périodes</li>
+</ul>
+<p><strong>Données de santé :</strong></p>
+<ul class="incremental">
+<li>Relation entre facteurs et résultats de santé</li>
+<li>Distribution des variables</li>
+<li>Fonction : classifier les risques selon des critères</li>
+</ul>
+<p><strong>Analyse de sondage :</strong></p>
+<ul class="incremental">
+<li>Pourcentages par catégorie</li>
+<li>Comparaisons entre groupes</li>
+<li>Fonction : créer des graphiques standardisés</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="présentations" class="level1" data-background-color="#8B008B">
+<h1 data-background-color="#8B008B">Présentations</h1>
+<section id="format-de-présentation" class="level2">
+<h2 class="anchored" data-anchor-id="format-de-présentation">Format de présentation</h2>
+<p><strong>5 minutes par personne</strong> :</p>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><strong>Sujet et questions</strong> (30 sec) : Quoi et pourquoi ?</li>
+<li><strong>Données</strong> (30 sec) : Source, nettoyage</li>
+<li><strong>Résultats</strong> (3 min) : Montrez 2-3 graphiques clés</li>
+<li><strong>Fonctions créées</strong> (1 min) : Vos outils personnalisés</li>
+<li><strong>Questions</strong> (30 sec) : Discussions avec les pairs</li>
+</ol>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Avertissement</span>Contrainte
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Montrez votre code R en LIVE (pas de PowerPoint) !</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercice-3-préparer-sa-présentation" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-3-préparer-sa-présentation">Exercice 3 : Préparer sa présentation</h2>
+<p><strong>Dans les 10 dernières minutes de travail :</strong></p>
+<ol type="1">
+<li><strong>Sélectionnez</strong> vos 2-3 graphiques les plus importants</li>
+<li><strong>Préparez</strong> votre script pour montrer :
+<ul>
+<li>L’import des données</li>
+<li>Un exemple de nettoyage</li>
+<li>Les graphiques principaux</li>
+<li>Une fonction en action</li>
+</ul></li>
+<li><strong>Testez</strong> que tout s’exécute sans erreur</li>
+<li><strong>Notez</strong> les points clés à mentionner</li>
+</ol>
+<div class="fragment">
+<p><strong>Astuce :</strong> Créez un script de présentation séparé avec juste l’essentiel</p>
+</div>
+</section>
+<section id="grille-découte" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="grille-découte">Grille d’écoute</h2>
+<p><strong>Pendant les présentations des autres, notez :</strong></p>
+<div class="nonincremental">
+<ul>
+<li>Une <strong>approche intéressante</strong> que vous pourriez réutiliser</li>
+<li>Une <strong>visualisation</strong> particulièrement réussie</li>
+<li>Une <strong>question</strong> ou suggestion constructive</li>
+<li>Un <strong>problème</strong> similaire à ce que vous avez rencontré</li>
+</ul>
 </div>
 <div class="fragment">
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -643,225 +822,163 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Astuce</span>Avantages
+<span class="screen-reader-only">Astuce</span>Feedback constructif
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li>Réutiliser du code</li>
-<li>Éviter la répétition</li>
-<li>Rendre le code plus lisible</li>
-<li>Partager avec d’autres</li>
-</ul>
+<p>Donnez des retours bienveillants et constructifs. Vous êtes tous en apprentissage !</p>
 </div>
 </div>
 </div>
 </section>
-<section id="exercice-7-première-fonction" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exercice-7-première-fonction">Exercice 7 : Première fonction</h2>
-<p>Demandez à votre LLM d’expliquer comment créer une fonction en R.</p>
-<p><strong>Créez une fonction simple :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dire_bonjour <span class="ot">&lt;-</span> <span class="cf">function</span>(nom) {</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  message <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Bonjour"</span>, nom)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(message)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Test</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dire_bonjour</span>(<span class="st">"Alice"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Questions :</strong></p>
-<ol type="1">
-<li>À quoi sert <code>function()</code> ?</li>
-<li>Qu’est-ce qu’un <strong>paramètre</strong> / <strong>argument</strong> ?</li>
-<li>À quoi sert <code>return()</code> ?</li>
-</ol>
-<div class="notes">
-<p>15 minutes. Première fonction. Bien distinguer définition (function) et appel (dire_bonjour(“Alice”)).</p>
-</div>
-</section>
-<section id="exercice-8-fonction-avec-condition" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exercice-8-fonction-avec-condition">Exercice 8 : Fonction avec condition</h2>
-<p>Créez une fonction <code>classifier_note()</code> qui :</p>
-<ul>
-<li>Prend une note en paramètre</li>
-<li>Retourne “Excellent” si &gt;= 16</li>
-<li>Retourne “Réussite” si &gt;= 10</li>
-<li>Retourne “Échec” sinon</li>
-</ul>
-<p><strong>Testez avec plusieurs valeurs.</strong></p>
-<div class="fragment">
-<p><strong>Extension :</strong> Que se passe-t-il si on passe une note négative ou &gt; 20 ? Comment améliorer la fonction ?</p>
-</div>
-<div class="notes">
-<p>15 minutes. Première fonction “utile”. L’extension introduit la validation des paramètres (concept important).</p>
-</div>
-</section>
-<section id="exercice-9-fonction-avec-boucle" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exercice-9-fonction-avec-boucle">Exercice 9 : Fonction avec boucle</h2>
-<p>Créez une fonction <code>calculer_moyenne()</code> qui :</p>
-<ul>
-<li>Prend un vecteur de nombres</li>
-<li>Utilise une boucle pour calculer la moyenne</li>
-<li>Retourne le résultat</li>
-</ul>
-<p><strong>Testez :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mes_notes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">8</span>, <span class="dv">14</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calculer_moyenne</span>(mes_notes)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Questions :</strong></p>
-<ol type="1">
-<li>Comment gérer les valeurs manquantes (<code>NA</code>) ?</li>
-<li>Comparez votre résultat avec <code>mean()</code></li>
-</ol>
-</div>
-<div class="notes">
-<p>15 minutes. Fonction plus complexe. Les étudiants réutilisent l’exercice 6. Discussion sur NA importante.</p>
-</div>
-</section>
-<section id="exercice-10-fonction-complète" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exercice-10-fonction-complète">Exercice 10 : Fonction complète</h2>
-<p>Créez une fonction <code>analyser_vecteur()</code> qui prend un vecteur et retourne :</p>
-<ul>
-<li>Le minimum</li>
-<li>Le maximum</li>
-<li>La moyenne</li>
-<li>Le nombre d’éléments</li>
-</ul>
-<div class="fragment">
-<p><strong>Défi :</strong> Comment retourner plusieurs valeurs ? Demandez au LLM !</p>
-<p><em>Indice : liste ou vecteur nommé</em></p>
-</div>
-<div class="notes">
-<p>15 minutes. Fonction avancée. Introduit le concept de retourner des structures de données complexes. Les étudiants découvriront les listes.</p>
-</div>
-</section>
-</section>
-<section id="mini-projet" class="level1" data-background-color="#DC143C">
-<h1 data-background-color="#DC143C">Mini-projet</h1>
-<section id="projet-analyse-de-températures" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="projet-analyse-de-températures">Projet : Analyse de températures</h2>
-<p>Vous allez créer un petit système d’analyse météo.</p>
-<p><strong>Données :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>temperatures <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">22</span>, <span class="dv">18</span>, <span class="dv">25</span>, <span class="dv">12</span>, <span class="dv">28</span>, <span class="dv">20</span>, <span class="dv">16</span>, <span class="dv">24</span>, <span class="dv">19</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Créez les fonctions suivantes :</strong></p>
-<ol type="1">
-<li><code>classifier_temperature(temp)</code> : retourne “Froid”, “Doux” ou “Chaud”</li>
-<li><code>compter_par_categorie(vecteur_temp)</code> : compte combien de jours froids/doux/chauds</li>
-<li><code>rapport_meteo(vecteur_temp)</code> : génère un rapport complet (min, max, moyenne, catégories)</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="célébration-des-réussites" class="level2">
+<h2 class="anchored" data-anchor-id="célébration-des-réussites">Célébration des réussites</h2>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Utilisez tout ce que vous avez appris
+<span class="screen-reader-only">Note</span>Vous avez réussi votre premier projet complet !
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Conditions, boucles, fonctions !</p>
+
 </div>
 </div>
-<div class="notes">
-<p>45 minutes. Projet synthèse. Les étudiants combinent tous les concepts. Circuler beaucoup. Encourager l’aide entre pairs. Certains iront plus loin (graphiques, etc.).</p>
-</div>
-</section>
-<section id="critères-du-mini-projet" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="critères-du-mini-projet">Critères du mini-projet</h2>
-<p>Votre code doit :</p>
 <div class="incremental">
+<p><strong>Réfléchissez :</strong></p>
 <ul class="incremental">
-<li>✅ Fonctionner sans erreur</li>
-<li>✅ Contenir au moins 3 fonctions</li>
-<li>✅ Utiliser des conditions (<code>if/else</code>)</li>
-<li>✅ Utiliser au moins une boucle</li>
-<li>✅ Être commenté (expliquez ce que fait chaque fonction)</li>
+<li>Qu’est-ce qui a été le plus difficile ?</li>
+<li>Qu’est-ce qui vous a le plus surpris ?</li>
+<li>Qu’est-ce qui vous a le plus appris ?</li>
+<li>Qu’est-ce qui vous a le plus plu ?</li>
 </ul>
-</div>
-<div class="fragment">
-<p><strong>Bonus :</strong></p>
-<ul>
-<li>Gérer les cas d’erreur (NA, vecteur vide, etc.)</li>
-<li>Créer des visualisations</li>
-<li>Tester avec d’autres données</li>
-</ul>
-</div>
-<div class="notes">
-<p>Afficher les critères clairement. Certains étudiants auront besoin de plus de temps - c’est OK.</p>
 </div>
 </section>
 </section>
-<section id="retour-sur-lutilisation-des-llms" class="level1" data-background-color="#2F4F4F">
-<h1 data-background-color="#2F4F4F">Retour sur l’utilisation des LLMs</h1>
-<section id="pièges-courants-avec-les-llms" class="level2">
-<h2 class="anchored" data-anchor-id="pièges-courants-avec-les-llms">Pièges courants avec les LLMs</h2>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Avertissement</span>Attention !
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Les LLMs peuvent :</p>
-<ul>
-<li>Proposer du code qui ne fonctionne pas</li>
-<li>Utiliser des fonctions qui n’existent pas</li>
-<li>Mélanger différentes versions de R</li>
-<li>Donner des explications approximatives</li>
-</ul>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Votre responsabilité :</strong> TOUJOURS tester le code !</p>
-</div>
-</section>
+<section id="retour-réflexif" class="level1" data-background-color="#DC143C">
+<h1 data-background-color="#DC143C">Retour réflexif</h1>
 <section id="exercice-réflexif-journal-de-bord" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="exercice-réflexif-journal-de-bord">Exercice réflexif : Journal de bord</h2>
-<p>Dans votre journal, documentez :</p>
+<p><strong>Documentez en détail dans votre journal :</strong></p>
 <ol type="1">
-<li><strong>Un prompt qui a bien fonctionné</strong> : Pourquoi ?</li>
-<li><strong>Une erreur du LLM</strong> : Comment l’avez-vous détectée ? Corrigée ?</li>
-<li><strong>Votre code le plus complexe</strong> : Expliquez-le avec vos mots</li>
-<li><strong>Une chose que vous ne comprenez pas encore</strong> : À approfondir</li>
+<li><strong>Votre projet</strong> :
+<ul>
+<li>Sujet choisi et pourquoi</li>
+<li>Questions posées</li>
+<li>Résultats principaux</li>
+</ul></li>
+<li><strong>Défis techniques</strong> :
+<ul>
+<li>Problèmes rencontrés</li>
+<li>Solutions trouvées</li>
+<li>Rôle du LLM dans la résolution</li>
+</ul></li>
+<li><strong>Apprentissages</strong> :
+<ul>
+<li>Ce que vous maîtrisez maintenant</li>
+<li>Ce qui reste difficile</li>
+<li>Progression depuis la séance 1</li>
+</ul></li>
+<li><strong>Prompts LLM</strong> :
+<ul>
+<li>Vos prompts les plus efficaces</li>
+<li>Erreurs du LLM et comment vous les avez corrigées</li>
+</ul></li>
 </ol>
-<div class="fragment">
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Astuce</span>Conseil
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Plus vous serez précis dans vos prompts, meilleures seront les réponses. Donnez du contexte !</p>
-</div>
-</div>
-</div>
 <div class="notes">
-<p>10 dernières minutes. Moment réflexif important. Les étudiants prennent du recul sur leur apprentissage.</p>
+<p>15 minutes. Documentation importante de ce projet majeur.</p>
+</div>
+</section>
+<section id="auto-évaluation" class="level2">
+<h2 class="anchored" data-anchor-id="auto-évaluation">Auto-évaluation</h2>
+<p><strong>Évaluez votre propre projet :</strong></p>
+<div class="nonincremental">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Critère</th>
+<th>🔴 Faible</th>
+<th>🟡 Moyen</th>
+<th>🟢 Bon</th>
+<th>🟢🟢 Excellent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Code fonctionnel</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Nettoyage données</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Qualité graphiques</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Interprétation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Commentaires</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Utilisation LLM</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p><strong>Identifiez vos axes d’amélioration pour la suite du cours.</strong></p>
 </div>
 </section>
 </section>
 <section id="ressources-et-prochaines-étapes" class="level1" data-background-color="#2E8B57">
 <h1 data-background-color="#2E8B57">Ressources et prochaines étapes</h1>
-<section id="pour-aller-plus-loin" class="level2">
-<h2 class="anchored" data-anchor-id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<section id="ce-que-vous-avez-accompli" class="level2">
+<h2 class="anchored" data-anchor-id="ce-que-vous-avez-accompli">Ce que vous avez accompli</h2>
+<div class="incremental">
+<p>✅ Choisi et cadré un projet d’analyse personnalisé ✅ Mené une analyse complète en autonomie ✅ Créé des fonctions personnalisées et réutilisables ✅ Produit des visualisations professionnelles ✅ Communiqué vos résultats à vos pairs ✅ Utilisé les LLMs comme partenaires d’analyse ✅ Développé votre autonomie en programmation</p>
+</div>
+<div class="fragment">
+<p><strong>🎉 Félicitations ! Vous êtes maintenant capables d’analyser des données en autonomie !</strong></p>
+</div>
+</section>
+<section id="compétences-à-ce-stade" class="level2">
+<h2 class="anchored" data-anchor-id="compétences-à-ce-stade">Compétences à ce stade</h2>
+<p><strong>Vous savez maintenant :</strong></p>
 <div class="incremental">
 <ul class="incremental">
-<li><strong>Documentation R :</strong> <code>?function</code>, <code>?if</code>, <code>?for</code></li>
-<li><strong>Pratiquez :</strong> La programmation s’apprend en codant !</li>
-<li><strong>Debuggez :</strong> Les erreurs sont normales et instructives</li>
-<li><strong>Partagez :</strong> Discutez de vos solutions avec vos pairs</li>
+<li>Analyser des données de A à Z</li>
+<li>Choisir les bonnes analyses et visualisations</li>
+<li>Créer des fonctions adaptées à vos besoins</li>
+<li>Nettoyer et préparer des données réelles</li>
+<li>Interpréter et communiquer des résultats</li>
+<li>Utiliser les LLMs efficacement</li>
+<li>Débugger de manière autonome</li>
 </ul>
 </div>
 </section>
@@ -878,14 +995,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Terminez le mini-projet si besoin</li>
-<li>Mettez à jour votre journal de bord</li>
-<li>Créez au moins une fonction originale qui vous serait utile</li>
+<li><strong>Finalisez votre projet</strong> si besoin</li>
+<li><strong>Mettez à jour votre journal</strong> avec tous les détails</li>
+<li><strong>Améliorez</strong> un aspect de votre projet suite aux feedbacks</li>
+<li><strong>Réfléchissez</strong> : quelles parties de votre code pourraient être mieux organisées ?</li>
 </ol>
 </div>
 </div>
 <div class="fragment">
-<p><strong>Questions à explorer :</strong> Comment sauvegarder ses fonctions ? Comment les partager ? (→ scripts, packages)</p>
+<p><strong>Prochaine séance :</strong> Organisation et modularité - structurer son code comme un professionnel !</p>
 </div>
 </section>
 <section id="questions" class="level2">
@@ -896,20 +1014,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Astuce</span>N’oubliez pas
+<span class="screen-reader-only">Astuce</span>Points clés à retenir
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Testez votre code</li>
-<li>Commentez votre code</li>
-<li>Documentez votre apprentissage</li>
-<li>Utilisez les LLMs comme <strong>assistants</strong>, pas comme <strong>rédacteurs</strong></li>
+<li>Vous êtes <strong>capables</strong> d’analyser des données en autonomie</li>
+<li>Le <strong>cadrage</strong> initial est crucial pour la réussite</li>
+<li>Les <strong>LLMs</strong> sont des assistants, mais c’est <strong>vous</strong> qui dirigez</li>
+<li><strong>Tester</strong> et <strong>commenter</strong> au fur et à mesure est essentiel</li>
+<li>Le <strong>feedback</strong> des pairs enrichit votre apprentissage</li>
 </ul>
 </div>
 </div>
 <div class="fragment">
-<p><strong>Bon courage et bon code ! 🚀</strong></p>
+<p><strong>Bravo pour ce projet ! 🚀</strong></p>
 </div>
 
 

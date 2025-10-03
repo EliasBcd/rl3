@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Elias Bouacida">
+
+<title>Séance 8 : Projet collaboratif final – Initiation à R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f4f457e805d2b247f730789ca0bbc19f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">EC Libre : Introduction à la programmation (en R) avec des LLMs</li><li class="breadcrumb-item"><a href="../ECLibre/01Introduction.html">ECLibre</a></li><li class="breadcrumb-item"><a href="../ECLibre/09Lecon8Collaboratif.html">Séance 8 : Projet collaboratif final</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">EC Libre : Introduction à la programmation (en R) avec des LLMs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">ECLibre</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/01Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apprendre la Programmation (en R) avec les LLMs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/02Lecon1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 1 : Premiers pas avec R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/03Lecon2Donnees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 2 : Données et fonctions intégrées</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/04Lecon3Fonctions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 3 : Fonctions, conditions et boucles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/05Lecon4Dataframes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 4 : Données tabulaires et graphiques avancés</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/06Lecon5Projet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 5 : Projet personnel intégré</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/07Lecon6Organisation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 6 : Organisation et modularité</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/08Lecon7Automatisation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 7 : Automatisation et rapports</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/09Lecon8Collaboratif.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Séance 8 : Projet collaboratif final</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Méthodologie de Projet Personnel et Professionnel</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">M3P</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/01Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apprendre la Programmation (en R) avec les LLMs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/02Lecon1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 1 : Premiers pas avec R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/03Lecon2Donnees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 2 : Données et fonctions intégrées</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/04Lecon3Fonctions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 3 : Fonctions, conditions et boucles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/05Lecon4Dataframes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 4 : Données tabulaires et graphiques avancés</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexe</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../JournalBord.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modèle de journal de bord</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../donnees/donnees_meteo.csv" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Données Météo</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#plan-de-la-séance" id="toc-plan-de-la-séance" class="nav-link active" data-scroll-target="#plan-de-la-séance">Plan de la séance</a></li>
+  <li><a href="#objectifs-de-la-séance" id="toc-objectifs-de-la-séance" class="nav-link" data-scroll-target="#objectifs-de-la-séance">Objectifs de la séance</a></li>
+  <li><a href="#présentation-du-projet" id="toc-présentation-du-projet" class="nav-link" data-scroll-target="#présentation-du-projet">Présentation du projet</a>
+  <ul class="collapse">
+  <li><a href="#le-défi-collaboratif" id="toc-le-défi-collaboratif" class="nav-link" data-scroll-target="#le-défi-collaboratif">Le défi collaboratif</a></li>
+  <li><a href="#structure-du-projet" id="toc-structure-du-projet" class="nav-link" data-scroll-target="#structure-du-projet">Structure du projet</a></li>
+  <li><a href="#livrables-par-équipe" id="toc-livrables-par-équipe" class="nav-link" data-scroll-target="#livrables-par-équipe">Livrables par équipe</a></li>
+  <li><a href="#livrable-collectif-final" id="toc-livrable-collectif-final" class="nav-link" data-scroll-target="#livrable-collectif-final">Livrable collectif final</a></li>
+  <li><a href="#critères-dévaluation" id="toc-critères-dévaluation" class="nav-link" data-scroll-target="#critères-dévaluation">Critères d’évaluation</a></li>
+  </ul></li>
+  <li><a href="#constitution-des-équipes" id="toc-constitution-des-équipes" class="nav-link" data-scroll-target="#constitution-des-équipes">Constitution des équipes</a>
+  <ul class="collapse">
+  <li><a href="#formation-des-équipes" id="toc-formation-des-équipes" class="nav-link" data-scroll-target="#formation-des-équipes">Formation des équipes</a></li>
+  <li><a href="#exercice-1-organisation-interne" id="toc-exercice-1-organisation-interne" class="nav-link" data-scroll-target="#exercice-1-organisation-interne">Exercice 1 : Organisation interne</a></li>
+  <li><a href="#exercice-2-charte-de-collaboration" id="toc-exercice-2-charte-de-collaboration" class="nav-link" data-scroll-target="#exercice-2-charte-de-collaboration">Exercice 2 : Charte de collaboration</a></li>
+  </ul></li>
+  <li><a href="#code-review-croisé" id="toc-code-review-croisé" class="nav-link" data-scroll-target="#code-review-croisé">Code Review Croisé</a>
+  <ul class="collapse">
+  <li><a href="#quest-ce-quun-code-review" id="toc-quest-ce-quun-code-review" class="nav-link" data-scroll-target="#quest-ce-quun-code-review">Qu’est-ce qu’un code review ?</a></li>
+  <li><a href="#que-regarder-dans-un-code-review" id="toc-que-regarder-dans-un-code-review" class="nav-link" data-scroll-target="#que-regarder-dans-un-code-review">Que regarder dans un code review ?</a></li>
+  <li><a href="#exercice-3-code-review-dune-autre-équipe" id="toc-exercice-3-code-review-dune-autre-équipe" class="nav-link" data-scroll-target="#exercice-3-code-review-dune-autre-équipe">Exercice 3 : Code review d’une autre équipe</a></li>
+  <li><a href="#donner-du-feedback-constructif" id="toc-donner-du-feedback-constructif" class="nav-link" data-scroll-target="#donner-du-feedback-constructif">Donner du feedback constructif</a></li>
+  </ul></li>
+  <li><a href="#travail-collaboratif" id="toc-travail-collaboratif" class="nav-link" data-scroll-target="#travail-collaboratif">Travail Collaboratif</a>
+  <ul class="collapse">
+  <li><a href="#phase-de-développement-90-min" id="toc-phase-de-développement-90-min" class="nav-link" data-scroll-target="#phase-de-développement-90-min">Phase de développement (90 min)</a></li>
+  <li><a href="#conventions-entre-équipes" id="toc-conventions-entre-équipes" class="nav-link" data-scroll-target="#conventions-entre-équipes">Conventions entre équipes</a></li>
+  <li><a href="#exercice-4-réunion-inter-équipes" id="toc-exercice-4-réunion-inter-équipes" class="nav-link" data-scroll-target="#exercice-4-réunion-inter-équipes">Exercice 4 : Réunion inter-équipes</a></li>
+  <li><a href="#checkpoints-intermédiaires" id="toc-checkpoints-intermédiaires" class="nav-link" data-scroll-target="#checkpoints-intermédiaires">Checkpoints intermédiaires</a></li>
+  <li><a href="#consultations-avec-lenseignant" id="toc-consultations-avec-lenseignant" class="nav-link" data-scroll-target="#consultations-avec-lenseignant">Consultations avec l’enseignant</a></li>
+  </ul></li>
+  <li><a href="#intégration-collaborative" id="toc-intégration-collaborative" class="nav-link" data-scroll-target="#intégration-collaborative">Intégration Collaborative</a>
+  <ul class="collapse">
+  <li><a href="#le-défi-de-lintégration" id="toc-le-défi-de-lintégration" class="nav-link" data-scroll-target="#le-défi-de-lintégration">Le défi de l’intégration</a></li>
+  <li><a href="#exercice-5-script-dintégration" id="toc-exercice-5-script-dintégration" class="nav-link" data-scroll-target="#exercice-5-script-dintégration">Exercice 5 : Script d’intégration</a></li>
+  <li><a href="#gestion-des-conflits" id="toc-gestion-des-conflits" class="nav-link" data-scroll-target="#gestion-des-conflits">Gestion des conflits</a></li>
+  <li><a href="#test-de-lintégration" id="toc-test-de-lintégration" class="nav-link" data-scroll-target="#test-de-lintégration">Test de l’intégration</a></li>
+  </ul></li>
+  <li><a href="#présentations-finales" id="toc-présentations-finales" class="nav-link" data-scroll-target="#présentations-finales">Présentations Finales</a>
+  <ul class="collapse">
+  <li><a href="#format-de-présentation" id="toc-format-de-présentation" class="nav-link" data-scroll-target="#format-de-présentation">Format de présentation</a></li>
+  <li><a href="#présentation-de-la-synthèse-intégrée" id="toc-présentation-de-la-synthèse-intégrée" class="nav-link" data-scroll-target="#présentation-de-la-synthèse-intégrée">Présentation de la synthèse intégrée</a></li>
+  <li><a href="#exercice-6-préparer-la-présentation" id="toc-exercice-6-préparer-la-présentation" class="nav-link" data-scroll-target="#exercice-6-préparer-la-présentation">Exercice 6 : Préparer la présentation</a></li>
+  <li><a href="#feedback-et-questions" id="toc-feedback-et-questions" class="nav-link" data-scroll-target="#feedback-et-questions">Feedback et questions</a></li>
+  </ul></li>
+  <li><a href="#célébration-et-bilan" id="toc-célébration-et-bilan" class="nav-link" data-scroll-target="#célébration-et-bilan">Célébration et Bilan</a>
+  <ul class="collapse">
+  <li><a href="#vous-avez-réussi" id="toc-vous-avez-réussi" class="nav-link" data-scroll-target="#vous-avez-réussi">Vous avez réussi ! 🎉</a></li>
+  <li><a href="#exercice-final-rétrospective" id="toc-exercice-final-rétrospective" class="nav-link" data-scroll-target="#exercice-final-rétrospective">Exercice final : Rétrospective</a></li>
+  <li><a href="#partage-collectif" id="toc-partage-collectif" class="nav-link" data-scroll-target="#partage-collectif">Partage collectif</a></li>
+  </ul></li>
+  <li><a href="#bilan-du-cours-complet" id="toc-bilan-du-cours-complet" class="nav-link" data-scroll-target="#bilan-du-cours-complet">Bilan du cours complet</a>
+  <ul class="collapse">
+  <li><a href="#compétences-acquises-en-8-séances" id="toc-compétences-acquises-en-8-séances" class="nav-link" data-scroll-target="#compétences-acquises-en-8-séances">Compétences acquises en 8 séances</a></li>
+  <li><a href="#compétences-transversales" id="toc-compétences-transversales" class="nav-link" data-scroll-target="#compétences-transversales">Compétences transversales</a></li>
+  <li><a href="#utilisation-des-llms" id="toc-utilisation-des-llms" class="nav-link" data-scroll-target="#utilisation-des-llms">Utilisation des LLMs</a></li>
+  <li><a href="#votre-progression" id="toc-votre-progression" class="nav-link" data-scroll-target="#votre-progression">Votre progression</a></li>
+  <li><a href="#et-maintenant" id="toc-et-maintenant" class="nav-link" data-scroll-target="#et-maintenant">Et maintenant ?</a></li>
+  </ul></li>
+  <li><a href="#ressources-pour-continuer" id="toc-ressources-pour-continuer" class="nav-link" data-scroll-target="#ressources-pour-continuer">Ressources pour continuer</a>
+  <ul class="collapse">
+  <li><a href="#poursuivre-votre-apprentissage" id="toc-poursuivre-votre-apprentissage" class="nav-link" data-scroll-target="#poursuivre-votre-apprentissage">Poursuivre votre apprentissage</a></li>
+  <li><a href="#rester-en-contact" id="toc-rester-en-contact" class="nav-link" data-scroll-target="#rester-en-contact">Rester en contact</a></li>
+  <li><a href="#merci" id="toc-merci" class="nav-link" data-scroll-target="#merci">Merci ! 🙏</a></li>
+  <li><a href="#questions-finales" id="toc-questions-finales" class="nav-link" data-scroll-target="#questions-finales">Questions finales ?</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="slide-lecon8.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">EC Libre : Introduction à la programmation (en R) avec des LLMs</li><li class="breadcrumb-item"><a href="../ECLibre/01Introduction.html">ECLibre</a></li><li class="breadcrumb-item"><a href="../ECLibre/09Lecon8Collaboratif.html">Séance 8 : Projet collaboratif final</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Séance 8 : Projet collaboratif final</h1>
+<p class="subtitle lead">Apprendre R avec les LLMs</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur·rice</div>
+    <div class="quarto-title-meta-contents">
+             <p>Elias Bouacida </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">3 octobre 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="plan-de-la-séance" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="plan-de-la-séance">Plan de la séance</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Présentation du projet collaboratif</strong> (15min) : Organisation et objectifs</li>
+<li><strong>Constitution des équipes et répartition</strong> (30min) : Former les groupes, assigner les angles d’analyse</li>
+<li><strong>Code review croisé</strong> (45min) : Analyser et améliorer le code d’une autre équipe</li>
+<li><strong>Travail collaboratif</strong> (90min) : Développement des analyses en équipe</li>
+<li><strong>Intégration collaborative</strong> (30min) : Faire fonctionner ensemble les analyses</li>
+<li><strong>Présentation finale</strong> (30min) : Synthèse collective des résultats</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Production attendue :</strong> Analyse collaborative intégrée + code review documenté</p>
+</div>
+</section>
+<section id="objectifs-de-la-séance" class="level2">
+<h2 class="anchored" data-anchor-id="objectifs-de-la-séance">Objectifs de la séance</h2>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Collaborer comme des professionnels
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Travailler en équipe</strong> sur un projet d’analyse</li>
+<li><strong>Communiquer</strong> efficacement sur le code</li>
+<li><strong>Intégrer</strong> différentes analyses</li>
+<li><strong>Réviser</strong> le code des autres (code review)</li>
+<li><strong>Appliquer</strong> toutes les bonnes pratiques apprises</li>
+<li><strong>Présenter</strong> des résultats de manière professionnelle</li>
+</ul>
+</div>
+</section>
+<section id="présentation-du-projet" class="level1" data-background-color="#2E8B57">
+<h1 data-background-color="#2E8B57">Présentation du projet</h1>
+<section id="le-défi-collaboratif" class="level2">
+<h2 class="anchored" data-anchor-id="le-défi-collaboratif">Le défi collaboratif</h2>
+<p><strong>Situation réelle :</strong></p>
+<p>Une organisation vous confie un grand dataset et vous demande une analyse complète sous différents angles.</p>
+<div class="fragment">
+<p><strong>4 équipes, 1 dataset, 4 perspectives complémentaires</strong></p>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Objectif final
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Produire une analyse intégrée qui combine les 4 perspectives pour une vision complète.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="structure-du-projet" class="level2">
+<h2 class="anchored" data-anchor-id="structure-du-projet">Structure du projet</h2>
+<p><strong>Le dataset commun :</strong> Données COVID, économiques, ou climatiques (fourni sur Moodle)</p>
+<p><strong>4 équipes, 4 angles d’analyse :</strong></p>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><strong>Équipe 1 - Évolution temporelle</strong> : Comment les variables évoluent dans le temps ?</li>
+<li><strong>Équipe 2 - Comparaisons géographiques</strong> : Quelles différences entre régions/pays ?</li>
+<li><strong>Équipe 3 - Facteurs socio-économiques</strong> : Quels facteurs influencent les résultats ?</li>
+<li><strong>Équipe 4 - Patterns et tendances</strong> : Quels patterns émergent ? Prédictions simples ?</li>
+</ol>
+</div>
+</section>
+<section id="livrables-par-équipe" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="livrables-par-équipe">Livrables par équipe</h2>
+<p><strong>Chaque équipe doit produire :</strong></p>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><strong>Code R modulaire</strong> (fichiers séparés)
+<ul class="incremental">
+<li><code>fonctions_equipe_X.R</code> : vos fonctions</li>
+<li><code>analyse_equipe_X.R</code> : script principal</li>
+<li><code>README_equipe_X.md</code> : documentation</li>
+</ul></li>
+<li><strong>Rapport d’analyse</strong> (R Markdown → HTML)
+<ul class="incremental">
+<li>Introduction et questions</li>
+<li>Méthodologie</li>
+<li>Résultats (graphiques + tableaux)</li>
+<li>Interprétation</li>
+<li>Conclusion</li>
+</ul></li>
+<li><strong>Présentation orale</strong> (5 min)
+<ul class="incremental">
+<li>Résultats clés</li>
+<li>Contribution à la vision globale</li>
+</ul></li>
+</ol>
+</div>
+</section>
+<section id="livrable-collectif-final" class="level2">
+<h2 class="anchored" data-anchor-id="livrable-collectif-final">Livrable collectif final</h2>
+<p><strong>Toutes les équipes ensemble produiront :</strong></p>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Synthèse intégrée</strong> : document combinant les 4 analyses</li>
+<li><strong>Code unifié</strong> : fonctions compatibles entre équipes</li>
+<li><strong>Recommandations communes</strong> : conclusions tirées de l’analyse complète</li>
+<li><strong>Présentation collective</strong> : vision d’ensemble</li>
+</ul>
+</div>
+</section>
+<section id="critères-dévaluation" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="critères-dévaluation">Critères d’évaluation</h2>
+<p><strong>Note d’équipe (60%) :</strong></p>
+<ul>
+<li>Qualité technique du code</li>
+<li>Pertinence de l’analyse</li>
+<li>Clarté du rapport</li>
+<li>Qualité de la présentation</li>
+</ul>
+<p><strong>Note individuelle (40%) :</strong></p>
+<ul>
+<li>Contribution identifiable (commits, fonctions créées)</li>
+<li>Qualité du code review</li>
+<li>Participation active</li>
+<li>Collaboration avec les autres équipes</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Tous ensemble !
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le succès du projet dépend de la collaboration entre les équipes !</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="constitution-des-équipes" class="level1" data-background-color="#4169E1">
+<h1 data-background-color="#4169E1">Constitution des équipes</h1>
+<section id="formation-des-équipes" class="level2">
+<h2 class="anchored" data-anchor-id="formation-des-équipes">Formation des équipes</h2>
+<p><strong>L’enseignant forme 4 équipes de 4-5 personnes</strong></p>
+<div class="incremental">
+<p><strong>Critères de formation :</strong></p>
+<ul class="incremental">
+<li>Diversité des niveaux</li>
+<li>Complémentarité des compétences</li>
+<li>Mixité si possible</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Chaque équipe se voit assigner un angle d’analyse</strong></p>
+</div>
+</section>
+<section id="exercice-1-organisation-interne" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-1-organisation-interne">Exercice 1 : Organisation interne</h2>
+<p><strong>Dans chaque équipe (15 min) :</strong></p>
+<ol type="1">
+<li><p><strong>Désignez un coordinateur</strong> (interface avec les autres équipes)</p></li>
+<li><p><strong>Répartissez les rôles</strong> :</p>
+<ul>
+<li>Responsable nettoyage des données</li>
+<li>Responsable analyses statistiques</li>
+<li>Responsable visualisations</li>
+<li>Responsable documentation</li>
+</ul></li>
+<li><p><strong>Définissez 3 questions précises</strong> liées à votre angle d’analyse</p></li>
+<li><p><strong>Planifiez votre travail</strong> :</p>
+<ul>
+<li>Quelles fonctions créer ?</li>
+<li>Quelle structure de code ?</li>
+<li>Comment vous répartir le travail ?</li>
+</ul></li>
+</ol>
+<div class="notes">
+<p>15 minutes. Chaque équipe s’organise.</p>
+</div>
+</section>
+<section id="exercice-2-charte-de-collaboration" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-2-charte-de-collaboration">Exercice 2 : Charte de collaboration</h2>
+<p><strong>Chaque équipe définit sa charte :</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>CHARTE D'ÉQUIPE X</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>OBJECTIF : <span class="co">[</span><span class="ot">Angle d'analyse</span><span class="co">]</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>QUESTIONS À RÉPONDRE :</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>1.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>2.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>3.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>RÉPARTITION DES TÂCHES :</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Membre A : <span class="co">[</span><span class="ot">responsabilité</span><span class="co">]</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Membre B : <span class="co">[</span><span class="ot">responsabilité</span><span class="co">]</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>...</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>CONVENTIONS DE CODE :</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Nommage des fonctions : equipe_X_nom_fonction()</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Nommage des variables : snake_case</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Commentaires : en français</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>COMMUNICATION :</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Coordination : <span class="co">[</span><span class="ot">nom du coordinateur</span><span class="co">]</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Fréquence des points : toutes les 30 minutes</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="notes">
+<p>15 minutes. Établir les règles de collaboration.</p>
+</div>
+</section>
+</section>
+<section id="code-review-croisé" class="level1" data-background-color="#FF8C00">
+<h1 data-background-color="#FF8C00">Code Review Croisé</h1>
+<section id="quest-ce-quun-code-review" class="level2">
+<h2 class="anchored" data-anchor-id="quest-ce-quun-code-review">Qu’est-ce qu’un code review ?</h2>
+<p><strong>Code review</strong> = Relecture critique du code par les pairs</p>
+<div class="incremental">
+<p><strong>Objectifs :</strong></p>
+<ul class="incremental">
+<li>Trouver des <strong>bugs</strong> potentiels</li>
+<li>Améliorer la <strong>lisibilité</strong></li>
+<li>Partager les <strong>bonnes pratiques</strong></li>
+<li>Apprendre des <strong>autres</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Dans l’industrie
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le code review est une pratique standard dans toutes les entreprises tech !</p>
+</div>
+</div>
+</div>
+</section>
+<section id="que-regarder-dans-un-code-review" class="level2">
+<h2 class="anchored" data-anchor-id="que-regarder-dans-un-code-review">Que regarder dans un code review ?</h2>
+<div class="incremental">
+<p><strong>Fonctionnalité :</strong></p>
+<ul class="incremental">
+<li>Le code fait-il ce qu’il est censé faire ?</li>
+<li>Gère-t-il les cas d’erreur ?</li>
+</ul>
+<p><strong>Lisibilité :</strong></p>
+<ul class="incremental">
+<li>Les noms de variables/fonctions sont-ils clairs ?</li>
+<li>Le code est-il bien commenté ?</li>
+<li>La structure est-elle logique ?</li>
+</ul>
+<p><strong>Efficacité :</strong></p>
+<ul class="incremental">
+<li>Y a-t-il des répétitions inutiles ?</li>
+<li>Les calculs sont-ils optimisés ?</li>
+<li>Les fonctions sont-elles réutilisables ?</li>
+</ul>
+</div>
+</section>
+<section id="exercice-3-code-review-dune-autre-équipe" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-3-code-review-dune-autre-équipe">Exercice 3 : Code review d’une autre équipe</h2>
+<p><strong>Organisation :</strong></p>
+<ul>
+<li>Équipe 1 ↔︎ Équipe 2</li>
+<li>Équipe 3 ↔︎ Équipe 4</li>
+</ul>
+<p><strong>Chaque équipe examine le code d’une autre équipe (provenant d’un projet précédent)</strong></p>
+<p><strong>Grille de review :</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>CODE REVIEW - Équipe X par Équipe Y</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>POINTS POSITIFS :</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Ce qui est bien fait</span><span class="co">]</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>PROBLÈMES IDENTIFIÉS :</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Bugs, erreurs logiques</span><span class="co">]</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>SUGGESTIONS D'AMÉLIORATION :</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Comment améliorer le code</span><span class="co">]</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>CODE EXEMPLAIRE :</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Un bout de code particulièrement bon</span><span class="co">]</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>NOTE GLOBALE : <span class="co">[</span><span class="ot">Sur 10</span><span class="co">]</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="notes">
+<p>45 minutes. Code review sérieux et constructif.</p>
+</div>
+</section>
+<section id="donner-du-feedback-constructif" class="level2">
+<h2 class="anchored" data-anchor-id="donner-du-feedback-constructif">Donner du feedback constructif</h2>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Règles d’or du code review
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="incremental">
+<p><strong>À FAIRE ✅ :</strong></p>
+<ul class="incremental">
+<li>Être spécifique : “Cette boucle pourrait être remplacée par <code>lapply()</code>”</li>
+<li>Être constructif : “Et si on ajoutait une vérification ici ?”</li>
+<li>Reconnaître ce qui est bon : “Excellente documentation !”</li>
+<li>Suggérer, ne pas imposer : “Une alternative serait…”</li>
+</ul>
+<p><strong>À ÉVITER ❌ :</strong></p>
+<ul class="incremental">
+<li>Critiquer la personne : “Tu ne sais pas coder”</li>
+<li>Être vague : “C’est mauvais”</li>
+<li>Imposer son style : “Je fais toujours comme ça”</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="travail-collaboratif" class="level1" data-background-color="#8B008B">
+<h1 data-background-color="#8B008B">Travail Collaboratif</h1>
+<section id="phase-de-développement-90-min" class="level2">
+<h2 class="anchored" data-anchor-id="phase-de-développement-90-min">Phase de développement (90 min)</h2>
+<p><strong>Chaque équipe travaille sur son analyse :</strong></p>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><strong>Import et nettoyage</strong> des données (commun à toutes les équipes)</li>
+<li><strong>Analyses spécifiques</strong> à votre angle</li>
+<li><strong>Création de fonctions</strong> réutilisables</li>
+<li><strong>Visualisations</strong> claires et informatives</li>
+<li><strong>Rédaction du rapport</strong> R Markdown</li>
+</ol>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Avertissement</span>Attention !
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vos fonctions doivent être <strong>compatibles</strong> avec celles des autres équipes !</p>
+</div>
+</div>
+</div>
+</section>
+<section id="conventions-entre-équipes" class="level2">
+<h2 class="anchored" data-anchor-id="conventions-entre-équipes">Conventions entre équipes</h2>
+<p><strong>Toutes les équipes doivent se mettre d’accord sur :</strong></p>
+<div class="incremental">
+<p><strong>Noms des objets principaux :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>donnees_brutes    <span class="co"># Dataset original</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>donnees_propres   <span class="co"># Dataset nettoyé</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>resultats_equipe_X  <span class="co"># Résultats de chaque équipe</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Structure des fonctions :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chaque équipe préfixe ses fonctions</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">equipe1_analyser_temporel</span>()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">equipe2_analyser_geographique</span>()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">equipe3_analyser_facteurs</span>()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">equipe4_analyser_patterns</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Format des sorties :</strong></p>
+<ul class="incremental">
+<li>Toutes les fonctions retournent des data.frames</li>
+<li>Même structure : colonnes standardisées</li>
+</ul>
+</div>
+</section>
+<section id="exercice-4-réunion-inter-équipes" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-4-réunion-inter-équipes">Exercice 4 : Réunion inter-équipes</h2>
+<p><strong>Les 4 coordinateurs se réunissent (10 min) pour :</strong></p>
+<ol type="1">
+<li>S’accorder sur les <strong>conventions de nommage</strong></li>
+<li>Définir la <strong>structure commune</strong> des données nettoyées</li>
+<li>Planifier l’<strong>intégration finale</strong></li>
+<li>Identifier les <strong>dépendances</strong> entre équipes</li>
+</ol>
+<p><strong>Résultat : Un document de conventions partagé</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>CONVENTIONS INTER-ÉQUIPES</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>OBJETS COMMUNS :</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>donnees_brutes : dataset original</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>donnees_propres : dataset nettoyé (structure : ...)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>PRÉFIXES DE FONCTIONS :</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Équipe 1 : e1_</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Équipe 2 : e2_</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Équipe 3 : e3_</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Équipe 4 : e4_</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>FORMAT DES SORTIES :</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>Toutes les fonctions d'analyse retournent un data.frame avec :</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>variable, valeur, interpretation</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="notes">
+<p>10 minutes. Coordination essentielle entre équipes.</p>
+</div>
+</section>
+<section id="checkpoints-intermédiaires" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoints-intermédiaires">Checkpoints intermédiaires</h2>
+<p><strong>Après 30 minutes :</strong></p>
+<ul>
+<li>Chaque équipe présente son avancement (2 min/équipe)</li>
+<li>Identification des blocages</li>
+<li>Ajustements si nécessaire</li>
+</ul>
+<p><strong>Après 60 minutes :</strong></p>
+<ul>
+<li>Vérification de la compatibilité du code</li>
+<li>Premiers tests d’intégration</li>
+<li>Corrections des incompatibilités</li>
+</ul>
+</section>
+<section id="consultations-avec-lenseignant" class="level2">
+<h2 class="anchored" data-anchor-id="consultations-avec-lenseignant">Consultations avec l’enseignant</h2>
+<p><strong>L’enseignant circule pour :</strong></p>
+<ul>
+<li>Débloquer les équipes en difficulté</li>
+<li>Valider les choix méthodologiques</li>
+<li>Suggérer des améliorations</li>
+<li>Vérifier la compatibilité inter-équipes</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>N’attendez pas !
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Appelez l’enseignant dès qu’un problème bloque toute l’équipe.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="intégration-collaborative" class="level1" data-background-color="#DC143C">
+<h1 data-background-color="#DC143C">Intégration Collaborative</h1>
+<section id="le-défi-de-lintégration" class="level2">
+<h2 class="anchored" data-anchor-id="le-défi-de-lintégration">Le défi de l’intégration</h2>
+<p><strong>Maintenant que chaque équipe a son analyse, il faut tout combiner !</strong></p>
+<div class="fragment">
+<p><strong>Objectif :</strong></p>
+<p>Créer un script <code>analyse_integree.R</code> qui :</p>
+<ol type="1">
+<li>Charge toutes les fonctions des 4 équipes</li>
+<li>Exécute les 4 analyses</li>
+<li>Combine les résultats</li>
+<li>Produit une synthèse globale</li>
+</ol>
+</div>
+</section>
+<section id="exercice-5-script-dintégration" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-5-script-dintégration">Exercice 5 : Script d’intégration</h2>
+<p><strong>Les coordinateurs créent ensemble :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># === ANALYSE INTÉGRÉE - 4 ÉQUIPES ===</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger toutes les fonctions</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"equipe1/fonctions_equipe1.R"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"equipe2/fonctions_equipe2.R"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"equipe3/fonctions_equipe3.R"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"equipe4/fonctions_equipe4.R"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Importer et nettoyer les données (commun)</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>donnees_brutes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"dataset_commun.csv"</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>donnees_propres <span class="ot">&lt;-</span> <span class="fu">nettoyer_donnees</span>(donnees_brutes)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Exécuter les 4 analyses</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>resultats_e1 <span class="ot">&lt;-</span> <span class="fu">e1_analyser_temporel</span>(donnees_propres)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>resultats_e2 <span class="ot">&lt;-</span> <span class="fu">e2_analyser_geographique</span>(donnees_propres)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>resultats_e3 <span class="ot">&lt;-</span> <span class="fu">e3_analyser_facteurs</span>(donnees_propres)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>resultats_e4 <span class="ot">&lt;-</span> <span class="fu">e4_analyser_patterns</span>(donnees_propres)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Combiner les résultats</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>synthese <span class="ot">&lt;-</span> <span class="fu">combiner_resultats</span>(</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">temporel =</span> resultats_e1,</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">geo =</span> resultats_e2,</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">facteurs =</span> resultats_e3,</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">patterns =</span> resultats_e4</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Sauvegarder</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(synthese, <span class="st">"synthese_complete.rds"</span>)</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(synthese, <span class="st">"synthese_complete.csv"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="notes">
+<p>20 minutes. Travail collectif d’intégration.</p>
+</div>
+</section>
+<section id="gestion-des-conflits" class="level2">
+<h2 class="anchored" data-anchor-id="gestion-des-conflits">Gestion des conflits</h2>
+<p><strong>Problèmes courants :</strong></p>
+<div class="incremental">
+<p><strong>Fonctions avec le même nom :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution : préfixer ou spécifier le package/source</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>equipe1<span class="sc">::</span><span class="fu">analyser</span>()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>equipe2<span class="sc">::</span><span class="fu">analyser</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Structures de données incompatibles :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution : créer des fonctions de conversion</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>convertir_format_equipe1_vers_equipe2 <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Transformation ici</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Dépendances manquantes :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution : documenter toutes les dépendances</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer un script setup.R</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"dplyr"</span>, <span class="st">"ggplot2"</span>, <span class="st">"lubridate"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(packages)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</section>
+<section id="test-de-lintégration" class="level2">
+<h2 class="anchored" data-anchor-id="test-de-lintégration">Test de l’intégration</h2>
+<p><strong>Vérifications essentielles :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Le script complet s'exécute sans erreur ?</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"analyse_integree.R"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Les résultats sont cohérents ?</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(synthese)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(synthese)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Les graphiques s'affichent ?</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Les fichiers de sortie sont créés ?</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><strong>Si ça casse, débuggez ensemble !</strong></p>
+</div>
+</section>
+</section>
+<section id="présentations-finales" class="level1" data-background-color="#2E8B57">
+<h1 data-background-color="#2E8B57">Présentations Finales</h1>
+<section id="format-de-présentation" class="level2">
+<h2 class="anchored" data-anchor-id="format-de-présentation">Format de présentation</h2>
+<p><strong>Présentations par équipe (5 min chacune) :</strong></p>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><strong>Angle d’analyse</strong> (30 sec) : Quelle perspective ?</li>
+<li><strong>Méthodologie</strong> (1 min) : Comment avez-vous procédé ?</li>
+<li><strong>Résultats clés</strong> (2 min) : 2-3 insights majeurs avec graphiques</li>
+<li><strong>Contribution à la synthèse</strong> (1 min) : Qu’apportez-vous au tout ?</li>
+<li><strong>Défis et apprentissages</strong> (30 sec) : Qu’avez-vous appris ?</li>
+</ol>
+</div>
+</section>
+<section id="présentation-de-la-synthèse-intégrée" class="level2">
+<h2 class="anchored" data-anchor-id="présentation-de-la-synthèse-intégrée">Présentation de la synthèse intégrée</h2>
+<p><strong>Présentation collective (10 min) :</strong></p>
+<ul>
+<li><strong>Vision d’ensemble</strong> : Comment les 4 analyses se complètent ?</li>
+<li><strong>Insights croisés</strong> : Ce qu’on voit en combinant tout</li>
+<li><strong>Recommandations</strong> : Conclusions basées sur l’analyse complète</li>
+<li><strong>Démo du code intégré</strong> : Montrer que tout fonctionne ensemble</li>
+</ul>
+<div class="fragment">
+<p><strong>Tous les coordinateurs présentent ensemble !</strong></p>
+</div>
+</section>
+<section id="exercice-6-préparer-la-présentation" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-6-préparer-la-présentation">Exercice 6 : Préparer la présentation</h2>
+<p><strong>Chaque équipe prépare (10 min) :</strong></p>
+<ol type="1">
+<li><strong>Sélectionner</strong> les 2-3 graphiques les plus importants</li>
+<li><strong>Rédiger</strong> les messages clés (3 bullets maximum)</li>
+<li><strong>Préparer</strong> une démo live de votre code</li>
+<li><strong>Répéter</strong> le timing (max 5 min !)</li>
+</ol>
+<p><strong>Pour la synthèse collective :</strong></p>
+<ul>
+<li>Les coordinateurs se réunissent</li>
+<li>Créent une présentation intégrée</li>
+<li>Se répartissent la parole</li>
+</ul>
+<div class="notes">
+<p>10 minutes de préparation avant les présentations.</p>
+</div>
+</section>
+<section id="feedback-et-questions" class="level2">
+<h2 class="anchored" data-anchor-id="feedback-et-questions">Feedback et questions</h2>
+<p><strong>Après chaque présentation :</strong></p>
+<ul>
+<li>2 minutes de questions/commentaires</li>
+<li>Feedback constructif des autres équipes</li>
+<li>Points d’amélioration suggérés</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Célébrons les réussites !
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Identifiez ce qui a été particulièrement bien fait dans chaque équipe.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="célébration-et-bilan" class="level1" data-background-color="#4169E1">
+<h1 data-background-color="#4169E1">Célébration et Bilan</h1>
+<section id="vous-avez-réussi" class="level2">
+<h2 class="anchored" data-anchor-id="vous-avez-réussi">Vous avez réussi ! 🎉</h2>
+<p><strong>Félicitations, vous avez :</strong></p>
+<div class="incremental">
+<p>✅ Collaboré en équipe sur un projet complexe ✅ Intégré différentes analyses en un tout cohérent ✅ Pratiqué le code review professionnel ✅ Géré les conflits et incompatibilités ✅ Communiqué efficacement sur du code ✅ Produit une analyse complète et documentée ✅ Présenté des résultats de manière professionnelle</p>
+</div>
+</section>
+<section id="exercice-final-rétrospective" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-final-rétrospective">Exercice final : Rétrospective</h2>
+<p><strong>Individuellement, réfléchissez (5 min) :</strong></p>
+<div class="nonincremental">
+<p><strong>Ce qui a bien fonctionné :</strong></p>
+<ul>
+<li>Dans votre équipe ?</li>
+<li>Dans la collaboration inter-équipes ?</li>
+<li>Dans votre propre contribution ?</li>
+</ul>
+<p><strong>Ce qui a été difficile :</strong></p>
+<ul>
+<li>Quels obstacles avez-vous rencontrés ?</li>
+<li>Comment les avez-vous surmontés ?</li>
+</ul>
+<p><strong>Ce que vous avez appris :</strong></p>
+<ul>
+<li>Sur R et la programmation ?</li>
+<li>Sur le travail en équipe ?</li>
+<li>Sur vous-même ?</li>
+</ul>
+<p><strong>Ce que vous allez réutiliser :</strong></p>
+<ul>
+<li>Quelles compétences acquises ?</li>
+<li>Quelles méthodes de travail ?</li>
+</ul>
+</div>
+</section>
+<section id="partage-collectif" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="partage-collectif">Partage collectif</h2>
+<p><strong>Tour de table (1 min/personne) :</strong></p>
+<p>Partagez <strong>UNE</strong> chose que vous retenez de ce cours :</p>
+<ul>
+<li>Une compétence technique</li>
+<li>Une méthode de travail</li>
+<li>Un moment marquant</li>
+<li>Une prise de conscience</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Votre parcours
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>De la séance 1 (découverte de R) à aujourd’hui (projet collaboratif complexe) : vous avez parcouru un chemin immense ! 🚀</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="bilan-du-cours-complet" class="level1" data-background-color="#8B008B">
+<h1 data-background-color="#8B008B">Bilan du cours complet</h1>
+<section id="compétences-acquises-en-8-séances" class="level2">
+<h2 class="anchored" data-anchor-id="compétences-acquises-en-8-séances">Compétences acquises en 8 séances</h2>
+<p><strong>Techniques :</strong></p>
+<div class="incremental">
+<ul class="incremental">
+<li>✅ Programmation R : variables, fonctions, conditions, boucles</li>
+<li>✅ Manipulation de données : import, nettoyage, transformation (dplyr)</li>
+<li>✅ Visualisation : ggplot2, graphiques professionnels</li>
+<li>✅ Organisation : code modulaire, packages, fonctions réutilisables</li>
+<li>✅ Automatisation : traitement par lots, rapports paramétrés</li>
+<li>✅ Documentation : R Markdown, commentaires, documentation</li>
+</ul>
+</div>
+</section>
+<section id="compétences-transversales" class="level2">
+<h2 class="anchored" data-anchor-id="compétences-transversales">Compétences transversales</h2>
+<p><strong>Méthodologiques :</strong></p>
+<div class="incremental">
+<ul class="incremental">
+<li>✅ Résolution de problèmes par décomposition</li>
+<li>✅ Debugging systématique</li>
+<li>✅ Tests et validation du code</li>
+<li>✅ Gestion d’erreurs et cas particuliers</li>
+</ul>
+</div>
+<p><strong>Collaboration :</strong></p>
+<div class="incremental">
+<ul class="incremental">
+<li>✅ Travail en équipe sur du code</li>
+<li>✅ Code review constructif</li>
+<li>✅ Communication technique</li>
+<li>✅ Intégration de travaux multiples</li>
+</ul>
+</div>
+</section>
+<section id="utilisation-des-llms" class="level2">
+<h2 class="anchored" data-anchor-id="utilisation-des-llms">Utilisation des LLMs</h2>
+<p><strong>Vous savez maintenant :</strong></p>
+<div class="incremental">
+<ul class="incremental">
+<li>✅ Formuler des prompts <strong>précis</strong> et <strong>contextualisés</strong></li>
+<li>✅ <strong>Valider</strong> critiquement les réponses</li>
+<li>✅ <strong>Itérer</strong> pour améliorer les résultats</li>
+<li>✅ <strong>Identifier</strong> les erreurs et limites des LLMs</li>
+<li>✅ Utiliser les LLMs comme <strong>partenaires</strong>, pas comme <strong>oracle</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>L’esprit critique
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La compétence la plus importante que vous avez développée !</p>
+</div>
+</div>
+</div>
+</section>
+<section id="votre-progression" class="level2">
+<h2 class="anchored" data-anchor-id="votre-progression">Votre progression</h2>
+<div class="nonincremental">
+<p><strong>Séance 1 :</strong> “Qu’est-ce que R ?”</p>
+<p><strong>Séance 2 :</strong> “Comment importer des données ?”</p>
+<p><strong>Séance 3 :</strong> “Comment créer une fonction ?”</p>
+<p><strong>Séance 4 :</strong> “Comment faire de beaux graphiques ?”</p>
+<p><strong>Séance 5 :</strong> “Analyse complète en autonomie !”</p>
+<p><strong>Séance 6 :</strong> “Organisation professionnelle du code”</p>
+<p><strong>Séance 7 :</strong> “Automatisation et rapports”</p>
+<p><strong>Séance 8 :</strong> “Projet collaboratif complexe !” ✨</p>
+</div>
+</section>
+<section id="et-maintenant" class="level2">
+<h2 class="anchored" data-anchor-id="et-maintenant">Et maintenant ?</h2>
+<p><strong>Vous êtes capables de :</strong></p>
+<div class="incremental">
+<ul class="incremental">
+<li>Analyser des données <strong>en autonomie</strong></li>
+<li>Créer des <strong>outils réutilisables</strong></li>
+<li><strong>Automatiser</strong> des tâches répétitives</li>
+<li><strong>Collaborer</strong> sur des projets data</li>
+<li><strong>Continuer à apprendre</strong> par vous-même avec les LLMs</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Le plus important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vous n’avez plus peur du code ! 🎓</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ressources-pour-continuer" class="level1" data-background-color="#2E8B57">
+<h1 data-background-color="#2E8B57">Ressources pour continuer</h1>
+<section id="poursuivre-votre-apprentissage" class="level2">
+<h2 class="anchored" data-anchor-id="poursuivre-votre-apprentissage">Poursuivre votre apprentissage</h2>
+<p><strong>Ressources en ligne :</strong></p>
+<ul>
+<li><a href="https://r4ds.hadley.nz/">R for Data Science</a> - livre gratuit</li>
+<li><a href="https://posit.co/resources/cheatsheets/">RStudio Cheatsheets</a></li>
+<li><a href="https://stackoverflow.com/questions/tagged/r">Stack Overflow</a> - communauté</li>
+<li>Votre journal de bord - vos propres notes !</li>
+</ul>
+<p><strong>Pratiquer :</strong></p>
+<ul>
+<li>Kaggle - datasets et compétitions</li>
+<li>TidyTuesday - défis hebdomadaires</li>
+<li>Vos propres projets - le meilleur apprentissage !</li>
+</ul>
+</section>
+<section id="rester-en-contact" class="level2">
+<h2 class="anchored" data-anchor-id="rester-en-contact">Rester en contact</h2>
+<p><strong>Communauté :</strong></p>
+<ul>
+<li>Continuez à échanger avec vos camarades</li>
+<li>Partagez vos projets</li>
+<li>Aidez les nouveaux arrivants</li>
+<li>Contribuez à des projets open source</li>
+</ul>
+<p><strong>Avec les LLMs :</strong></p>
+<ul>
+<li>Continuez à les utiliser <strong>critiquement</strong></li>
+<li>Documentez vos meilleures pratiques</li>
+<li>Partagez vos découvertes</li>
+</ul>
+</section>
+<section id="merci" class="level2">
+<h2 class="anchored" data-anchor-id="merci">Merci ! 🙏</h2>
+<p><strong>Merci pour :</strong></p>
+<ul>
+<li>Votre <strong>engagement</strong> tout au long du cours</li>
+<li>Votre <strong>curiosité</strong> et vos questions</li>
+<li>Votre <strong>collaboration</strong> avec vos pairs</li>
+<li>Votre <strong>persévérance</strong> face aux difficultés</li>
+</ul>
+<div class="fragment">
+<p><strong>Vous êtes maintenant des programmeurs R capables ! 🚀</strong></p>
+</div>
+<div class="fragment">
+<p><strong>Continuez à coder, continuez à apprendre, continuez à créer !</strong></p>
+</div>
+</section>
+<section id="questions-finales" class="level2">
+<h2 class="anchored" data-anchor-id="questions-finales">Questions finales ?</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>N’oubliez jamais
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Le <strong>code</strong> est un outil, pas une fin en soi</li>
+<li>Les <strong>erreurs</strong> sont des opportunités d’apprentissage</li>
+<li>La <strong>collaboration</strong> enrichit vos compétences</li>
+<li>L’<strong>apprentissage</strong> ne s’arrête jamais</li>
+<li>Les <strong>LLMs</strong> sont des assistants, vous êtes le cerveau !</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Bon courage pour vos futurs projets ! 🎉</strong></p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/EliasBcd\.github\.io\/rl3\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

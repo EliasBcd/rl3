@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Elias Bouacida">
+
+<title>Séance 6 : Organisation et modularité – Initiation à R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f4f457e805d2b247f730789ca0bbc19f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">EC Libre : Introduction à la programmation (en R) avec des LLMs</li><li class="breadcrumb-item"><a href="../ECLibre/01Introduction.html">ECLibre</a></li><li class="breadcrumb-item"><a href="../ECLibre/07Lecon6Organisation.html">Séance 6 : Organisation et modularité</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">EC Libre : Introduction à la programmation (en R) avec des LLMs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">ECLibre</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/01Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apprendre la Programmation (en R) avec les LLMs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/02Lecon1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 1 : Premiers pas avec R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/03Lecon2Donnees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 2 : Données et fonctions intégrées</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/04Lecon3Fonctions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 3 : Fonctions, conditions et boucles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/05Lecon4Dataframes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 4 : Données tabulaires et graphiques avancés</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/06Lecon5Projet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 5 : Projet personnel intégré</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/07Lecon6Organisation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Séance 6 : Organisation et modularité</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/08Lecon7Automatisation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 7 : Automatisation et rapports</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ECLibre/09Lecon8Collaboratif.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 8 : Projet collaboratif final</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Méthodologie de Projet Personnel et Professionnel</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">M3P</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/01Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apprendre la Programmation (en R) avec les LLMs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/02Lecon1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 1 : Premiers pas avec R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/03Lecon2Donnees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 2 : Données et fonctions intégrées</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/04Lecon3Fonctions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 3 : Fonctions, conditions et boucles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../M3P/05Lecon4Dataframes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 4 : Données tabulaires et graphiques avancés</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Annexe</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../JournalBord.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modèle de journal de bord</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../donnees/donnees_meteo.csv" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Données Météo</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#plan-de-la-séance" id="toc-plan-de-la-séance" class="nav-link active" data-scroll-target="#plan-de-la-séance">Plan de la séance</a></li>
+  <li><a href="#objectifs-de-la-séance" id="toc-objectifs-de-la-séance" class="nav-link" data-scroll-target="#objectifs-de-la-séance">Objectifs de la séance</a></li>
+  <li><a href="#récap-et-partage" id="toc-récap-et-partage" class="nav-link" data-scroll-target="#récap-et-partage">Récap et partage</a>
+  <ul class="collapse">
+  <li><a href="#retours-sur-vos-projets" id="toc-retours-sur-vos-projets" class="nav-link" data-scroll-target="#retours-sur-vos-projets">Retours sur vos projets</a></li>
+  <li><a href="#le-problème-du-code-spaghetti" id="toc-le-problème-du-code-spaghetti" class="nav-link" data-scroll-target="#le-problème-du-code-spaghetti">Le problème du code “spaghetti”</a></li>
+  </ul></li>
+  <li><a href="#refactoring-collectif" id="toc-refactoring-collectif" class="nav-link" data-scroll-target="#refactoring-collectif">Refactoring collectif</a>
+  <ul class="collapse">
+  <li><a href="#quest-ce-que-le-refactoring" id="toc-quest-ce-que-le-refactoring" class="nav-link" data-scroll-target="#quest-ce-que-le-refactoring">Qu’est-ce que le refactoring ?</a></li>
+  <li><a href="#exercice-1-analyser-du-code-désordonné" id="toc-exercice-1-analyser-du-code-désordonné" class="nav-link" data-scroll-target="#exercice-1-analyser-du-code-désordonné">Exercice 1 : Analyser du code désordonné</a></li>
+  <li><a href="#principes-dorganisation" id="toc-principes-dorganisation" class="nav-link" data-scroll-target="#principes-dorganisation">Principes d’organisation</a></li>
+  <li><a href="#exercice-2-refactoring-guidé" id="toc-exercice-2-refactoring-guidé" class="nav-link" data-scroll-target="#exercice-2-refactoring-guidé">Exercice 2 : Refactoring guidé</a></li>
+  <li><a href="#exercice-3-organisation-en-modules" id="toc-exercice-3-organisation-en-modules" class="nav-link" data-scroll-target="#exercice-3-organisation-en-modules">Exercice 3 : Organisation en modules</a></li>
+  </ul></li>
+  <li><a href="#packages-et-écosystème-r" id="toc-packages-et-écosystème-r" class="nav-link" data-scroll-target="#packages-et-écosystème-r">Packages et écosystème R</a>
+  <ul class="collapse">
+  <li><a href="#quest-ce-quun-package" id="toc-quest-ce-quun-package" class="nav-link" data-scroll-target="#quest-ce-quun-package">Qu’est-ce qu’un package ?</a></li>
+  <li><a href="#installer-et-charger-un-package" id="toc-installer-et-charger-un-package" class="nav-link" data-scroll-target="#installer-et-charger-un-package">Installer et charger un package</a></li>
+  <li><a href="#exercice-4-découvrir-dplyr" id="toc-exercice-4-découvrir-dplyr" class="nav-link" data-scroll-target="#exercice-4-découvrir-dplyr">Exercice 4 : Découvrir dplyr</a></li>
+  <li><a href="#le-pipe-ou" id="toc-le-pipe-ou" class="nav-link" data-scroll-target="#le-pipe-ou">Le pipe <code>%&gt;%</code> (ou <code>|&gt;</code>)</a></li>
+  <li><a href="#exercice-5-pratiquer-dplyr" id="toc-exercice-5-pratiquer-dplyr" class="nav-link" data-scroll-target="#exercice-5-pratiquer-dplyr">Exercice 5 : Pratiquer dplyr</a></li>
+  <li><a href="#exercice-6-autres-packages-utiles" id="toc-exercice-6-autres-packages-utiles" class="nav-link" data-scroll-target="#exercice-6-autres-packages-utiles">Exercice 6 : Autres packages utiles</a></li>
+  </ul></li>
+  <li><a href="#gestion-des-erreurs" id="toc-gestion-des-erreurs" class="nav-link" data-scroll-target="#gestion-des-erreurs">Gestion des erreurs</a>
+  <ul class="collapse">
+  <li><a href="#erreurs-courantes-avec-les-packages" id="toc-erreurs-courantes-avec-les-packages" class="nav-link" data-scroll-target="#erreurs-courantes-avec-les-packages">Erreurs courantes avec les packages</a></li>
+  <li><a href="#exercice-7-debugging-de-packages" id="toc-exercice-7-debugging-de-packages" class="nav-link" data-scroll-target="#exercice-7-debugging-de-packages">Exercice 7 : Debugging de packages</a></li>
+  <li><a href="#bonnes-pratiques" id="toc-bonnes-pratiques" class="nav-link" data-scroll-target="#bonnes-pratiques">Bonnes pratiques</a></li>
+  </ul></li>
+  <li><a href="#mini-package-personnel" id="toc-mini-package-personnel" class="nav-link" data-scroll-target="#mini-package-personnel">Mini-package personnel</a>
+  <ul class="collapse">
+  <li><a href="#projet-organiser-vos-fonctions" id="toc-projet-organiser-vos-fonctions" class="nav-link" data-scroll-target="#projet-organiser-vos-fonctions">Projet : Organiser vos fonctions</a></li>
+  <li><a href="#exercice-8-créer-sa-bibliothèque" id="toc-exercice-8-créer-sa-bibliothèque" class="nav-link" data-scroll-target="#exercice-8-créer-sa-bibliothèque">Exercice 8 : Créer sa bibliothèque</a></li>
+  <li><a href="#documentation-des-fonctions" id="toc-documentation-des-fonctions" class="nav-link" data-scroll-target="#documentation-des-fonctions">Documentation des fonctions</a></li>
+  <li><a href="#exercice-9-utiliser-sa-bibliothèque" id="toc-exercice-9-utiliser-sa-bibliothèque" class="nav-link" data-scroll-target="#exercice-9-utiliser-sa-bibliothèque">Exercice 9 : Utiliser sa bibliothèque</a></li>
+  </ul></li>
+  <li><a href="#retour-réflexif" id="toc-retour-réflexif" class="nav-link" data-scroll-target="#retour-réflexif">Retour réflexif</a>
+  <ul class="collapse">
+  <li><a href="#exercice-réflexif-journal-de-bord" id="toc-exercice-réflexif-journal-de-bord" class="nav-link" data-scroll-target="#exercice-réflexif-journal-de-bord">Exercice réflexif : Journal de bord</a></li>
+  <li><a href="#ce-que-vous-avez-appris" id="toc-ce-que-vous-avez-appris" class="nav-link" data-scroll-target="#ce-que-vous-avez-appris">Ce que vous avez appris</a></li>
+  </ul></li>
+  <li><a href="#ressources-et-prochaines-étapes" id="toc-ressources-et-prochaines-étapes" class="nav-link" data-scroll-target="#ressources-et-prochaines-étapes">Ressources et prochaines étapes</a>
+  <ul class="collapse">
+  <li><a href="#packages-clés-découverts" id="toc-packages-clés-découverts" class="nav-link" data-scroll-target="#packages-clés-découverts">Packages clés découverts</a></li>
+  <li><a href="#pour-aller-plus-loin" id="toc-pour-aller-plus-loin" class="nav-link" data-scroll-target="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+  <li><a href="#préparation-prochaine-séance" id="toc-préparation-prochaine-séance" class="nav-link" data-scroll-target="#préparation-prochaine-séance">Préparation prochaine séance</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions ?</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="slide-lecon6.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">EC Libre : Introduction à la programmation (en R) avec des LLMs</li><li class="breadcrumb-item"><a href="../ECLibre/01Introduction.html">ECLibre</a></li><li class="breadcrumb-item"><a href="../ECLibre/07Lecon6Organisation.html">Séance 6 : Organisation et modularité</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Séance 6 : Organisation et modularité</h1>
+<p class="subtitle lead">Apprendre R avec les LLMs</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur·rice</div>
+    <div class="quarto-title-meta-contents">
+             <p>Elias Bouacida </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">3 octobre 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="plan-de-la-séance" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="plan-de-la-séance">Plan de la séance</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Récap et partage</strong> (15min) : Retours sur les projets</li>
+<li><strong>Refactoring collectif</strong> (45min) : Organiser un long script</li>
+<li><strong>Packages et écosystème R</strong> (60min) : dplyr, lubridate, stringr</li>
+<li><strong>Gestion des erreurs courantes</strong> (45min) : Packages manquants, conflits</li>
+<li><strong>Mini-package personnel</strong> (50min) : Organiser ses fonctions</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Production attendue :</strong> Code organisé en modules + maîtrise de 3 packages</p>
+</div>
+</section>
+<section id="objectifs-de-la-séance" class="level2">
+<h2 class="anchored" data-anchor-id="objectifs-de-la-séance">Objectifs de la séance</h2>
+<div class="callout callout-style-default callout-tip callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Structurer son code comme un professionnel
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Organiser</strong> son code en modules logiques</li>
+<li><strong>Découvrir</strong> l’écosystème des packages R</li>
+<li><strong>Maîtriser</strong> dplyr pour manipuler les données</li>
+<li><strong>Gérer</strong> les erreurs liées aux packages</li>
+<li><strong>Créer</strong> sa propre bibliothèque de fonctions</li>
+</ul>
+</div>
+</section>
+<section id="récap-et-partage" class="level1" data-background-color="#2E8B57">
+<h1 data-background-color="#2E8B57">Récap et partage</h1>
+<section id="retours-sur-vos-projets" class="level2">
+<h2 class="anchored" data-anchor-id="retours-sur-vos-projets">Retours sur vos projets</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Quels retours avez-vous reçus ?</li>
+<li>Qu’avez-vous amélioré dans votre projet ?</li>
+<li>Une difficulté commune que vous avez observée ?</li>
+</ul>
+</div>
+</section>
+<section id="le-problème-du-code-spaghetti" class="level2">
+<h2 class="anchored" data-anchor-id="le-problème-du-code-spaghetti">Le problème du code “spaghetti”</h2>
+<p><strong>Observez ce type de code :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 500 lignes de code dans un seul fichier...</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>donnees<span class="sc">$</span>nom <span class="ot">&lt;-</span> <span class="fu">tolower</span>(donnees<span class="sc">$</span>nom)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ... 50 lignes de nettoyage ...</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>moyenne1 <span class="ot">&lt;-</span> <span class="fu">mean</span>(donnees<span class="sc">$</span>valeur1, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ... 30 lignes de calculs ...</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(donnees, <span class="fu">aes</span>(<span class="at">x =</span> var1, <span class="at">y =</span> var2)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ... encore 400 lignes ...</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Avertissement</span>Problèmes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Difficile à lire</li>
+<li>Difficile à maintenir</li>
+<li>Impossible à réutiliser</li>
+<li>Difficile à débugger</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="refactoring-collectif" class="level1" data-background-color="#4169E1">
+<h1 data-background-color="#4169E1">Refactoring collectif</h1>
+<section id="quest-ce-que-le-refactoring" class="level2">
+<h2 class="anchored" data-anchor-id="quest-ce-que-le-refactoring">Qu’est-ce que le refactoring ?</h2>
+<p><strong>Refactoring</strong> = Réorganiser le code sans changer son comportement</p>
+<div class="incremental">
+<p><strong>Objectifs :</strong></p>
+<ul class="incremental">
+<li>Améliorer la <strong>lisibilité</strong></li>
+<li>Faciliter la <strong>réutilisation</strong></li>
+<li>Simplifier la <strong>maintenance</strong></li>
+<li>Réduire la <strong>duplication</strong></li>
+</ul>
+</div>
+</section>
+<section id="exercice-1-analyser-du-code-désordonné" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-1-analyser-du-code-désordonné">Exercice 1 : Analyser du code désordonné</h2>
+<p><strong>Voici un script à améliorer :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"ventes.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>d<span class="sc">$</span>nom <span class="ot">&lt;-</span> <span class="fu">tolower</span>(d<span class="sc">$</span>nom)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>d<span class="sc">$</span>date <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(d<span class="sc">$</span>date)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">mean</span>(d<span class="sc">$</span>montant, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Moyenne:"</span>, m))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>d2 <span class="ot">&lt;-</span> d[d<span class="sc">$</span>montant <span class="sc">&gt;</span> m, ]</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(d2<span class="sc">$</span>date, d2<span class="sc">$</span>montant)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">sum</span>(d<span class="sc">$</span>montant, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Total:"</span>, s))</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>d3 <span class="ot">&lt;-</span> d[d<span class="sc">$</span>categorie <span class="sc">==</span> <span class="st">"A"</span>, ]</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(d3<span class="sc">$</span>montant, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Demandez au LLM :</strong></p>
+<blockquote class="blockquote">
+<p>“Quels sont les problèmes de ce code ? Comment pourrait-on l’améliorer ?”</p>
+</blockquote>
+<div class="notes">
+<p>15 minutes. Discussion collective sur les problèmes.</p>
+</div>
+</section>
+<section id="principes-dorganisation" class="level2">
+<h2 class="anchored" data-anchor-id="principes-dorganisation">Principes d’organisation</h2>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><strong>Un fichier = une responsabilité</strong>
+<ul class="incremental">
+<li><code>01_import_donnees.R</code></li>
+<li><code>02_nettoyage.R</code></li>
+<li><code>03_fonctions_analyse.R</code></li>
+<li><code>04_visualisation.R</code></li>
+</ul></li>
+<li><strong>Des noms explicites</strong>
+<ul class="incremental">
+<li><code>calculer_moyenne_par_groupe()</code> ✅</li>
+<li><code>calc()</code> ❌</li>
+</ul></li>
+<li><strong>Des fonctions courtes</strong>
+<ul class="incremental">
+<li>Une fonction = une tâche</li>
+</ul></li>
+<li><strong>Des commentaires utiles</strong>
+<ul class="incremental">
+<li>Expliquer le “pourquoi”, pas le “quoi”</li>
+</ul></li>
+</ol>
+</div>
+</section>
+<section id="exercice-2-refactoring-guidé" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-2-refactoring-guidé">Exercice 2 : Refactoring guidé</h2>
+<p><strong>Transformons le code précédent ensemble :</strong></p>
+<p><strong>Étape 1 - Fonctions de nettoyage :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nettoyer_noms <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>nom <span class="ot">&lt;-</span> <span class="fu">tolower</span>(data<span class="sc">$</span>nom)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>convertir_dates <span class="ot">&lt;-</span> <span class="cf">function</span>(data, colonne_date) {</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  data[[colonne_date]] <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(data[[colonne_date]])</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Étape 2 - Fonctions d’analyse :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>calculer_statistiques <span class="ot">&lt;-</span> <span class="cf">function</span>(data, colonne) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">moyenne =</span> <span class="fu">mean</span>(data[[colonne]], <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">total =</span> <span class="fu">sum</span>(data[[colonne]], <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">length</span>(data[[colonne]])</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="notes">
+<p>20 minutes. Refactoring collectif guidé.</p>
+</div>
+</section>
+<section id="exercice-3-organisation-en-modules" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-3-organisation-en-modules">Exercice 3 : Organisation en modules</h2>
+<p><strong>Créez la structure suivante :</strong></p>
+<pre><code>mon_projet/
+├── donnees/
+│   └── ventes.csv
+├── scripts/
+│   ├── 01_fonctions_nettoyage.R
+│   ├── 02_fonctions_analyse.R
+│   └── 03_fonctions_visualisation.R
+└── analyse_principale.R</code></pre>
+<p><strong>Dans <code>analyse_principale.R</code> :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger les fonctions</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/01_fonctions_nettoyage.R"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/02_fonctions_analyse.R"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"scripts/03_fonctions_visualisation.R"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliser les fonctions</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"donnees/ventes.csv"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">nettoyer_noms</span>(donnees)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>stats <span class="ot">&lt;-</span> <span class="fu">calculer_statistiques</span>(donnees, <span class="st">"montant"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="notes">
+<p>20 minutes. Les étudiants créent leur première structure modulaire.</p>
+</div>
+</section>
+</section>
+<section id="packages-et-écosystème-r" class="level1" data-background-color="#FF8C00">
+<h1 data-background-color="#FF8C00">Packages et écosystème R</h1>
+<section id="quest-ce-quun-package" class="level2">
+<h2 class="anchored" data-anchor-id="quest-ce-quun-package">Qu’est-ce qu’un package ?</h2>
+<p>Un <strong>package</strong> = Collection de fonctions réutilisables</p>
+<div class="incremental">
+<p><strong>Avantages :</strong></p>
+<ul class="incremental">
+<li>Fonctions <strong>testées</strong> et <strong>documentées</strong></li>
+<li><strong>Gain de temps</strong> énorme</li>
+<li><strong>Communauté</strong> active</li>
+<li><strong>Standards</strong> professionnels</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Exemples célèbres :</strong></p>
+<ul>
+<li><code>ggplot2</code> : graphiques (vous connaissez déjà !)</li>
+<li><code>dplyr</code> : manipulation de données</li>
+<li><code>tidyr</code> : restructuration de données</li>
+<li><code>lubridate</code> : dates et heures</li>
+</ul>
+</div>
+</section>
+<section id="installer-et-charger-un-package" class="level2">
+<h2 class="anchored" data-anchor-id="installer-et-charger-un-package">Installer et charger un package</h2>
+<p><strong>Installation (une seule fois) :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Chargement (à chaque session) :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>install.packages()</code> : télécharge depuis internet <code>library()</code> : active pour utilisation</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercice-4-découvrir-dplyr" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-4-découvrir-dplyr">Exercice 4 : Découvrir dplyr</h2>
+<p><strong>dplyr simplifie la manipulation de données</strong></p>
+<p><strong>Demandez au LLM :</strong></p>
+<blockquote class="blockquote">
+<p>“Explique-moi les principales fonctions de dplyr en R avec des exemples simples”</p>
+</blockquote>
+<div class="fragment">
+<p><strong>Fonctions principales :</strong></p>
+<ul>
+<li><code>filter()</code> : filtrer les lignes</li>
+<li><code>select()</code> : sélectionner les colonnes</li>
+<li><code>mutate()</code> : créer/modifier des colonnes</li>
+<li><code>summarise()</code> : calculer des résumés</li>
+<li><code>group_by()</code> : grouper par catégorie</li>
+<li><code>arrange()</code> : trier les lignes</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Testez avec vos données !</strong></p>
+</div>
+<div class="notes">
+<p>20 minutes. Première découverte de dplyr.</p>
+</div>
+</section>
+<section id="le-pipe-ou" class="level2">
+<h2 class="anchored" data-anchor-id="le-pipe-ou">Le pipe <code>%&gt;%</code> (ou <code>|&gt;</code>)</h2>
+<p><strong>dplyr introduit le pipe pour chaîner les opérations :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ancienne méthode (difficile à lire)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>resultat <span class="ot">&lt;-</span> <span class="fu">arrange</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(donnees, age <span class="sc">&gt;</span> <span class="dv">18</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>      categorie</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">moyenne =</span> <span class="fu">mean</span>(valeur)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  moyenne</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec le pipe (facile à lire)</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>resultat <span class="ot">&lt;-</span> donnees <span class="sc">%&gt;%</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age <span class="sc">&gt;</span> <span class="dv">18</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(categorie) <span class="sc">%&gt;%</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">moyenne =</span> <span class="fu">mean</span>(valeur)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(moyenne)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><strong>Le pipe se lit comme : “puis”</strong></p>
+</div>
+</section>
+<section id="exercice-5-pratiquer-dplyr" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-5-pratiquer-dplyr">Exercice 5 : Pratiquer dplyr</h2>
+<p><strong>Avec un dataset de ventes, utilisez dplyr pour :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>ventes <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(montant <span class="sc">&gt;</span> <span class="dv">1000</span>) <span class="sc">%&gt;%</span>          <span class="co"># Garder montants &gt; 1000</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(vendeur, montant, date) <span class="sc">%&gt;%</span>  <span class="co"># Sélectionner colonnes</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">montant_ttc =</span> montant <span class="sc">*</span> <span class="fl">1.2</span>) <span class="sc">%&gt;%</span>  <span class="co"># Ajouter TVA</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(vendeur) <span class="sc">%&gt;%</span>               <span class="co"># Grouper par vendeur</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">total =</span> <span class="fu">sum</span>(montant_ttc),</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">moyenne =</span> <span class="fu">mean</span>(montant_ttc),</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_ventes =</span> <span class="fu">n</span>()</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total))                <span class="co"># Trier par total décroissant</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Demandez au LLM d’expliquer chaque ligne si besoin !</strong></p>
+<div class="notes">
+<p>20 minutes. Exercice pratique avec dplyr.</p>
+</div>
+</section>
+<section id="exercice-6-autres-packages-utiles" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-6-autres-packages-utiles">Exercice 6 : Autres packages utiles</h2>
+<p><strong>Découvrez d’autres packages :</strong></p>
+<p><strong>lubridate (dates) :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>date <span class="ot">&lt;-</span> <span class="st">"2023-01-15"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">ymd</span>(date)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">year</span>(d)   <span class="co"># Extraire l'année</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">month</span>(d)  <span class="co"># Extraire le mois</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(d, <span class="at">label =</span> <span class="cn">TRUE</span>)  <span class="co"># Jour de la semaine</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>stringr (texte) :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>texte <span class="ot">&lt;-</span> <span class="st">"  Bonjour  "</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str_trim</span>(texte)        <span class="co"># Enlever espaces</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str_to_upper</span>(texte)    <span class="co"># Majuscules</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str_detect</span>(texte, <span class="st">"Bon"</span>)  <span class="co"># Détecter motif</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Demandez au LLM des exemples pour chaque package !</strong></p>
+<div class="notes">
+<p>20 minutes. Découverte d’autres packages utiles.</p>
+</div>
+</section>
+</section>
+<section id="gestion-des-erreurs" class="level1" data-background-color="#8B008B">
+<h1 data-background-color="#8B008B">Gestion des erreurs</h1>
+<section id="erreurs-courantes-avec-les-packages" class="level2">
+<h2 class="anchored" data-anchor-id="erreurs-courantes-avec-les-packages">Erreurs courantes avec les packages</h2>
+<div class="incremental">
+<p><strong>1. Package non installé :</strong></p>
+<pre><code>Error: could not find function "filter"
+→ Avez-vous fait install.packages("dplyr") ?</code></pre>
+<p><strong>2. Package non chargé :</strong></p>
+<pre><code>Error: could not find function "filter"
+→ Avez-vous fait library(dplyr) ?</code></pre>
+<p><strong>3. Conflits de noms :</strong></p>
+<pre><code>filter() existe dans dplyr ET dans stats
+→ Utiliser dplyr::filter() pour être explicite</code></pre>
+<p><strong>4. Versions incompatibles :</strong></p>
+<pre><code>Le package nécessite R version 4.0 minimum
+→ Mettre à jour R</code></pre>
+</div>
+</section>
+<section id="exercice-7-debugging-de-packages" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-7-debugging-de-packages">Exercice 7 : Debugging de packages</h2>
+<p><strong>Corrigez ces erreurs volontaires :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Problème 1</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>donnees <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age <span class="sc">&gt;</span> <span class="dv">18</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Erreur: could not find function "%&gt;%"</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Problème 2</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(iris, Species, Sepal.Length)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Marche, mais warning sur conflit avec MASS</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Problème 3</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"monpackageinexistant"</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Erreur: package not found</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Demandez au LLM de vous aider à comprendre et résoudre chaque erreur.</strong></p>
+<div class="notes">
+<p>15 minutes. Exercice de debugging.</p>
+</div>
+</section>
+<section id="bonnes-pratiques" class="level2">
+<h2 class="anchored" data-anchor-id="bonnes-pratiques">Bonnes pratiques</h2>
+<div class="incremental">
+<p><strong>Au début de chaque script :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger les packages nécessaires</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Vérifier la version R si besoin</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">getRversion</span>() <span class="sc">&lt;</span> <span class="st">"4.0.0"</span>) {</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(<span class="st">"Ce script nécessite R version 4.0 ou supérieure"</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>En cas de conflit :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spécifier explicitement le package</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">filter</span>(donnees, age <span class="sc">&gt;</span> <span class="dv">18</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">filter</span>(serie_temporelle, filtre)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</section>
+</section>
+<section id="mini-package-personnel" class="level1" data-background-color="#DC143C">
+<h1 data-background-color="#DC143C">Mini-package personnel</h1>
+<section id="projet-organiser-vos-fonctions" class="level2">
+<h2 class="anchored" data-anchor-id="projet-organiser-vos-fonctions">Projet : Organiser vos fonctions</h2>
+<p><strong>Objectif :</strong> Créer une bibliothèque personnelle de fonctions réutilisables</p>
+<p><strong>Structure :</strong></p>
+<pre><code>ma_bibliotheque/
+├── nettoyage.R
+├── analyse.R
+├── visualisation.R
+└── utils.R</code></pre>
+</section>
+<section id="exercice-8-créer-sa-bibliothèque" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-8-créer-sa-bibliothèque">Exercice 8 : Créer sa bibliothèque</h2>
+<p><strong>Dans <code>nettoyage.R</code> :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Standardiser les noms en minuscules</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param data Un dataframe</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param colonne Nom de la colonne à nettoyer</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' @return Le dataframe avec la colonne nettoyée</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>standardiser_noms <span class="ot">&lt;-</span> <span class="cf">function</span>(data, colonne) {</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  data[[colonne]] <span class="ot">&lt;-</span> <span class="fu">tolower</span>(data[[colonne]])</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co">#' Supprimer les lignes avec NA</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>supprimer_na <span class="ot">&lt;-</span> <span class="cf">function</span>(data, <span class="at">colonnes =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(colonnes)) {</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">na.omit</span>(data))</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  data[<span class="fu">complete.cases</span>(data[, colonnes]), ]</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Créez au moins 3 fonctions dans chaque fichier !</strong></p>
+<div class="notes">
+<p>30 minutes. Les étudiants organisent leurs fonctions.</p>
+</div>
+</section>
+<section id="documentation-des-fonctions" class="level2">
+<h2 class="anchored" data-anchor-id="documentation-des-fonctions">Documentation des fonctions</h2>
+<p><strong>Utilisez les commentaires roxygen2 :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Titre court de la fonction</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' Description détaillée de ce que fait la fonction.</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param parametre1 Description du premier paramètre</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param parametre2 Description du second paramètre</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' @return Description de ce que retourne la fonction</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' @examples</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co">#' ma_fonction(donnees, "colonne")</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>ma_fonction <span class="ot">&lt;-</span> <span class="cf">function</span>(parametre1, parametre2) {</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Code ici</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p><strong>Demandez au LLM de vous aider à documenter vos fonctions !</strong></p>
+</div>
+</section>
+<section id="exercice-9-utiliser-sa-bibliothèque" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-9-utiliser-sa-bibliothèque">Exercice 9 : Utiliser sa bibliothèque</h2>
+<p><strong>Créez un script principal qui utilise votre bibliothèque :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger toutes vos fonctions</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"ma_bibliotheque/nettoyage.R"</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"ma_bibliotheque/analyse.R"</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"ma_bibliotheque/visualisation.R"</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliser vos fonctions</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data.csv"</span>)</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">standardiser_noms</span>(donnees, <span class="st">"nom"</span>)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">supprimer_na</span>(donnees, <span class="fu">c</span>(<span class="st">"age"</span>, <span class="st">"salaire"</span>))</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>stats <span class="ot">&lt;-</span> <span class="fu">calculer_statistiques_complete</span>(donnees)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_distribution</span>(donnees, <span class="st">"salaire"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Testez que tout fonctionne !</strong></p>
+<div class="notes">
+<p>20 minutes. Test d’intégration.</p>
+</div>
+</section>
+</section>
+<section id="retour-réflexif" class="level1" data-background-color="#2F4F4F">
+<h1 data-background-color="#2F4F4F">Retour réflexif</h1>
+<section id="exercice-réflexif-journal-de-bord" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-réflexif-journal-de-bord">Exercice réflexif : Journal de bord</h2>
+<p><strong>Documentez :</strong></p>
+<ol type="1">
+<li><strong>Refactoring</strong> :
+<ul>
+<li>Avant/après : montrez un exemple de code que vous avez amélioré</li>
+<li>Qu’est-ce qui rend le code “après” meilleur ?</li>
+</ul></li>
+<li><strong>Packages</strong> :
+<ul>
+<li>Les 3 packages découverts aujourd’hui</li>
+<li>Fonction la plus utile de chaque package</li>
+<li>Une erreur de package que vous avez résolue</li>
+</ul></li>
+<li><strong>Organisation</strong> :
+<ul>
+<li>Structure de votre bibliothèque personnelle</li>
+<li>Vos fonctions les plus réutilisables</li>
+<li>Comment cette organisation vous aidera</li>
+</ul></li>
+</ol>
+<div class="notes">
+<p>15 minutes. Documentation des apprentissages.</p>
+</div>
+</section>
+<section id="ce-que-vous-avez-appris" class="level2">
+<h2 class="anchored" data-anchor-id="ce-que-vous-avez-appris">Ce que vous avez appris</h2>
+<div class="incremental">
+<p>✅ Organiser son code en modules logiques ✅ Créer et documenter des fonctions réutilisables ✅ Utiliser dplyr pour manipuler les données ✅ Découvrir l’écosystème des packages R ✅ Gérer les erreurs liées aux packages ✅ Créer sa propre bibliothèque de fonctions ✅ Adopter les bonnes pratiques professionnelles</p>
+</div>
+</section>
+</section>
+<section id="ressources-et-prochaines-étapes" class="level1" data-background-color="#2E8B57">
+<h1 data-background-color="#2E8B57">Ressources et prochaines étapes</h1>
+<section id="packages-clés-découverts" class="level2">
+<h2 class="anchored" data-anchor-id="packages-clés-découverts">Packages clés découverts</h2>
+<p><strong>dplyr :</strong></p>
+<ul>
+<li><code>filter()</code>, <code>select()</code>, <code>mutate()</code>, <code>summarise()</code>, <code>group_by()</code></li>
+<li>Le pipe <code>%&gt;%</code> (ou <code>|&gt;</code>)</li>
+</ul>
+<p><strong>lubridate :</strong></p>
+<ul>
+<li><code>ymd()</code>, <code>year()</code>, <code>month()</code>, <code>wday()</code></li>
+</ul>
+<p><strong>stringr :</strong></p>
+<ul>
+<li><code>str_trim()</code>, <code>str_to_upper()</code>, <code>str_detect()</code></li>
+</ul>
+</section>
+<section id="pour-aller-plus-loin" class="level2">
+<h2 class="anchored" data-anchor-id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Explorez</strong> d’autres packages du tidyverse</li>
+<li><strong>Organisez</strong> vos anciens projets avec cette nouvelle structure</li>
+<li><strong>Documentez</strong> systématiquement vos fonctions</li>
+<li><strong>Partagez</strong> vos fonctions avec vos camarades</li>
+</ul>
+</div>
+</section>
+<section id="préparation-prochaine-séance" class="level2">
+<h2 class="anchored" data-anchor-id="préparation-prochaine-séance">Préparation prochaine séance</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Devoirs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Réorganisez un de vos anciens projets avec la structure modulaire</li>
+<li>Créez au moins 5 fonctions documentées dans votre bibliothèque</li>
+<li>Pratiquez dplyr avec vos propres données</li>
+<li><strong>Mettez à jour votre journal</strong> avec tous les détails</li>
+</ol>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Prochaine séance :</strong> Automatisation et rapports - traiter plusieurs fichiers et créer des rapports reproductibles !</p>
+</div>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions ?</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Points clés à retenir
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Le <strong>code organisé</strong> est plus facile à maintenir et réutiliser</li>
+<li>Les <strong>packages</strong> vous font gagner un temps précieux</li>
+<li><strong>dplyr</strong> est essentiel pour manipuler des données</li>
+<li><strong>Documenter</strong> ses fonctions est une bonne pratique</li>
+<li>La <strong>modularité</strong> est la clé du code professionnel</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Bon courage pour l’organisation ! 📚</strong></p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/EliasBcd\.github\.io\/rl3\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
