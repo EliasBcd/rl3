@@ -129,7 +129,6 @@ Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le 
 
 - Apprendre à utiliser R et Rstudio
 - Apprendre à utiliser les principales librairies (aussi appelées paquets) de R pour l'analyse de données et les statistiques (le tidyverse)
-- Vous préparez à utiliser R dans d'autres cours (économétrie, séries temporelles, économie du travail, projet tutorés)
 - Vous apprendre à utiliser des LLMs pour faire cela
 
 
@@ -168,8 +167,8 @@ Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le 
 
 - 📈 **Analyser un sondage** : "Quel pourcentage préfère le chocolat ?"
 - 📊 **Créer des graphiques** : Histogrammes, courbes, diagrammes
-- 🧮 **Calculs statistiques** : Moyennes, corrélations, tests, économétrie
-- 🏃 **Données sportives** : Performance des équipes, évolutions
+- 🧮 **Calculs statistiques** : Moyennes, corrélations, tests
+- 🏃 **Données géographiques** : Cartes
 - 📋 **Nettoyer des données** : Corriger, organiser, structurer
 - 🎯 **Prédictions simples** : "Quelle sera la prochaine tendance ?"
 
@@ -254,7 +253,7 @@ barplot(ventes, names.arg = mois,
 
 # Les Erreurs : Vos Amies ! 🐛
 
-## Pourquoi on va faire exprès de commettre des erreurs
+## Pourquoi on fera des erreurs
 
 **Principe pédagogique :** Les erreurs sont des occasions d'apprentissage, pas des échecs !
 
@@ -290,10 +289,10 @@ Le cours est structuré en 3 phases progressives sur 8 séances de 3h.
 
 ::: {.nonincremental}
 - Importer des données réelles (fichiers CSV)
-- Explorer des data frames
+- Explorer des dataframes
 - Calculer des statistiques descriptives
 - Créer des visualisations simples
-- Apprendre à débugger efficacement
+- Apprendre à déboguer efficacement
 :::
 
 #### Séance 3 : Automatisation et fonctions
@@ -334,7 +333,7 @@ Le cours est structuré en 3 phases progressives sur 8 séances de 3h.
 
 ::: {.nonincremental}
 - Structurer son code en modules
-- Découvrir l'écosystème des packages (dplyr, lubridate)
+- Découvrir l'écosystème des packages (`dplyr`, `lubridate`)
 - Organiser ses fonctions en scripts thématiques
 :::
 
@@ -343,7 +342,7 @@ Le cours est structuré en 3 phases progressives sur 8 séances de 3h.
 ::: {.nonincremental}
 - Automatiser des analyses répétitives
 - Traiter plusieurs fichiers à la fois
-- Créer des rapports reproductibles avec R Markdown
+- Créer des rapports reproductibles avec markdown
 :::
 
 #### Séance 8 : Projet collaboratif final
@@ -385,7 +384,7 @@ Le cours est structuré en 3 phases progressives sur 8 séances de 3h.
 
 - Exercices sur machine
 - Aide individuelle
-- Debugging collectif
+- Déboguing collectif
 :::
 
 ::: {.column width="33%"}
@@ -475,7 +474,7 @@ Votre engagement pendant les séances.
 ::: {.incremental}
 - **Présence active** : Vous travaillez sur les exercices
 - **Entraide** : Vous aidez vos camarades ou demandez de l'aide
-- **Debugging collectif** : Vous partagez vos solutions
+- **Déboguing collectif** : Vous partagez vos solutions
 - **Questions** : Vous posez des questions pertinentes
 :::
 
@@ -535,7 +534,7 @@ La participation, ce n'est pas parler beaucoup, c'est être engagé dans votre a
 - Installation R/RStudio : <https://moodle.univ-paris8.fr/course/section.php?id=134073>
 - Utilisation de R/Rstudio en ligne : <https://datalab.sspcloud.fr/> (Utilisez votre compte étudiant Paris 8 pour vous connecter)
 - Guide des prompts efficaces : <https://www.francenum.gouv.fr/guides-et-conseils/intelligence-artificielle/generation-de-contenus-texte-image-son-video/comment-0>
-- [Forum d'entraide étudiant](https://moodle.univ-paris8.fr/mod/forum/view.php?id=415534)
+<!-- - [Forum d'entraide étudiant](https://moodle.univ-paris8.fr/mod/forum/view.php?id=415534) -->
 
 :::
 

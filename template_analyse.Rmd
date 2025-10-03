@@ -1,0 +1,147 @@
+---
+title: "`r params$titre`"
+author: "Rapport automatisé"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+params:
+  dataset: "donnees/ventes_janvier.csv"
+  titre: "Analyse de ventes"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(ggplot2)
+```
+
+# Introduction
+
+Ce rapport présente une analyse automatisée des données contenues dans le fichier : **`r basename(params$dataset)`**
+
+# Importation des données
+
+```{r}
+# Importer les données
+donnees <- read.csv(params$dataset)
+
+# Aperçu des données
+head(donnees)
+```
+
+# Statistiques descriptives
+
+```{r}
+# Structure des données
+str(donnees)
+
+# Résumé statistique
+summary(donnees)
+```
+
+## Statistiques par région
+
+```{r}
+# Nombre de transactions par région
+table(donnees$region)
+
+# Montant total par région
+aggregate(montant ~ region, data = donnees, FUN = sum)
+
+# Montant moyen par région
+aggregate(montant ~ region, data = donnees, FUN = mean)
+```
+
+# Visualisations
+
+## Distribution des montants
+
+```{r, fig.width=8, fig.height=5}
+ggplot(donnees, aes(x = montant)) +
+  geom_histogram(binwidth = 500, fill = "steelblue", color = "white") +
+  labs(title = "Distribution des montants de vente",
+       x = "Montant (€)",
+       y = "Fréquence") +
+  theme_minimal()
+```
+
+## Ventes par produit
+
+```{r, fig.width=8, fig.height=5}
+# Calculer le total par produit
+ventes_produit <- aggregate(montant ~ produit, data = donnees, FUN = sum)
+
+ggplot(ventes_produit, aes(x = reorder(produit, montant), y = montant)) +
+  geom_bar(stat = "identity", fill = "coral") +
+  coord_flip() +
+  labs(title = "Montant total des ventes par produit",
+       x = "Produit",
+       y = "Montant total (€)") +
+  theme_minimal()
+```
+
+## Ventes par région
+
+```{r, fig.width=8, fig.height=5}
+# Calculer le total par région
+ventes_region <- aggregate(montant ~ region, data = donnees, FUN = sum)
+
+ggplot(ventes_region, aes(x = region, y = montant, fill = region)) +
+  geom_bar(stat = "identity") +
+  scale_fill_brewer(palette = "Set2") +
+  labs(title = "Montant total des ventes par région",
+       x = "Région",
+       y = "Montant total (€)") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+# Analyse détaillée
+
+## Performance globale
+
+```{r}
+# Métriques clés
+montant_total <- sum(donnees$montant)
+montant_moyen <- mean(donnees$montant)
+quantite_totale <- sum(donnees$quantite)
+nb_transactions <- nrow(donnees)
+
+cat("Montant total des ventes:", format(montant_total, big.mark = " "), "€\n")
+cat("Montant moyen par transaction:", round(montant_moyen, 2), "€\n")
+cat("Quantité totale vendue:", quantite_totale, "unités\n")
+cat("Nombre de transactions:", nb_transactions, "\n")
+```
+
+## Produit le plus vendu
+
+```{r}
+# Produit avec le plus haut montant de ventes
+produit_top <- ventes_produit[which.max(ventes_produit$montant), ]
+cat("Le produit le plus vendu est:", produit_top$produit,
+    "avec un montant total de", format(produit_top$montant, big.mark = " "), "€\n")
+```
+
+## Région la plus performante
+
+```{r}
+# Région avec le plus haut montant de ventes
+region_top <- ventes_region[which.max(ventes_region$montant), ]
+cat("La région la plus performante est:", region_top$region,
+    "avec un montant total de", format(region_top$montant, big.mark = " "), "€\n")
+```
+
+# Conclusion
+
+Ce rapport a analysé **`r nb_transactions` transactions** représentant un montant total de **`r format(montant_total, big.mark = " ")` €**.
+
+- Le produit le plus vendu est : **`r produit_top$produit`**
+- La région la plus performante est : **`r region_top$region`**
+- Le montant moyen par transaction est de : **`r round(montant_moyen, 2)` €**
+
+---
+
+*Rapport généré automatiquement le `r Sys.time()`*

@@ -53,11 +53,11 @@ execute:
 
 ::: {.callout-note}
 ## Ce cours est différent
-Vous allez apprendre la programmation **avec l'aide d'intelligences artificielles** (LLMs comme ChatGPT, Claude, etc.)
+Vous allez apprendre la programmation **avec l'aide d'IA génératives** (LLMs comme ChatGPT, Claude, etc.)
 :::
 
 ::: {.fragment}
-**Aucun prérequis nécessaire** - nous partons de zéro !
+**Aucun prérequis nécessaire** -- nous partons de zéro !
 :::
 
 ## Pourquoi apprendre R ?
@@ -137,7 +137,7 @@ Appuyez sur **Entrée** pour exécuter. R affiche immédiatement le résultat !
 :::
 
 ::: {.notes}
-10 minutes. Concept simple mais fondamental. Insister sur l'aspect interactif.
+10 minutes. Concept simple, mais fondamental. Insister sur l'aspect interactif.
 :::
 
 # Premiers calculs {background-color="#FF8C00"}
@@ -171,7 +171,7 @@ Demandez à votre LLM :
 :::
 
 ::: {.notes}
-15 minutes. Premier contact avec c() et mean(). Ne pas tout expliquer maintenant - laisser les étudiants découvrir avec le LLM.
+15 minutes. Premier contact avec c() et mean(). Ne pas tout expliquer maintenant -- laisser les étudiants découvrir avec le LLM.
 :::
 
 ## Comprendre le code {.smaller}

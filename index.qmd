@@ -9,7 +9,7 @@ date: last-modified
 date-format: long
 ---
 
-Ce site contient la plupart des présentations utilisées pour le cours d'introduction à R à l'aide d'un LLM dispensé en L3 économie-finance à l'université Paris 8.
+Ce site contient la plupart des présentations utilisées pour le cours d'introduction à la programmation (en R) dispensé au sein de l'université Paris 8.
 
 
 # Syllabus 

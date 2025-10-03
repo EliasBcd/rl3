@@ -1,0 +1,11 @@
+date,produit,quantite,montant,region
+2025-02-02,Ordinateur,4,4800,Nord
+2025-02-05,Souris,18,270,Sud
+2025-02-08,Clavier,10,400,Est
+2025-02-10,Ecran,6,1500,Ouest
+2025-02-12,Ordinateur,2,2400,Nord
+2025-02-15,Souris,22,330,Sud
+2025-02-18,Clavier,9,360,Est
+2025-02-20,Ecran,8,2000,Ouest
+2025-02-22,Ordinateur,5,6000,Nord
+2025-02-25,Souris,12,180,Sud

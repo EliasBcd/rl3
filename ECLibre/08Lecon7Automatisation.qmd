@@ -456,7 +456,7 @@ ventes_importantes <- donnees[donnees$montant > params$seuil, ]
 
 **Créez un rapport avec paramètres :**
 
-````markdown
+````{verbatim}
 ---
 title: "Analyse automatisée"
 params:
@@ -468,7 +468,7 @@ output: html_document
 
 # Analyse de `r params$variable`
 
-```{{r}}
+```{r}
 donnees <- read.csv(params$dataset)
 variable_data <- donnees[[params$variable]]
 
