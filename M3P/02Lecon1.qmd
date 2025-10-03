@@ -48,11 +48,14 @@ execute:
 :::
 
 
+
 # Découverte de RStudio {background-color="#4169E1"}
 
 ## Exercice 1 : Explorer l'interface {.smaller}
 
 Ouvrez RStudio sur votre ordinateur.
+
+
 
 ::: {.fragment}
 **Explorez ensuite :**

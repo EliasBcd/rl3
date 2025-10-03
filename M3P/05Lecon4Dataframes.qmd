@@ -1,0 +1,574 @@
+---
+title: "Séance 4 : Données tabulaires et graphiques avancés"
+subtitle: "Apprendre R avec les LLMs"
+author: "Elias Bouacida"
+date: last-modified
+date-format: long
+format:
+  html: default
+  revealjs:
+    scrollable: true
+    slide-number: true
+    output-file: slide-lecon4.html
+    embed-resources: true
+    footer: "Séance 4 - Données tabulaires et graphiques avancés"
+format-links: [revealjs]
+lang: fr
+execute:
+  echo: true
+---
+
+## Plan de la séance {.smaller}
+
+::: {.incremental}
+- **Récap et partage** (15min) : Retours sur les fonctions
+- **Nettoyage de données** (60min) : Gérer les incohérences réelles
+- **Introduction à ggplot2** (75min) : Créer des graphiques sophistiqués
+- **Fonctions de visualisation** (40min) : Automatiser la création de graphiques
+- **Mini-projet** (40min) : Dashboard de visualisations
+:::
+
+::: {.fragment}
+**Production attendue :** Dashboard avec 4 graphiques + fonction de visualisation réutilisable
+:::
+
+## Objectifs de la séance
+
+::: {.callout-tip}
+## Maîtriser les données complexes et la visualisation
+:::
+
+::: {.incremental}
+- **Nettoyer** des données avec incohérences (casse, formats)
+- Maîtriser les **dataframes** avancés
+- Créer des **visualisations** avec ggplot2
+- Développer des **fonctions graphiques** réutilisables
+- Combiner analyse et communication visuelle
+:::
+
+# Récap et partage {background-color="#2E8B57"}
+
+## Retours sur les fonctions
+
+::: {.incremental}
+- Quelles fonctions avez-vous créées ?
+- Quelles difficultés avec les conditions et boucles ?
+- Un exemple de bug intéressant que vous avez résolu ?
+:::
+
+## Exercice de révision {.smaller}
+
+**Créez rapidement une fonction qui :**
+
+1. Prend un vecteur de nombres en paramètre
+2. Retourne "Positif" si la moyenne est > 0
+3. Retourne "Négatif" sinon
+4. Gère les NA correctement
+
+::: {.fragment}
+**Testez avec :**
+
+```{r}
+#| eval: false
+valeurs <- c(-5, 10, NA, 8, -3)
+classifier_moyenne(valeurs)
+```
+:::
+
+::: {.notes}
+10 minutes. Révision rapide. Vérifier que les concepts de la séance 3 sont acquis.
+:::
+
+# Données réelles et leurs problèmes {background-color="#4169E1"}
+
+## Les données ne sont jamais parfaites
+
+Dans le monde réel, les données contiennent souvent :
+
+::: {.incremental}
+- Des **problèmes de casse** : "Alice", "alice", "ALICE"
+- Des **formats incohérents** : "2023-01-15", "15/01/2023"
+- Des **valeurs manquantes** : NA, "", "N/A", "inconnu"
+- Des **doublons**
+- Des **erreurs de saisie**
+:::
+
+::: {.fragment}
+::: {.callout-warning}
+## Important
+Le nettoyage des données représente souvent 80% du travail d'analyse !
+:::
+:::
+
+## Exercice 1 : Découvrir les problèmes {.smaller}
+
+**Voici un jeu de données de ventes :**
+
+```{r}
+#| eval: false
+ventes <- data.frame(
+  mois = c("Jan", "Fév", "Mar", "Avr", "Mai", "Jun"),
+  montant = c(1500, 2000, NA, 1800, 2200, 1900),
+  vendeur = c("Alice", "Bob", "alice", "Bob", "Alice", "bob")
+)
+```
+
+**Demandez au LLM :**
+
+> "Quels sont les problèmes potentiels dans ce jeu de données pour une analyse ?"
+
+::: {.fragment}
+**Identifiez :**
+
+1. Le problème de casse dans les noms
+2. La valeur manquante
+3. Les conséquences pour les calculs par vendeur
+:::
+
+::: {.notes}
+15 minutes. Les étudiants découvrent les problèmes réels des données.
+:::
+
+## Exercice 2 : Nettoyer la casse {.smaller}
+
+**Problème :** Les noms "Alice", "alice" et "Bob", "bob" sont comptés séparément.
+
+**Demandez au LLM comment standardiser les noms.**
+
+::: {.fragment}
+Vous découvrirez probablement :
+
+```{r}
+#| eval: false
+ventes$vendeur <- tolower(ventes$vendeur)
+# ou
+ventes$vendeur <- toupper(ventes$vendeur)
+```
+:::
+
+::: {.fragment}
+**Vérifiez le résultat :**
+
+```{r}
+#| eval: false
+unique(ventes$vendeur)
+table(ventes$vendeur)
+```
+:::
+
+::: {.notes}
+15 minutes. Premier nettoyage simple mais essentiel.
+:::
+
+## Exercice 3 : Gérer les valeurs manquantes {.smaller}
+
+**Plusieurs stratégies possibles :**
+
+**Demandez au LLM :**
+
+> "Comment gérer les valeurs NA dans mes données de ventes ? Quelles sont les différentes approches ?"
+
+::: {.fragment}
+**Options principales :**
+
+1. **Supprimer** les lignes avec NA : `na.omit()`
+2. **Remplacer** par une valeur : moyenne, médiane, 0
+3. **Garder** mais utiliser `na.rm = TRUE` dans les calculs
+:::
+
+::: {.fragment}
+::: {.callout-note}
+## Réflexion importante
+Quelle stratégie choisir dépend du contexte ! Supprimer des données peut introduire des biais.
+:::
+:::
+
+::: {.notes}
+15 minutes. Discussion importante sur les choix méthodologiques.
+:::
+
+## Exercice 4 : Dataset complexe piégé {.smaller}
+
+**Nouveau challenge - Données étudiants :**
+
+```{r}
+#| eval: false
+etudiants <- data.frame(
+  nom = c("Dupont", "Martin", "Durand", "", "Petit"),
+  age = c(20, "vingt-deux", 19, 21, 18),
+  note_math = c(15, 12, NA, 16, 14),
+  note_info = c(13, NA, 15, 12, 16),
+  filiere = c("Info", "info", "Maths", "INFO", "maths")
+)
+```
+
+**Mission :**
+
+1. Identifiez TOUS les problèmes
+2. Nettoyez le dataset
+3. Calculez la moyenne par filière
+
+::: {.fragment}
+**Utilisez le LLM étape par étape !**
+:::
+
+::: {.notes}
+30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d'erreurs à trouver.
+:::
+
+# Introduction à ggplot2 {background-color="#FF8C00"}
+
+## Pourquoi ggplot2 ?
+
+Jusqu'ici vous avez utilisé `plot()`, `hist()`, `barplot()`...
+
+::: {.fragment}
+**ggplot2** est un package puissant pour créer des graphiques :
+
+- Syntaxe cohérente et logique
+- Graphiques professionnels
+- Très flexible et personnalisable
+- Standard dans l'analyse de données en R
+:::
+
+## La grammaire des graphiques
+
+**ggplot2** fonctionne par couches :
+
+::: {.incremental}
+1. **Données** : `ggplot(data = mes_donnees)`
+2. **Esthétiques** : `aes(x = variable1, y = variable2)`
+3. **Géométries** : `geom_point()`, `geom_line()`, `geom_bar()`
+4. **Personnalisation** : titres, couleurs, thèmes
+:::
+
+::: {.fragment}
+On **ajoute** des couches avec `+`
+:::
+
+## Exercice 5 : Premier graphique ggplot2 {.smaller}
+
+**Demandez au LLM :**
+
+> "Comment créer un graphique simple avec ggplot2 en R ? Je débute avec ce package."
+
+**Ensuite, testez avec vos données de ventes :**
+
+```{r}
+#| eval: false
+library(ggplot2)
+
+ggplot(data = ventes, aes(x = mois, y = montant)) +
+  geom_col()
+```
+
+::: {.fragment}
+**Questions :**
+
+1. Que fait `aes()` ?
+2. Pourquoi `geom_col()` et pas `geom_bar()` ?
+3. Comment changer la couleur des barres ?
+:::
+
+::: {.notes}
+20 minutes. Première découverte de ggplot2. La syntaxe peut surprendre au début.
+:::
+
+## Exercice 6 : Améliorer le graphique {.smaller}
+
+**Personnalisez votre graphique :**
+
+```{r}
+#| eval: false
+ggplot(data = ventes, aes(x = mois, y = montant)) +
+  geom_col(fill = "steelblue") +
+  labs(
+    title = "Ventes mensuelles",
+    x = "Mois",
+    y = "Montant (€)"
+  ) +
+  theme_minimal()
+```
+
+::: {.fragment}
+**Demandez au LLM :**
+
+> "Comment personnaliser les couleurs, titres et thème d'un graphique ggplot2 ?"
+:::
+
+::: {.fragment}
+**Explorez :**
+
+- Différentes couleurs
+- Différents thèmes : `theme_bw()`, `theme_classic()`
+- Ajout d'une ligne à un niveau spécifique avec `geom_hline()`
+:::
+
+::: {.notes}
+20 minutes. Exploration des options de personnalisation.
+:::
+
+## Exercice 7 : Différents types de graphiques {.smaller}
+
+**Demandez au LLM de vous montrer comment créer :**
+
+1. Un graphique en **points** (`geom_point()`)
+2. Un graphique en **lignes** (`geom_line()`)
+3. Un **boxplot** (`geom_boxplot()`)
+4. Un **histogramme** (`geom_histogram()`)
+
+::: {.fragment}
+**Testez chaque type avec des données adaptées.**
+
+Certains types nécessitent des données spécifiques !
+:::
+
+::: {.notes}
+20 minutes. Découverte de la variété des géométries disponibles.
+:::
+
+## Exercice 8 : Graphiques par catégorie {.smaller}
+
+**Challenge :** Créez un graphique des ventes coloré par vendeur.
+
+**Demandez au LLM :**
+
+> "Comment créer un graphique avec ggplot2 où chaque catégorie a une couleur différente ?"
+
+::: {.fragment}
+Vous découvrirez :
+
+```{r}
+#| eval: false
+ggplot(ventes, aes(x = mois, y = montant, fill = vendeur)) +
+  geom_col(position = "dodge") +
+  labs(title = "Ventes par vendeur et par mois")
+```
+:::
+
+::: {.fragment}
+**Questions :**
+
+1. Que fait `position = "dodge"` ?
+2. Que se passe-t-il sans ?
+3. Comment faire un graphique empilé ?
+:::
+
+::: {.notes}
+20 minutes. Introduction aux graphiques multivariés.
+:::
+
+# Fonctions de visualisation {background-color="#8B008B"}
+
+## Pourquoi créer des fonctions graphiques ?
+
+Si vous créez souvent le même type de graphique :
+
+::: {.incremental}
+- Éviter la **répétition** du code
+- Garantir la **cohérence** visuelle
+- Faciliter la **maintenance**
+- Permettre la **réutilisation**
+:::
+
+## Exercice 9 : Première fonction graphique {.smaller}
+
+**Créez une fonction qui génère un graphique en barres standard :**
+
+```{r}
+#| eval: false
+graphique_barres <- function(donnees, colonne_x, colonne_y, titre) {
+  ggplot(donnees, aes(x = .data[[colonne_x]], y = .data[[colonne_y]])) +
+    geom_col(fill = "steelblue") +
+    labs(title = titre) +
+    theme_minimal()
+}
+
+# Utilisation
+graphique_barres(ventes, "mois", "montant", "Ventes mensuelles")
+```
+
+::: {.fragment}
+**Demandez au LLM d'expliquer :**
+
+1. À quoi sert `.data[[...]]` ?
+2. Comment passer des noms de colonnes comme paramètres ?
+:::
+
+::: {.notes}
+20 minutes. Introduction aux fonctions avec ggplot2. Concept avancé mais important.
+:::
+
+## Exercice 10 : Fonction graphique avancée {.smaller}
+
+**Améliorez votre fonction avec plus d'options :**
+
+```{r}
+#| eval: false
+graphique_personnalise <- function(donnees, x, y, titre,
+                                   couleur = "steelblue",
+                                   type = "barres") {
+  # Créer le graphique de base
+  g <- ggplot(donnees, aes(x = .data[[x]], y = .data[[y]]))
+
+  # Ajouter la géométrie selon le type
+  if (type == "barres") {
+    g <- g + geom_col(fill = couleur)
+  } else if (type == "points") {
+    g <- g + geom_point(color = couleur, size = 3)
+  }
+
+  # Ajouter titre et thème
+  g <- g + labs(title = titre) + theme_minimal()
+
+  return(g)
+}
+```
+
+::: {.fragment}
+**Testez avec différentes options !**
+:::
+
+::: {.notes}
+20 minutes. Fonction plus sophistiquée avec options et conditions.
+:::
+
+# Mini-projet : Dashboard {background-color="#DC143C"}
+
+## Projet : Analyse de ventes complète {.smaller}
+
+**Objectif :** Créer un dashboard d'analyse avec 4 graphiques différents.
+
+**Données :**
+
+```{r}
+#| eval: false
+# Téléchargez le fichier ventes_annuelles.csv depuis Moodle
+ventes_annuelles <- read.csv("ventes_annuelles.csv")
+```
+
+**Les 4 graphiques à créer :**
+
+1. Évolution des ventes mensuelles (ligne)
+2. Ventes par vendeur (barres)
+3. Distribution des montants (histogramme)
+4. Comparaison par trimestre (boxplot)
+
+::: {.callout-note}
+## Utilisez ggplot2 pour tous les graphiques
+Personnalisez-les avec des couleurs et titres appropriés.
+:::
+
+::: {.notes}
+40 minutes. Projet de synthèse. Combine nettoyage, analyse et visualisation.
+:::
+
+## Critères du mini-projet {.smaller}
+
+::: {.incremental}
+- ✅ Les données sont **nettoyées** (casse, NA gérés)
+- ✅ Les 4 graphiques sont **créés avec ggplot2**
+- ✅ Chaque graphique a un **titre et des labels** appropriés
+- ✅ Le code est **commenté**
+- ✅ Une **fonction de visualisation** réutilisable est créée
+:::
+
+::: {.fragment}
+**Bonus :**
+
+- Créer un 5ème graphique original
+- Utiliser des facettes (`facet_wrap()`)
+- Ajouter des annotations sur les graphiques
+- Sauvegarder les graphiques avec `ggsave()`
+:::
+
+# Retour réflexif {background-color="#2F4F4F"}
+
+## Exercice réflexif : Journal de bord {.smaller}
+
+**Documentez dans votre journal :**
+
+1. **Nettoyage de données** :
+   - Quels problèmes avez-vous rencontrés ?
+   - Comment les avez-vous résolus ?
+   - Un prompt efficace pour le nettoyage
+
+2. **ggplot2** :
+   - Différences avec `plot()` de base
+   - Votre graphique préféré créé aujourd'hui
+   - Un concept difficile à comprendre
+
+3. **Fonctions graphiques** :
+   - Pourquoi créer des fonctions pour les graphiques ?
+   - Code de votre fonction réutilisable
+
+::: {.notes}
+10 minutes. Moment de réflexion et documentation.
+:::
+
+## Ce que vous avez appris aujourd'hui
+
+::: {.incremental}
+✅ Nettoyer des données réelles avec incohérences
+✅ Utiliser ggplot2 pour créer des graphiques professionnels
+✅ Maîtriser différentes géométries (barres, points, lignes, boxplot)
+✅ Personnaliser l'apparence des graphiques
+✅ Créer des fonctions de visualisation réutilisables
+✅ Combiner analyse et communication visuelle
+:::
+
+# Ressources et prochaines étapes {background-color="#2E8B57"}
+
+## Fonctions clés de cette séance
+
+**Nettoyage :**
+
+- `tolower()`, `toupper()` : standardiser la casse
+- `na.omit()` : supprimer les NA
+- `unique()`, `table()` : explorer les valeurs
+
+**ggplot2 :**
+
+- `ggplot()` + `aes()` : base du graphique
+- `geom_col()`, `geom_point()`, `geom_line()` : géométries
+- `labs()` : titres et labels
+- `theme_minimal()`, `theme_bw()` : thèmes
+
+## Pour aller plus loin
+
+::: {.incremental}
+- **Explorez** d'autres géométries de ggplot2
+- **Pratiquez** avec vos propres données
+- **Créez** une bibliothèque de fonctions graphiques
+- **Consultez** la documentation : `?ggplot2`
+:::
+
+## Préparation prochaine séance
+
+::: {.callout-note}
+## Devoirs
+
+1. Terminez le dashboard si besoin
+2. **Mettez à jour votre journal** avec les détails de cette séance
+3. Trouvez un jeu de données qui vous intéresse pour le projet de la séance 5
+4. Créez au moins 2 fonctions graphiques réutilisables
+:::
+
+::: {.fragment}
+**Prochaine séance :** Projet personnel intégré - vous allez mener une analyse complète en autonomie !
+:::
+
+## Questions ?
+
+::: {.callout-tip}
+## Points clés à retenir
+
+- Le **nettoyage** des données est essentiel et prend du temps
+- **ggplot2** permet de créer des graphiques professionnels de manière cohérente
+- Les **fonctions graphiques** évitent la répétition et assurent la cohérence
+- La **visualisation** est aussi importante que l'analyse
+:::
+
+::: {.fragment}
+**Bon courage et belles visualisations ! 📊**
+:::

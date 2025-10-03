@@ -1,9 +1,8 @@
 ---
-title: Introduction à R
-subtitle: Syllabus
+title: Initiation à la programmation (en R) à l'aide des LLMs
+subtitle: Plan général
 author: Elias Bouacida
 format: html
-bibliography: Bibliographie.bib
 lang: fr
 date: last-modified
 date-format: long
@@ -14,24 +13,35 @@ Ce site contient la plupart des présentations utilisées pour le cours d'introd
 
 # Syllabus 
 
-La principale ressource bibliographique pour le cours est @Barnier.
+Une ressource bibliographique utile pour comprendre de nombreux concepts en R est proposée par @Barnier.
 
 ## Plan du cours
 
-1. Installation et introduction à R / Rstudio et aux LLMs
-    - Installer R / Rstudio, utiliser Posit.cloud
-    - Installer un paquet
-    - Présenter l'interface de Rstudio (identique à celle de Posit.cloud)
-    - Les LLMs
-2. Premières utilisations de prompts pour coder en R
-3. Premières analyses de données à l'aide de R
+Le cours est structuré en 3 phases progressives sur 8 séances de 3h.
+
+### Phase 1 : Fondations 🌱 (Séances 1-3)
+
+**Objectif :** Maîtriser le dialogue avec un LLM et les concepts R de base
+
+### Phase 2 : Application 🚀 (Séances 4-5)
+
+**Objectif :** Analyser de vraies données en autonomie
+
+### Phase 3 : Expertise ⭐ (Séances 6-8)
+
+**Objectif :** Devenir autonome et collaborer efficacement
 
 
+**À la fin du cours, vous serez capable de :** analyser des données en autonomie, créer vos propres outils, automatiser vos analyses, collaborer sur du code, et utiliser les LLMs comme de véritables partenaires de travail.
 
 ## Validation
 
-Cours à validation, qui se fait sur le rendu d'un journal de bord
 
+En M3P, c'est un cours à validation. 
+En EC libre, c'est un cours noté, l'évaluation varie donc un peu entre les deux.
 
+# Organisation du site
+
+Pour chaque module, vous trouverez la présentation sous la forme d'une page web classique (`html`) et une version sous la forme d'une présentation téléchargeable en cliquant à droite sur `revealjs`.
 
 # Références

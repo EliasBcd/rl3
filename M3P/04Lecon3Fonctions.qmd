@@ -12,7 +12,6 @@ format:
     output-file: slide-lecon3.html
     embed-resources: true
     footer: "Séance 3 - Fonctions, conditions et boucles"
-format-links: [revealjs]
 lang: fr
 execute:
   echo: true
