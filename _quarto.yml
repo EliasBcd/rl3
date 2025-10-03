@@ -19,12 +19,8 @@ website:
     contents:
       - text: "Index"
         href: index.qmd
-      - section: "Introduction à R et Rstudio et la programmation avec des LLMs"
-        contents:
-          - 01Introduction.qmd
-          - 02Lecon1.qmd
-          - 03Lecon2Donnees.qmd
-          - 04Lecon3Fonctions.qmd
+      - section: "Méthodologie de Projet Personnel et Professionnel"
+        contents: M3P
       - section: "Annexe"
         contents: 
           - text: "Modèle de journal de bord"

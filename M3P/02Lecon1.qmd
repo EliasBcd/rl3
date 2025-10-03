@@ -10,7 +10,6 @@ format:
     scrollable: true
 editor: source
 institute: "Université Paris 8"
-bibliography: "Bibliographie.bib"
 lang: fr
 execute: 
   echo: true
@@ -26,7 +25,7 @@ format-links: [revealjs]
 
 Demandez à votre LLM préférez comment utiliser R et Rstudio.
 
-Demandez lui de vous décrire l'interface.
+Demandez-lui de vous décrire l'interface.
 
 ## Premiers calculs
 
