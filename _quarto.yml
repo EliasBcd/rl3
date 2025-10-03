@@ -21,6 +21,8 @@ website:
         href: index.qmd
       - section: "EC Libre : Introduction à la programmation (en R) avec des LLMs"
         contents: ECLibre
+      - section: "Méthodologie de Projet Personnel et Professionnel"
+        contents: M3P
       - section: "Annexe"
         contents: 
           - text: "Modèle de journal de bord"
