@@ -30,1054 +30,1114 @@
     ]
   },
   {
-    "objectID": "03Lecon2Donnees.html",
-    "href": "03Lecon2Donnees.html",
+    "objectID": "M3P/03Lecon2Donnees.html",
+    "href": "M3P/03Lecon2Donnees.html",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "",
     "text": "Récap et partage (20min) : Retours sur ce que vous avez appris la semaine dernière\nDataset (60min) : Données météo\nDebugging collectif (40min) :\nExploration fonctions built-in (60min) : sum(), length(), min(), max()\nMini-projet individuel (40min) : Analyser les données du PIB de l’INSEE\n\n\n\nProduction attendue : Analyse météo commentée + 3 fonctions maîtrisées",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 2 : Données et fonctions intégrées"
     ]
   },
   {
-    "objectID": "03Lecon2Donnees.html#plan-de-la-séance",
-    "href": "03Lecon2Donnees.html#plan-de-la-séance",
+    "objectID": "M3P/03Lecon2Donnees.html#plan-de-la-séance",
+    "href": "M3P/03Lecon2Donnees.html#plan-de-la-séance",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "",
     "text": "Récap et partage (20min) : Retours sur ce que vous avez appris la semaine dernière\nDataset (60min) : Données météo\nDebugging collectif (40min) :\nExploration fonctions built-in (60min) : sum(), length(), min(), max()\nMini-projet individuel (40min) : Analyser les données du PIB de l’INSEE\n\n\n\nProduction attendue : Analyse météo commentée + 3 fonctions maîtrisées",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 2 : Données et fonctions intégrées"
     ]
   },
   {
-    "objectID": "03Lecon2Donnees.html#objectif-de-la-séance",
-    "href": "03Lecon2Donnees.html#objectif-de-la-séance",
+    "objectID": "M3P/03Lecon2Donnees.html#objectif-de-la-séance",
+    "href": "M3P/03Lecon2Donnees.html#objectif-de-la-séance",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Objectif de la séance",
     "text": "Objectif de la séance\n\n\n\n\n\n\nAstuceManipuler des collections de données et comprendre le concept de fonction\n\n\n\n\n\n\n\n\nTravailler avec des vecteurs (collections de données)\nDécouvrir les fonctions built-in de R\nApprendre à débugger avec l’aide des LLMs\nGérer les données manquantes (NA)",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 2 : Données et fonctions intégrées"
     ]
   },
   {
-    "objectID": "03Lecon2Donnees.html#retours-sur-vos-premières-expériences",
-    "href": "03Lecon2Donnees.html#retours-sur-vos-premières-expériences",
+    "objectID": "M3P/03Lecon2Donnees.html#retours-sur-vos-premières-expériences",
+    "href": "M3P/03Lecon2Donnees.html#retours-sur-vos-premières-expériences",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Retours sur vos premières expériences",
     "text": "Retours sur vos premières expériences\n\n\nQu’avez-vous compris des concepts de la semaine dernière ?",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 2 : Données et fonctions intégrées"
     ]
   },
   {
-    "objectID": "03Lecon2Donnees.html#mes-retours-sur-vos-journaux",
-    "href": "03Lecon2Donnees.html#mes-retours-sur-vos-journaux",
+    "objectID": "M3P/03Lecon2Donnees.html#mes-retours-sur-vos-journaux",
+    "href": "M3P/03Lecon2Donnees.html#mes-retours-sur-vos-journaux",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Mes retours sur vos journaux",
     "text": "Mes retours sur vos journaux\n\n\nModèle disponible ici : https://moodle.univ-paris8.fr/mod/assign/view.php?id=271762\nCe que vous avez appris : c’est vous qui devez l’écrire\nEviter les impressions d’écran\nCopier/coller les prompts que vous utilisez et les évolutions de vos prompts si besoin\nCopier/coller les réponses du LLM\nEviter d’enregistrer en format .pages (format propriétaire Apple)",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 2 : Données et fonctions intégrées"
     ]
   },
   {
-    "objectID": "03Lecon2Donnees.html#données-météo",
-    "href": "03Lecon2Donnees.html#données-météo",
+    "objectID": "M3P/03Lecon2Donnees.html#données-météo",
+    "href": "M3P/03Lecon2Donnees.html#données-météo",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Données météo",
     "text": "Données météo\nConnectez-vous sur Moodle et téléchargez les données météo.\nVous devez maintenant :\n\nChargez les données dans Rstudio\nCalculez des statistiques sur la température : moyenne, médiane, minimum, maximum et écart-type.\nQuestion : quelles autres variables sont présentes ?",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 2 : Données et fonctions intégrées"
     ]
   },
   {
-    "objectID": "03Lecon2Donnees.html#représentation-graphique",
-    "href": "03Lecon2Donnees.html#représentation-graphique",
+    "objectID": "M3P/03Lecon2Donnees.html#représentation-graphique",
+    "href": "M3P/03Lecon2Donnees.html#représentation-graphique",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Représentation graphique",
     "text": "Représentation graphique\n\nReprésentez également l’évolution de la température dans le temps",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 2 : Données et fonctions intégrées"
     ]
   },
   {
-    "objectID": "03Lecon2Donnees.html#données-pib",
-    "href": "03Lecon2Donnees.html#données-pib",
+    "objectID": "M3P/03Lecon2Donnees.html#données-pib",
+    "href": "M3P/03Lecon2Donnees.html#données-pib",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Données PIB",
     "text": "Données PIB\nAllez sur le site de l’INSEE téléchargez les données du PIB\nhttps://www.insee.fr/fr/statistiques/2830613\nFaites-moi un rapport sur ces données",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 2 : Données et fonctions intégrées"
     ]
   },
   {
-    "objectID": "slide-lecon2.html#plan-de-la-séance",
-    "href": "slide-lecon2.html#plan-de-la-séance",
+    "objectID": "M3P/slide-lecon2.html#plan-de-la-séance",
+    "href": "M3P/slide-lecon2.html#plan-de-la-séance",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Plan de la séance",
     "text": "Plan de la séance\n\nRécap et partage (20min) : Retours sur ce que vous avez appris la semaine dernière\nDataset (60min) : Données météo\nDebugging collectif (40min) :\nExploration fonctions built-in (60min) : sum(), length(), min(), max()\nMini-projet individuel (40min) : Analyser les données du PIB de l’INSEE\n\n\nProduction attendue : Analyse météo commentée + 3 fonctions maîtrisées"
   },
   {
-    "objectID": "slide-lecon2.html#objectif-de-la-séance",
-    "href": "slide-lecon2.html#objectif-de-la-séance",
+    "objectID": "M3P/slide-lecon2.html#objectif-de-la-séance",
+    "href": "M3P/slide-lecon2.html#objectif-de-la-séance",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Objectif de la séance",
     "text": "Objectif de la séance\n\n\n\n\n\n\nManipuler des collections de données et comprendre le concept de fonction\n\n\n\n\n\n\n\nTravailler avec des vecteurs (collections de données)\nDécouvrir les fonctions built-in de R\nApprendre à débugger avec l’aide des LLMs\nGérer les données manquantes (NA)"
   },
   {
-    "objectID": "slide-lecon2.html#retours-sur-vos-premières-expériences",
-    "href": "slide-lecon2.html#retours-sur-vos-premières-expériences",
+    "objectID": "M3P/slide-lecon2.html#retours-sur-vos-premières-expériences",
+    "href": "M3P/slide-lecon2.html#retours-sur-vos-premières-expériences",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Retours sur vos premières expériences",
     "text": "Retours sur vos premières expériences\n\nQu’avez-vous compris des concepts de la semaine dernière ?"
   },
   {
-    "objectID": "slide-lecon2.html#mes-retours-sur-vos-journaux",
-    "href": "slide-lecon2.html#mes-retours-sur-vos-journaux",
+    "objectID": "M3P/slide-lecon2.html#mes-retours-sur-vos-journaux",
+    "href": "M3P/slide-lecon2.html#mes-retours-sur-vos-journaux",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Mes retours sur vos journaux",
     "text": "Mes retours sur vos journaux\n\nModèle disponible ici : https://moodle.univ-paris8.fr/mod/assign/view.php?id=271762\nCe que vous avez appris : c’est vous qui devez l’écrire\nEviter les impressions d’écran\nCopier/coller les prompts que vous utilisez et les évolutions de vos prompts si besoin\nCopier/coller les réponses du LLM\nEviter d’enregistrer en format .pages (format propriétaire Apple)"
   },
   {
-    "objectID": "slide-lecon2.html#données-météo",
-    "href": "slide-lecon2.html#données-météo",
+    "objectID": "M3P/slide-lecon2.html#données-météo",
+    "href": "M3P/slide-lecon2.html#données-météo",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Données météo",
     "text": "Données météo\nConnectez-vous sur Moodle et téléchargez les données météo.\nVous devez maintenant :\n\nChargez les données dans Rstudio\nCalculez des statistiques sur la température : moyenne, médiane, minimum, maximum et écart-type.\nQuestion : quelles autres variables sont présentes ?"
   },
   {
-    "objectID": "slide-lecon2.html#représentation-graphique",
-    "href": "slide-lecon2.html#représentation-graphique",
+    "objectID": "M3P/slide-lecon2.html#représentation-graphique",
+    "href": "M3P/slide-lecon2.html#représentation-graphique",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Représentation graphique",
     "text": "Représentation graphique\n\nReprésentez également l’évolution de la température dans le temps"
   },
   {
-    "objectID": "slide-lecon2.html#données-pib",
-    "href": "slide-lecon2.html#données-pib",
+    "objectID": "M3P/slide-lecon2.html#données-pib",
+    "href": "M3P/slide-lecon2.html#données-pib",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Données PIB",
     "text": "Données PIB\nAllez sur le site de l’INSEE téléchargez les données du PIB\nhttps://www.insee.fr/fr/statistiques/2830613\nFaites-moi un rapport sur ces données"
   },
   {
-    "objectID": "01Introduction.html",
-    "href": "01Introduction.html",
+    "objectID": "M3P/01Introduction.html",
+    "href": "M3P/01Introduction.html",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "",
     "text": "Apprendre la Programmation R avec les LLM\n\n\n🤖 LLM = Votre Assistant\nLLM : Large Language Model, aussi connu sous le nom d’IA générative\nEx : ChatGPT, Claude, Mistral, etc.\n\n📊 R = Langage Statistique\nPour analyser, visualiser, calculer\n\n🎯 Objectif = Collaboration\nProgrammer AVEC l’IA générative intelligemment\n\n\n\n\n\nLevez la main si vous avez déjà (Pas de jugement ! 😊)…\n\nUtilisé un LLM (ChatGPT, Claude, etc) ? 🙋‍♀️\nDemandé leur aide pour un devoir ? 📝\nCopié-collé une de leur réponse sans la comprendre ? 😅\nFait confiance aveuglément à un LLM ? 🤖\nPayé pour un LLM ?\nProgrammé dans n’importe quel langage de programmation ? 💻",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#bienvenue",
-    "href": "01Introduction.html#bienvenue",
+    "objectID": "M3P/01Introduction.html#bienvenue",
+    "href": "M3P/01Introduction.html#bienvenue",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "",
     "text": "Apprendre la Programmation R avec les LLM\n\n\n🤖 LLM = Votre Assistant\nLLM : Large Language Model, aussi connu sous le nom d’IA générative\nEx : ChatGPT, Claude, Mistral, etc.\n\n📊 R = Langage Statistique\nPour analyser, visualiser, calculer\n\n🎯 Objectif = Collaboration\nProgrammer AVEC l’IA générative intelligemment",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#sondage",
-    "href": "01Introduction.html#sondage",
+    "objectID": "M3P/01Introduction.html#sondage",
+    "href": "M3P/01Introduction.html#sondage",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "",
     "text": "Levez la main si vous avez déjà (Pas de jugement ! 😊)…\n\nUtilisé un LLM (ChatGPT, Claude, etc) ? 🙋‍♀️\nDemandé leur aide pour un devoir ? 📝\nCopié-collé une de leur réponse sans la comprendre ? 😅\nFait confiance aveuglément à un LLM ? 🤖\nPayé pour un LLM ?\nProgrammé dans n’importe quel langage de programmation ? 💻",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#que-va-t-on-apprendre",
-    "href": "01Introduction.html#que-va-t-on-apprendre",
+    "objectID": "M3P/01Introduction.html#que-va-t-on-apprendre",
+    "href": "M3P/01Introduction.html#que-va-t-on-apprendre",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Que va-t-on apprendre ?",
     "text": "Que va-t-on apprendre ?\n\nComment utilisez-vous des LLMs ?\n\n\n\nL’approche ici\n\nPoser les BONNES questions\nVérifier et corriger les erreurs\nComprendre les réponses\nUtiliser le LLM comme partenaire\n\n\n\n\nObjectif : Autonomie et esprit critique\n\n\nIci, demander des exemples de ce qu’ils font",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#démonstration-prompt",
-    "href": "01Introduction.html#démonstration-prompt",
+    "objectID": "M3P/01Introduction.html#démonstration-prompt",
+    "href": "M3P/01Introduction.html#démonstration-prompt",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Démonstration : Prompt",
     "text": "Démonstration : Prompt\n\n\n\nPrompt 1 (Essayez !)\n\"Fais-moi des statistiques sur mes données\"\n\nProblème : Trop vague !\nQuelles données ?\nQuelles statistiques ?\nQuel format de sortie ?\n\n\n\n\nPrompt 2\n\"J'ai 10 notes d'étudiants : \n12, 15, 18, 14, 16, 13, 17, 11, 19, 15.\nCalcule la moyenne, médiane et l'écart-type\nen R avec des commentaires explicatifs.\"\nRésultat : Code précis et commenté !\n\n\n\n\nProposer aux étudiants de le faire eux-même. Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le problème.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#objectif-du-cours",
-    "href": "01Introduction.html#objectif-du-cours",
+    "objectID": "M3P/01Introduction.html#objectif-du-cours",
+    "href": "M3P/01Introduction.html#objectif-du-cours",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Objectif du cours",
     "text": "Objectif du cours\n\nApprendre à utiliser R et Rstudio\nApprendre à utiliser les principales librairies (aussi appelées paquets) de R pour l’analyse de données et les statistiques (le tidyverse)\nVous préparez à utiliser R dans d’autres cours (économétrie, séries temporelles, économie du travail, projet tutorés)\nVous apprendre à utiliser des LLMs pour faire cela",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#r-et-rstudio-vos-nouveaux-outils",
-    "href": "01Introduction.html#r-et-rstudio-vos-nouveaux-outils",
+    "objectID": "M3P/01Introduction.html#r-et-rstudio-vos-nouveaux-outils",
+    "href": "M3P/01Introduction.html#r-et-rstudio-vos-nouveaux-outils",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "R et RStudio : Vos nouveaux outils",
     "text": "R et RStudio : Vos nouveaux outils\n\n\n\nR = Le Moteur 🚗\n\nLangage de programmation\nSpécialisé en analyse de données\nDérive d’un langage antérieur appelé S https://fr.wikipedia.org/wiki/S_(langage)\nEst un logiciel libre\n\n\n\n\nRStudio = L’Interface 🖥️\n\nEnvironnement convivial\nFacilite l’écriture de code R\nIntègre tout en un endroit\nComme Word pour l’écriture",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#exemples-concrets-dusage",
-    "href": "01Introduction.html#exemples-concrets-dusage",
+    "objectID": "M3P/01Introduction.html#exemples-concrets-dusage",
+    "href": "M3P/01Introduction.html#exemples-concrets-dusage",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Exemples concrets d’usage 🌟",
     "text": "Exemples concrets d’usage 🌟\n\n📈 Analyser un sondage : “Quel pourcentage préfère le chocolat ?”\n📊 Créer des graphiques : Histogrammes, courbes, diagrammes\n🧮 Calculs statistiques : Moyennes, corrélations, tests, économétrie\n🏃 Données sportives : Performance des équipes, évolutions\n📋 Nettoyer des données : Corriger, organiser, structurer\n🎯 Prédictions simples : “Quelle sera la prochaine tendance ?”",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#premier-aperçu-du-code-r",
-    "href": "01Introduction.html#premier-aperçu-du-code-r",
+    "objectID": "M3P/01Introduction.html#premier-aperçu-du-code-r",
+    "href": "M3P/01Introduction.html#premier-aperçu-du-code-r",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Premier aperçu du code R",
     "text": "Premier aperçu du code R\n\n# Créer une liste de notes\nnotes &lt;- c(15, 12, 18, 14, 16, 13, 17)\n# Calculer la moyenne\nmoyenne &lt;- mean(notes)\n# Afficher le résultat\nprint(paste(\"La moyenne est :\", moyenne))\n\n[1] \"La moyenne est : 15\"\n\n\nC’est tout ! Pas si compliqué, non ? 😊",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#le-processus-en-4-étapes",
-    "href": "01Introduction.html#le-processus-en-4-étapes",
+    "objectID": "M3P/01Introduction.html#le-processus-en-4-étapes",
+    "href": "M3P/01Introduction.html#le-processus-en-4-étapes",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Le processus en 4 étapes",
     "text": "Le processus en 4 étapes\n\n🎯 Formuler une question précise\n\nAu lieu de “fais-moi des calculs”\nDire “calcule la moyenne de ces 5 notes : 12, 15, 18, 14, 16”\n\n🤖 Recevoir et comprendre la réponse\n\nLe LLM vous donne du code + des explications (si vous lui demandez)\n\n🧪 Tester et vérifier\n\nExécuter le code, voir si ça marche, comprendre pourquoi\n\n✨ Améliorer si nécessaire\n\nCorriger les erreurs, adapter à vos besoins",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#exemple",
-    "href": "01Introduction.html#exemple",
+    "objectID": "M3P/01Introduction.html#exemple",
+    "href": "M3P/01Introduction.html#exemple",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Exemple",
     "text": "Exemple\nVotre demande (à votre LLM préféré)\n\"J'ai des données de vente par mois :\nJanvier : 1500€, Février : 2000€, Mars : 1800€\nCrée un graphique en barres avec R\"\nEssayez !",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#exemple-réponse-possible",
-    "href": "01Introduction.html#exemple-réponse-possible",
+    "objectID": "M3P/01Introduction.html#exemple-réponse-possible",
+    "href": "M3P/01Introduction.html#exemple-réponse-possible",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Exemple (réponse possible)",
     "text": "Exemple (réponse possible)\n\n# Données de vente\nmois &lt;- c(\"Janvier\", \"Février\", \"Mars\")\nventes &lt;- c(1500, 2000, 1800)\n\n# Créer le graphique\nbarplot(ventes, names.arg = mois, \n        main = \"Ventes par mois\",\n        ylab = \"Montant (€)\")",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#le-résultat",
-    "href": "01Introduction.html#le-résultat",
+    "objectID": "M3P/01Introduction.html#le-résultat",
+    "href": "M3P/01Introduction.html#le-résultat",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Le résultat",
     "text": "Le résultat\n\n# Testons le code !\nmois &lt;- c(\"Janvier\", \"Février\", \"Mars\")\nventes &lt;- c(1500, 2000, 1800)\n\nbarplot(ventes, names.arg = mois, \n        main = \"Ventes par mois\",\n        ylab = \"Montant (€)\",\n        col = \"steelblue\")",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#pourquoi-on-va-faire-exprès-de-commettre-des-erreurs",
-    "href": "01Introduction.html#pourquoi-on-va-faire-exprès-de-commettre-des-erreurs",
+    "objectID": "M3P/01Introduction.html#pourquoi-on-va-faire-exprès-de-commettre-des-erreurs",
+    "href": "M3P/01Introduction.html#pourquoi-on-va-faire-exprès-de-commettre-des-erreurs",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Pourquoi on va faire exprès de commettre des erreurs",
     "text": "Pourquoi on va faire exprès de commettre des erreurs\nPrincipe pédagogique : Les erreurs sont des occasions d’apprentissage, pas des échecs !\n\n🎯 Développer votre esprit critique\n🔍 Apprendre à déboguer\n🤖 Comprendre les limites des LLM\n💪 Gagner en autonomie\n🧠 Mémoriser par l’expérience",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#séances-2-phases",
-    "href": "01Introduction.html#séances-2-phases",
+    "objectID": "M3P/01Introduction.html#séances-2-phases",
+    "href": "M3P/01Introduction.html#séances-2-phases",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "5 Séances, 2 Phases",
     "text": "5 Séances, 2 Phases\n\nPhase 1 : Fondations 🌱 (Séances 1-3)\n\nSéance 1 : Premier contact LLM + Variables R\nSéance 2 : Vecteurs et fonctions built-in\nSéance 3 : Créer ses propres fonctions\n\n\nObjectif : Maîtriser le dialogue avec un LLM et les concepts R de base\n\n\n\n\nPhase 2 : Application 🚀 (Séances 4-5)\n\nSéance 4 : Tableaux de données et graphiques\nSéance 5 : Projet personnel libre\n\n\n\n\nObjectif : Analyser de vraies données en autonomie",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#structure-dune-séance-type",
-    "href": "01Introduction.html#structure-dune-séance-type",
+    "objectID": "M3P/01Introduction.html#structure-dune-séance-type",
+    "href": "M3P/01Introduction.html#structure-dune-séance-type",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Structure d’une séance type",
     "text": "Structure d’une séance type\n\n\n\n🎭 Présentation\n30-60 min\n\nConcepts du jour\nDémonstrations en direct\nExemples concrets\n\n\n\n\n💻 Pratique\n90-120 min\n\nExercices sur machine\nAide individuelle\nDebugging collectif\n\n\n\n\n🤝 Partage\n30 min\n\nRetours d’expérience\nSolutions créatives",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#évaluation-continue",
-    "href": "01Introduction.html#évaluation-continue",
+    "objectID": "M3P/01Introduction.html#évaluation-continue",
+    "href": "M3P/01Introduction.html#évaluation-continue",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Évaluation continue",
     "text": "Évaluation continue\nL’objectif : évaluer votre progression, pas vous piéger !\nCours à validation.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#vos-interrogations",
-    "href": "01Introduction.html#vos-interrogations",
+    "objectID": "M3P/01Introduction.html#vos-interrogations",
+    "href": "M3P/01Introduction.html#vos-interrogations",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Vos interrogations",
     "text": "Vos interrogations\nQuelles sont vos questions ? 🤔\n\n🤖 Sur l’utilisation des LLM ?\n📊 Sur le langage R ?\n📅 Sur l’organisation du cours ?\n📝 Sur l’évaluation ?\n\nPas de question bête ! Nous sommes tous là pour apprendre ensemble 😊",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#maintenant",
-    "href": "01Introduction.html#maintenant",
+    "objectID": "M3P/01Introduction.html#maintenant",
+    "href": "M3P/01Introduction.html#maintenant",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Maintenant",
     "text": "Maintenant\n\n📥 Installer R et RStudio (tutoriel fourni, si sur votre machine, démarrez Rstudio sinon)\n🔐 Créer un compte LLM (facultatif)\n🧪 Essayer un premier prompt simple",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#merci",
-    "href": "01Introduction.html#merci",
+    "objectID": "M3P/01Introduction.html#merci",
+    "href": "M3P/01Introduction.html#merci",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Merci !",
     "text": "Merci !\nN’oubliez pas : l’erreur est votre amie ! 😊\n\n\n📚 Apprenez\n\n🔍 Explorez\n\n🎉 Réussissez",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#ressources-disponibles",
-    "href": "01Introduction.html#ressources-disponibles",
+    "objectID": "M3P/01Introduction.html#ressources-disponibles",
+    "href": "M3P/01Introduction.html#ressources-disponibles",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Ressources disponibles",
     "text": "Ressources disponibles\n\n🔗 Liens utiles\n\n\nInstallation R/RStudio : https://moodle.univ-paris8.fr/mod/page/view.php?id=272504\nUtilisation de R/Rstudio en ligne : https://datalab.sspcloud.fr/ (Utilisez votre compte étudiant Paris 8 pour vous connecter)\nGuide des prompts efficaces : https://www.francenum.gouv.fr/guides-et-conseils/intelligence-artificielle/generation-de-contenus-texte-image-son-video/comment-0\nForum d’entraide étudiant",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "01Introduction.html#contact-et-ressources",
-    "href": "01Introduction.html#contact-et-ressources",
+    "objectID": "M3P/01Introduction.html#contact-et-ressources",
+    "href": "M3P/01Introduction.html#contact-et-ressources",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Contact et ressources",
     "text": "Contact et ressources\n\n\n📧 Email : elias.bouacida@univ-paris8.fr\n🌐 Espace de cours : Moodle\n🌐 Cours : Cours\nBureau : Bâtiment D, Salle D115\nPermanences : Mardi 14h-16h, Mercredi 14h-16h",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Apprendre la Programmation R avec les LLM"
     ]
   },
   {
-    "objectID": "slide-introduction.html#bienvenue",
-    "href": "slide-introduction.html#bienvenue",
+    "objectID": "M3P/slide-introduction.html#bienvenue",
+    "href": "M3P/slide-introduction.html#bienvenue",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Bienvenue ! 🚀",
     "text": "Bienvenue ! 🚀\nApprendre la Programmation R avec les LLM\n\n\n🤖 LLM = Votre Assistant\nLLM : Large Language Model, aussi connu sous le nom d’IA générative\nEx : ChatGPT, Claude, Mistral, etc.\n\n📊 R = Langage Statistique\nPour analyser, visualiser, calculer\n\n🎯 Objectif = Collaboration\nProgrammer AVEC l’IA générative intelligemment"
   },
   {
-    "objectID": "slide-introduction.html#sondage",
-    "href": "slide-introduction.html#sondage",
+    "objectID": "M3P/slide-introduction.html#sondage",
+    "href": "M3P/slide-introduction.html#sondage",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Sondage 📊",
     "text": "Sondage 📊\nLevez la main si vous avez déjà (Pas de jugement ! 😊)…\n\nUtilisé un LLM (ChatGPT, Claude, etc) ? 🙋‍♀️\nDemandé leur aide pour un devoir ? 📝\nCopié-collé une de leur réponse sans la comprendre ? 😅\nFait confiance aveuglément à un LLM ? 🤖\nPayé pour un LLM ?\nProgrammé dans n’importe quel langage de programmation ? 💻"
   },
   {
-    "objectID": "slide-introduction.html#que-va-t-on-apprendre",
-    "href": "slide-introduction.html#que-va-t-on-apprendre",
+    "objectID": "M3P/slide-introduction.html#que-va-t-on-apprendre",
+    "href": "M3P/slide-introduction.html#que-va-t-on-apprendre",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Que va-t-on apprendre ?",
     "text": "Que va-t-on apprendre ?\nComment utilisez-vous des LLMs ?\n\nL’approche ici\n\nPoser les BONNES questions\nVérifier et corriger les erreurs\nComprendre les réponses\nUtiliser le LLM comme partenaire\n\n\n\nObjectif : Autonomie et esprit critique\n\n\nIci, demander des exemples de ce qu’ils font"
   },
   {
-    "objectID": "slide-introduction.html#démonstration-prompt",
-    "href": "slide-introduction.html#démonstration-prompt",
+    "objectID": "M3P/slide-introduction.html#démonstration-prompt",
+    "href": "M3P/slide-introduction.html#démonstration-prompt",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Démonstration : Prompt",
     "text": "Démonstration : Prompt\n\n\nPrompt 1 (Essayez !)\n\"Fais-moi des statistiques sur mes données\"\n\nProblème : Trop vague !\nQuelles données ?\nQuelles statistiques ?\nQuel format de sortie ?\n\n\nPrompt 2\n\"J'ai 10 notes d'étudiants : \n12, 15, 18, 14, 16, 13, 17, 11, 19, 15.\nCalcule la moyenne, médiane et l'écart-type\nen R avec des commentaires explicatifs.\"\nRésultat : Code précis et commenté !\n\n\nProposer aux étudiants de le faire eux-même. Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le problème."
   },
   {
-    "objectID": "slide-introduction.html#objectif-du-cours",
-    "href": "slide-introduction.html#objectif-du-cours",
+    "objectID": "M3P/slide-introduction.html#objectif-du-cours",
+    "href": "M3P/slide-introduction.html#objectif-du-cours",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Objectif du cours",
     "text": "Objectif du cours\n\nApprendre à utiliser R et Rstudio\nApprendre à utiliser les principales librairies (aussi appelées paquets) de R pour l’analyse de données et les statistiques (le tidyverse)\nVous préparez à utiliser R dans d’autres cours (économétrie, séries temporelles, économie du travail, projet tutorés)\nVous apprendre à utiliser des LLMs pour faire cela"
   },
   {
-    "objectID": "slide-introduction.html#r-et-rstudio-vos-nouveaux-outils",
-    "href": "slide-introduction.html#r-et-rstudio-vos-nouveaux-outils",
+    "objectID": "M3P/slide-introduction.html#r-et-rstudio-vos-nouveaux-outils",
+    "href": "M3P/slide-introduction.html#r-et-rstudio-vos-nouveaux-outils",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "R et RStudio : Vos nouveaux outils",
     "text": "R et RStudio : Vos nouveaux outils\n\n\nR = Le Moteur 🚗\n\nLangage de programmation\nSpécialisé en analyse de données\nDérive d’un langage antérieur appelé S https://fr.wikipedia.org/wiki/S_(langage)\nEst un logiciel libre\n\n\nRStudio = L’Interface 🖥️\n\nEnvironnement convivial\nFacilite l’écriture de code R\nIntègre tout en un endroit\nComme Word pour l’écriture"
   },
   {
-    "objectID": "slide-introduction.html#exemples-concrets-dusage",
-    "href": "slide-introduction.html#exemples-concrets-dusage",
+    "objectID": "M3P/slide-introduction.html#exemples-concrets-dusage",
+    "href": "M3P/slide-introduction.html#exemples-concrets-dusage",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Exemples concrets d’usage 🌟",
     "text": "Exemples concrets d’usage 🌟\n\n📈 Analyser un sondage : “Quel pourcentage préfère le chocolat ?”\n📊 Créer des graphiques : Histogrammes, courbes, diagrammes\n🧮 Calculs statistiques : Moyennes, corrélations, tests, économétrie\n🏃 Données sportives : Performance des équipes, évolutions\n📋 Nettoyer des données : Corriger, organiser, structurer\n🎯 Prédictions simples : “Quelle sera la prochaine tendance ?”"
   },
   {
-    "objectID": "slide-introduction.html#premier-aperçu-du-code-r",
-    "href": "slide-introduction.html#premier-aperçu-du-code-r",
+    "objectID": "M3P/slide-introduction.html#premier-aperçu-du-code-r",
+    "href": "M3P/slide-introduction.html#premier-aperçu-du-code-r",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Premier aperçu du code R",
     "text": "Premier aperçu du code R\n\n# Créer une liste de notes\nnotes &lt;- c(15, 12, 18, 14, 16, 13, 17)\n# Calculer la moyenne\nmoyenne &lt;- mean(notes)\n# Afficher le résultat\nprint(paste(\"La moyenne est :\", moyenne))\n\n[1] \"La moyenne est : 15\"\n\n\nC’est tout ! Pas si compliqué, non ? 😊"
   },
   {
-    "objectID": "slide-introduction.html#le-processus-en-4-étapes",
-    "href": "slide-introduction.html#le-processus-en-4-étapes",
+    "objectID": "M3P/slide-introduction.html#le-processus-en-4-étapes",
+    "href": "M3P/slide-introduction.html#le-processus-en-4-étapes",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Le processus en 4 étapes",
     "text": "Le processus en 4 étapes\n\n🎯 Formuler une question précise\n\nAu lieu de “fais-moi des calculs”\nDire “calcule la moyenne de ces 5 notes : 12, 15, 18, 14, 16”\n\n🤖 Recevoir et comprendre la réponse\n\nLe LLM vous donne du code + des explications (si vous lui demandez)\n\n🧪 Tester et vérifier\n\nExécuter le code, voir si ça marche, comprendre pourquoi\n\n✨ Améliorer si nécessaire\n\nCorriger les erreurs, adapter à vos besoins"
   },
   {
-    "objectID": "slide-introduction.html#exemple",
-    "href": "slide-introduction.html#exemple",
+    "objectID": "M3P/slide-introduction.html#exemple",
+    "href": "M3P/slide-introduction.html#exemple",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Exemple",
     "text": "Exemple\nVotre demande (à votre LLM préféré)\n\"J'ai des données de vente par mois :\nJanvier : 1500€, Février : 2000€, Mars : 1800€\nCrée un graphique en barres avec R\"\nEssayez !"
   },
   {
-    "objectID": "slide-introduction.html#exemple-réponse-possible",
-    "href": "slide-introduction.html#exemple-réponse-possible",
+    "objectID": "M3P/slide-introduction.html#exemple-réponse-possible",
+    "href": "M3P/slide-introduction.html#exemple-réponse-possible",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Exemple (réponse possible)",
     "text": "Exemple (réponse possible)\n\n# Données de vente\nmois &lt;- c(\"Janvier\", \"Février\", \"Mars\")\nventes &lt;- c(1500, 2000, 1800)\n\n# Créer le graphique\nbarplot(ventes, names.arg = mois, \n        main = \"Ventes par mois\",\n        ylab = \"Montant (€)\")"
   },
   {
-    "objectID": "slide-introduction.html#le-résultat",
-    "href": "slide-introduction.html#le-résultat",
+    "objectID": "M3P/slide-introduction.html#le-résultat",
+    "href": "M3P/slide-introduction.html#le-résultat",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Le résultat",
     "text": "Le résultat\n\n# Testons le code !\nmois &lt;- c(\"Janvier\", \"Février\", \"Mars\")\nventes &lt;- c(1500, 2000, 1800)\n\nbarplot(ventes, names.arg = mois, \n        main = \"Ventes par mois\",\n        ylab = \"Montant (€)\",\n        col = \"steelblue\")"
   },
   {
-    "objectID": "slide-introduction.html#pourquoi-on-va-faire-exprès-de-commettre-des-erreurs",
-    "href": "slide-introduction.html#pourquoi-on-va-faire-exprès-de-commettre-des-erreurs",
+    "objectID": "M3P/slide-introduction.html#pourquoi-on-va-faire-exprès-de-commettre-des-erreurs",
+    "href": "M3P/slide-introduction.html#pourquoi-on-va-faire-exprès-de-commettre-des-erreurs",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Pourquoi on va faire exprès de commettre des erreurs",
     "text": "Pourquoi on va faire exprès de commettre des erreurs\nPrincipe pédagogique : Les erreurs sont des occasions d’apprentissage, pas des échecs !\n\n🎯 Développer votre esprit critique\n🔍 Apprendre à déboguer\n🤖 Comprendre les limites des LLM\n💪 Gagner en autonomie\n🧠 Mémoriser par l’expérience"
   },
   {
-    "objectID": "slide-introduction.html#séances-2-phases",
-    "href": "slide-introduction.html#séances-2-phases",
+    "objectID": "M3P/slide-introduction.html#séances-2-phases",
+    "href": "M3P/slide-introduction.html#séances-2-phases",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "5 Séances, 2 Phases",
     "text": "5 Séances, 2 Phases\nPhase 1 : Fondations 🌱 (Séances 1-3)\n\nSéance 1 : Premier contact LLM + Variables R\nSéance 2 : Vecteurs et fonctions built-in\nSéance 3 : Créer ses propres fonctions\n\n\nObjectif : Maîtriser le dialogue avec un LLM et les concepts R de base\n\n\nPhase 2 : Application 🚀 (Séances 4-5)\n\nSéance 4 : Tableaux de données et graphiques\nSéance 5 : Projet personnel libre\n\n\n\nObjectif : Analyser de vraies données en autonomie"
   },
   {
-    "objectID": "slide-introduction.html#structure-dune-séance-type",
-    "href": "slide-introduction.html#structure-dune-séance-type",
+    "objectID": "M3P/slide-introduction.html#structure-dune-séance-type",
+    "href": "M3P/slide-introduction.html#structure-dune-séance-type",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Structure d’une séance type",
     "text": "Structure d’une séance type\n\n\n🎭 Présentation\n30-60 min\n\nConcepts du jour\nDémonstrations en direct\nExemples concrets\n\n\n💻 Pratique\n90-120 min\n\nExercices sur machine\nAide individuelle\nDebugging collectif\n\n\n🤝 Partage\n30 min\n\nRetours d’expérience\nSolutions créatives"
   },
   {
-    "objectID": "slide-introduction.html#évaluation-continue",
-    "href": "slide-introduction.html#évaluation-continue",
+    "objectID": "M3P/slide-introduction.html#évaluation-continue",
+    "href": "M3P/slide-introduction.html#évaluation-continue",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Évaluation continue",
     "text": "Évaluation continue\nL’objectif : évaluer votre progression, pas vous piéger !\nCours à validation."
   },
   {
-    "objectID": "slide-introduction.html#vos-interrogations",
-    "href": "slide-introduction.html#vos-interrogations",
+    "objectID": "M3P/slide-introduction.html#vos-interrogations",
+    "href": "M3P/slide-introduction.html#vos-interrogations",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Vos interrogations",
     "text": "Vos interrogations\nQuelles sont vos questions ? 🤔\n\n🤖 Sur l’utilisation des LLM ?\n📊 Sur le langage R ?\n📅 Sur l’organisation du cours ?\n📝 Sur l’évaluation ?\n\nPas de question bête ! Nous sommes tous là pour apprendre ensemble 😊"
   },
   {
-    "objectID": "slide-introduction.html#maintenant",
-    "href": "slide-introduction.html#maintenant",
+    "objectID": "M3P/slide-introduction.html#maintenant",
+    "href": "M3P/slide-introduction.html#maintenant",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Maintenant",
     "text": "Maintenant\n\n📥 Installer R et RStudio (tutoriel fourni, si sur votre machine, démarrez Rstudio sinon)\n🔐 Créer un compte LLM (facultatif)\n🧪 Essayer un premier prompt simple"
   },
   {
-    "objectID": "slide-introduction.html#merci",
-    "href": "slide-introduction.html#merci",
+    "objectID": "M3P/slide-introduction.html#merci",
+    "href": "M3P/slide-introduction.html#merci",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Merci !",
     "text": "Merci !\nN’oubliez pas : l’erreur est votre amie ! 😊\n\n\n📚 Apprenez\n\n🔍 Explorez\n\n🎉 Réussissez"
   },
   {
-    "objectID": "slide-introduction.html#ressources-disponibles",
-    "href": "slide-introduction.html#ressources-disponibles",
+    "objectID": "M3P/slide-introduction.html#ressources-disponibles",
+    "href": "M3P/slide-introduction.html#ressources-disponibles",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Ressources disponibles",
     "text": "Ressources disponibles\n🔗 Liens utiles\n\nInstallation R/RStudio : https://moodle.univ-paris8.fr/mod/page/view.php?id=272504\nUtilisation de R/Rstudio en ligne : https://datalab.sspcloud.fr/ (Utilisez votre compte étudiant Paris 8 pour vous connecter)\nGuide des prompts efficaces : https://www.francenum.gouv.fr/guides-et-conseils/intelligence-artificielle/generation-de-contenus-texte-image-son-video/comment-0\nForum d’entraide étudiant"
   },
   {
-    "objectID": "slide-introduction.html#contact-et-ressources",
-    "href": "slide-introduction.html#contact-et-ressources",
+    "objectID": "M3P/slide-introduction.html#contact-et-ressources",
+    "href": "M3P/slide-introduction.html#contact-et-ressources",
     "title": "Apprendre la Programmation R avec les LLM",
     "section": "Contact et ressources",
     "text": "Contact et ressources\n\n📧 Email : elias.bouacida@univ-paris8.fr\n🌐 Espace de cours : Moodle\n🌐 Cours : Cours\nBureau : Bâtiment D, Salle D115\nPermanences : Mardi 14h-16h, Mercredi 14h-16h"
   },
   {
-    "objectID": "slide-lecon1.html#à-vous-de-jouer",
-    "href": "slide-lecon1.html#à-vous-de-jouer",
+    "objectID": "M3P/slide-lecon1.html#à-vous-de-jouer",
+    "href": "M3P/slide-lecon1.html#à-vous-de-jouer",
     "title": "Premiers pas avec R",
     "section": "À vous de jouer !",
-    "text": "À vous de jouer !\nDemandez à votre LLM préférez comment utiliser R et Rstudio.\nDemandez lui de vous décrire l’interface."
+    "text": "À vous de jouer !\nDemandez à votre LLM préférez comment utiliser R et Rstudio.\nDemandez-lui de vous décrire l’interface."
   },
   {
-    "objectID": "slide-lecon1.html#premiers-calculs",
-    "href": "slide-lecon1.html#premiers-calculs",
+    "objectID": "M3P/slide-lecon1.html#premiers-calculs",
+    "href": "M3P/slide-lecon1.html#premiers-calculs",
     "title": "Premiers pas avec R",
     "section": "Premiers calculs",
     "text": "Premiers calculs\n\nDans votre classe, les notes sont de 12, 15, 13 et 8.\nUtilisez R pour calculer la moyenne.\nExpliquez le code produit.\n\n\n\nnotes &lt;- c(12, 15, 13, 8)\n\nmean(notes)\n\n[1] 12\n\nprint(\"La moyenne est de : \", mean(notes))\n\n[1] \"La moyenne est de : \""
   },
   {
-    "objectID": "slide-lecon1.html#notions-1",
-    "href": "slide-lecon1.html#notions-1",
+    "objectID": "M3P/slide-lecon1.html#notions-1",
+    "href": "M3P/slide-lecon1.html#notions-1",
     "title": "Premiers pas avec R",
     "section": "Notions",
     "text": "Notions\nEcrivez dans votre journal le prompt que vous utilisez, la réponse du LLM, et ce que vous avez compris pour chacune des notions suivantes :\n\nObjet\nAssignation\nTypes\nFonctions\nScripts\n\n\nLaissez du temps aux étudiants pour écrire et ensuite échangez sur ce qu’ils ont compris à ces différentes notions. Diviser le temps entre les concepts. Discuter avec les étudiants de ce qu’ils demandent aux LLM, en particulier, demander si quelqu’un a pensé à demander une explication avec des exemples. Si besoin, demandez ensuite aux étudiants de s’expliquer entre eux ce qu’ils ont compris. Demandez à quelqu’un d’écrire au tableau de résultat."
   },
   {
-    "objectID": "slide-lecon1.html#remarque",
-    "href": "slide-lecon1.html#remarque",
+    "objectID": "M3P/slide-lecon1.html#remarque",
+    "href": "M3P/slide-lecon1.html#remarque",
     "title": "Premiers pas avec R",
     "section": "Remarque",
     "text": "Remarque\nVous pouvez demander des exemples !\n\nLaissez du temps à la fin de la séance pour écrire le journal."
   },
   {
-    "objectID": "02Lecon1.html",
-    "href": "02Lecon1.html",
+    "objectID": "M3P/02Lecon1.html",
+    "href": "M3P/02Lecon1.html",
     "title": "Premiers pas avec R",
     "section": "",
-    "text": "Demandez à votre LLM préférez comment utiliser R et Rstudio.\nDemandez lui de vous décrire l’interface.\n\n\n\n\nDans votre classe, les notes sont de 12, 15, 13 et 8.\nUtilisez R pour calculer la moyenne.\nExpliquez le code produit.\n\n\n\nnotes &lt;- c(12, 15, 13, 8)\n\nmean(notes)\n\n[1] 12\n\nprint(\"La moyenne est de : \", mean(notes))\n\n[1] \"La moyenne est de : \"",
+    "text": "Demandez à votre LLM préférez comment utiliser R et Rstudio.\nDemandez-lui de vous décrire l’interface.\n\n\n\n\nDans votre classe, les notes sont de 12, 15, 13 et 8.\nUtilisez R pour calculer la moyenne.\nExpliquez le code produit.\n\n\n\nnotes &lt;- c(12, 15, 13, 8)\n\nmean(notes)\n\n[1] 12\n\nprint(\"La moyenne est de : \", mean(notes))\n\n[1] \"La moyenne est de : \"",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Premiers pas avec R"
     ]
   },
   {
-    "objectID": "02Lecon1.html#à-vous-de-jouer",
-    "href": "02Lecon1.html#à-vous-de-jouer",
+    "objectID": "M3P/02Lecon1.html#à-vous-de-jouer",
+    "href": "M3P/02Lecon1.html#à-vous-de-jouer",
     "title": "Premiers pas avec R",
     "section": "",
-    "text": "Demandez à votre LLM préférez comment utiliser R et Rstudio.\nDemandez lui de vous décrire l’interface.",
+    "text": "Demandez à votre LLM préférez comment utiliser R et Rstudio.\nDemandez-lui de vous décrire l’interface.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Premiers pas avec R"
     ]
   },
   {
-    "objectID": "02Lecon1.html#premiers-calculs",
-    "href": "02Lecon1.html#premiers-calculs",
+    "objectID": "M3P/02Lecon1.html#premiers-calculs",
+    "href": "M3P/02Lecon1.html#premiers-calculs",
     "title": "Premiers pas avec R",
     "section": "",
     "text": "Dans votre classe, les notes sont de 12, 15, 13 et 8.\nUtilisez R pour calculer la moyenne.\nExpliquez le code produit.\n\n\n\nnotes &lt;- c(12, 15, 13, 8)\n\nmean(notes)\n\n[1] 12\n\nprint(\"La moyenne est de : \", mean(notes))\n\n[1] \"La moyenne est de : \"",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Premiers pas avec R"
     ]
   },
   {
-    "objectID": "02Lecon1.html#notions-1",
-    "href": "02Lecon1.html#notions-1",
+    "objectID": "M3P/02Lecon1.html#notions-1",
+    "href": "M3P/02Lecon1.html#notions-1",
     "title": "Premiers pas avec R",
     "section": "Notions",
     "text": "Notions\nEcrivez dans votre journal le prompt que vous utilisez, la réponse du LLM, et ce que vous avez compris pour chacune des notions suivantes :\n\n\nObjet\nAssignation\nTypes\nFonctions\nScripts\n\n\n\nLaissez du temps aux étudiants pour écrire et ensuite échangez sur ce qu’ils ont compris à ces différentes notions. Diviser le temps entre les concepts. Discuter avec les étudiants de ce qu’ils demandent aux LLM, en particulier, demander si quelqu’un a pensé à demander une explication avec des exemples. Si besoin, demandez ensuite aux étudiants de s’expliquer entre eux ce qu’ils ont compris. Demandez à quelqu’un d’écrire au tableau de résultat.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Premiers pas avec R"
     ]
   },
   {
-    "objectID": "02Lecon1.html#remarque",
-    "href": "02Lecon1.html#remarque",
+    "objectID": "M3P/02Lecon1.html#remarque",
+    "href": "M3P/02Lecon1.html#remarque",
     "title": "Premiers pas avec R",
     "section": "Remarque",
     "text": "Remarque\nVous pouvez demander des exemples !\n\nLaissez du temps à la fin de la séance pour écrire le journal.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Premiers pas avec R"
     ]
   },
   {
-    "objectID": "slide-lecon3.html#plan-de-la-séance",
-    "href": "slide-lecon3.html#plan-de-la-séance",
+    "objectID": "M3P/slide-lecon3.html#plan-de-la-séance",
+    "href": "M3P/slide-lecon3.html#plan-de-la-séance",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Plan de la séance",
     "text": "Plan de la séance\n\nRécap et partage (15min) : Retours sur les données\nConditions if/else (45min) : Prendre des décisions dans le code\nBoucles (45min) : Répéter des opérations\nCréer ses propres fonctions (60min) : Structurer son code\nMini-projet (45min) : Analyser des données avec vos fonctions\n\n\nProduction attendue : 3 fonctions personnalisées avec conditions et/ou boucles"
   },
   {
-    "objectID": "slide-lecon3.html#objectifs-de-la-séance",
-    "href": "slide-lecon3.html#objectifs-de-la-séance",
+    "objectID": "M3P/slide-lecon3.html#objectifs-de-la-séance",
+    "href": "M3P/slide-lecon3.html#objectifs-de-la-séance",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Objectifs de la séance",
     "text": "Objectifs de la séance\n\n\n\n\n\n\nAutomatiser et structurer son code\n\n\n\n\n\n\n\nUtiliser des conditions pour adapter le comportement du code\nUtiliser des boucles pour répéter des opérations\nCréer des fonctions réutilisables\nCombiner ces concepts pour résoudre des problèmes réels"
   },
   {
-    "objectID": "slide-lecon3.html#retours-sur-vos-analyses-de-données",
-    "href": "slide-lecon3.html#retours-sur-vos-analyses-de-données",
+    "objectID": "M3P/slide-lecon3.html#retours-sur-vos-analyses-de-données",
+    "href": "M3P/slide-lecon3.html#retours-sur-vos-analyses-de-données",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Retours sur vos analyses de données",
     "text": "Retours sur vos analyses de données\n\nQuelles difficultés avez-vous rencontrées ?\nQuelles fonctions intégrées avez-vous découvertes ?\nComment les LLMs vous ont-ils aidé ?"
   },
   {
-    "objectID": "slide-lecon3.html#pourquoi-des-conditions",
-    "href": "slide-lecon3.html#pourquoi-des-conditions",
+    "objectID": "M3P/slide-lecon3.html#pourquoi-des-conditions",
+    "href": "M3P/slide-lecon3.html#pourquoi-des-conditions",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Pourquoi des conditions ?",
     "text": "Pourquoi des conditions ?\n\n\n\n\n\n\nQuestion\n\n\nImaginez que vous analysez des températures. Comment indiquer s’il fait chaud ou froid ?\n\n\n\n\nOn a besoin de tester une condition et agir différemment selon le résultat."
   },
   {
-    "objectID": "slide-lecon3.html#exercice-1-première-condition",
-    "href": "slide-lecon3.html#exercice-1-première-condition",
+    "objectID": "M3P/slide-lecon3.html#exercice-1-première-condition",
+    "href": "M3P/slide-lecon3.html#exercice-1-première-condition",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 1 : Première condition",
     "text": "Exercice 1 : Première condition\nDemandez à votre LLM de vous expliquer la structure if/else en R avec un exemple simple.\nEnsuite, testez ce code :\n\ntemperature &lt;- 25\n\nif (temperature &gt; 20) {\n  print(\"Il fait chaud\")\n}\n\nQuestions à explorer avec votre LLM :\n\nQue se passe-t-il si temperature &lt;- 15 ?\nComment ajouter un message pour “Il fait froid” ?\nQu’est-ce qu’un opérateur de comparaison ? (&gt;, &lt;, ==, !=, &gt;=, &lt;=)\n\n\nLaisser 10 minutes. Circuler pour vérifier la compréhension. Insister sur le fait que le LLM peut se tromper - tester le code est essentiel."
   },
   {
-    "objectID": "slide-lecon3.html#exercice-2-ifelse-complet",
-    "href": "slide-lecon3.html#exercice-2-ifelse-complet",
+    "objectID": "M3P/slide-lecon3.html#exercice-2-ifelse-complet",
+    "href": "M3P/slide-lecon3.html#exercice-2-ifelse-complet",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 2 : if/else complet",
     "text": "Exercice 2 : if/else complet\nCréez un code qui :\n\nPrend une note (0-20)\nAffiche “Réussite” si la note est &gt;= 10\nAffiche “Échec” sinon\n\n\nExtension : Ajoutez une troisième catégorie avec else if :\n\n“Excellent” si &gt;= 16\n“Réussite” si &gt;= 10\n“Échec” sinon\n\n\n\n10 minutes. Faire un débriefing collectif. Demander à un étudiant de partager son code et son prompt."
   },
   {
-    "objectID": "slide-lecon3.html#exercice-3-conditions-et-vecteurs",
-    "href": "slide-lecon3.html#exercice-3-conditions-et-vecteurs",
+    "objectID": "M3P/slide-lecon3.html#exercice-3-conditions-et-vecteurs",
+    "href": "M3P/slide-lecon3.html#exercice-3-conditions-et-vecteurs",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 3 : Conditions et vecteurs",
     "text": "Exercice 3 : Conditions et vecteurs\nProblème : Vous avez plusieurs notes :\n\nnotes &lt;- c(8, 12, 15, 9, 18)\n\nQuestion : Comment classifier TOUTES ces notes ?\nDemandez à votre LLM comment appliquer une condition à un vecteur.\n\nIndices à explorer :\n\nLa fonction ifelse()\nLa différence entre if et ifelse()\n\n\n\n15 minutes. C’est un concept important. Les étudiants découvriront la vectorisation. Certains LLMs proposeront des boucles, d’autres ifelse(). Discuter les deux approches."
   },
   {
-    "objectID": "slide-lecon3.html#pourquoi-des-boucles",
-    "href": "slide-lecon3.html#pourquoi-des-boucles",
+    "objectID": "M3P/slide-lecon3.html#pourquoi-des-boucles",
+    "href": "M3P/slide-lecon3.html#pourquoi-des-boucles",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Pourquoi des boucles ?",
     "text": "Pourquoi des boucles ?\n\n\n\n\n\n\nSituation\n\n\nVous avez 100 températures à classifier. Écrire 100 fois if/else ?\n\n\n\n\nLes boucles permettent de répéter automatiquement des opérations."
   },
   {
-    "objectID": "slide-lecon3.html#exercice-4-boucle-for-simple",
-    "href": "slide-lecon3.html#exercice-4-boucle-for-simple",
+    "objectID": "M3P/slide-lecon3.html#exercice-4-boucle-for-simple",
+    "href": "M3P/slide-lecon3.html#exercice-4-boucle-for-simple",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 4 : Boucle for simple",
     "text": "Exercice 4 : Boucle for simple\nDemandez à votre LLM d’expliquer la boucle for en R avec un exemple.\nTestez ce code :\n\nfor (i in 1:5) {\n  print(i)\n}\n\nQuestions :\n\nQue fait 1:5 ?\nQue représente i ?\nComment afficher les nombres de 10 à 20 ?\n\n\n10 minutes. Concept fondamental mais peut être abstrait pour certains."
   },
   {
-    "objectID": "slide-lecon3.html#exercice-5-boucle-sur-un-vecteur",
-    "href": "slide-lecon3.html#exercice-5-boucle-sur-un-vecteur",
+    "objectID": "M3P/slide-lecon3.html#exercice-5-boucle-sur-un-vecteur",
+    "href": "M3P/slide-lecon3.html#exercice-5-boucle-sur-un-vecteur",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 5 : Boucle sur un vecteur",
     "text": "Exercice 5 : Boucle sur un vecteur\nReprenez vos notes de l’exercice 3 :\n\nnotes &lt;- c(8, 12, 15, 9, 18)\n\nUtilisez une boucle for pour :\n\nAfficher chaque note\nAfficher chaque note avec son classement (Réussite/Échec)\n\n\nAstuce : Combinez for et if/else !\n\n\n15 minutes. Les étudiants vont combiner les deux concepts. Anticiper les confusions entre i (indice) et notes[i] (valeur)."
   },
   {
-    "objectID": "slide-lecon3.html#exercice-6-accumuler-des-résultats",
-    "href": "slide-lecon3.html#exercice-6-accumuler-des-résultats",
+    "objectID": "M3P/slide-lecon3.html#exercice-6-accumuler-des-résultats",
+    "href": "M3P/slide-lecon3.html#exercice-6-accumuler-des-résultats",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 6 : Accumuler des résultats",
     "text": "Exercice 6 : Accumuler des résultats\nNouveau défi : Calculez la somme des notes sans utiliser sum().\nIndices :\n\nCréez une variable total &lt;- 0\nUtilisez une boucle pour ajouter chaque note à total\nAffichez le résultat final\n\n\nVérification : Comparez avec sum(notes)\n\n\n10 minutes. Introduit le concept d’accumulation. Utile pour comprendre ce que font réellement les fonctions intégrées."
   },
   {
-    "objectID": "slide-lecon3.html#boucle-while-optionnel",
-    "href": "slide-lecon3.html#boucle-while-optionnel",
+    "objectID": "M3P/slide-lecon3.html#boucle-while-optionnel",
+    "href": "M3P/slide-lecon3.html#boucle-while-optionnel",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Boucle while (optionnel)",
     "text": "Boucle while (optionnel)\nDemandez à votre LLM la différence entre for et while.\nExemple à tester :\n\ncompteur &lt;- 1\nwhile (compteur &lt;= 5) {\n  print(compteur)\n  compteur &lt;- compteur + 1\n}\n\n\n\n\n\n\n\nAttention !\n\n\nQue se passe-t-il si vous oubliez compteur &lt;- compteur + 1 ?\n\n\n\n\nOptionnel car while est moins utilisé en R. Mais bon pour comprendre les concepts de programmation. Attention aux boucles infinies !"
   },
   {
-    "objectID": "slide-lecon3.html#pourquoi-créer-des-fonctions",
-    "href": "slide-lecon3.html#pourquoi-créer-des-fonctions",
+    "objectID": "M3P/slide-lecon3.html#pourquoi-créer-des-fonctions",
+    "href": "M3P/slide-lecon3.html#pourquoi-créer-des-fonctions",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Pourquoi créer des fonctions ?",
     "text": "Pourquoi créer des fonctions ?\nJusqu’ici, vous avez utilisé des fonctions : mean(), sum(), print()…\n\nMaintenant, vous allez créer vos propres fonctions !\n\n\n\n\n\n\n\n\nAvantages\n\n\n\nRéutiliser du code\nÉviter la répétition\nRendre le code plus lisible\nPartager avec d’autres"
   },
   {
-    "objectID": "slide-lecon3.html#exercice-7-première-fonction",
-    "href": "slide-lecon3.html#exercice-7-première-fonction",
+    "objectID": "M3P/slide-lecon3.html#exercice-7-première-fonction",
+    "href": "M3P/slide-lecon3.html#exercice-7-première-fonction",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 7 : Première fonction",
     "text": "Exercice 7 : Première fonction\nDemandez à votre LLM d’expliquer comment créer une fonction en R.\nCréez une fonction simple :\n\ndire_bonjour &lt;- function(nom) {\n  message &lt;- paste(\"Bonjour\", nom)\n  return(message)\n}\n\n# Test\ndire_bonjour(\"Alice\")\n\nQuestions :\n\nÀ quoi sert function() ?\nQu’est-ce qu’un paramètre / argument ?\nÀ quoi sert return() ?\n\n\n15 minutes. Première fonction. Bien distinguer définition (function) et appel (dire_bonjour(“Alice”))."
   },
   {
-    "objectID": "slide-lecon3.html#exercice-8-fonction-avec-condition",
-    "href": "slide-lecon3.html#exercice-8-fonction-avec-condition",
+    "objectID": "M3P/slide-lecon3.html#exercice-8-fonction-avec-condition",
+    "href": "M3P/slide-lecon3.html#exercice-8-fonction-avec-condition",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 8 : Fonction avec condition",
     "text": "Exercice 8 : Fonction avec condition\nCréez une fonction classifier_note() qui :\n\nPrend une note en paramètre\nRetourne “Excellent” si &gt;= 16\nRetourne “Réussite” si &gt;= 10\nRetourne “Échec” sinon\n\nTestez avec plusieurs valeurs.\n\nExtension : Que se passe-t-il si on passe une note négative ou &gt; 20 ? Comment améliorer la fonction ?\n\n\n15 minutes. Première fonction “utile”. L’extension introduit la validation des paramètres (concept important)."
   },
   {
-    "objectID": "slide-lecon3.html#exercice-9-fonction-avec-boucle",
-    "href": "slide-lecon3.html#exercice-9-fonction-avec-boucle",
+    "objectID": "M3P/slide-lecon3.html#exercice-9-fonction-avec-boucle",
+    "href": "M3P/slide-lecon3.html#exercice-9-fonction-avec-boucle",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 9 : Fonction avec boucle",
     "text": "Exercice 9 : Fonction avec boucle\nCréez une fonction calculer_moyenne() qui :\n\nPrend un vecteur de nombres\nUtilise une boucle pour calculer la moyenne\nRetourne le résultat\n\nTestez :\n\nmes_notes &lt;- c(12, 15, 8, 14)\ncalculer_moyenne(mes_notes)\n\n\nQuestions :\n\nComment gérer les valeurs manquantes (NA) ?\nComparez votre résultat avec mean()\n\n\n\n15 minutes. Fonction plus complexe. Les étudiants réutilisent l’exercice 6. Discussion sur NA importante."
   },
   {
-    "objectID": "slide-lecon3.html#exercice-10-fonction-complète",
-    "href": "slide-lecon3.html#exercice-10-fonction-complète",
+    "objectID": "M3P/slide-lecon3.html#exercice-10-fonction-complète",
+    "href": "M3P/slide-lecon3.html#exercice-10-fonction-complète",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 10 : Fonction complète",
     "text": "Exercice 10 : Fonction complète\nCréez une fonction analyser_vecteur() qui prend un vecteur et retourne :\n\nLe minimum\nLe maximum\nLa moyenne\nLe nombre d’éléments\n\n\nDéfi : Comment retourner plusieurs valeurs ? Demandez au LLM !\nIndice : liste ou vecteur nommé\n\n\n15 minutes. Fonction avancée. Introduit le concept de retourner des structures de données complexes. Les étudiants découvriront les listes."
   },
   {
-    "objectID": "slide-lecon3.html#projet-analyse-de-températures",
-    "href": "slide-lecon3.html#projet-analyse-de-températures",
+    "objectID": "M3P/slide-lecon3.html#projet-analyse-de-températures",
+    "href": "M3P/slide-lecon3.html#projet-analyse-de-températures",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Projet : Analyse de températures",
     "text": "Projet : Analyse de températures\nVous allez créer un petit système d’analyse météo.\nDonnées :\n\ntemperatures &lt;- c(15, 22, 18, 25, 12, 28, 20, 16, 24, 19)\n\nCréez les fonctions suivantes :\n\nclassifier_temperature(temp) : retourne “Froid”, “Doux” ou “Chaud”\ncompter_par_categorie(vecteur_temp) : compte combien de jours froids/doux/chauds\nrapport_meteo(vecteur_temp) : génère un rapport complet (min, max, moyenne, catégories)\n\n\n\n\n\n\n\nUtilisez tout ce que vous avez appris\n\n\nConditions, boucles, fonctions !\n\n\n\n\n45 minutes. Projet synthèse. Les étudiants combinent tous les concepts. Circuler beaucoup. Encourager l’aide entre pairs. Certains iront plus loin (graphiques, etc.)."
   },
   {
-    "objectID": "slide-lecon3.html#critères-du-mini-projet",
-    "href": "slide-lecon3.html#critères-du-mini-projet",
+    "objectID": "M3P/slide-lecon3.html#critères-du-mini-projet",
+    "href": "M3P/slide-lecon3.html#critères-du-mini-projet",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Critères du mini-projet",
     "text": "Critères du mini-projet\nVotre code doit :\n\n✅ Fonctionner sans erreur\n✅ Contenir au moins 3 fonctions\n✅ Utiliser des conditions (if/else)\n✅ Utiliser au moins une boucle\n✅ Être commenté (expliquez ce que fait chaque fonction)\n\n\nBonus :\n\nGérer les cas d’erreur (NA, vecteur vide, etc.)\nCréer des visualisations\nTester avec d’autres données\n\n\n\nAfficher les critères clairement. Certains étudiants auront besoin de plus de temps - c’est OK."
   },
   {
-    "objectID": "slide-lecon3.html#pièges-courants-avec-les-llms",
-    "href": "slide-lecon3.html#pièges-courants-avec-les-llms",
+    "objectID": "M3P/slide-lecon3.html#pièges-courants-avec-les-llms",
+    "href": "M3P/slide-lecon3.html#pièges-courants-avec-les-llms",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Pièges courants avec les LLMs",
     "text": "Pièges courants avec les LLMs\n\n\n\n\n\n\nAttention !\n\n\nLes LLMs peuvent :\n\nProposer du code qui ne fonctionne pas\nUtiliser des fonctions qui n’existent pas\nMélanger différentes versions de R\nDonner des explications approximatives\n\n\n\n\n\nVotre responsabilité : TOUJOURS tester le code !"
   },
   {
-    "objectID": "slide-lecon3.html#exercice-réflexif-journal-de-bord",
-    "href": "slide-lecon3.html#exercice-réflexif-journal-de-bord",
+    "objectID": "M3P/slide-lecon3.html#exercice-réflexif-journal-de-bord",
+    "href": "M3P/slide-lecon3.html#exercice-réflexif-journal-de-bord",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice réflexif : Journal de bord",
     "text": "Exercice réflexif : Journal de bord\nDans votre journal, documentez :\n\nUn prompt qui a bien fonctionné : Pourquoi ?\nUne erreur du LLM : Comment l’avez-vous détectée ? Corrigée ?\nVotre code le plus complexe : Expliquez-le avec vos mots\nUne chose que vous ne comprenez pas encore : À approfondir\n\n\n\n\n\n\n\n\nConseil\n\n\nPlus vous serez précis dans vos prompts, meilleures seront les réponses. Donnez du contexte !\n\n\n\n\n\n10 dernières minutes. Moment réflexif important. Les étudiants prennent du recul sur leur apprentissage."
   },
   {
-    "objectID": "slide-lecon3.html#pour-aller-plus-loin",
-    "href": "slide-lecon3.html#pour-aller-plus-loin",
+    "objectID": "M3P/slide-lecon3.html#pour-aller-plus-loin",
+    "href": "M3P/slide-lecon3.html#pour-aller-plus-loin",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Pour aller plus loin",
     "text": "Pour aller plus loin\n\nDocumentation R : ?function, ?if, ?for\nPratiquez : La programmation s’apprend en codant !\nDebuggez : Les erreurs sont normales et instructives\nPartagez : Discutez de vos solutions avec vos pairs"
   },
   {
-    "objectID": "slide-lecon3.html#préparation-prochaine-séance",
-    "href": "slide-lecon3.html#préparation-prochaine-séance",
+    "objectID": "M3P/slide-lecon3.html#préparation-prochaine-séance",
+    "href": "M3P/slide-lecon3.html#préparation-prochaine-séance",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Préparation prochaine séance",
     "text": "Préparation prochaine séance\n\n\n\n\n\n\nDevoirs\n\n\n\nTerminez le mini-projet si besoin\nMettez à jour votre journal de bord\nCréez au moins une fonction originale qui vous serait utile\n\n\n\n\n\nQuestions à explorer : Comment sauvegarder ses fonctions ? Comment les partager ? (→ scripts, packages)"
   },
   {
-    "objectID": "slide-lecon3.html#questions",
-    "href": "slide-lecon3.html#questions",
+    "objectID": "M3P/slide-lecon3.html#questions",
+    "href": "M3P/slide-lecon3.html#questions",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Questions ?",
     "text": "Questions ?\n\n\n\n\n\n\nN’oubliez pas\n\n\n\nTestez votre code\nCommentez votre code\nDocumentez votre apprentissage\nUtilisez les LLMs comme assistants, pas comme rédacteurs\n\n\n\n\n\nBon courage et bon code ! 🚀"
   },
   {
-    "objectID": "04Lecon3Fonctions.html",
-    "href": "04Lecon3Fonctions.html",
+    "objectID": "M3P/04Lecon3Fonctions.html",
+    "href": "M3P/04Lecon3Fonctions.html",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "",
     "text": "Récap et partage (15min) : Retours sur les données\nConditions if/else (45min) : Prendre des décisions dans le code\nBoucles (45min) : Répéter des opérations\nCréer ses propres fonctions (60min) : Structurer son code\nMini-projet (45min) : Analyser des données avec vos fonctions\n\n\n\nProduction attendue : 3 fonctions personnalisées avec conditions et/ou boucles",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#plan-de-la-séance",
-    "href": "04Lecon3Fonctions.html#plan-de-la-séance",
+    "objectID": "M3P/04Lecon3Fonctions.html#plan-de-la-séance",
+    "href": "M3P/04Lecon3Fonctions.html#plan-de-la-séance",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "",
     "text": "Récap et partage (15min) : Retours sur les données\nConditions if/else (45min) : Prendre des décisions dans le code\nBoucles (45min) : Répéter des opérations\nCréer ses propres fonctions (60min) : Structurer son code\nMini-projet (45min) : Analyser des données avec vos fonctions\n\n\n\nProduction attendue : 3 fonctions personnalisées avec conditions et/ou boucles",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#objectifs-de-la-séance",
-    "href": "04Lecon3Fonctions.html#objectifs-de-la-séance",
+    "objectID": "M3P/04Lecon3Fonctions.html#objectifs-de-la-séance",
+    "href": "M3P/04Lecon3Fonctions.html#objectifs-de-la-séance",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Objectifs de la séance",
     "text": "Objectifs de la séance\n\n\n\n\n\n\nAstuceAutomatiser et structurer son code\n\n\n\n\n\n\n\n\nUtiliser des conditions pour adapter le comportement du code\nUtiliser des boucles pour répéter des opérations\nCréer des fonctions réutilisables\nCombiner ces concepts pour résoudre des problèmes réels",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#retours-sur-vos-analyses-de-données",
-    "href": "04Lecon3Fonctions.html#retours-sur-vos-analyses-de-données",
+    "objectID": "M3P/04Lecon3Fonctions.html#retours-sur-vos-analyses-de-données",
+    "href": "M3P/04Lecon3Fonctions.html#retours-sur-vos-analyses-de-données",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Retours sur vos analyses de données",
     "text": "Retours sur vos analyses de données\n\n\nQuelles difficultés avez-vous rencontrées ?\nQuelles fonctions intégrées avez-vous découvertes ?\nComment les LLMs vous ont-ils aidé ?",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#pourquoi-des-conditions",
-    "href": "04Lecon3Fonctions.html#pourquoi-des-conditions",
+    "objectID": "M3P/04Lecon3Fonctions.html#pourquoi-des-conditions",
+    "href": "M3P/04Lecon3Fonctions.html#pourquoi-des-conditions",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Pourquoi des conditions ?",
     "text": "Pourquoi des conditions ?\n\n\n\n\n\n\nNoteQuestion\n\n\n\nImaginez que vous analysez des températures. Comment indiquer s’il fait chaud ou froid ?\n\n\n\nOn a besoin de tester une condition et agir différemment selon le résultat.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#exercice-1-première-condition",
-    "href": "04Lecon3Fonctions.html#exercice-1-première-condition",
+    "objectID": "M3P/04Lecon3Fonctions.html#exercice-1-première-condition",
+    "href": "M3P/04Lecon3Fonctions.html#exercice-1-première-condition",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 1 : Première condition",
     "text": "Exercice 1 : Première condition\nDemandez à votre LLM de vous expliquer la structure if/else en R avec un exemple simple.\nEnsuite, testez ce code :\n\ntemperature &lt;- 25\n\nif (temperature &gt; 20) {\n  print(\"Il fait chaud\")\n}\n\nQuestions à explorer avec votre LLM :\n\nQue se passe-t-il si temperature &lt;- 15 ?\nComment ajouter un message pour “Il fait froid” ?\nQu’est-ce qu’un opérateur de comparaison ? (&gt;, &lt;, ==, !=, &gt;=, &lt;=)\n\n\nLaisser 10 minutes. Circuler pour vérifier la compréhension. Insister sur le fait que le LLM peut se tromper - tester le code est essentiel.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#exercice-2-ifelse-complet",
-    "href": "04Lecon3Fonctions.html#exercice-2-ifelse-complet",
+    "objectID": "M3P/04Lecon3Fonctions.html#exercice-2-ifelse-complet",
+    "href": "M3P/04Lecon3Fonctions.html#exercice-2-ifelse-complet",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 2 : if/else complet",
     "text": "Exercice 2 : if/else complet\nCréez un code qui :\n\nPrend une note (0-20)\nAffiche “Réussite” si la note est &gt;= 10\nAffiche “Échec” sinon\n\n\nExtension : Ajoutez une troisième catégorie avec else if :\n\n“Excellent” si &gt;= 16\n“Réussite” si &gt;= 10\n“Échec” sinon\n\n\n\n10 minutes. Faire un débriefing collectif. Demander à un étudiant de partager son code et son prompt.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#exercice-3-conditions-et-vecteurs",
-    "href": "04Lecon3Fonctions.html#exercice-3-conditions-et-vecteurs",
+    "objectID": "M3P/04Lecon3Fonctions.html#exercice-3-conditions-et-vecteurs",
+    "href": "M3P/04Lecon3Fonctions.html#exercice-3-conditions-et-vecteurs",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 3 : Conditions et vecteurs",
     "text": "Exercice 3 : Conditions et vecteurs\nProblème : Vous avez plusieurs notes :\n\nnotes &lt;- c(8, 12, 15, 9, 18)\n\nQuestion : Comment classifier TOUTES ces notes ?\nDemandez à votre LLM comment appliquer une condition à un vecteur.\n\nIndices à explorer :\n\nLa fonction ifelse()\nLa différence entre if et ifelse()\n\n\n\n15 minutes. C’est un concept important. Les étudiants découvriront la vectorisation. Certains LLMs proposeront des boucles, d’autres ifelse(). Discuter les deux approches.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#pourquoi-des-boucles",
-    "href": "04Lecon3Fonctions.html#pourquoi-des-boucles",
+    "objectID": "M3P/04Lecon3Fonctions.html#pourquoi-des-boucles",
+    "href": "M3P/04Lecon3Fonctions.html#pourquoi-des-boucles",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Pourquoi des boucles ?",
     "text": "Pourquoi des boucles ?\n\n\n\n\n\n\nNoteSituation\n\n\n\nVous avez 100 températures à classifier. Écrire 100 fois if/else ?\n\n\n\nLes boucles permettent de répéter automatiquement des opérations.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#exercice-4-boucle-for-simple",
-    "href": "04Lecon3Fonctions.html#exercice-4-boucle-for-simple",
+    "objectID": "M3P/04Lecon3Fonctions.html#exercice-4-boucle-for-simple",
+    "href": "M3P/04Lecon3Fonctions.html#exercice-4-boucle-for-simple",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 4 : Boucle for simple",
     "text": "Exercice 4 : Boucle for simple\nDemandez à votre LLM d’expliquer la boucle for en R avec un exemple.\nTestez ce code :\n\nfor (i in 1:5) {\n  print(i)\n}\n\nQuestions :\n\nQue fait 1:5 ?\nQue représente i ?\nComment afficher les nombres de 10 à 20 ?\n\n\n10 minutes. Concept fondamental mais peut être abstrait pour certains.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#exercice-5-boucle-sur-un-vecteur",
-    "href": "04Lecon3Fonctions.html#exercice-5-boucle-sur-un-vecteur",
+    "objectID": "M3P/04Lecon3Fonctions.html#exercice-5-boucle-sur-un-vecteur",
+    "href": "M3P/04Lecon3Fonctions.html#exercice-5-boucle-sur-un-vecteur",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 5 : Boucle sur un vecteur",
     "text": "Exercice 5 : Boucle sur un vecteur\nReprenez vos notes de l’exercice 3 :\n\nnotes &lt;- c(8, 12, 15, 9, 18)\n\nUtilisez une boucle for pour :\n\nAfficher chaque note\nAfficher chaque note avec son classement (Réussite/Échec)\n\n\nAstuce : Combinez for et if/else !\n\n\n15 minutes. Les étudiants vont combiner les deux concepts. Anticiper les confusions entre i (indice) et notes[i] (valeur).",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#exercice-6-accumuler-des-résultats",
-    "href": "04Lecon3Fonctions.html#exercice-6-accumuler-des-résultats",
+    "objectID": "M3P/04Lecon3Fonctions.html#exercice-6-accumuler-des-résultats",
+    "href": "M3P/04Lecon3Fonctions.html#exercice-6-accumuler-des-résultats",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 6 : Accumuler des résultats",
     "text": "Exercice 6 : Accumuler des résultats\nNouveau défi : Calculez la somme des notes sans utiliser sum().\nIndices :\n\nCréez une variable total &lt;- 0\nUtilisez une boucle pour ajouter chaque note à total\nAffichez le résultat final\n\n\nVérification : Comparez avec sum(notes)\n\n\n10 minutes. Introduit le concept d’accumulation. Utile pour comprendre ce que font réellement les fonctions intégrées.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#boucle-while-optionnel",
-    "href": "04Lecon3Fonctions.html#boucle-while-optionnel",
+    "objectID": "M3P/04Lecon3Fonctions.html#boucle-while-optionnel",
+    "href": "M3P/04Lecon3Fonctions.html#boucle-while-optionnel",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Boucle while (optionnel)",
     "text": "Boucle while (optionnel)\nDemandez à votre LLM la différence entre for et while.\nExemple à tester :\n\ncompteur &lt;- 1\nwhile (compteur &lt;= 5) {\n  print(compteur)\n  compteur &lt;- compteur + 1\n}\n\n\n\n\n\n\n\nAvertissementAttention !\n\n\n\nQue se passe-t-il si vous oubliez compteur &lt;- compteur + 1 ?\n\n\n\nOptionnel car while est moins utilisé en R. Mais bon pour comprendre les concepts de programmation. Attention aux boucles infinies !",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#pourquoi-créer-des-fonctions",
-    "href": "04Lecon3Fonctions.html#pourquoi-créer-des-fonctions",
+    "objectID": "M3P/04Lecon3Fonctions.html#pourquoi-créer-des-fonctions",
+    "href": "M3P/04Lecon3Fonctions.html#pourquoi-créer-des-fonctions",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Pourquoi créer des fonctions ?",
     "text": "Pourquoi créer des fonctions ?\nJusqu’ici, vous avez utilisé des fonctions : mean(), sum(), print()…\n\nMaintenant, vous allez créer vos propres fonctions !\n\n\n\n\n\n\n\n\nAstuceAvantages\n\n\n\n\nRéutiliser du code\nÉviter la répétition\nRendre le code plus lisible\nPartager avec d’autres",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#exercice-7-première-fonction",
-    "href": "04Lecon3Fonctions.html#exercice-7-première-fonction",
+    "objectID": "M3P/04Lecon3Fonctions.html#exercice-7-première-fonction",
+    "href": "M3P/04Lecon3Fonctions.html#exercice-7-première-fonction",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 7 : Première fonction",
     "text": "Exercice 7 : Première fonction\nDemandez à votre LLM d’expliquer comment créer une fonction en R.\nCréez une fonction simple :\n\ndire_bonjour &lt;- function(nom) {\n  message &lt;- paste(\"Bonjour\", nom)\n  return(message)\n}\n\n# Test\ndire_bonjour(\"Alice\")\n\nQuestions :\n\nÀ quoi sert function() ?\nQu’est-ce qu’un paramètre / argument ?\nÀ quoi sert return() ?\n\n\n15 minutes. Première fonction. Bien distinguer définition (function) et appel (dire_bonjour(“Alice”)).",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#exercice-8-fonction-avec-condition",
-    "href": "04Lecon3Fonctions.html#exercice-8-fonction-avec-condition",
+    "objectID": "M3P/04Lecon3Fonctions.html#exercice-8-fonction-avec-condition",
+    "href": "M3P/04Lecon3Fonctions.html#exercice-8-fonction-avec-condition",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 8 : Fonction avec condition",
     "text": "Exercice 8 : Fonction avec condition\nCréez une fonction classifier_note() qui :\n\nPrend une note en paramètre\nRetourne “Excellent” si &gt;= 16\nRetourne “Réussite” si &gt;= 10\nRetourne “Échec” sinon\n\nTestez avec plusieurs valeurs.\n\nExtension : Que se passe-t-il si on passe une note négative ou &gt; 20 ? Comment améliorer la fonction ?\n\n\n15 minutes. Première fonction “utile”. L’extension introduit la validation des paramètres (concept important).",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#exercice-9-fonction-avec-boucle",
-    "href": "04Lecon3Fonctions.html#exercice-9-fonction-avec-boucle",
+    "objectID": "M3P/04Lecon3Fonctions.html#exercice-9-fonction-avec-boucle",
+    "href": "M3P/04Lecon3Fonctions.html#exercice-9-fonction-avec-boucle",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 9 : Fonction avec boucle",
     "text": "Exercice 9 : Fonction avec boucle\nCréez une fonction calculer_moyenne() qui :\n\nPrend un vecteur de nombres\nUtilise une boucle pour calculer la moyenne\nRetourne le résultat\n\nTestez :\n\nmes_notes &lt;- c(12, 15, 8, 14)\ncalculer_moyenne(mes_notes)\n\n\nQuestions :\n\nComment gérer les valeurs manquantes (NA) ?\nComparez votre résultat avec mean()\n\n\n\n15 minutes. Fonction plus complexe. Les étudiants réutilisent l’exercice 6. Discussion sur NA importante.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#exercice-10-fonction-complète",
-    "href": "04Lecon3Fonctions.html#exercice-10-fonction-complète",
+    "objectID": "M3P/04Lecon3Fonctions.html#exercice-10-fonction-complète",
+    "href": "M3P/04Lecon3Fonctions.html#exercice-10-fonction-complète",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 10 : Fonction complète",
     "text": "Exercice 10 : Fonction complète\nCréez une fonction analyser_vecteur() qui prend un vecteur et retourne :\n\nLe minimum\nLe maximum\nLa moyenne\nLe nombre d’éléments\n\n\nDéfi : Comment retourner plusieurs valeurs ? Demandez au LLM !\nIndice : liste ou vecteur nommé\n\n\n15 minutes. Fonction avancée. Introduit le concept de retourner des structures de données complexes. Les étudiants découvriront les listes.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#projet-analyse-de-températures",
-    "href": "04Lecon3Fonctions.html#projet-analyse-de-températures",
+    "objectID": "M3P/04Lecon3Fonctions.html#projet-analyse-de-températures",
+    "href": "M3P/04Lecon3Fonctions.html#projet-analyse-de-températures",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Projet : Analyse de températures",
     "text": "Projet : Analyse de températures\nVous allez créer un petit système d’analyse météo.\nDonnées :\n\ntemperatures &lt;- c(15, 22, 18, 25, 12, 28, 20, 16, 24, 19)\n\nCréez les fonctions suivantes :\n\nclassifier_temperature(temp) : retourne “Froid”, “Doux” ou “Chaud”\ncompter_par_categorie(vecteur_temp) : compte combien de jours froids/doux/chauds\nrapport_meteo(vecteur_temp) : génère un rapport complet (min, max, moyenne, catégories)\n\n\n\n\n\n\n\nNoteUtilisez tout ce que vous avez appris\n\n\n\nConditions, boucles, fonctions !\n\n\n\n45 minutes. Projet synthèse. Les étudiants combinent tous les concepts. Circuler beaucoup. Encourager l’aide entre pairs. Certains iront plus loin (graphiques, etc.).",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#critères-du-mini-projet",
-    "href": "04Lecon3Fonctions.html#critères-du-mini-projet",
+    "objectID": "M3P/04Lecon3Fonctions.html#critères-du-mini-projet",
+    "href": "M3P/04Lecon3Fonctions.html#critères-du-mini-projet",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Critères du mini-projet",
     "text": "Critères du mini-projet\nVotre code doit :\n\n\n✅ Fonctionner sans erreur\n✅ Contenir au moins 3 fonctions\n✅ Utiliser des conditions (if/else)\n✅ Utiliser au moins une boucle\n✅ Être commenté (expliquez ce que fait chaque fonction)\n\n\n\nBonus :\n\nGérer les cas d’erreur (NA, vecteur vide, etc.)\nCréer des visualisations\nTester avec d’autres données\n\n\n\nAfficher les critères clairement. Certains étudiants auront besoin de plus de temps - c’est OK.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#pièges-courants-avec-les-llms",
-    "href": "04Lecon3Fonctions.html#pièges-courants-avec-les-llms",
+    "objectID": "M3P/04Lecon3Fonctions.html#pièges-courants-avec-les-llms",
+    "href": "M3P/04Lecon3Fonctions.html#pièges-courants-avec-les-llms",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Pièges courants avec les LLMs",
     "text": "Pièges courants avec les LLMs\n\n\n\n\n\n\nAvertissementAttention !\n\n\n\nLes LLMs peuvent :\n\nProposer du code qui ne fonctionne pas\nUtiliser des fonctions qui n’existent pas\nMélanger différentes versions de R\nDonner des explications approximatives\n\n\n\n\nVotre responsabilité : TOUJOURS tester le code !",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#exercice-réflexif-journal-de-bord",
-    "href": "04Lecon3Fonctions.html#exercice-réflexif-journal-de-bord",
+    "objectID": "M3P/04Lecon3Fonctions.html#exercice-réflexif-journal-de-bord",
+    "href": "M3P/04Lecon3Fonctions.html#exercice-réflexif-journal-de-bord",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice réflexif : Journal de bord",
     "text": "Exercice réflexif : Journal de bord\nDans votre journal, documentez :\n\nUn prompt qui a bien fonctionné : Pourquoi ?\nUne erreur du LLM : Comment l’avez-vous détectée ? Corrigée ?\nVotre code le plus complexe : Expliquez-le avec vos mots\nUne chose que vous ne comprenez pas encore : À approfondir\n\n\n\n\n\n\n\n\nAstuceConseil\n\n\n\nPlus vous serez précis dans vos prompts, meilleures seront les réponses. Donnez du contexte !\n\n\n\n\n10 dernières minutes. Moment réflexif important. Les étudiants prennent du recul sur leur apprentissage.",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#pour-aller-plus-loin",
-    "href": "04Lecon3Fonctions.html#pour-aller-plus-loin",
+    "objectID": "M3P/04Lecon3Fonctions.html#pour-aller-plus-loin",
+    "href": "M3P/04Lecon3Fonctions.html#pour-aller-plus-loin",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Pour aller plus loin",
     "text": "Pour aller plus loin\n\n\nDocumentation R : ?function, ?if, ?for\nPratiquez : La programmation s’apprend en codant !\nDebuggez : Les erreurs sont normales et instructives\nPartagez : Discutez de vos solutions avec vos pairs",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#préparation-prochaine-séance",
-    "href": "04Lecon3Fonctions.html#préparation-prochaine-séance",
+    "objectID": "M3P/04Lecon3Fonctions.html#préparation-prochaine-séance",
+    "href": "M3P/04Lecon3Fonctions.html#préparation-prochaine-séance",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Préparation prochaine séance",
     "text": "Préparation prochaine séance\n\n\n\n\n\n\nNoteDevoirs\n\n\n\n\nTerminez le mini-projet si besoin\nMettez à jour votre journal de bord\nCréez au moins une fonction originale qui vous serait utile\n\n\n\n\nQuestions à explorer : Comment sauvegarder ses fonctions ? Comment les partager ? (→ scripts, packages)",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   },
   {
-    "objectID": "04Lecon3Fonctions.html#questions",
-    "href": "04Lecon3Fonctions.html#questions",
+    "objectID": "M3P/04Lecon3Fonctions.html#questions",
+    "href": "M3P/04Lecon3Fonctions.html#questions",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Questions ?",
     "text": "Questions ?\n\n\n\n\n\n\nAstuceN’oubliez pas\n\n\n\n\nTestez votre code\nCommentez votre code\nDocumentez votre apprentissage\nUtilisez les LLMs comme assistants, pas comme rédacteurs\n\n\n\n\nBon courage et bon code ! 🚀",
     "crumbs": [
-      "Introduction à R et Rstudio et la programmation avec des LLMs",
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
       "Séance 3 : Fonctions, conditions et boucles"
     ]
   }

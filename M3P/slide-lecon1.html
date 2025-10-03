@@ -442,7 +442,7 @@
   <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Elias Bouacida">
-  <title>Initiation à R – Séance 3 : Fonctions, conditions et boucles</title>
+  <title>Initiation à R – Premiers pas avec R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1053,379 +1053,70 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Séance 3 : Fonctions, conditions et boucles</h1>
-  <p class="subtitle">Apprendre R avec les LLMs</p>
+  <h1 class="title">Premiers pas avec R</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
 Elias Bouacida 
 </div>
-</div>
+        <p class="quarto-title-affiliation">
+            Université Paris 8
+          </p>
+    </div>
 </div>
 
-  <p class="date">30 septembre 2025</p>
-</section>
-<section id="plan-de-la-séance" class="slide level2 smaller">
-<h2>Plan de la séance</h2>
-<ul>
-<li class="fragment"><strong>Récap et partage</strong> (15min) : Retours sur les données</li>
-<li class="fragment"><strong>Conditions if/else</strong> (45min) : Prendre des décisions dans le code</li>
-<li class="fragment"><strong>Boucles</strong> (45min) : Répéter des opérations</li>
-<li class="fragment"><strong>Créer ses propres fonctions</strong> (60min) : Structurer son code</li>
-<li class="fragment"><strong>Mini-projet</strong> (45min) : Analyser des données avec vos fonctions</li>
-</ul>
-<div class="fragment">
-<p><strong>Production attendue :</strong> 3 fonctions personnalisées avec conditions et/ou boucles</p>
-</div>
-</section>
-<section id="objectifs-de-la-séance" class="slide level2">
-<h2>Objectifs de la séance</h2>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Automatiser et structurer son code</strong></p>
-</div>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment">Utiliser des <strong>conditions</strong> pour adapter le comportement du code</li>
-<li class="fragment">Utiliser des <strong>boucles</strong> pour répéter des opérations</li>
-<li class="fragment"><strong>Créer des fonctions</strong> réutilisables</li>
-<li class="fragment"><strong>Combiner</strong> ces concepts pour résoudre des problèmes réels</li>
-</ul>
+  <p class="date">3 octobre 2025</p>
 </section>
 <section>
-<section id="récap-et-partage" class="title-slide slide level1 center" data-background-color="#2E8B57">
-<h1>Récap et partage</h1>
+<section id="introduction" class="title-slide slide level1 center">
+<h1>Introduction</h1>
 
 </section>
-<section id="retours-sur-vos-analyses-de-données" class="slide level2">
-<h2>Retours sur vos analyses de données</h2>
+<section id="à-vous-de-jouer" class="slide level2">
+<h2>À vous de jouer !</h2>
+<p>Demandez à votre LLM préférez comment utiliser R et Rstudio.</p>
+<p>Demandez-lui de vous décrire l’interface.</p>
+</section>
+<section id="premiers-calculs" class="slide level2">
+<h2>Premiers calculs</h2>
 <ul>
-<li class="fragment">Quelles difficultés avez-vous rencontrées ?</li>
-<li class="fragment">Quelles fonctions intégrées avez-vous découvertes ?</li>
-<li class="fragment">Comment les LLMs vous ont-ils aidé ?</li>
+<li>Dans votre classe, les notes sont de 12, 15, 13 et 8.</li>
+<li>Utilisez R pour calculer la moyenne.</li>
+<li>Expliquez le code produit.</li>
 </ul>
-</section></section>
-<section>
-<section id="conditions-ifelse" class="title-slide slide level1 center" data-background-color="#4169E1">
-<h1>Conditions if/else</h1>
-
-</section>
-<section id="pourquoi-des-conditions" class="slide level2">
-<h2>Pourquoi des conditions ?</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Question</strong></p>
-</div>
-<div class="callout-content">
-<p>Imaginez que vous analysez des températures. Comment indiquer s’il fait chaud ou froid ?</p>
-</div>
-</div>
-</div>
 <div class="fragment">
-<p>On a besoin de <strong>tester une condition</strong> et agir différemment selon le résultat.</p>
-</div>
-</section>
-<section id="exercice-1-première-condition" class="slide level2 smaller scrollable">
-<h2>Exercice 1 : Première condition</h2>
-<p>Demandez à votre LLM de vous expliquer la structure <code>if/else</code> en R avec un exemple simple.</p>
-<p><strong>Ensuite, testez ce code :</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>temperature <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>notes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">13</span>, <span class="dv">8</span>)</span>
 <span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a><span class="cf">if</span> (temperature <span class="sc">&gt;</span> <span class="dv">20</span>) {</span>
-<span id="cb1-4"><a></a>  <span class="fu">print</span>(<span class="st">&quot;Il fait chaud&quot;</span>)</span>
-<span id="cb1-5"><a></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a></a><span class="fu">mean</span>(notes)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12</code></pre>
 </div>
-<p><strong>Questions à explorer avec votre LLM :</strong></p>
-<ol type="1">
-<li>Que se passe-t-il si <code>temperature &lt;- 15</code> ?</li>
-<li>Comment ajouter un message pour “Il fait froid” ?</li>
-<li>Qu’est-ce qu’un opérateur de comparaison ? (<code>&gt;</code>, <code>&lt;</code>, <code>==</code>, <code>!=</code>, <code>&gt;=</code>, <code>&lt;=</code>)</li>
-</ol>
-<aside class="notes">
-<p>Laisser 10 minutes. Circuler pour vérifier la compréhension. Insister sur le fait que le LLM peut se tromper - tester le code est essentiel.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="exercice-2-ifelse-complet" class="slide level2 smaller">
-<h2>Exercice 2 : if/else complet</h2>
-<p>Créez un code qui :</p>
-<ul>
-<li>Prend une note (0-20)</li>
-<li>Affiche “Réussite” si la note est &gt;= 10</li>
-<li>Affiche “Échec” sinon</li>
-</ul>
-<div class="fragment">
-<p><strong>Extension :</strong> Ajoutez une troisième catégorie avec <code>else if</code> :</p>
-<ul>
-<li>“Excellent” si &gt;= 16</li>
-<li>“Réussite” si &gt;= 10</li>
-<li>“Échec” sinon</li>
-</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">print</span>(<span class="st">&quot;La moyenne est de : &quot;</span>, <span class="fu">mean</span>(notes))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;La moyenne est de : &quot;</code></pre>
 </div>
-<aside class="notes">
-<p>10 minutes. Faire un débriefing collectif. Demander à un étudiant de partager son code et son prompt.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="exercice-3-conditions-et-vecteurs" class="slide level2 smaller">
-<h2>Exercice 3 : Conditions et vecteurs</h2>
-<p><strong>Problème :</strong> Vous avez plusieurs notes :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>notes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">18</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><strong>Question :</strong> Comment classifier TOUTES ces notes ?</p>
-<p>Demandez à votre LLM comment appliquer une condition à un vecteur.</p>
-<div class="fragment">
-<p><strong>Indices à explorer :</strong></p>
-<ul>
-<li>La fonction <code>ifelse()</code></li>
-<li>La différence entre <code>if</code> et <code>ifelse()</code></li>
-</ul>
 </div>
-<aside class="notes">
-<p>15 minutes. C’est un concept important. Les étudiants découvriront la vectorisation. Certains LLMs proposeront des boucles, d’autres <code>ifelse()</code>. Discuter les deux approches.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
 </section></section>
 <section>
-<section id="boucles" class="title-slide slide level1 center" data-background-color="#FF8C00">
-<h1>Boucles</h1>
+<section id="notions" class="title-slide slide level1 center">
+<h1>Notions</h1>
 
 </section>
-<section id="pourquoi-des-boucles" class="slide level2">
-<h2>Pourquoi des boucles ?</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Situation</strong></p>
-</div>
-<div class="callout-content">
-<p>Vous avez 100 températures à classifier. Écrire 100 fois <code>if/else</code> ?</p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>Les <strong>boucles</strong> permettent de répéter automatiquement des opérations.</p>
-</div>
-</section>
-<section id="exercice-4-boucle-for-simple" class="slide level2 smaller scrollable">
-<h2>Exercice 4 : Boucle for simple</h2>
-<p>Demandez à votre LLM d’expliquer la boucle <code>for</code> en R avec un exemple.</p>
-<p><strong>Testez ce code :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
-<span id="cb3-2"><a></a>  <span class="fu">print</span>(i)</span>
-<span id="cb3-3"><a></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Questions :</strong></p>
-<ol type="1">
-<li>Que fait <code>1:5</code> ?</li>
-<li>Que représente <code>i</code> ?</li>
-<li>Comment afficher les nombres de 10 à 20 ?</li>
-</ol>
-<aside class="notes">
-<p>10 minutes. Concept fondamental mais peut être abstrait pour certains.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="exercice-5-boucle-sur-un-vecteur" class="slide level2 smaller scrollable">
-<h2>Exercice 5 : Boucle sur un vecteur</h2>
-<p>Reprenez vos notes de l’exercice 3 :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>notes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">18</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Utilisez une boucle <code>for</code> pour :</p>
-<ol type="1">
-<li>Afficher chaque note</li>
-<li>Afficher chaque note avec son classement (Réussite/Échec)</li>
-</ol>
-<div class="fragment">
-<p><strong>Astuce :</strong> Combinez <code>for</code> et <code>if/else</code> !</p>
-</div>
-<aside class="notes">
-<p>15 minutes. Les étudiants vont combiner les deux concepts. Anticiper les confusions entre i (indice) et notes[i] (valeur).</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="exercice-6-accumuler-des-résultats" class="slide level2 smaller scrollable">
-<h2>Exercice 6 : Accumuler des résultats</h2>
-<p><strong>Nouveau défi :</strong> Calculez la somme des notes <strong>sans utiliser</strong> <code>sum()</code>.</p>
-<p><strong>Indices :</strong></p>
-<ol type="1">
-<li>Créez une variable <code>total &lt;- 0</code></li>
-<li>Utilisez une boucle pour ajouter chaque note à <code>total</code></li>
-<li>Affichez le résultat final</li>
-</ol>
-<div class="fragment">
-<p><strong>Vérification :</strong> Comparez avec <code>sum(notes)</code></p>
-</div>
-<aside class="notes">
-<p>10 minutes. Introduit le concept d’accumulation. Utile pour comprendre ce que font réellement les fonctions intégrées.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="boucle-while-optionnel" class="slide level2 smaller">
-<h2>Boucle while (optionnel)</h2>
-<p>Demandez à votre LLM la différence entre <code>for</code> et <code>while</code>.</p>
-<p><strong>Exemple à tester :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>compteur <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb5-2"><a></a><span class="cf">while</span> (compteur <span class="sc">&lt;=</span> <span class="dv">5</span>) {</span>
-<span id="cb5-3"><a></a>  <span class="fu">print</span>(compteur)</span>
-<span id="cb5-4"><a></a>  compteur <span class="ot">&lt;-</span> compteur <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb5-5"><a></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Attention !</strong></p>
-</div>
-<div class="callout-content">
-<p>Que se passe-t-il si vous oubliez <code>compteur &lt;- compteur + 1</code> ?</p>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>Optionnel car <code>while</code> est moins utilisé en R. Mais bon pour comprendre les concepts de programmation. Attention aux boucles infinies !</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section></section>
-<section>
-<section id="créer-ses-fonctions" class="title-slide slide level1 center" data-background-color="#8B008B">
-<h1>Créer ses fonctions</h1>
-
-</section>
-<section id="pourquoi-créer-des-fonctions" class="slide level2">
-<h2>Pourquoi créer des fonctions ?</h2>
-<p>Jusqu’ici, vous avez <strong>utilisé</strong> des fonctions : <code>mean()</code>, <code>sum()</code>, <code>print()</code>…</p>
-<div class="fragment">
-<p>Maintenant, vous allez <strong>créer</strong> vos propres fonctions !</p>
-</div>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Avantages</strong></p>
-</div>
-<div class="callout-content">
+<section id="notions-1" class="slide level2">
+<h2>Notions</h2>
+<p>Ecrivez dans votre journal le prompt que vous utilisez, la réponse du LLM, et ce que vous avez compris pour chacune des notions suivantes :</p>
 <ul>
-<li>Réutiliser du code</li>
-<li>Éviter la répétition</li>
-<li>Rendre le code plus lisible</li>
-<li>Partager avec d’autres</li>
+<li class="fragment">Objet</li>
+<li class="fragment">Assignation</li>
+<li class="fragment">Types</li>
+<li class="fragment">Fonctions</li>
+<li class="fragment">Scripts</li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-7-première-fonction" class="slide level2 smaller scrollable">
-<h2>Exercice 7 : Première fonction</h2>
-<p>Demandez à votre LLM d’expliquer comment créer une fonction en R.</p>
-<p><strong>Créez une fonction simple :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>dire_bonjour <span class="ot">&lt;-</span> <span class="cf">function</span>(nom) {</span>
-<span id="cb6-2"><a></a>  message <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;Bonjour&quot;</span>, nom)</span>
-<span id="cb6-3"><a></a>  <span class="fu">return</span>(message)</span>
-<span id="cb6-4"><a></a>}</span>
-<span id="cb6-5"><a></a></span>
-<span id="cb6-6"><a></a><span class="co"># Test</span></span>
-<span id="cb6-7"><a></a><span class="fu">dire_bonjour</span>(<span class="st">&quot;Alice&quot;</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Questions :</strong></p>
-<ol type="1">
-<li>À quoi sert <code>function()</code> ?</li>
-<li>Qu’est-ce qu’un <strong>paramètre</strong> / <strong>argument</strong> ?</li>
-<li>À quoi sert <code>return()</code> ?</li>
-</ol>
 <aside class="notes">
-<p>15 minutes. Première fonction. Bien distinguer définition (function) et appel (dire_bonjour(“Alice”)).</p>
+<p>Laissez du temps aux étudiants pour écrire et ensuite échangez sur ce qu’ils ont compris à ces différentes notions. Diviser le temps entre les concepts. Discuter avec les étudiants de ce qu’ils demandent aux LLM, en particulier, demander si quelqu’un a pensé à demander une explication avec des exemples. Si besoin, demandez ensuite aux étudiants de s’expliquer entre eux ce qu’ils ont compris. Demandez à quelqu’un d’écrire au tableau de résultat.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1438,21 +1129,11 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 </section>
-<section id="exercice-8-fonction-avec-condition" class="slide level2 smaller">
-<h2>Exercice 8 : Fonction avec condition</h2>
-<p>Créez une fonction <code>classifier_note()</code> qui :</p>
-<ul>
-<li>Prend une note en paramètre</li>
-<li>Retourne “Excellent” si &gt;= 16</li>
-<li>Retourne “Réussite” si &gt;= 10</li>
-<li>Retourne “Échec” sinon</li>
-</ul>
-<p><strong>Testez avec plusieurs valeurs.</strong></p>
-<div class="fragment">
-<p><strong>Extension :</strong> Que se passe-t-il si on passe une note négative ou &gt; 20 ? Comment améliorer la fonction ?</p>
-</div>
+<section id="remarque" class="slide level2">
+<h2>Remarque</h2>
+<p>Vous pouvez demander des exemples !</p>
 <aside class="notes">
-<p>15 minutes. Première fonction “utile”. L’extension introduit la validation des paramètres (concept important).</p>
+<p>Laissez du temps à la fin de la séance pour écrire le journal.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1464,280 +1145,13 @@ width: 1px!important;
 overflow: hidden!important;
 display:block!important;
 }</style></aside>
-</section>
-<section id="exercice-9-fonction-avec-boucle" class="slide level2 smaller scrollable">
-<h2>Exercice 9 : Fonction avec boucle</h2>
-<p>Créez une fonction <code>calculer_moyenne()</code> qui :</p>
-<ul>
-<li>Prend un vecteur de nombres</li>
-<li>Utilise une boucle pour calculer la moyenne</li>
-<li>Retourne le résultat</li>
-</ul>
-<p><strong>Testez :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mes_notes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">8</span>, <span class="dv">14</span>)</span>
-<span id="cb7-2"><a></a><span class="fu">calculer_moyenne</span>(mes_notes)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="fragment">
-<p><strong>Questions :</strong></p>
-<ol type="1">
-<li>Comment gérer les valeurs manquantes (<code>NA</code>) ?</li>
-<li>Comparez votre résultat avec <code>mean()</code></li>
-</ol>
-</div>
-<aside class="notes">
-<p>15 minutes. Fonction plus complexe. Les étudiants réutilisent l’exercice 6. Discussion sur NA importante.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="exercice-10-fonction-complète" class="slide level2 smaller">
-<h2>Exercice 10 : Fonction complète</h2>
-<p>Créez une fonction <code>analyser_vecteur()</code> qui prend un vecteur et retourne :</p>
-<ul>
-<li>Le minimum</li>
-<li>Le maximum</li>
-<li>La moyenne</li>
-<li>Le nombre d’éléments</li>
-</ul>
-<div class="fragment">
-<p><strong>Défi :</strong> Comment retourner plusieurs valeurs ? Demandez au LLM !</p>
-<p><em>Indice : liste ou vecteur nommé</em></p>
-</div>
-<aside class="notes">
-<p>15 minutes. Fonction avancée. Introduit le concept de retourner des structures de données complexes. Les étudiants découvriront les listes.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section></section>
-<section>
-<section id="mini-projet" class="title-slide slide level1 center" data-background-color="#DC143C">
-<h1>Mini-projet</h1>
-
-</section>
-<section id="projet-analyse-de-températures" class="slide level2 smaller scrollable">
-<h2>Projet : Analyse de températures</h2>
-<p>Vous allez créer un petit système d’analyse météo.</p>
-<p><strong>Données :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>temperatures <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">22</span>, <span class="dv">18</span>, <span class="dv">25</span>, <span class="dv">12</span>, <span class="dv">28</span>, <span class="dv">20</span>, <span class="dv">16</span>, <span class="dv">24</span>, <span class="dv">19</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Créez les fonctions suivantes :</strong></p>
-<ol type="1">
-<li><code>classifier_temperature(temp)</code> : retourne “Froid”, “Doux” ou “Chaud”</li>
-<li><code>compter_par_categorie(vecteur_temp)</code> : compte combien de jours froids/doux/chauds</li>
-<li><code>rapport_meteo(vecteur_temp)</code> : génère un rapport complet (min, max, moyenne, catégories)</li>
-</ol>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Utilisez tout ce que vous avez appris</strong></p>
-</div>
-<div class="callout-content">
-<p>Conditions, boucles, fonctions !</p>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>45 minutes. Projet synthèse. Les étudiants combinent tous les concepts. Circuler beaucoup. Encourager l’aide entre pairs. Certains iront plus loin (graphiques, etc.).</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section>
-<section id="critères-du-mini-projet" class="slide level2 smaller">
-<h2>Critères du mini-projet</h2>
-<p>Votre code doit :</p>
-<ul>
-<li class="fragment">✅ Fonctionner sans erreur</li>
-<li class="fragment">✅ Contenir au moins 3 fonctions</li>
-<li class="fragment">✅ Utiliser des conditions (<code>if/else</code>)</li>
-<li class="fragment">✅ Utiliser au moins une boucle</li>
-<li class="fragment">✅ Être commenté (expliquez ce que fait chaque fonction)</li>
-</ul>
-<div class="fragment">
-<p><strong>Bonus :</strong></p>
-<ul>
-<li>Gérer les cas d’erreur (NA, vecteur vide, etc.)</li>
-<li>Créer des visualisations</li>
-<li>Tester avec d’autres données</li>
-</ul>
-</div>
-<aside class="notes">
-<p>Afficher les critères clairement. Certains étudiants auront besoin de plus de temps - c’est OK.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section></section>
-<section>
-<section id="retour-sur-lutilisation-des-llms" class="title-slide slide level1 center" data-background-color="#2F4F4F">
-<h1>Retour sur l’utilisation des LLMs</h1>
-
-</section>
-<section id="pièges-courants-avec-les-llms" class="slide level2">
-<h2>Pièges courants avec les LLMs</h2>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Attention !</strong></p>
-</div>
-<div class="callout-content">
-<p>Les LLMs peuvent :</p>
-<ul>
-<li>Proposer du code qui ne fonctionne pas</li>
-<li>Utiliser des fonctions qui n’existent pas</li>
-<li>Mélanger différentes versions de R</li>
-<li>Donner des explications approximatives</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Votre responsabilité :</strong> TOUJOURS tester le code !</p>
-</div>
-</section>
-<section id="exercice-réflexif-journal-de-bord" class="slide level2 smaller scrollable">
-<h2>Exercice réflexif : Journal de bord</h2>
-<p>Dans votre journal, documentez :</p>
-<ol type="1">
-<li><strong>Un prompt qui a bien fonctionné</strong> : Pourquoi ?</li>
-<li><strong>Une erreur du LLM</strong> : Comment l’avez-vous détectée ? Corrigée ?</li>
-<li><strong>Votre code le plus complexe</strong> : Expliquez-le avec vos mots</li>
-<li><strong>Une chose que vous ne comprenez pas encore</strong> : À approfondir</li>
-</ol>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Conseil</strong></p>
-</div>
-<div class="callout-content">
-<p>Plus vous serez précis dans vos prompts, meilleures seront les réponses. Donnez du contexte !</p>
-</div>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>10 dernières minutes. Moment réflexif important. Les étudiants prennent du recul sur leur apprentissage.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
-</section></section>
-<section>
-<section id="ressources-et-prochaines-étapes" class="title-slide slide level1 center" data-background-color="#2E8B57">
-<h1>Ressources et prochaines étapes</h1>
-
-</section>
-<section id="pour-aller-plus-loin" class="slide level2">
-<h2>Pour aller plus loin</h2>
-<ul>
-<li class="fragment"><strong>Documentation R :</strong> <code>?function</code>, <code>?if</code>, <code>?for</code></li>
-<li class="fragment"><strong>Pratiquez :</strong> La programmation s’apprend en codant !</li>
-<li class="fragment"><strong>Debuggez :</strong> Les erreurs sont normales et instructives</li>
-<li class="fragment"><strong>Partagez :</strong> Discutez de vos solutions avec vos pairs</li>
-</ul>
-</section>
-<section id="préparation-prochaine-séance" class="slide level2 scrollable">
-<h2>Préparation prochaine séance</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Devoirs</strong></p>
-</div>
-<div class="callout-content">
-<ol type="1">
-<li>Terminez le mini-projet si besoin</li>
-<li>Mettez à jour votre journal de bord</li>
-<li>Créez au moins une fonction originale qui vous serait utile</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Questions à explorer :</strong> Comment sauvegarder ses fonctions ? Comment les partager ? (→ scripts, packages)</p>
-</div>
-</section>
-<section id="questions" class="slide level2">
-<h2>Questions ?</h2>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>N’oubliez pas</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Testez votre code</li>
-<li>Commentez votre code</li>
-<li>Documentez votre apprentissage</li>
-<li>Utilisez les LLMs comme <strong>assistants</strong>, pas comme <strong>rédacteurs</strong></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Bon courage et bon code ! 🚀</strong></p>
-</div>
 
 
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>Séance 3 - Fonctions, conditions et boucles</p>
+
 </div>
 </div></div>
 
@@ -2751,7 +2165,7 @@ window.QuartoSupport = function () {
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: false,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
