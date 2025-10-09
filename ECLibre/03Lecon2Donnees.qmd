@@ -118,7 +118,7 @@ Un format simple et universel pour stocker des données tabulaires.
 ::: {.fragment}
 **Exemple de contenu CSV :**
 
-```
+``` {verbatim}
 nom,age,note
 Alice,20,15
 Bob,22,12
