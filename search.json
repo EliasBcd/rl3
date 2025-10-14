@@ -274,7 +274,7 @@
     "href": "M3P/05Lecon4Dataframes.html#critères-du-mini-projet",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Critères du mini-projet",
-    "text": "Critères du mini-projet\n\n\n✅ Les données sont nettoyées (casse, NA gérés)\n✅ Les 4 graphiques sont créés avec ggplot2\n✅ Chaque graphique a un titre et des labels appropriés\n✅ Le code est commenté\n✅ Une fonction de visualisation réutilisable est créée\n\n\n\nBonus :\n\nCréer un 5ème graphique original\nUtiliser des facettes (facet_wrap())\nAjouter des annotations sur les graphiques\nSauvegarder les graphiques avec ggsave()",
+    "text": "Critères du mini-projet\n\n\n\nLes données sont nettoyées (casse, NA gérés)\n\n\nLes 4 graphiques sont créés avec ggplot2\n\n\nChaque graphique a un titre et des labels appropriés\n\n\nLe code est commenté\n\n\nUne fonction de visualisation réutilisable est créée\n\n\n\n\nBonus :\n\nCréer un 5ème graphique original\nUtiliser des facettes (facet_wrap())\nAjouter des annotations sur les graphiques\nSauvegarder les graphiques avec ggsave()",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -298,7 +298,7 @@
     "href": "M3P/05Lecon4Dataframes.html#ce-que-vous-avez-appris-aujourdhui",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Ce que vous avez appris aujourd’hui",
-    "text": "Ce que vous avez appris aujourd’hui\n\n✅ Nettoyer des données réelles avec incohérences ✅ Utiliser ggplot2 pour créer des graphiques professionnels ✅ Maîtriser différentes géométries (barres, points, lignes, boxplot) ✅ Personnaliser l’apparence des graphiques ✅ Créer des fonctions de visualisation réutilisables ✅ Combiner analyse et communication visuelle",
+    "text": "Ce que vous avez appris aujourd’hui\n\n\nNettoyer des données réelles avec incohérences\nUtiliser ggplot2 pour créer des graphiques professionnels\nMaîtriser différentes géométries (barres, points, lignes, boxplot)\nPersonnaliser l’apparence des graphiques\nCréer des fonctions de visualisation réutilisables\nCombiner analyse et communication visuelle",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -491,7 +491,7 @@
     "href": "M3P/slide-lecon4.html#critères-du-mini-projet",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Critères du mini-projet",
-    "text": "Critères du mini-projet\n\n✅ Les données sont nettoyées (casse, NA gérés)\n✅ Les 4 graphiques sont créés avec ggplot2\n✅ Chaque graphique a un titre et des labels appropriés\n✅ Le code est commenté\n✅ Une fonction de visualisation réutilisable est créée\n\n\nBonus :\n\nCréer un 5ème graphique original\nUtiliser des facettes (facet_wrap())\nAjouter des annotations sur les graphiques\nSauvegarder les graphiques avec ggsave()"
+    "text": "Critères du mini-projet\n\n\nLes données sont nettoyées (casse, NA gérés)\n\n\nLes 4 graphiques sont créés avec ggplot2\n\n\nChaque graphique a un titre et des labels appropriés\n\n\nLe code est commenté\n\n\nUne fonction de visualisation réutilisable est créée\n\n\n\nBonus :\n\nCréer un 5ème graphique original\nUtiliser des facettes (facet_wrap())\nAjouter des annotations sur les graphiques\nSauvegarder les graphiques avec ggsave()"
   },
   {
     "objectID": "M3P/slide-lecon4.html#exercice-réflexif-journal-de-bord",
@@ -505,7 +505,7 @@
     "href": "M3P/slide-lecon4.html#ce-que-vous-avez-appris-aujourdhui",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Ce que vous avez appris aujourd’hui",
-    "text": "Ce que vous avez appris aujourd’hui\n✅ Nettoyer des données réelles avec incohérences ✅ Utiliser ggplot2 pour créer des graphiques professionnels ✅ Maîtriser différentes géométries (barres, points, lignes, boxplot) ✅ Personnaliser l’apparence des graphiques ✅ Créer des fonctions de visualisation réutilisables ✅ Combiner analyse et communication visuelle"
+    "text": "Ce que vous avez appris aujourd’hui\n\nNettoyer des données réelles avec incohérences\nUtiliser ggplot2 pour créer des graphiques professionnels\nMaîtriser différentes géométries (barres, points, lignes, boxplot)\nPersonnaliser l’apparence des graphiques\nCréer des fonctions de visualisation réutilisables\nCombiner analyse et communication visuelle"
   },
   {
     "objectID": "M3P/slide-lecon4.html#fonctions-clés-de-cette-séance",
@@ -7702,7 +7702,7 @@
     "href": "M3P/slide-lecon5.html#quest-ce-quun-projet-intégré",
     "title": "Séance 5 : Projet personnel intégré",
     "section": "Qu’est-ce qu’un projet intégré ?",
-    "text": "Qu’est-ce qu’un projet intégré ?\nC’est une analyse complète qui combine TOUT ce que vous avez appris :\n\n✅ Import et nettoyage de données\n✅ Statistiques descriptives\n✅ Fonctions personnalisées\n✅ Conditions et boucles si nécessaire\n✅ Visualisations avec ggplot2\n✅ Interprétation des résultats\n✅ Utilisation efficace des LLMs"
+    "text": "Qu’est-ce qu’un projet intégré ?\nC’est une analyse complète qui combine TOUT ce que vous avez appris :\n\n\nImport et nettoyage de données\n\n\nStatistiques descriptives\n\n\nFonctions personnalisées\n\n\nConditions et boucles si nécessaire\n\n\nVisualisations avec ggplot2\n\n\nInterprétation des résultats\n\n\nUtilisation efficace des LLMs"
   },
   {
     "objectID": "M3P/slide-lecon5.html#structure-attendue",
@@ -7723,7 +7723,7 @@
     "href": "M3P/slide-lecon5.html#étape-1-choisir-un-dataset",
     "title": "Séance 5 : Projet personnel intégré",
     "section": "Étape 1 : Choisir un dataset",
-    "text": "Étape 1 : Choisir un dataset\n\n\n\n\n\n\nSources de données possibles\n\n\n\n\n\n\n\nDonnées personnelles : vos propres observations, sondages\nDonnées publiques : INSEE, data.gouv.fr, Kaggle\nDonnées du cours : datasets fournis sur Moodle\nDonnées de votre domaine : économie, psychologie, sport, santé\n\n\n\n\n\n\n\n\nCritères de choix\n\n\n\nPas trop volumineux (&lt; 10 000 lignes)\nAu moins 3-4 variables\nVous intéresse vraiment !"
+    "text": "Étape 1 : Choisir un dataset\n\n\n\n\n\n\nSources de données possibles\n\n\n\n\n\n\n\nINSEE\ndata.gouv.fr\nKaggle\n\n\n\n\n\n\n\n\nCritères de choix\n\n\n\nPas trop volumineux (&lt; 10 000 lignes)\nAu moins 3-4 variables\nVous intéresse vraiment !"
   },
   {
     "objectID": "M3P/slide-lecon5.html#exercice-1-exploration-initiale",
@@ -7758,7 +7758,7 @@
     "href": "M3P/slide-lecon5.html#checklist-de-progression",
     "title": "Séance 5 : Projet personnel intégré",
     "section": "Checklist de progression",
-    "text": "Checklist de progression\nPendant votre travail, vérifiez que vous avez :\n☐ Importé et vérifié les données ☐ Nettoyé les données (NA, types, casse) ☐ Calculé des statistiques descriptives ☐ Créé au moins 3 graphiques ggplot2 ☐ Écrit au moins 2 fonctions personnalisées ☐ Commenté votre code ☐ Répondu à vos questions initiales ☐ Testé que tout fonctionne"
+    "text": "Checklist de progression\nPendant votre travail, vérifiez que vous avez :\n\nImporté et vérifié les données\nNettoyé les données (NA, types, casse)\nCalculé des statistiques descriptives\nCréé au moins 3 graphiques ggplot2\nÉcrit au moins 2 fonctions personnalisées\nCommenté votre code\nRépondu à vos questions initiales\nTesté que tout fonctionne"
   },
   {
     "objectID": "M3P/slide-lecon5.html#stratégies-pour-avancer",
@@ -7821,14 +7821,14 @@
     "href": "M3P/slide-lecon5.html#auto-évaluation",
     "title": "Séance 5 : Projet personnel intégré",
     "section": "Auto-évaluation",
-    "text": "Auto-évaluation\nÉvaluez votre propre projet :\n\n\n\nCritère\n🔴 Faible\n🟡 Moyen\n🟢 Bon\n🟢🟢 Excellent\n\n\n\n\nCode fonctionnel\n\n\n\n\n\n\nNettoyage données\n\n\n\n\n\n\nQualité graphiques\n\n\n\n\n\n\nInterprétation\n\n\n\n\n\n\nCommentaires\n\n\n\n\n\n\nUtilisation LLM\n\n\n\n\n\n\n\n\nIdentifiez vos axes d’amélioration pour la suite du cours."
+    "text": "Auto-évaluation\nÉvaluez votre propre projet :\n\n\n\nCritère\n🔴 Faible\n🟡 Moyen\n🟢 Bon\n🟢🟢 Excellent\n\n\n\n\nCode fonctionnel\n\n\n\n\n\n\nNettoyage données\n\n\n\n\n\n\nQualité graphiques\n\n\n\n\n\n\nInterprétation\n\n\n\n\n\n\nCommentaires\n\n\n\n\n\n\nUtilisation LLM"
   },
   {
     "objectID": "M3P/slide-lecon5.html#ce-que-vous-avez-accompli",
     "href": "M3P/slide-lecon5.html#ce-que-vous-avez-accompli",
     "title": "Séance 5 : Projet personnel intégré",
     "section": "Ce que vous avez accompli",
-    "text": "Ce que vous avez accompli\n✅ Choisi et cadré un projet d’analyse personnalisé ✅ Mené une analyse complète en autonomie ✅ Créé des fonctions personnalisées et réutilisables ✅ Produit des visualisations professionnelles ✅ Communiqué vos résultats à vos pairs ✅ Utilisé les LLMs comme partenaires d’analyse ✅ Développé votre autonomie en programmation\n\n🎉 Félicitations ! Vous êtes maintenant capables d’analyser des données en autonomie !"
+    "text": "Ce que vous avez accompli\n\nChoisi et cadré un projet d’analyse personnalisé\nMené une analyse complète en autonomie\nCréé des fonctions personnalisées et réutilisables\nProduit des visualisations professionnelles\nCommuniqué vos résultats à vos pairs\nUtilisé les LLMs comme partenaires d’analyse\nDéveloppé votre autonomie en programmation\n\n\n🎉 Félicitations ! Vous êtes maintenant capables d’analyser des données en autonomie !"
   },
   {
     "objectID": "M3P/slide-lecon5.html#compétences-à-ce-stade",
@@ -7836,13 +7836,6 @@
     "title": "Séance 5 : Projet personnel intégré",
     "section": "Compétences à ce stade",
     "text": "Compétences à ce stade\nVous savez maintenant :\n\nAnalyser des données de A à Z\nChoisir les bonnes analyses et visualisations\nCréer des fonctions adaptées à vos besoins\nNettoyer et préparer des données réelles\nInterpréter et communiquer des résultats\nUtiliser les LLMs efficacement\nDébugger de manière autonome"
-  },
-  {
-    "objectID": "M3P/slide-lecon5.html#préparation-prochaine-séance",
-    "href": "M3P/slide-lecon5.html#préparation-prochaine-séance",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Préparation prochaine séance",
-    "text": "Préparation prochaine séance\n\n\n\n\n\n\nDevoirs\n\n\n\nFinalisez votre projet si besoin\nMettez à jour votre journal avec tous les détails\nAméliorez un aspect de votre projet suite aux feedbacks\nRéfléchissez : quelles parties de votre code pourraient être mieux organisées ?\n\n\n\n\n\nProchaine séance : Organisation et modularité - structurer son code comme un professionnel !"
   },
   {
     "objectID": "M3P/slide-lecon5.html#questions",
@@ -7892,7 +7885,7 @@
     "href": "M3P/06Lecon5Projet.html#quest-ce-quun-projet-intégré",
     "title": "Séance 5 : Projet personnel intégré",
     "section": "Qu’est-ce qu’un projet intégré ?",
-    "text": "Qu’est-ce qu’un projet intégré ?\nC’est une analyse complète qui combine TOUT ce que vous avez appris :\n\n\n✅ Import et nettoyage de données\n✅ Statistiques descriptives\n✅ Fonctions personnalisées\n✅ Conditions et boucles si nécessaire\n✅ Visualisations avec ggplot2\n✅ Interprétation des résultats\n✅ Utilisation efficace des LLMs",
+    "text": "Qu’est-ce qu’un projet intégré ?\nC’est une analyse complète qui combine TOUT ce que vous avez appris :\n\n\n\nImport et nettoyage de données\n\n\nStatistiques descriptives\n\n\nFonctions personnalisées\n\n\nConditions et boucles si nécessaire\n\n\nVisualisations avec ggplot2\n\n\nInterprétation des résultats\n\n\nUtilisation efficace des LLMs",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7928,7 +7921,7 @@
     "href": "M3P/06Lecon5Projet.html#étape-1-choisir-un-dataset",
     "title": "Séance 5 : Projet personnel intégré",
     "section": "Étape 1 : Choisir un dataset",
-    "text": "Étape 1 : Choisir un dataset\n\n\n\n\n\n\nNoteSources de données possibles\n\n\n\n\n\n\n\n\nDonnées personnelles : vos propres observations, sondages\nDonnées publiques : INSEE, data.gouv.fr, Kaggle\nDonnées du cours : datasets fournis sur Moodle\nDonnées de votre domaine : économie, psychologie, sport, santé\n\n\n\n\n\n\n\n\n\nAvertissementCritères de choix\n\n\n\n\nPas trop volumineux (&lt; 10 000 lignes)\nAu moins 3-4 variables\nVous intéresse vraiment !",
+    "text": "Étape 1 : Choisir un dataset\n\n\n\n\n\n\nNoteSources de données possibles\n\n\n\n\n\n\n\nINSEE\ndata.gouv.fr\nKaggle\n\n\n\n\n\n\n\n\nAvertissementCritères de choix\n\n\n\n\nPas trop volumineux (&lt; 10 000 lignes)\nAu moins 3-4 variables\nVous intéresse vraiment !",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7988,7 +7981,7 @@
     "href": "M3P/06Lecon5Projet.html#checklist-de-progression",
     "title": "Séance 5 : Projet personnel intégré",
     "section": "Checklist de progression",
-    "text": "Checklist de progression\n\nPendant votre travail, vérifiez que vous avez :\n☐ Importé et vérifié les données ☐ Nettoyé les données (NA, types, casse) ☐ Calculé des statistiques descriptives ☐ Créé au moins 3 graphiques ggplot2 ☐ Écrit au moins 2 fonctions personnalisées ☐ Commenté votre code ☐ Répondu à vos questions initiales ☐ Testé que tout fonctionne",
+    "text": "Checklist de progression\n\nPendant votre travail, vérifiez que vous avez :\n\nImporté et vérifié les données\nNettoyé les données (NA, types, casse)\nCalculé des statistiques descriptives\nCréé au moins 3 graphiques ggplot2\nÉcrit au moins 2 fonctions personnalisées\nCommenté votre code\nRépondu à vos questions initiales\nTesté que tout fonctionne",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -8096,7 +8089,7 @@
     "href": "M3P/06Lecon5Projet.html#auto-évaluation",
     "title": "Séance 5 : Projet personnel intégré",
     "section": "Auto-évaluation",
-    "text": "Auto-évaluation\nÉvaluez votre propre projet :\n\n\n\n\nCritère\n🔴 Faible\n🟡 Moyen\n🟢 Bon\n🟢🟢 Excellent\n\n\n\n\nCode fonctionnel\n\n\n\n\n\n\nNettoyage données\n\n\n\n\n\n\nQualité graphiques\n\n\n\n\n\n\nInterprétation\n\n\n\n\n\n\nCommentaires\n\n\n\n\n\n\nUtilisation LLM\n\n\n\n\n\n\n\n\n\nIdentifiez vos axes d’amélioration pour la suite du cours.",
+    "text": "Auto-évaluation\nÉvaluez votre propre projet :\n\n\n\n\nCritère\n🔴 Faible\n🟡 Moyen\n🟢 Bon\n🟢🟢 Excellent\n\n\n\n\nCode fonctionnel\n\n\n\n\n\n\nNettoyage données\n\n\n\n\n\n\nQualité graphiques\n\n\n\n\n\n\nInterprétation\n\n\n\n\n\n\nCommentaires\n\n\n\n\n\n\nUtilisation LLM",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -8108,7 +8101,7 @@
     "href": "M3P/06Lecon5Projet.html#ce-que-vous-avez-accompli",
     "title": "Séance 5 : Projet personnel intégré",
     "section": "Ce que vous avez accompli",
-    "text": "Ce que vous avez accompli\n\n✅ Choisi et cadré un projet d’analyse personnalisé ✅ Mené une analyse complète en autonomie ✅ Créé des fonctions personnalisées et réutilisables ✅ Produit des visualisations professionnelles ✅ Communiqué vos résultats à vos pairs ✅ Utilisé les LLMs comme partenaires d’analyse ✅ Développé votre autonomie en programmation\n\n\n🎉 Félicitations ! Vous êtes maintenant capables d’analyser des données en autonomie !",
+    "text": "Ce que vous avez accompli\n\n\nChoisi et cadré un projet d’analyse personnalisé\nMené une analyse complète en autonomie\nCréé des fonctions personnalisées et réutilisables\nProduit des visualisations professionnelles\nCommuniqué vos résultats à vos pairs\nUtilisé les LLMs comme partenaires d’analyse\nDéveloppé votre autonomie en programmation\n\n\n\n🎉 Félicitations ! Vous êtes maintenant capables d’analyser des données en autonomie !",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -8121,18 +8114,6 @@
     "title": "Séance 5 : Projet personnel intégré",
     "section": "Compétences à ce stade",
     "text": "Compétences à ce stade\nVous savez maintenant :\n\n\nAnalyser des données de A à Z\nChoisir les bonnes analyses et visualisations\nCréer des fonctions adaptées à vos besoins\nNettoyer et préparer des données réelles\nInterpréter et communiquer des résultats\nUtiliser les LLMs efficacement\nDébugger de manière autonome",
-    "crumbs": [
-      "Méthodologie de Projet Personnel et Professionnel",
-      "M3P",
-      "Séance 5 : Projet personnel intégré"
-    ]
-  },
-  {
-    "objectID": "M3P/06Lecon5Projet.html#préparation-prochaine-séance",
-    "href": "M3P/06Lecon5Projet.html#préparation-prochaine-séance",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Préparation prochaine séance",
-    "text": "Préparation prochaine séance\n\n\n\n\n\n\nNoteDevoirs\n\n\n\n\nFinalisez votre projet si besoin\nMettez à jour votre journal avec tous les détails\nAméliorez un aspect de votre projet suite aux feedbacks\nRéfléchissez : quelles parties de votre code pourraient être mieux organisées ?\n\n\n\n\nProchaine séance : Organisation et modularité - structurer son code comme un professionnel !",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
