@@ -1265,7 +1265,7 @@
     "href": "M3P/01Introduction.html#démonstration-prompt",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "Démonstration : Prompt",
-    "text": "Démonstration : Prompt\n\n\n\nPrompt 1 (Essayez !)\n\"Fais-moi des statistiques sur mes données\"\n\nProblème : Trop vague !\nQuelles données ?\nQuelles statistiques ?\nQuel format de sortie ?\n\n\n\n\nPrompt 2\n\"J'ai 10 notes d'étudiants : \n12, 15, 18, 14, 16, 13, 17, 11, 19, 15.\nCalcule la moyenne, médiane et l'écart-type\nen R avec des commentaires explicatifs.\"\nRésultat : Code précis et commenté !\n\n\n\n\nProposer aux étudiants de le faire eux-même. Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le problème.",
+    "text": "Démonstration : Prompt\n\n\n\nPrompt 1\n\"Fais-moi des statistiques sur mes données\"\n\nProblème : Trop vague !\nQuelles données ?\nQuelles statistiques ?\nQuel format de sortie ?\n\n\n\n\nPrompt 2\n\"J'ai 10 notes d'étudiants : \n12, 15, 18, 14, 16, 13, 17, 11, 19, 15.\nCalcule la moyenne, médiane et l'écart-type\nen R avec des commentaires explicatifs.\"\nRésultat : Code précis et commenté !\n\n\n\n\nProposer aux étudiants de le faire eux-mêmes. Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le problème.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -1285,11 +1285,11 @@
     ]
   },
   {
-    "objectID": "M3P/01Introduction.html#r-et-rstudio-vos-nouveaux-outils",
-    "href": "M3P/01Introduction.html#r-et-rstudio-vos-nouveaux-outils",
+    "objectID": "M3P/01Introduction.html#r-et-rstudio-des-outils",
+    "href": "M3P/01Introduction.html#r-et-rstudio-des-outils",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
-    "section": "R et RStudio : Vos nouveaux outils",
-    "text": "R et RStudio : Vos nouveaux outils\n\n\n\nR = Le Moteur 🚗\n\nLangage de programmation\nSpécialisé en analyse de données\nDérive d’un langage antérieur appelé S https://fr.wikipedia.org/wiki/S_(langage)\nEst un logiciel libre\n\n\n\n\nRStudio = L’Interface 🖥️\n\nEnvironnement convivial\nFacilite l’écriture de code R\nIntègre tout en un endroit\nComme Word pour l’écriture",
+    "section": "R et RStudio : Des outils",
+    "text": "R et RStudio : Des outils\n\n\n\nR\n\nLangage de programmation\nSpécialisé en analyse de données\nDérive d’un langage antérieur appelé S https://fr.wikipedia.org/wiki/S_(langage)\nEst un logiciel libre\n\n\n\n\nRStudio = L’Interface (IDE)\n\nEnvironnement convivial\nFacilite l’écriture de code R\nIntègre tous les outils nécessaires",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -1300,8 +1300,8 @@
     "objectID": "M3P/01Introduction.html#exemples-concrets-dusage",
     "href": "M3P/01Introduction.html#exemples-concrets-dusage",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
-    "section": "Exemples concrets d’usage 🌟",
-    "text": "Exemples concrets d’usage 🌟\n\n📈 Analyser un sondage : “Quel pourcentage préfère le chocolat ?”\n📊 Créer des graphiques : Histogrammes, courbes, diagrammes\n🧮 Calculs statistiques : Moyennes, corrélations, tests\n🏃 Données géographiques : Cartes\n📋 Nettoyer des données : Corriger, organiser, structurer\n🎯 Prédictions simples : “Quelle sera la prochaine tendance ?”",
+    "section": "Exemples concrets d’usage",
+    "text": "Exemples concrets d’usage\n\nAnalyser un sondage : “Quel pourcentage préfère le chocolat ?”\nCréer des graphiques : Histogrammes, courbes, diagrammes\nCalculs statistiques : Moyennes, corrélations, tests, régressions\nDonnées géographiques : Cartes\nNettoyer des données : Corriger, organiser, structurer\nPrédictions simples : “Quelle sera la prochaine tendance ?”",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -1313,7 +1313,7 @@
     "href": "M3P/01Introduction.html#premier-aperçu-du-code-r",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "Premier aperçu du code R",
-    "text": "Premier aperçu du code R\n\n# Créer une liste de notes\nnotes &lt;- c(15, 12, 18, 14, 16, 13, 17)\n# Calculer la moyenne\nmoyenne &lt;- mean(notes)\n# Afficher le résultat\nprint(paste(\"La moyenne est :\", moyenne))\n\n[1] \"La moyenne est : 15\"\n\n\nC’est tout ! Pas si compliqué, non ? 😊",
+    "text": "Premier aperçu du code R\n\n# Créer une liste de notes\nnotes &lt;- c(15, 12, 18, 14, 16, 13, 17)\n# Calculer la moyenne\nmoyenne &lt;- mean(notes)\n# Afficher le résultat\nprint(paste(\"La moyenne est :\", moyenne))\n\n[1] \"La moyenne est : 15\"\n\n\nC’est tout ! Pas si compliqué, non ?",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -1361,7 +1361,7 @@
     "href": "M3P/01Introduction.html#le-résultat",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "Le résultat",
-    "text": "Le résultat\n\n# Testons le code !\nmois &lt;- c(\"Janvier\", \"Février\", \"Mars\")\nventes &lt;- c(1500, 2000, 1800)\n\nbarplot(ventes, names.arg = mois, \n        main = \"Ventes par mois\",\n        ylab = \"Montant (€)\",\n        col = \"steelblue\")",
+    "text": "Le résultat\n\n# Testons le code !\nmois &lt;- c(\"Janvier\", \"Février\", \"Mars\")\nventes &lt;- c(1500, 2000, 1800)\n\n# Créer le graphique\nbarplot(ventes, names.arg = mois, \n        main = \"Ventes par mois\",\n        ylab = \"Montant (€)\")",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -1369,11 +1369,11 @@
     ]
   },
   {
-    "objectID": "M3P/01Introduction.html#pourquoi-on-fera-des-erreurs",
-    "href": "M3P/01Introduction.html#pourquoi-on-fera-des-erreurs",
+    "objectID": "M3P/01Introduction.html#les-erreurs-vos-amies",
+    "href": "M3P/01Introduction.html#les-erreurs-vos-amies",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
-    "section": "Pourquoi on fera des erreurs",
-    "text": "Pourquoi on fera des erreurs\nPrincipe pédagogique : Les erreurs sont des occasions d’apprentissage, pas des échecs !\n\n🎯 Développer votre esprit critique\n🔍 Apprendre à déboguer\n🤖 Comprendre les limites des LLM\n💪 Gagner en autonomie\n🧠 Mémoriser par l’expérience",
+    "section": "Les Erreurs : Vos Amies !",
+    "text": "Les Erreurs : Vos Amies !\nPrincipe pédagogique : Les erreurs sont des occasions d’apprentissage, pas des échecs !\n\n🎯 Développer votre esprit critique\n🔍 Apprendre à déboguer\n🤖 Comprendre les limites des LLM\n💪 Gagner en autonomie\n🧠 Mémoriser par l’expérience",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -1384,8 +1384,32 @@
     "objectID": "M3P/01Introduction.html#séances-de-3-heures",
     "href": "M3P/01Introduction.html#séances-de-3-heures",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
-    "section": "8 Séances de 3 heures 📅",
-    "text": "8 Séances de 3 heures 📅\nLe cours est structuré en 3 phases progressives sur 8 séances de 3h.\n\nPhase 1 : Fondations 🌱 (Séances 1-3)\nObjectif : Maîtriser le dialogue avec un LLM et les concepts R de base\n\nSéance 1 : Premiers pas avec R\n\n\nDécouvrir RStudio et son interface\nComprendre les concepts de base : objets, types, vecteurs\nUtiliser des fonctions intégrées\nCréer son premier script\nCommencer son journal de bord\n\n\n\n\nSéance 2 : Données et visualisations\n\n\nImporter des données réelles (fichiers CSV)\nExplorer des dataframes\nCalculer des statistiques descriptives\nCréer des visualisations simples\nApprendre à déboguer efficacement\n\n\n\n\nSéance 3 : Automatisation et fonctions\n\n\nUtiliser des conditions (if/else)\nCréer des boucles (for, while)\nÉcrire vos propres fonctions\nCombiner tous les concepts appris\n\n\n\n\n\nPhase 2 : Application 🚀 (Séances 4-5)\nObjectif : Analyser de vraies données en autonomie\n\nSéance 4 : Données tabulaires et graphiques avancés\n\n\nMaîtriser les dataframes complexes\nNettoyage de données (casse, formats, incohérences)\nVisualisations avec ggplot2\nCréer des fonctions de visualisation réutilisables\n\n\n\n\nSéance 5 : Projet personnel intégré\n\n\nChoix et cadrage d’un projet personnel\nAnalyse complète de A à Z en autonomie\nPrésentation des résultats aux pairs\n\n\n\n\n\nPhase 3 : Expertise ⭐ (Séances 6-8)\nObjectif : Devenir autonome et collaborer efficacement\n\nSéance 6 : Organisation et modularité\n\n\nStructurer son code en modules\nDécouvrir l’écosystème des packages (dplyr, lubridate)\nOrganiser ses fonctions en scripts thématiques\n\n\n\n\nSéance 7 : Automatisation et rapports\n\n\nAutomatiser des analyses répétitives\nTraiter plusieurs fichiers à la fois\nCréer des rapports reproductibles avec markdown\n\n\n\n\nSéance 8 : Projet collaboratif final\n\n\nTravailler en équipe sur un grand dataset\nCode review croisé entre équipes\nIntégrer les bonnes pratiques de développement\nPrésentation finale",
+    "section": "5 Séances de 3 heures 📅",
+    "text": "5 Séances de 3 heures 📅\nLe cours est structuré en 2 phases progressives sur 5 séances de 3h.",
+    "crumbs": [
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
+      "Apprendre la Programmation (en R) avec les LLMs"
+    ]
+  },
+  {
+    "objectID": "M3P/01Introduction.html#phase-1-fondations-séances-1-3",
+    "href": "M3P/01Introduction.html#phase-1-fondations-séances-1-3",
+    "title": "Apprendre la Programmation (en R) avec les LLMs",
+    "section": "Phase 1 : Fondations 🌱 (Séances 1-3)",
+    "text": "Phase 1 : Fondations 🌱 (Séances 1-3)\nObjectif : Maîtriser le dialogue avec un LLM et les concepts R de base\n\nSéance 1 : Premiers pas avec R\n\n\nDécouvrir RStudio et son interface\nComprendre les concepts de base : objets, types, vecteurs\nUtiliser des fonctions intégrées\nCréer son premier script\nCommencer son journal de bord\n\n\n\n\nSéance 2 : Données et visualisations\n\n\nImporter des données réelles (fichiers CSV)\nExplorer des data.frames\nCalculer des statistiques descriptives\nCréer des visualisations simples\nApprendre à déboguer efficacement\n\n\n\n\nSéance 3 : Automatisation et fonctions\n\n\nUtiliser des conditions (if/else)\nCréer des boucles (for, while)\nÉcrire vos propres fonctions\nCombiner tous les concepts appris",
+    "crumbs": [
+      "Méthodologie de Projet Personnel et Professionnel",
+      "M3P",
+      "Apprendre la Programmation (en R) avec les LLMs"
+    ]
+  },
+  {
+    "objectID": "M3P/01Introduction.html#phase-2-application-séances-4-5",
+    "href": "M3P/01Introduction.html#phase-2-application-séances-4-5",
+    "title": "Apprendre la Programmation (en R) avec les LLMs",
+    "section": "Phase 2 : Application 🚀 (Séances 4-5)",
+    "text": "Phase 2 : Application 🚀 (Séances 4-5)\nObjectif : Analyser de vraies données en autonomie\n\nSéance 4 : Données tabulaires et graphiques avancés\n\n\nMaîtriser les data.frames complexes\nNettoyage de données (casse, formats, incohérences)\nVisualisations avec ggplot2\nCréer des fonctions de visualisation réutilisables\n\n\n\n\nSéance 5 : Projet personnel intégré\n\n\nChoix et cadrage d’un projet personnel\nAnalyse complète de A à Z en autonomie\nPrésentation des résultats aux pairs",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -1397,7 +1421,7 @@
     "href": "M3P/01Introduction.html#progression-pédagogique",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "Progression pédagogique",
-    "text": "Progression pédagogique\n\n\nSéances 1-3 → Bases : concepts fondamentaux et autonomie technique\nSéances 4-5 → Application : projets personnels et analyses complètes\nSéances 6-8 → Expertise : organisation, automatisation et collaboration\n\n\n\nÀ la fin du cours, vous serez capable de : analyser des données en autonomie, créer vos propres outils, automatiser vos analyses, collaborer sur du code, et utiliser les LLMs comme de véritables partenaires de travail.",
+    "text": "Progression pédagogique\n\n\nSéances 1-3 → Bases : concepts fondamentaux et autonomie technique\nSéances 4-5 → Application : projets personnels et analyses complètes\n\n\n\nÀ la fin du cours, vous serez capable de : analyser des données en autonomie, créer vos propres outils, automatiser vos analyses et utiliser les LLMs comme de véritables partenaires de travail.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -1421,7 +1445,7 @@
     "href": "M3P/01Introduction.html#une-évaluation-bienveillante",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "Une évaluation bienveillante",
-    "text": "Une évaluation bienveillante\nCours noté : L’objectif est d’évaluer votre progression, pas de vous piéger !\n\nComposition de la note\nVotre note finale est répartie en 3 composantes :",
+    "text": "Une évaluation bienveillante\nCours à validation : L’objectif est d’évaluer votre progression, pas de vous piéger !\n\nComposition de la note\nLa validation dépend de 3 composantes :",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -1445,7 +1469,7 @@
     "href": "M3P/01Introduction.html#mini-projets-40",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "🎯 Mini-projets (40%)",
-    "text": "🎯 Mini-projets (40%)\nRendus de fin de séance à soumettre sur Moodle.\n\n\nSéance 1 : Script commenté avec analyse de données simple\nSéance 2 : Analyse de données INSEE avec visualisations\nSéance 3 : Fonctions personnalisées pour analyse de températures\n\n\n\nCritères : Code fonctionnel, commenté, résout le problème posé",
+    "text": "🎯 Mini-projets (40%)\nRendus de fin de séance à soumettre sur Moodle.\nCritères : Code fonctionnel, commenté, résout le problème posé",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -1469,31 +1493,7 @@
     "href": "M3P/01Introduction.html#vos-interrogations",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "Vos interrogations",
-    "text": "Vos interrogations\nQuelles sont vos questions ? 🤔\n\n🤖 Sur l’utilisation des LLM ?\n📊 Sur le langage R ?\n📅 Sur l’organisation du cours ?\n📝 Sur l’évaluation ?\n\nPas de question bête ! Nous sommes tous là pour apprendre ensemble 😊",
-    "crumbs": [
-      "Méthodologie de Projet Personnel et Professionnel",
-      "M3P",
-      "Apprendre la Programmation (en R) avec les LLMs"
-    ]
-  },
-  {
-    "objectID": "M3P/01Introduction.html#maintenant",
-    "href": "M3P/01Introduction.html#maintenant",
-    "title": "Apprendre la Programmation (en R) avec les LLMs",
-    "section": "Maintenant",
-    "text": "Maintenant\n\n📥 Installer R et RStudio (tutoriel fourni, si sur votre machine, démarrez Rstudio sinon)\n🔐 Créer un compte LLM (facultatif)\n🧪 Essayer un premier prompt simple",
-    "crumbs": [
-      "Méthodologie de Projet Personnel et Professionnel",
-      "M3P",
-      "Apprendre la Programmation (en R) avec les LLMs"
-    ]
-  },
-  {
-    "objectID": "M3P/01Introduction.html#merci",
-    "href": "M3P/01Introduction.html#merci",
-    "title": "Apprendre la Programmation (en R) avec les LLMs",
-    "section": "Merci !",
-    "text": "Merci !\nN’oubliez pas : l’erreur est votre amie ! 😊\n\n\n📚 Apprenez\n\n🔍 Explorez\n\n🎉 Réussissez",
+    "text": "Vos interrogations\nQuelles sont vos questions ?\n\nSur l’utilisation des LLM ?\nSur le langage R ?\nSur l’organisation du cours ?\nSur l’évaluation ?\n\nPas de question bête ! Nous sommes tous là pour apprendre ensemble",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -1505,7 +1505,7 @@
     "href": "M3P/01Introduction.html#ressources-disponibles",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "Ressources disponibles",
-    "text": "Ressources disponibles\n\n🔗 Liens utiles\n\n\nInstallation R/RStudio : https://moodle.univ-paris8.fr/course/section.php?id=134073\nUtilisation de R/Rstudio en ligne : https://datalab.sspcloud.fr/ (Utilisez votre compte étudiant Paris 8 pour vous connecter)\nGuide des prompts efficaces : https://www.francenum.gouv.fr/guides-et-conseils/intelligence-artificielle/generation-de-contenus-texte-image-son-video/comment-0",
+    "text": "Ressources disponibles\n\n🔗 Liens utiles\n\n\nInstallation R/RStudio : https://moodle.univ-paris8.fr/course/section.php?id=134073\nUtilisation de R/Rstudio en ligne : https://datalab.sspcloud.fr/ (Utilisez votre compte étudiant Paris 8 pour vous connecter)\nGuide des prompts efficaces : https://www.francenum.gouv.fr/guides-et-conseils/intelligence-artificielle/generation-de-contenus-texte-image-son-video/comment-0\nForum d’entraide étudiant",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -1550,7 +1550,7 @@
     "href": "M3P/slide-introduction.html#démonstration-prompt",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "Démonstration : Prompt",
-    "text": "Démonstration : Prompt\n\n\nPrompt 1 (Essayez !)\n\"Fais-moi des statistiques sur mes données\"\n\nProblème : Trop vague !\nQuelles données ?\nQuelles statistiques ?\nQuel format de sortie ?\n\n\nPrompt 2\n\"J'ai 10 notes d'étudiants : \n12, 15, 18, 14, 16, 13, 17, 11, 19, 15.\nCalcule la moyenne, médiane et l'écart-type\nen R avec des commentaires explicatifs.\"\nRésultat : Code précis et commenté !\n\n\nProposer aux étudiants de le faire eux-même. Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le problème."
+    "text": "Démonstration : Prompt\n\n\nPrompt 1\n\"Fais-moi des statistiques sur mes données\"\n\nProblème : Trop vague !\nQuelles données ?\nQuelles statistiques ?\nQuel format de sortie ?\n\n\nPrompt 2\n\"J'ai 10 notes d'étudiants : \n12, 15, 18, 14, 16, 13, 17, 11, 19, 15.\nCalcule la moyenne, médiane et l'écart-type\nen R avec des commentaires explicatifs.\"\nRésultat : Code précis et commenté !\n\n\nProposer aux étudiants de le faire eux-mêmes. Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le problème."
   },
   {
     "objectID": "M3P/slide-introduction.html#objectif-du-cours",
@@ -1560,25 +1560,25 @@
     "text": "Objectif du cours\n\nApprendre à utiliser R et Rstudio\nApprendre à utiliser les principales librairies (aussi appelées paquets) de R pour l’analyse de données et les statistiques (le tidyverse)\nVous apprendre à utiliser des LLMs pour faire cela"
   },
   {
-    "objectID": "M3P/slide-introduction.html#r-et-rstudio-vos-nouveaux-outils",
-    "href": "M3P/slide-introduction.html#r-et-rstudio-vos-nouveaux-outils",
+    "objectID": "M3P/slide-introduction.html#r-et-rstudio-des-outils",
+    "href": "M3P/slide-introduction.html#r-et-rstudio-des-outils",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
-    "section": "R et RStudio : Vos nouveaux outils",
-    "text": "R et RStudio : Vos nouveaux outils\n\n\nR = Le Moteur 🚗\n\nLangage de programmation\nSpécialisé en analyse de données\nDérive d’un langage antérieur appelé S https://fr.wikipedia.org/wiki/S_(langage)\nEst un logiciel libre\n\n\nRStudio = L’Interface 🖥️\n\nEnvironnement convivial\nFacilite l’écriture de code R\nIntègre tout en un endroit\nComme Word pour l’écriture"
+    "section": "R et RStudio : Des outils",
+    "text": "R et RStudio : Des outils\n\n\nR\n\nLangage de programmation\nSpécialisé en analyse de données\nDérive d’un langage antérieur appelé S https://fr.wikipedia.org/wiki/S_(langage)\nEst un logiciel libre\n\n\nRStudio = L’Interface (IDE)\n\nEnvironnement convivial\nFacilite l’écriture de code R\nIntègre tous les outils nécessaires"
   },
   {
     "objectID": "M3P/slide-introduction.html#exemples-concrets-dusage",
     "href": "M3P/slide-introduction.html#exemples-concrets-dusage",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
-    "section": "Exemples concrets d’usage 🌟",
-    "text": "Exemples concrets d’usage 🌟\n\n📈 Analyser un sondage : “Quel pourcentage préfère le chocolat ?”\n📊 Créer des graphiques : Histogrammes, courbes, diagrammes\n🧮 Calculs statistiques : Moyennes, corrélations, tests\n🏃 Données géographiques : Cartes\n📋 Nettoyer des données : Corriger, organiser, structurer\n🎯 Prédictions simples : “Quelle sera la prochaine tendance ?”"
+    "section": "Exemples concrets d’usage",
+    "text": "Exemples concrets d’usage\n\nAnalyser un sondage : “Quel pourcentage préfère le chocolat ?”\nCréer des graphiques : Histogrammes, courbes, diagrammes\nCalculs statistiques : Moyennes, corrélations, tests, régressions\nDonnées géographiques : Cartes\nNettoyer des données : Corriger, organiser, structurer\nPrédictions simples : “Quelle sera la prochaine tendance ?”"
   },
   {
     "objectID": "M3P/slide-introduction.html#premier-aperçu-du-code-r",
     "href": "M3P/slide-introduction.html#premier-aperçu-du-code-r",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "Premier aperçu du code R",
-    "text": "Premier aperçu du code R\n\n# Créer une liste de notes\nnotes &lt;- c(15, 12, 18, 14, 16, 13, 17)\n# Calculer la moyenne\nmoyenne &lt;- mean(notes)\n# Afficher le résultat\nprint(paste(\"La moyenne est :\", moyenne))\n\n[1] \"La moyenne est : 15\"\n\n\nC’est tout ! Pas si compliqué, non ? 😊"
+    "text": "Premier aperçu du code R\n\n# Créer une liste de notes\nnotes &lt;- c(15, 12, 18, 14, 16, 13, 17)\n# Calculer la moyenne\nmoyenne &lt;- mean(notes)\n# Afficher le résultat\nprint(paste(\"La moyenne est :\", moyenne))\n\n[1] \"La moyenne est : 15\"\n\n\nC’est tout ! Pas si compliqué, non ?"
   },
   {
     "objectID": "M3P/slide-introduction.html#le-processus-en-4-étapes",
@@ -1606,28 +1606,42 @@
     "href": "M3P/slide-introduction.html#le-résultat",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "Le résultat",
-    "text": "Le résultat\n\n# Testons le code !\nmois &lt;- c(\"Janvier\", \"Février\", \"Mars\")\nventes &lt;- c(1500, 2000, 1800)\n\nbarplot(ventes, names.arg = mois, \n        main = \"Ventes par mois\",\n        ylab = \"Montant (€)\",\n        col = \"steelblue\")"
+    "text": "Le résultat\n\n# Testons le code !\nmois &lt;- c(\"Janvier\", \"Février\", \"Mars\")\nventes &lt;- c(1500, 2000, 1800)\n\n# Créer le graphique\nbarplot(ventes, names.arg = mois, \n        main = \"Ventes par mois\",\n        ylab = \"Montant (€)\")"
   },
   {
-    "objectID": "M3P/slide-introduction.html#pourquoi-on-fera-des-erreurs",
-    "href": "M3P/slide-introduction.html#pourquoi-on-fera-des-erreurs",
+    "objectID": "M3P/slide-introduction.html#les-erreurs-vos-amies",
+    "href": "M3P/slide-introduction.html#les-erreurs-vos-amies",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
-    "section": "Pourquoi on fera des erreurs",
-    "text": "Pourquoi on fera des erreurs\nPrincipe pédagogique : Les erreurs sont des occasions d’apprentissage, pas des échecs !\n\n🎯 Développer votre esprit critique\n🔍 Apprendre à déboguer\n🤖 Comprendre les limites des LLM\n💪 Gagner en autonomie\n🧠 Mémoriser par l’expérience"
+    "section": "Les Erreurs : Vos Amies !",
+    "text": "Les Erreurs : Vos Amies !\nPrincipe pédagogique : Les erreurs sont des occasions d’apprentissage, pas des échecs !\n\n🎯 Développer votre esprit critique\n🔍 Apprendre à déboguer\n🤖 Comprendre les limites des LLM\n💪 Gagner en autonomie\n🧠 Mémoriser par l’expérience"
   },
   {
     "objectID": "M3P/slide-introduction.html#séances-de-3-heures",
     "href": "M3P/slide-introduction.html#séances-de-3-heures",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
-    "section": "8 Séances de 3 heures 📅",
-    "text": "8 Séances de 3 heures 📅\nLe cours est structuré en 3 phases progressives sur 8 séances de 3h.\nPhase 1 : Fondations 🌱 (Séances 1-3)\nObjectif : Maîtriser le dialogue avec un LLM et les concepts R de base\nSéance 1 : Premiers pas avec R\n\nDécouvrir RStudio et son interface\nComprendre les concepts de base : objets, types, vecteurs\nUtiliser des fonctions intégrées\nCréer son premier script\nCommencer son journal de bord\n\nSéance 2 : Données et visualisations\n\nImporter des données réelles (fichiers CSV)\nExplorer des dataframes\nCalculer des statistiques descriptives\nCréer des visualisations simples\nApprendre à déboguer efficacement\n\nSéance 3 : Automatisation et fonctions\n\nUtiliser des conditions (if/else)\nCréer des boucles (for, while)\nÉcrire vos propres fonctions\nCombiner tous les concepts appris\n\nPhase 2 : Application 🚀 (Séances 4-5)\nObjectif : Analyser de vraies données en autonomie\nSéance 4 : Données tabulaires et graphiques avancés\n\nMaîtriser les dataframes complexes\nNettoyage de données (casse, formats, incohérences)\nVisualisations avec ggplot2\nCréer des fonctions de visualisation réutilisables\n\nSéance 5 : Projet personnel intégré\n\nChoix et cadrage d’un projet personnel\nAnalyse complète de A à Z en autonomie\nPrésentation des résultats aux pairs\n\nPhase 3 : Expertise ⭐ (Séances 6-8)\nObjectif : Devenir autonome et collaborer efficacement\nSéance 6 : Organisation et modularité\n\nStructurer son code en modules\nDécouvrir l’écosystème des packages (dplyr, lubridate)\nOrganiser ses fonctions en scripts thématiques\n\nSéance 7 : Automatisation et rapports\n\nAutomatiser des analyses répétitives\nTraiter plusieurs fichiers à la fois\nCréer des rapports reproductibles avec markdown\n\nSéance 8 : Projet collaboratif final\n\nTravailler en équipe sur un grand dataset\nCode review croisé entre équipes\nIntégrer les bonnes pratiques de développement\nPrésentation finale"
+    "section": "5 Séances de 3 heures 📅",
+    "text": "5 Séances de 3 heures 📅\nLe cours est structuré en 2 phases progressives sur 5 séances de 3h."
+  },
+  {
+    "objectID": "M3P/slide-introduction.html#phase-1-fondations-séances-1-3",
+    "href": "M3P/slide-introduction.html#phase-1-fondations-séances-1-3",
+    "title": "Apprendre la Programmation (en R) avec les LLMs",
+    "section": "Phase 1 : Fondations 🌱 (Séances 1-3)",
+    "text": "Phase 1 : Fondations 🌱 (Séances 1-3)\nObjectif : Maîtriser le dialogue avec un LLM et les concepts R de base\nSéance 1 : Premiers pas avec R\n\nDécouvrir RStudio et son interface\nComprendre les concepts de base : objets, types, vecteurs\nUtiliser des fonctions intégrées\nCréer son premier script\nCommencer son journal de bord\n\nSéance 2 : Données et visualisations\n\nImporter des données réelles (fichiers CSV)\nExplorer des data.frames\nCalculer des statistiques descriptives\nCréer des visualisations simples\nApprendre à déboguer efficacement\n\nSéance 3 : Automatisation et fonctions\n\nUtiliser des conditions (if/else)\nCréer des boucles (for, while)\nÉcrire vos propres fonctions\nCombiner tous les concepts appris"
+  },
+  {
+    "objectID": "M3P/slide-introduction.html#phase-2-application-séances-4-5",
+    "href": "M3P/slide-introduction.html#phase-2-application-séances-4-5",
+    "title": "Apprendre la Programmation (en R) avec les LLMs",
+    "section": "Phase 2 : Application 🚀 (Séances 4-5)",
+    "text": "Phase 2 : Application 🚀 (Séances 4-5)\nObjectif : Analyser de vraies données en autonomie\nSéance 4 : Données tabulaires et graphiques avancés\n\nMaîtriser les data.frames complexes\nNettoyage de données (casse, formats, incohérences)\nVisualisations avec ggplot2\nCréer des fonctions de visualisation réutilisables\n\nSéance 5 : Projet personnel intégré\n\nChoix et cadrage d’un projet personnel\nAnalyse complète de A à Z en autonomie\nPrésentation des résultats aux pairs"
   },
   {
     "objectID": "M3P/slide-introduction.html#progression-pédagogique",
     "href": "M3P/slide-introduction.html#progression-pédagogique",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "Progression pédagogique",
-    "text": "Progression pédagogique\n\nSéances 1-3 → Bases : concepts fondamentaux et autonomie technique\nSéances 4-5 → Application : projets personnels et analyses complètes\nSéances 6-8 → Expertise : organisation, automatisation et collaboration\n\n\nÀ la fin du cours, vous serez capable de : analyser des données en autonomie, créer vos propres outils, automatiser vos analyses, collaborer sur du code, et utiliser les LLMs comme de véritables partenaires de travail."
+    "text": "Progression pédagogique\n\nSéances 1-3 → Bases : concepts fondamentaux et autonomie technique\nSéances 4-5 → Application : projets personnels et analyses complètes\n\n\nÀ la fin du cours, vous serez capable de : analyser des données en autonomie, créer vos propres outils, automatiser vos analyses et utiliser les LLMs comme de véritables partenaires de travail."
   },
   {
     "objectID": "M3P/slide-introduction.html#structure-dune-séance-type",
@@ -1641,7 +1655,7 @@
     "href": "M3P/slide-introduction.html#une-évaluation-bienveillante",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "Une évaluation bienveillante",
-    "text": "Une évaluation bienveillante\nCours noté : L’objectif est d’évaluer votre progression, pas de vous piéger !\nComposition de la note\nVotre note finale est répartie en 3 composantes :"
+    "text": "Une évaluation bienveillante\nCours à validation : L’objectif est d’évaluer votre progression, pas de vous piéger !\nComposition de la note\nLa validation dépend de 3 composantes :"
   },
   {
     "objectID": "M3P/slide-introduction.html#journal-de-bord-40",
@@ -1655,7 +1669,7 @@
     "href": "M3P/slide-introduction.html#mini-projets-40",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "🎯 Mini-projets (40%)",
-    "text": "🎯 Mini-projets (40%)\nRendus de fin de séance à soumettre sur Moodle.\n\nSéance 1 : Script commenté avec analyse de données simple\nSéance 2 : Analyse de données INSEE avec visualisations\nSéance 3 : Fonctions personnalisées pour analyse de températures\n\n\nCritères : Code fonctionnel, commenté, résout le problème posé"
+    "text": "🎯 Mini-projets (40%)\nRendus de fin de séance à soumettre sur Moodle.\nCritères : Code fonctionnel, commenté, résout le problème posé"
   },
   {
     "objectID": "M3P/slide-introduction.html#participation-20",
@@ -1669,28 +1683,14 @@
     "href": "M3P/slide-introduction.html#vos-interrogations",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "Vos interrogations",
-    "text": "Vos interrogations\nQuelles sont vos questions ? 🤔\n\n🤖 Sur l’utilisation des LLM ?\n📊 Sur le langage R ?\n📅 Sur l’organisation du cours ?\n📝 Sur l’évaluation ?\n\nPas de question bête ! Nous sommes tous là pour apprendre ensemble 😊"
-  },
-  {
-    "objectID": "M3P/slide-introduction.html#maintenant",
-    "href": "M3P/slide-introduction.html#maintenant",
-    "title": "Apprendre la Programmation (en R) avec les LLMs",
-    "section": "Maintenant",
-    "text": "Maintenant\n\n📥 Installer R et RStudio (tutoriel fourni, si sur votre machine, démarrez Rstudio sinon)\n🔐 Créer un compte LLM (facultatif)\n🧪 Essayer un premier prompt simple"
-  },
-  {
-    "objectID": "M3P/slide-introduction.html#merci",
-    "href": "M3P/slide-introduction.html#merci",
-    "title": "Apprendre la Programmation (en R) avec les LLMs",
-    "section": "Merci !",
-    "text": "Merci !\nN’oubliez pas : l’erreur est votre amie ! 😊\n\n\n📚 Apprenez\n\n🔍 Explorez\n\n🎉 Réussissez"
+    "text": "Vos interrogations\nQuelles sont vos questions ?\n\nSur l’utilisation des LLM ?\nSur le langage R ?\nSur l’organisation du cours ?\nSur l’évaluation ?\n\nPas de question bête ! Nous sommes tous là pour apprendre ensemble"
   },
   {
     "objectID": "M3P/slide-introduction.html#ressources-disponibles",
     "href": "M3P/slide-introduction.html#ressources-disponibles",
     "title": "Apprendre la Programmation (en R) avec les LLMs",
     "section": "Ressources disponibles",
-    "text": "Ressources disponibles\n🔗 Liens utiles\n\nInstallation R/RStudio : https://moodle.univ-paris8.fr/course/section.php?id=134073\nUtilisation de R/Rstudio en ligne : https://datalab.sspcloud.fr/ (Utilisez votre compte étudiant Paris 8 pour vous connecter)\nGuide des prompts efficaces : https://www.francenum.gouv.fr/guides-et-conseils/intelligence-artificielle/generation-de-contenus-texte-image-son-video/comment-0"
+    "text": "Ressources disponibles\n🔗 Liens utiles\n\nInstallation R/RStudio : https://moodle.univ-paris8.fr/course/section.php?id=134073\nUtilisation de R/Rstudio en ligne : https://datalab.sspcloud.fr/ (Utilisez votre compte étudiant Paris 8 pour vous connecter)\nGuide des prompts efficaces : https://www.francenum.gouv.fr/guides-et-conseils/intelligence-artificielle/generation-de-contenus-texte-image-son-video/comment-0\nForum d’entraide étudiant"
   },
   {
     "objectID": "M3P/slide-introduction.html#contact-et-ressources",
