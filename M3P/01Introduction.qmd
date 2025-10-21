@@ -93,7 +93,7 @@ Ici, demander des exemples de ce qu'ils font
 
 :::: {.columns}
 ::: {.column width="50%" .fragment}
-### Prompt 1 (Essayez !)
+### Prompt 1
 
 ```
 "Fais-moi des statistiques sur mes données"
@@ -120,7 +120,7 @@ en R avec des commentaires explicatifs."
 ::::
 
 ::: {.notes}
-Proposer aux étudiants de le faire eux-même.
+Proposer aux étudiants de le faire eux-mêmes.
 Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le problème.
 :::
 
@@ -135,13 +135,13 @@ Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le 
 
 # R et Rstudio ? 📊
 
-## R et RStudio : Vos nouveaux outils
+## R et RStudio : Des outils
 
 :::: {.columns}
 
 ::: {.column width="50%" .fragment }
 
-### R = Le Moteur 🚗
+### R 
 
 - Langage de programmation
 - Spécialisé en analyse de données
@@ -152,25 +152,24 @@ Commencez par le prompt 1, puis les amener au prompt 2 en formalisant un peu le 
 
 ::: {.column width="50%" .fragment }
 
-### RStudio = L'Interface 🖥️
+### RStudio = L'Interface (IDE)
 
 - Environnement convivial
 - Facilite l'écriture de code R
-- Intègre tout en un endroit
-- Comme Word pour l'écriture
+- Intègre tous les outils nécessaires
 
 :::
 
 ::::
 
-## Exemples concrets d'usage 🌟
+## Exemples concrets d'usage
 
-- 📈 **Analyser un sondage** : "Quel pourcentage préfère le chocolat ?"
-- 📊 **Créer des graphiques** : Histogrammes, courbes, diagrammes
-- 🧮 **Calculs statistiques** : Moyennes, corrélations, tests
-- 🏃 **Données géographiques** : Cartes
-- 📋 **Nettoyer des données** : Corriger, organiser, structurer
-- 🎯 **Prédictions simples** : "Quelle sera la prochaine tendance ?"
+- **Analyser un sondage** : "Quel pourcentage préfère le chocolat ?"
+- **Créer des graphiques** : Histogrammes, courbes, diagrammes
+- **Calculs statistiques** : Moyennes, corrélations, tests, régressions
+- **Données géographiques** : Cartes
+- **Nettoyer des données** : Corriger, organiser, structurer
+- **Prédictions simples** : "Quelle sera la prochaine tendance ?"
 
 ## Premier aperçu du code R
 
@@ -186,9 +185,9 @@ moyenne <- mean(notes)
 print(paste("La moyenne est :", moyenne))
 ```
 
-**C'est tout ! Pas si compliqué, non ?** 😊
+**C'est tout ! Pas si compliqué, non ?** 
 
-# Comment ça marche avec un LLM ? 🤝
+# Comment ça marche avec un LLM ? 
 
 ## Le processus en 4 étapes
 
@@ -245,15 +244,13 @@ barplot(ventes, names.arg = mois,
 mois <- c("Janvier", "Février", "Mars")
 ventes <- c(1500, 2000, 1800)
 
+# Créer le graphique
 barplot(ventes, names.arg = mois, 
         main = "Ventes par mois",
-        ylab = "Montant (€)",
-        col = "steelblue")
+        ylab = "Montant (€)")
 ```
 
-# Les Erreurs : Vos Amies ! 🐛
-
-## Pourquoi on fera des erreurs
+## Les Erreurs : Vos Amies !
 
 **Principe pédagogique :** Les erreurs sont des occasions d'apprentissage, pas des échecs !
 
@@ -267,15 +264,15 @@ barplot(ventes, names.arg = mois,
 
 # Organisation du Cours
 
-## 8 Séances de 3 heures 📅
+## 5 Séances de 3 heures 📅
 
-Le cours est structuré en 3 phases progressives sur 8 séances de 3h.
+Le cours est structuré en 2 phases progressives sur 5 séances de 3h.
 
-### Phase 1 : Fondations 🌱 (Séances 1-3)
+## Phase 1 : Fondations 🌱 (Séances 1-3)
 
 **Objectif :** Maîtriser le dialogue avec un LLM et les concepts R de base
 
-#### Séance 1 : Premiers pas avec R
+### Séance 1 : Premiers pas avec R
 
 ::: {.nonincremental}
 - Découvrir RStudio et son interface
@@ -285,17 +282,17 @@ Le cours est structuré en 3 phases progressives sur 8 séances de 3h.
 - Commencer son journal de bord
 :::
 
-#### Séance 2 : Données et visualisations
+### Séance 2 : Données et visualisations
 
 ::: {.nonincremental}
 - Importer des données réelles (fichiers CSV)
-- Explorer des dataframes
+- Explorer des `data.frames`
 - Calculer des statistiques descriptives
 - Créer des visualisations simples
 - Apprendre à déboguer efficacement
 :::
 
-#### Séance 3 : Automatisation et fonctions
+### Séance 3 : Automatisation et fonctions
 
 ::: {.nonincremental}
 - Utiliser des conditions (`if/else`)
@@ -304,20 +301,20 @@ Le cours est structuré en 3 phases progressives sur 8 séances de 3h.
 - Combiner tous les concepts appris
 :::
 
-### Phase 2 : Application 🚀 (Séances 4-5)
+## Phase 2 : Application 🚀 (Séances 4-5)
 
 **Objectif :** Analyser de vraies données en autonomie
 
-#### Séance 4 : Données tabulaires et graphiques avancés
+### Séance 4 : Données tabulaires et graphiques avancés
 
 ::: {.nonincremental}
-- Maîtriser les dataframes complexes
+- Maîtriser les `data.frames` complexes
 - Nettoyage de données (casse, formats, incohérences)
-- Visualisations avec ggplot2
+- Visualisations avec `ggplot2`
 - Créer des fonctions de visualisation réutilisables
 :::
 
-#### Séance 5 : Projet personnel intégré
+### Séance 5 : Projet personnel intégré
 
 ::: {.nonincremental}
 - Choix et cadrage d'un projet personnel
@@ -325,45 +322,16 @@ Le cours est structuré en 3 phases progressives sur 8 séances de 3h.
 - Présentation des résultats aux pairs
 :::
 
-### Phase 3 : Expertise ⭐ (Séances 6-8)
-
-**Objectif :** Devenir autonome et collaborer efficacement
-
-#### Séance 6 : Organisation et modularité
-
-::: {.nonincremental}
-- Structurer son code en modules
-- Découvrir l'écosystème des packages (`dplyr`, `lubridate`)
-- Organiser ses fonctions en scripts thématiques
-:::
-
-#### Séance 7 : Automatisation et rapports
-
-::: {.nonincremental}
-- Automatiser des analyses répétitives
-- Traiter plusieurs fichiers à la fois
-- Créer des rapports reproductibles avec markdown
-:::
-
-#### Séance 8 : Projet collaboratif final
-
-::: {.nonincremental}
-- Travailler en équipe sur un grand dataset
-- Code review croisé entre équipes
-- Intégrer les bonnes pratiques de développement
-- Présentation finale
-:::
 
 ## Progression pédagogique
 
 ::: {.incremental}
 - **Séances 1-3** → Bases : concepts fondamentaux et autonomie technique
 - **Séances 4-5** → Application : projets personnels et analyses complètes
-- **Séances 6-8** → Expertise : organisation, automatisation et collaboration
 :::
 
 ::: {.fragment}
-**À la fin du cours, vous serez capable de :** analyser des données en autonomie, créer vos propres outils, automatiser vos analyses, collaborer sur du code, et utiliser les LLMs comme de véritables partenaires de travail.
+**À la fin du cours, vous serez capable de :** analyser des données en autonomie, créer vos propres outils, automatiser vos analyses et utiliser les LLMs comme de véritables partenaires de travail.
 :::
 
 ## Structure d'une séance type
@@ -400,11 +368,11 @@ Le cours est structuré en 3 phases progressives sur 8 séances de 3h.
 
 ## Une évaluation bienveillante
 
-**Cours noté** : L'objectif est d'évaluer votre progression, pas de vous piéger !
+**Cours à validation** : L'objectif est d'évaluer votre progression, pas de vous piéger !
 
 ### Composition de la note
 
-Votre note finale est répartie en 3 composantes :
+La validation dépend de 3 composantes :
 
 ```{r notes}
 #| echo: false
@@ -457,15 +425,8 @@ Documentez vos échecs comme vos réussites. C'est votre progression qui compte.
 
 Rendus de fin de séance à soumettre sur Moodle.
 
-::: {.nonincremental}
-- **Séance 1** : Script commenté avec analyse de données simple
-- **Séance 2** : Analyse de données INSEE avec visualisations
-- **Séance 3** : Fonctions personnalisées pour analyse de températures
-:::
-
-::: {.fragment}
 **Critères :** Code fonctionnel, commenté, résout le problème posé
-:::
+
 
 ## 👥 Participation (20%) {.smaller}
 
@@ -490,40 +451,16 @@ La participation, ce n'est pas parler beaucoup, c'est être engagé dans votre a
 
 ## Vos interrogations
 
-**Quelles sont vos questions ?** 🤔
+**Quelles sont vos questions ?** 
 
-- 🤖 Sur l'utilisation des LLM ?
-- 📊 Sur le langage R ?
-- 📅 Sur l'organisation du cours ?
-- 📝 Sur l'évaluation ?
+- Sur l'utilisation des LLM ?
+- Sur le langage R ?
+- Sur l'organisation du cours ?
+- Sur l'évaluation ?
 
-**Pas de question bête !** Nous sommes tous là pour apprendre ensemble 😊
+**Pas de question bête !** Nous sommes tous là pour apprendre ensemble 
 
-# Prochaines Étapes 🎯
 
-## Maintenant 
-
-1. 📥 **Installer R et RStudio** (tutoriel fourni, si sur votre machine, démarrez Rstudio sinon)
-2. 🔐 **Créer un compte LLM** (facultatif)
-4. 🧪 **Essayer un premier prompt** simple
-
-## Merci ! 
-
-*N'oubliez pas : l'erreur est votre amie !* 😊
-
-:::: {.columns}
-::: {.column width="33%"}
-**📚 Apprenez**
-:::
-
-::: {.column width="33%"}
-**🔍 Explorez**
-:::
-
-::: {.column width="33%"}
-**🎉 Réussissez**
-:::
-::::
 
 ## Ressources disponibles 
 
@@ -534,7 +471,7 @@ La participation, ce n'est pas parler beaucoup, c'est être engagé dans votre a
 - Installation R/RStudio : <https://moodle.univ-paris8.fr/course/section.php?id=134073>
 - Utilisation de R/Rstudio en ligne : <https://datalab.sspcloud.fr/> (Utilisez votre compte étudiant Paris 8 pour vous connecter)
 - Guide des prompts efficaces : <https://www.francenum.gouv.fr/guides-et-conseils/intelligence-artificielle/generation-de-contenus-texte-image-son-video/comment-0>
-<!-- - [Forum d'entraide étudiant](https://moodle.univ-paris8.fr/mod/forum/view.php?id=415534) -->
+- [Forum d'entraide étudiant](https://moodle.univ-paris8.fr/mod/forum/view.php?id=415534)
 
 :::
 
