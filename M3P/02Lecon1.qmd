@@ -21,12 +21,12 @@ execute:
 ## Plan de la séance {.smaller}
 
 ::: {.incremental}
-- **Présentation** (15min) : Le cours et les outils
-- **Découverte de l'interface RStudio** (30min) : Se repérer dans l'environnement
-- **Premiers calculs** (30min) : R comme une calculatrice
-- **Concepts de base** (60min) : Objets, assignation, types
-- **Fonctions intégrées** (45min) : Utiliser des fonctions existantes
-- **Premier script** (30min) : Organiser son code
+- **Présentation** : Le cours et les outils
+- **Découverte de l'interface RStudio**  : Se repérer dans l'environnement
+- **Premiers calculs** : R comme une calculatrice
+- **Concepts de base** : Objets, assignation, types
+- **Fonctions intégrées** : Utiliser des fonctions existantes
+- **Premier script** : Organiser son code
 :::
 
 ::: {.fragment}
@@ -134,7 +134,8 @@ Demandez à votre LLM :
 :::
 
 ::: {.notes}
-15 minutes. Premier contact avec c() et mean(). Ne pas tout expliquer maintenant -- laisser les étudiants découvrir avec le LLM.
+15 minutes. Premier contact avec `c()` et `mean()`.
+Ne pas tout expliquer maintenant -- laisser les étudiants découvrir avec le LLM.
 :::
 
 ## Comprendre le code {.smaller}
@@ -393,7 +394,7 @@ mean(notes_avec_absence)
 :::
 
 ::: {.notes}
-15 minutes. Problème réel et fréquent. Les étudiants découvrent na.rm = TRUE.
+15 minutes. Problème réel et fréquent. Les étudiants découvrent `na.rm = TRUE`.
 :::
 
 # Premier script {background-color="#2F4F4F"}
@@ -536,13 +537,13 @@ Soyez précis ! Plus votre journal est détaillé, plus il vous sera utile.
 ## Ce que vous avez appris aujourd'hui
 
 ::: {.incremental}
-✅ Utiliser RStudio
-✅ Créer des objets avec `<-`
-✅ Manipuler des vecteurs avec `c()`
-✅ Utiliser des fonctions : `mean()`, `sum()`, `max()`, etc.
-✅ Écrire et sauvegarder un script
-✅ Commenter son code
-✅ Utiliser les LLMs comme assistants
+- Utiliser RStudio
+- Créer des objets avec `<-`
+- Manipuler des vecteurs avec `c()`
+- Utiliser des fonctions : `mean()`, `sum()`, `max()`, etc.
+- Écrire et sauvegarder un script
+- Commenter son code
+- Utiliser les LLMs comme assistants
 :::
 
 ## Pour aller plus loin
@@ -576,6 +577,4 @@ Soyez précis ! Plus votre journal est détaillé, plus il vous sera utile.
 - **Testez toujours** le code avant de l'utiliser
 :::
 
-::: {.fragment}
-**Bienvenue dans l'aventure R ! 🚀**
-:::
+
