@@ -6657,7 +6657,7 @@
     "href": "M3P/slide-lecon1.html#plan-de-la-séance",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Plan de la séance",
-    "text": "Plan de la séance\n\nPrésentation (15min) : Le cours et les outils\nDécouverte de l’interface RStudio (30min) : Se repérer dans l’environnement\nPremiers calculs (30min) : R comme une calculatrice\nConcepts de base (60min) : Objets, assignation, types\nFonctions intégrées (45min) : Utiliser des fonctions existantes\nPremier script (30min) : Organiser son code\n\n\nProduction attendue : Journal de bord documentant votre découverte de R"
+    "text": "Plan de la séance\n\nPrésentation : Le cours et les outils\nDécouverte de l’interface RStudio : Se repérer dans l’environnement\nPremiers calculs : R comme une calculatrice\nConcepts de base : Objets, assignation, types\nFonctions intégrées : Utiliser des fonctions existantes\nPremier script : Organiser son code\n\n\nProduction attendue : Journal de bord documentant votre découverte de R"
   },
   {
     "objectID": "M3P/slide-lecon1.html#objectifs-de-la-séance",
@@ -6832,7 +6832,7 @@
     "href": "M3P/slide-lecon1.html#ce-que-vous-avez-appris-aujourdhui",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Ce que vous avez appris aujourd’hui",
-    "text": "Ce que vous avez appris aujourd’hui\n✅ Utiliser RStudio ✅ Créer des objets avec &lt;- ✅ Manipuler des vecteurs avec c() ✅ Utiliser des fonctions : mean(), sum(), max(), etc. ✅ Écrire et sauvegarder un script ✅ Commenter son code ✅ Utiliser les LLMs comme assistants"
+    "text": "Ce que vous avez appris aujourd’hui\n\nUtiliser RStudio\nCréer des objets avec &lt;-\nManipuler des vecteurs avec c()\nUtiliser des fonctions : mean(), sum(), max(), etc.\nÉcrire et sauvegarder un script\nCommenter son code\nUtiliser les LLMs comme assistants"
   },
   {
     "objectID": "M3P/slide-lecon1.html#pour-aller-plus-loin",
@@ -6853,14 +6853,14 @@
     "href": "M3P/slide-lecon1.html#questions",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nN’oubliez pas\n\n\n\nR est un outil - il faut du temps pour le maîtriser\nLes erreurs sont normales et font partie de l’apprentissage\nLes LLMs sont des assistants, pas des remplaçants de votre cerveau\nTestez toujours le code avant de l’utiliser\n\n\n\n\n\nBienvenue dans l’aventure R ! 🚀"
+    "text": "Questions ?\n\n\n\n\n\n\nN’oubliez pas\n\n\n\nR est un outil - il faut du temps pour le maîtriser\nLes erreurs sont normales et font partie de l’apprentissage\nLes LLMs sont des assistants, pas des remplaçants de votre cerveau\nTestez toujours le code avant de l’utiliser"
   },
   {
     "objectID": "M3P/02Lecon1.html",
     "href": "M3P/02Lecon1.html",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "",
-    "text": "Présentation (15min) : Le cours et les outils\nDécouverte de l’interface RStudio (30min) : Se repérer dans l’environnement\nPremiers calculs (30min) : R comme une calculatrice\nConcepts de base (60min) : Objets, assignation, types\nFonctions intégrées (45min) : Utiliser des fonctions existantes\nPremier script (30min) : Organiser son code\n\n\n\nProduction attendue : Journal de bord documentant votre découverte de R",
+    "text": "Présentation : Le cours et les outils\nDécouverte de l’interface RStudio : Se repérer dans l’environnement\nPremiers calculs : R comme une calculatrice\nConcepts de base : Objets, assignation, types\nFonctions intégrées : Utiliser des fonctions existantes\nPremier script : Organiser son code\n\n\n\nProduction attendue : Journal de bord documentant votre découverte de R",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -6872,7 +6872,7 @@
     "href": "M3P/02Lecon1.html#plan-de-la-séance",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "",
-    "text": "Présentation (15min) : Le cours et les outils\nDécouverte de l’interface RStudio (30min) : Se repérer dans l’environnement\nPremiers calculs (30min) : R comme une calculatrice\nConcepts de base (60min) : Objets, assignation, types\nFonctions intégrées (45min) : Utiliser des fonctions existantes\nPremier script (30min) : Organiser son code\n\n\n\nProduction attendue : Journal de bord documentant votre découverte de R",
+    "text": "Présentation : Le cours et les outils\nDécouverte de l’interface RStudio : Se repérer dans l’environnement\nPremiers calculs : R comme une calculatrice\nConcepts de base : Objets, assignation, types\nFonctions intégrées : Utiliser des fonctions existantes\nPremier script : Organiser son code\n\n\n\nProduction attendue : Journal de bord documentant votre découverte de R",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7172,7 +7172,7 @@
     "href": "M3P/02Lecon1.html#ce-que-vous-avez-appris-aujourdhui",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Ce que vous avez appris aujourd’hui",
-    "text": "Ce que vous avez appris aujourd’hui\n\n✅ Utiliser RStudio ✅ Créer des objets avec &lt;- ✅ Manipuler des vecteurs avec c() ✅ Utiliser des fonctions : mean(), sum(), max(), etc. ✅ Écrire et sauvegarder un script ✅ Commenter son code ✅ Utiliser les LLMs comme assistants",
+    "text": "Ce que vous avez appris aujourd’hui\n\n\nUtiliser RStudio\nCréer des objets avec &lt;-\nManipuler des vecteurs avec c()\nUtiliser des fonctions : mean(), sum(), max(), etc.\nÉcrire et sauvegarder un script\nCommenter son code\nUtiliser les LLMs comme assistants",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7208,7 +7208,7 @@
     "href": "M3P/02Lecon1.html#questions",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nAstuceN’oubliez pas\n\n\n\n\nR est un outil - il faut du temps pour le maîtriser\nLes erreurs sont normales et font partie de l’apprentissage\nLes LLMs sont des assistants, pas des remplaçants de votre cerveau\nTestez toujours le code avant de l’utiliser\n\n\n\n\nBienvenue dans l’aventure R ! 🚀",
+    "text": "Questions ?\n\n\n\n\n\n\nAstuceN’oubliez pas\n\n\n\n\nR est un outil - il faut du temps pour le maîtriser\nLes erreurs sont normales et font partie de l’apprentissage\nLes LLMs sont des assistants, pas des remplaçants de votre cerveau\nTestez toujours le code avant de l’utiliser",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
