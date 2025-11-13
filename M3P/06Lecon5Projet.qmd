@@ -52,13 +52,13 @@ execute:
 C'est une analyse complète qui combine **TOUT** ce que vous avez appris :
 
 ::: {.incremental}
-- -  Import et nettoyage de données
-- -  Statistiques descriptives
-- -  Fonctions personnalisées
-- -  Conditions et boucles si nécessaire
-- -  Visualisations avec `ggplot2`
-- -  Interprétation des résultats
-- -  Utilisation efficace des LLMs
+-  Import et nettoyage de données
+-  Statistiques descriptives
+-  Fonctions personnalisées
+-  Conditions et boucles si nécessaire
+-  Visualisations avec `ggplot2`
+-  Interprétation des résultats
+-  Utilisation efficace des LLMs
 :::
 
 ## Structure attendue

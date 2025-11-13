@@ -52,13 +52,13 @@ execute:
 C'est une analyse complète qui combine **TOUT** ce que vous avez appris :
 
 ::: {.incremental}
-- ✅ Import et nettoyage de données
-- ✅ Statistiques descriptives
-- ✅ Fonctions personnalisées
-- ✅ Conditions et boucles si nécessaire
-- ✅ Visualisations avec ggplot2
-- ✅ Interprétation des résultats
-- ✅ Utilisation efficace des LLMs
+-  Import et nettoyage de données
+-  Statistiques descriptives
+-  Fonctions personnalisées
+-  Conditions et boucles si nécessaire
+-  Visualisations avec `ggplot2`
+-  Interprétation des résultats
+-  Utilisation efficace des LLMs
 :::
 
 ## Structure attendue
@@ -110,12 +110,11 @@ Votre projet doit contenir :
 ## Sources de données possibles
 :::
 
-::: {.incremental}
-- **Données personnelles** : vos propres observations, sondages
-- **Données publiques** : INSEE, data.gouv.fr, Kaggle
-- **Données du cours** : datasets fournis sur Moodle
-- **Données de votre domaine** : économie, psychologie, sport, santé
-:::
+
+- [INSEE](https://www.insee.fr/fr/statistiques)
+- [data.gouv.fr](https://www.data.gouv.fr/)
+- [Kaggle](https://www.kaggle.com/datasets)
+
 
 ::: {.fragment}
 ::: {.callout-warning}
@@ -235,14 +234,14 @@ ANALYSES PRÉVUES :
 ::: {.nonincremental}
 **Pendant votre travail, vérifiez que vous avez :**
 
-☐ Importé et vérifié les données
-☐ Nettoyé les données (NA, types, casse)
-☐ Calculé des statistiques descriptives
-☐ Créé au moins 3 graphiques ggplot2
-☐ Écrit au moins 2 fonctions personnalisées
-☐ Commenté votre code
-☐ Répondu à vos questions initiales
-☐ Testé que tout fonctionne
+- [ ] Importé et vérifié les données
+- [ ] Nettoyé les données (NA, types, casse)
+- [ ] Calculé des statistiques descriptives
+- [ ] Créé au moins 3 graphiques `ggplot2`
+- [ ] Écrit au moins 2 fonctions personnalisées
+- [ ] Commenté votre code
+- [ ] Répondu à vos questions initiales
+- [ ] Testé que tout fonctionne
 
 :::
 
@@ -445,13 +444,13 @@ Donnez des retours bienveillants et constructifs. Vous êtes tous en apprentissa
 ## Ce que vous avez accompli
 
 ::: {.incremental}
-✅ Choisi et cadré un projet d'analyse personnalisé
-✅ Mené une analyse complète en autonomie
-✅ Créé des fonctions personnalisées et réutilisables
-✅ Produit des visualisations professionnelles
-✅ Communiqué vos résultats à vos pairs
-✅ Utilisé les LLMs comme partenaires d'analyse
-✅ Développé votre autonomie en programmation
+- Choisi et cadré un projet d'analyse personnalisé
+- Mené une analyse complète en autonomie
+- Créé des fonctions personnalisées et réutilisables
+- Produit des visualisations professionnelles
+- Communiqué vos résultats à vos pairs
+- Utilisé les LLMs comme partenaires d'analyse
+- Développé votre autonomie en programmation
 :::
 
 ::: {.fragment}
