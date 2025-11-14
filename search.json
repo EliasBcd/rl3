@@ -82,7 +82,7 @@
     "href": "M3P/05Lecon4Dataframes.html#exercice-de-révision",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice de révision",
-    "text": "Exercice de révision\nCréez rapidement une fonction qui :\n\nPrend un vecteur de nombres en paramètre\nRetourne “Positif” si la moyenne est &gt; 0\nRetourne “Négatif” sinon\nGère les NA correctement\n\n\nTestez avec :\n\nvaleurs &lt;- c(-5, 10, NA, 8, -3)\nclassifier_moyenne(valeurs)\n\n\n\n10 minutes. Révision rapide. Vérifier que les concepts de la séance 3 sont acquis.",
+    "text": "Exercice de révision\nCréez rapidement une fonction qui :\n\nPrend un vecteur de nombres en paramètre\nRetourne “Positif” si la moyenne de ces nombres est &gt; 0\nRetourne “Négatif” sinon\nGère les NA correctement\n\n\nTestez avec :\n\nvaleurs &lt;- c(-5, 10, NA, 8, -3)\nclassifier_moyenne(valeurs)\n\n\n\n10 minutes. Révision rapide. Vérifier que les concepts de la séance 3 sont acquis.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -138,11 +138,11 @@
     ]
   },
   {
-    "objectID": "M3P/05Lecon4Dataframes.html#exercice-4-dataset-complexe-piégé",
-    "href": "M3P/05Lecon4Dataframes.html#exercice-4-dataset-complexe-piégé",
+    "objectID": "M3P/05Lecon4Dataframes.html#exercice-4-jeu-de-données-complexe-piégé",
+    "href": "M3P/05Lecon4Dataframes.html#exercice-4-jeu-de-données-complexe-piégé",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
-    "section": "Exercice 4 : Dataset complexe piégé",
-    "text": "Exercice 4 : Dataset complexe piégé\nNouveau challenge - Données étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nMission :\n\nIdentifiez TOUS les problèmes\nNettoyez le dataset\nCalculez la moyenne par filière\n\n\nUtilisez le LLM étape par étape !\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver.",
+    "section": "Exercice 4 : Jeu de données complexe piégé",
+    "text": "Exercice 4 : Jeu de données complexe piégé\nNouveau challenge - Données étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nMission :\n\nIdentifiez TOUS les problèmes\nNettoyez le jeu de données\nCalculez la moyenne par filière\n\n\nUtilisez le LLM étape par étape !\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -262,7 +262,7 @@
     "href": "M3P/05Lecon4Dataframes.html#projet-analyse-de-ventes-complète",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Projet : Analyse de ventes complète",
-    "text": "Projet : Analyse de ventes complète\nObjectif : Créer un dashboard d’analyse avec 4 graphiques différents.\nDonnées :\n\n# Téléchargez le fichier ventes_annuelles.csv depuis Moodle\nventes_annuelles &lt;- read.csv(\"ventes_annuelles.csv\")\n\nLes 4 graphiques à créer :\n\nÉvolution des ventes mensuelles (ligne)\nVentes par vendeur (barres)\nDistribution des montants (histogramme)\nComparaison par trimestre (boxplot)\n\n\n\n\n\n\n\nNoteUtilisez ggplot2 pour tous les graphiques\n\n\n\nPersonnalisez-les avec des couleurs et titres appropriés.\n\n\n\n40 minutes. Projet de synthèse. Combine nettoyage, analyse et visualisation.",
+    "text": "Projet : Analyse de ventes complète\nObjectif : Créer un dashboard d’analyse avec 4 graphiques différents.\nDonnées :\n\n# Téléchargez les fichiers de ventes mensuelles depuis Moodle\nventes_janvier &lt;- read.csv(\"ventes_janvier.csv\")\n# etc\n\nLes 4 graphiques à créer :\n\nÉvolution des ventes mensuelles (ligne)\nVentes par région (barres)\nDistribution des montants (histogramme)\nComparaison par région (boxplot)\n\n\n\n\n\n\n\nNoteUtilisez ggplot2 pour tous les graphiques\n\n\n\nPersonnalisez-les avec des couleurs et titres appropriés.\n\n\n\n40 minutes. Projet de synthèse. Combine nettoyage, analyse et visualisation.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -274,7 +274,7 @@
     "href": "M3P/05Lecon4Dataframes.html#critères-du-mini-projet",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Critères du mini-projet",
-    "text": "Critères du mini-projet\n\n\nLes données sont nettoyées (casse, NA gérés)\nLes 4 graphiques sont créés avec ggplot2\nChaque graphique a un titre et des labels appropriés\nLe code est commenté\nUne fonction de visualisation réutilisable est créée\n\n\n\nBonus :\n\nCréer un 5e graphique original\nUtiliser des facettes (facet_wrap())\nAjouter des annotations sur les graphiques\nSauvegarder les graphiques avec ggsave()",
+    "text": "Critères du mini-projet\n\n\nLes données sont nettoyées (casse, NA gérés)\nLes 4 graphiques sont créés avec ggplot2\nChaque graphique a un titre et des légendes appropriés\nLe code est commenté\nUne fonction de visualisation réutilisable est créée (facultatif)\n\n\n\nBonus :\n\nCréer un 5e graphique original\nUtiliser des facettes (facet_wrap())\nAjouter des annotations sur les graphiques\nSauvegarder les graphiques avec ggsave()",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -379,7 +379,7 @@
     "href": "M3P/slide-lecon4.html#exercice-de-révision",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice de révision",
-    "text": "Exercice de révision\nCréez rapidement une fonction qui :\n\nPrend un vecteur de nombres en paramètre\nRetourne “Positif” si la moyenne est &gt; 0\nRetourne “Négatif” sinon\nGère les NA correctement\n\n\nTestez avec :\n\nvaleurs &lt;- c(-5, 10, NA, 8, -3)\nclassifier_moyenne(valeurs)\n\n\n\n10 minutes. Révision rapide. Vérifier que les concepts de la séance 3 sont acquis."
+    "text": "Exercice de révision\nCréez rapidement une fonction qui :\n\nPrend un vecteur de nombres en paramètre\nRetourne “Positif” si la moyenne de ces nombres est &gt; 0\nRetourne “Négatif” sinon\nGère les NA correctement\n\n\nTestez avec :\n\nvaleurs &lt;- c(-5, 10, NA, 8, -3)\nclassifier_moyenne(valeurs)\n\n\n\n10 minutes. Révision rapide. Vérifier que les concepts de la séance 3 sont acquis."
   },
   {
     "objectID": "M3P/slide-lecon4.html#les-données-ne-sont-jamais-parfaites",
@@ -410,11 +410,11 @@
     "text": "Exercice 3 : Gérer les valeurs manquantes\nPlusieurs stratégies possibles :\nDemandez au LLM :\n\n“Comment gérer les valeurs NA dans mes données de ventes ? Quelles sont les différentes approches ?”\n\n\nOptions principales :\n\nSupprimer les lignes avec NA : na.omit()\nRemplacer par une valeur : moyenne, médiane, 0\nGarder mais utiliser na.rm = TRUE dans les calculs\n\n\n\n\n\n\n\n\n\nRéflexion importante\n\n\nQuelle stratégie choisir dépend du contexte ! Supprimer des données peut introduire des biais.\n\n\n\n\n\n15 minutes. Discussion importante sur les choix méthodologiques."
   },
   {
-    "objectID": "M3P/slide-lecon4.html#exercice-4-dataset-complexe-piégé",
-    "href": "M3P/slide-lecon4.html#exercice-4-dataset-complexe-piégé",
+    "objectID": "M3P/slide-lecon4.html#exercice-4-jeu-de-données-complexe-piégé",
+    "href": "M3P/slide-lecon4.html#exercice-4-jeu-de-données-complexe-piégé",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
-    "section": "Exercice 4 : Dataset complexe piégé",
-    "text": "Exercice 4 : Dataset complexe piégé\nNouveau challenge - Données étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nMission :\n\nIdentifiez TOUS les problèmes\nNettoyez le dataset\nCalculez la moyenne par filière\n\n\nUtilisez le LLM étape par étape !\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver."
+    "section": "Exercice 4 : Jeu de données complexe piégé",
+    "text": "Exercice 4 : Jeu de données complexe piégé\nNouveau challenge - Données étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nMission :\n\nIdentifiez TOUS les problèmes\nNettoyez le jeu de données\nCalculez la moyenne par filière\n\n\nUtilisez le LLM étape par étape !\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver."
   },
   {
     "objectID": "M3P/slide-lecon4.html#pourquoi-ggplot2",
@@ -484,14 +484,14 @@
     "href": "M3P/slide-lecon4.html#projet-analyse-de-ventes-complète",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Projet : Analyse de ventes complète",
-    "text": "Projet : Analyse de ventes complète\nObjectif : Créer un dashboard d’analyse avec 4 graphiques différents.\nDonnées :\n\n# Téléchargez le fichier ventes_annuelles.csv depuis Moodle\nventes_annuelles &lt;- read.csv(\"ventes_annuelles.csv\")\n\nLes 4 graphiques à créer :\n\nÉvolution des ventes mensuelles (ligne)\nVentes par vendeur (barres)\nDistribution des montants (histogramme)\nComparaison par trimestre (boxplot)\n\n\n\n\n\n\n\nUtilisez ggplot2 pour tous les graphiques\n\n\nPersonnalisez-les avec des couleurs et titres appropriés.\n\n\n\n\n40 minutes. Projet de synthèse. Combine nettoyage, analyse et visualisation."
+    "text": "Projet : Analyse de ventes complète\nObjectif : Créer un dashboard d’analyse avec 4 graphiques différents.\nDonnées :\n\n# Téléchargez les fichiers de ventes mensuelles depuis Moodle\nventes_janvier &lt;- read.csv(\"ventes_janvier.csv\")\n# etc\n\nLes 4 graphiques à créer :\n\nÉvolution des ventes mensuelles (ligne)\nVentes par région (barres)\nDistribution des montants (histogramme)\nComparaison par région (boxplot)\n\n\n\n\n\n\n\nUtilisez ggplot2 pour tous les graphiques\n\n\nPersonnalisez-les avec des couleurs et titres appropriés.\n\n\n\n\n40 minutes. Projet de synthèse. Combine nettoyage, analyse et visualisation."
   },
   {
     "objectID": "M3P/slide-lecon4.html#critères-du-mini-projet",
     "href": "M3P/slide-lecon4.html#critères-du-mini-projet",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Critères du mini-projet",
-    "text": "Critères du mini-projet\n\nLes données sont nettoyées (casse, NA gérés)\nLes 4 graphiques sont créés avec ggplot2\nChaque graphique a un titre et des labels appropriés\nLe code est commenté\nUne fonction de visualisation réutilisable est créée\n\n\nBonus :\n\nCréer un 5e graphique original\nUtiliser des facettes (facet_wrap())\nAjouter des annotations sur les graphiques\nSauvegarder les graphiques avec ggsave()"
+    "text": "Critères du mini-projet\n\nLes données sont nettoyées (casse, NA gérés)\nLes 4 graphiques sont créés avec ggplot2\nChaque graphique a un titre et des légendes appropriés\nLe code est commenté\nUne fonction de visualisation réutilisable est créée (facultatif)\n\n\nBonus :\n\nCréer un 5e graphique original\nUtiliser des facettes (facet_wrap())\nAjouter des annotations sur les graphiques\nSauvegarder les graphiques avec ggsave()"
   },
   {
     "objectID": "M3P/slide-lecon4.html#exercice-réflexif-journal-de-bord",

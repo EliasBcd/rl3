@@ -328,11 +328,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercice-1-découvrir-les-problèmes" id="toc-exercice-1-découvrir-les-problèmes" class="nav-link" data-scroll-target="#exercice-1-découvrir-les-problèmes">Exercice 1 : Découvrir les problèmes</a></li>
   <li><a href="#exercice-2-nettoyer-la-casse" id="toc-exercice-2-nettoyer-la-casse" class="nav-link" data-scroll-target="#exercice-2-nettoyer-la-casse">Exercice 2 : Nettoyer la casse</a></li>
   <li><a href="#exercice-3-gérer-les-valeurs-manquantes" id="toc-exercice-3-gérer-les-valeurs-manquantes" class="nav-link" data-scroll-target="#exercice-3-gérer-les-valeurs-manquantes">Exercice 3 : Gérer les valeurs manquantes</a></li>
-  <li><a href="#exercice-4-dataset-complexe-piégé" id="toc-exercice-4-dataset-complexe-piégé" class="nav-link" data-scroll-target="#exercice-4-dataset-complexe-piégé">Exercice 4 : Dataset complexe piégé</a></li>
+  <li><a href="#exercice-4-jeu-de-données-complexe-piégé" id="toc-exercice-4-jeu-de-données-complexe-piégé" class="nav-link" data-scroll-target="#exercice-4-jeu-de-données-complexe-piégé">Exercice 4 : Jeu de données complexe piégé</a></li>
   </ul></li>
-  <li><a href="#introduction-à-ggplot2" id="toc-introduction-à-ggplot2" class="nav-link" data-scroll-target="#introduction-à-ggplot2">Introduction à ggplot2</a>
+  <li><a href="#introduction-à-ggplot2" id="toc-introduction-à-ggplot2" class="nav-link" data-scroll-target="#introduction-à-ggplot2">Introduction à <code>ggplot2</code></a>
   <ul class="collapse">
-  <li><a href="#pourquoi-ggplot2" id="toc-pourquoi-ggplot2" class="nav-link" data-scroll-target="#pourquoi-ggplot2">Pourquoi ggplot2 ?</a></li>
+  <li><a href="#pourquoi-ggplot2" id="toc-pourquoi-ggplot2" class="nav-link" data-scroll-target="#pourquoi-ggplot2">Pourquoi <code>ggplot2</code> ?</a></li>
   <li><a href="#la-grammaire-des-graphiques" id="toc-la-grammaire-des-graphiques" class="nav-link" data-scroll-target="#la-grammaire-des-graphiques">La grammaire des graphiques</a></li>
   <li><a href="#exercice-5-premier-graphique-ggplot2" id="toc-exercice-5-premier-graphique-ggplot2" class="nav-link" data-scroll-target="#exercice-5-premier-graphique-ggplot2">Exercice 5 : Premier graphique ggplot2</a></li>
   <li><a href="#exercice-6-améliorer-le-graphique" id="toc-exercice-6-améliorer-le-graphique" class="nav-link" data-scroll-target="#exercice-6-améliorer-le-graphique">Exercice 6 : Améliorer le graphique</a></li>
@@ -434,7 +434,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul class="incremental">
 <li><strong>Nettoyer</strong> des données avec incohérences (casse, formats)</li>
 <li>Maîtriser les <strong>dataframes</strong> avancés</li>
-<li>Créer des <strong>visualisations</strong> avec ggplot2</li>
+<li>Créer des <strong>visualisations</strong> avec <code>ggplot2</code></li>
 <li>Développer des <strong>fonctions graphiques</strong> réutilisables</li>
 <li>Combiner analyse et communication visuelle</li>
 </ul>
@@ -457,7 +457,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Créez rapidement une fonction qui :</strong></p>
 <ol type="1">
 <li>Prend un vecteur de nombres en paramètre</li>
-<li>Retourne “Positif” si la moyenne est &gt; 0</li>
+<li>Retourne “Positif” si la moyenne de ces nombres est &gt; 0</li>
 <li>Retourne “Négatif” sinon</li>
 <li>Gère les NA correctement</li>
 </ol>
@@ -586,8 +586,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>15 minutes. Discussion importante sur les choix méthodologiques.</p>
 </div>
 </section>
-<section id="exercice-4-dataset-complexe-piégé" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exercice-4-dataset-complexe-piégé">Exercice 4 : Dataset complexe piégé</h2>
+<section id="exercice-4-jeu-de-données-complexe-piégé" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-4-jeu-de-données-complexe-piégé">Exercice 4 : Jeu de données complexe piégé</h2>
 <p><strong>Nouveau challenge - Données étudiants :</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>etudiants <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -601,7 +601,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Mission :</strong></p>
 <ol type="1">
 <li>Identifiez TOUS les problèmes</li>
-<li>Nettoyez le dataset</li>
+<li>Nettoyez le jeu de données</li>
 <li>Calculez la moyenne par filière</li>
 </ol>
 <div class="fragment">
@@ -613,9 +613,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="introduction-à-ggplot2" class="level1" data-background-color="#FF8C00">
-<h1 data-background-color="#FF8C00">Introduction à ggplot2</h1>
+<h1 data-background-color="#FF8C00">Introduction à <code>ggplot2</code></h1>
 <section id="pourquoi-ggplot2" class="level2">
-<h2 class="anchored" data-anchor-id="pourquoi-ggplot2">Pourquoi ggplot2 ?</h2>
+<h2 class="anchored" data-anchor-id="pourquoi-ggplot2">Pourquoi <code>ggplot2</code> ?</h2>
 <p>Jusqu’ici vous avez utilisé <code>plot()</code>, <code>hist()</code>, <code>barplot()</code>…</p>
 <div class="fragment">
 <p><strong>ggplot2</strong> est un package puissant pour créer des graphiques :</p>
@@ -820,15 +820,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Objectif :</strong> Créer un dashboard d’analyse avec 4 graphiques différents.</p>
 <p><strong>Données :</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Téléchargez le fichier ventes_annuelles.csv depuis Moodle</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ventes_annuelles <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"ventes_annuelles.csv"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Téléchargez les fichiers de ventes mensuelles depuis Moodle</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ventes_janvier <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"ventes_janvier.csv"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># etc</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Les 4 graphiques à créer :</strong></p>
 <ol type="1">
 <li>Évolution des ventes mensuelles (ligne)</li>
-<li>Ventes par vendeur (barres)</li>
+<li>Ventes par région (barres)</li>
 <li>Distribution des montants (histogramme)</li>
-<li>Comparaison par trimestre (boxplot)</li>
+<li>Comparaison par région (boxplot)</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -852,10 +853,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="incremental">
 <ul class="incremental">
 <li>Les données sont <strong>nettoyées</strong> (casse, NA gérés)</li>
-<li>Les 4 graphiques sont <strong>créés avec ggplot2</strong></li>
-<li>Chaque graphique a un <strong>titre et des labels</strong> appropriés</li>
+<li>Les 4 graphiques sont <strong>créés avec <code>ggplot2</code></strong></li>
+<li>Chaque graphique a un <strong>titre et des légendes</strong> appropriés</li>
 <li>Le code est <strong>commenté</strong></li>
-<li>Une <strong>fonction de visualisation</strong> réutilisable est créée</li>
+<li>Une <strong>fonction de visualisation</strong> réutilisable est créée (facultatif)</li>
 </ul>
 </div>
 <div class="fragment">
