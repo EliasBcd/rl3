@@ -443,16 +443,16 @@ graphique_personnalise <- function(donnees, x, y, titre,
 
 ```{r}
 #| eval: false
-# Téléchargez le fichier ventes_annuelles.csv depuis Moodle
-ventes_annuelles <- read.csv("ventes_annuelles.csv")
+# Téléchargez les 3 fichiers de ventes depuis Moodle
+ventes_janvier <- read.csv("ventes_janvier.csv") # etc
 ```
 
 **Les 4 graphiques à créer :**
 
 1. Évolution des ventes mensuelles (ligne)
-2. Ventes par vendeur (barres)
+2. Ventes par région (barres)
 3. Distribution des montants (histogramme)
-4. Comparaison par trimestre (boxplot)
+4. Comparaison par mois (boxplot)
 
 ::: {.callout-note}
 ## Utilisez `ggplot2` pour tous les graphiques
@@ -470,7 +470,7 @@ Personnalisez-les avec des couleurs et titres appropriés.
 - Les 4 graphiques sont **créés avec ggplot2**
 - Chaque graphique a un **titre et des labels** appropriés
 - Le code est **commenté**
-- Une **fonction de visualisation** réutilisable est créée
+- Une **fonction de visualisation** réutilisable est créée (facultatif)
 :::
 
 ::: {.fragment}
