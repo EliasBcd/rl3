@@ -41,7 +41,7 @@ execute:
 ::: {.incremental}
 - **Nettoyer** des données avec incohérences (casse, formats)
 - Maîtriser les **dataframes** avancés
-- Créer des **visualisations** avec ggplot2
+- Créer des **visualisations** avec `ggplot2`
 - Développer des **fonctions graphiques** réutilisables
 - Combiner analyse et communication visuelle
 :::
@@ -61,7 +61,7 @@ execute:
 **Créez rapidement une fonction qui :**
 
 1. Prend un vecteur de nombres en paramètre
-2. Retourne "Positif" si la moyenne est > 0
+2. Retourne "Positif" si la moyenne de ces nombres est > 0
 3. Retourne "Négatif" sinon
 4. Gère les NA correctement
 
@@ -187,7 +187,7 @@ Quelle stratégie choisir dépend du contexte ! Supprimer des données peut intr
 15 minutes. Discussion importante sur les choix méthodologiques.
 :::
 
-## Exercice 4 : Dataset complexe piégé {.smaller}
+## Exercice 4 : Jeu de données complexe piégé {.smaller}
 
 **Nouveau challenge - Données étudiants :**
 
@@ -205,7 +205,7 @@ etudiants <- data.frame(
 **Mission :**
 
 1. Identifiez TOUS les problèmes
-2. Nettoyez le dataset
+2. Nettoyez le jeu de données
 3. Calculez la moyenne par filière
 
 ::: {.fragment}
@@ -216,9 +216,9 @@ etudiants <- data.frame(
 30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d'erreurs à trouver.
 :::
 
-# Introduction à ggplot2 {background-color="#FF8C00"}
+# Introduction à `ggplot2` {background-color="#FF8C00"}
 
-## Pourquoi ggplot2 ?
+## Pourquoi `ggplot2` ?
 
 Jusqu'ici vous avez utilisé `plot()`, `hist()`, `barplot()`...
 
@@ -443,16 +443,17 @@ graphique_personnalise <- function(donnees, x, y, titre,
 
 ```{r}
 #| eval: false
-# Téléchargez le fichier ventes_annuelles.csv depuis Moodle
-ventes_annuelles <- read.csv("ventes_annuelles.csv")
+# Téléchargez les fichiers de ventes mensuelles depuis Moodle
+ventes_janvier <- read.csv("ventes_janvier.csv")
+# etc
 ```
 
 **Les 4 graphiques à créer :**
 
 1. Évolution des ventes mensuelles (ligne)
-2. Ventes par vendeur (barres)
+2. Ventes par région (barres)
 3. Distribution des montants (histogramme)
-4. Comparaison par trimestre (boxplot)
+4. Comparaison par région (boxplot)
 
 ::: {.callout-note}
 ## Utilisez `ggplot2` pour tous les graphiques
@@ -467,10 +468,10 @@ Personnalisez-les avec des couleurs et titres appropriés.
 
 ::: {.incremental}
 - Les données sont **nettoyées** (casse, NA gérés)
-- Les 4 graphiques sont **créés avec ggplot2**
-- Chaque graphique a un **titre et des labels** appropriés
+- Les 4 graphiques sont **créés avec `ggplot2`**
+- Chaque graphique a un **titre et des légendes** appropriés
 - Le code est **commenté**
-- Une **fonction de visualisation** réutilisable est créée
+- Une **fonction de visualisation** réutilisable est créée (facultatif)
 :::
 
 ::: {.fragment}
