@@ -1064,7 +1064,7 @@ Elias Bouacida
 </div>
 </div>
 
-  <p class="date">13 novembre 2025</p>
+  <p class="date">14 novembre 2025</p>
 </section>
 <section id="plan-de-la-séance" class="slide level2 smaller">
 <h2>Plan de la séance</h2>
@@ -1595,15 +1595,15 @@ display:block!important;
 <p><strong>Objectif :</strong> Créer un dashboard d’analyse avec 4 graphiques différents.</p>
 <p><strong>Données :</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># Téléchargez le fichier ventes_annuelles.csv depuis Moodle</span></span>
-<span id="cb11-2"><a></a>ventes_annuelles <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;ventes_annuelles.csv&quot;</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># Téléchargez les 3 fichiers de ventes depuis Moodle</span></span>
+<span id="cb11-2"><a></a>ventes_janvier <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;ventes_janvier.csv&quot;</span>) <span class="co"># etc</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Les 4 graphiques à créer :</strong></p>
 <ol type="1">
 <li>Évolution des ventes mensuelles (ligne)</li>
-<li>Ventes par vendeur (barres)</li>
+<li>Ventes par région (barres)</li>
 <li>Distribution des montants (histogramme)</li>
-<li>Comparaison par trimestre (boxplot)</li>
+<li>Comparaison par mois (boxplot)</li>
 </ol>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -1639,7 +1639,7 @@ display:block!important;
 <li class="fragment">Les 4 graphiques sont <strong>créés avec ggplot2</strong></li>
 <li class="fragment">Chaque graphique a un <strong>titre et des labels</strong> appropriés</li>
 <li class="fragment">Le code est <strong>commenté</strong></li>
-<li class="fragment">Une <strong>fonction de visualisation</strong> réutilisable est créée</li>
+<li class="fragment">Une <strong>fonction de visualisation</strong> réutilisable est créée (facultatif)</li>
 </ul>
 <div class="fragment">
 <p><strong>Bonus :</strong></p>

@@ -4980,14 +4980,14 @@
     "href": "ECLibre/slide-lecon4.html#projet-analyse-de-ventes-complète",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Projet : Analyse de ventes complète",
-    "text": "Projet : Analyse de ventes complète\nObjectif : Créer un dashboard d’analyse avec 4 graphiques différents.\nDonnées :\n\n# Téléchargez le fichier ventes_annuelles.csv depuis Moodle\nventes_annuelles &lt;- read.csv(\"ventes_annuelles.csv\")\n\nLes 4 graphiques à créer :\n\nÉvolution des ventes mensuelles (ligne)\nVentes par vendeur (barres)\nDistribution des montants (histogramme)\nComparaison par trimestre (boxplot)\n\n\n\n\n\n\n\nUtilisez ggplot2 pour tous les graphiques\n\n\nPersonnalisez-les avec des couleurs et titres appropriés.\n\n\n\n\n40 minutes. Projet de synthèse. Combine nettoyage, analyse et visualisation."
+    "text": "Projet : Analyse de ventes complète\nObjectif : Créer un dashboard d’analyse avec 4 graphiques différents.\nDonnées :\n\n# Téléchargez les 3 fichiers de ventes depuis Moodle\nventes_janvier &lt;- read.csv(\"ventes_janvier.csv\") # etc\n\nLes 4 graphiques à créer :\n\nÉvolution des ventes mensuelles (ligne)\nVentes par région (barres)\nDistribution des montants (histogramme)\nComparaison par mois (boxplot)\n\n\n\n\n\n\n\nUtilisez ggplot2 pour tous les graphiques\n\n\nPersonnalisez-les avec des couleurs et titres appropriés.\n\n\n\n\n40 minutes. Projet de synthèse. Combine nettoyage, analyse et visualisation."
   },
   {
     "objectID": "ECLibre/slide-lecon4.html#critères-du-mini-projet",
     "href": "ECLibre/slide-lecon4.html#critères-du-mini-projet",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Critères du mini-projet",
-    "text": "Critères du mini-projet\n\nLes données sont nettoyées (casse, NA gérés)\nLes 4 graphiques sont créés avec ggplot2\nChaque graphique a un titre et des labels appropriés\nLe code est commenté\nUne fonction de visualisation réutilisable est créée\n\n\nBonus :\n\nCréer un 5e graphique original\nUtiliser des facettes (facet_wrap())\nAjouter des annotations sur les graphiques\nSauvegarder les graphiques avec ggsave()"
+    "text": "Critères du mini-projet\n\nLes données sont nettoyées (casse, NA gérés)\nLes 4 graphiques sont créés avec ggplot2\nChaque graphique a un titre et des labels appropriés\nLe code est commenté\nUne fonction de visualisation réutilisable est créée (facultatif)\n\n\nBonus :\n\nCréer un 5e graphique original\nUtiliser des facettes (facet_wrap())\nAjouter des annotations sur les graphiques\nSauvegarder les graphiques avec ggsave()"
   },
   {
     "objectID": "ECLibre/slide-lecon4.html#exercice-réflexif-journal-de-bord",
@@ -5264,7 +5264,7 @@
     "href": "ECLibre/05Lecon4Dataframes.html#projet-analyse-de-ventes-complète",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Projet : Analyse de ventes complète",
-    "text": "Projet : Analyse de ventes complète\nObjectif : Créer un dashboard d’analyse avec 4 graphiques différents.\nDonnées :\n\n# Téléchargez le fichier ventes_annuelles.csv depuis Moodle\nventes_annuelles &lt;- read.csv(\"ventes_annuelles.csv\")\n\nLes 4 graphiques à créer :\n\nÉvolution des ventes mensuelles (ligne)\nVentes par vendeur (barres)\nDistribution des montants (histogramme)\nComparaison par trimestre (boxplot)\n\n\n\n\n\n\n\nNoteUtilisez ggplot2 pour tous les graphiques\n\n\n\nPersonnalisez-les avec des couleurs et titres appropriés.\n\n\n\n40 minutes. Projet de synthèse. Combine nettoyage, analyse et visualisation.",
+    "text": "Projet : Analyse de ventes complète\nObjectif : Créer un dashboard d’analyse avec 4 graphiques différents.\nDonnées :\n\n# Téléchargez les 3 fichiers de ventes depuis Moodle\nventes_janvier &lt;- read.csv(\"ventes_janvier.csv\") # etc\n\nLes 4 graphiques à créer :\n\nÉvolution des ventes mensuelles (ligne)\nVentes par région (barres)\nDistribution des montants (histogramme)\nComparaison par mois (boxplot)\n\n\n\n\n\n\n\nNoteUtilisez ggplot2 pour tous les graphiques\n\n\n\nPersonnalisez-les avec des couleurs et titres appropriés.\n\n\n\n40 minutes. Projet de synthèse. Combine nettoyage, analyse et visualisation.",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -5276,7 +5276,7 @@
     "href": "ECLibre/05Lecon4Dataframes.html#critères-du-mini-projet",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Critères du mini-projet",
-    "text": "Critères du mini-projet\n\n\nLes données sont nettoyées (casse, NA gérés)\nLes 4 graphiques sont créés avec ggplot2\nChaque graphique a un titre et des labels appropriés\nLe code est commenté\nUne fonction de visualisation réutilisable est créée\n\n\n\nBonus :\n\nCréer un 5e graphique original\nUtiliser des facettes (facet_wrap())\nAjouter des annotations sur les graphiques\nSauvegarder les graphiques avec ggsave()",
+    "text": "Critères du mini-projet\n\n\nLes données sont nettoyées (casse, NA gérés)\nLes 4 graphiques sont créés avec ggplot2\nChaque graphique a un titre et des labels appropriés\nLe code est commenté\nUne fonction de visualisation réutilisable est créée (facultatif)\n\n\n\nBonus :\n\nCréer un 5e graphique original\nUtiliser des facettes (facet_wrap())\nAjouter des annotations sur les graphiques\nSauvegarder les graphiques avec ggsave()",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
