@@ -275,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../M3P/06Lecon5Projet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Séance 5 : Projet personnel intégré</span></a>
+ <span class="menu-text">Projet Final</span></a>
   </div>
 </li>
       </ul>
@@ -391,7 +391,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">14 novembre 2025</p>
+      <p class="date">25 novembre 2025</p>
     </div>
   </div>
   
@@ -603,7 +603,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Ensuite, affichez-les en tapant simplement leur nom dans la console.</p>
 <div class="fragment">
-<p><strong>Questions à explorer avec le LLM :</strong></p>
+<p><strong>Essayez les choses suivantes :</strong></p>
 <ol type="1">
 <li>Peut-on mettre des espaces dans les noms d’objets ?</li>
 <li>Quelle est la différence entre <code>&lt;-</code> et <code>=</code> ?</li>
@@ -619,9 +619,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>R distingue différents <strong>types</strong> de données :</p>
 <div class="incremental">
 <ul class="incremental">
-<li><strong>Numérique</strong> : <code>42</code>, <code>3.14</code></li>
-<li><strong>Caractère</strong> (texte) : <code>"Bonjour"</code>, <code>"Paris"</code></li>
-<li><strong>Logique</strong> : <code>TRUE</code>, <code>FALSE</code></li>
+<li><strong>Numérique</strong> (<code>numeric</code> ou <code>num</code>) : <code>42</code>, <code>3.14</code></li>
+<li><strong>Texte</strong> (<code>character</code> ou <code>chr</code>) : <code>"Bonjour"</code>, <code>"Paris"</code></li>
+<li><strong>Logique</strong> (<code>logical</code>) : <code>TRUE</code>, <code>FALSE</code></li>
 </ul>
 </div>
 <div class="fragment">
@@ -634,11 +634,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exercice-5-explorer-les-types" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="exercice-5-explorer-les-types">Exercice 5 : Explorer les types</h2>
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote class="blockquote">
-<p>“Explique-moi les différents types de données en R avec des exemples simples.”</p>
-</blockquote>
-<p><strong>Ensuite, testez ce code et observez :</strong></p>
+<p><strong>Testez ce code et observez :</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>nombre <span class="ot">&lt;-</span> <span class="dv">42</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>texte <span class="ot">&lt;-</span> <span class="st">"Hello"</span></span>
@@ -669,7 +665,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Important
+<span class="screen-reader-only">Note</span>Rappel
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -689,7 +685,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Afficher la première température</li>
 <li>Afficher les trois premières températures</li>
 <li>Calculer la température moyenne</li>
-<li>Trouver la température maximale</li>
+<li>Afficher la 5e et la 7e température</li>
 </ol>
 <div class="fragment">
 <p><strong>Testez les solutions proposées !</strong></p>
@@ -726,10 +722,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(temperatures)     <span class="co"># maximum</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote class="blockquote">
-<p>“Quelles autres fonctions statistiques utiles existent en R pour analyser un vecteur de nombres ?”</p>
-</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Il en existe bien d’autres !</p>
+</div>
+</div>
 </div>
 <div class="notes">
 <p>15 minutes. Les étudiants découvrent les fonctions intégrées. Encourager l’exploration.</p>
@@ -737,10 +742,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exercice-8-laide-en-r" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="exercice-8-laide-en-r">Exercice 8 : L’aide en R</h2>
-<p>Vous pouvez obtenir de l’aide sur n’importe quelle fonction avec <code>?</code> :</p>
+<p>Vous pouvez obtenir de l’aide sur n’importe quelle fonction avec <code>?</code> ou <code>help</code> :</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>?mean</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>?sum</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"sum"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
 <p><strong>Explorez :</strong></p>
@@ -770,7 +775,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="notes">
-<p>15 minutes. Concept important : devenir autonome. L’aide R est technique mais précise.</p>
+<p>15 minutes. Concept important : devenir autonome. L’aide R est technique, mais précise.</p>
 </div>
 </section>
 <section id="exercice-9-gérer-les-valeurs-manquantes" class="level2 smaller">
@@ -785,8 +790,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>NA</code> signifie “<strong>N</strong>ot <strong>A</strong>vailable” (donnée manquante).</p>
 </div>
 <div class="fragment">
-<p><strong>Demandez au LLM comment calculer la moyenne en ignorant les NA.</strong></p>
-<p><em>Indice : regardez dans l’aide de <code>mean()</code> le paramètre <code>na.rm</code></em></p>
+<p>Indice : regardez dans l’aide de <code>mean()</code> le paramètre <code>na.rm</code></p>
 </div>
 <div class="notes">
 <p>15 minutes. Problème réel et fréquent. Les étudiants découvrent <code>na.rm = TRUE</code>.</p>
@@ -826,8 +830,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(moyenne)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="3" type="1">
-<li><strong>Sauvegardez</strong> (File &gt; Save ou Ctrl+S)</li>
-<li><strong>Exécutez</strong> ligne par ligne (Ctrl+Entrée)</li>
+<li><strong>Sauvegardez</strong> (File &gt; Save ou Ctrl+S ou 💾)</li>
+<li><strong>Exécutez</strong> ligne par ligne (Ctrl+Entrée ou run en haut à droite du script)</li>
 </ol>
 <div class="notes">
 <p>20 minutes. Première sauvegarde de code. Insister sur les commentaires (#).</p>

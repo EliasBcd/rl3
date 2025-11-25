@@ -1064,7 +1064,7 @@ Elias Bouacida
 </div>
 </div>
 
-  <p class="date">14 novembre 2025</p>
+  <p class="date">25 novembre 2025</p>
 </section>
 <section id="plan-de-la-séance" class="slide level2 smaller">
 <h2>Plan de la séance</h2>
@@ -1073,10 +1073,10 @@ Elias Bouacida
 <li class="fragment"><strong>Nettoyage de données</strong> (60min) : Gérer les incohérences réelles</li>
 <li class="fragment"><strong>Introduction à ggplot2</strong> (75min) : Créer des graphiques sophistiqués</li>
 <li class="fragment"><strong>Fonctions de visualisation</strong> (40min) : Automatiser la création de graphiques</li>
-<li class="fragment"><strong>Mini-projet</strong> (40min) : Dashboard de visualisations</li>
+<li class="fragment"><strong>Mini-projet</strong> (40min) : Tableau de pilotage avec des visualisations</li>
 </ul>
 <div class="fragment">
-<p><strong>Production attendue :</strong> Dashboard avec 4 graphiques + fonction de visualisation réutilisable</p>
+<p><strong>Production attendue :</strong> Tableau de pilotage avec 4 graphiques + fonction de visualisation réutilisable</p>
 </div>
 </section>
 <section id="objectifs-de-la-séance" class="slide level2">
@@ -1128,7 +1128,7 @@ Elias Bouacida
 <p><strong>Testez avec :</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>valeurs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">10</span>, <span class="cn">NA</span>, <span class="dv">8</span>, <span class="sc">-</span><span class="dv">3</span>)</span>
-<span id="cb1-2"><a></a><span class="fu">classifier_moyenne</span>(valeurs)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-2"><a></a><span class="fu">classer_moyenne</span>(valeurs)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <aside class="notes">
@@ -1186,10 +1186,7 @@ display:block!important;
 <span id="cb2-4"><a></a>  <span class="at">vendeur =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;bob&quot;</span>)</span>
 <span id="cb2-5"><a></a>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote>
-<p>“Quels sont les problèmes potentiels dans ce jeu de données pour une analyse ?”</p>
-</blockquote>
+<p>Quels sont les problèmes potentiels dans ce jeu de données pour une analyse ?</p>
 <div class="fragment">
 <p><strong>Identifiez :</strong></p>
 <ol type="1">
@@ -1270,13 +1267,13 @@ display:block!important;
 <p><strong>Réflexion importante</strong></p>
 </div>
 <div class="callout-content">
-<p>Quelle stratégie choisir dépend du contexte ! Supprimer des données peut introduire des biais.</p>
+<p>Quelle stratégie choisir dépend du contexte ! Supprimer ou interpoler des données peut introduire des biais.</p>
 </div>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>15 minutes. Discussion importante sur les choix méthodologiques.</p>
+<p>15 minutes. Discussion sur les choix méthodologiques.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1291,7 +1288,7 @@ display:block!important;
 </section>
 <section id="exercice-4-jeu-de-données-complexe-piégé" class="slide level2 smaller scrollable">
 <h2>Exercice 4 : Jeu de données complexe piégé</h2>
-<p><strong>Nouveau challenge - Données étudiants :</strong></p>
+<p><strong>Nouveau défi – Données étudiants :</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>etudiants <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb5-2"><a></a>  <span class="at">nom =</span> <span class="fu">c</span>(<span class="st">&quot;Dupont&quot;</span>, <span class="st">&quot;Martin&quot;</span>, <span class="st">&quot;Durand&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;Petit&quot;</span>),</span>
@@ -1301,15 +1298,12 @@ display:block!important;
 <span id="cb5-6"><a></a>  <span class="at">filiere =</span> <span class="fu">c</span>(<span class="st">&quot;Info&quot;</span>, <span class="st">&quot;info&quot;</span>, <span class="st">&quot;Maths&quot;</span>, <span class="st">&quot;INFO&quot;</span>, <span class="st">&quot;maths&quot;</span>)</span>
 <span id="cb5-7"><a></a>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><strong>Mission :</strong></p>
+<p>Objectif :</p>
 <ol type="1">
 <li>Identifiez TOUS les problèmes</li>
 <li>Nettoyez le jeu de données</li>
-<li>Calculez la moyenne par filière</li>
+<li>Calculez la générale des étudiants</li>
 </ol>
-<div class="fragment">
-<p><strong>Utilisez le LLM étape par étape !</strong></p>
-</div>
 <aside class="notes">
 <p>30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver.</p>
 <style type="text/css">
@@ -1331,7 +1325,7 @@ display:block!important;
 </section>
 <section id="pourquoi-ggplot2" class="slide level2">
 <h2>Pourquoi <code>ggplot2</code> ?</h2>
-<p>Jusqu’ici vous avez utilisé <code>plot()</code>, <code>hist()</code>, <code>barplot()</code>…</p>
+<p>Jusqu’ici, vous avez utilisé <code>plot()</code>, <code>hist()</code>, <code>barplot()</code>…</p>
 <div class="fragment">
 <p><strong>ggplot2</strong> est un package puissant pour créer des graphiques :</p>
 <ul>
@@ -1344,7 +1338,7 @@ display:block!important;
 </section>
 <section id="la-grammaire-des-graphiques" class="slide level2 scrollable">
 <h2>La grammaire des graphiques</h2>
-<p><strong>ggplot2</strong> fonctionne par couches :</p>
+<p><strong><code>ggplot2</code></strong> fonctionne par couches :</p>
 <ol type="1">
 <li class="fragment"><strong>Données</strong> : <code>ggplot(data = mes_donnees)</code></li>
 <li class="fragment"><strong>Esthétiques</strong> : <code>aes(x = variable1, y = variable2)</code></li>
@@ -1356,12 +1350,8 @@ display:block!important;
 </div>
 </section>
 <section id="exercice-5-premier-graphique-ggplot2" class="slide level2 smaller scrollable">
-<h2>Exercice 5 : Premier graphique ggplot2</h2>
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote>
-<p>“Comment créer un graphique simple avec ggplot2 en R ? Je débute avec ce package.”</p>
-</blockquote>
-<p><strong>Ensuite, testez avec vos données de ventes :</strong></p>
+<h2>Exercice 5 : Premier graphique <code>ggplot2</code></h2>
+<p>Testez ce code :</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb6-2"><a></a></span>
@@ -1369,7 +1359,7 @@ display:block!important;
 <span id="cb6-4"><a></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
-<p><strong>Questions :</strong></p>
+<p>Questions :</p>
 <ol type="1">
 <li>Que fait <code>aes()</code> ?</li>
 <li>Pourquoi <code>geom_col()</code> et pas <code>geom_bar()</code> ?</li>
@@ -1377,7 +1367,7 @@ display:block!important;
 </ol>
 </div>
 <aside class="notes">
-<p>20 minutes. Première découverte de ggplot2. La syntaxe peut surprendre au début.</p>
+<p>20 minutes. Première découverte de <code>ggplot2</code>. La syntaxe peut surprendre au début.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1404,12 +1394,6 @@ display:block!important;
 <span id="cb7-8"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote>
-<p>“Comment personnaliser les couleurs, titres et thème d’un graphique ggplot2 ?”</p>
-</blockquote>
-</div>
-<div class="fragment">
 <p><strong>Explorez :</strong></p>
 <ul>
 <li>Différentes couleurs</li>
@@ -1433,7 +1417,7 @@ display:block!important;
 </section>
 <section id="exercice-7-différents-types-de-graphiques" class="slide level2 smaller scrollable">
 <h2>Exercice 7 : Différents types de graphiques</h2>
-<p><strong>Demandez au LLM de vous montrer comment créer :</strong></p>
+<p>Demandez au LLM de vous montrer comment créer :</p>
 <ol type="1">
 <li>Un graphique en <strong>points</strong> (<code>geom_point()</code>)</li>
 <li>Un graphique en <strong>lignes</strong> (<code>geom_line()</code>)</li>
@@ -1460,13 +1444,10 @@ display:block!important;
 </section>
 <section id="exercice-8-graphiques-par-catégorie" class="slide level2 smaller scrollable">
 <h2>Exercice 8 : Graphiques par catégorie</h2>
-<p><strong>Challenge :</strong> Créez un graphique des ventes coloré par vendeur.</p>
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote>
-<p>“Comment créer un graphique avec ggplot2 où chaque catégorie a une couleur différente ?”</p>
-</blockquote>
+<p>Créez un graphique des ventes coloré par vendeur.</p>
+<p>Comment créer un graphique avec <code>ggplot2</code> où chaque catégorie a une couleur différente ?</p>
 <div class="fragment">
-<p>Vous découvrirez :</p>
+<p>Une réponse :</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(ventes, <span class="fu">aes</span>(<span class="at">x =</span> mois, <span class="at">y =</span> montant, <span class="at">fill =</span> vendeur)) <span class="sc">+</span></span>
 <span id="cb8-2"><a></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
@@ -1474,8 +1455,9 @@ display:block!important;
 </div>
 </div>
 <div class="fragment">
-<p><strong>Questions :</strong></p>
+<p>Questions :</p>
 <ol type="1">
+<li>Où est positionné <code>fill</code> ? Pourquoi ?</li>
 <li>Que fait <code>position = &quot;dodge&quot;</code> ?</li>
 <li>Que se passe-t-il sans ?</li>
 <li>Comment faire un graphique empilé ?</li>
@@ -1532,7 +1514,7 @@ display:block!important;
 </ol>
 </div>
 <aside class="notes">
-<p>20 minutes. Introduction aux fonctions avec ggplot2. Concept avancé mais important.</p>
+<p>20 minutes. Introduction aux fonctions avec <code>ggplot2</code>.</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1667,7 +1649,7 @@ display:block!important;
 <li>Comment les avez-vous résolus ?</li>
 <li>Un prompt efficace pour le nettoyage</li>
 </ul></li>
-<li><strong>ggplot2</strong> :
+<li><strong><code>ggplot2</code></strong> :
 <ul>
 <li>Différences avec <code>plot()</code> de base</li>
 <li>Votre graphique préféré créé aujourd’hui</li>
@@ -1777,9 +1759,6 @@ display:block!important;
 </ul>
 </div>
 </div>
-</div>
-<div class="fragment">
-<p><strong>Bon courage et belles visualisations ! 📊</strong></p>
 </div>
 
 

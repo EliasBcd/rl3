@@ -275,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../M3P/06Lecon5Projet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Séance 5 : Projet personnel intégré</span></a>
+ <span class="menu-text">Projet Final</span></a>
   </div>
 </li>
       </ul>
@@ -353,10 +353,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercice-8-explorer-dautres-graphiques" id="toc-exercice-8-explorer-dautres-graphiques" class="nav-link" data-scroll-target="#exercice-8-explorer-dautres-graphiques">Exercice 8 : Explorer d’autres graphiques</a></li>
   <li><a href="#sauvegarder-un-graphique" id="toc-sauvegarder-un-graphique" class="nav-link" data-scroll-target="#sauvegarder-un-graphique">Sauvegarder un graphique</a></li>
   </ul></li>
-  <li><a href="#debugging" id="toc-debugging" class="nav-link" data-scroll-target="#debugging">Debugging</a>
+  <li><a href="#débogage" id="toc-débogage" class="nav-link" data-scroll-target="#débogage">Débogage</a>
   <ul class="collapse">
   <li><a href="#les-erreurs-sont-normales" id="toc-les-erreurs-sont-normales" class="nav-link" data-scroll-target="#les-erreurs-sont-normales">Les erreurs sont normales !</a></li>
-  <li><a href="#exercice-9-debugging-collectif" id="toc-exercice-9-debugging-collectif" class="nav-link" data-scroll-target="#exercice-9-debugging-collectif">Exercice 9 : Debugging collectif</a></li>
+  <li><a href="#exercice-9-débogage-collectif" id="toc-exercice-9-débogage-collectif" class="nav-link" data-scroll-target="#exercice-9-débogage-collectif">Exercice 9 : Débogage collectif</a></li>
   <li><a href="#bien-utiliser-le-llm-pour-débugger" id="toc-bien-utiliser-le-llm-pour-débugger" class="nav-link" data-scroll-target="#bien-utiliser-le-llm-pour-débugger">Bien utiliser le LLM pour débugger</a></li>
   </ul></li>
   <li><a href="#mini-projet" id="toc-mini-projet" class="nav-link" data-scroll-target="#mini-projet">Mini-projet</a>
@@ -368,7 +368,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#retour-réflexif" id="toc-retour-réflexif" class="nav-link" data-scroll-target="#retour-réflexif">Retour réflexif</a>
   <ul class="collapse">
   <li><a href="#exercice-de-synthèse-journal-de-bord" id="toc-exercice-de-synthèse-journal-de-bord" class="nav-link" data-scroll-target="#exercice-de-synthèse-journal-de-bord">Exercice de synthèse : Journal de bord</a></li>
-  <li><a href="#évolution-de-vos-compétences" id="toc-évolution-de-vos-compétences" class="nav-link" data-scroll-target="#évolution-de-vos-compétences">Évolution de vos compétences</a></li>
   </ul></li>
   <li><a href="#ressources-et-prochaines-étapes" id="toc-ressources-et-prochaines-étapes" class="nav-link" data-scroll-target="#ressources-et-prochaines-étapes">Ressources et prochaines étapes</a>
   <ul class="collapse">
@@ -403,7 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">14 novembre 2025</p>
+      <p class="date">25 novembre 2025</p>
     </div>
   </div>
   
@@ -584,10 +583,11 @@ Charlie,21,14</code></pre>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>donnees_meteo <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"donnees_meteo.csv"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>Ou la proposition d’utiliser la commande d’importation de Rstudio.</p>
 </div>
 <div class="fragment">
 <p><strong>Testez cette commande !</strong></p>
-<p>En cas d’erreur, demandez au LLM de vous aider à débugger.</p>
+<p>En cas d’erreur, demandez au LLM de vous aider à déboguer.</p>
 </div>
 <div class="notes">
 <p>15 minutes. Première importation de données. Anticiper les erreurs de chemin, d’encodage, etc.</p>
@@ -604,7 +604,7 @@ Charlie,21,14</code></pre>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(donnees_meteo)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
-<p><strong>Demandez au LLM d’expliquer ce que montrent ces fonctions.</strong></p>
+<p>À quoi servent ces fonctions ?</p>
 </div>
 </section>
 </section>
@@ -612,7 +612,7 @@ Charlie,21,14</code></pre>
 <h1 data-background-color="#FF8C00">Exploration de données</h1>
 <section id="les-data-frames" class="level2">
 <h2 class="anchored" data-anchor-id="les-data-frames">Les data frames</h2>
-<p>Les données importées sont stockées dans un <strong>data frame</strong>.</p>
+<p>Les données importées sont stockées dans un <strong>data.frame</strong>.</p>
 <div class="fragment">
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -624,7 +624,7 @@ Charlie,21,14</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Un data frame est comme un tableau Excel : des lignes (observations) et des colonnes (variables).</p>
+<p>Un dataframe est comme une feuille d’un tableau Excel : des lignes (observations) et des colonnes (variables).</p>
 </div>
 </div>
 </div>
@@ -682,15 +682,7 @@ Charlie,21,14</code></pre>
 <li>Le maximum</li>
 <li>L’écart-type (<code>sd()</code>)</li>
 </ol>
-<div class="fragment">
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote class="blockquote">
-<p>“Comment calculer des statistiques descriptives sur une colonne d’un data frame en R ?”</p>
-</blockquote>
-</div>
-<div class="fragment">
-<p><strong>Notez vos résultats dans un commentaire de votre script.</strong></p>
-</div>
+<p>Notez vos résultats dans un commentaire de votre script.</p>
 <div class="notes">
 <p>15 minutes. Application pratique. Les étudiants utilisent $ et les fonctions statistiques.</p>
 </div>
@@ -766,21 +758,12 @@ Charlie,21,14</code></pre>
 </section>
 <section id="exercice-6-rapport-statistique" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="exercice-6-rapport-statistique">Exercice 6 : Rapport statistique</h2>
-<p><strong>Créez un script qui génère un rapport complet sur la variable température :</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rapport sur la température</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"=== ANALYSE DE LA TEMPÉRATURE ==="</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Nombre d'observations :"</span>, <span class="fu">length</span>(donnees_meteo<span class="sc">$</span>temperature)))</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Valeurs manquantes :"</span>, <span class="fu">sum</span>(<span class="fu">is.na</span>(donnees_meteo<span class="sc">$</span>temperature))))</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Moyenne :"</span>, <span class="fu">mean</span>(donnees_meteo<span class="sc">$</span>temperature, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Médiane :"</span>, <span class="fu">median</span>(donnees_meteo<span class="sc">$</span>temperature, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Écart-type :"</span>, <span class="fu">sd</span>(donnees_meteo<span class="sc">$</span>temperature, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)))</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<p>Créez un script qui génère un rapport complet sur la variable température en utilisant la fonction <code>paste</code> (cherchez ce qu’elle fait).</p>
 <div class="fragment">
 <p><strong>Extension :</strong> Faites la même chose pour une autre variable.</p>
 </div>
 <div class="notes">
-<p>15 minutes. Exercice de synthèse. Introduction à paste() pour formater.</p>
+<p>15 minutes. Exercice de synthèse. Introduction à <code>paste()</code> pour formater.</p>
 </div>
 </section>
 </section>
@@ -803,9 +786,9 @@ Charlie,21,14</code></pre>
 <p>“Comment créer un graphique simple en R pour visualiser l’évolution d’une variable dans le temps ? Je débute.”</p>
 </blockquote>
 <div class="fragment">
-<p>Vous découvrirez probablement <code>plot()</code> :</p>
+<p>Vous découvrirez probablement <code>plot()</code> (ou <code>ggplot</code>) :</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(donnees_meteo<span class="sc">$</span>date, donnees_meteo<span class="sc">$</span>temperature)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(donnees_meteo<span class="sc">$</span>date, donnees_meteo<span class="sc">$</span>temperature)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment">
@@ -813,22 +796,22 @@ Charlie,21,14</code></pre>
 <p>Si vous avez une erreur avec les dates, demandez au LLM comment les convertir au bon format.</p>
 </div>
 <div class="notes">
-<p>15 minutes. Premier graphique. Les dates peuvent poser problème - bon exercice de debugging.</p>
+<p>15 minutes. Premier graphique. Les dates peuvent poser problème – bon exercice de deboguer.</p>
 </div>
 </section>
 <section id="améliorer-le-graphique" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="améliorer-le-graphique">Améliorer le graphique</h2>
 <p>Les graphiques de base peuvent être personnalisés :</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(donnees_meteo<span class="sc">$</span>date, donnees_meteo<span class="sc">$</span>temperature,</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"l"</span>,  <span class="co"># ligne au lieu de points</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>,</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Évolution de la température"</span>,</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Date"</span>,</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Température (°C)"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(donnees_meteo<span class="sc">$</span>date, donnees_meteo<span class="sc">$</span>temperature,</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"l"</span>,  <span class="co"># ligne au lieu de points</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Évolution de la température"</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Date"</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Température (°C)"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
-<p><strong>Demandez au LLM d’expliquer chaque paramètre.</strong></p>
+<p>Que signifie chaque paramètre ?</p>
 </div>
 </section>
 <section id="exercice-8-explorer-dautres-graphiques" class="level2 smaller">
@@ -853,24 +836,24 @@ Charlie,21,14</code></pre>
 </section>
 <section id="sauvegarder-un-graphique" class="level2">
 <h2 class="anchored" data-anchor-id="sauvegarder-un-graphique">Sauvegarder un graphique</h2>
-<p>Pour sauvegarder un graphique :</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ouvrir un fichier</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="st">"mon_graphique.png"</span>, <span class="at">width =</span> <span class="dv">800</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer le graphique</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(donnees_meteo<span class="sc">$</span>date, donnees_meteo<span class="sc">$</span>temperature, <span class="at">type =</span> <span class="st">"l"</span>)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Fermer le fichier</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Pour sauvegarder un graphique, vous pouvez utiliser l’exportation de Rstudio.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="fragment">
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Le fichier sera dans votre dossier de travail.</p>
 </div>
+</div>
 </section>
 </section>
-<section id="debugging" class="level1" data-background-color="#2F4F4F">
-<h1 data-background-color="#2F4F4F">Debugging</h1>
+<section id="débogage" class="level1" data-background-color="#2F4F4F">
+<h1 data-background-color="#2F4F4F">Débogage</h1>
 <section id="les-erreurs-sont-normales" class="level2">
 <h2 class="anchored" data-anchor-id="les-erreurs-sont-normales">Les erreurs sont normales !</h2>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -887,7 +870,7 @@ Charlie,21,14</code></pre>
 </div>
 </div>
 <div class="fragment">
-<p><strong>Stratégie de debugging :</strong></p>
+<p><strong>Stratégie de débogage :</strong></p>
 <ol type="1">
 <li><strong>Lire</strong> le message d’erreur (même s’il semble cryptique)</li>
 <li><strong>Identifier</strong> la ligne problématique</li>
@@ -896,18 +879,18 @@ Charlie,21,14</code></pre>
 </ol>
 </div>
 </section>
-<section id="exercice-9-debugging-collectif" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exercice-9-debugging-collectif">Exercice 9 : Debugging collectif</h2>
+<section id="exercice-9-débogage-collectif" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-9-débogage-collectif">Exercice 9 : Débogage collectif</h2>
 <p><strong>Voici du code avec des erreurs. Trouvez-les et corrigez-les :</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger les données</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(donnees_meteo.csv)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer la moyenne</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>moyenne_temp <span class="ot">&lt;-</span> <span class="fu">mean</span>(donnees<span class="sc">$</span>Temperature)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"La moyenne est"</span> moyenne_temp)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger les données</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(donnees_meteo.csv)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer la moyenne</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>moyenne_temp <span class="ot">&lt;-</span> <span class="fu">mean</span>(donnees<span class="sc">$</span>Temperature)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"La moyenne est"</span> moyenne_temp)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
 <p><strong>Travaillez par groupes de 2-3. Utilisez le LLM si nécessaire.</strong></p>
@@ -917,11 +900,11 @@ Charlie,21,14</code></pre>
 <ol type="1">
 <li>Guillemets manquants autour du nom de fichier</li>
 <li>Majuscule incorrecte dans le nom de colonne</li>
-<li>Virgule manquante dans <code>print()</code></li>
+<li><code>paste()</code> et virgule manquante dans <code>print()</code></li>
 </ol>
 </div>
 <div class="notes">
-<p>15 minutes. Exercice collectif. Discuter ensuite des types d’erreurs courantes.</p>
+<p>15 minutes. ; Exercice collectif. Discuter ensuite des types d’erreurs courantes.</p>
 </div>
 </section>
 <section id="bien-utiliser-le-llm-pour-débugger" class="level2 smaller">
@@ -939,7 +922,7 @@ Charlie,21,14</code></pre>
 
 </div>
 </div>
-<p><strong>Mauvais prompt :</strong> &gt; “Ça marche pas”</p>
+<p><strong>Mauvais prompt :</strong> &gt; “Ça ne marche pas”</p>
 <p><strong>Bon prompt :</strong> &gt; “J’essaie d’importer un fichier CSV avec read.csv() mais j’obtiens cette erreur : [copier l’erreur exacte]. Voici mon code : [copier le code]. Que dois-je corriger ?”</p>
 <div class="fragment">
 <p><strong>Donnez toujours :</strong></p>
@@ -1053,30 +1036,14 @@ Charlie,21,14</code></pre>
 <li>Un graphique dont vous êtes fier (copier le code)</li>
 <li>Une chose que vous ne comprenez pas encore</li>
 </ul></li>
-<li><strong>Debugging</strong> :
+<li><strong>Débogage</strong> :
 <ul>
 <li>Une erreur marquante et comment vous l’avez résolue</li>
-<li>Un bon prompt de debugging qui a fonctionné</li>
+<li>Un bon prompt de débogage qui a fonctionné</li>
 </ul></li>
 </ol>
 <div class="notes">
 <p>15 minutes. Temps de réflexion calme. Important pour ancrer les apprentissages.</p>
-</div>
-</section>
-<section id="évolution-de-vos-compétences" class="level2">
-<h2 class="anchored" data-anchor-id="évolution-de-vos-compétences">Évolution de vos compétences</h2>
-<div class="incremental">
-<p><strong>Séance 1 :</strong> Vous avez appris les bases (objets, fonctions, vecteurs)</p>
-<p><strong>Séance 2 :</strong> Vous savez maintenant :</p>
-<ul class="incremental">
-<li>Importer des données réelles</li>
-<li>Les explorer et les analyser</li>
-<li>Créer des visualisations</li>
-<li>Débugger efficacement</li>
-</ul>
-</div>
-<div class="fragment">
-<p><strong>Vous êtes déjà capable d’analyser de vraies données ! 🎉</strong></p>
 </div>
 </section>
 </section>
@@ -1128,13 +1095,11 @@ Charlie,21,14</code></pre>
 <ol type="1">
 <li>Terminez le mini-projet INSEE si besoin</li>
 <li><strong>Mettez à jour votre journal</strong> avec tous les détails de cette séance</li>
-<li>Trouvez un jeu de données qui vous intéresse et analysez-le</li>
-<li>Créez au moins 3 graphiques différents avec vos données</li>
 </ol>
 </div>
 </div>
 <div class="fragment">
-<p><strong>Prochaine séance :</strong> Fonctions, conditions et boucles - automatiser vos analyses !</p>
+<p><strong>Prochaine séance :</strong> Fonctions, conditions et boucles – automatiser vos analyses !</p>
 </div>
 </section>
 <section id="questions" class="level2">
@@ -1150,16 +1115,13 @@ Charlie,21,14</code></pre>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Les <strong>data frames</strong> sont essentiels pour travailler avec des données réelles</li>
+<li>Les <strong>dataframes</strong> sont essentiels pour travailler avec des données réelles</li>
 <li><code>$</code> permet d’accéder aux colonnes</li>
 <li>Toujours vérifier les <strong>NA</strong> avant de calculer</li>
 <li>Les <strong>visualisations</strong> révèlent ce que les chiffres cachent</li>
-<li>Le <strong>debugging</strong> fait partie du processus - soyez patient !</li>
+<li>Le <strong>débogage</strong> fait partie du processus – soyez patient !</li>
 </ul>
 </div>
-</div>
-<div class="fragment">
-<p><strong>Bon courage et bonnes analyses ! 📊</strong></p>
 </div>
 
 

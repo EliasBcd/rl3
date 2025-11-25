@@ -275,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../M3P/06Lecon5Projet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Séance 5 : Projet personnel intégré</span></a>
+ <span class="menu-text">Projet Final</span></a>
   </div>
 </li>
       </ul>
@@ -334,7 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#pourquoi-ggplot2" id="toc-pourquoi-ggplot2" class="nav-link" data-scroll-target="#pourquoi-ggplot2">Pourquoi <code>ggplot2</code> ?</a></li>
   <li><a href="#la-grammaire-des-graphiques" id="toc-la-grammaire-des-graphiques" class="nav-link" data-scroll-target="#la-grammaire-des-graphiques">La grammaire des graphiques</a></li>
-  <li><a href="#exercice-5-premier-graphique-ggplot2" id="toc-exercice-5-premier-graphique-ggplot2" class="nav-link" data-scroll-target="#exercice-5-premier-graphique-ggplot2">Exercice 5 : Premier graphique ggplot2</a></li>
+  <li><a href="#exercice-5-premier-graphique-ggplot2" id="toc-exercice-5-premier-graphique-ggplot2" class="nav-link" data-scroll-target="#exercice-5-premier-graphique-ggplot2">Exercice 5 : Premier graphique <code>ggplot2</code></a></li>
   <li><a href="#exercice-6-améliorer-le-graphique" id="toc-exercice-6-améliorer-le-graphique" class="nav-link" data-scroll-target="#exercice-6-améliorer-le-graphique">Exercice 6 : Améliorer le graphique</a></li>
   <li><a href="#exercice-7-différents-types-de-graphiques" id="toc-exercice-7-différents-types-de-graphiques" class="nav-link" data-scroll-target="#exercice-7-différents-types-de-graphiques">Exercice 7 : Différents types de graphiques</a></li>
   <li><a href="#exercice-8-graphiques-par-catégorie" id="toc-exercice-8-graphiques-par-catégorie" class="nav-link" data-scroll-target="#exercice-8-graphiques-par-catégorie">Exercice 8 : Graphiques par catégorie</a></li>
@@ -388,7 +388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">14 novembre 2025</p>
+      <p class="date">25 novembre 2025</p>
     </div>
   </div>
   
@@ -408,11 +408,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Nettoyage de données</strong> (60min) : Gérer les incohérences réelles</li>
 <li><strong>Introduction à ggplot2</strong> (75min) : Créer des graphiques sophistiqués</li>
 <li><strong>Fonctions de visualisation</strong> (40min) : Automatiser la création de graphiques</li>
-<li><strong>Mini-projet</strong> (40min) : Dashboard de visualisations</li>
+<li><strong>Mini-projet</strong> (40min) : Tableau de pilotage avec des visualisations</li>
 </ul>
 </div>
 <div class="fragment">
-<p><strong>Production attendue :</strong> Dashboard avec 4 graphiques + fonction de visualisation réutilisable</p>
+<p><strong>Production attendue :</strong> Tableau de pilotage avec 4 graphiques + fonction de visualisation réutilisable</p>
 </div>
 </section>
 <section id="objectifs-de-la-séance" class="level2">
@@ -465,7 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Testez avec :</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>valeurs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">10</span>, <span class="cn">NA</span>, <span class="dv">8</span>, <span class="sc">-</span><span class="dv">3</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">classifier_moyenne</span>(valeurs)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">classer_moyenne</span>(valeurs)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="notes">
@@ -513,10 +513,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">vendeur =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Alice"</span>, <span class="st">"bob"</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote class="blockquote">
-<p>“Quels sont les problèmes potentiels dans ce jeu de données pour une analyse ?”</p>
-</blockquote>
+<p>Quels sont les problèmes potentiels dans ce jeu de données pour une analyse ?</p>
 <div class="fragment">
 <p><strong>Identifiez :</strong></p>
 <ol type="1">
@@ -578,17 +575,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Quelle stratégie choisir dépend du contexte ! Supprimer des données peut introduire des biais.</p>
+<p>Quelle stratégie choisir dépend du contexte ! Supprimer ou interpoler des données peut introduire des biais.</p>
 </div>
 </div>
 </div>
 <div class="notes">
-<p>15 minutes. Discussion importante sur les choix méthodologiques.</p>
+<p>15 minutes. Discussion sur les choix méthodologiques.</p>
 </div>
 </section>
 <section id="exercice-4-jeu-de-données-complexe-piégé" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="exercice-4-jeu-de-données-complexe-piégé">Exercice 4 : Jeu de données complexe piégé</h2>
-<p><strong>Nouveau challenge - Données étudiants :</strong></p>
+<p><strong>Nouveau défi – Données étudiants :</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>etudiants <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">nom =</span> <span class="fu">c</span>(<span class="st">"Dupont"</span>, <span class="st">"Martin"</span>, <span class="st">"Durand"</span>, <span class="st">""</span>, <span class="st">"Petit"</span>),</span>
@@ -598,15 +595,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">filiere =</span> <span class="fu">c</span>(<span class="st">"Info"</span>, <span class="st">"info"</span>, <span class="st">"Maths"</span>, <span class="st">"INFO"</span>, <span class="st">"maths"</span>)</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><strong>Mission :</strong></p>
+<p>Objectif :</p>
 <ol type="1">
 <li>Identifiez TOUS les problèmes</li>
 <li>Nettoyez le jeu de données</li>
-<li>Calculez la moyenne par filière</li>
+<li>Calculez la générale des étudiants</li>
 </ol>
-<div class="fragment">
-<p><strong>Utilisez le LLM étape par étape !</strong></p>
-</div>
 <div class="notes">
 <p>30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver.</p>
 </div>
@@ -616,7 +610,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-background-color="#FF8C00">Introduction à <code>ggplot2</code></h1>
 <section id="pourquoi-ggplot2" class="level2">
 <h2 class="anchored" data-anchor-id="pourquoi-ggplot2">Pourquoi <code>ggplot2</code> ?</h2>
-<p>Jusqu’ici vous avez utilisé <code>plot()</code>, <code>hist()</code>, <code>barplot()</code>…</p>
+<p>Jusqu’ici, vous avez utilisé <code>plot()</code>, <code>hist()</code>, <code>barplot()</code>…</p>
 <div class="fragment">
 <p><strong>ggplot2</strong> est un package puissant pour créer des graphiques :</p>
 <ul>
@@ -629,7 +623,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="la-grammaire-des-graphiques" class="level2">
 <h2 class="anchored" data-anchor-id="la-grammaire-des-graphiques">La grammaire des graphiques</h2>
-<p><strong>ggplot2</strong> fonctionne par couches :</p>
+<p><strong><code>ggplot2</code></strong> fonctionne par couches :</p>
 <div class="incremental">
 <ol class="incremental" type="1">
 <li><strong>Données</strong> : <code>ggplot(data = mes_donnees)</code></li>
@@ -643,12 +637,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="exercice-5-premier-graphique-ggplot2" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exercice-5-premier-graphique-ggplot2">Exercice 5 : Premier graphique ggplot2</h2>
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote class="blockquote">
-<p>“Comment créer un graphique simple avec ggplot2 en R ? Je débute avec ce package.”</p>
-</blockquote>
-<p><strong>Ensuite, testez avec vos données de ventes :</strong></p>
+<h2 class="smaller anchored" data-anchor-id="exercice-5-premier-graphique-ggplot2">Exercice 5 : Premier graphique <code>ggplot2</code></h2>
+<p>Testez ce code :</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -656,7 +646,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
-<p><strong>Questions :</strong></p>
+<p>Questions :</p>
 <ol type="1">
 <li>Que fait <code>aes()</code> ?</li>
 <li>Pourquoi <code>geom_col()</code> et pas <code>geom_bar()</code> ?</li>
@@ -664,7 +654,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </div>
 <div class="notes">
-<p>20 minutes. Première découverte de ggplot2. La syntaxe peut surprendre au début.</p>
+<p>20 minutes. Première découverte de <code>ggplot2</code>. La syntaxe peut surprendre au début.</p>
 </div>
 </section>
 <section id="exercice-6-améliorer-le-graphique" class="level2 smaller">
@@ -681,12 +671,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote class="blockquote">
-<p>“Comment personnaliser les couleurs, titres et thème d’un graphique ggplot2 ?”</p>
-</blockquote>
-</div>
-<div class="fragment">
 <p><strong>Explorez :</strong></p>
 <ul>
 <li>Différentes couleurs</li>
@@ -700,7 +684,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exercice-7-différents-types-de-graphiques" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="exercice-7-différents-types-de-graphiques">Exercice 7 : Différents types de graphiques</h2>
-<p><strong>Demandez au LLM de vous montrer comment créer :</strong></p>
+<p>Demandez au LLM de vous montrer comment créer :</p>
 <ol type="1">
 <li>Un graphique en <strong>points</strong> (<code>geom_point()</code>)</li>
 <li>Un graphique en <strong>lignes</strong> (<code>geom_line()</code>)</li>
@@ -717,13 +701,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exercice-8-graphiques-par-catégorie" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="exercice-8-graphiques-par-catégorie">Exercice 8 : Graphiques par catégorie</h2>
-<p><strong>Challenge :</strong> Créez un graphique des ventes coloré par vendeur.</p>
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote class="blockquote">
-<p>“Comment créer un graphique avec ggplot2 où chaque catégorie a une couleur différente ?”</p>
-</blockquote>
+<p>Créez un graphique des ventes coloré par vendeur.</p>
+<p>Comment créer un graphique avec <code>ggplot2</code> où chaque catégorie a une couleur différente ?</p>
 <div class="fragment">
-<p>Vous découvrirez :</p>
+<p>Une réponse :</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ventes, <span class="fu">aes</span>(<span class="at">x =</span> mois, <span class="at">y =</span> montant, <span class="at">fill =</span> vendeur)) <span class="sc">+</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
@@ -731,8 +712,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="fragment">
-<p><strong>Questions :</strong></p>
+<p>Questions :</p>
 <ol type="1">
+<li>Où est positionné <code>fill</code> ? Pourquoi ?</li>
 <li>Que fait <code>position = "dodge"</code> ?</li>
 <li>Que se passe-t-il sans ?</li>
 <li>Comment faire un graphique empilé ?</li>
@@ -779,7 +761,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </div>
 <div class="notes">
-<p>20 minutes. Introduction aux fonctions avec ggplot2. Concept avancé mais important.</p>
+<p>20 minutes. Introduction aux fonctions avec <code>ggplot2</code>.</p>
 </div>
 </section>
 <section id="exercice-10-fonction-graphique-avancée" class="level2 smaller">
@@ -882,7 +864,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Comment les avez-vous résolus ?</li>
 <li>Un prompt efficace pour le nettoyage</li>
 </ul></li>
-<li><strong>ggplot2</strong> :
+<li><strong><code>ggplot2</code></strong> :
 <ul>
 <li>Différences avec <code>plot()</code> de base</li>
 <li>Votre graphique préféré créé aujourd’hui</li>
@@ -984,9 +966,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>La <strong>visualisation</strong> est aussi importante que l’analyse</li>
 </ul>
 </div>
-</div>
-<div class="fragment">
-<p><strong>Bon courage et belles visualisations ! 📊</strong></p>
 </div>
 
 

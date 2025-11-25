@@ -34,7 +34,7 @@
     "href": "M3P/05Lecon4Dataframes.html",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "",
-    "text": "Récap et partage (15min) : Retours sur les fonctions\nNettoyage de données (60min) : Gérer les incohérences réelles\nIntroduction à ggplot2 (75min) : Créer des graphiques sophistiqués\nFonctions de visualisation (40min) : Automatiser la création de graphiques\nMini-projet (40min) : Dashboard de visualisations\n\n\n\nProduction attendue : Dashboard avec 4 graphiques + fonction de visualisation réutilisable",
+    "text": "Récap et partage (15min) : Retours sur les fonctions\nNettoyage de données (60min) : Gérer les incohérences réelles\nIntroduction à ggplot2 (75min) : Créer des graphiques sophistiqués\nFonctions de visualisation (40min) : Automatiser la création de graphiques\nMini-projet (40min) : Tableau de pilotage avec des visualisations\n\n\n\nProduction attendue : Tableau de pilotage avec 4 graphiques + fonction de visualisation réutilisable",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -46,7 +46,7 @@
     "href": "M3P/05Lecon4Dataframes.html#plan-de-la-séance",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "",
-    "text": "Récap et partage (15min) : Retours sur les fonctions\nNettoyage de données (60min) : Gérer les incohérences réelles\nIntroduction à ggplot2 (75min) : Créer des graphiques sophistiqués\nFonctions de visualisation (40min) : Automatiser la création de graphiques\nMini-projet (40min) : Dashboard de visualisations\n\n\n\nProduction attendue : Dashboard avec 4 graphiques + fonction de visualisation réutilisable",
+    "text": "Récap et partage (15min) : Retours sur les fonctions\nNettoyage de données (60min) : Gérer les incohérences réelles\nIntroduction à ggplot2 (75min) : Créer des graphiques sophistiqués\nFonctions de visualisation (40min) : Automatiser la création de graphiques\nMini-projet (40min) : Tableau de pilotage avec des visualisations\n\n\n\nProduction attendue : Tableau de pilotage avec 4 graphiques + fonction de visualisation réutilisable",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -82,7 +82,7 @@
     "href": "M3P/05Lecon4Dataframes.html#exercice-de-révision",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice de révision",
-    "text": "Exercice de révision\nCréez rapidement une fonction qui :\n\nPrend un vecteur de nombres en paramètre\nRetourne “Positif” si la moyenne de ces nombres est &gt; 0\nRetourne “Négatif” sinon\nGère les NA correctement\n\n\nTestez avec :\n\nvaleurs &lt;- c(-5, 10, NA, 8, -3)\nclassifier_moyenne(valeurs)\n\n\n\n10 minutes. Révision rapide. Vérifier que les concepts de la séance 3 sont acquis.",
+    "text": "Exercice de révision\nCréez rapidement une fonction qui :\n\nPrend un vecteur de nombres en paramètre\nRetourne “Positif” si la moyenne de ces nombres est &gt; 0\nRetourne “Négatif” sinon\nGère les NA correctement\n\n\nTestez avec :\n\nvaleurs &lt;- c(-5, 10, NA, 8, -3)\nclasser_moyenne(valeurs)\n\n\n\n10 minutes. Révision rapide. Vérifier que les concepts de la séance 3 sont acquis.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -106,7 +106,7 @@
     "href": "M3P/05Lecon4Dataframes.html#exercice-1-découvrir-les-problèmes",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 1 : Découvrir les problèmes",
-    "text": "Exercice 1 : Découvrir les problèmes\nVoici un jeu de données de ventes :\n\nventes &lt;- data.frame(\n  mois = c(\"Jan\", \"Fév\", \"Mar\", \"Avr\", \"Mai\", \"Jun\"),\n  montant = c(1500, 2000, NA, 1800, 2200, 1900),\n  vendeur = c(\"Alice\", \"Bob\", \"alice\", \"Bob\", \"Alice\", \"bob\")\n)\n\nDemandez au LLM :\n\n“Quels sont les problèmes potentiels dans ce jeu de données pour une analyse ?”\n\n\nIdentifiez :\n\nLe problème de casse dans les noms\nLa valeur manquante\nLes conséquences pour les calculs par vendeur\n\n\n\n15 minutes. Les étudiants découvrent les problèmes réels des données.",
+    "text": "Exercice 1 : Découvrir les problèmes\nVoici un jeu de données de ventes :\n\nventes &lt;- data.frame(\n  mois = c(\"Jan\", \"Fév\", \"Mar\", \"Avr\", \"Mai\", \"Jun\"),\n  montant = c(1500, 2000, NA, 1800, 2200, 1900),\n  vendeur = c(\"Alice\", \"Bob\", \"alice\", \"Bob\", \"Alice\", \"bob\")\n)\n\nQuels sont les problèmes potentiels dans ce jeu de données pour une analyse ?\n\nIdentifiez :\n\nLe problème de casse dans les noms\nLa valeur manquante\nLes conséquences pour les calculs par vendeur\n\n\n\n15 minutes. Les étudiants découvrent les problèmes réels des données.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -130,7 +130,7 @@
     "href": "M3P/05Lecon4Dataframes.html#exercice-3-gérer-les-valeurs-manquantes",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 3 : Gérer les valeurs manquantes",
-    "text": "Exercice 3 : Gérer les valeurs manquantes\nPlusieurs stratégies possibles :\nDemandez au LLM :\n\n“Comment gérer les valeurs NA dans mes données de ventes ? Quelles sont les différentes approches ?”\n\n\nOptions principales :\n\nSupprimer les lignes avec NA : na.omit()\nRemplacer par une valeur : moyenne, médiane, 0\nGarder mais utiliser na.rm = TRUE dans les calculs\n\n\n\n\n\n\n\n\n\nNoteRéflexion importante\n\n\n\nQuelle stratégie choisir dépend du contexte ! Supprimer des données peut introduire des biais.\n\n\n\n\n15 minutes. Discussion importante sur les choix méthodologiques.",
+    "text": "Exercice 3 : Gérer les valeurs manquantes\nPlusieurs stratégies possibles :\nDemandez au LLM :\n\n“Comment gérer les valeurs NA dans mes données de ventes ? Quelles sont les différentes approches ?”\n\n\nOptions principales :\n\nSupprimer les lignes avec NA : na.omit()\nRemplacer par une valeur : moyenne, médiane, 0\nGarder mais utiliser na.rm = TRUE dans les calculs\n\n\n\n\n\n\n\n\n\nNoteRéflexion importante\n\n\n\nQuelle stratégie choisir dépend du contexte ! Supprimer ou interpoler des données peut introduire des biais.\n\n\n\n\n15 minutes. Discussion sur les choix méthodologiques.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -142,7 +142,7 @@
     "href": "M3P/05Lecon4Dataframes.html#exercice-4-jeu-de-données-complexe-piégé",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 4 : Jeu de données complexe piégé",
-    "text": "Exercice 4 : Jeu de données complexe piégé\nNouveau challenge - Données étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nMission :\n\nIdentifiez TOUS les problèmes\nNettoyez le jeu de données\nCalculez la moyenne par filière\n\n\nUtilisez le LLM étape par étape !\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver.",
+    "text": "Exercice 4 : Jeu de données complexe piégé\nNouveau défi – Données étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nObjectif :\n\nIdentifiez TOUS les problèmes\nNettoyez le jeu de données\nCalculez la générale des étudiants\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -154,7 +154,7 @@
     "href": "M3P/05Lecon4Dataframes.html#pourquoi-ggplot2",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Pourquoi ggplot2 ?",
-    "text": "Pourquoi ggplot2 ?\nJusqu’ici vous avez utilisé plot(), hist(), barplot()…\n\nggplot2 est un package puissant pour créer des graphiques :\n\nSyntaxe cohérente et logique\nGraphiques professionnels\nTrès flexible et personnalisable\nStandard dans l’analyse de données en R",
+    "text": "Pourquoi ggplot2 ?\nJusqu’ici, vous avez utilisé plot(), hist(), barplot()…\n\nggplot2 est un package puissant pour créer des graphiques :\n\nSyntaxe cohérente et logique\nGraphiques professionnels\nTrès flexible et personnalisable\nStandard dans l’analyse de données en R",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -178,7 +178,7 @@
     "href": "M3P/05Lecon4Dataframes.html#exercice-5-premier-graphique-ggplot2",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 5 : Premier graphique ggplot2",
-    "text": "Exercice 5 : Premier graphique ggplot2\nDemandez au LLM :\n\n“Comment créer un graphique simple avec ggplot2 en R ? Je débute avec ce package.”\n\nEnsuite, testez avec vos données de ventes :\n\nlibrary(ggplot2)\n\nggplot(data = ventes, aes(x = mois, y = montant)) +\n  geom_col()\n\n\nQuestions :\n\nQue fait aes() ?\nPourquoi geom_col() et pas geom_bar() ?\nComment changer la couleur des barres ?\n\n\n\n20 minutes. Première découverte de ggplot2. La syntaxe peut surprendre au début.",
+    "text": "Exercice 5 : Premier graphique ggplot2\nTestez ce code :\n\nlibrary(ggplot2)\n\nggplot(data = ventes, aes(x = mois, y = montant)) +\n  geom_col()\n\n\nQuestions :\n\nQue fait aes() ?\nPourquoi geom_col() et pas geom_bar() ?\nComment changer la couleur des barres ?\n\n\n\n20 minutes. Première découverte de ggplot2. La syntaxe peut surprendre au début.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -190,7 +190,7 @@
     "href": "M3P/05Lecon4Dataframes.html#exercice-6-améliorer-le-graphique",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 6 : Améliorer le graphique",
-    "text": "Exercice 6 : Améliorer le graphique\nPersonnalisez votre graphique :\n\nggplot(data = ventes, aes(x = mois, y = montant)) +\n  geom_col(fill = \"steelblue\") +\n  labs(\n    title = \"Ventes mensuelles\",\n    x = \"Mois\",\n    y = \"Montant (€)\"\n  ) +\n  theme_minimal()\n\n\nDemandez au LLM :\n\n“Comment personnaliser les couleurs, titres et thème d’un graphique ggplot2 ?”\n\n\n\nExplorez :\n\nDifférentes couleurs\nDifférents thèmes : theme_bw(), theme_classic()\nAjout d’une ligne à un niveau spécifique avec geom_hline()\n\n\n\n20 minutes. Exploration des options de personnalisation.",
+    "text": "Exercice 6 : Améliorer le graphique\nPersonnalisez votre graphique :\n\nggplot(data = ventes, aes(x = mois, y = montant)) +\n  geom_col(fill = \"steelblue\") +\n  labs(\n    title = \"Ventes mensuelles\",\n    x = \"Mois\",\n    y = \"Montant (€)\"\n  ) +\n  theme_minimal()\n\n\nExplorez :\n\nDifférentes couleurs\nDifférents thèmes : theme_bw(), theme_classic()\nAjout d’une ligne à un niveau spécifique avec geom_hline()\n\n\n\n20 minutes. Exploration des options de personnalisation.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -214,7 +214,7 @@
     "href": "M3P/05Lecon4Dataframes.html#exercice-8-graphiques-par-catégorie",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 8 : Graphiques par catégorie",
-    "text": "Exercice 8 : Graphiques par catégorie\nChallenge : Créez un graphique des ventes coloré par vendeur.\nDemandez au LLM :\n\n“Comment créer un graphique avec ggplot2 où chaque catégorie a une couleur différente ?”\n\n\nVous découvrirez :\n\nggplot(ventes, aes(x = mois, y = montant, fill = vendeur)) +\n  geom_col(position = \"dodge\") +\n  labs(title = \"Ventes par vendeur et par mois\")\n\n\n\nQuestions :\n\nQue fait position = \"dodge\" ?\nQue se passe-t-il sans ?\nComment faire un graphique empilé ?\n\n\n\n20 minutes. Introduction aux graphiques multivariés.",
+    "text": "Exercice 8 : Graphiques par catégorie\nCréez un graphique des ventes coloré par vendeur.\nComment créer un graphique avec ggplot2 où chaque catégorie a une couleur différente ?\n\nUne réponse :\n\nggplot(ventes, aes(x = mois, y = montant, fill = vendeur)) +\n  geom_col(position = \"dodge\") +\n  labs(title = \"Ventes par vendeur et par mois\")\n\n\n\nQuestions :\n\nOù est positionné fill ? Pourquoi ?\nQue fait position = \"dodge\" ?\nQue se passe-t-il sans ?\nComment faire un graphique empilé ?\n\n\n\n20 minutes. Introduction aux graphiques multivariés.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -238,7 +238,7 @@
     "href": "M3P/05Lecon4Dataframes.html#exercice-9-première-fonction-graphique",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 9 : Première fonction graphique",
-    "text": "Exercice 9 : Première fonction graphique\nCréez une fonction qui génère un graphique en barres standard :\n\ngraphique_barres &lt;- function(donnees, colonne_x, colonne_y, titre) {\n  ggplot(donnees, aes(x = .data[[colonne_x]], y = .data[[colonne_y]])) +\n    geom_col(fill = \"steelblue\") +\n    labs(title = titre) +\n    theme_minimal()\n}\n\n# Utilisation\ngraphique_barres(ventes, \"mois\", \"montant\", \"Ventes mensuelles\")\n\n\nDemandez au LLM d’expliquer :\n\nÀ quoi sert .data[[...]] ?\nComment passer des noms de colonnes comme paramètres ?\n\n\n\n20 minutes. Introduction aux fonctions avec ggplot2. Concept avancé mais important.",
+    "text": "Exercice 9 : Première fonction graphique\nCréez une fonction qui génère un graphique en barres standard :\n\ngraphique_barres &lt;- function(donnees, colonne_x, colonne_y, titre) {\n  ggplot(donnees, aes(x = .data[[colonne_x]], y = .data[[colonne_y]])) +\n    geom_col(fill = \"steelblue\") +\n    labs(title = titre) +\n    theme_minimal()\n}\n\n# Utilisation\ngraphique_barres(ventes, \"mois\", \"montant\", \"Ventes mensuelles\")\n\n\nDemandez au LLM d’expliquer :\n\nÀ quoi sert .data[[...]] ?\nComment passer des noms de colonnes comme paramètres ?\n\n\n\n20 minutes. Introduction aux fonctions avec ggplot2.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -346,7 +346,7 @@
     "href": "M3P/05Lecon4Dataframes.html#questions",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nAstucePoints clés à retenir\n\n\n\n\nLe nettoyage des données est essentiel et prend du temps\nggplot2 permet de créer des graphiques professionnels de manière cohérente\nLes fonctions graphiques évitent la répétition et assurent la cohérence\nLa visualisation est aussi importante que l’analyse\n\n\n\n\nBon courage et belles visualisations ! 📊",
+    "text": "Questions ?\n\n\n\n\n\n\nAstucePoints clés à retenir\n\n\n\n\nLe nettoyage des données est essentiel et prend du temps\nggplot2 permet de créer des graphiques professionnels de manière cohérente\nLes fonctions graphiques évitent la répétition et assurent la cohérence\nLa visualisation est aussi importante que l’analyse",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -358,7 +358,7 @@
     "href": "M3P/slide-lecon4.html#plan-de-la-séance",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Plan de la séance",
-    "text": "Plan de la séance\n\nRécap et partage (15min) : Retours sur les fonctions\nNettoyage de données (60min) : Gérer les incohérences réelles\nIntroduction à ggplot2 (75min) : Créer des graphiques sophistiqués\nFonctions de visualisation (40min) : Automatiser la création de graphiques\nMini-projet (40min) : Dashboard de visualisations\n\n\nProduction attendue : Dashboard avec 4 graphiques + fonction de visualisation réutilisable"
+    "text": "Plan de la séance\n\nRécap et partage (15min) : Retours sur les fonctions\nNettoyage de données (60min) : Gérer les incohérences réelles\nIntroduction à ggplot2 (75min) : Créer des graphiques sophistiqués\nFonctions de visualisation (40min) : Automatiser la création de graphiques\nMini-projet (40min) : Tableau de pilotage avec des visualisations\n\n\nProduction attendue : Tableau de pilotage avec 4 graphiques + fonction de visualisation réutilisable"
   },
   {
     "objectID": "M3P/slide-lecon4.html#objectifs-de-la-séance",
@@ -379,7 +379,7 @@
     "href": "M3P/slide-lecon4.html#exercice-de-révision",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice de révision",
-    "text": "Exercice de révision\nCréez rapidement une fonction qui :\n\nPrend un vecteur de nombres en paramètre\nRetourne “Positif” si la moyenne de ces nombres est &gt; 0\nRetourne “Négatif” sinon\nGère les NA correctement\n\n\nTestez avec :\n\nvaleurs &lt;- c(-5, 10, NA, 8, -3)\nclassifier_moyenne(valeurs)\n\n\n\n10 minutes. Révision rapide. Vérifier que les concepts de la séance 3 sont acquis."
+    "text": "Exercice de révision\nCréez rapidement une fonction qui :\n\nPrend un vecteur de nombres en paramètre\nRetourne “Positif” si la moyenne de ces nombres est &gt; 0\nRetourne “Négatif” sinon\nGère les NA correctement\n\n\nTestez avec :\n\nvaleurs &lt;- c(-5, 10, NA, 8, -3)\nclasser_moyenne(valeurs)\n\n\n\n10 minutes. Révision rapide. Vérifier que les concepts de la séance 3 sont acquis."
   },
   {
     "objectID": "M3P/slide-lecon4.html#les-données-ne-sont-jamais-parfaites",
@@ -393,7 +393,7 @@
     "href": "M3P/slide-lecon4.html#exercice-1-découvrir-les-problèmes",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 1 : Découvrir les problèmes",
-    "text": "Exercice 1 : Découvrir les problèmes\nVoici un jeu de données de ventes :\n\nventes &lt;- data.frame(\n  mois = c(\"Jan\", \"Fév\", \"Mar\", \"Avr\", \"Mai\", \"Jun\"),\n  montant = c(1500, 2000, NA, 1800, 2200, 1900),\n  vendeur = c(\"Alice\", \"Bob\", \"alice\", \"Bob\", \"Alice\", \"bob\")\n)\n\nDemandez au LLM :\n\n“Quels sont les problèmes potentiels dans ce jeu de données pour une analyse ?”\n\n\nIdentifiez :\n\nLe problème de casse dans les noms\nLa valeur manquante\nLes conséquences pour les calculs par vendeur\n\n\n\n15 minutes. Les étudiants découvrent les problèmes réels des données."
+    "text": "Exercice 1 : Découvrir les problèmes\nVoici un jeu de données de ventes :\n\nventes &lt;- data.frame(\n  mois = c(\"Jan\", \"Fév\", \"Mar\", \"Avr\", \"Mai\", \"Jun\"),\n  montant = c(1500, 2000, NA, 1800, 2200, 1900),\n  vendeur = c(\"Alice\", \"Bob\", \"alice\", \"Bob\", \"Alice\", \"bob\")\n)\n\nQuels sont les problèmes potentiels dans ce jeu de données pour une analyse ?\n\nIdentifiez :\n\nLe problème de casse dans les noms\nLa valeur manquante\nLes conséquences pour les calculs par vendeur\n\n\n\n15 minutes. Les étudiants découvrent les problèmes réels des données."
   },
   {
     "objectID": "M3P/slide-lecon4.html#exercice-2-nettoyer-la-casse",
@@ -407,21 +407,21 @@
     "href": "M3P/slide-lecon4.html#exercice-3-gérer-les-valeurs-manquantes",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 3 : Gérer les valeurs manquantes",
-    "text": "Exercice 3 : Gérer les valeurs manquantes\nPlusieurs stratégies possibles :\nDemandez au LLM :\n\n“Comment gérer les valeurs NA dans mes données de ventes ? Quelles sont les différentes approches ?”\n\n\nOptions principales :\n\nSupprimer les lignes avec NA : na.omit()\nRemplacer par une valeur : moyenne, médiane, 0\nGarder mais utiliser na.rm = TRUE dans les calculs\n\n\n\n\n\n\n\n\n\nRéflexion importante\n\n\nQuelle stratégie choisir dépend du contexte ! Supprimer des données peut introduire des biais.\n\n\n\n\n\n15 minutes. Discussion importante sur les choix méthodologiques."
+    "text": "Exercice 3 : Gérer les valeurs manquantes\nPlusieurs stratégies possibles :\nDemandez au LLM :\n\n“Comment gérer les valeurs NA dans mes données de ventes ? Quelles sont les différentes approches ?”\n\n\nOptions principales :\n\nSupprimer les lignes avec NA : na.omit()\nRemplacer par une valeur : moyenne, médiane, 0\nGarder mais utiliser na.rm = TRUE dans les calculs\n\n\n\n\n\n\n\n\n\nRéflexion importante\n\n\nQuelle stratégie choisir dépend du contexte ! Supprimer ou interpoler des données peut introduire des biais.\n\n\n\n\n\n15 minutes. Discussion sur les choix méthodologiques."
   },
   {
     "objectID": "M3P/slide-lecon4.html#exercice-4-jeu-de-données-complexe-piégé",
     "href": "M3P/slide-lecon4.html#exercice-4-jeu-de-données-complexe-piégé",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 4 : Jeu de données complexe piégé",
-    "text": "Exercice 4 : Jeu de données complexe piégé\nNouveau challenge - Données étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nMission :\n\nIdentifiez TOUS les problèmes\nNettoyez le jeu de données\nCalculez la moyenne par filière\n\n\nUtilisez le LLM étape par étape !\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver."
+    "text": "Exercice 4 : Jeu de données complexe piégé\nNouveau défi – Données étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nObjectif :\n\nIdentifiez TOUS les problèmes\nNettoyez le jeu de données\nCalculez la générale des étudiants\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver."
   },
   {
     "objectID": "M3P/slide-lecon4.html#pourquoi-ggplot2",
     "href": "M3P/slide-lecon4.html#pourquoi-ggplot2",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Pourquoi ggplot2 ?",
-    "text": "Pourquoi ggplot2 ?\nJusqu’ici vous avez utilisé plot(), hist(), barplot()…\n\nggplot2 est un package puissant pour créer des graphiques :\n\nSyntaxe cohérente et logique\nGraphiques professionnels\nTrès flexible et personnalisable\nStandard dans l’analyse de données en R"
+    "text": "Pourquoi ggplot2 ?\nJusqu’ici, vous avez utilisé plot(), hist(), barplot()…\n\nggplot2 est un package puissant pour créer des graphiques :\n\nSyntaxe cohérente et logique\nGraphiques professionnels\nTrès flexible et personnalisable\nStandard dans l’analyse de données en R"
   },
   {
     "objectID": "M3P/slide-lecon4.html#la-grammaire-des-graphiques",
@@ -435,14 +435,14 @@
     "href": "M3P/slide-lecon4.html#exercice-5-premier-graphique-ggplot2",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 5 : Premier graphique ggplot2",
-    "text": "Exercice 5 : Premier graphique ggplot2\nDemandez au LLM :\n\n“Comment créer un graphique simple avec ggplot2 en R ? Je débute avec ce package.”\n\nEnsuite, testez avec vos données de ventes :\n\nlibrary(ggplot2)\n\nggplot(data = ventes, aes(x = mois, y = montant)) +\n  geom_col()\n\n\nQuestions :\n\nQue fait aes() ?\nPourquoi geom_col() et pas geom_bar() ?\nComment changer la couleur des barres ?\n\n\n\n20 minutes. Première découverte de ggplot2. La syntaxe peut surprendre au début."
+    "text": "Exercice 5 : Premier graphique ggplot2\nTestez ce code :\n\nlibrary(ggplot2)\n\nggplot(data = ventes, aes(x = mois, y = montant)) +\n  geom_col()\n\n\nQuestions :\n\nQue fait aes() ?\nPourquoi geom_col() et pas geom_bar() ?\nComment changer la couleur des barres ?\n\n\n\n20 minutes. Première découverte de ggplot2. La syntaxe peut surprendre au début."
   },
   {
     "objectID": "M3P/slide-lecon4.html#exercice-6-améliorer-le-graphique",
     "href": "M3P/slide-lecon4.html#exercice-6-améliorer-le-graphique",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 6 : Améliorer le graphique",
-    "text": "Exercice 6 : Améliorer le graphique\nPersonnalisez votre graphique :\n\nggplot(data = ventes, aes(x = mois, y = montant)) +\n  geom_col(fill = \"steelblue\") +\n  labs(\n    title = \"Ventes mensuelles\",\n    x = \"Mois\",\n    y = \"Montant (€)\"\n  ) +\n  theme_minimal()\n\n\nDemandez au LLM :\n\n“Comment personnaliser les couleurs, titres et thème d’un graphique ggplot2 ?”\n\n\n\nExplorez :\n\nDifférentes couleurs\nDifférents thèmes : theme_bw(), theme_classic()\nAjout d’une ligne à un niveau spécifique avec geom_hline()\n\n\n\n20 minutes. Exploration des options de personnalisation."
+    "text": "Exercice 6 : Améliorer le graphique\nPersonnalisez votre graphique :\n\nggplot(data = ventes, aes(x = mois, y = montant)) +\n  geom_col(fill = \"steelblue\") +\n  labs(\n    title = \"Ventes mensuelles\",\n    x = \"Mois\",\n    y = \"Montant (€)\"\n  ) +\n  theme_minimal()\n\n\nExplorez :\n\nDifférentes couleurs\nDifférents thèmes : theme_bw(), theme_classic()\nAjout d’une ligne à un niveau spécifique avec geom_hline()\n\n\n\n20 minutes. Exploration des options de personnalisation."
   },
   {
     "objectID": "M3P/slide-lecon4.html#exercice-7-différents-types-de-graphiques",
@@ -456,7 +456,7 @@
     "href": "M3P/slide-lecon4.html#exercice-8-graphiques-par-catégorie",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 8 : Graphiques par catégorie",
-    "text": "Exercice 8 : Graphiques par catégorie\nChallenge : Créez un graphique des ventes coloré par vendeur.\nDemandez au LLM :\n\n“Comment créer un graphique avec ggplot2 où chaque catégorie a une couleur différente ?”\n\n\nVous découvrirez :\n\nggplot(ventes, aes(x = mois, y = montant, fill = vendeur)) +\n  geom_col(position = \"dodge\") +\n  labs(title = \"Ventes par vendeur et par mois\")\n\n\n\nQuestions :\n\nQue fait position = \"dodge\" ?\nQue se passe-t-il sans ?\nComment faire un graphique empilé ?\n\n\n\n20 minutes. Introduction aux graphiques multivariés."
+    "text": "Exercice 8 : Graphiques par catégorie\nCréez un graphique des ventes coloré par vendeur.\nComment créer un graphique avec ggplot2 où chaque catégorie a une couleur différente ?\n\nUne réponse :\n\nggplot(ventes, aes(x = mois, y = montant, fill = vendeur)) +\n  geom_col(position = \"dodge\") +\n  labs(title = \"Ventes par vendeur et par mois\")\n\n\n\nQuestions :\n\nOù est positionné fill ? Pourquoi ?\nQue fait position = \"dodge\" ?\nQue se passe-t-il sans ?\nComment faire un graphique empilé ?\n\n\n\n20 minutes. Introduction aux graphiques multivariés."
   },
   {
     "objectID": "M3P/slide-lecon4.html#pourquoi-créer-des-fonctions-graphiques",
@@ -470,7 +470,7 @@
     "href": "M3P/slide-lecon4.html#exercice-9-première-fonction-graphique",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 9 : Première fonction graphique",
-    "text": "Exercice 9 : Première fonction graphique\nCréez une fonction qui génère un graphique en barres standard :\n\ngraphique_barres &lt;- function(donnees, colonne_x, colonne_y, titre) {\n  ggplot(donnees, aes(x = .data[[colonne_x]], y = .data[[colonne_y]])) +\n    geom_col(fill = \"steelblue\") +\n    labs(title = titre) +\n    theme_minimal()\n}\n\n# Utilisation\ngraphique_barres(ventes, \"mois\", \"montant\", \"Ventes mensuelles\")\n\n\nDemandez au LLM d’expliquer :\n\nÀ quoi sert .data[[...]] ?\nComment passer des noms de colonnes comme paramètres ?\n\n\n\n20 minutes. Introduction aux fonctions avec ggplot2. Concept avancé mais important."
+    "text": "Exercice 9 : Première fonction graphique\nCréez une fonction qui génère un graphique en barres standard :\n\ngraphique_barres &lt;- function(donnees, colonne_x, colonne_y, titre) {\n  ggplot(donnees, aes(x = .data[[colonne_x]], y = .data[[colonne_y]])) +\n    geom_col(fill = \"steelblue\") +\n    labs(title = titre) +\n    theme_minimal()\n}\n\n# Utilisation\ngraphique_barres(ventes, \"mois\", \"montant\", \"Ventes mensuelles\")\n\n\nDemandez au LLM d’expliquer :\n\nÀ quoi sert .data[[...]] ?\nComment passer des noms de colonnes comme paramètres ?\n\n\n\n20 minutes. Introduction aux fonctions avec ggplot2."
   },
   {
     "objectID": "M3P/slide-lecon4.html#exercice-10-fonction-graphique-avancée",
@@ -533,7 +533,7 @@
     "href": "M3P/slide-lecon4.html#questions",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nPoints clés à retenir\n\n\n\nLe nettoyage des données est essentiel et prend du temps\nggplot2 permet de créer des graphiques professionnels de manière cohérente\nLes fonctions graphiques évitent la répétition et assurent la cohérence\nLa visualisation est aussi importante que l’analyse\n\n\n\n\n\nBon courage et belles visualisations ! 📊"
+    "text": "Questions ?\n\n\n\n\n\n\nPoints clés à retenir\n\n\n\nLe nettoyage des données est essentiel et prend du temps\nggplot2 permet de créer des graphiques professionnels de manière cohérente\nLes fonctions graphiques évitent la répétition et assurent la cohérence\nLa visualisation est aussi importante que l’analyse"
   },
   {
     "objectID": "M3P/03Lecon2Donnees.html",
@@ -648,7 +648,7 @@
     "href": "M3P/03Lecon2Donnees.html#exercice-2-importer-les-données",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Exercice 2 : Importer les données",
-    "text": "Exercice 2 : Importer les données\nDemandez à votre LLM :\n\n“Comment importer un fichier CSV en R ? Je débute en programmation.”\n\n\nVous devriez obtenir quelque chose comme :\n\ndonnees_meteo &lt;- read.csv(\"donnees_meteo.csv\")\n\n\n\nTestez cette commande !\nEn cas d’erreur, demandez au LLM de vous aider à débugger.\n\n\n15 minutes. Première importation de données. Anticiper les erreurs de chemin, d’encodage, etc.",
+    "text": "Exercice 2 : Importer les données\nDemandez à votre LLM :\n\n“Comment importer un fichier CSV en R ? Je débute en programmation.”\n\n\nVous devriez obtenir quelque chose comme :\n\ndonnees_meteo &lt;- read.csv(\"donnees_meteo.csv\")\n\nOu la proposition d’utiliser la commande d’importation de Rstudio.\n\n\nTestez cette commande !\nEn cas d’erreur, demandez au LLM de vous aider à déboguer.\n\n\n15 minutes. Première importation de données. Anticiper les erreurs de chemin, d’encodage, etc.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -660,7 +660,7 @@
     "href": "M3P/03Lecon2Donnees.html#vérifier-limportation",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Vérifier l’importation",
-    "text": "Vérifier l’importation\nUne fois importé, vérifiez que ça a fonctionné :\n\n# Afficher les premières lignes\nhead(donnees_meteo)\n\n# Afficher la structure\nstr(donnees_meteo)\n\n\nDemandez au LLM d’expliquer ce que montrent ces fonctions.",
+    "text": "Vérifier l’importation\nUne fois importé, vérifiez que ça a fonctionné :\n\n# Afficher les premières lignes\nhead(donnees_meteo)\n\n# Afficher la structure\nstr(donnees_meteo)\n\n\nÀ quoi servent ces fonctions ?",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -672,7 +672,7 @@
     "href": "M3P/03Lecon2Donnees.html#les-data-frames",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Les data frames",
-    "text": "Les data frames\nLes données importées sont stockées dans un data frame.\n\n\n\n\n\n\n\nAstuceAnalogie\n\n\n\nUn data frame est comme un tableau Excel : des lignes (observations) et des colonnes (variables).",
+    "text": "Les data frames\nLes données importées sont stockées dans un data.frame.\n\n\n\n\n\n\n\nAstuceAnalogie\n\n\n\nUn dataframe est comme une feuille d’un tableau Excel : des lignes (observations) et des colonnes (variables).",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -708,7 +708,7 @@
     "href": "M3P/03Lecon2Donnees.html#exercice-4-analyser-les-variables",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Exercice 4 : Analyser les variables",
-    "text": "Exercice 4 : Analyser les variables\nPour chaque variable numérique dans vos données, calculez :\n\nLa moyenne\nLa médiane\nLe minimum\nLe maximum\nL’écart-type (sd())\n\n\nDemandez au LLM :\n\n“Comment calculer des statistiques descriptives sur une colonne d’un data frame en R ?”\n\n\n\nNotez vos résultats dans un commentaire de votre script.\n\n\n15 minutes. Application pratique. Les étudiants utilisent $ et les fonctions statistiques.",
+    "text": "Exercice 4 : Analyser les variables\nPour chaque variable numérique dans vos données, calculez :\n\nLa moyenne\nLa médiane\nLe minimum\nLe maximum\nL’écart-type (sd())\n\nNotez vos résultats dans un commentaire de votre script.\n\n15 minutes. Application pratique. Les étudiants utilisent $ et les fonctions statistiques.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -756,7 +756,7 @@
     "href": "M3P/03Lecon2Donnees.html#exercice-6-rapport-statistique",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Exercice 6 : Rapport statistique",
-    "text": "Exercice 6 : Rapport statistique\nCréez un script qui génère un rapport complet sur la variable température :\n\n# Rapport sur la température\nprint(\"=== ANALYSE DE LA TEMPÉRATURE ===\")\nprint(paste(\"Nombre d'observations :\", length(donnees_meteo$temperature)))\nprint(paste(\"Valeurs manquantes :\", sum(is.na(donnees_meteo$temperature))))\nprint(paste(\"Moyenne :\", mean(donnees_meteo$temperature, na.rm = TRUE)))\nprint(paste(\"Médiane :\", median(donnees_meteo$temperature, na.rm = TRUE)))\nprint(paste(\"Écart-type :\", sd(donnees_meteo$temperature, na.rm = TRUE)))\n\n\nExtension : Faites la même chose pour une autre variable.\n\n\n15 minutes. Exercice de synthèse. Introduction à paste() pour formater.",
+    "text": "Exercice 6 : Rapport statistique\nCréez un script qui génère un rapport complet sur la variable température en utilisant la fonction paste (cherchez ce qu’elle fait).\n\nExtension : Faites la même chose pour une autre variable.\n\n\n15 minutes. Exercice de synthèse. Introduction à paste() pour formater.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -780,7 +780,7 @@
     "href": "M3P/03Lecon2Donnees.html#exercice-7-premier-graphique",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Exercice 7 : Premier graphique",
-    "text": "Exercice 7 : Premier graphique\nDemandez au LLM :\n\n“Comment créer un graphique simple en R pour visualiser l’évolution d’une variable dans le temps ? Je débute.”\n\n\nVous découvrirez probablement plot() :\n\nplot(donnees_meteo$date, donnees_meteo$temperature)\n\n\n\nTestez ce code !\nSi vous avez une erreur avec les dates, demandez au LLM comment les convertir au bon format.\n\n\n15 minutes. Premier graphique. Les dates peuvent poser problème - bon exercice de debugging.",
+    "text": "Exercice 7 : Premier graphique\nDemandez au LLM :\n\n“Comment créer un graphique simple en R pour visualiser l’évolution d’une variable dans le temps ? Je débute.”\n\n\nVous découvrirez probablement plot() (ou ggplot) :\n\nplot(donnees_meteo$date, donnees_meteo$temperature)\n\n\n\nTestez ce code !\nSi vous avez une erreur avec les dates, demandez au LLM comment les convertir au bon format.\n\n\n15 minutes. Premier graphique. Les dates peuvent poser problème – bon exercice de deboguer.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -792,7 +792,7 @@
     "href": "M3P/03Lecon2Donnees.html#améliorer-le-graphique",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Améliorer le graphique",
-    "text": "Améliorer le graphique\nLes graphiques de base peuvent être personnalisés :\n\nplot(donnees_meteo$date, donnees_meteo$temperature,\n     type = \"l\",  # ligne au lieu de points\n     col = \"blue\",\n     main = \"Évolution de la température\",\n     xlab = \"Date\",\n     ylab = \"Température (°C)\")\n\n\nDemandez au LLM d’expliquer chaque paramètre.",
+    "text": "Améliorer le graphique\nLes graphiques de base peuvent être personnalisés :\n\nplot(donnees_meteo$date, donnees_meteo$temperature,\n     type = \"l\",  # ligne au lieu de points\n     col = \"blue\",\n     main = \"Évolution de la température\",\n     xlab = \"Date\",\n     ylab = \"Température (°C)\")\n\n\nQue signifie chaque paramètre ?",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -816,7 +816,7 @@
     "href": "M3P/03Lecon2Donnees.html#sauvegarder-un-graphique",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Sauvegarder un graphique",
-    "text": "Sauvegarder un graphique\nPour sauvegarder un graphique :\n\n# Ouvrir un fichier\npng(\"mon_graphique.png\", width = 800, height = 600)\n\n# Créer le graphique\nplot(donnees_meteo$date, donnees_meteo$temperature, type = \"l\")\n\n# Fermer le fichier\ndev.off()\n\n\nLe fichier sera dans votre dossier de travail.",
+    "text": "Sauvegarder un graphique\nPour sauvegarder un graphique, vous pouvez utiliser l’exportation de Rstudio.\n\n\n\n\n\n\nNote\n\n\n\nLe fichier sera dans votre dossier de travail.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -828,7 +828,7 @@
     "href": "M3P/03Lecon2Donnees.html#les-erreurs-sont-normales",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Les erreurs sont normales !",
-    "text": "Les erreurs sont normales !\n\n\n\n\n\n\nAvertissementImportant\n\n\n\nTout le monde rencontre des erreurs. C’est une partie essentielle de la programmation.\n\n\n\nStratégie de debugging :\n\nLire le message d’erreur (même s’il semble cryptique)\nIdentifier la ligne problématique\nTester des hypothèses\nDemander de l’aide (LLM, documentation, pairs)",
+    "text": "Les erreurs sont normales !\n\n\n\n\n\n\nAvertissementImportant\n\n\n\nTout le monde rencontre des erreurs. C’est une partie essentielle de la programmation.\n\n\n\nStratégie de débogage :\n\nLire le message d’erreur (même s’il semble cryptique)\nIdentifier la ligne problématique\nTester des hypothèses\nDemander de l’aide (LLM, documentation, pairs)",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -836,11 +836,11 @@
     ]
   },
   {
-    "objectID": "M3P/03Lecon2Donnees.html#exercice-9-debugging-collectif",
-    "href": "M3P/03Lecon2Donnees.html#exercice-9-debugging-collectif",
+    "objectID": "M3P/03Lecon2Donnees.html#exercice-9-débogage-collectif",
+    "href": "M3P/03Lecon2Donnees.html#exercice-9-débogage-collectif",
     "title": "Séance 2 : Données et fonctions intégrées",
-    "section": "Exercice 9 : Debugging collectif",
-    "text": "Exercice 9 : Debugging collectif\nVoici du code avec des erreurs. Trouvez-les et corrigez-les :\n\n# Charger les données\ndonnees &lt;- read.csv(donnees_meteo.csv)\n\n# Calculer la moyenne\nmoyenne_temp &lt;- mean(donnees$Temperature)\n\n# Afficher\nprint(\"La moyenne est\" moyenne_temp)\n\n\nTravaillez par groupes de 2-3. Utilisez le LLM si nécessaire.\n\n\nErreurs à trouver :\n\nGuillemets manquants autour du nom de fichier\nMajuscule incorrecte dans le nom de colonne\nVirgule manquante dans print()\n\n\n\n15 minutes. Exercice collectif. Discuter ensuite des types d’erreurs courantes.",
+    "section": "Exercice 9 : Débogage collectif",
+    "text": "Exercice 9 : Débogage collectif\nVoici du code avec des erreurs. Trouvez-les et corrigez-les :\n\n# Charger les données\ndonnees &lt;- read.csv(donnees_meteo.csv)\n\n# Calculer la moyenne\nmoyenne_temp &lt;- mean(donnees$Temperature)\n\n# Afficher\nprint(\"La moyenne est\" moyenne_temp)\n\n\nTravaillez par groupes de 2-3. Utilisez le LLM si nécessaire.\n\n\nErreurs à trouver :\n\nGuillemets manquants autour du nom de fichier\nMajuscule incorrecte dans le nom de colonne\npaste() et virgule manquante dans print()\n\n\n\n15 minutes. ; Exercice collectif. Discuter ensuite des types d’erreurs courantes.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -852,7 +852,7 @@
     "href": "M3P/03Lecon2Donnees.html#bien-utiliser-le-llm-pour-débugger",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Bien utiliser le LLM pour débugger",
-    "text": "Bien utiliser le LLM pour débugger\n\n\n\n\n\n\nAstuceComment demander de l’aide efficacement\n\n\n\n\n\n\nMauvais prompt : &gt; “Ça marche pas”\nBon prompt : &gt; “J’essaie d’importer un fichier CSV avec read.csv() mais j’obtiens cette erreur : [copier l’erreur exacte]. Voici mon code : [copier le code]. Que dois-je corriger ?”\n\nDonnez toujours :\n\nLe code exact\nL’erreur complète\nCe que vous essayez de faire\nVotre niveau (débutant)",
+    "text": "Bien utiliser le LLM pour débugger\n\n\n\n\n\n\nAstuceComment demander de l’aide efficacement\n\n\n\n\n\n\nMauvais prompt : &gt; “Ça ne marche pas”\nBon prompt : &gt; “J’essaie d’importer un fichier CSV avec read.csv() mais j’obtiens cette erreur : [copier l’erreur exacte]. Voici mon code : [copier le code]. Que dois-je corriger ?”\n\nDonnez toujours :\n\nLe code exact\nL’erreur complète\nCe que vous essayez de faire\nVotre niveau (débutant)",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -900,19 +900,7 @@
     "href": "M3P/03Lecon2Donnees.html#exercice-de-synthèse-journal-de-bord",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Exercice de synthèse : Journal de bord",
-    "text": "Exercice de synthèse : Journal de bord\nDans votre journal, documentez :\n\nImport de données :\n\nPrompts utilisés pour apprendre à importer\nDifficultés rencontrées (chemins, formats, etc.)\nSolutions trouvées\n\nAnalyse et visualisation :\n\n3 fonctions nouvelles que vous maîtrisez maintenant\nUn graphique dont vous êtes fier (copier le code)\nUne chose que vous ne comprenez pas encore\n\nDebugging :\n\nUne erreur marquante et comment vous l’avez résolue\nUn bon prompt de debugging qui a fonctionné\n\n\n\n15 minutes. Temps de réflexion calme. Important pour ancrer les apprentissages.",
-    "crumbs": [
-      "Méthodologie de Projet Personnel et Professionnel",
-      "M3P",
-      "Séance 2 : Données et fonctions intégrées"
-    ]
-  },
-  {
-    "objectID": "M3P/03Lecon2Donnees.html#évolution-de-vos-compétences",
-    "href": "M3P/03Lecon2Donnees.html#évolution-de-vos-compétences",
-    "title": "Séance 2 : Données et fonctions intégrées",
-    "section": "Évolution de vos compétences",
-    "text": "Évolution de vos compétences\n\nSéance 1 : Vous avez appris les bases (objets, fonctions, vecteurs)\nSéance 2 : Vous savez maintenant :\n\nImporter des données réelles\nLes explorer et les analyser\nCréer des visualisations\nDébugger efficacement\n\n\n\nVous êtes déjà capable d’analyser de vraies données ! 🎉",
+    "text": "Exercice de synthèse : Journal de bord\nDans votre journal, documentez :\n\nImport de données :\n\nPrompts utilisés pour apprendre à importer\nDifficultés rencontrées (chemins, formats, etc.)\nSolutions trouvées\n\nAnalyse et visualisation :\n\n3 fonctions nouvelles que vous maîtrisez maintenant\nUn graphique dont vous êtes fier (copier le code)\nUne chose que vous ne comprenez pas encore\n\nDébogage :\n\nUne erreur marquante et comment vous l’avez résolue\nUn bon prompt de débogage qui a fonctionné\n\n\n\n15 minutes. Temps de réflexion calme. Important pour ancrer les apprentissages.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -948,7 +936,7 @@
     "href": "M3P/03Lecon2Donnees.html#préparation-prochaine-séance",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Préparation prochaine séance",
-    "text": "Préparation prochaine séance\n\n\n\n\n\n\nNoteDevoirs\n\n\n\n\nTerminez le mini-projet INSEE si besoin\nMettez à jour votre journal avec tous les détails de cette séance\nTrouvez un jeu de données qui vous intéresse et analysez-le\nCréez au moins 3 graphiques différents avec vos données\n\n\n\n\nProchaine séance : Fonctions, conditions et boucles - automatiser vos analyses !",
+    "text": "Préparation prochaine séance\n\n\n\n\n\n\nNoteDevoirs\n\n\n\n\nTerminez le mini-projet INSEE si besoin\nMettez à jour votre journal avec tous les détails de cette séance\n\n\n\n\nProchaine séance : Fonctions, conditions et boucles – automatiser vos analyses !",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -960,7 +948,7 @@
     "href": "M3P/03Lecon2Donnees.html#questions",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nAstucePoints clés à retenir\n\n\n\n\nLes data frames sont essentiels pour travailler avec des données réelles\n$ permet d’accéder aux colonnes\nToujours vérifier les NA avant de calculer\nLes visualisations révèlent ce que les chiffres cachent\nLe debugging fait partie du processus - soyez patient !\n\n\n\n\nBon courage et bonnes analyses ! 📊",
+    "text": "Questions ?\n\n\n\n\n\n\nAstucePoints clés à retenir\n\n\n\n\nLes dataframes sont essentiels pour travailler avec des données réelles\n$ permet d’accéder aux colonnes\nToujours vérifier les NA avant de calculer\nLes visualisations révèlent ce que les chiffres cachent\nLe débogage fait partie du processus – soyez patient !",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -1028,21 +1016,21 @@
     "href": "M3P/slide-lecon2.html#exercice-2-importer-les-données",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Exercice 2 : Importer les données",
-    "text": "Exercice 2 : Importer les données\nDemandez à votre LLM :\n\n“Comment importer un fichier CSV en R ? Je débute en programmation.”\n\n\nVous devriez obtenir quelque chose comme :\n\ndonnees_meteo &lt;- read.csv(\"donnees_meteo.csv\")\n\n\n\nTestez cette commande !\nEn cas d’erreur, demandez au LLM de vous aider à débugger.\n\n\n15 minutes. Première importation de données. Anticiper les erreurs de chemin, d’encodage, etc."
+    "text": "Exercice 2 : Importer les données\nDemandez à votre LLM :\n\n“Comment importer un fichier CSV en R ? Je débute en programmation.”\n\n\nVous devriez obtenir quelque chose comme :\n\ndonnees_meteo &lt;- read.csv(\"donnees_meteo.csv\")\n\nOu la proposition d’utiliser la commande d’importation de Rstudio.\n\n\nTestez cette commande !\nEn cas d’erreur, demandez au LLM de vous aider à déboguer.\n\n\n15 minutes. Première importation de données. Anticiper les erreurs de chemin, d’encodage, etc."
   },
   {
     "objectID": "M3P/slide-lecon2.html#vérifier-limportation",
     "href": "M3P/slide-lecon2.html#vérifier-limportation",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Vérifier l’importation",
-    "text": "Vérifier l’importation\nUne fois importé, vérifiez que ça a fonctionné :\n\n# Afficher les premières lignes\nhead(donnees_meteo)\n\n# Afficher la structure\nstr(donnees_meteo)\n\n\nDemandez au LLM d’expliquer ce que montrent ces fonctions."
+    "text": "Vérifier l’importation\nUne fois importé, vérifiez que ça a fonctionné :\n\n# Afficher les premières lignes\nhead(donnees_meteo)\n\n# Afficher la structure\nstr(donnees_meteo)\n\n\nÀ quoi servent ces fonctions ?"
   },
   {
     "objectID": "M3P/slide-lecon2.html#les-data-frames",
     "href": "M3P/slide-lecon2.html#les-data-frames",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Les data frames",
-    "text": "Les data frames\nLes données importées sont stockées dans un data frame.\n\n\n\n\n\n\n\nAnalogie\n\n\nUn data frame est comme un tableau Excel : des lignes (observations) et des colonnes (variables)."
+    "text": "Les data frames\nLes données importées sont stockées dans un data.frame.\n\n\n\n\n\n\n\nAnalogie\n\n\nUn dataframe est comme une feuille d’un tableau Excel : des lignes (observations) et des colonnes (variables)."
   },
   {
     "objectID": "M3P/slide-lecon2.html#exercice-3-explorer-la-structure",
@@ -1063,7 +1051,7 @@
     "href": "M3P/slide-lecon2.html#exercice-4-analyser-les-variables",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Exercice 4 : Analyser les variables",
-    "text": "Exercice 4 : Analyser les variables\nPour chaque variable numérique dans vos données, calculez :\n\nLa moyenne\nLa médiane\nLe minimum\nLe maximum\nL’écart-type (sd())\n\n\nDemandez au LLM :\n\n“Comment calculer des statistiques descriptives sur une colonne d’un data frame en R ?”\n\n\n\nNotez vos résultats dans un commentaire de votre script.\n\n\n15 minutes. Application pratique. Les étudiants utilisent $ et les fonctions statistiques."
+    "text": "Exercice 4 : Analyser les variables\nPour chaque variable numérique dans vos données, calculez :\n\nLa moyenne\nLa médiane\nLe minimum\nLe maximum\nL’écart-type (sd())\n\nNotez vos résultats dans un commentaire de votre script.\n\n15 minutes. Application pratique. Les étudiants utilisent $ et les fonctions statistiques."
   },
   {
     "objectID": "M3P/slide-lecon2.html#la-fonction-summary",
@@ -1091,7 +1079,7 @@
     "href": "M3P/slide-lecon2.html#exercice-6-rapport-statistique",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Exercice 6 : Rapport statistique",
-    "text": "Exercice 6 : Rapport statistique\nCréez un script qui génère un rapport complet sur la variable température :\n\n# Rapport sur la température\nprint(\"=== ANALYSE DE LA TEMPÉRATURE ===\")\nprint(paste(\"Nombre d'observations :\", length(donnees_meteo$temperature)))\nprint(paste(\"Valeurs manquantes :\", sum(is.na(donnees_meteo$temperature))))\nprint(paste(\"Moyenne :\", mean(donnees_meteo$temperature, na.rm = TRUE)))\nprint(paste(\"Médiane :\", median(donnees_meteo$temperature, na.rm = TRUE)))\nprint(paste(\"Écart-type :\", sd(donnees_meteo$temperature, na.rm = TRUE)))\n\n\nExtension : Faites la même chose pour une autre variable.\n\n\n15 minutes. Exercice de synthèse. Introduction à paste() pour formater."
+    "text": "Exercice 6 : Rapport statistique\nCréez un script qui génère un rapport complet sur la variable température en utilisant la fonction paste (cherchez ce qu’elle fait).\n\nExtension : Faites la même chose pour une autre variable.\n\n\n15 minutes. Exercice de synthèse. Introduction à paste() pour formater."
   },
   {
     "objectID": "M3P/slide-lecon2.html#pourquoi-visualiser",
@@ -1105,14 +1093,14 @@
     "href": "M3P/slide-lecon2.html#exercice-7-premier-graphique",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Exercice 7 : Premier graphique",
-    "text": "Exercice 7 : Premier graphique\nDemandez au LLM :\n\n“Comment créer un graphique simple en R pour visualiser l’évolution d’une variable dans le temps ? Je débute.”\n\n\nVous découvrirez probablement plot() :\n\nplot(donnees_meteo$date, donnees_meteo$temperature)\n\n\n\nTestez ce code !\nSi vous avez une erreur avec les dates, demandez au LLM comment les convertir au bon format.\n\n\n15 minutes. Premier graphique. Les dates peuvent poser problème - bon exercice de debugging."
+    "text": "Exercice 7 : Premier graphique\nDemandez au LLM :\n\n“Comment créer un graphique simple en R pour visualiser l’évolution d’une variable dans le temps ? Je débute.”\n\n\nVous découvrirez probablement plot() (ou ggplot) :\n\nplot(donnees_meteo$date, donnees_meteo$temperature)\n\n\n\nTestez ce code !\nSi vous avez une erreur avec les dates, demandez au LLM comment les convertir au bon format.\n\n\n15 minutes. Premier graphique. Les dates peuvent poser problème – bon exercice de deboguer."
   },
   {
     "objectID": "M3P/slide-lecon2.html#améliorer-le-graphique",
     "href": "M3P/slide-lecon2.html#améliorer-le-graphique",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Améliorer le graphique",
-    "text": "Améliorer le graphique\nLes graphiques de base peuvent être personnalisés :\n\nplot(donnees_meteo$date, donnees_meteo$temperature,\n     type = \"l\",  # ligne au lieu de points\n     col = \"blue\",\n     main = \"Évolution de la température\",\n     xlab = \"Date\",\n     ylab = \"Température (°C)\")\n\n\nDemandez au LLM d’expliquer chaque paramètre."
+    "text": "Améliorer le graphique\nLes graphiques de base peuvent être personnalisés :\n\nplot(donnees_meteo$date, donnees_meteo$temperature,\n     type = \"l\",  # ligne au lieu de points\n     col = \"blue\",\n     main = \"Évolution de la température\",\n     xlab = \"Date\",\n     ylab = \"Température (°C)\")\n\n\nQue signifie chaque paramètre ?"
   },
   {
     "objectID": "M3P/slide-lecon2.html#exercice-8-explorer-dautres-graphiques",
@@ -1126,28 +1114,28 @@
     "href": "M3P/slide-lecon2.html#sauvegarder-un-graphique",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Sauvegarder un graphique",
-    "text": "Sauvegarder un graphique\nPour sauvegarder un graphique :\n\n# Ouvrir un fichier\npng(\"mon_graphique.png\", width = 800, height = 600)\n\n# Créer le graphique\nplot(donnees_meteo$date, donnees_meteo$temperature, type = \"l\")\n\n# Fermer le fichier\ndev.off()\n\n\nLe fichier sera dans votre dossier de travail."
+    "text": "Sauvegarder un graphique\nPour sauvegarder un graphique, vous pouvez utiliser l’exportation de Rstudio.\n\n\n\n\n\n\nNote\n\n\nLe fichier sera dans votre dossier de travail."
   },
   {
     "objectID": "M3P/slide-lecon2.html#les-erreurs-sont-normales",
     "href": "M3P/slide-lecon2.html#les-erreurs-sont-normales",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Les erreurs sont normales !",
-    "text": "Les erreurs sont normales !\n\n\n\n\n\n\nImportant\n\n\nTout le monde rencontre des erreurs. C’est une partie essentielle de la programmation.\n\n\n\n\nStratégie de debugging :\n\nLire le message d’erreur (même s’il semble cryptique)\nIdentifier la ligne problématique\nTester des hypothèses\nDemander de l’aide (LLM, documentation, pairs)"
+    "text": "Les erreurs sont normales !\n\n\n\n\n\n\nImportant\n\n\nTout le monde rencontre des erreurs. C’est une partie essentielle de la programmation.\n\n\n\n\nStratégie de débogage :\n\nLire le message d’erreur (même s’il semble cryptique)\nIdentifier la ligne problématique\nTester des hypothèses\nDemander de l’aide (LLM, documentation, pairs)"
   },
   {
-    "objectID": "M3P/slide-lecon2.html#exercice-9-debugging-collectif",
-    "href": "M3P/slide-lecon2.html#exercice-9-debugging-collectif",
+    "objectID": "M3P/slide-lecon2.html#exercice-9-débogage-collectif",
+    "href": "M3P/slide-lecon2.html#exercice-9-débogage-collectif",
     "title": "Séance 2 : Données et fonctions intégrées",
-    "section": "Exercice 9 : Debugging collectif",
-    "text": "Exercice 9 : Debugging collectif\nVoici du code avec des erreurs. Trouvez-les et corrigez-les :\n\n# Charger les données\ndonnees &lt;- read.csv(donnees_meteo.csv)\n\n# Calculer la moyenne\nmoyenne_temp &lt;- mean(donnees$Temperature)\n\n# Afficher\nprint(\"La moyenne est\" moyenne_temp)\n\n\nTravaillez par groupes de 2-3. Utilisez le LLM si nécessaire.\n\n\nErreurs à trouver :\n\nGuillemets manquants autour du nom de fichier\nMajuscule incorrecte dans le nom de colonne\nVirgule manquante dans print()\n\n\n\n15 minutes. Exercice collectif. Discuter ensuite des types d’erreurs courantes."
+    "section": "Exercice 9 : Débogage collectif",
+    "text": "Exercice 9 : Débogage collectif\nVoici du code avec des erreurs. Trouvez-les et corrigez-les :\n\n# Charger les données\ndonnees &lt;- read.csv(donnees_meteo.csv)\n\n# Calculer la moyenne\nmoyenne_temp &lt;- mean(donnees$Temperature)\n\n# Afficher\nprint(\"La moyenne est\" moyenne_temp)\n\n\nTravaillez par groupes de 2-3. Utilisez le LLM si nécessaire.\n\n\nErreurs à trouver :\n\nGuillemets manquants autour du nom de fichier\nMajuscule incorrecte dans le nom de colonne\npaste() et virgule manquante dans print()\n\n\n\n15 minutes. ; Exercice collectif. Discuter ensuite des types d’erreurs courantes."
   },
   {
     "objectID": "M3P/slide-lecon2.html#bien-utiliser-le-llm-pour-débugger",
     "href": "M3P/slide-lecon2.html#bien-utiliser-le-llm-pour-débugger",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Bien utiliser le LLM pour débugger",
-    "text": "Bien utiliser le LLM pour débugger\n\n\n\n\n\n\nComment demander de l’aide efficacement\n\n\n\n\n\n\nMauvais prompt : &gt; “Ça marche pas”\nBon prompt : &gt; “J’essaie d’importer un fichier CSV avec read.csv() mais j’obtiens cette erreur : [copier l’erreur exacte]. Voici mon code : [copier le code]. Que dois-je corriger ?”\n\nDonnez toujours :\n\nLe code exact\nL’erreur complète\nCe que vous essayez de faire\nVotre niveau (débutant)"
+    "text": "Bien utiliser le LLM pour débugger\n\n\n\n\n\n\nComment demander de l’aide efficacement\n\n\n\n\n\n\nMauvais prompt : &gt; “Ça ne marche pas”\nBon prompt : &gt; “J’essaie d’importer un fichier CSV avec read.csv() mais j’obtiens cette erreur : [copier l’erreur exacte]. Voici mon code : [copier le code]. Que dois-je corriger ?”\n\nDonnez toujours :\n\nLe code exact\nL’erreur complète\nCe que vous essayez de faire\nVotre niveau (débutant)"
   },
   {
     "objectID": "M3P/slide-lecon2.html#projet-analyse-de-données-insee",
@@ -1175,14 +1163,7 @@
     "href": "M3P/slide-lecon2.html#exercice-de-synthèse-journal-de-bord",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Exercice de synthèse : Journal de bord",
-    "text": "Exercice de synthèse : Journal de bord\nDans votre journal, documentez :\n\nImport de données :\n\nPrompts utilisés pour apprendre à importer\nDifficultés rencontrées (chemins, formats, etc.)\nSolutions trouvées\n\nAnalyse et visualisation :\n\n3 fonctions nouvelles que vous maîtrisez maintenant\nUn graphique dont vous êtes fier (copier le code)\nUne chose que vous ne comprenez pas encore\n\nDebugging :\n\nUne erreur marquante et comment vous l’avez résolue\nUn bon prompt de debugging qui a fonctionné\n\n\n\n15 minutes. Temps de réflexion calme. Important pour ancrer les apprentissages."
-  },
-  {
-    "objectID": "M3P/slide-lecon2.html#évolution-de-vos-compétences",
-    "href": "M3P/slide-lecon2.html#évolution-de-vos-compétences",
-    "title": "Séance 2 : Données et fonctions intégrées",
-    "section": "Évolution de vos compétences",
-    "text": "Évolution de vos compétences\nSéance 1 : Vous avez appris les bases (objets, fonctions, vecteurs)\nSéance 2 : Vous savez maintenant :\n\nImporter des données réelles\nLes explorer et les analyser\nCréer des visualisations\nDébugger efficacement\n\n\nVous êtes déjà capable d’analyser de vraies données ! 🎉"
+    "text": "Exercice de synthèse : Journal de bord\nDans votre journal, documentez :\n\nImport de données :\n\nPrompts utilisés pour apprendre à importer\nDifficultés rencontrées (chemins, formats, etc.)\nSolutions trouvées\n\nAnalyse et visualisation :\n\n3 fonctions nouvelles que vous maîtrisez maintenant\nUn graphique dont vous êtes fier (copier le code)\nUne chose que vous ne comprenez pas encore\n\nDébogage :\n\nUne erreur marquante et comment vous l’avez résolue\nUn bon prompt de débogage qui a fonctionné\n\n\n\n15 minutes. Temps de réflexion calme. Important pour ancrer les apprentissages."
   },
   {
     "objectID": "M3P/slide-lecon2.html#fonctions-clés-de-cette-séance",
@@ -1203,14 +1184,14 @@
     "href": "M3P/slide-lecon2.html#préparation-prochaine-séance",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Préparation prochaine séance",
-    "text": "Préparation prochaine séance\n\n\n\n\n\n\nDevoirs\n\n\n\nTerminez le mini-projet INSEE si besoin\nMettez à jour votre journal avec tous les détails de cette séance\nTrouvez un jeu de données qui vous intéresse et analysez-le\nCréez au moins 3 graphiques différents avec vos données\n\n\n\n\n\nProchaine séance : Fonctions, conditions et boucles - automatiser vos analyses !"
+    "text": "Préparation prochaine séance\n\n\n\n\n\n\nDevoirs\n\n\n\nTerminez le mini-projet INSEE si besoin\nMettez à jour votre journal avec tous les détails de cette séance\n\n\n\n\n\nProchaine séance : Fonctions, conditions et boucles – automatiser vos analyses !"
   },
   {
     "objectID": "M3P/slide-lecon2.html#questions",
     "href": "M3P/slide-lecon2.html#questions",
     "title": "Séance 2 : Données et fonctions intégrées",
     "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nPoints clés à retenir\n\n\n\nLes data frames sont essentiels pour travailler avec des données réelles\n$ permet d’accéder aux colonnes\nToujours vérifier les NA avant de calculer\nLes visualisations révèlent ce que les chiffres cachent\nLe debugging fait partie du processus - soyez patient !\n\n\n\n\n\nBon courage et bonnes analyses ! 📊"
+    "text": "Questions ?\n\n\n\n\n\n\nPoints clés à retenir\n\n\n\nLes dataframes sont essentiels pour travailler avec des données réelles\n$ permet d’accéder aux colonnes\nToujours vérifier les NA avant de calculer\nLes visualisations révèlent ce que les chiffres cachent\nLe débogage fait partie du processus – soyez patient !"
   },
   {
     "objectID": "M3P/01Introduction.html",
@@ -6713,35 +6694,35 @@
     "href": "M3P/slide-lecon1.html#exercice-4-créer-des-objets",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Exercice 4 : Créer des objets",
-    "text": "Exercice 4 : Créer des objets\nCréez les objets suivants :\n\nvotre_prenom &lt;- \"...\"\nvotre_age &lt;- ...\nannee_naissance &lt;- 2025 - votre_age\n\nEnsuite, affichez-les en tapant simplement leur nom dans la console.\n\nQuestions à explorer avec le LLM :\n\nPeut-on mettre des espaces dans les noms d’objets ?\nQuelle est la différence entre &lt;- et = ?\nComment supprimer un objet ?\n\n\n\n15 minutes. Exercice pratique simple. Les étudiants découvrent les règles de nommage."
+    "text": "Exercice 4 : Créer des objets\nCréez les objets suivants :\n\nvotre_prenom &lt;- \"...\"\nvotre_age &lt;- ...\nannee_naissance &lt;- 2025 - votre_age\n\nEnsuite, affichez-les en tapant simplement leur nom dans la console.\n\nEssayez les choses suivantes :\n\nPeut-on mettre des espaces dans les noms d’objets ?\nQuelle est la différence entre &lt;- et = ?\nComment supprimer un objet ?\n\n\n\n15 minutes. Exercice pratique simple. Les étudiants découvrent les règles de nommage."
   },
   {
     "objectID": "M3P/slide-lecon1.html#les-types-de-données",
     "href": "M3P/slide-lecon1.html#les-types-de-données",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Les types de données",
-    "text": "Les types de données\nR distingue différents types de données :\n\nNumérique : 42, 3.14\nCaractère (texte) : \"Bonjour\", \"Paris\"\nLogique : TRUE, FALSE\n\n\nPour vérifier le type :\n\nage &lt;- 20\nclass(age)"
+    "text": "Les types de données\nR distingue différents types de données :\n\nNumérique (numeric ou num) : 42, 3.14\nTexte (character ou chr) : \"Bonjour\", \"Paris\"\nLogique (logical) : TRUE, FALSE\n\n\nPour vérifier le type :\n\nage &lt;- 20\nclass(age)"
   },
   {
     "objectID": "M3P/slide-lecon1.html#exercice-5-explorer-les-types",
     "href": "M3P/slide-lecon1.html#exercice-5-explorer-les-types",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Exercice 5 : Explorer les types",
-    "text": "Exercice 5 : Explorer les types\nDemandez au LLM :\n\n“Explique-moi les différents types de données en R avec des exemples simples.”\n\nEnsuite, testez ce code et observez :\n\nnombre &lt;- 42\ntexte &lt;- \"Hello\"\nvrai_faux &lt;- TRUE\n\nclass(nombre)\nclass(texte)\nclass(vrai_faux)\n\n\nQuestion bonus : Que se passe-t-il si on essaie d’additionner un nombre et du texte ?\n\n\n15 minutes. Concept important. Les erreurs de type sont fréquentes pour les débutants."
+    "text": "Exercice 5 : Explorer les types\nTestez ce code et observez :\n\nnombre &lt;- 42\ntexte &lt;- \"Hello\"\nvrai_faux &lt;- TRUE\n\nclass(nombre)\nclass(texte)\nclass(vrai_faux)\n\n\nQuestion bonus : Que se passe-t-il si on essaie d’additionner un nombre et du texte ?\n\n\n15 minutes. Concept important. Les erreurs de type sont fréquentes pour les débutants."
   },
   {
     "objectID": "M3P/slide-lecon1.html#les-vecteurs",
     "href": "M3P/slide-lecon1.html#les-vecteurs",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Les vecteurs",
-    "text": "Les vecteurs\nUn vecteur est une collection de valeurs du même type.\n\nnotes &lt;- c(12, 15, 13, 8)\nprenoms &lt;- c(\"Alice\", \"Bob\", \"Charlie\")\n\n\n\n\n\n\n\n\nImportant\n\n\nc() signifie “combine” - elle regroupe plusieurs valeurs."
+    "text": "Les vecteurs\nUn vecteur est une collection de valeurs du même type.\n\nnotes &lt;- c(12, 15, 13, 8)\nprenoms &lt;- c(\"Alice\", \"Bob\", \"Charlie\")\n\n\n\n\n\n\n\n\nRappel\n\n\nc() signifie “combine” - elle regroupe plusieurs valeurs."
   },
   {
     "objectID": "M3P/slide-lecon1.html#exercice-6-manipuler-des-vecteurs",
     "href": "M3P/slide-lecon1.html#exercice-6-manipuler-des-vecteurs",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Exercice 6 : Manipuler des vecteurs",
-    "text": "Exercice 6 : Manipuler des vecteurs\nCréez un vecteur avec les températures de la semaine :\n\ntemperatures &lt;- c(18, 20, 19, 22, 21, 17, 16)\n\nDemandez au LLM comment :\n\nAfficher la première température\nAfficher les trois premières températures\nCalculer la température moyenne\nTrouver la température maximale\n\n\nTestez les solutions proposées !\n\n\n15 minutes. Introduction à l’indexation. Les étudiants découvriront [1], [1:3], max(), etc."
+    "text": "Exercice 6 : Manipuler des vecteurs\nCréez un vecteur avec les températures de la semaine :\n\ntemperatures &lt;- c(18, 20, 19, 22, 21, 17, 16)\n\nDemandez au LLM comment :\n\nAfficher la première température\nAfficher les trois premières températures\nCalculer la température moyenne\nAfficher la 5e et la 7e température\n\n\nTestez les solutions proposées !\n\n\n15 minutes. Introduction à l’indexation. Les étudiants découvriront [1], [1:3], max(), etc."
   },
   {
     "objectID": "M3P/slide-lecon1.html#quest-ce-quune-fonction",
@@ -6755,21 +6736,21 @@
     "href": "M3P/slide-lecon1.html#exercice-7-découvrir-des-fonctions",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Exercice 7 : Découvrir des fonctions",
-    "text": "Exercice 7 : Découvrir des fonctions\nAvec votre vecteur de températures, testez :\n\ntemperatures &lt;- c(18, 20, 19, 22, 21, 17, 16)\n\nmean(temperatures)    # moyenne\nsum(temperatures)     # somme\nlength(temperatures)  # nombre d'éléments\nmin(temperatures)     # minimum\nmax(temperatures)     # maximum\n\n\nDemandez au LLM :\n\n“Quelles autres fonctions statistiques utiles existent en R pour analyser un vecteur de nombres ?”\n\n\n\n15 minutes. Les étudiants découvrent les fonctions intégrées. Encourager l’exploration."
+    "text": "Exercice 7 : Découvrir des fonctions\nAvec votre vecteur de températures, testez :\n\ntemperatures &lt;- c(18, 20, 19, 22, 21, 17, 16)\n\nmean(temperatures)    # moyenne\nsum(temperatures)     # somme\nlength(temperatures)  # nombre d'éléments\nmin(temperatures)     # minimum\nmax(temperatures)     # maximum\n\n\n\n\n\n\n\n\nNote\n\n\nIl en existe bien d’autres !\n\n\n\n\n\n15 minutes. Les étudiants découvrent les fonctions intégrées. Encourager l’exploration."
   },
   {
     "objectID": "M3P/slide-lecon1.html#exercice-8-laide-en-r",
     "href": "M3P/slide-lecon1.html#exercice-8-laide-en-r",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Exercice 8 : L’aide en R",
-    "text": "Exercice 8 : L’aide en R\nVous pouvez obtenir de l’aide sur n’importe quelle fonction avec ? :\n\n?mean\n?sum\n\n\nExplorez :\n\nTestez ?mean dans la console\nOù apparaît l’aide ?\nQue signifie le paramètre na.rm ?\n\n\n\n\n\n\n\n\n\nDouble source d’aide\n\n\n\nL’aide R (documentation officielle)\nLes LLMs (explications en langage naturel)\n\nUtilisez les deux !\n\n\n\n\n\n15 minutes. Concept important : devenir autonome. L’aide R est technique mais précise."
+    "text": "Exercice 8 : L’aide en R\nVous pouvez obtenir de l’aide sur n’importe quelle fonction avec ? ou help :\n\n?mean\nhelp(\"sum\")\n\n\nExplorez :\n\nTestez ?mean dans la console\nOù apparaît l’aide ?\nQue signifie le paramètre na.rm ?\n\n\n\n\n\n\n\n\n\nDouble source d’aide\n\n\n\nL’aide R (documentation officielle)\nLes LLMs (explications en langage naturel)\n\nUtilisez les deux !\n\n\n\n\n\n15 minutes. Concept important : devenir autonome. L’aide R est technique, mais précise."
   },
   {
     "objectID": "M3P/slide-lecon1.html#exercice-9-gérer-les-valeurs-manquantes",
     "href": "M3P/slide-lecon1.html#exercice-9-gérer-les-valeurs-manquantes",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Exercice 9 : Gérer les valeurs manquantes",
-    "text": "Exercice 9 : Gérer les valeurs manquantes\nTestez ce code :\n\nnotes_avec_absence &lt;- c(12, 15, NA, 13, 8)\nmean(notes_avec_absence)\n\n\nQue se passe-t-il ?\nNA signifie “Not Available” (donnée manquante).\n\n\nDemandez au LLM comment calculer la moyenne en ignorant les NA.\nIndice : regardez dans l’aide de mean() le paramètre na.rm\n\n\n15 minutes. Problème réel et fréquent. Les étudiants découvrent na.rm = TRUE."
+    "text": "Exercice 9 : Gérer les valeurs manquantes\nTestez ce code :\n\nnotes_avec_absence &lt;- c(12, 15, NA, 13, 8)\nmean(notes_avec_absence)\n\n\nQue se passe-t-il ?\nNA signifie “Not Available” (donnée manquante).\n\n\nIndice : regardez dans l’aide de mean() le paramètre na.rm\n\n\n15 minutes. Problème réel et fréquent. Les étudiants découvrent na.rm = TRUE."
   },
   {
     "objectID": "M3P/slide-lecon1.html#pourquoi-un-script",
@@ -6783,7 +6764,7 @@
     "href": "M3P/slide-lecon1.html#exercice-10-créer-un-script",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Exercice 10 : Créer un script",
-    "text": "Exercice 10 : Créer un script\n\nCliquez sur File &gt; New File &gt; R Script\nDans ce nouveau fichier, écrivez :\n\n\n# Mon premier script R\n# Auteur : [Votre nom]\n\n# Calcul de moyennes\nnotes &lt;- c(12, 15, 13, 8)\nmoyenne &lt;- mean(notes)\n\nprint(\"La moyenne est :\")\nprint(moyenne)\n\n\nSauvegardez (File &gt; Save ou Ctrl+S)\nExécutez ligne par ligne (Ctrl+Entrée)\n\n\n20 minutes. Première sauvegarde de code. Insister sur les commentaires (#)."
+    "text": "Exercice 10 : Créer un script\n\nCliquez sur File &gt; New File &gt; R Script\nDans ce nouveau fichier, écrivez :\n\n\n# Mon premier script R\n# Auteur : [Votre nom]\n\n# Calcul de moyennes\nnotes &lt;- c(12, 15, 13, 8)\nmoyenne &lt;- mean(notes)\n\nprint(\"La moyenne est :\")\nprint(moyenne)\n\n\nSauvegardez (File &gt; Save ou Ctrl+S ou 💾)\nExécutez ligne par ligne (Ctrl+Entrée ou run en haut à droite du script)\n\n\n20 minutes. Première sauvegarde de code. Insister sur les commentaires (#)."
   },
   {
     "objectID": "M3P/slide-lecon1.html#les-commentaires",
@@ -6968,7 +6949,7 @@
     "href": "M3P/02Lecon1.html#exercice-4-créer-des-objets",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Exercice 4 : Créer des objets",
-    "text": "Exercice 4 : Créer des objets\nCréez les objets suivants :\n\nvotre_prenom &lt;- \"...\"\nvotre_age &lt;- ...\nannee_naissance &lt;- 2025 - votre_age\n\nEnsuite, affichez-les en tapant simplement leur nom dans la console.\n\nQuestions à explorer avec le LLM :\n\nPeut-on mettre des espaces dans les noms d’objets ?\nQuelle est la différence entre &lt;- et = ?\nComment supprimer un objet ?\n\n\n\n15 minutes. Exercice pratique simple. Les étudiants découvrent les règles de nommage.",
+    "text": "Exercice 4 : Créer des objets\nCréez les objets suivants :\n\nvotre_prenom &lt;- \"...\"\nvotre_age &lt;- ...\nannee_naissance &lt;- 2025 - votre_age\n\nEnsuite, affichez-les en tapant simplement leur nom dans la console.\n\nEssayez les choses suivantes :\n\nPeut-on mettre des espaces dans les noms d’objets ?\nQuelle est la différence entre &lt;- et = ?\nComment supprimer un objet ?\n\n\n\n15 minutes. Exercice pratique simple. Les étudiants découvrent les règles de nommage.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -6980,7 +6961,7 @@
     "href": "M3P/02Lecon1.html#les-types-de-données",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Les types de données",
-    "text": "Les types de données\nR distingue différents types de données :\n\n\nNumérique : 42, 3.14\nCaractère (texte) : \"Bonjour\", \"Paris\"\nLogique : TRUE, FALSE\n\n\n\nPour vérifier le type :\n\nage &lt;- 20\nclass(age)",
+    "text": "Les types de données\nR distingue différents types de données :\n\n\nNumérique (numeric ou num) : 42, 3.14\nTexte (character ou chr) : \"Bonjour\", \"Paris\"\nLogique (logical) : TRUE, FALSE\n\n\n\nPour vérifier le type :\n\nage &lt;- 20\nclass(age)",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -6992,7 +6973,7 @@
     "href": "M3P/02Lecon1.html#exercice-5-explorer-les-types",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Exercice 5 : Explorer les types",
-    "text": "Exercice 5 : Explorer les types\nDemandez au LLM :\n\n“Explique-moi les différents types de données en R avec des exemples simples.”\n\nEnsuite, testez ce code et observez :\n\nnombre &lt;- 42\ntexte &lt;- \"Hello\"\nvrai_faux &lt;- TRUE\n\nclass(nombre)\nclass(texte)\nclass(vrai_faux)\n\n\nQuestion bonus : Que se passe-t-il si on essaie d’additionner un nombre et du texte ?\n\n\n15 minutes. Concept important. Les erreurs de type sont fréquentes pour les débutants.",
+    "text": "Exercice 5 : Explorer les types\nTestez ce code et observez :\n\nnombre &lt;- 42\ntexte &lt;- \"Hello\"\nvrai_faux &lt;- TRUE\n\nclass(nombre)\nclass(texte)\nclass(vrai_faux)\n\n\nQuestion bonus : Que se passe-t-il si on essaie d’additionner un nombre et du texte ?\n\n\n15 minutes. Concept important. Les erreurs de type sont fréquentes pour les débutants.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7004,7 +6985,7 @@
     "href": "M3P/02Lecon1.html#les-vecteurs",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Les vecteurs",
-    "text": "Les vecteurs\nUn vecteur est une collection de valeurs du même type.\n\nnotes &lt;- c(12, 15, 13, 8)\nprenoms &lt;- c(\"Alice\", \"Bob\", \"Charlie\")\n\n\n\n\n\n\n\n\nNoteImportant\n\n\n\nc() signifie “combine” - elle regroupe plusieurs valeurs.",
+    "text": "Les vecteurs\nUn vecteur est une collection de valeurs du même type.\n\nnotes &lt;- c(12, 15, 13, 8)\nprenoms &lt;- c(\"Alice\", \"Bob\", \"Charlie\")\n\n\n\n\n\n\n\n\nNoteRappel\n\n\n\nc() signifie “combine” - elle regroupe plusieurs valeurs.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7016,7 +6997,7 @@
     "href": "M3P/02Lecon1.html#exercice-6-manipuler-des-vecteurs",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Exercice 6 : Manipuler des vecteurs",
-    "text": "Exercice 6 : Manipuler des vecteurs\nCréez un vecteur avec les températures de la semaine :\n\ntemperatures &lt;- c(18, 20, 19, 22, 21, 17, 16)\n\nDemandez au LLM comment :\n\nAfficher la première température\nAfficher les trois premières températures\nCalculer la température moyenne\nTrouver la température maximale\n\n\nTestez les solutions proposées !\n\n\n15 minutes. Introduction à l’indexation. Les étudiants découvriront [1], [1:3], max(), etc.",
+    "text": "Exercice 6 : Manipuler des vecteurs\nCréez un vecteur avec les températures de la semaine :\n\ntemperatures &lt;- c(18, 20, 19, 22, 21, 17, 16)\n\nDemandez au LLM comment :\n\nAfficher la première température\nAfficher les trois premières températures\nCalculer la température moyenne\nAfficher la 5e et la 7e température\n\n\nTestez les solutions proposées !\n\n\n15 minutes. Introduction à l’indexation. Les étudiants découvriront [1], [1:3], max(), etc.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7040,7 +7021,7 @@
     "href": "M3P/02Lecon1.html#exercice-7-découvrir-des-fonctions",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Exercice 7 : Découvrir des fonctions",
-    "text": "Exercice 7 : Découvrir des fonctions\nAvec votre vecteur de températures, testez :\n\ntemperatures &lt;- c(18, 20, 19, 22, 21, 17, 16)\n\nmean(temperatures)    # moyenne\nsum(temperatures)     # somme\nlength(temperatures)  # nombre d'éléments\nmin(temperatures)     # minimum\nmax(temperatures)     # maximum\n\n\nDemandez au LLM :\n\n“Quelles autres fonctions statistiques utiles existent en R pour analyser un vecteur de nombres ?”\n\n\n\n15 minutes. Les étudiants découvrent les fonctions intégrées. Encourager l’exploration.",
+    "text": "Exercice 7 : Découvrir des fonctions\nAvec votre vecteur de températures, testez :\n\ntemperatures &lt;- c(18, 20, 19, 22, 21, 17, 16)\n\nmean(temperatures)    # moyenne\nsum(temperatures)     # somme\nlength(temperatures)  # nombre d'éléments\nmin(temperatures)     # minimum\nmax(temperatures)     # maximum\n\n\n\n\n\n\n\n\nNote\n\n\n\nIl en existe bien d’autres !\n\n\n\n\n15 minutes. Les étudiants découvrent les fonctions intégrées. Encourager l’exploration.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7052,7 +7033,7 @@
     "href": "M3P/02Lecon1.html#exercice-8-laide-en-r",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Exercice 8 : L’aide en R",
-    "text": "Exercice 8 : L’aide en R\nVous pouvez obtenir de l’aide sur n’importe quelle fonction avec ? :\n\n?mean\n?sum\n\n\nExplorez :\n\nTestez ?mean dans la console\nOù apparaît l’aide ?\nQue signifie le paramètre na.rm ?\n\n\n\n\n\n\n\n\n\nAstuceDouble source d’aide\n\n\n\n\nL’aide R (documentation officielle)\nLes LLMs (explications en langage naturel)\n\nUtilisez les deux !\n\n\n\n\n15 minutes. Concept important : devenir autonome. L’aide R est technique mais précise.",
+    "text": "Exercice 8 : L’aide en R\nVous pouvez obtenir de l’aide sur n’importe quelle fonction avec ? ou help :\n\n?mean\nhelp(\"sum\")\n\n\nExplorez :\n\nTestez ?mean dans la console\nOù apparaît l’aide ?\nQue signifie le paramètre na.rm ?\n\n\n\n\n\n\n\n\n\nAstuceDouble source d’aide\n\n\n\n\nL’aide R (documentation officielle)\nLes LLMs (explications en langage naturel)\n\nUtilisez les deux !\n\n\n\n\n15 minutes. Concept important : devenir autonome. L’aide R est technique, mais précise.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7064,7 +7045,7 @@
     "href": "M3P/02Lecon1.html#exercice-9-gérer-les-valeurs-manquantes",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Exercice 9 : Gérer les valeurs manquantes",
-    "text": "Exercice 9 : Gérer les valeurs manquantes\nTestez ce code :\n\nnotes_avec_absence &lt;- c(12, 15, NA, 13, 8)\nmean(notes_avec_absence)\n\n\nQue se passe-t-il ?\nNA signifie “Not Available” (donnée manquante).\n\n\nDemandez au LLM comment calculer la moyenne en ignorant les NA.\nIndice : regardez dans l’aide de mean() le paramètre na.rm\n\n\n15 minutes. Problème réel et fréquent. Les étudiants découvrent na.rm = TRUE.",
+    "text": "Exercice 9 : Gérer les valeurs manquantes\nTestez ce code :\n\nnotes_avec_absence &lt;- c(12, 15, NA, 13, 8)\nmean(notes_avec_absence)\n\n\nQue se passe-t-il ?\nNA signifie “Not Available” (donnée manquante).\n\n\nIndice : regardez dans l’aide de mean() le paramètre na.rm\n\n\n15 minutes. Problème réel et fréquent. Les étudiants découvrent na.rm = TRUE.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7088,7 +7069,7 @@
     "href": "M3P/02Lecon1.html#exercice-10-créer-un-script",
     "title": "Séance 1 : Premiers pas avec R",
     "section": "Exercice 10 : Créer un script",
-    "text": "Exercice 10 : Créer un script\n\nCliquez sur File &gt; New File &gt; R Script\nDans ce nouveau fichier, écrivez :\n\n\n# Mon premier script R\n# Auteur : [Votre nom]\n\n# Calcul de moyennes\nnotes &lt;- c(12, 15, 13, 8)\nmoyenne &lt;- mean(notes)\n\nprint(\"La moyenne est :\")\nprint(moyenne)\n\n\nSauvegardez (File &gt; Save ou Ctrl+S)\nExécutez ligne par ligne (Ctrl+Entrée)\n\n\n20 minutes. Première sauvegarde de code. Insister sur les commentaires (#).",
+    "text": "Exercice 10 : Créer un script\n\nCliquez sur File &gt; New File &gt; R Script\nDans ce nouveau fichier, écrivez :\n\n\n# Mon premier script R\n# Auteur : [Votre nom]\n\n# Calcul de moyennes\nnotes &lt;- c(12, 15, 13, 8)\nmoyenne &lt;- mean(notes)\n\nprint(\"La moyenne est :\")\nprint(moyenne)\n\n\nSauvegardez (File &gt; Save ou Ctrl+S ou 💾)\nExécutez ligne par ligne (Ctrl+Entrée ou run en haut à droite du script)\n\n\n20 minutes. Première sauvegarde de code. Insister sur les commentaires (#).",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7276,7 +7257,7 @@
     "href": "M3P/slide-lecon3.html#exercice-4-boucle-for-simple",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 4 : Boucle for simple",
-    "text": "Exercice 4 : Boucle for simple\nDemandez à votre LLM d’expliquer la boucle for en R avec un exemple.\nTestez ce code :\n\nfor (i in 1:5) {\n  print(i)\n}\n\nQuestions :\n\nQue fait 1:5 ?\nQue représente i ?\nComment afficher les nombres de 10 à 20 ?\n\n\n10 minutes. Concept fondamental mais peut être abstrait pour certains."
+    "text": "Exercice 4 : Boucle for simple\nTestez ce code :\n\nfor (i in 1:5) {\n  print(i)\n}\n\nQuestions :\n\nQue fait 1:5 ?\nQue représente i ?\nComment afficher les nombres de 10 à 20 ?\n\n\n10 minutes. Concept fondamental, mais peut être abstrait pour certains."
   },
   {
     "objectID": "M3P/slide-lecon3.html#exercice-5-boucle-sur-un-vecteur",
@@ -7290,7 +7271,7 @@
     "href": "M3P/slide-lecon3.html#exercice-6-accumuler-des-résultats",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 6 : Accumuler des résultats",
-    "text": "Exercice 6 : Accumuler des résultats\nNouveau défi : Calculez la somme des notes sans utiliser sum().\nIndices :\n\nCréez une variable total &lt;- 0\nUtilisez une boucle pour ajouter chaque note à total\nAffichez le résultat final\n\n\nVérification : Comparez avec sum(notes)\n\n\n10 minutes. Introduit le concept d’accumulation. Utile pour comprendre ce que font réellement les fonctions intégrées."
+    "text": "Exercice 6 : Accumuler des résultats\nCalculez la somme des notes sans utiliser sum().\n\nIndices :\n\nCréez une variable total &lt;- 0\nUtilisez une boucle pour ajouter chaque note à total\nAffichez le résultat final\n\n\n\nVérification : Comparez avec sum(notes)\n\n\n10 minutes. Introduit le concept d’accumulation. Utile pour comprendre ce que font réellement les fonctions intégrées."
   },
   {
     "objectID": "M3P/slide-lecon3.html#boucle-while-optionnel",
@@ -7311,7 +7292,7 @@
     "href": "M3P/slide-lecon3.html#exercice-7-première-fonction",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 7 : Première fonction",
-    "text": "Exercice 7 : Première fonction\nDemandez à votre LLM d’expliquer comment créer une fonction en R.\nCréez une fonction simple :\n\ndire_bonjour &lt;- function(nom) {\n  message &lt;- paste(\"Bonjour\", nom)\n  return(message)\n}\n\n# Test\ndire_bonjour(\"Alice\")\n\nQuestions :\n\nÀ quoi sert function() ?\nQu’est-ce qu’un paramètre / argument ?\nÀ quoi sert return() ?\n\n\n15 minutes. Première fonction. Bien distinguer définition (function) et appel (dire_bonjour(“Alice”))."
+    "text": "Exercice 7 : Première fonction\nCréez une fonction simple :\n\ndire_bonjour &lt;- function(nom) {\n  message &lt;- paste(\"Bonjour\", nom)\n  return(message)\n}\n\n# Test\ndire_bonjour(\"Alice\")\n\nQuestions :\n\nÀ quoi sert function() ?\nQu’est-ce qu’un paramètre / argument ?\nÀ quoi sert return() ?\n\n\n15 minutes. Première fonction. Bien distinguer définition (function) et appel (dire_bonjour(\"Alice\"))."
   },
   {
     "objectID": "M3P/slide-lecon3.html#exercice-8-fonction-avec-condition",
@@ -7332,14 +7313,14 @@
     "href": "M3P/slide-lecon3.html#exercice-10-fonction-complète",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 10 : Fonction complète",
-    "text": "Exercice 10 : Fonction complète\nCréez une fonction analyser_vecteur() qui prend un vecteur et retourne :\n\nLe minimum\nLe maximum\nLa moyenne\nLe nombre d’éléments\n\n\nDéfi : Comment retourner plusieurs valeurs ? Demandez au LLM !\nIndice : liste ou vecteur nommé\n\n\n15 minutes. Fonction avancée. Introduit le concept de retourner des structures de données complexes. Les étudiants découvriront les listes."
+    "text": "Exercice 10 : Fonction complète\nCréez une fonction analyser_vecteur() qui prend un vecteur et retourne :\n\nLe minimum\nLe maximum\nLa moyenne\nLe nombre d’éléments\n\n\nComment retourner plusieurs valeurs ? Demandez au LLM !\nIndice : liste ou vecteur nommé\n\n\n15 minutes. Fonction avancée. Introduit le concept de retourner des structures de données complexes. Les étudiants découvriront les listes."
   },
   {
     "objectID": "M3P/slide-lecon3.html#projet-analyse-de-températures",
     "href": "M3P/slide-lecon3.html#projet-analyse-de-températures",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Projet : Analyse de températures",
-    "text": "Projet : Analyse de températures\nVous allez créer un petit système d’analyse météo.\nDonnées :\n\ntemperatures &lt;- c(15, 22, 18, 25, 12, 28, 20, 16, 24, 19)\n\nCréez les fonctions suivantes :\n\nclassifier_temperature(temp) : retourne “Froid”, “Doux” ou “Chaud”\ncompter_par_categorie(vecteur_temp) : compte combien de jours froids/doux/chauds\nrapport_meteo(vecteur_temp) : génère un rapport complet (min, max, moyenne, catégories)\n\n\n\n\n\n\n\nUtilisez tout ce que vous avez appris\n\n\nConditions, boucles, fonctions !\n\n\n\n\n45 minutes. Projet synthèse. Les étudiants combinent tous les concepts. Circuler beaucoup. Encourager l’aide entre pairs. Certains iront plus loin (graphiques, etc.)."
+    "text": "Projet : Analyse de températures\nVous allez créer un petit système d’analyse météo.\nDonnées :\n\ntemperatures &lt;- c(15, 22, 18, 25, 12, 28, 20, 16, 24, 19)\n\nCréez les fonctions suivantes :\n\nclasser_temperature(temp) : retourne “Froid”, “Doux” ou “Chaud”\ncompter_par_categorie(vecteur_temp) : compte combien de jours froids/doux/chauds\nrapport_meteo(vecteur_temp) : génère un rapport complet (min, max, moyenne, catégories)\n\n\n\n\n\n\n\nUtilisez tout ce que vous avez appris\n\n\nConditions, boucles, fonctions !\n\n\n\n\n45 minutes. Projet synthèse. Les étudiants combinent tous les concepts. Circuler beaucoup. Encourager l’aide entre pairs. Certains iront plus loin (graphiques, etc.)."
   },
   {
     "objectID": "M3P/slide-lecon3.html#critères-du-mini-projet",
@@ -7363,25 +7344,18 @@
     "text": "Exercice réflexif : Journal de bord\nDans votre journal, documentez :\n\nUn prompt qui a bien fonctionné : Pourquoi ?\nUne erreur du LLM : Comment l’avez-vous détectée ? Corrigée ?\nVotre code le plus complexe : Expliquez-le avec vos mots\nUne chose que vous ne comprenez pas encore : À approfondir\n\n\n\n\n\n\n\n\nConseil\n\n\nPlus vous serez précis dans vos prompts, meilleures seront les réponses. Donnez du contexte !\n\n\n\n\n\n10 dernières minutes. Moment réflexif important. Les étudiants prennent du recul sur leur apprentissage."
   },
   {
-    "objectID": "M3P/slide-lecon3.html#pour-aller-plus-loin",
-    "href": "M3P/slide-lecon3.html#pour-aller-plus-loin",
-    "title": "Séance 3 : Fonctions, conditions et boucles",
-    "section": "Pour aller plus loin",
-    "text": "Pour aller plus loin\n\nDocumentation R : ?function, ?if, ?for\nPratiquez : La programmation s’apprend en codant !\nDebuggez : Les erreurs sont normales et instructives\nPartagez : Discutez de vos solutions avec vos pairs"
-  },
-  {
     "objectID": "M3P/slide-lecon3.html#préparation-prochaine-séance",
     "href": "M3P/slide-lecon3.html#préparation-prochaine-séance",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Préparation prochaine séance",
-    "text": "Préparation prochaine séance\n\n\n\n\n\n\nDevoirs\n\n\n\nTerminez le mini-projet si besoin\nMettez à jour votre journal de bord\nCréez au moins une fonction originale qui vous serait utile\n\n\n\n\n\nQuestions à explorer : Comment sauvegarder ses fonctions ? Comment les partager ? (→ scripts, packages)"
+    "text": "Préparation prochaine séance\n\n\n\n\n\n\nDevoirs\n\n\n\nTerminez le mini-projet si besoin\nMettez à jour votre journal de bord\n\n\n\n\n\nQuestions à explorer : Comment sauvegarder ses fonctions ? Comment les partager ? (scripts, packages)"
   },
   {
     "objectID": "M3P/slide-lecon3.html#questions",
     "href": "M3P/slide-lecon3.html#questions",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nN’oubliez pas\n\n\n\nTestez votre code\nCommentez votre code\nDocumentez votre apprentissage\nUtilisez les LLMs comme assistants, pas comme rédacteurs\n\n\n\n\n\nBon courage et bon code ! 🚀"
+    "text": "Questions ?\n\n\n\n\n\n\nN’oubliez pas\n\n\n\nTestez votre code\nCommentez votre code\nDocumentez votre apprentissage\nUtilisez les LLMs comme assistants, pas comme rédacteurs"
   },
   {
     "objectID": "M3P/04Lecon3Fonctions.html",
@@ -7496,7 +7470,7 @@
     "href": "M3P/04Lecon3Fonctions.html#exercice-4-boucle-for-simple",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 4 : Boucle for simple",
-    "text": "Exercice 4 : Boucle for simple\nDemandez à votre LLM d’expliquer la boucle for en R avec un exemple.\nTestez ce code :\n\nfor (i in 1:5) {\n  print(i)\n}\n\nQuestions :\n\nQue fait 1:5 ?\nQue représente i ?\nComment afficher les nombres de 10 à 20 ?\n\n\n10 minutes. Concept fondamental mais peut être abstrait pour certains.",
+    "text": "Exercice 4 : Boucle for simple\nTestez ce code :\n\nfor (i in 1:5) {\n  print(i)\n}\n\nQuestions :\n\nQue fait 1:5 ?\nQue représente i ?\nComment afficher les nombres de 10 à 20 ?\n\n\n10 minutes. Concept fondamental, mais peut être abstrait pour certains.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7520,7 +7494,7 @@
     "href": "M3P/04Lecon3Fonctions.html#exercice-6-accumuler-des-résultats",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 6 : Accumuler des résultats",
-    "text": "Exercice 6 : Accumuler des résultats\nNouveau défi : Calculez la somme des notes sans utiliser sum().\nIndices :\n\nCréez une variable total &lt;- 0\nUtilisez une boucle pour ajouter chaque note à total\nAffichez le résultat final\n\n\nVérification : Comparez avec sum(notes)\n\n\n10 minutes. Introduit le concept d’accumulation. Utile pour comprendre ce que font réellement les fonctions intégrées.",
+    "text": "Exercice 6 : Accumuler des résultats\nCalculez la somme des notes sans utiliser sum().\n\nIndices :\n\nCréez une variable total &lt;- 0\nUtilisez une boucle pour ajouter chaque note à total\nAffichez le résultat final\n\n\n\nVérification : Comparez avec sum(notes)\n\n\n10 minutes. Introduit le concept d’accumulation. Utile pour comprendre ce que font réellement les fonctions intégrées.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7556,7 +7530,7 @@
     "href": "M3P/04Lecon3Fonctions.html#exercice-7-première-fonction",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 7 : Première fonction",
-    "text": "Exercice 7 : Première fonction\nDemandez à votre LLM d’expliquer comment créer une fonction en R.\nCréez une fonction simple :\n\ndire_bonjour &lt;- function(nom) {\n  message &lt;- paste(\"Bonjour\", nom)\n  return(message)\n}\n\n# Test\ndire_bonjour(\"Alice\")\n\nQuestions :\n\nÀ quoi sert function() ?\nQu’est-ce qu’un paramètre / argument ?\nÀ quoi sert return() ?\n\n\n15 minutes. Première fonction. Bien distinguer définition (function) et appel (dire_bonjour(“Alice”)).",
+    "text": "Exercice 7 : Première fonction\nCréez une fonction simple :\n\ndire_bonjour &lt;- function(nom) {\n  message &lt;- paste(\"Bonjour\", nom)\n  return(message)\n}\n\n# Test\ndire_bonjour(\"Alice\")\n\nQuestions :\n\nÀ quoi sert function() ?\nQu’est-ce qu’un paramètre / argument ?\nÀ quoi sert return() ?\n\n\n15 minutes. Première fonction. Bien distinguer définition (function) et appel (dire_bonjour(\"Alice\")).",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7592,7 +7566,7 @@
     "href": "M3P/04Lecon3Fonctions.html#exercice-10-fonction-complète",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Exercice 10 : Fonction complète",
-    "text": "Exercice 10 : Fonction complète\nCréez une fonction analyser_vecteur() qui prend un vecteur et retourne :\n\nLe minimum\nLe maximum\nLa moyenne\nLe nombre d’éléments\n\n\nDéfi : Comment retourner plusieurs valeurs ? Demandez au LLM !\nIndice : liste ou vecteur nommé\n\n\n15 minutes. Fonction avancée. Introduit le concept de retourner des structures de données complexes. Les étudiants découvriront les listes.",
+    "text": "Exercice 10 : Fonction complète\nCréez une fonction analyser_vecteur() qui prend un vecteur et retourne :\n\nLe minimum\nLe maximum\nLa moyenne\nLe nombre d’éléments\n\n\nComment retourner plusieurs valeurs ? Demandez au LLM !\nIndice : liste ou vecteur nommé\n\n\n15 minutes. Fonction avancée. Introduit le concept de retourner des structures de données complexes. Les étudiants découvriront les listes.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7604,7 +7578,7 @@
     "href": "M3P/04Lecon3Fonctions.html#projet-analyse-de-températures",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Projet : Analyse de températures",
-    "text": "Projet : Analyse de températures\nVous allez créer un petit système d’analyse météo.\nDonnées :\n\ntemperatures &lt;- c(15, 22, 18, 25, 12, 28, 20, 16, 24, 19)\n\nCréez les fonctions suivantes :\n\nclassifier_temperature(temp) : retourne “Froid”, “Doux” ou “Chaud”\ncompter_par_categorie(vecteur_temp) : compte combien de jours froids/doux/chauds\nrapport_meteo(vecteur_temp) : génère un rapport complet (min, max, moyenne, catégories)\n\n\n\n\n\n\n\nNoteUtilisez tout ce que vous avez appris\n\n\n\nConditions, boucles, fonctions !\n\n\n\n45 minutes. Projet synthèse. Les étudiants combinent tous les concepts. Circuler beaucoup. Encourager l’aide entre pairs. Certains iront plus loin (graphiques, etc.).",
+    "text": "Projet : Analyse de températures\nVous allez créer un petit système d’analyse météo.\nDonnées :\n\ntemperatures &lt;- c(15, 22, 18, 25, 12, 28, 20, 16, 24, 19)\n\nCréez les fonctions suivantes :\n\nclasser_temperature(temp) : retourne “Froid”, “Doux” ou “Chaud”\ncompter_par_categorie(vecteur_temp) : compte combien de jours froids/doux/chauds\nrapport_meteo(vecteur_temp) : génère un rapport complet (min, max, moyenne, catégories)\n\n\n\n\n\n\n\nNoteUtilisez tout ce que vous avez appris\n\n\n\nConditions, boucles, fonctions !\n\n\n\n45 minutes. Projet synthèse. Les étudiants combinent tous les concepts. Circuler beaucoup. Encourager l’aide entre pairs. Certains iront plus loin (graphiques, etc.).",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7648,23 +7622,11 @@
     ]
   },
   {
-    "objectID": "M3P/04Lecon3Fonctions.html#pour-aller-plus-loin",
-    "href": "M3P/04Lecon3Fonctions.html#pour-aller-plus-loin",
-    "title": "Séance 3 : Fonctions, conditions et boucles",
-    "section": "Pour aller plus loin",
-    "text": "Pour aller plus loin\n\n\nDocumentation R : ?function, ?if, ?for\nPratiquez : La programmation s’apprend en codant !\nDebuggez : Les erreurs sont normales et instructives\nPartagez : Discutez de vos solutions avec vos pairs",
-    "crumbs": [
-      "Méthodologie de Projet Personnel et Professionnel",
-      "M3P",
-      "Séance 3 : Fonctions, conditions et boucles"
-    ]
-  },
-  {
     "objectID": "M3P/04Lecon3Fonctions.html#préparation-prochaine-séance",
     "href": "M3P/04Lecon3Fonctions.html#préparation-prochaine-séance",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Préparation prochaine séance",
-    "text": "Préparation prochaine séance\n\n\n\n\n\n\nNoteDevoirs\n\n\n\n\nTerminez le mini-projet si besoin\nMettez à jour votre journal de bord\nCréez au moins une fonction originale qui vous serait utile\n\n\n\n\nQuestions à explorer : Comment sauvegarder ses fonctions ? Comment les partager ? (→ scripts, packages)",
+    "text": "Préparation prochaine séance\n\n\n\n\n\n\nNoteDevoirs\n\n\n\n\nTerminez le mini-projet si besoin\nMettez à jour votre journal de bord\n\n\n\n\nQuestions à explorer : Comment sauvegarder ses fonctions ? Comment les partager ? (scripts, packages)",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7676,7 +7638,7 @@
     "href": "M3P/04Lecon3Fonctions.html#questions",
     "title": "Séance 3 : Fonctions, conditions et boucles",
     "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nAstuceN’oubliez pas\n\n\n\n\nTestez votre code\nCommentez votre code\nDocumentez votre apprentissage\nUtilisez les LLMs comme assistants, pas comme rédacteurs\n\n\n\n\nBon courage et bon code ! 🚀",
+    "text": "Questions ?\n\n\n\n\n\n\nAstuceN’oubliez pas\n\n\n\n\nTestez votre code\nCommentez votre code\nDocumentez votre apprentissage\nUtilisez les LLMs comme assistants, pas comme rédacteurs",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7686,450 +7648,393 @@
   {
     "objectID": "M3P/slide-lecon5.html#plan-de-la-séance",
     "href": "M3P/slide-lecon5.html#plan-de-la-séance",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Plan de la séance",
-    "text": "Plan de la séance\n\nPrésentation du projet (15min) : Cadrage et attentes\nChoix et préparation (30min) : Sélection du dataset et définition des questions\nTravail autonome supervisé (120min) : Analyse libre avec consultations individuelles\nPrésentations courtes (45min) : Partage des résultats (5min/étudiant)\n\n\nProduction attendue : Analyse complète avec code, graphiques et interprétation"
+    "text": "Plan de la séance\n\nPrésentation du projet (15min) : Cadrage et attentes\nChoix et préparation (30min) : Sélection du jeu de données et définition des questions\nTravail autonome supervisé (120min) : Analyse libre avec consultations individuelles\nPrésentations courtes (45min) : Partage des résultats (5min/étudiant)\n\n\nProduction attendue : Analyse complète avec code, graphiques et interprétation"
   },
   {
     "objectID": "M3P/slide-lecon5.html#objectifs-de-la-séance",
     "href": "M3P/slide-lecon5.html#objectifs-de-la-séance",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Objectifs de la séance",
-    "text": "Objectifs de la séance\n\n\n\n\n\n\nMener une analyse complète en autonomie\n\n\n\n\n\n\n\nChoisir et cadrer un sujet d’analyse personnel\nAppliquer toutes les compétences acquises\nTravailler en autonomie avec le LLM comme assistant\nCommuniquer ses résultats de manière claire\nRecevoir et donner du feedback constructif"
+    "text": "Objectifs de la séance\n\n\n\n\n\n\nMener une analyse complète en autonomie\n\n\n\n\n\n\n\nChoisir et cadrer un sujet d’analyse personnel\nAppliquer toutes les compétences acquises\nTravailler en autonomie avec le LLM comme assistant"
   },
   {
     "objectID": "M3P/slide-lecon5.html#quest-ce-quun-projet-intégré",
     "href": "M3P/slide-lecon5.html#quest-ce-quun-projet-intégré",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Qu’est-ce qu’un projet intégré ?",
     "text": "Qu’est-ce qu’un projet intégré ?\nC’est une analyse complète qui combine TOUT ce que vous avez appris :\n\nImport et nettoyage de données\nStatistiques descriptives\nFonctions personnalisées\nConditions et boucles si nécessaire\nVisualisations avec ggplot2\nInterprétation des résultats\nUtilisation efficace des LLMs"
   },
   {
     "objectID": "M3P/slide-lecon5.html#structure-attendue",
     "href": "M3P/slide-lecon5.html#structure-attendue",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Structure attendue",
     "text": "Structure attendue\nVotre projet doit contenir :\n\nIntroduction : Quel sujet ? Quelles questions ?\nDonnées : Source, description, nettoyage\nAnalyse : Statistiques, visualisations\nFonctions : Au moins 2 fonctions personnalisées\nRésultats : Interprétation claire\nCode : Commenté et organisé"
   },
   {
-    "objectID": "M3P/slide-lecon5.html#critères-dévaluation",
-    "href": "M3P/slide-lecon5.html#critères-dévaluation",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Critères d’évaluation",
-    "text": "Critères d’évaluation\nExcellence technique (40%) :\n\nCode fonctionnel et robuste\nNettoyage approprié des données\nUtilisation correcte des fonctions\nVisualisations claires\n\nAnalyse (30%) :\n\nQuestions pertinentes\nStatistiques appropriées\nInterprétation correcte\n\nCommunication (20%) :\n\nCode commenté\nPrésentation structurée\nGraphiques lisibles\n\nUtilisation des LLMs (10%) :\n\nPrompts efficaces\nValidation critique des réponses"
+    "objectID": "M3P/slide-lecon5.html#critères-dévaluation-à-titre-informatif",
+    "href": "M3P/slide-lecon5.html#critères-dévaluation-à-titre-informatif",
+    "title": "Projet Final",
+    "section": "Critères d’évaluation (à titre informatif)",
+    "text": "Critères d’évaluation (à titre informatif)\nExcellence technique (40%) :\n\nCode fonctionnel et robuste\nNettoyage approprié des données\nUtilisation correcte des fonctions\nVisualisations claires\n\nAnalyse (30%) :\n\nQuestions pertinentes\nStatistiques appropriées\nInterprétation correcte\n\nCommunication (20%) :\n\nCode commenté\nPrésentation structurée\nGraphiques lisibles\n\nUtilisation des LLMs (10%) :\n\nPrompts efficaces\nValidation critique des réponses"
   },
   {
-    "objectID": "M3P/slide-lecon5.html#étape-1-choisir-un-dataset",
-    "href": "M3P/slide-lecon5.html#étape-1-choisir-un-dataset",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Étape 1 : Choisir un dataset",
-    "text": "Étape 1 : Choisir un dataset\n\n\n\n\n\n\nSources de données possibles\n\n\n\n\n\n\n\nINSEE\ndata.gouv.fr\nKaggle\n\n\n\n\n\n\n\n\nCritères de choix\n\n\n\nPas trop volumineux (&lt; 10 000 lignes)\nAu moins 3-4 variables\nVous intéresse vraiment !"
+    "objectID": "M3P/slide-lecon5.html#étape-1-choisir-des-données",
+    "href": "M3P/slide-lecon5.html#étape-1-choisir-des-données",
+    "title": "Projet Final",
+    "section": "Étape 1 : Choisir des données",
+    "text": "Étape 1 : Choisir des données\n\n\n\n\n\n\nSources de données possibles\n\n\n\n\n\n\n\nINSEE\ndata.gouv.fr\nKaggle\n\n\n\n\n\n\n\n\nCritères de choix\n\n\n\nPas trop volumineux (&lt; 10 000 lignes)\nAu moins 3-4 variables\nVous intéresse vraiment !"
   },
   {
     "objectID": "M3P/slide-lecon5.html#exercice-1-exploration-initiale",
     "href": "M3P/slide-lecon5.html#exercice-1-exploration-initiale",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Exercice 1 : Exploration initiale",
-    "text": "Exercice 1 : Exploration initiale\nUne fois votre dataset choisi :\n\nImportez-le dans R\nExplorez-le :\n\n\n# Premières lignes\nhead(mes_donnees)\n\n# Structure\nstr(mes_donnees)\n\n# Résumé\nsummary(mes_donnees)\n\n# Dimensions\ndim(mes_donnees)\n\n\nIdentifiez les problèmes potentiels (NA, types, incohérences)\n\n\n15 minutes. Les étudiants découvrent leurs données."
+    "text": "Exercice 1 : Exploration initiale\nUne fois vos données choisies :\n\nImportez-les dans R\nExplorez-les :\n\n\n# Premières lignes\nhead(mes_donnees)\n\n# Structure\nstr(mes_donnees)\n\n# Résumé\nsummary(mes_donnees)\n\n# Dimensions\ndim(mes_donnees)\n\n\nIdentifiez les problèmes potentiels (NA, types, incohérences)\n\n\n15 minutes. Les étudiants découvrent leurs données."
   },
   {
     "objectID": "M3P/slide-lecon5.html#étape-2-définir-ses-questions",
     "href": "M3P/slide-lecon5.html#étape-2-définir-ses-questions",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Étape 2 : Définir ses questions",
     "text": "Étape 2 : Définir ses questions\nAvant d’analyser, définissez 2-3 questions claires.\n\nExemples de bonnes questions :\n\n“Quelle est l’évolution des ventes au fil du temps ?”\n“Y a-t-il une différence de salaire entre les groupes ?”\n“Quels facteurs influencent le plus la note finale ?”\n\n\n\nMauvaises questions (trop vagues) :\n\n“Qu’est-ce qu’il y a dans ces données ?”\n“Fais une analyse”"
   },
   {
     "objectID": "M3P/slide-lecon5.html#exercice-2-cadrage-du-projet",
     "href": "M3P/slide-lecon5.html#exercice-2-cadrage-du-projet",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Exercice 2 : Cadrage du projet",
     "text": "Exercice 2 : Cadrage du projet\nRemplissez ce cadre (écrivez-le !) :\nPROJET : [Titre court]\n\nDONNÉES :\n- Source :\n- Nombre de lignes :\n- Variables principales :\n\nQUESTIONS :\n1.\n2.\n3.\n\nANALYSES PRÉVUES :\n- Statistiques :\n- Graphiques :\n- Fonctions à créer :\n\nMontrez votre cadre à l’enseignant avant de commencer !\n\n\n15 minutes. Validation du cadrage. Éviter que les étudiants se lancent sans direction."
   },
   {
-    "objectID": "M3P/slide-lecon5.html#phase-de-travail-2h",
-    "href": "M3P/slide-lecon5.html#phase-de-travail-2h",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Phase de travail (2h)",
-    "text": "Phase de travail (2h)\n\n\n\n\n\n\nVous êtes maintenant autonome !\n\n\n\n\n\n\nUtilisez tout ce que vous avez appris :\n\nLes LLMs pour vous aider\nLa documentation R\nVotre journal de bord\nVos camarades\nL’enseignant (consultations individuelles)\n\n\n\n\n\n\n\n\nAttention !\n\n\n\nTestez votre code régulièrement\nCommentez au fur et à mesure\nSauvegardez souvent\nDocumentez vos prompts LLM"
+    "objectID": "M3P/slide-lecon5.html#phase-de-travail-chez-vous",
+    "href": "M3P/slide-lecon5.html#phase-de-travail-chez-vous",
+    "title": "Projet Final",
+    "section": "Phase de travail (chez vous)",
+    "text": "Phase de travail (chez vous)\n\n\n\n\n\n\nVous êtes maintenant autonome !\n\n\n\n\n\n\nUtilisez tout ce que vous avez appris :\n\nLes LLMs pour vous aider\nLa documentation R\nVotre journal de bord\nVos camarades\nL’enseignant (par mail ou dans son bureau)\n\n\n\n\n\n\n\n\nAttention !\n\n\n\nTestez votre code régulièrement\nCommentez au fur et à mesure\nSauvegardez souvent\nDocumentez vos prompts LLM"
   },
   {
     "objectID": "M3P/slide-lecon5.html#checklist-de-progression",
     "href": "M3P/slide-lecon5.html#checklist-de-progression",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Checklist de progression",
     "text": "Checklist de progression\nPendant votre travail, vérifiez que vous avez :\n\nImporté et vérifié les données\nNettoyé les données (NA, types, casse)\nCalculé des statistiques descriptives\nCréé au moins 3 graphiques ggplot2\nÉcrit au moins 2 fonctions personnalisées\nCommenté votre code\nRépondu à vos questions initiales\nTesté que tout fonctionne"
   },
   {
     "objectID": "M3P/slide-lecon5.html#stratégies-pour-avancer",
     "href": "M3P/slide-lecon5.html#stratégies-pour-avancer",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Stratégies pour avancer",
     "text": "Stratégies pour avancer\nSi vous êtes bloqué :\n\nDécomposez le problème en étapes plus petites\nDemandez au LLM une étape à la fois\nTestez chaque étape avant de passer à la suivante\nConsultez votre journal des séances précédentes\nDemandez de l’aide à un camarade ou l’enseignant\n\n\nSi vous avancez vite :\n\nCréez des visualisations plus sophistiquées\nAjoutez des fonctions bonus\nExplorez des analyses supplémentaires\nAidez vos camarades"
   },
   {
     "objectID": "M3P/slide-lecon5.html#consultations-individuelles",
     "href": "M3P/slide-lecon5.html#consultations-individuelles",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Consultations individuelles",
-    "text": "Consultations individuelles\n\n\n\n\n\n\nL’enseignant circule\n\n\n\n\n\n\nVous pouvez demander :\n\nValidation de votre approche\nAide sur un bug précis\nConseils sur les visualisations\nVérification de votre code\n\n\n\n\n\n\n\n\nPréparez votre question\n\n\nAvant d’appeler l’enseignant, préparez :\n\nCe que vous essayez de faire\nCe que vous avez déjà essayé\nLe message d’erreur exact (si erreur)"
+    "text": "Consultations individuelles\nVous pouvez demander :\n\nValidation de votre approche\nAide sur un bug précis\nConseils sur les visualisations\nVérification de votre code\n\n\n\n\n\n\n\n\nPréparez votre question\n\n\nAvant d’appeler l’enseignant, préparez :\n\nCe que vous essayez de faire\nCe que vous avez déjà essayé\nLe message d’erreur exact (si erreur)"
   },
   {
     "objectID": "M3P/slide-lecon5.html#exemples-de-projets-réussis",
     "href": "M3P/slide-lecon5.html#exemples-de-projets-réussis",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Exemples de projets réussis",
     "text": "Exemples de projets réussis\nPour vous inspirer :\nAnalyse de données sportives :\n\nÉvolution des performances d’une équipe\nComparaison entre joueurs\nFonction : calculer et visualiser les statistiques d’un joueur\n\nAnalyse économique :\n\nÉvolution du PIB par pays\nComparaison de secteurs économiques\nFonction : calculer la croissance sur différentes périodes\n\nDonnées de santé :\n\nRelation entre facteurs et résultats de santé\nDistribution des variables\nFonction : classifier les risques selon des critères\n\nAnalyse de sondage :\n\nPourcentages par catégorie\nComparaisons entre groupes\nFonction : créer des graphiques standardisés"
   },
   {
-    "objectID": "M3P/slide-lecon5.html#format-de-présentation",
-    "href": "M3P/slide-lecon5.html#format-de-présentation",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Format de présentation",
-    "text": "Format de présentation\n5 minutes par personne :\n\nSujet et questions (30 sec) : Quoi et pourquoi ?\nDonnées (30 sec) : Source, nettoyage\nRésultats (3 min) : Montrez 2-3 graphiques clés\nFonctions créées (1 min) : Vos outils personnalisés\nQuestions (30 sec) : Discussions avec les pairs\n\n\n\n\n\n\n\n\nContrainte\n\n\nMontrez votre code R en LIVE (pas de PowerPoint) !"
-  },
-  {
-    "objectID": "M3P/slide-lecon5.html#exercice-3-préparer-sa-présentation",
-    "href": "M3P/slide-lecon5.html#exercice-3-préparer-sa-présentation",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Exercice 3 : Préparer sa présentation",
-    "text": "Exercice 3 : Préparer sa présentation\nDans les 10 dernières minutes de travail :\n\nSélectionnez vos 2-3 graphiques les plus importants\nPréparez votre script pour montrer :\n\nL’import des données\nUn exemple de nettoyage\nLes graphiques principaux\nUne fonction en action\n\nTestez que tout s’exécute sans erreur\nNotez les points clés à mentionner\n\n\nAstuce : Créez un script de présentation séparé avec juste l’essentiel"
-  },
-  {
-    "objectID": "M3P/slide-lecon5.html#grille-découte",
-    "href": "M3P/slide-lecon5.html#grille-découte",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Grille d’écoute",
-    "text": "Grille d’écoute\nPendant les présentations des autres, notez :\n\nUne approche intéressante que vous pourriez réutiliser\nUne visualisation particulièrement réussie\nUne question ou suggestion constructive\nUn problème similaire à ce que vous avez rencontré\n\n\n\n\n\n\n\n\nFeedback constructif\n\n\nDonnez des retours bienveillants et constructifs. Vous êtes tous en apprentissage !"
-  },
-  {
-    "objectID": "M3P/slide-lecon5.html#célébration-des-réussites",
-    "href": "M3P/slide-lecon5.html#célébration-des-réussites",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Célébration des réussites",
-    "text": "Célébration des réussites\n\n\n\n\n\n\nVous avez réussi votre premier projet complet !\n\n\n\n\n\n\nRéfléchissez :\n\nQu’est-ce qui a été le plus difficile ?\nQu’est-ce qui vous a le plus surpris ?\nQu’est-ce qui vous a le plus appris ?\nQu’est-ce qui vous a le plus plu ?"
+    "objectID": "M3P/slide-lecon5.html#bravo",
+    "href": "M3P/slide-lecon5.html#bravo",
+    "title": "Projet Final",
+    "section": "Bravo !",
+    "text": "Bravo !\n\n\n\n\n\n\nVous avez réussi votre premier projet complet !\n\n\n\n\n\n\nRéfléchissez :\n\nQu’est-ce qui a été le plus difficile ?\nQu’est-ce qui vous a le plus surpris ?\nQu’est-ce qui vous a le plus appris ?\nQu’est-ce qui vous a le plus plu ?"
   },
   {
     "objectID": "M3P/slide-lecon5.html#exercice-réflexif-journal-de-bord",
     "href": "M3P/slide-lecon5.html#exercice-réflexif-journal-de-bord",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Exercice réflexif : Journal de bord",
     "text": "Exercice réflexif : Journal de bord\nDocumentez en détail dans votre journal :\n\nVotre projet :\n\nSujet choisi et pourquoi\nQuestions posées\nRésultats principaux\n\nDéfis techniques :\n\nProblèmes rencontrés\nSolutions trouvées\nRôle du LLM dans la résolution\n\nApprentissages :\n\nCe que vous maîtrisez maintenant\nCe qui reste difficile\nProgression depuis la séance 1\n\nPrompts LLM :\n\nVos prompts les plus efficaces\nErreurs du LLM et comment vous les avez corrigées\n\n\n\n15 minutes. Documentation importante de ce projet majeur."
   },
   {
     "objectID": "M3P/slide-lecon5.html#auto-évaluation",
     "href": "M3P/slide-lecon5.html#auto-évaluation",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Auto-évaluation",
     "text": "Auto-évaluation\nÉvaluez votre propre projet :\n\n\n\nCritère\n🔴 Faible\n🟡 Moyen\n🟢 Bon\n🟢🟢 Excellent\n\n\n\n\nCode fonctionnel\n\n\n\n\n\n\nNettoyage données\n\n\n\n\n\n\nQualité graphiques\n\n\n\n\n\n\nInterprétation\n\n\n\n\n\n\nCommentaires\n\n\n\n\n\n\nUtilisation LLM"
   },
   {
     "objectID": "M3P/slide-lecon5.html#ce-que-vous-avez-accompli",
     "href": "M3P/slide-lecon5.html#ce-que-vous-avez-accompli",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Ce que vous avez accompli",
-    "text": "Ce que vous avez accompli\n\nChoisi et cadré un projet d’analyse personnalisé\nMené une analyse complète en autonomie\nCréé des fonctions personnalisées et réutilisables\nProduit des visualisations professionnelles\nCommuniqué vos résultats à vos pairs\nUtilisé les LLMs comme partenaires d’analyse\nDéveloppé votre autonomie en programmation\n\n\n🎉 Félicitations ! Vous êtes maintenant capables d’analyser des données en autonomie !"
+    "text": "Ce que vous avez accompli\n\nChoisi et cadré un projet d’analyse personnalisé\nMené une analyse complète en autonomie\nCréé des fonctions personnalisées et réutilisables\nProduit des visualisations professionnelles\nCommuniqué vos résultats à vos pairs\nUtilisé les LLMs comme partenaires d’analyse\nDéveloppé votre autonomie en programmation\n\n\n🎉 Félicitations ! Vous êtes capables d’analyser des données en autonomie !"
   },
   {
     "objectID": "M3P/slide-lecon5.html#compétences-à-ce-stade",
     "href": "M3P/slide-lecon5.html#compétences-à-ce-stade",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Compétences à ce stade",
-    "text": "Compétences à ce stade\nVous savez maintenant :\n\nAnalyser des données de A à Z\nChoisir les bonnes analyses et visualisations\nCréer des fonctions adaptées à vos besoins\nNettoyer et préparer des données réelles\nInterpréter et communiquer des résultats\nUtiliser les LLMs efficacement\nDébugger de manière autonome"
+    "text": "Compétences à ce stade\nVous savez maintenant :\n\nAnalyser des données de A à Z\nChoisir les bonnes analyses et visualisations\nCréer des fonctions adaptées à vos besoins\nNettoyer et préparer des données réelles\nInterpréter et communiquer des résultats\nUtiliser les LLMs efficacement\nDéboguer de manière autonome"
   },
   {
     "objectID": "M3P/slide-lecon5.html#questions",
     "href": "M3P/slide-lecon5.html#questions",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nPoints clés à retenir\n\n\n\nVous êtes capables d’analyser des données en autonomie\nLe cadrage initial est crucial pour la réussite\nLes LLMs sont des assistants, mais c’est vous qui dirigez\nTester et commenter au fur et à mesure est essentiel\nLe feedback des pairs enrichit votre apprentissage\n\n\n\n\n\nBravo pour ce projet ! 🚀"
+    "text": "Questions ?\n\n\n\n\n\n\nPoints clés à retenir\n\n\n\nVous êtes capables d’analyser des données en autonomie\nLe cadrage initial est crucial pour la réussite\nLes LLMs sont des assistants, mais c’est vous qui dirigez\nTester et commenter au fur et à mesure est essentiel\n\n\n\n\n\nBravo pour ce projet ! 🚀"
   },
   {
     "objectID": "M3P/06Lecon5Projet.html",
     "href": "M3P/06Lecon5Projet.html",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "",
-    "text": "Présentation du projet (15min) : Cadrage et attentes\nChoix et préparation (30min) : Sélection du dataset et définition des questions\nTravail autonome supervisé (120min) : Analyse libre avec consultations individuelles\nPrésentations courtes (45min) : Partage des résultats (5min/étudiant)\n\n\n\nProduction attendue : Analyse complète avec code, graphiques et interprétation",
+    "text": "Présentation du projet (15min) : Cadrage et attentes\nChoix et préparation (30min) : Sélection du jeu de données et définition des questions\nTravail autonome supervisé (120min) : Analyse libre avec consultations individuelles\nPrésentations courtes (45min) : Partage des résultats (5min/étudiant)\n\n\n\nProduction attendue : Analyse complète avec code, graphiques et interprétation",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#plan-de-la-séance",
     "href": "M3P/06Lecon5Projet.html#plan-de-la-séance",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "",
-    "text": "Présentation du projet (15min) : Cadrage et attentes\nChoix et préparation (30min) : Sélection du dataset et définition des questions\nTravail autonome supervisé (120min) : Analyse libre avec consultations individuelles\nPrésentations courtes (45min) : Partage des résultats (5min/étudiant)\n\n\n\nProduction attendue : Analyse complète avec code, graphiques et interprétation",
+    "text": "Présentation du projet (15min) : Cadrage et attentes\nChoix et préparation (30min) : Sélection du jeu de données et définition des questions\nTravail autonome supervisé (120min) : Analyse libre avec consultations individuelles\nPrésentations courtes (45min) : Partage des résultats (5min/étudiant)\n\n\n\nProduction attendue : Analyse complète avec code, graphiques et interprétation",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#objectifs-de-la-séance",
     "href": "M3P/06Lecon5Projet.html#objectifs-de-la-séance",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Objectifs de la séance",
-    "text": "Objectifs de la séance\n\n\n\n\n\n\nAstuceMener une analyse complète en autonomie\n\n\n\n\n\n\n\n\nChoisir et cadrer un sujet d’analyse personnel\nAppliquer toutes les compétences acquises\nTravailler en autonomie avec le LLM comme assistant\nCommuniquer ses résultats de manière claire\nRecevoir et donner du feedback constructif",
+    "text": "Objectifs de la séance\n\n\n\n\n\n\nAstuceMener une analyse complète en autonomie\n\n\n\n\n\n\n\n\nChoisir et cadrer un sujet d’analyse personnel\nAppliquer toutes les compétences acquises\nTravailler en autonomie avec le LLM comme assistant",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#quest-ce-quun-projet-intégré",
     "href": "M3P/06Lecon5Projet.html#quest-ce-quun-projet-intégré",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Qu’est-ce qu’un projet intégré ?",
     "text": "Qu’est-ce qu’un projet intégré ?\nC’est une analyse complète qui combine TOUT ce que vous avez appris :\n\n\nImport et nettoyage de données\nStatistiques descriptives\nFonctions personnalisées\nConditions et boucles si nécessaire\nVisualisations avec ggplot2\nInterprétation des résultats\nUtilisation efficace des LLMs",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#structure-attendue",
     "href": "M3P/06Lecon5Projet.html#structure-attendue",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Structure attendue",
     "text": "Structure attendue\nVotre projet doit contenir :\n\n\nIntroduction : Quel sujet ? Quelles questions ?\nDonnées : Source, description, nettoyage\nAnalyse : Statistiques, visualisations\nFonctions : Au moins 2 fonctions personnalisées\nRésultats : Interprétation claire\nCode : Commenté et organisé",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
-    "objectID": "M3P/06Lecon5Projet.html#critères-dévaluation",
-    "href": "M3P/06Lecon5Projet.html#critères-dévaluation",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Critères d’évaluation",
-    "text": "Critères d’évaluation\n\nExcellence technique (40%) :\n\nCode fonctionnel et robuste\nNettoyage approprié des données\nUtilisation correcte des fonctions\nVisualisations claires\n\nAnalyse (30%) :\n\nQuestions pertinentes\nStatistiques appropriées\nInterprétation correcte\n\nCommunication (20%) :\n\nCode commenté\nPrésentation structurée\nGraphiques lisibles\n\nUtilisation des LLMs (10%) :\n\nPrompts efficaces\nValidation critique des réponses",
+    "objectID": "M3P/06Lecon5Projet.html#critères-dévaluation-à-titre-informatif",
+    "href": "M3P/06Lecon5Projet.html#critères-dévaluation-à-titre-informatif",
+    "title": "Projet Final",
+    "section": "Critères d’évaluation (à titre informatif)",
+    "text": "Critères d’évaluation (à titre informatif)\n\nExcellence technique (40%) :\n\nCode fonctionnel et robuste\nNettoyage approprié des données\nUtilisation correcte des fonctions\nVisualisations claires\n\nAnalyse (30%) :\n\nQuestions pertinentes\nStatistiques appropriées\nInterprétation correcte\n\nCommunication (20%) :\n\nCode commenté\nPrésentation structurée\nGraphiques lisibles\n\nUtilisation des LLMs (10%) :\n\nPrompts efficaces\nValidation critique des réponses",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
-    "objectID": "M3P/06Lecon5Projet.html#étape-1-choisir-un-dataset",
-    "href": "M3P/06Lecon5Projet.html#étape-1-choisir-un-dataset",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Étape 1 : Choisir un dataset",
-    "text": "Étape 1 : Choisir un dataset\n\n\n\n\n\n\nNoteSources de données possibles\n\n\n\n\n\n\n\nINSEE\ndata.gouv.fr\nKaggle\n\n\n\n\n\n\n\n\nAvertissementCritères de choix\n\n\n\n\nPas trop volumineux (&lt; 10 000 lignes)\nAu moins 3-4 variables\nVous intéresse vraiment !",
+    "objectID": "M3P/06Lecon5Projet.html#étape-1-choisir-des-données",
+    "href": "M3P/06Lecon5Projet.html#étape-1-choisir-des-données",
+    "title": "Projet Final",
+    "section": "Étape 1 : Choisir des données",
+    "text": "Étape 1 : Choisir des données\n\n\n\n\n\n\nNoteSources de données possibles\n\n\n\n\n\n\n\nINSEE\ndata.gouv.fr\nKaggle\n\n\n\n\n\n\n\n\nAvertissementCritères de choix\n\n\n\n\nPas trop volumineux (&lt; 10 000 lignes)\nAu moins 3-4 variables\nVous intéresse vraiment !",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#exercice-1-exploration-initiale",
     "href": "M3P/06Lecon5Projet.html#exercice-1-exploration-initiale",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Exercice 1 : Exploration initiale",
-    "text": "Exercice 1 : Exploration initiale\nUne fois votre dataset choisi :\n\nImportez-le dans R\nExplorez-le :\n\n\n# Premières lignes\nhead(mes_donnees)\n\n# Structure\nstr(mes_donnees)\n\n# Résumé\nsummary(mes_donnees)\n\n# Dimensions\ndim(mes_donnees)\n\n\nIdentifiez les problèmes potentiels (NA, types, incohérences)\n\n\n15 minutes. Les étudiants découvrent leurs données.",
+    "text": "Exercice 1 : Exploration initiale\nUne fois vos données choisies :\n\nImportez-les dans R\nExplorez-les :\n\n\n# Premières lignes\nhead(mes_donnees)\n\n# Structure\nstr(mes_donnees)\n\n# Résumé\nsummary(mes_donnees)\n\n# Dimensions\ndim(mes_donnees)\n\n\nIdentifiez les problèmes potentiels (NA, types, incohérences)\n\n\n15 minutes. Les étudiants découvrent leurs données.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#étape-2-définir-ses-questions",
     "href": "M3P/06Lecon5Projet.html#étape-2-définir-ses-questions",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Étape 2 : Définir ses questions",
     "text": "Étape 2 : Définir ses questions\nAvant d’analyser, définissez 2-3 questions claires.\n\nExemples de bonnes questions :\n\n“Quelle est l’évolution des ventes au fil du temps ?”\n“Y a-t-il une différence de salaire entre les groupes ?”\n“Quels facteurs influencent le plus la note finale ?”\n\n\n\nMauvaises questions (trop vagues) :\n\n“Qu’est-ce qu’il y a dans ces données ?”\n“Fais une analyse”",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#exercice-2-cadrage-du-projet",
     "href": "M3P/06Lecon5Projet.html#exercice-2-cadrage-du-projet",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Exercice 2 : Cadrage du projet",
     "text": "Exercice 2 : Cadrage du projet\nRemplissez ce cadre (écrivez-le !) :\nPROJET : [Titre court]\n\nDONNÉES :\n- Source :\n- Nombre de lignes :\n- Variables principales :\n\nQUESTIONS :\n1.\n2.\n3.\n\nANALYSES PRÉVUES :\n- Statistiques :\n- Graphiques :\n- Fonctions à créer :\n\nMontrez votre cadre à l’enseignant avant de commencer !\n\n\n15 minutes. Validation du cadrage. Éviter que les étudiants se lancent sans direction.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
-    "objectID": "M3P/06Lecon5Projet.html#phase-de-travail-2h",
-    "href": "M3P/06Lecon5Projet.html#phase-de-travail-2h",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Phase de travail (2h)",
-    "text": "Phase de travail (2h)\n\n\n\n\n\n\nAstuceVous êtes maintenant autonome !\n\n\n\n\n\n\nUtilisez tout ce que vous avez appris :\n\nLes LLMs pour vous aider\nLa documentation R\nVotre journal de bord\nVos camarades\nL’enseignant (consultations individuelles)\n\n\n\n\n\n\n\n\nAvertissementAttention !\n\n\n\n\nTestez votre code régulièrement\nCommentez au fur et à mesure\nSauvegardez souvent\nDocumentez vos prompts LLM",
+    "objectID": "M3P/06Lecon5Projet.html#phase-de-travail-chez-vous",
+    "href": "M3P/06Lecon5Projet.html#phase-de-travail-chez-vous",
+    "title": "Projet Final",
+    "section": "Phase de travail (chez vous)",
+    "text": "Phase de travail (chez vous)\n\n\n\n\n\n\nAstuceVous êtes maintenant autonome !\n\n\n\n\n\n\nUtilisez tout ce que vous avez appris :\n\nLes LLMs pour vous aider\nLa documentation R\nVotre journal de bord\nVos camarades\nL’enseignant (par mail ou dans son bureau)\n\n\n\n\n\n\n\n\nAvertissementAttention !\n\n\n\n\nTestez votre code régulièrement\nCommentez au fur et à mesure\nSauvegardez souvent\nDocumentez vos prompts LLM",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#checklist-de-progression",
     "href": "M3P/06Lecon5Projet.html#checklist-de-progression",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Checklist de progression",
     "text": "Checklist de progression\n\nPendant votre travail, vérifiez que vous avez :\n\nImporté et vérifié les données\nNettoyé les données (NA, types, casse)\nCalculé des statistiques descriptives\nCréé au moins 3 graphiques ggplot2\nÉcrit au moins 2 fonctions personnalisées\nCommenté votre code\nRépondu à vos questions initiales\nTesté que tout fonctionne",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#stratégies-pour-avancer",
     "href": "M3P/06Lecon5Projet.html#stratégies-pour-avancer",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Stratégies pour avancer",
     "text": "Stratégies pour avancer\nSi vous êtes bloqué :\n\n\nDécomposez le problème en étapes plus petites\nDemandez au LLM une étape à la fois\nTestez chaque étape avant de passer à la suivante\nConsultez votre journal des séances précédentes\nDemandez de l’aide à un camarade ou l’enseignant\n\n\n\nSi vous avancez vite :\n\nCréez des visualisations plus sophistiquées\nAjoutez des fonctions bonus\nExplorez des analyses supplémentaires\nAidez vos camarades",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#consultations-individuelles",
     "href": "M3P/06Lecon5Projet.html#consultations-individuelles",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Consultations individuelles",
-    "text": "Consultations individuelles\n\n\n\n\n\n\nNoteL’enseignant circule\n\n\n\n\n\n\nVous pouvez demander :\n\nValidation de votre approche\nAide sur un bug précis\nConseils sur les visualisations\nVérification de votre code\n\n\n\n\n\n\n\n\nAstucePréparez votre question\n\n\n\nAvant d’appeler l’enseignant, préparez :\n\nCe que vous essayez de faire\nCe que vous avez déjà essayé\nLe message d’erreur exact (si erreur)",
+    "text": "Consultations individuelles\nVous pouvez demander :\n\nValidation de votre approche\nAide sur un bug précis\nConseils sur les visualisations\nVérification de votre code\n\n\n\n\n\n\n\n\nAstucePréparez votre question\n\n\n\nAvant d’appeler l’enseignant, préparez :\n\nCe que vous essayez de faire\nCe que vous avez déjà essayé\nLe message d’erreur exact (si erreur)",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#exemples-de-projets-réussis",
     "href": "M3P/06Lecon5Projet.html#exemples-de-projets-réussis",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Exemples de projets réussis",
     "text": "Exemples de projets réussis\nPour vous inspirer :\n\nAnalyse de données sportives :\n\nÉvolution des performances d’une équipe\nComparaison entre joueurs\nFonction : calculer et visualiser les statistiques d’un joueur\n\nAnalyse économique :\n\nÉvolution du PIB par pays\nComparaison de secteurs économiques\nFonction : calculer la croissance sur différentes périodes\n\nDonnées de santé :\n\nRelation entre facteurs et résultats de santé\nDistribution des variables\nFonction : classifier les risques selon des critères\n\nAnalyse de sondage :\n\nPourcentages par catégorie\nComparaisons entre groupes\nFonction : créer des graphiques standardisés",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
-    "objectID": "M3P/06Lecon5Projet.html#format-de-présentation",
-    "href": "M3P/06Lecon5Projet.html#format-de-présentation",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Format de présentation",
-    "text": "Format de présentation\n5 minutes par personne :\n\n\nSujet et questions (30 sec) : Quoi et pourquoi ?\nDonnées (30 sec) : Source, nettoyage\nRésultats (3 min) : Montrez 2-3 graphiques clés\nFonctions créées (1 min) : Vos outils personnalisés\nQuestions (30 sec) : Discussions avec les pairs\n\n\n\n\n\n\n\n\n\nAvertissementContrainte\n\n\n\nMontrez votre code R en LIVE (pas de PowerPoint) !",
+    "objectID": "M3P/06Lecon5Projet.html#bravo",
+    "href": "M3P/06Lecon5Projet.html#bravo",
+    "title": "Projet Final",
+    "section": "Bravo !",
+    "text": "Bravo !\n\n\n\n\n\n\nNoteVous avez réussi votre premier projet complet !\n\n\n\n\n\n\n\nRéfléchissez :\n\nQu’est-ce qui a été le plus difficile ?\nQu’est-ce qui vous a le plus surpris ?\nQu’est-ce qui vous a le plus appris ?\nQu’est-ce qui vous a le plus plu ?",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
-    ]
-  },
-  {
-    "objectID": "M3P/06Lecon5Projet.html#exercice-3-préparer-sa-présentation",
-    "href": "M3P/06Lecon5Projet.html#exercice-3-préparer-sa-présentation",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Exercice 3 : Préparer sa présentation",
-    "text": "Exercice 3 : Préparer sa présentation\nDans les 10 dernières minutes de travail :\n\nSélectionnez vos 2-3 graphiques les plus importants\nPréparez votre script pour montrer :\n\nL’import des données\nUn exemple de nettoyage\nLes graphiques principaux\nUne fonction en action\n\nTestez que tout s’exécute sans erreur\nNotez les points clés à mentionner\n\n\nAstuce : Créez un script de présentation séparé avec juste l’essentiel",
-    "crumbs": [
-      "Méthodologie de Projet Personnel et Professionnel",
-      "M3P",
-      "Séance 5 : Projet personnel intégré"
-    ]
-  },
-  {
-    "objectID": "M3P/06Lecon5Projet.html#grille-découte",
-    "href": "M3P/06Lecon5Projet.html#grille-découte",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Grille d’écoute",
-    "text": "Grille d’écoute\nPendant les présentations des autres, notez :\n\n\nUne approche intéressante que vous pourriez réutiliser\nUne visualisation particulièrement réussie\nUne question ou suggestion constructive\nUn problème similaire à ce que vous avez rencontré\n\n\n\n\n\n\n\n\n\nAstuceFeedback constructif\n\n\n\nDonnez des retours bienveillants et constructifs. Vous êtes tous en apprentissage !",
-    "crumbs": [
-      "Méthodologie de Projet Personnel et Professionnel",
-      "M3P",
-      "Séance 5 : Projet personnel intégré"
-    ]
-  },
-  {
-    "objectID": "M3P/06Lecon5Projet.html#célébration-des-réussites",
-    "href": "M3P/06Lecon5Projet.html#célébration-des-réussites",
-    "title": "Séance 5 : Projet personnel intégré",
-    "section": "Célébration des réussites",
-    "text": "Célébration des réussites\n\n\n\n\n\n\nNoteVous avez réussi votre premier projet complet !\n\n\n\n\n\n\n\nRéfléchissez :\n\nQu’est-ce qui a été le plus difficile ?\nQu’est-ce qui vous a le plus surpris ?\nQu’est-ce qui vous a le plus appris ?\nQu’est-ce qui vous a le plus plu ?",
-    "crumbs": [
-      "Méthodologie de Projet Personnel et Professionnel",
-      "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#exercice-réflexif-journal-de-bord",
     "href": "M3P/06Lecon5Projet.html#exercice-réflexif-journal-de-bord",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Exercice réflexif : Journal de bord",
     "text": "Exercice réflexif : Journal de bord\nDocumentez en détail dans votre journal :\n\nVotre projet :\n\nSujet choisi et pourquoi\nQuestions posées\nRésultats principaux\n\nDéfis techniques :\n\nProblèmes rencontrés\nSolutions trouvées\nRôle du LLM dans la résolution\n\nApprentissages :\n\nCe que vous maîtrisez maintenant\nCe qui reste difficile\nProgression depuis la séance 1\n\nPrompts LLM :\n\nVos prompts les plus efficaces\nErreurs du LLM et comment vous les avez corrigées\n\n\n\n15 minutes. Documentation importante de ce projet majeur.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#auto-évaluation",
     "href": "M3P/06Lecon5Projet.html#auto-évaluation",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Auto-évaluation",
     "text": "Auto-évaluation\nÉvaluez votre propre projet :\n\n\n\n\nCritère\n🔴 Faible\n🟡 Moyen\n🟢 Bon\n🟢🟢 Excellent\n\n\n\n\nCode fonctionnel\n\n\n\n\n\n\nNettoyage données\n\n\n\n\n\n\nQualité graphiques\n\n\n\n\n\n\nInterprétation\n\n\n\n\n\n\nCommentaires\n\n\n\n\n\n\nUtilisation LLM",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#ce-que-vous-avez-accompli",
     "href": "M3P/06Lecon5Projet.html#ce-que-vous-avez-accompli",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Ce que vous avez accompli",
-    "text": "Ce que vous avez accompli\n\n\nChoisi et cadré un projet d’analyse personnalisé\nMené une analyse complète en autonomie\nCréé des fonctions personnalisées et réutilisables\nProduit des visualisations professionnelles\nCommuniqué vos résultats à vos pairs\nUtilisé les LLMs comme partenaires d’analyse\nDéveloppé votre autonomie en programmation\n\n\n\n🎉 Félicitations ! Vous êtes maintenant capables d’analyser des données en autonomie !",
+    "text": "Ce que vous avez accompli\n\n\nChoisi et cadré un projet d’analyse personnalisé\nMené une analyse complète en autonomie\nCréé des fonctions personnalisées et réutilisables\nProduit des visualisations professionnelles\nCommuniqué vos résultats à vos pairs\nUtilisé les LLMs comme partenaires d’analyse\nDéveloppé votre autonomie en programmation\n\n\n\n🎉 Félicitations ! Vous êtes capables d’analyser des données en autonomie !",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#compétences-à-ce-stade",
     "href": "M3P/06Lecon5Projet.html#compétences-à-ce-stade",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Compétences à ce stade",
-    "text": "Compétences à ce stade\nVous savez maintenant :\n\n\nAnalyser des données de A à Z\nChoisir les bonnes analyses et visualisations\nCréer des fonctions adaptées à vos besoins\nNettoyer et préparer des données réelles\nInterpréter et communiquer des résultats\nUtiliser les LLMs efficacement\nDébugger de manière autonome",
+    "text": "Compétences à ce stade\nVous savez maintenant :\n\n\nAnalyser des données de A à Z\nChoisir les bonnes analyses et visualisations\nCréer des fonctions adaptées à vos besoins\nNettoyer et préparer des données réelles\nInterpréter et communiquer des résultats\nUtiliser les LLMs efficacement\nDéboguer de manière autonome",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   },
   {
     "objectID": "M3P/06Lecon5Projet.html#questions",
     "href": "M3P/06Lecon5Projet.html#questions",
-    "title": "Séance 5 : Projet personnel intégré",
+    "title": "Projet Final",
     "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nAstucePoints clés à retenir\n\n\n\n\nVous êtes capables d’analyser des données en autonomie\nLe cadrage initial est crucial pour la réussite\nLes LLMs sont des assistants, mais c’est vous qui dirigez\nTester et commenter au fur et à mesure est essentiel\nLe feedback des pairs enrichit votre apprentissage\n\n\n\n\nBravo pour ce projet ! 🚀",
+    "text": "Questions ?\n\n\n\n\n\n\nAstucePoints clés à retenir\n\n\n\n\nVous êtes capables d’analyser des données en autonomie\nLe cadrage initial est crucial pour la réussite\nLes LLMs sont des assistants, mais c’est vous qui dirigez\nTester et commenter au fur et à mesure est essentiel\n\n\n\n\nBravo pour ce projet ! 🚀",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
-      "Séance 5 : Projet personnel intégré"
+      "Projet Final"
     ]
   }
 ]
