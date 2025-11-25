@@ -356,7 +356,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#ressources-et-prochaines-étapes" id="toc-ressources-et-prochaines-étapes" class="nav-link" data-scroll-target="#ressources-et-prochaines-étapes">Ressources et prochaines étapes</a>
   <ul class="collapse">
-  <li><a href="#pour-aller-plus-loin" id="toc-pour-aller-plus-loin" class="nav-link" data-scroll-target="#pour-aller-plus-loin">Pour aller plus loin</a></li>
   <li><a href="#préparation-prochaine-séance" id="toc-préparation-prochaine-séance" class="nav-link" data-scroll-target="#préparation-prochaine-séance">Préparation prochaine séance</a></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions ?</a></li>
   </ul></li>
@@ -555,21 +554,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exercice-4-boucle-for-simple" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="exercice-4-boucle-for-simple">Exercice 4 : Boucle for simple</h2>
-<p>Demandez à votre LLM d’expliquer la boucle <code>for</code> en R avec un exemple.</p>
-<p><strong>Testez ce code :</strong></p>
+<p>Testez ce code :</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><strong>Questions :</strong></p>
+<p>Questions :</p>
 <ol type="1">
 <li>Que fait <code>1:5</code> ?</li>
 <li>Que représente <code>i</code> ?</li>
 <li>Comment afficher les nombres de 10 à 20 ?</li>
 </ol>
 <div class="notes">
-<p>10 minutes. Concept fondamental mais peut être abstrait pour certains.</p>
+<p>10 minutes. Concept fondamental, mais peut être abstrait pour certains.</p>
 </div>
 </section>
 <section id="exercice-5-boucle-sur-un-vecteur" class="level2 smaller">
@@ -592,13 +590,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exercice-6-accumuler-des-résultats" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="exercice-6-accumuler-des-résultats">Exercice 6 : Accumuler des résultats</h2>
-<p><strong>Nouveau défi :</strong> Calculez la somme des notes <strong>sans utiliser</strong> <code>sum()</code>.</p>
+<p>Calculez la somme des notes <strong>sans utiliser</strong> <code>sum()</code>.</p>
+<div class="fragment">
 <p><strong>Indices :</strong></p>
 <ol type="1">
 <li>Créez une variable <code>total &lt;- 0</code></li>
 <li>Utilisez une boucle pour ajouter chaque note à <code>total</code></li>
 <li>Affichez le résultat final</li>
 </ol>
+</div>
 <div class="fragment">
 <p><strong>Vérification :</strong> Comparez avec <code>sum(notes)</code></p>
 </div>
@@ -666,8 +666,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exercice-7-première-fonction" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="exercice-7-première-fonction">Exercice 7 : Première fonction</h2>
-<p>Demandez à votre LLM d’expliquer comment créer une fonction en R.</p>
-<p><strong>Créez une fonction simple :</strong></p>
+<p>Créez une fonction simple :</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dire_bonjour <span class="ot">&lt;-</span> <span class="cf">function</span>(nom) {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  message <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Bonjour"</span>, nom)</span>
@@ -684,7 +683,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>À quoi sert <code>return()</code> ?</li>
 </ol>
 <div class="notes">
-<p>15 minutes. Première fonction. Bien distinguer définition (function) et appel (dire_bonjour(“Alice”)).</p>
+<p>15 minutes. Première fonction. Bien distinguer définition (<code>function</code>) et appel (<code>dire_bonjour("Alice")</code>).</p>
 </div>
 </section>
 <section id="exercice-8-fonction-avec-condition" class="level2 smaller">
@@ -696,7 +695,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Retourne “Réussite” si &gt;= 10</li>
 <li>Retourne “Échec” sinon</li>
 </ul>
-<p><strong>Testez avec plusieurs valeurs.</strong></p>
+<p>Testez avec plusieurs valeurs.</p>
 <div class="fragment">
 <p><strong>Extension :</strong> Que se passe-t-il si on passe une note négative ou &gt; 20 ? Comment améliorer la fonction ?</p>
 </div>
@@ -738,7 +737,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Le nombre d’éléments</li>
 </ul>
 <div class="fragment">
-<p><strong>Défi :</strong> Comment retourner plusieurs valeurs ? Demandez au LLM !</p>
+<p>Comment retourner plusieurs valeurs ? Demandez au LLM !</p>
 <p><em>Indice : liste ou vecteur nommé</em></p>
 </div>
 <div class="notes">
@@ -757,7 +756,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><strong>Créez les fonctions suivantes :</strong></p>
 <ol type="1">
-<li><code>classifier_temperature(temp)</code> : retourne “Froid”, “Doux” ou “Chaud”</li>
+<li><code>classer_temperature(temp)</code> : retourne “Froid”, “Doux” ou “Chaud”</li>
 <li><code>compter_par_categorie(vecteur_temp)</code> : compte combien de jours froids/doux/chauds</li>
 <li><code>rapport_meteo(vecteur_temp)</code> : génère un rapport complet (min, max, moyenne, catégories)</li>
 </ol>
@@ -861,17 +860,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ressources-et-prochaines-étapes" class="level1" data-background-color="#2E8B57">
 <h1 data-background-color="#2E8B57">Ressources et prochaines étapes</h1>
-<section id="pour-aller-plus-loin" class="level2">
-<h2 class="anchored" data-anchor-id="pour-aller-plus-loin">Pour aller plus loin</h2>
-<div class="incremental">
-<ul class="incremental">
-<li><strong>Documentation R :</strong> <code>?function</code>, <code>?if</code>, <code>?for</code></li>
-<li><strong>Pratiquez :</strong> La programmation s’apprend en codant !</li>
-<li><strong>Debuggez :</strong> Les erreurs sont normales et instructives</li>
-<li><strong>Partagez :</strong> Discutez de vos solutions avec vos pairs</li>
-</ul>
-</div>
-</section>
 <section id="préparation-prochaine-séance" class="level2">
 <h2 class="anchored" data-anchor-id="préparation-prochaine-séance">Préparation prochaine séance</h2>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -887,12 +875,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Terminez le mini-projet si besoin</li>
 <li>Mettez à jour votre journal de bord</li>
-<li>Créez au moins une fonction originale qui vous serait utile</li>
 </ol>
 </div>
 </div>
 <div class="fragment">
-<p><strong>Questions à explorer :</strong> Comment sauvegarder ses fonctions ? Comment les partager ? (→ scripts, packages)</p>
+<p><strong>Questions à explorer :</strong> Comment sauvegarder ses fonctions ? Comment les partager ? (scripts, packages)</p>
 </div>
 </section>
 <section id="questions" class="level2">
@@ -914,9 +901,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Utilisez les LLMs comme <strong>assistants</strong>, pas comme <strong>rédacteurs</strong></li>
 </ul>
 </div>
-</div>
-<div class="fragment">
-<p><strong>Bon courage et bon code ! 🚀</strong></p>
 </div>
 
 
