@@ -21,11 +21,11 @@ execute:
 ## Plan de la séance {.smaller}
 
 ::: {.incremental}
-- **Récap et partage** (15min) : Retours sur les fonctions
-- **Nettoyage de données** (60min) : Gérer les incohérences réelles
-- **Introduction à ggplot2** (75min) : Créer des graphiques sophistiqués
-- **Fonctions de visualisation** (40min) : Automatiser la création de graphiques
-- **Mini-projet** (40min) : Tableau de pilotage avec des visualisations
+- **Récap et partage** : Retours sur les fonctions
+- **Nettoyage de données**  : Gérer les incohérences réelles
+- **Introduction à ggplot2** : Créer des graphiques sophistiqués
+- **Fonctions de visualisation** : Automatiser la création de graphiques
+- **Mini-projet** : Tableau de pilotage avec des visualisations
 :::
 
 ::: {.fragment}
@@ -192,7 +192,7 @@ Discussion sur les choix méthodologiques.
 
 ## Exercice 4 : Jeu de données complexe piégé {.smaller}
 
-**Nouveau défi -- Données étudiants :**
+Données étudiants :
 
 ```{r}
 #| eval: false
@@ -437,7 +437,7 @@ graphique_personnalise <- function(donnees, x, y, titre,
 
 ```{r}
 #| eval: false
-# Téléchargez les fichiers de ventes mensuelles depuis Moodle
+# Téléchargez les 3 fichiers de ventes depuis Moodle
 ventes_janvier <- read.csv("ventes_janvier.csv")
 # etc
 ```

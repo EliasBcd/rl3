@@ -118,7 +118,7 @@ Un format simple et universel pour stocker des données tabulaires.
 ::: {.fragment}
 **Exemple de contenu CSV :**
 
-```
+``` {verbatim}
 nom,age,note
 Alice,20,15
 Bob,22,12
@@ -406,7 +406,7 @@ Si vous avez une erreur avec les dates, demandez au LLM comment les convertir au
 :::
 
 ::: {.notes}
-15 minutes. Premier graphique. Les dates peuvent poser problème -- bon exercice de deboguer.
+15 minutes. Premier graphique. Les dates peuvent poser problème -- bon exercice de déboguer.
 :::
 
 ## Améliorer le graphique {.smaller}

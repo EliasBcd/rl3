@@ -21,10 +21,10 @@ execute:
 ## Plan de la séance {.smaller}
 
 ::: {.incremental}
-- **Présentation du projet** (15min) : Cadrage et attentes
-- **Choix et préparation** (30min) : Sélection du jeu de données et définition des questions
-- **Travail autonome supervisé** (120min) : Analyse libre avec consultations individuelles
-- **Présentations courtes** (45min) : Partage des résultats (5min/étudiant)
+- **Présentation du projet**  : Cadrage et attentes
+- **Choix et préparation** : Sélection du jeu de données et définition des questions
+- **Travail autonome supervisé**  : Analyse libre avec consultations individuelles
+- **Présentations courtes** : Partage des résultats (5min/étudiant)
 :::
 
 ::: {.fragment}
@@ -392,7 +392,7 @@ Avant d'appeler l'enseignant, préparez :
 :::
 
 ::: {.fragment}
-**🎉 Félicitations ! Vous êtes capables d'analyser des données en autonomie !**
+** Félicitations ! Vous êtes capables d'analyser des données en autonomie !**
 :::
 
 ## Compétences à ce stade

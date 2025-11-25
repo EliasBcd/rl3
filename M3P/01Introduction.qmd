@@ -286,7 +286,7 @@ Le cours est structuré en 2 phases progressives sur 5 séances de 3h.
 
 ::: {.nonincremental}
 - Importer des données réelles (fichiers CSV)
-- Explorer des `data.frames`
+- Explorer des dataframes
 - Calculer des statistiques descriptives
 - Créer des visualisations simples
 - Apprendre à déboguer efficacement
@@ -471,7 +471,7 @@ La participation, ce n'est pas parler beaucoup, c'est être engagé dans votre a
 - Installation R/RStudio : <https://moodle.univ-paris8.fr/course/section.php?id=134073>
 - Utilisation de R/Rstudio en ligne : <https://datalab.sspcloud.fr/> (Utilisez votre compte étudiant Paris 8 pour vous connecter)
 - Guide des prompts efficaces : <https://www.francenum.gouv.fr/guides-et-conseils/intelligence-artificielle/generation-de-contenus-texte-image-son-video/comment-0>
-- [Forum d'entraide étudiant](https://moodle.univ-paris8.fr/mod/forum/view.php?id=415534)
+
 
 :::
 

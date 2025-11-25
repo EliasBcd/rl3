@@ -21,15 +21,15 @@ execute:
 ## Plan de la séance {.smaller}
 
 ::: {.incremental}
-- **Récap et partage** (15min) : Retours sur les fonctions
-- **Nettoyage de données** (60min) : Gérer les incohérences réelles
-- **Introduction à ggplot2** (75min) : Créer des graphiques sophistiqués
-- **Fonctions de visualisation** (40min) : Automatiser la création de graphiques
-- **Mini-projet** (40min) : Dashboard de visualisations
+- **Récap et partage** : Retours sur les fonctions
+- **Nettoyage de données**  : Gérer les incohérences réelles
+- **Introduction à ggplot2** : Créer des graphiques sophistiqués
+- **Fonctions de visualisation** : Automatiser la création de graphiques
+- **Mini-projet** : Tableau de pilotage avec des visualisations
 :::
 
 ::: {.fragment}
-**Production attendue :** Dashboard avec 4 graphiques + fonction de visualisation réutilisable
+**Production attendue :** Tableau de pilotage avec 4 graphiques + fonction de visualisation réutilisable
 :::
 
 ## Objectifs de la séance
@@ -41,7 +41,7 @@ execute:
 ::: {.incremental}
 - **Nettoyer** des données avec incohérences (casse, formats)
 - Maîtriser les **dataframes** avancés
-- Créer des **visualisations** avec ggplot2
+- Créer des **visualisations** avec `ggplot2`
 - Développer des **fonctions graphiques** réutilisables
 - Combiner analyse et communication visuelle
 :::
@@ -61,7 +61,7 @@ execute:
 **Créez rapidement une fonction qui :**
 
 1. Prend un vecteur de nombres en paramètre
-2. Retourne "Positif" si la moyenne est > 0
+2. Retourne "Positif" si la moyenne de ces nombres est > 0
 3. Retourne "Négatif" sinon
 4. Gère les NA correctement
 
@@ -71,12 +71,14 @@ execute:
 ```{r}
 #| eval: false
 valeurs <- c(-5, 10, NA, 8, -3)
-classifier_moyenne(valeurs)
+classer_moyenne(valeurs)
 ```
 :::
 
 ::: {.notes}
-10 minutes. Révision rapide. Vérifier que les concepts de la séance 3 sont acquis.
+10 minutes. 
+Révision rapide. 
+Vérifier que les concepts de la séance 3 sont acquis.
 :::
 
 # Données réelles et leurs problèmes {background-color="#4169E1"}
@@ -113,9 +115,9 @@ ventes <- data.frame(
 )
 ```
 
-**Demandez au LLM :**
 
-> "Quels sont les problèmes potentiels dans ce jeu de données pour une analyse ?"
+
+Quels sont les problèmes potentiels dans ce jeu de données pour une analyse ?
 
 ::: {.fragment}
 **Identifiez :**
@@ -179,17 +181,18 @@ table(ventes$vendeur)
 ::: {.fragment}
 ::: {.callout-note}
 ## Réflexion importante
-Quelle stratégie choisir dépend du contexte ! Supprimer des données peut introduire des biais.
+Quelle stratégie choisir dépend du contexte ! Supprimer ou interpoler des données peut introduire des biais.
 :::
 :::
 
 ::: {.notes}
-15 minutes. Discussion importante sur les choix méthodologiques.
+15 minutes. 
+Discussion sur les choix méthodologiques.
 :::
 
-## Exercice 4 : Dataset complexe piégé {.smaller}
+## Exercice 4 : Jeu de données complexe piégé {.smaller}
 
-**Nouveau challenge - Données étudiants :**
+Données étudiants :
 
 ```{r}
 #| eval: false
@@ -202,25 +205,21 @@ etudiants <- data.frame(
 )
 ```
 
-**Mission :**
+Objectif :
 
 1. Identifiez TOUS les problèmes
-2. Nettoyez le dataset
-3. Calculez la moyenne par filière
-
-::: {.fragment}
-**Utilisez le LLM étape par étape !**
-:::
+2. Nettoyez le jeu de données
+3. Calculez la générale des étudiants
 
 ::: {.notes}
 30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d'erreurs à trouver.
 :::
 
-# Introduction à ggplot2 {background-color="#FF8C00"}
+# Introduction à `ggplot2` {background-color="#FF8C00"}
 
-## Pourquoi ggplot2 ?
+## Pourquoi `ggplot2` ?
 
-Jusqu'ici vous avez utilisé `plot()`, `hist()`, `barplot()`...
+Jusqu'ici, vous avez utilisé `plot()`, `hist()`, `barplot()`...
 
 ::: {.fragment}
 **ggplot2** est un package puissant pour créer des graphiques :
@@ -233,7 +232,7 @@ Jusqu'ici vous avez utilisé `plot()`, `hist()`, `barplot()`...
 
 ## La grammaire des graphiques
 
-**ggplot2** fonctionne par couches :
+**`ggplot2`** fonctionne par couches :
 
 ::: {.incremental}
 1. **Données** : `ggplot(data = mes_donnees)`
@@ -246,13 +245,9 @@ Jusqu'ici vous avez utilisé `plot()`, `hist()`, `barplot()`...
 On **ajoute** des couches avec `+`
 :::
 
-## Exercice 5 : Premier graphique ggplot2 {.smaller}
+## Exercice 5 : Premier graphique `ggplot2` {.smaller}
 
-**Demandez au LLM :**
-
-> "Comment créer un graphique simple avec ggplot2 en R ? Je débute avec ce package."
-
-**Ensuite, testez avec vos données de ventes :**
+Testez ce code :
 
 ```{r}
 #| eval: false
@@ -262,8 +257,9 @@ ggplot(data = ventes, aes(x = mois, y = montant)) +
   geom_col()
 ```
 
+
 ::: {.fragment}
-**Questions :**
+Questions :
 
 1. Que fait `aes()` ?
 2. Pourquoi `geom_col()` et pas `geom_bar()` ?
@@ -271,7 +267,9 @@ ggplot(data = ventes, aes(x = mois, y = montant)) +
 :::
 
 ::: {.notes}
-20 minutes. Première découverte de ggplot2. La syntaxe peut surprendre au début.
+20 minutes. 
+Première découverte de `ggplot2`. 
+La syntaxe peut surprendre au début.
 :::
 
 ## Exercice 6 : Améliorer le graphique {.smaller}
@@ -291,12 +289,6 @@ ggplot(data = ventes, aes(x = mois, y = montant)) +
 ```
 
 ::: {.fragment}
-**Demandez au LLM :**
-
-> "Comment personnaliser les couleurs, titres et thème d'un graphique ggplot2 ?"
-:::
-
-::: {.fragment}
 **Explorez :**
 
 - Différentes couleurs
@@ -310,7 +302,7 @@ ggplot(data = ventes, aes(x = mois, y = montant)) +
 
 ## Exercice 7 : Différents types de graphiques {.smaller}
 
-**Demandez au LLM de vous montrer comment créer :**
+Demandez au LLM de vous montrer comment créer :
 
 1. Un graphique en **points** (`geom_point()`)
 2. Un graphique en **lignes** (`geom_line()`)
@@ -329,14 +321,14 @@ Certains types nécessitent des données spécifiques !
 
 ## Exercice 8 : Graphiques par catégorie {.smaller}
 
-**Challenge :** Créez un graphique des ventes coloré par vendeur.
+Créez un graphique des ventes coloré par vendeur.
 
-**Demandez au LLM :**
 
-> "Comment créer un graphique avec ggplot2 où chaque catégorie a une couleur différente ?"
+
+Comment créer un graphique avec `ggplot2` où chaque catégorie a une couleur différente ?
 
 ::: {.fragment}
-Vous découvrirez :
+Une réponse :
 
 ```{r}
 #| eval: false
@@ -347,11 +339,13 @@ ggplot(ventes, aes(x = mois, y = montant, fill = vendeur)) +
 :::
 
 ::: {.fragment}
-**Questions :**
+Questions :
 
+1. Où est positionné `fill` ? Pourquoi ?
 1. Que fait `position = "dodge"` ?
 2. Que se passe-t-il sans ?
 3. Comment faire un graphique empilé ?
+
 :::
 
 ::: {.notes}
@@ -396,7 +390,7 @@ graphique_barres(ventes, "mois", "montant", "Ventes mensuelles")
 :::
 
 ::: {.notes}
-20 minutes. Introduction aux fonctions avec ggplot2. Concept avancé mais important.
+20 minutes. Introduction aux fonctions avec `ggplot2`.
 :::
 
 ## Exercice 10 : Fonction graphique avancée {.smaller}
@@ -444,7 +438,8 @@ graphique_personnalise <- function(donnees, x, y, titre,
 ```{r}
 #| eval: false
 # Téléchargez les 3 fichiers de ventes depuis Moodle
-ventes_janvier <- read.csv("ventes_janvier.csv") # etc
+ventes_janvier <- read.csv("ventes_janvier.csv")
+# etc
 ```
 
 **Les 4 graphiques à créer :**
@@ -452,7 +447,7 @@ ventes_janvier <- read.csv("ventes_janvier.csv") # etc
 1. Évolution des ventes mensuelles (ligne)
 2. Ventes par région (barres)
 3. Distribution des montants (histogramme)
-4. Comparaison par mois (boxplot)
+4. Comparaison par région (boxplot)
 
 ::: {.callout-note}
 ## Utilisez `ggplot2` pour tous les graphiques
@@ -467,8 +462,8 @@ Personnalisez-les avec des couleurs et titres appropriés.
 
 ::: {.incremental}
 - Les données sont **nettoyées** (casse, NA gérés)
-- Les 4 graphiques sont **créés avec ggplot2**
-- Chaque graphique a un **titre et des labels** appropriés
+- Les 4 graphiques sont **créés avec `ggplot2`**
+- Chaque graphique a un **titre et des légendes** appropriés
 - Le code est **commenté**
 - Une **fonction de visualisation** réutilisable est créée (facultatif)
 :::
@@ -493,7 +488,7 @@ Personnalisez-les avec des couleurs et titres appropriés.
    - Comment les avez-vous résolus ?
    - Un prompt efficace pour le nettoyage
 
-2. **ggplot2** :
+2. **`ggplot2`** :
    - Différences avec `plot()` de base
    - Votre graphique préféré créé aujourd'hui
    - Un concept difficile à comprendre
@@ -569,6 +564,3 @@ Personnalisez-les avec des couleurs et titres appropriés.
 - La **visualisation** est aussi importante que l'analyse
 :::
 
-::: {.fragment}
-**Bon courage et belles visualisations ! 📊**
-:::

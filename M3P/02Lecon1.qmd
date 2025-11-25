@@ -48,14 +48,11 @@ execute:
 :::
 
 
-
 # Découverte de RStudio {background-color="#4169E1"}
 
 ## Exercice 1 : Explorer l'interface {.smaller}
 
 Ouvrez RStudio sur votre ordinateur.
-
-
 
 ::: {.fragment}
 **Explorez ensuite :**
@@ -234,7 +231,6 @@ class(age)
 :::
 
 ## Exercice 5 : Explorer les types {.smaller}
-
 
 **Testez ce code et observez :**
 
@@ -572,5 +568,4 @@ Soyez précis ! Plus votre journal est détaillé, plus il vous sera utile.
 - Les LLMs sont des **assistants**, pas des remplaçants de votre cerveau
 - **Testez toujours** le code avant de l'utiliser
 :::
-
 

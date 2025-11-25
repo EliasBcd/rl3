@@ -169,16 +169,18 @@ Vous devriez obtenir quelque chose comme :
 #| eval: false
 donnees_meteo <- read.csv("donnees_meteo.csv")
 ```
+Ou la proposition d'utiliser la commande d'importation de Rstudio.
 :::
 
 ::: {.fragment}
 **Testez cette commande !**
 
-En cas d'erreur, demandez au LLM de vous aider à débugger.
+En cas d'erreur, demandez au LLM de vous aider à déboguer.
 :::
 
 ::: {.notes}
-15 minutes. Première importation de données. Anticiper les erreurs de chemin, d'encodage, etc.
+15 minutes. Première importation de données. 
+Anticiper les erreurs de chemin, d'encodage, etc.
 :::
 
 ## Vérifier l'importation
@@ -195,19 +197,19 @@ str(donnees_meteo)
 ```
 
 ::: {.fragment}
-**Demandez au LLM d'expliquer ce que montrent ces fonctions.**
+À quoi servent ces fonctions ?
 :::
 
 # Exploration de données {background-color="#FF8C00"}
 
 ## Les data frames
 
-Les données importées sont stockées dans un **data frame**.
+Les données importées sont stockées dans un **data.frame**.
 
 ::: {.fragment}
 ::: {.callout-tip}
 ## Analogie
-Un data frame est comme un tableau Excel : des lignes (observations) et des colonnes (variables).
+Un dataframe est comme une feuille d'un tableau Excel : des lignes (observations) et des colonnes (variables).
 :::
 :::
 
@@ -272,15 +274,9 @@ max(donnees_meteo$temperature)
 4. Le maximum
 5. L'écart-type (`sd()`)
 
-::: {.fragment}
-**Demandez au LLM :**
 
-> "Comment calculer des statistiques descriptives sur une colonne d'un data frame en R ?"
-:::
+Notez vos résultats dans un commentaire de votre script.
 
-::: {.fragment}
-**Notez vos résultats dans un commentaire de votre script.**
-:::
 
 ::: {.notes}
 15 minutes. Application pratique. Les étudiants utilisent $ et les fonctions statistiques.
@@ -367,25 +363,15 @@ mean(donnees_meteo$temperature, na.rm = TRUE)
 
 ## Exercice 6 : Rapport statistique {.smaller}
 
-**Créez un script qui génère un rapport complet sur la variable température :**
+Créez un script qui génère un rapport complet sur la variable température en utilisant la fonction `paste` (cherchez ce qu'elle fait).
 
-```{r}
-#| eval: false
-# Rapport sur la température
-print("=== ANALYSE DE LA TEMPÉRATURE ===")
-print(paste("Nombre d'observations :", length(donnees_meteo$temperature)))
-print(paste("Valeurs manquantes :", sum(is.na(donnees_meteo$temperature))))
-print(paste("Moyenne :", mean(donnees_meteo$temperature, na.rm = TRUE)))
-print(paste("Médiane :", median(donnees_meteo$temperature, na.rm = TRUE)))
-print(paste("Écart-type :", sd(donnees_meteo$temperature, na.rm = TRUE)))
-```
 
 ::: {.fragment}
 **Extension :** Faites la même chose pour une autre variable.
 :::
 
 ::: {.notes}
-15 minutes. Exercice de synthèse. Introduction à paste() pour formater.
+15 minutes. Exercice de synthèse. Introduction à `paste()` pour formater.
 :::
 
 # Visualisations {background-color="#DC143C"}
@@ -405,7 +391,7 @@ print(paste("Écart-type :", sd(donnees_meteo$temperature, na.rm = TRUE)))
 > "Comment créer un graphique simple en R pour visualiser l'évolution d'une variable dans le temps ? Je débute."
 
 ::: {.fragment}
-Vous découvrirez probablement `plot()` :
+Vous découvrirez probablement `plot()` (ou `ggplot`) :
 
 ```{r}
 #| eval: false
@@ -420,7 +406,7 @@ Si vous avez une erreur avec les dates, demandez au LLM comment les convertir au
 :::
 
 ::: {.notes}
-15 minutes. Premier graphique. Les dates peuvent poser problème - bon exercice de debugging.
+15 minutes. Premier graphique. Les dates peuvent poser problème -- bon exercice de déboguer.
 :::
 
 ## Améliorer le graphique {.smaller}
@@ -438,7 +424,7 @@ plot(donnees_meteo$date, donnees_meteo$temperature,
 ```
 
 ::: {.fragment}
-**Demandez au LLM d'expliquer chaque paramètre.**
+Que signifie chaque paramètre ?
 :::
 
 ## Exercice 8 : Explorer d'autres graphiques {.smaller}
@@ -463,35 +449,24 @@ plot(donnees_meteo$date, donnees_meteo$temperature,
 
 ## Sauvegarder un graphique
 
-Pour sauvegarder un graphique :
+Pour sauvegarder un graphique, vous pouvez utiliser l'exportation de Rstudio.
 
-```{r}
-#| eval: false
-# Ouvrir un fichier
-png("mon_graphique.png", width = 800, height = 600)
-
-# Créer le graphique
-plot(donnees_meteo$date, donnees_meteo$temperature, type = "l")
-
-# Fermer le fichier
-dev.off()
-```
-
-::: {.fragment}
+::: {.callout-note}
 Le fichier sera dans votre dossier de travail.
 :::
 
-# Debugging {background-color="#2F4F4F"}
+# Débogage {background-color="#2F4F4F"}
 
 ## Les erreurs sont normales !
 
 ::: {.callout-warning}
 ## Important
-Tout le monde rencontre des erreurs. C'est une partie essentielle de la programmation.
+Tout le monde rencontre des erreurs. 
+C'est une partie essentielle de la programmation.
 :::
 
 ::: {.fragment}
-**Stratégie de debugging :**
+**Stratégie de débogage :**
 
 1. **Lire** le message d'erreur (même s'il semble cryptique)
 2. **Identifier** la ligne problématique
@@ -499,7 +474,7 @@ Tout le monde rencontre des erreurs. C'est une partie essentielle de la programm
 4. **Demander** de l'aide (LLM, documentation, pairs)
 :::
 
-## Exercice 9 : Debugging collectif {.smaller}
+## Exercice 9 : Débogage collectif {.smaller}
 
 **Voici du code avec des erreurs. Trouvez-les et corrigez-les :**
 
@@ -524,11 +499,13 @@ print("La moyenne est" moyenne_temp)
 
 1. Guillemets manquants autour du nom de fichier
 2. Majuscule incorrecte dans le nom de colonne
-3. Virgule manquante dans `print()`
+3. `paste()` et virgule manquante dans `print()`
 :::
 
 ::: {.notes}
-15 minutes. Exercice collectif. Discuter ensuite des types d'erreurs courantes.
+15 minutes. ;
+Exercice collectif. 
+Discuter ensuite des types d'erreurs courantes.
 :::
 
 ## Bien utiliser le LLM pour débugger {.smaller}
@@ -538,7 +515,7 @@ print("La moyenne est" moyenne_temp)
 :::
 
 **Mauvais prompt :**
-> "Ça marche pas"
+> "Ça ne marche pas"
 
 **Bon prompt :**
 > "J'essaie d'importer un fichier CSV avec read.csv() mais j'obtiens cette erreur : [copier l'erreur exacte]. Voici mon code : [copier le code]. Que dois-je corriger ?"
@@ -631,30 +608,14 @@ Procédez par étapes. Testez chaque ligne avant de passer à la suivante.
    - Un graphique dont vous êtes fier (copier le code)
    - Une chose que vous ne comprenez pas encore
 
-3. **Debugging** :
+3. **Débogage** :
    - Une erreur marquante et comment vous l'avez résolue
-   - Un bon prompt de debugging qui a fonctionné
+   - Un bon prompt de débogage qui a fonctionné
 
 ::: {.notes}
 15 minutes. Temps de réflexion calme. Important pour ancrer les apprentissages.
 :::
 
-## Évolution de vos compétences
-
-::: {.incremental}
-**Séance 1 :** Vous avez appris les bases (objets, fonctions, vecteurs)
-
-**Séance 2 :** Vous savez maintenant :
-
-- Importer des données réelles
-- Les explorer et les analyser
-- Créer des visualisations
-- Débugger efficacement
-:::
-
-::: {.fragment}
-**Vous êtes déjà capable d'analyser de vraies données ! 🎉**
-:::
 
 # Ressources et prochaines étapes {background-color="#8B008B"}
 
@@ -693,12 +654,10 @@ Procédez par étapes. Testez chaque ligne avant de passer à la suivante.
 
 1. Terminez le mini-projet INSEE si besoin
 2. **Mettez à jour votre journal** avec tous les détails de cette séance
-3. Trouvez un jeu de données qui vous intéresse et analysez-le
-4. Créez au moins 3 graphiques différents avec vos données
 :::
 
 ::: {.fragment}
-**Prochaine séance :** Fonctions, conditions et boucles - automatiser vos analyses !
+**Prochaine séance :** Fonctions, conditions et boucles -- automatiser vos analyses !
 :::
 
 ## Questions ?
@@ -706,14 +665,11 @@ Procédez par étapes. Testez chaque ligne avant de passer à la suivante.
 ::: {.callout-tip}
 ## Points clés à retenir
 
-- Les **data frames** sont essentiels pour travailler avec des données réelles
+- Les **dataframes** sont essentiels pour travailler avec des données réelles
 - `$` permet d'accéder aux colonnes
 - Toujours vérifier les **NA** avant de calculer
 - Les **visualisations** révèlent ce que les chiffres cachent
-- Le **debugging** fait partie du processus - soyez patient !
+- Le **débogage** fait partie du processus -- soyez patient !
 :::
 
-::: {.fragment}
-**Bon courage et bonnes analyses ! 📊**
-:::
 
