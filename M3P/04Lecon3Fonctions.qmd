@@ -151,9 +151,8 @@ Les **boucles** permettent de répéter automatiquement des opérations.
 
 ## Exercice 4 : Boucle for simple {.smaller}
 
-Demandez à votre LLM d'expliquer la boucle `for` en R avec un exemple.
 
-**Testez ce code :**
+Testez ce code :
 
 ```{r}
 #| eval: false
@@ -162,14 +161,14 @@ for (i in 1:5) {
 }
 ```
 
-**Questions :**
+Questions :
 
 1. Que fait `1:5` ?
 2. Que représente `i` ?
 3. Comment afficher les nombres de 10 à 20 ?
 
 ::: {.notes}
-10 minutes. Concept fondamental mais peut être abstrait pour certains.
+10 minutes. Concept fondamental, mais peut être abstrait pour certains.
 :::
 
 ## Exercice 5 : Boucle sur un vecteur {.smaller}
@@ -196,13 +195,15 @@ Utilisez une boucle `for` pour :
 
 ## Exercice 6 : Accumuler des résultats {.smaller}
 
-**Nouveau défi :** Calculez la somme des notes **sans utiliser** `sum()`.
+Calculez la somme des notes **sans utiliser** `sum()`.
 
+::: {.fragment}
 **Indices :**
 
 1. Créez une variable `total <- 0`
 2. Utilisez une boucle pour ajouter chaque note à `total`
 3. Affichez le résultat final
+:::
 
 ::: {.fragment}
 **Vérification :** Comparez avec `sum(notes)`
@@ -258,9 +259,8 @@ Maintenant, vous allez **créer** vos propres fonctions !
 
 ## Exercice 7 : Première fonction {.smaller}
 
-Demandez à votre LLM d'expliquer comment créer une fonction en R.
 
-**Créez une fonction simple :**
+Créez une fonction simple :
 
 ```{r}
 #| eval: false
@@ -280,7 +280,7 @@ dire_bonjour("Alice")
 3. À quoi sert `return()` ?
 
 ::: {.notes}
-15 minutes. Première fonction. Bien distinguer définition (function) et appel (dire_bonjour("Alice")).
+15 minutes. Première fonction. Bien distinguer définition (`function`) et appel (`dire_bonjour("Alice")`).
 :::
 
 ## Exercice 8 : Fonction avec condition {.smaller}
@@ -292,7 +292,7 @@ Créez une fonction `classifier_note()` qui :
 - Retourne "Réussite" si >= 10
 - Retourne "Échec" sinon
 
-**Testez avec plusieurs valeurs.**
+Testez avec plusieurs valeurs.
 
 ::: {.fragment}
 **Extension :** Que se passe-t-il si on passe une note négative ou > 20 ? Comment améliorer la fonction ?
@@ -339,7 +339,7 @@ Créez une fonction `analyser_vecteur()` qui prend un vecteur et retourne :
 - Le nombre d'éléments
 
 ::: {.fragment}
-**Défi :** Comment retourner plusieurs valeurs ? Demandez au LLM !
+Comment retourner plusieurs valeurs ? Demandez au LLM !
 
 *Indice : liste ou vecteur nommé*
 :::
@@ -363,7 +363,7 @@ temperatures <- c(15, 22, 18, 25, 12, 28, 20, 16, 24, 19)
 
 **Créez les fonctions suivantes :**
 
-1. `classifier_temperature(temp)` : retourne "Froid", "Doux" ou "Chaud"
+1. `classer_temperature(temp)` : retourne "Froid", "Doux" ou "Chaud"
 2. `compter_par_categorie(vecteur_temp)` : compte combien de jours froids/doux/chauds
 3. `rapport_meteo(vecteur_temp)` : génère un rapport complet (min, max, moyenne, catégories)
 
@@ -440,26 +440,16 @@ Plus vous serez précis dans vos prompts, meilleures seront les réponses. Donne
 
 # Ressources et prochaines étapes {background-color="#2E8B57"}
 
-## Pour aller plus loin
-
-::: {.incremental}
-- **Documentation R :** `?function`, `?if`, `?for`
-- **Pratiquez :** La programmation s'apprend en codant !
-- **Debuggez :** Les erreurs sont normales et instructives
-- **Partagez :** Discutez de vos solutions avec vos pairs
-:::
-
 ## Préparation prochaine séance
 
 ::: {.callout-note}
 ## Devoirs
 1. Terminez le mini-projet si besoin
 2. Mettez à jour votre journal de bord
-3. Créez au moins une fonction originale qui vous serait utile
 :::
 
 ::: {.fragment}
-**Questions à explorer :** Comment sauvegarder ses fonctions ? Comment les partager ? (→ scripts, packages)
+**Questions à explorer :** Comment sauvegarder ses fonctions ? Comment les partager ? (scripts, packages)
 :::
 
 ## Questions ?
@@ -472,6 +462,3 @@ Plus vous serez précis dans vos prompts, meilleures seront les réponses. Donne
 - Utilisez les LLMs comme **assistants**, pas comme **rédacteurs**
 :::
 
-::: {.fragment}
-**Bon courage et bon code ! 🚀**
-:::

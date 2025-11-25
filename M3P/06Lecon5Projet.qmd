@@ -1,5 +1,5 @@
 ---
-title: "Séance 5 : Projet personnel intégré"
+title: "Projet Final"
 subtitle: "Apprendre R avec les LLMs"
 author: "Elias Bouacida"
 date: last-modified
@@ -11,7 +11,7 @@ format:
     slide-number: true
     output-file: slide-lecon5.html
     embed-resources: true
-    footer: "Séance 5 - Projet personnel intégré"
+    footer: "Projet final"
 format-links: [revealjs]
 lang: fr
 execute:
@@ -22,7 +22,7 @@ execute:
 
 ::: {.incremental}
 - **Présentation du projet** (15min) : Cadrage et attentes
-- **Choix et préparation** (30min) : Sélection du dataset et définition des questions
+- **Choix et préparation** (30min) : Sélection du jeu de données et définition des questions
 - **Travail autonome supervisé** (120min) : Analyse libre avec consultations individuelles
 - **Présentations courtes** (45min) : Partage des résultats (5min/étudiant)
 :::
@@ -41,8 +41,6 @@ execute:
 - **Choisir** et cadrer un sujet d'analyse personnel
 - **Appliquer** toutes les compétences acquises
 - Travailler en **autonomie** avec le LLM comme assistant
-- **Communiquer** ses résultats de manière claire
-- **Recevoir** et donner du feedback constructif
 :::
 
 # Présentation du projet {background-color="#2E8B57"}
@@ -74,7 +72,7 @@ Votre projet doit contenir :
 6. **Code** : Commenté et organisé
 :::
 
-## Critères d'évaluation {.smaller}
+## Critères d'évaluation (à titre informatif) {.smaller}
 
 ::: {.incremental}
 **Excellence technique (40%) :**
@@ -104,7 +102,7 @@ Votre projet doit contenir :
 
 # Choix et cadrage {background-color="#4169E1"}
 
-## Étape 1 : Choisir un dataset
+## Étape 1 : Choisir des données
 
 ::: {.callout-note}
 ## Sources de données possibles
@@ -127,10 +125,10 @@ Votre projet doit contenir :
 
 ## Exercice 1 : Exploration initiale {.smaller}
 
-**Une fois votre dataset choisi :**
+**Une fois vos données choisies :**
 
-1. **Importez-le** dans R
-2. **Explorez-le** :
+1. **Importez-les** dans R
+2. **Explorez-les** :
 
 ```{r}
 #| eval: false
@@ -196,7 +194,7 @@ ANALYSES PRÉVUES :
 ```
 
 ::: {.fragment}
-**Montrez votre cadre à l'enseignant avant de commencer !**
+Montrez votre cadre à l'enseignant avant de commencer !
 :::
 
 ::: {.notes}
@@ -205,7 +203,7 @@ ANALYSES PRÉVUES :
 
 # Travail autonome {background-color="#FF8C00"}
 
-## Phase de travail (2h)
+## Phase de travail (chez vous)
 
 ::: {.callout-tip}
 ## Vous êtes maintenant autonome !
@@ -217,7 +215,7 @@ ANALYSES PRÉVUES :
 - La documentation R
 - Votre journal de bord
 - Vos camarades
-- L'enseignant (consultations individuelles)
+- L'enseignant (par mail ou dans son bureau)
 
 ::: {.fragment}
 ::: {.callout-warning}
@@ -268,10 +266,6 @@ ANALYSES PRÉVUES :
 
 ## Consultations individuelles
 
-::: {.callout-note}
-## L'enseignant circule
-:::
-
 Vous pouvez demander :
 
 - Validation de votre approche
@@ -320,63 +314,12 @@ Avant d'appeler l'enseignant, préparez :
 - Fonction : créer des graphiques standardisés
 :::
 
-# Présentations {background-color="#8B008B"}
 
-## Format de présentation
 
-**5 minutes par personne** :
+# Retour réflexif {background-color="#DC143C"}
 
-::: {.incremental}
-1. **Sujet et questions** (30 sec) : Quoi et pourquoi ?
-2. **Données** (30 sec) : Source, nettoyage
-3. **Résultats** (3 min) : Montrez 2-3 graphiques clés
-4. **Fonctions créées** (1 min) : Vos outils personnalisés
-5. **Questions** (30 sec) : Discussions avec les pairs
-:::
 
-::: {.fragment}
-::: {.callout-warning}
-## Contrainte
-Montrez votre code R en LIVE (pas de PowerPoint) !
-:::
-:::
-
-## Exercice 3 : Préparer sa présentation {.smaller}
-
-**Dans les 10 dernières minutes de travail :**
-
-1. **Sélectionnez** vos 2-3 graphiques les plus importants
-2. **Préparez** votre script pour montrer :
-   - L'import des données
-   - Un exemple de nettoyage
-   - Les graphiques principaux
-   - Une fonction en action
-3. **Testez** que tout s'exécute sans erreur
-4. **Notez** les points clés à mentionner
-
-::: {.fragment}
-**Astuce :** Créez un script de présentation séparé avec juste l'essentiel
-:::
-
-## Grille d'écoute {.smaller}
-
-**Pendant les présentations des autres, notez :**
-
-::: {.nonincremental}
-- Une **approche intéressante** que vous pourriez réutiliser
-- Une **visualisation** particulièrement réussie
-- Une **question** ou suggestion constructive
-- Un **problème** similaire à ce que vous avez rencontré
-:::
-
-::: {.fragment}
-::: {.callout-tip}
-## Feedback constructif
-Donnez des retours bienveillants et constructifs. Vous êtes tous en apprentissage !
-:::
-:::
-
-## Célébration des réussites
+## Bravo !
 
 ::: {.callout-note}
 ## Vous avez réussi votre premier projet complet !
@@ -390,8 +333,6 @@ Donnez des retours bienveillants et constructifs. Vous êtes tous en apprentissa
 - Qu'est-ce qui vous a le plus appris ?
 - Qu'est-ce qui vous a le plus plu ?
 :::
-
-# Retour réflexif {background-color="#DC143C"}
 
 ## Exercice réflexif : Journal de bord {.smaller}
 
@@ -451,7 +392,7 @@ Donnez des retours bienveillants et constructifs. Vous êtes tous en apprentissa
 :::
 
 ::: {.fragment}
-**🎉 Félicitations ! Vous êtes maintenant capables d'analyser des données en autonomie !**
+**🎉 Félicitations ! Vous êtes capables d'analyser des données en autonomie !**
 :::
 
 ## Compétences à ce stade
@@ -465,7 +406,7 @@ Donnez des retours bienveillants et constructifs. Vous êtes tous en apprentissa
 - Nettoyer et préparer des données réelles
 - Interpréter et communiquer des résultats
 - Utiliser les LLMs efficacement
-- Débugger de manière autonome
+- Déboguer de manière autonome
 :::
 
 
@@ -479,7 +420,6 @@ Donnez des retours bienveillants et constructifs. Vous êtes tous en apprentissa
 - Le **cadrage** initial est crucial pour la réussite
 - Les **LLMs** sont des assistants, mais c'est **vous** qui dirigez
 - **Tester** et **commenter** au fur et à mesure est essentiel
-- Le **feedback** des pairs enrichit votre apprentissage
 :::
 
 ::: {.fragment}

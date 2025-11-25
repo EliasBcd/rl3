@@ -95,7 +95,8 @@ La **console** permet d'exécuter du code R directement.
 ::: {.fragment}
 ::: {.callout-tip}
 ## Astuce
-Appuyez sur **Entrée** pour exécuter. R affiche immédiatement le résultat !
+Appuyez sur **Entrée** pour exécuter. 
+R affiche immédiatement le résultat !
 :::
 :::
 
@@ -201,7 +202,7 @@ annee_naissance <- 2025 - votre_age
 Ensuite, affichez-les en tapant simplement leur nom dans la console.
 
 ::: {.fragment}
-**Questions à explorer avec le LLM :**
+**Essayez les choses suivantes :**
 
 1. Peut-on mettre des espaces dans les noms d'objets ?
 2. Quelle est la différence entre `<-` et `=` ?
@@ -217,9 +218,9 @@ Ensuite, affichez-les en tapant simplement leur nom dans la console.
 R distingue différents **types** de données :
 
 ::: {.incremental}
-- **Numérique** : `42`, `3.14`
-- **Caractère** (texte) : `"Bonjour"`, `"Paris"`
-- **Logique** : `TRUE`, `FALSE`
+- **Numérique** (`numeric` ou `num`) : `42`, `3.14`
+- **Texte** (`character` ou `chr`) : `"Bonjour"`, `"Paris"`
+- **Logique** (`logical`) : `TRUE`, `FALSE`
 :::
 
 ::: {.fragment}
@@ -234,11 +235,8 @@ class(age)
 
 ## Exercice 5 : Explorer les types {.smaller}
 
-**Demandez au LLM :**
 
-> "Explique-moi les différents types de données en R avec des exemples simples."
-
-**Ensuite, testez ce code et observez :**
+**Testez ce code et observez :**
 
 ```{r}
 #| eval: false
@@ -271,7 +269,7 @@ prenoms <- c("Alice", "Bob", "Charlie")
 
 ::: {.fragment}
 ::: {.callout-note}
-## Important
+## Rappel
 `c()` signifie "**c**ombine" - elle regroupe plusieurs valeurs.
 :::
 :::
@@ -290,7 +288,7 @@ temperatures <- c(18, 20, 19, 22, 21, 17, 16)
 1. Afficher la première température
 2. Afficher les trois premières températures
 3. Calculer la température moyenne
-4. Trouver la température maximale
+4. Afficher la 5e et la 7e température
 
 ::: {.fragment}
 **Testez les solutions proposées !**
@@ -330,9 +328,9 @@ max(temperatures)     # maximum
 ```
 
 ::: {.fragment}
-**Demandez au LLM :**
-
-> "Quelles autres fonctions statistiques utiles existent en R pour analyser un vecteur de nombres ?"
+::: {.callout-note}
+Il en existe bien d'autres !
+:::
 :::
 
 ::: {.notes}
@@ -341,12 +339,12 @@ max(temperatures)     # maximum
 
 ## Exercice 8 : L'aide en R {.smaller}
 
-Vous pouvez obtenir de l'aide sur n'importe quelle fonction avec `?` :
+Vous pouvez obtenir de l'aide sur n'importe quelle fonction avec `?` ou `help` :
 
 ```{r}
 #| eval: false
 ?mean
-?sum
+help("sum")
 ```
 
 ::: {.fragment}
@@ -368,7 +366,7 @@ Vous pouvez obtenir de l'aide sur n'importe quelle fonction avec `?` :
 :::
 
 ::: {.notes}
-15 minutes. Concept important : devenir autonome. L'aide R est technique mais précise.
+15 minutes. Concept important : devenir autonome. L'aide R est technique, mais précise.
 :::
 
 ## Exercice 9 : Gérer les valeurs manquantes {.smaller}
@@ -388,9 +386,7 @@ mean(notes_avec_absence)
 :::
 
 ::: {.fragment}
-**Demandez au LLM comment calculer la moyenne en ignorant les NA.**
-
-*Indice : regardez dans l'aide de `mean()` le paramètre `na.rm`*
+Indice : regardez dans l'aide de `mean()` le paramètre `na.rm`
 :::
 
 ::: {.notes}
@@ -430,8 +426,8 @@ print("La moyenne est :")
 print(moyenne)
 ```
 
-3. **Sauvegardez** (File > Save ou Ctrl+S)
-4. **Exécutez** ligne par ligne (Ctrl+Entrée)
+3. **Sauvegardez** (File > Save ou Ctrl+S ou 💾)
+4. **Exécutez** ligne par ligne (Ctrl+Entrée ou run en haut à droite du script)
 
 ::: {.notes}
 20 minutes. Première sauvegarde de code. Insister sur les commentaires (#).
