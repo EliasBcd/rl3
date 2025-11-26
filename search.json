@@ -7551,11 +7551,11 @@
     ]
   },
   {
-    "objectID": "M3P/slide-lecon5.html#plan-de-la-séance",
-    "href": "M3P/slide-lecon5.html#plan-de-la-séance",
+    "objectID": "M3P/slide-lecon5.html#plan-de-la-présentation",
+    "href": "M3P/slide-lecon5.html#plan-de-la-présentation",
     "title": "Projet Final",
-    "section": "Plan de la séance",
-    "text": "Plan de la séance\n\nPrésentation du projet : Cadrage et attentes\nChoix et préparation : Sélection du jeu de données et définition des questions\nTravail autonome supervisé : Analyse libre avec consultations individuelles\nPrésentations courtes : Partage des résultats (5min/étudiant)\n\n\nProduction attendue : Analyse complète avec code, graphiques et interprétation"
+    "section": "Plan de la présentation",
+    "text": "Plan de la présentation\n\nPrésentation du projet : Cadrage et attentes\nChoix et préparation : Sélection du jeu de données et définition des questions\nTravail autonome : Analyse libre avec consultations individuelles\n\n\nProduction attendue : Analyse complète avec code, graphiques et interprétation"
   },
   {
     "objectID": "M3P/slide-lecon5.html#objectifs-de-la-séance",
@@ -7569,7 +7569,7 @@
     "href": "M3P/slide-lecon5.html#quest-ce-quun-projet-intégré",
     "title": "Projet Final",
     "section": "Qu’est-ce qu’un projet intégré ?",
-    "text": "Qu’est-ce qu’un projet intégré ?\nC’est une analyse complète qui combine TOUT ce que vous avez appris :\n\nImport et nettoyage de données\nStatistiques descriptives\nFonctions personnalisées\nConditions et boucles si nécessaire\nVisualisations avec ggplot2\nInterprétation des résultats\nUtilisation efficace des LLMs"
+    "text": "Qu’est-ce qu’un projet intégré ?\nC’est une analyse complète qui combine TOUT ce que vous avez appris :\n\nImport et nettoyage de données\nStatistiques descriptives\nFonctions personnalisées\nConditions et boucles si nécessaire\nVisualisations avec ggplot2\nInterprétation des résultats\nUtilisation des LLMs"
   },
   {
     "objectID": "M3P/slide-lecon5.html#structure-attendue",
@@ -7583,7 +7583,7 @@
     "href": "M3P/slide-lecon5.html#critères-dévaluation-à-titre-informatif",
     "title": "Projet Final",
     "section": "Critères d’évaluation (à titre informatif)",
-    "text": "Critères d’évaluation (à titre informatif)\nExcellence technique (40%) :\n\nCode fonctionnel et robuste\nNettoyage approprié des données\nUtilisation correcte des fonctions\nVisualisations claires\n\nAnalyse (30%) :\n\nQuestions pertinentes\nStatistiques appropriées\nInterprétation correcte\n\nCommunication (20%) :\n\nCode commenté\nPrésentation structurée\nGraphiques lisibles\n\nUtilisation des LLMs (10%) :\n\nPrompts efficaces\nValidation critique des réponses"
+    "text": "Critères d’évaluation (à titre informatif)\nExcellence technique (40%) :\n\nCode fonctionnel et robuste\nNettoyage approprié des données\nUtilisation correcte des fonctions\nVisualisations claires\n\nAnalyse (30%) :\n\nQuestions pertinentes\nStatistiques appropriées\nInterprétation correcte\n\nCommunication (20%) :\n\nCode commenté\nPrésentation structurée des résultats\nGraphiques lisibles\n\nUtilisation des LLMs (10%) :\n\nPrompts efficaces\nValidation critique des réponses"
   },
   {
     "objectID": "M3P/slide-lecon5.html#étape-1-choisir-des-données",
@@ -7593,11 +7593,11 @@
     "text": "Étape 1 : Choisir des données\n\n\n\n\n\n\nSources de données possibles\n\n\n\n\n\n\n\nINSEE\ndata.gouv.fr\nKaggle\n\n\n\n\n\n\n\n\nCritères de choix\n\n\n\nPas trop volumineux (&lt; 10 000 lignes)\nAu moins 3-4 variables\nVous intéresse vraiment !"
   },
   {
-    "objectID": "M3P/slide-lecon5.html#exercice-1-exploration-initiale",
-    "href": "M3P/slide-lecon5.html#exercice-1-exploration-initiale",
+    "objectID": "M3P/slide-lecon5.html#étape-1-exploration-initiale",
+    "href": "M3P/slide-lecon5.html#étape-1-exploration-initiale",
     "title": "Projet Final",
-    "section": "Exercice 1 : Exploration initiale",
-    "text": "Exercice 1 : Exploration initiale\nUne fois vos données choisies :\n\nImportez-les dans R\nExplorez-les :\n\n\n# Premières lignes\nhead(mes_donnees)\n\n# Structure\nstr(mes_donnees)\n\n# Résumé\nsummary(mes_donnees)\n\n# Dimensions\ndim(mes_donnees)\n\n\nIdentifiez les problèmes potentiels (NA, types, incohérences)\n\n\n15 minutes. Les étudiants découvrent leurs données."
+    "section": "Étape 1 : Exploration initiale",
+    "text": "Étape 1 : Exploration initiale\nUne fois vos données choisies :\n\nImportez-les dans R\nExplorez-les :\n\n\n# Premières lignes\nhead(mes_donnees)\n\n# Structure\nstr(mes_donnees)\n\n# Résumé\nsummary(mes_donnees)\n\n# Dimensions\ndim(mes_donnees)\n\n\nIdentifiez les problèmes potentiels (NA, types, incohérences)\n\n\n15 minutes. Les étudiants découvrent leurs données."
   },
   {
     "objectID": "M3P/slide-lecon5.html#étape-2-définir-ses-questions",
@@ -7607,11 +7607,11 @@
     "text": "Étape 2 : Définir ses questions\nAvant d’analyser, définissez 2-3 questions claires.\n\nExemples de bonnes questions :\n\n“Quelle est l’évolution des ventes au fil du temps ?”\n“Y a-t-il une différence de salaire entre les groupes ?”\n“Quels facteurs influencent le plus la note finale ?”\n\n\n\nMauvaises questions (trop vagues) :\n\n“Qu’est-ce qu’il y a dans ces données ?”\n“Fais une analyse”"
   },
   {
-    "objectID": "M3P/slide-lecon5.html#exercice-2-cadrage-du-projet",
-    "href": "M3P/slide-lecon5.html#exercice-2-cadrage-du-projet",
+    "objectID": "M3P/slide-lecon5.html#étape-3-cadrage-du-projet",
+    "href": "M3P/slide-lecon5.html#étape-3-cadrage-du-projet",
     "title": "Projet Final",
-    "section": "Exercice 2 : Cadrage du projet",
-    "text": "Exercice 2 : Cadrage du projet\nRemplissez ce cadre (écrivez-le !) :\nPROJET : [Titre court]\n\nDONNÉES :\n- Source :\n- Nombre de lignes :\n- Variables principales :\n\nQUESTIONS :\n1.\n2.\n3.\n\nANALYSES PRÉVUES :\n- Statistiques :\n- Graphiques :\n- Fonctions à créer :\n\nMontrez votre cadre à l’enseignant avant de commencer !\n\n\n15 minutes. Validation du cadrage. Éviter que les étudiants se lancent sans direction."
+    "section": "Étape 3 : Cadrage du projet",
+    "text": "Étape 3 : Cadrage du projet\nRemplissez ce cadre (écrivez-le !) :\nPROJET : [Titre court]\n\nDONNÉES :\n- Source :\n- Nombre de lignes :\n- Variables principales :\n\nQUESTIONS :\n1.\n2.\n3.\n\nANALYSES PRÉVUES :\n- Statistiques :\n- Graphiques :\n- Fonctions à créer :\n\nMontrez votre cadre à l’enseignant avant de commencer !\n\n\n15 minutes. Validation du cadrage. Éviter que les étudiants se lancent sans direction."
   },
   {
     "objectID": "M3P/slide-lecon5.html#phase-de-travail-chez-vous",
@@ -7632,7 +7632,7 @@
     "href": "M3P/slide-lecon5.html#stratégies-pour-avancer",
     "title": "Projet Final",
     "section": "Stratégies pour avancer",
-    "text": "Stratégies pour avancer\nSi vous êtes bloqué :\n\nDécomposez le problème en étapes plus petites\nDemandez au LLM une étape à la fois\nTestez chaque étape avant de passer à la suivante\nConsultez votre journal des séances précédentes\nDemandez de l’aide à un camarade ou l’enseignant\n\n\nSi vous avancez vite :\n\nCréez des visualisations plus sophistiquées\nAjoutez des fonctions bonus\nExplorez des analyses supplémentaires\nAidez vos camarades"
+    "text": "Stratégies pour avancer\nSi vous êtes bloqué :\n\nDécomposez le problème en étapes plus petites\nDemandez au LLM une étape à la fois\nTestez chaque étape avant de passer à la suivante\nConsultez votre journal des séances précédentes\nDemandez de l’aide à un camarade ou l’enseignant\n\n\nVous pouvez en plus :\n\nCréez des visualisations plus sophistiquées\nAjoutez des fonctions bonus\nExplorez des analyses supplémentaires\nAidez vos camarades"
   },
   {
     "objectID": "M3P/slide-lecon5.html#consultations-individuelles",
@@ -7649,13 +7649,6 @@
     "text": "Exemples de projets réussis\nPour vous inspirer :\nAnalyse de données sportives :\n\nÉvolution des performances d’une équipe\nComparaison entre joueurs\nFonction : calculer et visualiser les statistiques d’un joueur\n\nAnalyse économique :\n\nÉvolution du PIB par pays\nComparaison de secteurs économiques\nFonction : calculer la croissance sur différentes périodes\n\nDonnées de santé :\n\nRelation entre facteurs et résultats de santé\nDistribution des variables\nFonction : classifier les risques selon des critères\n\nAnalyse de sondage :\n\nPourcentages par catégorie\nComparaisons entre groupes\nFonction : créer des graphiques standardisés"
   },
   {
-    "objectID": "M3P/slide-lecon5.html#bravo",
-    "href": "M3P/slide-lecon5.html#bravo",
-    "title": "Projet Final",
-    "section": "Bravo !",
-    "text": "Bravo !\n\n\n\n\n\n\nVous avez réussi votre premier projet complet !\n\n\n\n\n\n\nRéfléchissez :\n\nQu’est-ce qui a été le plus difficile ?\nQu’est-ce qui vous a le plus surpris ?\nQu’est-ce qui vous a le plus appris ?\nQu’est-ce qui vous a le plus plu ?"
-  },
-  {
     "objectID": "M3P/slide-lecon5.html#exercice-réflexif-journal-de-bord",
     "href": "M3P/slide-lecon5.html#exercice-réflexif-journal-de-bord",
     "title": "Projet Final",
@@ -7663,39 +7656,11 @@
     "text": "Exercice réflexif : Journal de bord\nDocumentez en détail dans votre journal :\n\nVotre projet :\n\nSujet choisi et pourquoi\nQuestions posées\nRésultats principaux\n\nDéfis techniques :\n\nProblèmes rencontrés\nSolutions trouvées\nRôle du LLM dans la résolution\n\nApprentissages :\n\nCe que vous maîtrisez maintenant\nCe qui reste difficile\nProgression depuis la séance 1\n\nPrompts LLM :\n\nVos prompts les plus efficaces\nErreurs du LLM et comment vous les avez corrigées\n\n\n\n15 minutes. Documentation importante de ce projet majeur."
   },
   {
-    "objectID": "M3P/slide-lecon5.html#auto-évaluation",
-    "href": "M3P/slide-lecon5.html#auto-évaluation",
-    "title": "Projet Final",
-    "section": "Auto-évaluation",
-    "text": "Auto-évaluation\nÉvaluez votre propre projet :\n\n\n\nCritère\n🔴 Faible\n🟡 Moyen\n🟢 Bon\n🟢🟢 Excellent\n\n\n\n\nCode fonctionnel\n\n\n\n\n\n\nNettoyage données\n\n\n\n\n\n\nQualité graphiques\n\n\n\n\n\n\nInterprétation\n\n\n\n\n\n\nCommentaires\n\n\n\n\n\n\nUtilisation LLM"
-  },
-  {
-    "objectID": "M3P/slide-lecon5.html#ce-que-vous-avez-accompli",
-    "href": "M3P/slide-lecon5.html#ce-que-vous-avez-accompli",
-    "title": "Projet Final",
-    "section": "Ce que vous avez accompli",
-    "text": "Ce que vous avez accompli\n\nChoisi et cadré un projet d’analyse personnalisé\nMené une analyse complète en autonomie\nCréé des fonctions personnalisées et réutilisables\nProduit des visualisations professionnelles\nCommuniqué vos résultats à vos pairs\nUtilisé les LLMs comme partenaires d’analyse\nDéveloppé votre autonomie en programmation\n\n\n** Félicitations ! Vous êtes capables d’analyser des données en autonomie !**"
-  },
-  {
-    "objectID": "M3P/slide-lecon5.html#compétences-à-ce-stade",
-    "href": "M3P/slide-lecon5.html#compétences-à-ce-stade",
-    "title": "Projet Final",
-    "section": "Compétences à ce stade",
-    "text": "Compétences à ce stade\nVous savez maintenant :\n\nAnalyser des données de A à Z\nChoisir les bonnes analyses et visualisations\nCréer des fonctions adaptées à vos besoins\nNettoyer et préparer des données réelles\nInterpréter et communiquer des résultats\nUtiliser les LLMs efficacement\nDéboguer de manière autonome"
-  },
-  {
-    "objectID": "M3P/slide-lecon5.html#questions",
-    "href": "M3P/slide-lecon5.html#questions",
-    "title": "Projet Final",
-    "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nPoints clés à retenir\n\n\n\nVous êtes capables d’analyser des données en autonomie\nLe cadrage initial est crucial pour la réussite\nLes LLMs sont des assistants, mais c’est vous qui dirigez\nTester et commenter au fur et à mesure est essentiel\n\n\n\n\n\nBravo pour ce projet ! 🚀"
-  },
-  {
     "objectID": "M3P/06Lecon5Projet.html",
     "href": "M3P/06Lecon5Projet.html",
     "title": "Projet Final",
     "section": "",
-    "text": "Présentation du projet : Cadrage et attentes\nChoix et préparation : Sélection du jeu de données et définition des questions\nTravail autonome supervisé : Analyse libre avec consultations individuelles\nPrésentations courtes : Partage des résultats (5min/étudiant)\n\n\n\nProduction attendue : Analyse complète avec code, graphiques et interprétation",
+    "text": "Présentation du projet : Cadrage et attentes\nChoix et préparation : Sélection du jeu de données et définition des questions\nTravail autonome : Analyse libre avec consultations individuelles\n\n\n\nProduction attendue : Analyse complète avec code, graphiques et interprétation",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7703,11 +7668,11 @@
     ]
   },
   {
-    "objectID": "M3P/06Lecon5Projet.html#plan-de-la-séance",
-    "href": "M3P/06Lecon5Projet.html#plan-de-la-séance",
+    "objectID": "M3P/06Lecon5Projet.html#plan-de-la-présentation",
+    "href": "M3P/06Lecon5Projet.html#plan-de-la-présentation",
     "title": "Projet Final",
     "section": "",
-    "text": "Présentation du projet : Cadrage et attentes\nChoix et préparation : Sélection du jeu de données et définition des questions\nTravail autonome supervisé : Analyse libre avec consultations individuelles\nPrésentations courtes : Partage des résultats (5min/étudiant)\n\n\n\nProduction attendue : Analyse complète avec code, graphiques et interprétation",
+    "text": "Présentation du projet : Cadrage et attentes\nChoix et préparation : Sélection du jeu de données et définition des questions\nTravail autonome : Analyse libre avec consultations individuelles\n\n\n\nProduction attendue : Analyse complète avec code, graphiques et interprétation",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7731,7 +7696,7 @@
     "href": "M3P/06Lecon5Projet.html#quest-ce-quun-projet-intégré",
     "title": "Projet Final",
     "section": "Qu’est-ce qu’un projet intégré ?",
-    "text": "Qu’est-ce qu’un projet intégré ?\nC’est une analyse complète qui combine TOUT ce que vous avez appris :\n\n\nImport et nettoyage de données\nStatistiques descriptives\nFonctions personnalisées\nConditions et boucles si nécessaire\nVisualisations avec ggplot2\nInterprétation des résultats\nUtilisation efficace des LLMs",
+    "text": "Qu’est-ce qu’un projet intégré ?\nC’est une analyse complète qui combine TOUT ce que vous avez appris :\n\n\nImport et nettoyage de données\nStatistiques descriptives\nFonctions personnalisées\nConditions et boucles si nécessaire\nVisualisations avec ggplot2\nInterprétation des résultats\nUtilisation des LLMs",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7755,7 +7720,7 @@
     "href": "M3P/06Lecon5Projet.html#critères-dévaluation-à-titre-informatif",
     "title": "Projet Final",
     "section": "Critères d’évaluation (à titre informatif)",
-    "text": "Critères d’évaluation (à titre informatif)\n\nExcellence technique (40%) :\n\nCode fonctionnel et robuste\nNettoyage approprié des données\nUtilisation correcte des fonctions\nVisualisations claires\n\nAnalyse (30%) :\n\nQuestions pertinentes\nStatistiques appropriées\nInterprétation correcte\n\nCommunication (20%) :\n\nCode commenté\nPrésentation structurée\nGraphiques lisibles\n\nUtilisation des LLMs (10%) :\n\nPrompts efficaces\nValidation critique des réponses",
+    "text": "Critères d’évaluation (à titre informatif)\n\nExcellence technique (40%) :\n\nCode fonctionnel et robuste\nNettoyage approprié des données\nUtilisation correcte des fonctions\nVisualisations claires\n\nAnalyse (30%) :\n\nQuestions pertinentes\nStatistiques appropriées\nInterprétation correcte\n\nCommunication (20%) :\n\nCode commenté\nPrésentation structurée des résultats\nGraphiques lisibles\n\nUtilisation des LLMs (10%) :\n\nPrompts efficaces\nValidation critique des réponses",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7775,11 +7740,11 @@
     ]
   },
   {
-    "objectID": "M3P/06Lecon5Projet.html#exercice-1-exploration-initiale",
-    "href": "M3P/06Lecon5Projet.html#exercice-1-exploration-initiale",
+    "objectID": "M3P/06Lecon5Projet.html#étape-1-exploration-initiale",
+    "href": "M3P/06Lecon5Projet.html#étape-1-exploration-initiale",
     "title": "Projet Final",
-    "section": "Exercice 1 : Exploration initiale",
-    "text": "Exercice 1 : Exploration initiale\nUne fois vos données choisies :\n\nImportez-les dans R\nExplorez-les :\n\n\n# Premières lignes\nhead(mes_donnees)\n\n# Structure\nstr(mes_donnees)\n\n# Résumé\nsummary(mes_donnees)\n\n# Dimensions\ndim(mes_donnees)\n\n\nIdentifiez les problèmes potentiels (NA, types, incohérences)\n\n\n15 minutes. Les étudiants découvrent leurs données.",
+    "section": "Étape 1 : Exploration initiale",
+    "text": "Étape 1 : Exploration initiale\nUne fois vos données choisies :\n\nImportez-les dans R\nExplorez-les :\n\n\n# Premières lignes\nhead(mes_donnees)\n\n# Structure\nstr(mes_donnees)\n\n# Résumé\nsummary(mes_donnees)\n\n# Dimensions\ndim(mes_donnees)\n\n\nIdentifiez les problèmes potentiels (NA, types, incohérences)\n\n\n15 minutes. Les étudiants découvrent leurs données.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7799,11 +7764,11 @@
     ]
   },
   {
-    "objectID": "M3P/06Lecon5Projet.html#exercice-2-cadrage-du-projet",
-    "href": "M3P/06Lecon5Projet.html#exercice-2-cadrage-du-projet",
+    "objectID": "M3P/06Lecon5Projet.html#étape-3-cadrage-du-projet",
+    "href": "M3P/06Lecon5Projet.html#étape-3-cadrage-du-projet",
     "title": "Projet Final",
-    "section": "Exercice 2 : Cadrage du projet",
-    "text": "Exercice 2 : Cadrage du projet\nRemplissez ce cadre (écrivez-le !) :\nPROJET : [Titre court]\n\nDONNÉES :\n- Source :\n- Nombre de lignes :\n- Variables principales :\n\nQUESTIONS :\n1.\n2.\n3.\n\nANALYSES PRÉVUES :\n- Statistiques :\n- Graphiques :\n- Fonctions à créer :\n\nMontrez votre cadre à l’enseignant avant de commencer !\n\n\n15 minutes. Validation du cadrage. Éviter que les étudiants se lancent sans direction.",
+    "section": "Étape 3 : Cadrage du projet",
+    "text": "Étape 3 : Cadrage du projet\nRemplissez ce cadre (écrivez-le !) :\nPROJET : [Titre court]\n\nDONNÉES :\n- Source :\n- Nombre de lignes :\n- Variables principales :\n\nQUESTIONS :\n1.\n2.\n3.\n\nANALYSES PRÉVUES :\n- Statistiques :\n- Graphiques :\n- Fonctions à créer :\n\nMontrez votre cadre à l’enseignant avant de commencer !\n\n\n15 minutes. Validation du cadrage. Éviter que les étudiants se lancent sans direction.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7839,7 +7804,7 @@
     "href": "M3P/06Lecon5Projet.html#stratégies-pour-avancer",
     "title": "Projet Final",
     "section": "Stratégies pour avancer",
-    "text": "Stratégies pour avancer\nSi vous êtes bloqué :\n\n\nDécomposez le problème en étapes plus petites\nDemandez au LLM une étape à la fois\nTestez chaque étape avant de passer à la suivante\nConsultez votre journal des séances précédentes\nDemandez de l’aide à un camarade ou l’enseignant\n\n\n\nSi vous avancez vite :\n\nCréez des visualisations plus sophistiquées\nAjoutez des fonctions bonus\nExplorez des analyses supplémentaires\nAidez vos camarades",
+    "text": "Stratégies pour avancer\nSi vous êtes bloqué :\n\n\nDécomposez le problème en étapes plus petites\nDemandez au LLM une étape à la fois\nTestez chaque étape avant de passer à la suivante\nConsultez votre journal des séances précédentes\nDemandez de l’aide à un camarade ou l’enseignant\n\n\n\nVous pouvez en plus :\n\nCréez des visualisations plus sophistiquées\nAjoutez des fonctions bonus\nExplorez des analyses supplémentaires\nAidez vos camarades",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -7871,71 +7836,11 @@
     ]
   },
   {
-    "objectID": "M3P/06Lecon5Projet.html#bravo",
-    "href": "M3P/06Lecon5Projet.html#bravo",
-    "title": "Projet Final",
-    "section": "Bravo !",
-    "text": "Bravo !\n\n\n\n\n\n\nNoteVous avez réussi votre premier projet complet !\n\n\n\n\n\n\n\nRéfléchissez :\n\nQu’est-ce qui a été le plus difficile ?\nQu’est-ce qui vous a le plus surpris ?\nQu’est-ce qui vous a le plus appris ?\nQu’est-ce qui vous a le plus plu ?",
-    "crumbs": [
-      "Méthodologie de Projet Personnel et Professionnel",
-      "M3P",
-      "Projet Final"
-    ]
-  },
-  {
     "objectID": "M3P/06Lecon5Projet.html#exercice-réflexif-journal-de-bord",
     "href": "M3P/06Lecon5Projet.html#exercice-réflexif-journal-de-bord",
     "title": "Projet Final",
     "section": "Exercice réflexif : Journal de bord",
     "text": "Exercice réflexif : Journal de bord\nDocumentez en détail dans votre journal :\n\nVotre projet :\n\nSujet choisi et pourquoi\nQuestions posées\nRésultats principaux\n\nDéfis techniques :\n\nProblèmes rencontrés\nSolutions trouvées\nRôle du LLM dans la résolution\n\nApprentissages :\n\nCe que vous maîtrisez maintenant\nCe qui reste difficile\nProgression depuis la séance 1\n\nPrompts LLM :\n\nVos prompts les plus efficaces\nErreurs du LLM et comment vous les avez corrigées\n\n\n\n15 minutes. Documentation importante de ce projet majeur.",
-    "crumbs": [
-      "Méthodologie de Projet Personnel et Professionnel",
-      "M3P",
-      "Projet Final"
-    ]
-  },
-  {
-    "objectID": "M3P/06Lecon5Projet.html#auto-évaluation",
-    "href": "M3P/06Lecon5Projet.html#auto-évaluation",
-    "title": "Projet Final",
-    "section": "Auto-évaluation",
-    "text": "Auto-évaluation\nÉvaluez votre propre projet :\n\n\n\n\nCritère\n🔴 Faible\n🟡 Moyen\n🟢 Bon\n🟢🟢 Excellent\n\n\n\n\nCode fonctionnel\n\n\n\n\n\n\nNettoyage données\n\n\n\n\n\n\nQualité graphiques\n\n\n\n\n\n\nInterprétation\n\n\n\n\n\n\nCommentaires\n\n\n\n\n\n\nUtilisation LLM",
-    "crumbs": [
-      "Méthodologie de Projet Personnel et Professionnel",
-      "M3P",
-      "Projet Final"
-    ]
-  },
-  {
-    "objectID": "M3P/06Lecon5Projet.html#ce-que-vous-avez-accompli",
-    "href": "M3P/06Lecon5Projet.html#ce-que-vous-avez-accompli",
-    "title": "Projet Final",
-    "section": "Ce que vous avez accompli",
-    "text": "Ce que vous avez accompli\n\n\nChoisi et cadré un projet d’analyse personnalisé\nMené une analyse complète en autonomie\nCréé des fonctions personnalisées et réutilisables\nProduit des visualisations professionnelles\nCommuniqué vos résultats à vos pairs\nUtilisé les LLMs comme partenaires d’analyse\nDéveloppé votre autonomie en programmation\n\n\n\n** Félicitations ! Vous êtes capables d’analyser des données en autonomie !**",
-    "crumbs": [
-      "Méthodologie de Projet Personnel et Professionnel",
-      "M3P",
-      "Projet Final"
-    ]
-  },
-  {
-    "objectID": "M3P/06Lecon5Projet.html#compétences-à-ce-stade",
-    "href": "M3P/06Lecon5Projet.html#compétences-à-ce-stade",
-    "title": "Projet Final",
-    "section": "Compétences à ce stade",
-    "text": "Compétences à ce stade\nVous savez maintenant :\n\n\nAnalyser des données de A à Z\nChoisir les bonnes analyses et visualisations\nCréer des fonctions adaptées à vos besoins\nNettoyer et préparer des données réelles\nInterpréter et communiquer des résultats\nUtiliser les LLMs efficacement\nDéboguer de manière autonome",
-    "crumbs": [
-      "Méthodologie de Projet Personnel et Professionnel",
-      "M3P",
-      "Projet Final"
-    ]
-  },
-  {
-    "objectID": "M3P/06Lecon5Projet.html#questions",
-    "href": "M3P/06Lecon5Projet.html#questions",
-    "title": "Projet Final",
-    "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nAstucePoints clés à retenir\n\n\n\n\nVous êtes capables d’analyser des données en autonomie\nLe cadrage initial est crucial pour la réussite\nLes LLMs sont des assistants, mais c’est vous qui dirigez\nTester et commenter au fur et à mesure est essentiel\n\n\n\n\nBravo pour ce projet ! 🚀",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
