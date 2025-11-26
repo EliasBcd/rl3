@@ -18,13 +18,12 @@ execute:
   echo: true
 ---
 
-## Plan de la séance {.smaller}
+## Plan de la présentation {.smaller}
 
 ::: {.incremental}
 - **Présentation du projet**  : Cadrage et attentes
 - **Choix et préparation** : Sélection du jeu de données et définition des questions
-- **Travail autonome supervisé**  : Analyse libre avec consultations individuelles
-- **Présentations courtes** : Partage des résultats (5min/étudiant)
+- **Travail autonome**  : Analyse libre avec consultations individuelles
 :::
 
 ::: {.fragment}
@@ -56,7 +55,7 @@ C'est une analyse complète qui combine **TOUT** ce que vous avez appris :
 -  Conditions et boucles si nécessaire
 -  Visualisations avec `ggplot2`
 -  Interprétation des résultats
--  Utilisation efficace des LLMs
+-  Utilisation des LLMs
 :::
 
 ## Structure attendue
@@ -91,7 +90,7 @@ Votre projet doit contenir :
 **Communication (20%) :**
 
 - Code commenté
-- Présentation structurée
+- Présentation structurée des résultats
 - Graphiques lisibles
 
 **Utilisation des LLMs (10%) :**
@@ -123,7 +122,7 @@ Votre projet doit contenir :
 :::
 :::
 
-## Exercice 1 : Exploration initiale {.smaller}
+## Étape 1 : Exploration initiale {.smaller}
 
 **Une fois vos données choisies :**
 
@@ -170,7 +169,7 @@ dim(mes_donnees)
 - "Fais une analyse"
 :::
 
-## Exercice 2 : Cadrage du projet {.smaller}
+## Étape 3 : Cadrage du projet {.smaller}
 
 **Remplissez ce cadre (écrivez-le !) :**
 
@@ -256,7 +255,7 @@ Montrez votre cadre à l'enseignant avant de commencer !
 :::
 
 ::: {.fragment}
-**Si vous avancez vite :**
+Vous pouvez en plus : 
 
 - Créez des visualisations plus sophistiquées
 - Ajoutez des fonctions bonus
@@ -318,22 +317,6 @@ Avant d'appeler l'enseignant, préparez :
 
 # Retour réflexif {background-color="#DC143C"}
 
-
-## Bravo !
-
-::: {.callout-note}
-## Vous avez réussi votre premier projet complet !
-:::
-
-::: {.incremental}
-**Réfléchissez :**
-
-- Qu'est-ce qui a été le plus difficile ?
-- Qu'est-ce qui vous a le plus surpris ?
-- Qu'est-ce qui vous a le plus appris ?
-- Qu'est-ce qui vous a le plus plu ?
-:::
-
 ## Exercice réflexif : Journal de bord {.smaller}
 
 **Documentez en détail dans votre journal :**
@@ -359,69 +342,4 @@ Avant d'appeler l'enseignant, préparez :
 
 ::: {.notes}
 15 minutes. Documentation importante de ce projet majeur.
-:::
-
-## Auto-évaluation
-
-**Évaluez votre propre projet :**
-
-::: {.nonincremental}
-| Critère | 🔴 Faible | 🟡 Moyen | 🟢 Bon | 🟢🟢 Excellent |
-|---------|----------|---------|-------|--------------|
-| Code fonctionnel | | | | |
-| Nettoyage données | | | | |
-| Qualité graphiques | | | | |
-| Interprétation | | | | |
-| Commentaires | | | | |
-| Utilisation LLM | | | | |
-:::
-
-
-# Ressources et prochaines étapes {background-color="#2E8B57"}
-
-## Ce que vous avez accompli
-
-::: {.incremental}
-- Choisi et cadré un projet d'analyse personnalisé
-- Mené une analyse complète en autonomie
-- Créé des fonctions personnalisées et réutilisables
-- Produit des visualisations professionnelles
-- Communiqué vos résultats à vos pairs
-- Utilisé les LLMs comme partenaires d'analyse
-- Développé votre autonomie en programmation
-:::
-
-::: {.fragment}
-** Félicitations ! Vous êtes capables d'analyser des données en autonomie !**
-:::
-
-## Compétences à ce stade
-
-**Vous savez maintenant :**
-
-::: {.incremental}
-- Analyser des données de A à Z
-- Choisir les bonnes analyses et visualisations
-- Créer des fonctions adaptées à vos besoins
-- Nettoyer et préparer des données réelles
-- Interpréter et communiquer des résultats
-- Utiliser les LLMs efficacement
-- Déboguer de manière autonome
-:::
-
-
-
-## Questions ?
-
-::: {.callout-tip}
-## Points clés à retenir
-
-- Vous êtes **capables** d'analyser des données en autonomie
-- Le **cadrage** initial est crucial pour la réussite
-- Les **LLMs** sont des assistants, mais c'est **vous** qui dirigez
-- **Tester** et **commenter** au fur et à mesure est essentiel
-:::
-
-::: {.fragment}
-**Bravo pour ce projet ! 🚀**
 :::
