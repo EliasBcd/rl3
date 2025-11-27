@@ -5267,7 +5267,7 @@
     "href": "ECLibre/slide-lecon6.html#le-problème-du-code-spaghetti",
     "title": "Séance 6 : Organisation et modularité",
     "section": "Le problème du code “spaghetti”",
-    "text": "Le problème du code “spaghetti”\nObservez ce type de code :\n\n# 500 lignes de code dans un seul fichier...\ndonnees &lt;- read.csv(\"data.csv\")\ndonnees$nom &lt;- tolower(donnees$nom)\n# ... 50 lignes de nettoyage ...\nmoyenne1 &lt;- mean(donnees$valeur1, na.rm = TRUE)\n# ... 30 lignes de calculs ...\nggplot(donnees, aes(x = var1, y = var2)) + geom_point()\n# ... encore 400 lignes ...\n\n\n\n\n\n\n\n\nProblèmes\n\n\n\nDifficile à lire\nDifficile à maintenir\nImpossible à réutiliser\nDifficile à débugger"
+    "text": "Le problème du code “spaghetti”\nObservez ce type de code :\n\n# 500 lignes de code dans un seul fichier...\ndonnees &lt;- read.csv(\"data.csv\")\ndonnees$nom &lt;- tolower(donnees$nom)\n# ... 50 lignes de nettoyage ...\nmoyenne1 &lt;- mean(donnees$valeur1, na.rm = TRUE)\n# ... 30 lignes de calculs ...\nggplot(donnees, aes(x = var1, y = var2)) + geom_point()\n# ... encore 400 lignes ...\n\n\n\n\n\n\n\n\nProblèmes\n\n\n\nDifficile à lire\nDifficile à maintenir\nImpossible à réutiliser\nDifficile à déboguer"
   },
   {
     "objectID": "ECLibre/slide-lecon6.html#quest-ce-que-le-refactoring",
@@ -5281,7 +5281,7 @@
     "href": "ECLibre/slide-lecon6.html#exercice-1-analyser-du-code-désordonné",
     "title": "Séance 6 : Organisation et modularité",
     "section": "Exercice 1 : Analyser du code désordonné",
-    "text": "Exercice 1 : Analyser du code désordonné\nVoici un script à améliorer :\n\nd &lt;- read.csv(\"ventes.csv\")\nd$nom &lt;- tolower(d$nom)\nd$date &lt;- as.Date(d$date)\nm &lt;- mean(d$montant, na.rm = TRUE)\nprint(paste(\"Moyenne:\", m))\nd2 &lt;- d[d$montant &gt; m, ]\nplot(d2$date, d2$montant)\ns &lt;- sum(d$montant, na.rm = TRUE)\nprint(paste(\"Total:\", s))\nd3 &lt;- d[d$categorie == \"A\", ]\nm2 &lt;- mean(d3$montant, na.rm = TRUE)\n\nDemandez au LLM :\n\n“Quels sont les problèmes de ce code ? Comment pourrait-on l’améliorer ?”\n\n\n15 minutes. Discussion collective sur les problèmes."
+    "text": "Exercice 1 : Analyser du code désordonné\nVoici un script à améliorer :\n\nd &lt;- read.csv(\"ventes.csv\")\nd$nom &lt;- tolower(d$nom)\nd$date &lt;- as.Date(d$date)\nm &lt;- mean(d$montant, na.rm = TRUE)\nprint(paste(\"Moyenne :\", m))\nd2 &lt;- d[d$montant &gt; m, ]\nplot(d2$date, d2$montant)\ns &lt;- sum(d$montant, na.rm = TRUE)\nprint(paste(\"Total :\", s))\nd3 &lt;- d[d$categorie == \"A\", ]\nm2 &lt;- mean(d3$montant, na.rm = TRUE)\n\nQuels sont les problèmes de ce code ? Comment pourrait-on l’améliorer ?\n\n15 minutes. Discussion collective sur les problèmes."
   },
   {
     "objectID": "ECLibre/slide-lecon6.html#principes-dorganisation",
@@ -5308,22 +5308,22 @@
     "objectID": "ECLibre/slide-lecon6.html#quest-ce-quun-package",
     "href": "ECLibre/slide-lecon6.html#quest-ce-quun-package",
     "title": "Séance 6 : Organisation et modularité",
-    "section": "Qu’est-ce qu’un package ?",
-    "text": "Qu’est-ce qu’un package ?\nUn package = Collection de fonctions réutilisables\nAvantages :\n\nFonctions testées et documentées\nGain de temps énorme\nCommunauté active\nStandards professionnels\n\n\nExemples célèbres :\n\nggplot2 : graphiques (vous connaissez déjà !)\ndplyr : manipulation de données\ntidyr : restructuration de données\nlubridate : dates et heures"
+    "section": "Qu’est-ce qu’un package?",
+    "text": "Qu’est-ce qu’un package?\nUn package = Collection de fonctions réutilisables\naka : paquet ou Librairie\nAvantages :\n\nFonctions testées et documentées\nGain de temps énorme\nCommunauté active\nStandards professionnels\n\n\nExemples célèbres :\n\nggplot2 : graphiques (vous connaissez déjà !)\ndplyr : manipulation de données\ntidyr : restructuration de données\nlubridate : dates et heures"
   },
   {
     "objectID": "ECLibre/slide-lecon6.html#installer-et-charger-un-package",
     "href": "ECLibre/slide-lecon6.html#installer-et-charger-un-package",
     "title": "Séance 6 : Organisation et modularité",
     "section": "Installer et charger un package",
-    "text": "Installer et charger un package\nInstallation (une seule fois) :\n\ninstall.packages(\"dplyr\")\n\nChargement (à chaque session) :\n\nlibrary(dplyr)\n\n\n\n\n\n\n\n\nImportant\n\n\ninstall.packages() : télécharge depuis internet library() : active pour utilisation"
+    "text": "Installer et charger un package\nInstallation (une seule fois) :\n\ninstall.packages(\"dplyr\")\n\nChargement (à chaque session) :\n\nlibrary(dplyr)\n\n\n\n\n\n\n\n\nImportant\n\n\ninstall.packages() : télécharge depuis internet (les dépôts du CRAN) library() : active pour utilisation"
   },
   {
     "objectID": "ECLibre/slide-lecon6.html#exercice-4-découvrir-dplyr",
     "href": "ECLibre/slide-lecon6.html#exercice-4-découvrir-dplyr",
     "title": "Séance 6 : Organisation et modularité",
     "section": "Exercice 4 : Découvrir dplyr",
-    "text": "Exercice 4 : Découvrir dplyr\ndplyr simplifie la manipulation de données\nDemandez au LLM :\n\n“Explique-moi les principales fonctions de dplyr en R avec des exemples simples”\n\n\nFonctions principales :\n\nfilter() : filtrer les lignes\nselect() : sélectionner les colonnes\nmutate() : créer/modifier des colonnes\nsummarise() : calculer des résumés\ngroup_by() : grouper par catégorie\narrange() : trier les lignes\n\n\n\nTestez avec vos données !\n\n\n20 minutes. Première découverte de dplyr."
+    "text": "Exercice 4 : Découvrir dplyr\ndplyr simplifie la manipulation de données\nUtilisez la commande suivante dans votre console R\n\nvignette(\"dplyr\")\n\nQuels sont les principales fonctions de dplyr\n\nFonctions principales :\n\nfilter() : filtrer les lignes\nselect() : sélectionner les colonnes\nmutate() : créer/modifier des colonnes\nsummarise() : calculer des résumés\ngroup_by() : grouper par catégorie\narrange() : trier les lignes\n%&gt;% : Combiner les fonctions\n\n\n\nTestez avec vos données !\n\n\n20 minutes. Première découverte de dplyr."
   },
   {
     "objectID": "ECLibre/slide-lecon6.html#le-pipe-ou",
@@ -5344,7 +5344,7 @@
     "href": "ECLibre/slide-lecon6.html#exercice-6-autres-packages-utiles",
     "title": "Séance 6 : Organisation et modularité",
     "section": "Exercice 6 : Autres packages utiles",
-    "text": "Exercice 6 : Autres packages utiles\nDécouvrez d’autres packages :\nlubridate (dates) :\n\nlibrary(lubridate)\n\ndate &lt;- \"2023-01-15\"\nd &lt;- ymd(date)\nyear(d)   # Extraire l'année\nmonth(d)  # Extraire le mois\nwday(d, label = TRUE)  # Jour de la semaine\n\nstringr (texte) :\n\nlibrary(stringr)\n\ntexte &lt;- \"  Bonjour  \"\nstr_trim(texte)        # Enlever espaces\nstr_to_upper(texte)    # Majuscules\nstr_detect(texte, \"Bon\")  # Détecter motif\n\nDemandez au LLM des exemples pour chaque package !\n\n20 minutes. Découverte d’autres packages utiles."
+    "text": "Exercice 6 : Autres packages utiles\nDécouvrez d’autres packages :\nlubridate (dates) :\n\nlibrary(lubridate)\n\ndate &lt;- \"2023-01-15\"\nd &lt;- ymd(date)\nyear(d)   # Extraire l'année\nmonth(d)  # Extraire le mois\nwday(d, label = TRUE)  # Jour de la semaine\n\nstringr (texte) :\n\nlibrary(stringr)\n\ntexte &lt;- \"  Bonjour  \"\nstr_trim(texte)        # Enlever espaces\nstr_to_upper(texte)    # Majuscules\nstr_detect(texte, \"Bon\")  # Détecter motif\n\nDemandez au LLM des exemples pour chaque package ou utilisez vignette()\n\n20 minutes. Découverte d’autres packages utiles."
   },
   {
     "objectID": "ECLibre/slide-lecon6.html#erreurs-courantes-avec-les-packages",
@@ -5358,7 +5358,7 @@
     "href": "ECLibre/slide-lecon6.html#exercice-7-debugging-de-packages",
     "title": "Séance 6 : Organisation et modularité",
     "section": "Exercice 7 : Debugging de packages",
-    "text": "Exercice 7 : Debugging de packages\nCorrigez ces erreurs volontaires :\n\n# Problème 1\ndonnees %&gt;%\n  filter(age &gt; 18)\n# Erreur: could not find function \"%&gt;%\"\n\n# Problème 2\nlibrary(dplyr)\nselect(iris, Species, Sepal.Length)\n# Marche, mais warning sur conflit avec MASS\n\n# Problème 3\ninstall.packages(\"monpackageinexistant\")\n# Erreur: package not found\n\nDemandez au LLM de vous aider à comprendre et résoudre chaque erreur.\n\n15 minutes. Exercice de debugging."
+    "text": "Exercice 7 : Debugging de packages\nCorrigez ces erreurs volontaires :\n\n# Problème 1\ndonnees %&gt;%\n  filter(age &gt; 18)\n# \n# Problème 2\nlibrary(dplyr)\nselect(iris, Species, Sepal.Length)\n\n# Problème 3\ninstall.packages(ggplot2)\n\n\nDemandez au LLM de vous aider à comprendre et résoudre chaque erreur.\n\n\n15 minutes. Exercice de débogage.\nProblème 1 : Erreur : could not find function “%&gt;%”\nProblème 2 : Marche, mais warning sur conflit avec MASS\nProblème 3 : Il faut mettre du texte et nom un nom d’objet."
   },
   {
     "objectID": "ECLibre/slide-lecon6.html#bonnes-pratiques",
@@ -5407,7 +5407,7 @@
     "href": "ECLibre/slide-lecon6.html#ce-que-vous-avez-appris",
     "title": "Séance 6 : Organisation et modularité",
     "section": "Ce que vous avez appris",
-    "text": "Ce que vous avez appris\n✅ Organiser son code en modules logiques ✅ Créer et documenter des fonctions réutilisables ✅ Utiliser dplyr pour manipuler les données ✅ Découvrir l’écosystème des packages R ✅ Gérer les erreurs liées aux packages ✅ Créer sa propre bibliothèque de fonctions ✅ Adopter les bonnes pratiques professionnelles"
+    "text": "Ce que vous avez appris\n\nOrganiser son code en modules logiques\nCréer et documenter des fonctions réutilisables\nUtiliser dplyr pour manipuler les données\nDécouvrir l’écosystème des packages R\nGérer les erreurs liées aux packages\nCréer sa propre bibliothèque de fonctions\nAdopter les bonnes pratiques professionnelles"
   },
   {
     "objectID": "ECLibre/slide-lecon6.html#packages-clés-découverts",
@@ -5490,7 +5490,7 @@
     "href": "ECLibre/07Lecon6Organisation.html#le-problème-du-code-spaghetti",
     "title": "Séance 6 : Organisation et modularité",
     "section": "Le problème du code “spaghetti”",
-    "text": "Le problème du code “spaghetti”\nObservez ce type de code :\n\n# 500 lignes de code dans un seul fichier...\ndonnees &lt;- read.csv(\"data.csv\")\ndonnees$nom &lt;- tolower(donnees$nom)\n# ... 50 lignes de nettoyage ...\nmoyenne1 &lt;- mean(donnees$valeur1, na.rm = TRUE)\n# ... 30 lignes de calculs ...\nggplot(donnees, aes(x = var1, y = var2)) + geom_point()\n# ... encore 400 lignes ...\n\n\n\n\n\n\n\n\nAvertissementProblèmes\n\n\n\n\nDifficile à lire\nDifficile à maintenir\nImpossible à réutiliser\nDifficile à débugger",
+    "text": "Le problème du code “spaghetti”\nObservez ce type de code :\n\n# 500 lignes de code dans un seul fichier...\ndonnees &lt;- read.csv(\"data.csv\")\ndonnees$nom &lt;- tolower(donnees$nom)\n# ... 50 lignes de nettoyage ...\nmoyenne1 &lt;- mean(donnees$valeur1, na.rm = TRUE)\n# ... 30 lignes de calculs ...\nggplot(donnees, aes(x = var1, y = var2)) + geom_point()\n# ... encore 400 lignes ...\n\n\n\n\n\n\n\n\nAvertissementProblèmes\n\n\n\n\nDifficile à lire\nDifficile à maintenir\nImpossible à réutiliser\nDifficile à déboguer",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -5514,7 +5514,7 @@
     "href": "ECLibre/07Lecon6Organisation.html#exercice-1-analyser-du-code-désordonné",
     "title": "Séance 6 : Organisation et modularité",
     "section": "Exercice 1 : Analyser du code désordonné",
-    "text": "Exercice 1 : Analyser du code désordonné\nVoici un script à améliorer :\n\nd &lt;- read.csv(\"ventes.csv\")\nd$nom &lt;- tolower(d$nom)\nd$date &lt;- as.Date(d$date)\nm &lt;- mean(d$montant, na.rm = TRUE)\nprint(paste(\"Moyenne:\", m))\nd2 &lt;- d[d$montant &gt; m, ]\nplot(d2$date, d2$montant)\ns &lt;- sum(d$montant, na.rm = TRUE)\nprint(paste(\"Total:\", s))\nd3 &lt;- d[d$categorie == \"A\", ]\nm2 &lt;- mean(d3$montant, na.rm = TRUE)\n\nDemandez au LLM :\n\n“Quels sont les problèmes de ce code ? Comment pourrait-on l’améliorer ?”\n\n\n15 minutes. Discussion collective sur les problèmes.",
+    "text": "Exercice 1 : Analyser du code désordonné\nVoici un script à améliorer :\n\nd &lt;- read.csv(\"ventes.csv\")\nd$nom &lt;- tolower(d$nom)\nd$date &lt;- as.Date(d$date)\nm &lt;- mean(d$montant, na.rm = TRUE)\nprint(paste(\"Moyenne :\", m))\nd2 &lt;- d[d$montant &gt; m, ]\nplot(d2$date, d2$montant)\ns &lt;- sum(d$montant, na.rm = TRUE)\nprint(paste(\"Total :\", s))\nd3 &lt;- d[d$categorie == \"A\", ]\nm2 &lt;- mean(d3$montant, na.rm = TRUE)\n\nQuels sont les problèmes de ce code ? Comment pourrait-on l’améliorer ?\n\n15 minutes. Discussion collective sur les problèmes.",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -5561,8 +5561,8 @@
     "objectID": "ECLibre/07Lecon6Organisation.html#quest-ce-quun-package",
     "href": "ECLibre/07Lecon6Organisation.html#quest-ce-quun-package",
     "title": "Séance 6 : Organisation et modularité",
-    "section": "Qu’est-ce qu’un package ?",
-    "text": "Qu’est-ce qu’un package ?\nUn package = Collection de fonctions réutilisables\n\nAvantages :\n\nFonctions testées et documentées\nGain de temps énorme\nCommunauté active\nStandards professionnels\n\n\n\nExemples célèbres :\n\nggplot2 : graphiques (vous connaissez déjà !)\ndplyr : manipulation de données\ntidyr : restructuration de données\nlubridate : dates et heures",
+    "section": "Qu’est-ce qu’un package?",
+    "text": "Qu’est-ce qu’un package?\nUn package = Collection de fonctions réutilisables\naka : paquet ou Librairie\n\nAvantages :\n\nFonctions testées et documentées\nGain de temps énorme\nCommunauté active\nStandards professionnels\n\n\n\nExemples célèbres :\n\nggplot2 : graphiques (vous connaissez déjà !)\ndplyr : manipulation de données\ntidyr : restructuration de données\nlubridate : dates et heures",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -5574,7 +5574,7 @@
     "href": "ECLibre/07Lecon6Organisation.html#installer-et-charger-un-package",
     "title": "Séance 6 : Organisation et modularité",
     "section": "Installer et charger un package",
-    "text": "Installer et charger un package\nInstallation (une seule fois) :\n\ninstall.packages(\"dplyr\")\n\nChargement (à chaque session) :\n\nlibrary(dplyr)\n\n\n\n\n\n\n\n\nNoteImportant\n\n\n\ninstall.packages() : télécharge depuis internet library() : active pour utilisation",
+    "text": "Installer et charger un package\nInstallation (une seule fois) :\n\ninstall.packages(\"dplyr\")\n\nChargement (à chaque session) :\n\nlibrary(dplyr)\n\n\n\n\n\n\n\n\nNoteImportant\n\n\n\ninstall.packages() : télécharge depuis internet (les dépôts du CRAN) library() : active pour utilisation",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -5586,7 +5586,7 @@
     "href": "ECLibre/07Lecon6Organisation.html#exercice-4-découvrir-dplyr",
     "title": "Séance 6 : Organisation et modularité",
     "section": "Exercice 4 : Découvrir dplyr",
-    "text": "Exercice 4 : Découvrir dplyr\ndplyr simplifie la manipulation de données\nDemandez au LLM :\n\n“Explique-moi les principales fonctions de dplyr en R avec des exemples simples”\n\n\nFonctions principales :\n\nfilter() : filtrer les lignes\nselect() : sélectionner les colonnes\nmutate() : créer/modifier des colonnes\nsummarise() : calculer des résumés\ngroup_by() : grouper par catégorie\narrange() : trier les lignes\n\n\n\nTestez avec vos données !\n\n\n20 minutes. Première découverte de dplyr.",
+    "text": "Exercice 4 : Découvrir dplyr\ndplyr simplifie la manipulation de données\nUtilisez la commande suivante dans votre console R\n\nvignette(\"dplyr\")\n\nQuels sont les principales fonctions de dplyr\n\nFonctions principales :\n\nfilter() : filtrer les lignes\nselect() : sélectionner les colonnes\nmutate() : créer/modifier des colonnes\nsummarise() : calculer des résumés\ngroup_by() : grouper par catégorie\narrange() : trier les lignes\n%&gt;% : Combiner les fonctions\n\n\n\nTestez avec vos données !\n\n\n20 minutes. Première découverte de dplyr.",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -5622,7 +5622,7 @@
     "href": "ECLibre/07Lecon6Organisation.html#exercice-6-autres-packages-utiles",
     "title": "Séance 6 : Organisation et modularité",
     "section": "Exercice 6 : Autres packages utiles",
-    "text": "Exercice 6 : Autres packages utiles\nDécouvrez d’autres packages :\nlubridate (dates) :\n\nlibrary(lubridate)\n\ndate &lt;- \"2023-01-15\"\nd &lt;- ymd(date)\nyear(d)   # Extraire l'année\nmonth(d)  # Extraire le mois\nwday(d, label = TRUE)  # Jour de la semaine\n\nstringr (texte) :\n\nlibrary(stringr)\n\ntexte &lt;- \"  Bonjour  \"\nstr_trim(texte)        # Enlever espaces\nstr_to_upper(texte)    # Majuscules\nstr_detect(texte, \"Bon\")  # Détecter motif\n\nDemandez au LLM des exemples pour chaque package !\n\n20 minutes. Découverte d’autres packages utiles.",
+    "text": "Exercice 6 : Autres packages utiles\nDécouvrez d’autres packages :\nlubridate (dates) :\n\nlibrary(lubridate)\n\ndate &lt;- \"2023-01-15\"\nd &lt;- ymd(date)\nyear(d)   # Extraire l'année\nmonth(d)  # Extraire le mois\nwday(d, label = TRUE)  # Jour de la semaine\n\nstringr (texte) :\n\nlibrary(stringr)\n\ntexte &lt;- \"  Bonjour  \"\nstr_trim(texte)        # Enlever espaces\nstr_to_upper(texte)    # Majuscules\nstr_detect(texte, \"Bon\")  # Détecter motif\n\nDemandez au LLM des exemples pour chaque package ou utilisez vignette()\n\n20 minutes. Découverte d’autres packages utiles.",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -5646,7 +5646,7 @@
     "href": "ECLibre/07Lecon6Organisation.html#exercice-7-debugging-de-packages",
     "title": "Séance 6 : Organisation et modularité",
     "section": "Exercice 7 : Debugging de packages",
-    "text": "Exercice 7 : Debugging de packages\nCorrigez ces erreurs volontaires :\n\n# Problème 1\ndonnees %&gt;%\n  filter(age &gt; 18)\n# Erreur: could not find function \"%&gt;%\"\n\n# Problème 2\nlibrary(dplyr)\nselect(iris, Species, Sepal.Length)\n# Marche, mais warning sur conflit avec MASS\n\n# Problème 3\ninstall.packages(\"monpackageinexistant\")\n# Erreur: package not found\n\nDemandez au LLM de vous aider à comprendre et résoudre chaque erreur.\n\n15 minutes. Exercice de debugging.",
+    "text": "Exercice 7 : Debugging de packages\nCorrigez ces erreurs volontaires :\n\n# Problème 1\ndonnees %&gt;%\n  filter(age &gt; 18)\n# \n# Problème 2\nlibrary(dplyr)\nselect(iris, Species, Sepal.Length)\n\n# Problème 3\ninstall.packages(ggplot2)\n\n\nDemandez au LLM de vous aider à comprendre et résoudre chaque erreur.\n\n\n15 minutes. Exercice de débogage.\nProblème 1 : Erreur : could not find function “%&gt;%”\nProblème 2 : Marche, mais warning sur conflit avec MASS\nProblème 3 : Il faut mettre du texte et nom un nom d’objet.",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -5730,7 +5730,7 @@
     "href": "ECLibre/07Lecon6Organisation.html#ce-que-vous-avez-appris",
     "title": "Séance 6 : Organisation et modularité",
     "section": "Ce que vous avez appris",
-    "text": "Ce que vous avez appris\n\n✅ Organiser son code en modules logiques ✅ Créer et documenter des fonctions réutilisables ✅ Utiliser dplyr pour manipuler les données ✅ Découvrir l’écosystème des packages R ✅ Gérer les erreurs liées aux packages ✅ Créer sa propre bibliothèque de fonctions ✅ Adopter les bonnes pratiques professionnelles",
+    "text": "Ce que vous avez appris\n\n\nOrganiser son code en modules logiques\nCréer et documenter des fonctions réutilisables\nUtiliser dplyr pour manipuler les données\nDécouvrir l’écosystème des packages R\nGérer les erreurs liées aux packages\nCréer sa propre bibliothèque de fonctions\nAdopter les bonnes pratiques professionnelles",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
