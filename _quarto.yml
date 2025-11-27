@@ -29,6 +29,8 @@ website:
             href: JournalBord.qmd
           - text: "Données Météo"
             href: donnees/donnees_meteo.csv
+          - text: "Données Ventes"
+            href: donnees/ventes.csv
 
 
 format:
