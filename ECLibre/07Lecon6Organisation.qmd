@@ -78,7 +78,7 @@ ggplot(donnees, aes(x = var1, y = var2)) + geom_point()
 - Difficile à lire
 - Difficile à maintenir
 - Impossible à réutiliser
-- Difficile à débugger
+- Difficile à déboguer
 :::
 :::
 
@@ -107,18 +107,17 @@ d <- read.csv("ventes.csv")
 d$nom <- tolower(d$nom)
 d$date <- as.Date(d$date)
 m <- mean(d$montant, na.rm = TRUE)
-print(paste("Moyenne:", m))
+print(paste("Moyenne :", m))
 d2 <- d[d$montant > m, ]
 plot(d2$date, d2$montant)
 s <- sum(d$montant, na.rm = TRUE)
-print(paste("Total:", s))
+print(paste("Total :", s))
 d3 <- d[d$categorie == "A", ]
 m2 <- mean(d3$montant, na.rm = TRUE)
 ```
 
-**Demandez au LLM :**
 
-> "Quels sont les problèmes de ce code ? Comment pourrait-on l'améliorer ?"
+Quels sont les problèmes de ce code ? Comment pourrait-on l'améliorer ?
 
 ::: {.notes}
 15 minutes. Discussion collective sur les problèmes.
@@ -216,9 +215,11 @@ stats <- calculer_statistiques(donnees, "montant")
 
 # Packages et écosystème R {background-color="#FF8C00"}
 
-## Qu'est-ce qu'un package ?
+## Qu'est-ce qu'un package?
 
 Un **package** = Collection de fonctions réutilisables
+
+aka : paquet ou Librairie
 
 ::: {.incremental}
 **Avantages :**
@@ -257,18 +258,23 @@ library(dplyr)
 ::: {.fragment}
 ::: {.callout-note}
 ## Important
-`install.packages()` : télécharge depuis internet
+`install.packages()` : télécharge depuis internet (les dépôts du [CRAN](https://cran.r-project.org/))
 `library()` : active pour utilisation
 :::
 :::
 
 ## Exercice 4 : Découvrir dplyr {.smaller}
 
-**dplyr simplifie la manipulation de données**
+**`dplyr` simplifie la manipulation de données**
 
-**Demandez au LLM :**
+Utilisez la commande suivante dans votre console R
 
-> "Explique-moi les principales fonctions de dplyr en R avec des exemples simples"
+```{r}
+#| eval: false
+vignette("dplyr")
+```
+
+Quels sont les principales fonctions de `dplyr`
 
 ::: {.fragment}
 **Fonctions principales :**
@@ -279,6 +285,7 @@ library(dplyr)
 - `summarise()` : calculer des résumés
 - `group_by()` : grouper par catégorie
 - `arrange()` : trier les lignes
+- `%>%` : Combiner les fonctions
 :::
 
 ::: {.fragment}
@@ -375,7 +382,7 @@ str_to_upper(texte)    # Majuscules
 str_detect(texte, "Bon")  # Détecter motif
 ```
 
-**Demandez au LLM des exemples pour chaque package !**
+Demandez au LLM des exemples pour chaque package ou utilisez `vignette()`
 
 ::: {.notes}
 20 minutes. Découverte d'autres packages utiles.
@@ -424,22 +431,27 @@ Le package nécessite R version 4.0 minimum
 # Problème 1
 donnees %>%
   filter(age > 18)
-# Erreur: could not find function "%>%"
-
+# 
 # Problème 2
 library(dplyr)
 select(iris, Species, Sepal.Length)
-# Marche, mais warning sur conflit avec MASS
 
 # Problème 3
-install.packages("monpackageinexistant")
-# Erreur: package not found
+install.packages(ggplot2)
+
 ```
 
+::: {.fragment}
 **Demandez au LLM de vous aider à comprendre et résoudre chaque erreur.**
+:::
 
 ::: {.notes}
-15 minutes. Exercice de debugging.
+15 minutes. 
+Exercice de débogage.  
+Problème 1 : Erreur : could not find function "%>%"  
+Problème 2 : Marche, mais warning sur conflit avec MASS  
+Problème 3 : Il faut mettre du texte et nom un nom d'objet.
+
 :::
 
 ## Bonnes pratiques
@@ -487,6 +499,8 @@ ma_bibliotheque/
 ```
 
 ## Exercice 8 : Créer sa bibliothèque {.smaller}
+
+
 
 **Dans `nettoyage.R` :**
 
@@ -593,13 +607,13 @@ plot_distribution(donnees, "salaire")
 ## Ce que vous avez appris
 
 ::: {.incremental}
-✅ Organiser son code en modules logiques
-✅ Créer et documenter des fonctions réutilisables
-✅ Utiliser dplyr pour manipuler les données
-✅ Découvrir l'écosystème des packages R
-✅ Gérer les erreurs liées aux packages
-✅ Créer sa propre bibliothèque de fonctions
-✅ Adopter les bonnes pratiques professionnelles
+- Organiser son code en modules logiques
+- Créer et documenter des fonctions réutilisables
+- Utiliser dplyr pour manipuler les données
+- Découvrir l'écosystème des packages R
+- Gérer les erreurs liées aux packages
+- Créer sa propre bibliothèque de fonctions
+- Adopter les bonnes pratiques professionnelles
 :::
 
 # Ressources et prochaines étapes {background-color="#2E8B57"}
