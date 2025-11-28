@@ -130,7 +130,7 @@
     "href": "M3P/05Lecon4Dataframes.html#exercice-3-gérer-les-valeurs-manquantes",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 3 : Gérer les valeurs manquantes",
-    "text": "Exercice 3 : Gérer les valeurs manquantes\nPlusieurs stratégies possibles :\nDemandez au LLM :\n\n“Comment gérer les valeurs NA dans mes données de ventes ? Quelles sont les différentes approches ?”\n\n\nOptions principales :\n\nSupprimer les lignes avec NA : na.omit()\nRemplacer par une valeur : moyenne, médiane, 0\nGarder mais utiliser na.rm = TRUE dans les calculs\n\n\n\n\n\n\n\n\n\nNoteRéflexion importante\n\n\n\nQuelle stratégie choisir dépend du contexte ! Supprimer ou interpoler des données peut introduire des biais.\n\n\n\n\n15 minutes. Discussion sur les choix méthodologiques.",
+    "text": "Exercice 3 : Gérer les valeurs manquantes\nPlusieurs stratégies possibles :\nDemandez au LLM :\n\n“Comment gérer les valeurs NA dans mes données de ventes ? Quelles sont les différentes approches ?”\n\n\nOptions principales :\n\nSupprimer les lignes avec NA : na.omit()\nRemplacer par une valeur : moyenne, médiane, 0\nGarder, mais utiliser na.rm = TRUE dans les calculs\n\n\n\n\n\n\n\n\n\nNoteRéflexion importante\n\n\n\nQuelle stratégie choisir dépend du contexte ! Supprimer ou interpoler des données peut introduire des biais.\n\n\n\n\n15 minutes. Discussion sur les choix méthodologiques.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -142,7 +142,7 @@
     "href": "M3P/05Lecon4Dataframes.html#exercice-4-jeu-de-données-complexe-piégé",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 4 : Jeu de données complexe piégé",
-    "text": "Exercice 4 : Jeu de données complexe piégé\nDonnées étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nObjectif :\n\nIdentifiez TOUS les problèmes\nNettoyez le jeu de données\nCalculez la générale des étudiants\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver.",
+    "text": "Exercice 4 : Jeu de données complexe piégé\nDonnées étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nObjectif :\n\nIdentifiez TOUS les problèmes\nNettoyez le jeu de données\nCalculez la moyenne générale des étudiants\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver.",
     "crumbs": [
       "Méthodologie de Projet Personnel et Professionnel",
       "M3P",
@@ -407,14 +407,14 @@
     "href": "M3P/slide-lecon4.html#exercice-3-gérer-les-valeurs-manquantes",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 3 : Gérer les valeurs manquantes",
-    "text": "Exercice 3 : Gérer les valeurs manquantes\nPlusieurs stratégies possibles :\nDemandez au LLM :\n\n“Comment gérer les valeurs NA dans mes données de ventes ? Quelles sont les différentes approches ?”\n\n\nOptions principales :\n\nSupprimer les lignes avec NA : na.omit()\nRemplacer par une valeur : moyenne, médiane, 0\nGarder mais utiliser na.rm = TRUE dans les calculs\n\n\n\n\n\n\n\n\n\nRéflexion importante\n\n\nQuelle stratégie choisir dépend du contexte ! Supprimer ou interpoler des données peut introduire des biais.\n\n\n\n\n\n15 minutes. Discussion sur les choix méthodologiques."
+    "text": "Exercice 3 : Gérer les valeurs manquantes\nPlusieurs stratégies possibles :\nDemandez au LLM :\n\n“Comment gérer les valeurs NA dans mes données de ventes ? Quelles sont les différentes approches ?”\n\n\nOptions principales :\n\nSupprimer les lignes avec NA : na.omit()\nRemplacer par une valeur : moyenne, médiane, 0\nGarder, mais utiliser na.rm = TRUE dans les calculs\n\n\n\n\n\n\n\n\n\nRéflexion importante\n\n\nQuelle stratégie choisir dépend du contexte ! Supprimer ou interpoler des données peut introduire des biais.\n\n\n\n\n\n15 minutes. Discussion sur les choix méthodologiques."
   },
   {
     "objectID": "M3P/slide-lecon4.html#exercice-4-jeu-de-données-complexe-piégé",
     "href": "M3P/slide-lecon4.html#exercice-4-jeu-de-données-complexe-piégé",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 4 : Jeu de données complexe piégé",
-    "text": "Exercice 4 : Jeu de données complexe piégé\nDonnées étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nObjectif :\n\nIdentifiez TOUS les problèmes\nNettoyez le jeu de données\nCalculez la générale des étudiants\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver."
+    "text": "Exercice 4 : Jeu de données complexe piégé\nDonnées étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nObjectif :\n\nIdentifiez TOUS les problèmes\nNettoyez le jeu de données\nCalculez la moyenne générale des étudiants\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver."
   },
   {
     "objectID": "M3P/slide-lecon4.html#pourquoi-ggplot2",
@@ -4796,7 +4796,7 @@
     "href": "ECLibre/slide-lecon4.html#exercice-4-jeu-de-données-complexe-piégé",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 4 : Jeu de données complexe piégé",
-    "text": "Exercice 4 : Jeu de données complexe piégé\nDonnées étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nObjectif :\n\nIdentifiez TOUS les problèmes\nNettoyez le jeu de données\nCalculez la générale des étudiants\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver."
+    "text": "Exercice 4 : Jeu de données complexe piégé\nDonnées étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nObjectif :\n\nIdentifiez TOUS les problèmes\nNettoyez le jeu de données\nCalculez la moyenne générale des étudiants\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver."
   },
   {
     "objectID": "ECLibre/slide-lecon4.html#pourquoi-ggplot2",
@@ -5030,7 +5030,7 @@
     "href": "ECLibre/05Lecon4Dataframes.html#exercice-4-jeu-de-données-complexe-piégé",
     "title": "Séance 4 : Données tabulaires et graphiques avancés",
     "section": "Exercice 4 : Jeu de données complexe piégé",
-    "text": "Exercice 4 : Jeu de données complexe piégé\nDonnées étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nObjectif :\n\nIdentifiez TOUS les problèmes\nNettoyez le jeu de données\nCalculez la générale des étudiants\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver.",
+    "text": "Exercice 4 : Jeu de données complexe piégé\nDonnées étudiants :\n\netudiants &lt;- data.frame(\n  nom = c(\"Dupont\", \"Martin\", \"Durand\", \"\", \"Petit\"),\n  age = c(20, \"vingt-deux\", 19, 21, 18),\n  note_math = c(15, 12, NA, 16, 14),\n  note_info = c(13, NA, 15, 12, 16),\n  filiere = c(\"Info\", \"info\", \"Maths\", \"INFO\", \"maths\")\n)\n\nObjectif :\n\nIdentifiez TOUS les problèmes\nNettoyez le jeu de données\nCalculez la moyenne générale des étudiants\n\n\n30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d’erreurs à trouver.",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
