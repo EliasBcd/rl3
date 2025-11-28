@@ -175,7 +175,7 @@ table(ventes$vendeur)
 
 1. **Supprimer** les lignes avec NA : `na.omit()`
 2. **Remplacer** par une valeur : moyenne, médiane, 0
-3. **Garder** mais utiliser `na.rm = TRUE` dans les calculs
+3. **Garder**, mais utiliser `na.rm = TRUE` dans les calculs
 :::
 
 ::: {.fragment}
@@ -209,7 +209,7 @@ Objectif :
 
 1. Identifiez TOUS les problèmes
 2. Nettoyez le jeu de données
-3. Calculez la générale des étudiants
+3. Calculez la moyenne générale des étudiants
 
 ::: {.notes}
 30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d'erreurs à trouver.

@@ -209,7 +209,7 @@ Objectif :
 
 1. Identifiez TOUS les problèmes
 2. Nettoyez le jeu de données
-3. Calculez la générale des étudiants
+3. Calculez la moyenne générale des étudiants
 
 ::: {.notes}
 30 minutes. Exercice de synthèse sur le nettoyage. Beaucoup d'erreurs à trouver.
