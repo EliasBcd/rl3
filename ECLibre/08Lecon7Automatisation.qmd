@@ -21,10 +21,10 @@ execute:
 ## Plan de la séance {.smaller}
 
 ::: {.incremental}
-- **Récap et partage** (15min) : Retours sur l'organisation du code
-- **Traitement par lots** (60min) : Analyser plusieurs fichiers automatiquement
-- **Introduction à R Markdown** (60min) : Mélanger code, texte et résultats
-- **Rapport paramétré** (65min) : Créer un template d'analyse réutilisable
+- **Récap et partage**  : Retours sur l'organisation du code
+- **Traitement par lots** : Analyser plusieurs fichiers automatiquement
+- **Introduction à Quarto** : Mélanger code, texte et résultats
+- **Rapport paramétré** : Créer un template d'analyse réutilisable
 :::
 
 ::: {.fragment}
@@ -40,7 +40,7 @@ execute:
 ::: {.incremental}
 - **Automatiser** le traitement de plusieurs fichiers
 - **Créer** des rapports reproductibles
-- **Maîtriser** R Markdown pour mélanger code et texte
+- **Maîtriser** Quarto pour mélanger code et texte
 - **Paramétrer** ses analyses pour la réutilisation
 - **Générer** des documents professionnels
 :::
@@ -64,7 +64,7 @@ Vous avez analysé les ventes de janvier...
 :::
 
 ::: {.fragment}
-Maintenant on vous demande d'analyser janvier, février, mars, avril, mai, juin... 📊
+Maintenant on vous demande d'analyser janvier, février, mars, avril, mai, juin...
 :::
 
 ::: {.fragment}
@@ -106,12 +106,10 @@ for (fichier in fichiers) {
 
 ## Exercice 1 : Lister des fichiers {.smaller}
 
-**Demandez au LLM :**
-
-> "Comment lister tous les fichiers CSV d'un dossier en R ?"
+Comment lister tous les fichiers CSV d'un dossier en R ?
 
 ::: {.fragment}
-Vous découvrirez :
+Solutions possibles :
 
 ```{r}
 #| eval: false
@@ -235,14 +233,14 @@ for (fichier in fichiers) {
 ```
 
 ::: {.fragment}
-**Demandez au LLM d'expliquer `tryCatch()` !**
+Essayez d'expliquer ce que signifie `tryCatch()`.
 :::
 
-# Introduction à R Markdown {background-color="#FF8C00"}
+# Introduction à Quarto {background-color="#FF8C00"}
 
-## Qu'est-ce que R Markdown ?
+## Qu'est-ce que Quarto ?
 
-**R Markdown** permet de créer des documents qui mélangent :
+**Quarto** permet de créer des documents qui mélangent :
 
 ::: {.incremental}
 - Du **texte** (explications, interprétations)
@@ -259,14 +257,14 @@ for (fichier in fichiers) {
 - Sites web, livres
 :::
 
-## Pourquoi R Markdown ?
+## Pourquoi Quarto ?
 
 ::: {.incremental}
 **Avantages :**
 
 - **Reproductibilité** : tout est dans un seul fichier
 - **Cohérence** : résultats toujours à jour avec le code
-- **Communication** : rapports professionnels
+- **Communication** : rapports faciles à produire
 - **Gain de temps** : pas de copier-coller de résultats
 :::
 
@@ -277,16 +275,16 @@ Si vos données changent, votre rapport se met à jour automatiquement !
 :::
 :::
 
-## Structure d'un document R Markdown {.smaller}
+## Structure d'un document Quarto {.smaller}
 
-**Un fichier `.Rmd` contient :**
+**Un fichier `.qmd` contient :**
 
-````markdown
+````yaml
 ---
 title: "Mon Rapport"
 author: "Votre Nom"
 date: "2025-01-15"
-output: html_document
+format: html
 ---
 
 # Introduction
@@ -308,13 +306,13 @@ plot(donnees$x, donnees$y)
 ```
 ````
 
-## Exercice 4 : Premier document R Markdown {.smaller}
+## Exercice 4 : Premier document Quarto {.smaller}
 
-**Créez un nouveau fichier R Markdown :**
+**Créez un nouveau fichier Quarto :**
 
-1. Dans RStudio : File > New File > R Markdown
+1. Dans RStudio : File > New File > Quarto
 2. Donnez un titre et choisissez HTML
-3. Cliquez sur "Knit" pour générer le document
+3. Cliquez sur "Render" pour générer le document
 
 ::: {.fragment}
 **Observez :**
@@ -326,13 +324,11 @@ plot(donnees$x, donnees$y)
 :::
 
 ::: {.fragment}
-**Demandez au LLM :**
-
-> "Explique-moi la syntaxe de base de Markdown (titres, listes, gras, italique)"
+Cherchez la syntaxe de base de Markdown (titres, listes, gras, italique)
 :::
 
 ::: {.notes}
-20 minutes. Première découverte de R Markdown.
+20 minutes. Première découverte de Quarto.
 :::
 
 ## Options des blocs de code {.smaller}
@@ -340,20 +336,24 @@ plot(donnees$x, donnees$y)
 **On peut contrôler ce qui apparaît dans le rapport :**
 
 ````markdown
-```{{r, echo=TRUE, eval=TRUE}}
-# echo=TRUE : montrer le code
-# eval=TRUE : exécuter le code
+```{{r}}
+#| echo: true
+#| eval: true
+# montrer et exécuter le code
 x <- 1:10
 mean(x)
 ```
 
-```{{r, echo=FALSE, eval=TRUE}}
-# echo=FALSE : cacher le code, montrer seulement le résultat
+```{{r}}
+#| echo: false
+#| eval: true
+# cacher le code, montrer seulement le résultat
 plot(x, x^2)
 ```
 
-```{{r, eval=FALSE}}
-# eval=FALSE : montrer le code mais ne pas l'exécuter
+```{{r}}
+#| eval: false
+# montrer le code mais ne pas l'exécuter
 # Utile pour montrer des exemples
 install.packages("monpackage")
 ```
@@ -362,14 +362,14 @@ install.packages("monpackage")
 ::: {.fragment}
 **Autres options utiles :**
 
-- `message=FALSE` : cacher les messages
-- `warning=FALSE` : cacher les avertissements
-- `fig.width=8, fig.height=5` : taille des graphiques
+- `message: false` : cacher les messages
+- `warning: false` : cacher les avertissements
+- `fig-width: 8, fig-height: 5` : taille des graphiques
 :::
 
 ## Exercice 5 : Rapport d'analyse simple {.smaller}
 
-**Créez un rapport R Markdown qui :**
+**Créez un rapport Quarto qui :**
 
 1. Importe un jeu de données
 2. Affiche les premières lignes (avec `head()`)
@@ -391,7 +391,8 @@ summary(donnees)
 ```
 
 # Analyse
-```{{r, echo=FALSE}}
+```{{r}}
+#| echo: false
 # Graphiques sans montrer le code
 ```
 
@@ -426,9 +427,8 @@ Les résultats montrent que...
 ![Image](chemin/vers/image.png)
 ```
 
-::: {.fragment}
-**Demandez au LLM de vous montrer plus d'options de formatage !**
-:::
+Toutes les options de formatages en Quarto sont disponibles ici : <https://quarto.org/docs/authoring/markdown-basics.html>
+
 
 # Rapport paramétré {background-color="#8B008B"}
 
@@ -438,9 +438,10 @@ Les résultats montrent que...
 
 **Solution :** Créer un template paramétrable
 
-```markdown
+````quarto
 ---
 title: "Rapport de ventes"
+format: html
 params:
   fichier: "ventes_janvier.csv"
   seuil: 1000
@@ -450,7 +451,7 @@ params:
 donnees <- read.csv(params$fichier)
 ventes_importantes <- donnees[donnees$montant > params$seuil, ]
 ```
-```
+````
 
 ## Exercice 6 : Premier rapport paramétré {.smaller}
 
@@ -459,11 +460,11 @@ ventes_importantes <- donnees[donnees$montant > params$seuil, ]
 ````{verbatim}
 ---
 title: "Analyse automatisée"
+format: html
 params:
   dataset: "data.csv"
   variable: "valeur"
   titre_graphique: "Distribution des valeurs"
-output: html_document
 ---
 
 # Analyse de `r params$variable`
@@ -491,16 +492,16 @@ hist(variable_data, main = params$titre_graphique)
 
 ```{r}
 #| eval: false
-library(rmarkdown)
+library(quarto)
 
 # Générer un rapport avec des paramètres spécifiques
-render("template.Rmd",
-       params = list(
-         dataset = "ventes_janvier.csv",
-         variable = "montant",
-         titre_graphique = "Ventes de janvier"
-       ),
-       output_file = "rapport_janvier.html")
+quarto_render("template.qmd",
+              execute_params = list(
+                dataset = "ventes_janvier.csv",
+                variable = "montant",
+                titre_graphique = "Ventes de janvier"
+              ),
+              output_file = "rapport_janvier.html")
 
 # Boucle pour générer plusieurs rapports
 fichiers <- c("ventes_janvier.csv", "ventes_fevrier.csv", "ventes_mars.csv")
@@ -508,13 +509,13 @@ fichiers <- c("ventes_janvier.csv", "ventes_fevrier.csv", "ventes_mars.csv")
 for (f in fichiers) {
   mois <- tools::file_path_sans_ext(basename(f))
 
-  render("template.Rmd",
-         params = list(
-           dataset = f,
-           variable = "montant",
-           titre_graphique = paste("Ventes de", mois)
-         ),
-         output_file = paste0("rapport_", mois, ".html"))
+  quarto_render("template.qmd",
+                execute_params = list(
+                  dataset = f,
+                  variable = "montant",
+                  titre_graphique = paste("Ventes de", mois)
+                ),
+                output_file = paste0("rapport_", mois, ".html"))
 }
 ```
 
@@ -540,9 +541,9 @@ generer_rapport <- function(fichier_donnees, output_dir = "rapports/") {
   # Générer le rapport
   output_file <- file.path(output_dir, paste0("rapport_", nom_base, ".html"))
 
-  rmarkdown::render(
-    "template_analyse.Rmd",
-    params = list(
+  quarto::quarto_render(
+    "template_analyse.qmd",
+    execute_params = list(
       dataset = fichier_donnees,
       titre = paste("Analyse de", nom_base)
     ),
@@ -564,18 +565,17 @@ rapports <- lapply(fichiers, generer_rapport)
 
 ## Formats de sortie multiples
 
-**R Markdown peut générer différents formats :**
+**Quarto peut générer différents formats :**
 
-````markdown
+````yaml
 ---
 title: "Mon Rapport"
-output:
-  html_document:
+format:
+  html:
     toc: true
-    toc_float: true
-  pdf_document:
+  pdf:
     toc: true
-  word_document: default
+  docx: default
 ---
 ````
 
@@ -584,31 +584,19 @@ output:
 
 ```{r}
 #| eval: false
-render("rapport.Rmd", output_format = "pdf_document")
+quarto_render("rapport.qmd", output_format = "pdf")
 ```
 :::
 
-# Mini-projet : Système de rapports {background-color="#DC143C"}
+# Mini-projet : Rapports {background-color="#DC143C"}
 
-## Projet final : Rapports automatisés {.smaller}
+## Projet final : Rapports {.smaller}
 
-**Objectif :** Créer un système complet de génération de rapports
-
-**Spécifications :**
-
-1. Un **template R Markdown** paramétrable
-2. Une **fonction** qui génère des rapports pour plusieurs fichiers
-3. Les rapports doivent inclure :
-   - Import et nettoyage automatique
-   - Statistiques descriptives
-   - Au moins 3 graphiques
-   - Interprétation textuelle
-4. Gestion des erreurs (fichiers manquants, colonnes manquantes)
-5. Génération en HTML
+**Objectif :** Transformer votre rapport précédent en un rapport Quarto
 
 ::: {.callout-note}
 ## Utilisez tout ce que vous avez appris
-Fonctions, dplyr, ggplot2, gestion d'erreurs, R Markdown !
+Fonctions, dplyr, ggplot2, gestion d'erreurs, Quarto !
 :::
 
 ::: {.notes}
@@ -618,21 +606,9 @@ Fonctions, dplyr, ggplot2, gestion d'erreurs, R Markdown !
 ## Critères du projet {.smaller}
 
 ::: {.incremental}
-- ✅ Template R Markdown **paramétrable** et réutilisable
-- ✅ Fonction de génération **robuste** (gère les erreurs)
-- ✅ Rapports **complets** (stats + graphiques + texte)
-- ✅ Code **commenté** et **organisé**
-- ✅ **Fonctionne** avec différents fichiers de données
+- Votre projet est maintenant écrit en un mélange de Quarto et R
 :::
 
-::: {.fragment}
-**Bonus :**
-
-- Génération automatique d'un index de tous les rapports
-- Graphiques interactifs avec `plotly`
-- Rapport au format PDF
-- Envoi automatique par email (avancé !)
-:::
 
 # Retour réflexif {background-color="#2F4F4F"}
 
@@ -645,15 +621,13 @@ Fonctions, dplyr, ggplot2, gestion d'erreurs, R Markdown !
    - Votre fonction d'analyse par lots
    - Une erreur que vous avez gérée avec `tryCatch()`
 
-2. **R Markdown** :
+2. **Quarto** :
    - Différences avec un script R normal
    - Avantages pour vos analyses
    - Options de blocs de code les plus utiles
 
-3. **Rapports paramétrés** :
-   - Votre template réutilisable
-   - Comment vous allez l'utiliser à l'avenir
-   - Difficultés rencontrées et solutions
+3. **Rapports** :
+   - Votre rapport
 
 ::: {.notes}
 15 minutes. Documentation des apprentissages avancés.
@@ -662,12 +636,12 @@ Fonctions, dplyr, ggplot2, gestion d'erreurs, R Markdown !
 ## Ce que vous avez accompli
 
 ::: {.incremental}
-✅ Automatiser le traitement de plusieurs fichiers
-✅ Créer des rapports reproductibles avec R Markdown
-✅ Paramétrer des analyses pour la réutilisation
-✅ Générer des documents professionnels automatiquement
-✅ Gérer les erreurs dans les processus automatisés
-✅ Combiner toutes vos compétences en R
+- Automatiser le traitement de plusieurs fichiers
+- Créer des rapports reproductibles avec Quarto
+- Paramétrer des analyses pour la réutilisation
+- Générer des documents professionnels automatiquement
+- Gérer les erreurs dans les processus automatisés
+- Combiner toutes vos compétences en R
 :::
 
 # Ressources et prochaines étapes {background-color="#2E8B57"}
@@ -680,11 +654,11 @@ Fonctions, dplyr, ggplot2, gestion d'erreurs, R Markdown !
 - Boucles `for` et `lapply()` sur plusieurs fichiers
 - `tryCatch()` : gestion des erreurs
 
-**R Markdown :**
+**Quarto :**
 
 - Structure : YAML + Markdown + code R
-- Options de blocs : `echo`, `eval`, `message`, `warning`
-- `render()` : générer des rapports par programme
+- Options de blocs : `echo`, `eval`, `message`, `warning` (avec syntaxe `#|`)
+- `quarto_render()` : générer des rapports par programme
 
 **Paramètres :**
 
@@ -694,40 +668,12 @@ Fonctions, dplyr, ggplot2, gestion d'erreurs, R Markdown !
 ## Pour aller plus loin
 
 ::: {.incremental}
-- **Explorez** d'autres formats de sortie (PDF, Word, slides)
+- **Explorez** d'autres formats de sortie (PDF, Word, revealjs)
 - **Créez** une bibliothèque de templates pour différents types d'analyses
 - **Automatisez** la génération régulière de rapports (tâches planifiées)
 - **Partagez** vos templates avec vos collègues
 :::
 
-## Préparation séance finale
+## Bilan final
 
-::: {.callout-note}
-## Devoirs
-
-1. Finalisez votre système de rapports automatisés
-2. Testez-le avec au moins 3 fichiers différents
-3. **Mettez à jour votre journal** en détail
-4. Préparez-vous pour le projet collaboratif final
-5. Réfléchissez aux bonnes pratiques pour travailler en équipe sur du code
-:::
-
-::: {.fragment}
-**Séance finale :** Projet collaboratif - intégrer vos compétences en équipe !
-:::
-
-## Questions ?
-
-::: {.callout-tip}
-## Points clés à retenir
-
-- **Automatiser** évite la répétition et les erreurs
-- **R Markdown** garantit la reproductibilité
-- Les **paramètres** rendent vos analyses réutilisables
-- La **gestion d'erreurs** est essentielle en production
-- Vous êtes maintenant capables de créer des **systèmes professionnels** !
-:::
-
-::: {.fragment}
-**Bravo pour ces compétences avancées ! 🎓**
-:::
+Quels retours vous avez à faire sur le cours ?
