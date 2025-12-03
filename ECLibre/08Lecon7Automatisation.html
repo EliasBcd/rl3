@@ -336,12 +336,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercice-3-fonction-danalyse-par-lots" id="toc-exercice-3-fonction-danalyse-par-lots" class="nav-link" data-scroll-target="#exercice-3-fonction-danalyse-par-lots">Exercice 3 : Fonction d’analyse par lots</a></li>
   <li><a href="#gestion-des-erreurs-dans-les-boucles" id="toc-gestion-des-erreurs-dans-les-boucles" class="nav-link" data-scroll-target="#gestion-des-erreurs-dans-les-boucles">Gestion des erreurs dans les boucles</a></li>
   </ul></li>
-  <li><a href="#introduction-à-r-markdown" id="toc-introduction-à-r-markdown" class="nav-link" data-scroll-target="#introduction-à-r-markdown">Introduction à R Markdown</a>
+  <li><a href="#introduction-à-quarto" id="toc-introduction-à-quarto" class="nav-link" data-scroll-target="#introduction-à-quarto">Introduction à Quarto</a>
   <ul class="collapse">
-  <li><a href="#quest-ce-que-r-markdown" id="toc-quest-ce-que-r-markdown" class="nav-link" data-scroll-target="#quest-ce-que-r-markdown">Qu’est-ce que R Markdown ?</a></li>
-  <li><a href="#pourquoi-r-markdown" id="toc-pourquoi-r-markdown" class="nav-link" data-scroll-target="#pourquoi-r-markdown">Pourquoi R Markdown ?</a></li>
-  <li><a href="#structure-dun-document-r-markdown" id="toc-structure-dun-document-r-markdown" class="nav-link" data-scroll-target="#structure-dun-document-r-markdown">Structure d’un document R Markdown</a></li>
-  <li><a href="#exercice-4-premier-document-r-markdown" id="toc-exercice-4-premier-document-r-markdown" class="nav-link" data-scroll-target="#exercice-4-premier-document-r-markdown">Exercice 4 : Premier document R Markdown</a></li>
+  <li><a href="#quest-ce-que-quarto" id="toc-quest-ce-que-quarto" class="nav-link" data-scroll-target="#quest-ce-que-quarto">Qu’est-ce que Quarto ?</a></li>
+  <li><a href="#pourquoi-quarto" id="toc-pourquoi-quarto" class="nav-link" data-scroll-target="#pourquoi-quarto">Pourquoi Quarto ?</a></li>
+  <li><a href="#structure-dun-document-quarto" id="toc-structure-dun-document-quarto" class="nav-link" data-scroll-target="#structure-dun-document-quarto">Structure d’un document Quarto</a></li>
+  <li><a href="#exercice-4-premier-document-quarto" id="toc-exercice-4-premier-document-quarto" class="nav-link" data-scroll-target="#exercice-4-premier-document-quarto">Exercice 4 : Premier document Quarto</a></li>
   <li><a href="#options-des-blocs-de-code" id="toc-options-des-blocs-de-code" class="nav-link" data-scroll-target="#options-des-blocs-de-code">Options des blocs de code</a></li>
   <li><a href="#exercice-5-rapport-danalyse-simple" id="toc-exercice-5-rapport-danalyse-simple" class="nav-link" data-scroll-target="#exercice-5-rapport-danalyse-simple">Exercice 5 : Rapport d’analyse simple</a></li>
   <li><a href="#markdown-pour-le-formatage" id="toc-markdown-pour-le-formatage" class="nav-link" data-scroll-target="#markdown-pour-le-formatage">Markdown pour le formatage</a></li>
@@ -349,10 +349,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#rapport-paramétré" id="toc-rapport-paramétré" class="nav-link" data-scroll-target="#rapport-paramétré">Rapport paramétré</a>
   <ul class="collapse">
   <li><a href="#pourquoi-paramétrer" id="toc-pourquoi-paramétrer" class="nav-link" data-scroll-target="#pourquoi-paramétrer">Pourquoi paramétrer ?</a></li>
+  <li><a href="#exercice-6-premier-rapport-paramétré" id="toc-exercice-6-premier-rapport-paramétré" class="nav-link" data-scroll-target="#exercice-6-premier-rapport-paramétré">Exercice 6 : Premier rapport paramétré</a></li>
+  <li><a href="#générer-des-rapports-par-programme" id="toc-générer-des-rapports-par-programme" class="nav-link" data-scroll-target="#générer-des-rapports-par-programme">Générer des rapports par programme</a></li>
+  <li><a href="#exercice-7-fonction-de-génération-de-rapport" id="toc-exercice-7-fonction-de-génération-de-rapport" class="nav-link" data-scroll-target="#exercice-7-fonction-de-génération-de-rapport">Exercice 7 : Fonction de génération de rapport</a></li>
+  <li><a href="#formats-de-sortie-multiples" id="toc-formats-de-sortie-multiples" class="nav-link" data-scroll-target="#formats-de-sortie-multiples">Formats de sortie multiples</a></li>
   </ul></li>
-  <li><a href="#mini-projet-système-de-rapports" id="toc-mini-projet-système-de-rapports" class="nav-link" data-scroll-target="#mini-projet-système-de-rapports">Mini-projet : Système de rapports</a>
+  <li><a href="#mini-projet-rapports" id="toc-mini-projet-rapports" class="nav-link" data-scroll-target="#mini-projet-rapports">Mini-projet : Rapports</a>
   <ul class="collapse">
-  <li><a href="#projet-final-rapports-automatisés" id="toc-projet-final-rapports-automatisés" class="nav-link" data-scroll-target="#projet-final-rapports-automatisés">Projet final : Rapports automatisés</a></li>
+  <li><a href="#projet-final-rapports" id="toc-projet-final-rapports" class="nav-link" data-scroll-target="#projet-final-rapports">Projet final : Rapports</a></li>
   <li><a href="#critères-du-projet" id="toc-critères-du-projet" class="nav-link" data-scroll-target="#critères-du-projet">Critères du projet</a></li>
   </ul></li>
   <li><a href="#retour-réflexif" id="toc-retour-réflexif" class="nav-link" data-scroll-target="#retour-réflexif">Retour réflexif</a>
@@ -364,8 +368,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#concepts-clés-de-la-séance" id="toc-concepts-clés-de-la-séance" class="nav-link" data-scroll-target="#concepts-clés-de-la-séance">Concepts clés de la séance</a></li>
   <li><a href="#pour-aller-plus-loin" id="toc-pour-aller-plus-loin" class="nav-link" data-scroll-target="#pour-aller-plus-loin">Pour aller plus loin</a></li>
-  <li><a href="#préparation-séance-finale" id="toc-préparation-séance-finale" class="nav-link" data-scroll-target="#préparation-séance-finale">Préparation séance finale</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions ?</a></li>
+  <li><a href="#bilan-final" id="toc-bilan-final" class="nav-link" data-scroll-target="#bilan-final">Bilan final</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="slide-lecon7.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -393,7 +396,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">28 novembre 2025</p>
+      <p class="date">3 décembre 2025</p>
     </div>
   </div>
   
@@ -409,10 +412,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="smaller anchored" data-anchor-id="plan-de-la-séance">Plan de la séance</h2>
 <div class="incremental">
 <ul class="incremental">
-<li><strong>Récap et partage</strong> (15min) : Retours sur l’organisation du code</li>
-<li><strong>Traitement par lots</strong> (60min) : Analyser plusieurs fichiers automatiquement</li>
-<li><strong>Introduction à R Markdown</strong> (60min) : Mélanger code, texte et résultats</li>
-<li><strong>Rapport paramétré</strong> (65min) : Créer un template d’analyse réutilisable</li>
+<li><strong>Récap et partage</strong> : Retours sur l’organisation du code</li>
+<li><strong>Traitement par lots</strong> : Analyser plusieurs fichiers automatiquement</li>
+<li><strong>Introduction à Quarto</strong> : Mélanger code, texte et résultats</li>
+<li><strong>Rapport paramétré</strong> : Créer un template d’analyse réutilisable</li>
 </ul>
 </div>
 <div class="fragment">
@@ -438,7 +441,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul class="incremental">
 <li><strong>Automatiser</strong> le traitement de plusieurs fichiers</li>
 <li><strong>Créer</strong> des rapports reproductibles</li>
-<li><strong>Maîtriser</strong> R Markdown pour mélanger code et texte</li>
+<li><strong>Maîtriser</strong> Quarto pour mélanger code et texte</li>
 <li><strong>Paramétrer</strong> ses analyses pour la réutilisation</li>
 <li><strong>Générer</strong> des documents professionnels</li>
 </ul>
@@ -463,7 +466,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Vous avez analysé les ventes de janvier…</p>
 </div>
 <div class="fragment">
-<p>Maintenant on vous demande d’analyser janvier, février, mars, avril, mai, juin… 📊</p>
+<p>Maintenant on vous demande d’analyser janvier, février, mars, avril, mai, juin…</p>
 </div>
 <div class="fragment">
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -509,12 +512,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exercice-1-lister-des-fichiers" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="exercice-1-lister-des-fichiers">Exercice 1 : Lister des fichiers</h2>
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote class="blockquote">
-<p>“Comment lister tous les fichiers CSV d’un dossier en R ?”</p>
-</blockquote>
+<p>Comment lister tous les fichiers CSV d’un dossier en R ?</p>
 <div class="fragment">
-<p>Vous découvrirez :</p>
+<p>Solutions possibles :</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lister tous les fichiers CSV du dossier courant</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>fichiers <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.csv$"</span>)</span>
@@ -625,15 +625,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
-<p><strong>Demandez au LLM d’expliquer <code>tryCatch()</code> !</strong></p>
+<p>Essayez d’expliquer ce que signifie <code>tryCatch()</code>.</p>
 </div>
 </section>
 </section>
-<section id="introduction-à-r-markdown" class="level1" data-background-color="#FF8C00">
-<h1 data-background-color="#FF8C00">Introduction à R Markdown</h1>
-<section id="quest-ce-que-r-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="quest-ce-que-r-markdown">Qu’est-ce que R Markdown ?</h2>
-<p><strong>R Markdown</strong> permet de créer des documents qui mélangent :</p>
+<section id="introduction-à-quarto" class="level1" data-background-color="#FF8C00">
+<h1 data-background-color="#FF8C00">Introduction à Quarto</h1>
+<section id="quest-ce-que-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quest-ce-que-quarto">Qu’est-ce que Quarto ?</h2>
+<p><strong>Quarto</strong> permet de créer des documents qui mélangent :</p>
 <div class="incremental">
 <ul class="incremental">
 <li>Du <strong>texte</strong> (explications, interprétations)</li>
@@ -651,14 +651,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </div>
 </section>
-<section id="pourquoi-r-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="pourquoi-r-markdown">Pourquoi R Markdown ?</h2>
+<section id="pourquoi-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="pourquoi-quarto">Pourquoi Quarto ?</h2>
 <div class="incremental">
 <p><strong>Avantages :</strong></p>
 <ul class="incremental">
 <li><strong>Reproductibilité</strong> : tout est dans un seul fichier</li>
 <li><strong>Cohérence</strong> : résultats toujours à jour avec le code</li>
-<li><strong>Communication</strong> : rapports professionnels</li>
+<li><strong>Communication</strong> : rapports faciles à produire</li>
 <li><strong>Gain de temps</strong> : pas de copier-coller de résultats</li>
 </ul>
 </div>
@@ -678,41 +678,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="structure-dun-document-r-markdown" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="structure-dun-document-r-markdown">Structure d’un document R Markdown</h2>
-<p><strong>Un fichier <code>.Rmd</code> contient :</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Mon Rapport"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Votre Nom"</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-01-15"</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<section id="structure-dun-document-quarto" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="structure-dun-document-quarto">Structure d’un document Quarto</h2>
+<p><strong>Un fichier <code>.qmd</code> contient :</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Mon Rapport"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Votre Nom"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2025-01-15"</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Introduction</span></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>Ceci est du texte normal.</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="at">Ceci est du texte normal.</span></span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="at">```{r}</span></span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Ceci est du code R</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data.csv"</span>)</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(donnees<span class="sc">$</span>valeur)</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="at">donnees &lt;- read.csv("data.csv")</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="at">mean(donnees$valeur)</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="at">```</span></span>
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Résultats</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">## Résultats</span></span>
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>Le graphique ci-dessous montre...</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="at">Le graphique ci-dessous montre...</span></span>
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(donnees<span class="sc">$</span>x, donnees<span class="sc">$</span>y)</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="at">```{r}</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="at">plot(donnees$x, donnees$y)</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="at">```</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="exercice-4-premier-document-r-markdown" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="exercice-4-premier-document-r-markdown">Exercice 4 : Premier document R Markdown</h2>
-<p><strong>Créez un nouveau fichier R Markdown :</strong></p>
+<section id="exercice-4-premier-document-quarto" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-4-premier-document-quarto">Exercice 4 : Premier document Quarto</h2>
+<p><strong>Créez un nouveau fichier Quarto :</strong></p>
 <ol type="1">
-<li>Dans RStudio : File &gt; New File &gt; R Markdown</li>
+<li>Dans RStudio : File &gt; New File &gt; Quarto</li>
 <li>Donnez un titre et choisissez HTML</li>
-<li>Cliquez sur “Knit” pour générer le document</li>
+<li>Cliquez sur “Render” pour générer le document</li>
 </ol>
 <div class="fragment">
 <p><strong>Observez :</strong></p>
@@ -724,47 +724,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </div>
 <div class="fragment">
-<p><strong>Demandez au LLM :</strong></p>
-<blockquote class="blockquote">
-<p>“Explique-moi la syntaxe de base de Markdown (titres, listes, gras, italique)”</p>
-</blockquote>
+<p>Cherchez la syntaxe de base de Markdown (titres, listes, gras, italique)</p>
 </div>
 <div class="notes">
-<p>20 minutes. Première découverte de R Markdown.</p>
+<p>20 minutes. Première découverte de Quarto.</p>
 </div>
 </section>
 <section id="options-des-blocs-de-code" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="options-des-blocs-de-code">Options des blocs de code</h2>
 <p><strong>On peut contrôler ce qui apparaît dans le rapport :</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=TRUE, eval=TRUE}</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># echo=TRUE : montrer le code</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># eval=TRUE : exécuter le code</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE, eval=TRUE}</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># echo=FALSE : cacher le code, montrer seulement le résultat</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, x<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval=FALSE}</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co"># eval=FALSE : montrer le code mais ne pas l'exécuter</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Utile pour montrer des exemples</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"monpackage"</span>)</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># montrer et exécuter le code</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># cacher le code, montrer seulement le résultat</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co"># montrer le code mais ne pas l'exécuter</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Utile pour montrer des exemples</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"monpackage"</span>)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p><strong>Autres options utiles :</strong></p>
 <ul>
-<li><code>message=FALSE</code> : cacher les messages</li>
-<li><code>warning=FALSE</code> : cacher les avertissements</li>
-<li><code>fig.width=8, fig.height=5</code> : taille des graphiques</li>
+<li><code>message: false</code> : cacher les messages</li>
+<li><code>warning: false</code> : cacher les avertissements</li>
+<li><code>fig-width: 8, fig-height: 5</code> : taille des graphiques</li>
 </ul>
 </div>
 </section>
 <section id="exercice-5-rapport-danalyse-simple" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="exercice-5-rapport-danalyse-simple">Exercice 5 : Rapport d’analyse simple</h2>
-<p><strong>Créez un rapport R Markdown qui :</strong></p>
+<p><strong>Créez un rapport Quarto qui :</strong></p>
 <ol type="1">
 <li>Importe un jeu de données</li>
 <li>Affiche les premières lignes (avec <code>head()</code>)</li>
@@ -784,12 +785,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># Analyse</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Graphiques sans montrer le code</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusion</span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>Les résultats montrent que...</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Graphiques sans montrer le code</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusion</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>Les résultats montrent que...</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="notes">
 <p>30 minutes. Premier rapport complet.</p>
 </div>
@@ -813,9 +815,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Lien</span><span class="co">](https://www.example.com)</span></span>
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="al">![Image](chemin/vers/image.png)</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="fragment">
-<p><strong>Demandez au LLM de vous montrer plus d’options de formatage !</strong></p>
-</div>
+<p>Toutes les options de formatages en Quarto sont disponibles ici : <a href="https://quarto.org/docs/authoring/markdown-basics.html" class="uri">https://quarto.org/docs/authoring/markdown-basics.html</a></p>
 </section>
 </section>
 <section id="rapport-paramétré" class="level1" data-background-color="#8B008B">
@@ -824,176 +824,144 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="pourquoi-paramétrer">Pourquoi paramétrer ?</h2>
 <p><strong>Problème :</strong> Vous voulez le même rapport pour différents datasets</p>
 <p><strong>Solution :</strong> Créer un template paramétrable</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown quarto code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Rapport de ventes"</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="an">params:</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">  fichier: "ventes_janvier.csv"</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">  seuil: 1000</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(params<span class="sc">$</span>fichier)</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>ventes_importantes <span class="ot">&lt;-</span> donnees[donnees<span class="sc">$</span>montant <span class="sc">&gt;</span> params<span class="sc">$</span>seuil, ]</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>
-## Exercice 6 : Premier rapport paramétré {.smaller}
-
-**Créez un rapport avec paramètres :**
-
-
-````{.default}
----
-title: "Analyse automatisée"
-params:
-  dataset: "data.csv"
-  variable: "valeur"
-  titre_graphique: "Distribution des valeurs"
-output: html_document
----
-
-# Analyse de `r params$variable`
-
-```{r}
-donnees &lt;- read.csv(params$dataset)
-variable_data &lt;- donnees[[params$variable]]
-
-# Statistiques
-cat("Moyenne:", mean(variable_data, na.rm = TRUE), "\n")
-cat("Médiane:", median(variable_data, na.rm = TRUE), "\n")
-
-# Graphique
-hist(variable_data, main = params$titre_graphique)</code></pre>
-<pre><code>
-::: {.notes}
-25 minutes. Introduction aux paramètres.
-:::
-
-## Générer des rapports par programme {.smaller}
-
-**Vous pouvez générer des rapports depuis R :**
-
-
-::: {.cell}
-
-```{.r .cell-code}
-library(rmarkdown)
-
-# Générer un rapport avec des paramètres spécifiques
-render("template.Rmd",
-       params = list(
-         dataset = "ventes_janvier.csv",
-         variable = "montant",
-         titre_graphique = "Ventes de janvier"
-       ),
-       output_file = "rapport_janvier.html")
-
-# Boucle pour générer plusieurs rapports
-fichiers &lt;- c("ventes_janvier.csv", "ventes_fevrier.csv", "ventes_mars.csv")
-
-for (f in fichiers) {
-  mois &lt;- tools::file_path_sans_ext(basename(f))
-
-  render("template.Rmd",
-         params = list(
-           dataset = f,
-           variable = "montant",
-           titre_graphique = paste("Ventes de", mois)
-         ),
-         output_file = paste0("rapport_", mois, ".html"))
-}
-```
-:::
-
-
-::: {.notes}
-20 minutes. Automatisation complète.
-:::
-
-## Exercice 7 : Fonction de génération de rapport {.smaller}
-
-**Créez une fonction qui génère des rapports automatiquement :**
-
-
-::: {.cell}
-
-```{.r .cell-code}
-generer_rapport &lt;- function(fichier_donnees, output_dir = "rapports/") {
-  # Extraire le nom du fichier sans extension
-  nom_base &lt;- tools::file_path_sans_ext(basename(fichier_donnees))
-
-  # Créer le dossier de sortie si nécessaire
-  if (!dir.exists(output_dir)) {
-    dir.create(output_dir, recursive = TRUE)
-  }
-
-  # Générer le rapport
-  output_file &lt;- file.path(output_dir, paste0("rapport_", nom_base, ".html"))
-
-  rmarkdown::render(
-    "template_analyse.Rmd",
-    params = list(
-      dataset = fichier_donnees,
-      titre = paste("Analyse de", nom_base)
-    ),
-    output_file = output_file
-  )
-
-  message("Rapport généré : ", output_file)
-  return(output_file)
-}
-
-# Utilisation
-fichiers &lt;- list.files("donnees/", pattern = "\\.csv$", full.names = TRUE)
-rapports &lt;- lapply(fichiers, generer_rapport)
-```
-:::
-
-
-::: {.notes}
-30 minutes. Fonction professionnelle de génération de rapports.
-:::
-
-## Formats de sortie multiples
-
-**R Markdown peut générer différents formats :**
-
-````markdown
----
-title: "Mon Rapport"
-output:
-  html_document:
-    toc: true
-    toc_float: true
-  pdf_document:
-    toc: true
-  word_document: default
----</code></pre>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="an">params:</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">  fichier: "ventes_janvier.csv"</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">  seuil: 1000</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>donnees <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(params<span class="sc">$</span>fichier)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>ventes_importantes <span class="ot">&lt;-</span> donnees[donnees<span class="sc">$</span>montant <span class="sc">&gt;</span> params<span class="sc">$</span>seuil, ]</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="exercice-6-premier-rapport-paramétré" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-6-premier-rapport-paramétré">Exercice 6 : Premier rapport paramétré</h2>
+<p><strong>Créez un rapport avec paramètres :</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>title: "Analyse automatisée"</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>format: html</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>params:</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  dataset: "data.csv"</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  variable: "valeur"</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  titre_graphique: "Distribution des valeurs"</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a># Analyse de `r params$variable`</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>```{r}</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>donnees &lt;- read.csv(params$dataset)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>variable_data &lt;- donnees[[params$variable]]</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a># Statistiques</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>cat("Moyenne:", mean(variable_data, na.rm = TRUE), "\n")</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>cat("Médiane:", median(variable_data, na.rm = TRUE), "\n")</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a># Graphique</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>hist(variable_data, main = params$titre_graphique)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="notes">
+<p>25 minutes. Introduction aux paramètres.</p>
+</div>
+</section>
+<section id="générer-des-rapports-par-programme" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="générer-des-rapports-par-programme">Générer des rapports par programme</h2>
+<p><strong>Vous pouvez générer des rapports depuis R :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(quarto)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Générer un rapport avec des paramètres spécifiques</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">quarto_render</span>(<span class="st">"template.qmd"</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">execute_params =</span> <span class="fu">list</span>(</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">dataset =</span> <span class="st">"ventes_janvier.csv"</span>,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">variable =</span> <span class="st">"montant"</span>,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">titre_graphique =</span> <span class="st">"Ventes de janvier"</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>              ),</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">output_file =</span> <span class="st">"rapport_janvier.html"</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Boucle pour générer plusieurs rapports</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>fichiers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ventes_janvier.csv"</span>, <span class="st">"ventes_fevrier.csv"</span>, <span class="st">"ventes_mars.csv"</span>)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (f <span class="cf">in</span> fichiers) {</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  mois <span class="ot">&lt;-</span> tools<span class="sc">::</span><span class="fu">file_path_sans_ext</span>(<span class="fu">basename</span>(f))</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">quarto_render</span>(<span class="st">"template.qmd"</span>,</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>                <span class="at">execute_params =</span> <span class="fu">list</span>(</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>                  <span class="at">dataset =</span> f,</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>                  <span class="at">variable =</span> <span class="st">"montant"</span>,</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>                  <span class="at">titre_graphique =</span> <span class="fu">paste</span>(<span class="st">"Ventes de"</span>, mois)</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>                ),</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>                <span class="at">output_file =</span> <span class="fu">paste0</span>(<span class="st">"rapport_"</span>, mois, <span class="st">".html"</span>))</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="notes">
+<p>20 minutes. Automatisation complète.</p>
+</div>
+</section>
+<section id="exercice-7-fonction-de-génération-de-rapport" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercice-7-fonction-de-génération-de-rapport">Exercice 7 : Fonction de génération de rapport</h2>
+<p><strong>Créez une fonction qui génère des rapports automatiquement :</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>generer_rapport <span class="ot">&lt;-</span> <span class="cf">function</span>(fichier_donnees, <span class="at">output_dir =</span> <span class="st">"rapports/"</span>) {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Extraire le nom du fichier sans extension</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  nom_base <span class="ot">&lt;-</span> tools<span class="sc">::</span><span class="fu">file_path_sans_ext</span>(<span class="fu">basename</span>(fichier_donnees))</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Créer le dossier de sortie si nécessaire</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(output_dir)) {</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dir.create</span>(output_dir, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Générer le rapport</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  output_file <span class="ot">&lt;-</span> <span class="fu">file.path</span>(output_dir, <span class="fu">paste0</span>(<span class="st">"rapport_"</span>, nom_base, <span class="st">".html"</span>))</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  quarto<span class="sc">::</span><span class="fu">quarto_render</span>(</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"template_analyse.qmd"</span>,</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">execute_params =</span> <span class="fu">list</span>(</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">dataset =</span> fichier_donnees,</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">titre =</span> <span class="fu">paste</span>(<span class="st">"Analyse de"</span>, nom_base)</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">output_file =</span> output_file</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">"Rapport généré : "</span>, output_file)</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output_file)</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>fichiers <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="st">"donnees/"</span>, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.csv$"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>rapports <span class="ot">&lt;-</span> <span class="fu">lapply</span>(fichiers, generer_rapport)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="notes">
+<p>30 minutes. Fonction professionnelle de génération de rapports.</p>
+</div>
+</section>
+<section id="formats-de-sortie-multiples" class="level2">
+<h2 class="anchored" data-anchor-id="formats-de-sortie-multiples">Formats de sortie multiples</h2>
+<p><strong>Quarto peut générer différents formats :</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Mon Rapport"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p><strong>Pour générer un format spécifique :</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">render</span>(<span class="st">"rapport.Rmd"</span>, <span class="at">output_format =</span> <span class="st">"pdf_document"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quarto_render</span>(<span class="st">"rapport.qmd"</span>, <span class="at">output_format =</span> <span class="st">"pdf"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
 </section>
-<section id="mini-projet-système-de-rapports" class="level1" data-background-color="#DC143C">
-<h1 data-background-color="#DC143C">Mini-projet : Système de rapports</h1>
-<section id="projet-final-rapports-automatisés" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="projet-final-rapports-automatisés">Projet final : Rapports automatisés</h2>
-<p><strong>Objectif :</strong> Créer un système complet de génération de rapports</p>
-<p><strong>Spécifications :</strong></p>
-<ol type="1">
-<li>Un <strong>template R Markdown</strong> paramétrable</li>
-<li>Une <strong>fonction</strong> qui génère des rapports pour plusieurs fichiers</li>
-<li>Les rapports doivent inclure :
-<ul>
-<li>Import et nettoyage automatique</li>
-<li>Statistiques descriptives</li>
-<li>Au moins 3 graphiques</li>
-<li>Interprétation textuelle</li>
-</ul></li>
-<li>Gestion des erreurs (fichiers manquants, colonnes manquantes)</li>
-<li>Génération en HTML</li>
-</ol>
+<section id="mini-projet-rapports" class="level1" data-background-color="#DC143C">
+<h1 data-background-color="#DC143C">Mini-projet : Rapports</h1>
+<section id="projet-final-rapports" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="projet-final-rapports">Projet final : Rapports</h2>
+<p><strong>Objectif :</strong> Transformer votre rapport précédent en un rapport Quarto</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1004,7 +972,7 @@ output:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Fonctions, dplyr, ggplot2, gestion d’erreurs, R Markdown !</p>
+<p>Fonctions, dplyr, ggplot2, gestion d’erreurs, Quarto !</p>
 </div>
 </div>
 <div class="notes">
@@ -1015,20 +983,7 @@ output:
 <h2 class="smaller anchored" data-anchor-id="critères-du-projet">Critères du projet</h2>
 <div class="incremental">
 <ul class="incremental">
-<li>✅ Template R Markdown <strong>paramétrable</strong> et réutilisable</li>
-<li>✅ Fonction de génération <strong>robuste</strong> (gère les erreurs)</li>
-<li>✅ Rapports <strong>complets</strong> (stats + graphiques + texte)</li>
-<li>✅ Code <strong>commenté</strong> et <strong>organisé</strong></li>
-<li>✅ <strong>Fonctionne</strong> avec différents fichiers de données</li>
-</ul>
-</div>
-<div class="fragment">
-<p><strong>Bonus :</strong></p>
-<ul>
-<li>Génération automatique d’un index de tous les rapports</li>
-<li>Graphiques interactifs avec <code>plotly</code></li>
-<li>Rapport au format PDF</li>
-<li>Envoi automatique par email (avancé !)</li>
+<li>Votre projet est maintenant écrit en un mélange de Quarto et R</li>
 </ul>
 </div>
 </section>
@@ -1045,17 +1000,15 @@ output:
 <li>Votre fonction d’analyse par lots</li>
 <li>Une erreur que vous avez gérée avec <code>tryCatch()</code></li>
 </ul></li>
-<li><strong>R Markdown</strong> :
+<li><strong>Quarto</strong> :
 <ul>
 <li>Différences avec un script R normal</li>
 <li>Avantages pour vos analyses</li>
 <li>Options de blocs de code les plus utiles</li>
 </ul></li>
-<li><strong>Rapports paramétrés</strong> :
+<li><strong>Rapports</strong> :
 <ul>
-<li>Votre template réutilisable</li>
-<li>Comment vous allez l’utiliser à l’avenir</li>
-<li>Difficultés rencontrées et solutions</li>
+<li>Votre rapport</li>
 </ul></li>
 </ol>
 <div class="notes">
@@ -1065,7 +1018,14 @@ output:
 <section id="ce-que-vous-avez-accompli" class="level2">
 <h2 class="anchored" data-anchor-id="ce-que-vous-avez-accompli">Ce que vous avez accompli</h2>
 <div class="incremental">
-<p>✅ Automatiser le traitement de plusieurs fichiers ✅ Créer des rapports reproductibles avec R Markdown ✅ Paramétrer des analyses pour la réutilisation ✅ Générer des documents professionnels automatiquement ✅ Gérer les erreurs dans les processus automatisés ✅ Combiner toutes vos compétences en R</p>
+<ul class="incremental">
+<li>Automatiser le traitement de plusieurs fichiers</li>
+<li>Créer des rapports reproductibles avec Quarto</li>
+<li>Paramétrer des analyses pour la réutilisation</li>
+<li>Générer des documents professionnels automatiquement</li>
+<li>Gérer les erreurs dans les processus automatisés</li>
+<li>Combiner toutes vos compétences en R</li>
+</ul>
 </div>
 </section>
 </section>
@@ -1079,11 +1039,11 @@ output:
 <li>Boucles <code>for</code> et <code>lapply()</code> sur plusieurs fichiers</li>
 <li><code>tryCatch()</code> : gestion des erreurs</li>
 </ul>
-<p><strong>R Markdown :</strong></p>
+<p><strong>Quarto :</strong></p>
 <ul>
 <li>Structure : YAML + Markdown + code R</li>
-<li>Options de blocs : <code>echo</code>, <code>eval</code>, <code>message</code>, <code>warning</code></li>
-<li><code>render()</code> : générer des rapports par programme</li>
+<li>Options de blocs : <code>echo</code>, <code>eval</code>, <code>message</code>, <code>warning</code> (avec syntaxe <code>#|</code>)</li>
+<li><code>quarto_render()</code> : générer des rapports par programme</li>
 </ul>
 <p><strong>Paramètres :</strong></p>
 <ul>
@@ -1095,62 +1055,16 @@ output:
 <h2 class="anchored" data-anchor-id="pour-aller-plus-loin">Pour aller plus loin</h2>
 <div class="incremental">
 <ul class="incremental">
-<li><strong>Explorez</strong> d’autres formats de sortie (PDF, Word, slides)</li>
+<li><strong>Explorez</strong> d’autres formats de sortie (PDF, Word, revealjs)</li>
 <li><strong>Créez</strong> une bibliothèque de templates pour différents types d’analyses</li>
 <li><strong>Automatisez</strong> la génération régulière de rapports (tâches planifiées)</li>
 <li><strong>Partagez</strong> vos templates avec vos collègues</li>
 </ul>
 </div>
 </section>
-<section id="préparation-séance-finale" class="level2">
-<h2 class="anchored" data-anchor-id="préparation-séance-finale">Préparation séance finale</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Devoirs
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Finalisez votre système de rapports automatisés</li>
-<li>Testez-le avec au moins 3 fichiers différents</li>
-<li><strong>Mettez à jour votre journal</strong> en détail</li>
-<li>Préparez-vous pour le projet collaboratif final</li>
-<li>Réfléchissez aux bonnes pratiques pour travailler en équipe sur du code</li>
-</ol>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Séance finale :</strong> Projet collaboratif - intégrer vos compétences en équipe !</p>
-</div>
-</section>
-<section id="questions" class="level2">
-<h2 class="anchored" data-anchor-id="questions">Questions ?</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Astuce</span>Points clés à retenir
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><strong>Automatiser</strong> évite la répétition et les erreurs</li>
-<li><strong>R Markdown</strong> garantit la reproductibilité</li>
-<li>Les <strong>paramètres</strong> rendent vos analyses réutilisables</li>
-<li>La <strong>gestion d’erreurs</strong> est essentielle en production</li>
-<li>Vous êtes maintenant capables de créer des <strong>systèmes professionnels</strong> !</li>
-</ul>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Bravo pour ces compétences avancées ! 🎓</strong></p>
-</div>
+<section id="bilan-final" class="level2">
+<h2 class="anchored" data-anchor-id="bilan-final">Bilan final</h2>
+<p>Quels retours vous avez à faire sur le cours ?</p>
 
 
 </section>

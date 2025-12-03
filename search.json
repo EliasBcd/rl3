@@ -1685,7 +1685,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "",
-    "text": "Récap et partage (15min) : Retours sur l’organisation du code\nTraitement par lots (60min) : Analyser plusieurs fichiers automatiquement\nIntroduction à R Markdown (60min) : Mélanger code, texte et résultats\nRapport paramétré (65min) : Créer un template d’analyse réutilisable\n\n\n\nProduction attendue : Rapport automatisé fonctionnel au format PDF/HTML",
+    "text": "Récap et partage : Retours sur l’organisation du code\nTraitement par lots : Analyser plusieurs fichiers automatiquement\nIntroduction à Quarto : Mélanger code, texte et résultats\nRapport paramétré : Créer un template d’analyse réutilisable\n\n\n\nProduction attendue : Rapport automatisé fonctionnel au format PDF/HTML",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1697,7 +1697,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html#plan-de-la-séance",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "",
-    "text": "Récap et partage (15min) : Retours sur l’organisation du code\nTraitement par lots (60min) : Analyser plusieurs fichiers automatiquement\nIntroduction à R Markdown (60min) : Mélanger code, texte et résultats\nRapport paramétré (65min) : Créer un template d’analyse réutilisable\n\n\n\nProduction attendue : Rapport automatisé fonctionnel au format PDF/HTML",
+    "text": "Récap et partage : Retours sur l’organisation du code\nTraitement par lots : Analyser plusieurs fichiers automatiquement\nIntroduction à Quarto : Mélanger code, texte et résultats\nRapport paramétré : Créer un template d’analyse réutilisable\n\n\n\nProduction attendue : Rapport automatisé fonctionnel au format PDF/HTML",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1709,7 +1709,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html#objectifs-de-la-séance",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Objectifs de la séance",
-    "text": "Objectifs de la séance\n\n\n\n\n\n\nAstuceAutomatiser pour gagner du temps\n\n\n\n\n\n\n\n\nAutomatiser le traitement de plusieurs fichiers\nCréer des rapports reproductibles\nMaîtriser R Markdown pour mélanger code et texte\nParamétrer ses analyses pour la réutilisation\nGénérer des documents professionnels",
+    "text": "Objectifs de la séance\n\n\n\n\n\n\nAstuceAutomatiser pour gagner du temps\n\n\n\n\n\n\n\n\nAutomatiser le traitement de plusieurs fichiers\nCréer des rapports reproductibles\nMaîtriser Quarto pour mélanger code et texte\nParamétrer ses analyses pour la réutilisation\nGénérer des documents professionnels",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1733,7 +1733,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html#le-défi-de-léchelle",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Le défi de l’échelle",
-    "text": "Le défi de l’échelle\nSituation réelle :\n\nVous avez analysé les ventes de janvier…\n\n\nMaintenant on vous demande d’analyser janvier, février, mars, avril, mai, juin… 📊\n\n\n\n\n\n\n\n\nAvertissementProblème\n\n\n\nCopier-coller votre code 12 fois ? Non ! Il faut automatiser.",
+    "text": "Le défi de l’échelle\nSituation réelle :\n\nVous avez analysé les ventes de janvier…\n\n\nMaintenant on vous demande d’analyser janvier, février, mars, avril, mai, juin…\n\n\n\n\n\n\n\n\nAvertissementProblème\n\n\n\nCopier-coller votre code 12 fois ? Non ! Il faut automatiser.",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1757,7 +1757,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html#exercice-1-lister-des-fichiers",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Exercice 1 : Lister des fichiers",
-    "text": "Exercice 1 : Lister des fichiers\nDemandez au LLM :\n\n“Comment lister tous les fichiers CSV d’un dossier en R ?”\n\n\nVous découvrirez :\n\n# Lister tous les fichiers CSV du dossier courant\nfichiers &lt;- list.files(pattern = \"\\\\.csv$\")\n\n# Lister avec le chemin complet\nfichiers &lt;- list.files(path = \"donnees/\", pattern = \"\\\\.csv$\",\n                       full.names = TRUE)\n\n# Voir les fichiers\nprint(fichiers)\n\n\n\nTestez avec vos propres fichiers !\n\n\n15 minutes. Première étape de l’automatisation.",
+    "text": "Exercice 1 : Lister des fichiers\nComment lister tous les fichiers CSV d’un dossier en R ?\n\nSolutions possibles :\n\n# Lister tous les fichiers CSV du dossier courant\nfichiers &lt;- list.files(pattern = \"\\\\.csv$\")\n\n# Lister avec le chemin complet\nfichiers &lt;- list.files(path = \"donnees/\", pattern = \"\\\\.csv$\",\n                       full.names = TRUE)\n\n# Voir les fichiers\nprint(fichiers)\n\n\n\nTestez avec vos propres fichiers !\n\n\n15 minutes. Première étape de l’automatisation.",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1793,7 +1793,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html#gestion-des-erreurs-dans-les-boucles",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Gestion des erreurs dans les boucles",
-    "text": "Gestion des erreurs dans les boucles\nProblème : Un fichier corrompu plante tout !\n\n# Mauvais : tout plante au premier problème\nfor (fichier in fichiers) {\n  donnees &lt;- read.csv(fichier)  # Erreur ici = tout s'arrête\n  analyser(donnees)\n}\n\n# Bon : gérer les erreurs\nfor (fichier in fichiers) {\n  resultat &lt;- tryCatch({\n    donnees &lt;- read.csv(fichier)\n    analyser(donnees)\n  }, error = function(e) {\n    message(\"Erreur avec \", fichier, \": \", e$message)\n    NULL  # Retourner NULL en cas d'erreur\n  })\n}\n\n\nDemandez au LLM d’expliquer tryCatch() !",
+    "text": "Gestion des erreurs dans les boucles\nProblème : Un fichier corrompu plante tout !\n\n# Mauvais : tout plante au premier problème\nfor (fichier in fichiers) {\n  donnees &lt;- read.csv(fichier)  # Erreur ici = tout s'arrête\n  analyser(donnees)\n}\n\n# Bon : gérer les erreurs\nfor (fichier in fichiers) {\n  resultat &lt;- tryCatch({\n    donnees &lt;- read.csv(fichier)\n    analyser(donnees)\n  }, error = function(e) {\n    message(\"Erreur avec \", fichier, \": \", e$message)\n    NULL  # Retourner NULL en cas d'erreur\n  })\n}\n\n\nEssayez d’expliquer ce que signifie tryCatch().",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1801,11 +1801,11 @@
     ]
   },
   {
-    "objectID": "ECLibre/08Lecon7Automatisation.html#quest-ce-que-r-markdown",
-    "href": "ECLibre/08Lecon7Automatisation.html#quest-ce-que-r-markdown",
+    "objectID": "ECLibre/08Lecon7Automatisation.html#quest-ce-que-quarto",
+    "href": "ECLibre/08Lecon7Automatisation.html#quest-ce-que-quarto",
     "title": "Séance 7 : Automatisation et rapports",
-    "section": "Qu’est-ce que R Markdown ?",
-    "text": "Qu’est-ce que R Markdown ?\nR Markdown permet de créer des documents qui mélangent :\n\n\nDu texte (explications, interprétations)\nDu code R (analyses)\nDes résultats (tableaux, graphiques)\nDes formules mathématiques\n\n\n\nFormats de sortie :\n\nPDF, HTML, Word\nPrésentations (comme ce cours !)\nSites web, livres",
+    "section": "Qu’est-ce que Quarto ?",
+    "text": "Qu’est-ce que Quarto ?\nQuarto permet de créer des documents qui mélangent :\n\n\nDu texte (explications, interprétations)\nDu code R (analyses)\nDes résultats (tableaux, graphiques)\nDes formules mathématiques\n\n\n\nFormats de sortie :\n\nPDF, HTML, Word\nPrésentations (comme ce cours !)\nSites web, livres",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1813,11 +1813,11 @@
     ]
   },
   {
-    "objectID": "ECLibre/08Lecon7Automatisation.html#pourquoi-r-markdown",
-    "href": "ECLibre/08Lecon7Automatisation.html#pourquoi-r-markdown",
+    "objectID": "ECLibre/08Lecon7Automatisation.html#pourquoi-quarto",
+    "href": "ECLibre/08Lecon7Automatisation.html#pourquoi-quarto",
     "title": "Séance 7 : Automatisation et rapports",
-    "section": "Pourquoi R Markdown ?",
-    "text": "Pourquoi R Markdown ?\n\nAvantages :\n\nReproductibilité : tout est dans un seul fichier\nCohérence : résultats toujours à jour avec le code\nCommunication : rapports professionnels\nGain de temps : pas de copier-coller de résultats\n\n\n\n\n\n\n\n\n\nNoteImportant\n\n\n\nSi vos données changent, votre rapport se met à jour automatiquement !",
+    "section": "Pourquoi Quarto ?",
+    "text": "Pourquoi Quarto ?\n\nAvantages :\n\nReproductibilité : tout est dans un seul fichier\nCohérence : résultats toujours à jour avec le code\nCommunication : rapports faciles à produire\nGain de temps : pas de copier-coller de résultats\n\n\n\n\n\n\n\n\n\nNoteImportant\n\n\n\nSi vos données changent, votre rapport se met à jour automatiquement !",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1825,11 +1825,11 @@
     ]
   },
   {
-    "objectID": "ECLibre/08Lecon7Automatisation.html#structure-dun-document-r-markdown",
-    "href": "ECLibre/08Lecon7Automatisation.html#structure-dun-document-r-markdown",
+    "objectID": "ECLibre/08Lecon7Automatisation.html#structure-dun-document-quarto",
+    "href": "ECLibre/08Lecon7Automatisation.html#structure-dun-document-quarto",
     "title": "Séance 7 : Automatisation et rapports",
-    "section": "Structure d’un document R Markdown",
-    "text": "Structure d’un document R Markdown\nUn fichier .Rmd contient :\n---\ntitle: \"Mon Rapport\"\nauthor: \"Votre Nom\"\ndate: \"2025-01-15\"\noutput: html_document\n---\n\n# Introduction\n\nCeci est du texte normal.\n\n```{r}\n# Ceci est du code R\ndonnees &lt;- read.csv(\"data.csv\")\nmean(donnees$valeur)\n```\n\n## Résultats\n\nLe graphique ci-dessous montre...\n\n```{r}\nplot(donnees$x, donnees$y)\n```",
+    "section": "Structure d’un document Quarto",
+    "text": "Structure d’un document Quarto\nUn fichier .qmd contient :\n---\ntitle: \"Mon Rapport\"\nauthor: \"Votre Nom\"\ndate: \"2025-01-15\"\nformat: html\n---\n\n# Introduction\n\nCeci est du texte normal.\n\n```{r}\n# Ceci est du code R\ndonnees &lt;- read.csv(\"data.csv\")\nmean(donnees$valeur)\n```\n\n## Résultats\n\nLe graphique ci-dessous montre...\n\n```{r}\nplot(donnees$x, donnees$y)\n```",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1837,11 +1837,11 @@
     ]
   },
   {
-    "objectID": "ECLibre/08Lecon7Automatisation.html#exercice-4-premier-document-r-markdown",
-    "href": "ECLibre/08Lecon7Automatisation.html#exercice-4-premier-document-r-markdown",
+    "objectID": "ECLibre/08Lecon7Automatisation.html#exercice-4-premier-document-quarto",
+    "href": "ECLibre/08Lecon7Automatisation.html#exercice-4-premier-document-quarto",
     "title": "Séance 7 : Automatisation et rapports",
-    "section": "Exercice 4 : Premier document R Markdown",
-    "text": "Exercice 4 : Premier document R Markdown\nCréez un nouveau fichier R Markdown :\n\nDans RStudio : File &gt; New File &gt; R Markdown\nDonnez un titre et choisissez HTML\nCliquez sur “Knit” pour générer le document\n\n\nObservez :\n\nL’en-tête YAML (entre les ---)\nLes blocs de code R (entre les ```{r} )\nLe texte Markdown\nLe résultat généré\n\n\n\nDemandez au LLM :\n\n“Explique-moi la syntaxe de base de Markdown (titres, listes, gras, italique)”\n\n\n\n20 minutes. Première découverte de R Markdown.",
+    "section": "Exercice 4 : Premier document Quarto",
+    "text": "Exercice 4 : Premier document Quarto\nCréez un nouveau fichier Quarto :\n\nDans RStudio : File &gt; New File &gt; Quarto\nDonnez un titre et choisissez HTML\nCliquez sur “Render” pour générer le document\n\n\nObservez :\n\nL’en-tête YAML (entre les ---)\nLes blocs de code R (entre les ```{r} )\nLe texte Markdown\nLe résultat généré\n\n\n\nCherchez la syntaxe de base de Markdown (titres, listes, gras, italique)\n\n\n20 minutes. Première découverte de Quarto.",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1853,7 +1853,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html#options-des-blocs-de-code",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Options des blocs de code",
-    "text": "Options des blocs de code\nOn peut contrôler ce qui apparaît dans le rapport :\n```{r, echo=TRUE, eval=TRUE}\n# echo=TRUE : montrer le code\n# eval=TRUE : exécuter le code\nx &lt;- 1:10\nmean(x)\n```\n\n```{r, echo=FALSE, eval=TRUE}\n# echo=FALSE : cacher le code, montrer seulement le résultat\nplot(x, x^2)\n```\n\n```{r, eval=FALSE}\n# eval=FALSE : montrer le code mais ne pas l'exécuter\n# Utile pour montrer des exemples\ninstall.packages(\"monpackage\")\n```\n\nAutres options utiles :\n\nmessage=FALSE : cacher les messages\nwarning=FALSE : cacher les avertissements\nfig.width=8, fig.height=5 : taille des graphiques",
+    "text": "Options des blocs de code\nOn peut contrôler ce qui apparaît dans le rapport :\n```{r}\n#| echo: true\n#| eval: true\n# montrer et exécuter le code\nx &lt;- 1:10\nmean(x)\n```\n\n```{r}\n#| echo: false\n#| eval: true\n# cacher le code, montrer seulement le résultat\nplot(x, x^2)\n```\n\n```{r}\n#| eval: false\n# montrer le code mais ne pas l'exécuter\n# Utile pour montrer des exemples\ninstall.packages(\"monpackage\")\n```\n\nAutres options utiles :\n\nmessage: false : cacher les messages\nwarning: false : cacher les avertissements\nfig-width: 8, fig-height: 5 : taille des graphiques",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1865,7 +1865,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html#exercice-5-rapport-danalyse-simple",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Exercice 5 : Rapport d’analyse simple",
-    "text": "Exercice 5 : Rapport d’analyse simple\nCréez un rapport R Markdown qui :\n\nImporte un jeu de données\nAffiche les premières lignes (avec head())\nCalcule des statistiques (moyenne, médiane, etc.)\nCrée 2 graphiques\nInterprète les résultats en texte\n\nStructure suggérée :\n# Introduction\nDescription du dataset...\n\n# Exploration des données\n```{r}\ndonnees &lt;- read.csv(\"data.csv\")\nhead(donnees)\nsummary(donnees)\n```\n\n# Analyse\n```{r, echo=FALSE}\n# Graphiques sans montrer le code\n```\n\n# Conclusion\nLes résultats montrent que...\n\n30 minutes. Premier rapport complet.",
+    "text": "Exercice 5 : Rapport d’analyse simple\nCréez un rapport Quarto qui :\n\nImporte un jeu de données\nAffiche les premières lignes (avec head())\nCalcule des statistiques (moyenne, médiane, etc.)\nCrée 2 graphiques\nInterprète les résultats en texte\n\nStructure suggérée :\n# Introduction\nDescription du dataset...\n\n# Exploration des données\n```{r}\ndonnees &lt;- read.csv(\"data.csv\")\nhead(donnees)\nsummary(donnees)\n```\n\n# Analyse\n```{r}\n#| echo: false\n# Graphiques sans montrer le code\n```\n\n# Conclusion\nLes résultats montrent que...\n\n30 minutes. Premier rapport complet.",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1877,7 +1877,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html#markdown-pour-le-formatage",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Markdown pour le formatage",
-    "text": "Markdown pour le formatage\nSyntaxe de base :\n# Titre niveau 1\n## Titre niveau 2\n### Titre niveau 3\n\n**Texte en gras**\n*Texte en italique*\n\n- Liste à puces\n- Deuxième élément\n\n1. Liste numérotée\n2. Deuxième élément\n\n[Lien](https://www.example.com)\n\n![Image](chemin/vers/image.png)\n\nDemandez au LLM de vous montrer plus d’options de formatage !",
+    "text": "Markdown pour le formatage\nSyntaxe de base :\n# Titre niveau 1\n## Titre niveau 2\n### Titre niveau 3\n\n**Texte en gras**\n*Texte en italique*\n\n- Liste à puces\n- Deuxième élément\n\n1. Liste numérotée\n2. Deuxième élément\n\n[Lien](https://www.example.com)\n\n![Image](chemin/vers/image.png)\nToutes les options de formatages en Quarto sont disponibles ici : https://quarto.org/docs/authoring/markdown-basics.html",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1889,7 +1889,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html#pourquoi-paramétrer",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Pourquoi paramétrer ?",
-    "text": "Pourquoi paramétrer ?\nProblème : Vous voulez le même rapport pour différents datasets\nSolution : Créer un template paramétrable\n---\ntitle: \"Rapport de ventes\"\nparams:\n  fichier: \"ventes_janvier.csv\"\n  seuil: 1000\n---\n\n```{r}\ndonnees &lt;- read.csv(params$fichier)\nventes_importantes &lt;- donnees[donnees$montant &gt; params$seuil, ]\n\n## Exercice 6 : Premier rapport paramétré {.smaller}\n\n**Créez un rapport avec paramètres :**\n\n\n````{.default}\n---\ntitle: \"Analyse automatisée\"\nparams:\n  dataset: \"data.csv\"\n  variable: \"valeur\"\n  titre_graphique: \"Distribution des valeurs\"\noutput: html_document\n---\n\n# Analyse de `r params$variable`\n\n```{r}\ndonnees &lt;- read.csv(params$dataset)\nvariable_data &lt;- donnees[[params$variable]]\n\n# Statistiques\ncat(\"Moyenne:\", mean(variable_data, na.rm = TRUE), \"\\n\")\ncat(\"Médiane:\", median(variable_data, na.rm = TRUE), \"\\n\")\n\n# Graphique\nhist(variable_data, main = params$titre_graphique)\n\n::: {.notes}\n25 minutes. Introduction aux paramètres.\n:::\n\n## Générer des rapports par programme {.smaller}\n\n**Vous pouvez générer des rapports depuis R :**\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(rmarkdown)\n\n# Générer un rapport avec des paramètres spécifiques\nrender(\"template.Rmd\",\n       params = list(\n         dataset = \"ventes_janvier.csv\",\n         variable = \"montant\",\n         titre_graphique = \"Ventes de janvier\"\n       ),\n       output_file = \"rapport_janvier.html\")\n\n# Boucle pour générer plusieurs rapports\nfichiers &lt;- c(\"ventes_janvier.csv\", \"ventes_fevrier.csv\", \"ventes_mars.csv\")\n\nfor (f in fichiers) {\n  mois &lt;- tools::file_path_sans_ext(basename(f))\n\n  render(\"template.Rmd\",\n         params = list(\n           dataset = f,\n           variable = \"montant\",\n           titre_graphique = paste(\"Ventes de\", mois)\n         ),\n         output_file = paste0(\"rapport_\", mois, \".html\"))\n}\n```\n:::\n\n\n::: {.notes}\n20 minutes. Automatisation complète.\n:::\n\n## Exercice 7 : Fonction de génération de rapport {.smaller}\n\n**Créez une fonction qui génère des rapports automatiquement :**\n\n\n::: {.cell}\n\n```{.r .cell-code}\ngenerer_rapport &lt;- function(fichier_donnees, output_dir = \"rapports/\") {\n  # Extraire le nom du fichier sans extension\n  nom_base &lt;- tools::file_path_sans_ext(basename(fichier_donnees))\n\n  # Créer le dossier de sortie si nécessaire\n  if (!dir.exists(output_dir)) {\n    dir.create(output_dir, recursive = TRUE)\n  }\n\n  # Générer le rapport\n  output_file &lt;- file.path(output_dir, paste0(\"rapport_\", nom_base, \".html\"))\n\n  rmarkdown::render(\n    \"template_analyse.Rmd\",\n    params = list(\n      dataset = fichier_donnees,\n      titre = paste(\"Analyse de\", nom_base)\n    ),\n    output_file = output_file\n  )\n\n  message(\"Rapport généré : \", output_file)\n  return(output_file)\n}\n\n# Utilisation\nfichiers &lt;- list.files(\"donnees/\", pattern = \"\\\\.csv$\", full.names = TRUE)\nrapports &lt;- lapply(fichiers, generer_rapport)\n```\n:::\n\n\n::: {.notes}\n30 minutes. Fonction professionnelle de génération de rapports.\n:::\n\n## Formats de sortie multiples\n\n**R Markdown peut générer différents formats :**\n\n````markdown\n---\ntitle: \"Mon Rapport\"\noutput:\n  html_document:\n    toc: true\n    toc_float: true\n  pdf_document:\n    toc: true\n  word_document: default\n---\n\nPour générer un format spécifique :\n\nrender(\"rapport.Rmd\", output_format = \"pdf_document\")",
+    "text": "Pourquoi paramétrer ?\nProblème : Vous voulez le même rapport pour différents datasets\nSolution : Créer un template paramétrable\n---\ntitle: \"Rapport de ventes\"\nformat: html\nparams:\n  fichier: \"ventes_janvier.csv\"\n  seuil: 1000\n---\n\n```{r}\ndonnees &lt;- read.csv(params$fichier)\nventes_importantes &lt;- donnees[donnees$montant &gt; params$seuil, ]\n```",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1897,11 +1897,59 @@
     ]
   },
   {
-    "objectID": "ECLibre/08Lecon7Automatisation.html#projet-final-rapports-automatisés",
-    "href": "ECLibre/08Lecon7Automatisation.html#projet-final-rapports-automatisés",
+    "objectID": "ECLibre/08Lecon7Automatisation.html#exercice-6-premier-rapport-paramétré",
+    "href": "ECLibre/08Lecon7Automatisation.html#exercice-6-premier-rapport-paramétré",
     "title": "Séance 7 : Automatisation et rapports",
-    "section": "Projet final : Rapports automatisés",
-    "text": "Projet final : Rapports automatisés\nObjectif : Créer un système complet de génération de rapports\nSpécifications :\n\nUn template R Markdown paramétrable\nUne fonction qui génère des rapports pour plusieurs fichiers\nLes rapports doivent inclure :\n\nImport et nettoyage automatique\nStatistiques descriptives\nAu moins 3 graphiques\nInterprétation textuelle\n\nGestion des erreurs (fichiers manquants, colonnes manquantes)\nGénération en HTML\n\n\n\n\n\n\n\nNoteUtilisez tout ce que vous avez appris\n\n\n\nFonctions, dplyr, ggplot2, gestion d’erreurs, R Markdown !\n\n\n\n65 minutes. Projet de synthèse final.",
+    "section": "Exercice 6 : Premier rapport paramétré",
+    "text": "Exercice 6 : Premier rapport paramétré\nCréez un rapport avec paramètres :\n---\ntitle: \"Analyse automatisée\"\nformat: html\nparams:\n  dataset: \"data.csv\"\n  variable: \"valeur\"\n  titre_graphique: \"Distribution des valeurs\"\n---\n\n# Analyse de `r params$variable`\n\n```{r}\ndonnees &lt;- read.csv(params$dataset)\nvariable_data &lt;- donnees[[params$variable]]\n\n# Statistiques\ncat(\"Moyenne:\", mean(variable_data, na.rm = TRUE), \"\\n\")\ncat(\"Médiane:\", median(variable_data, na.rm = TRUE), \"\\n\")\n\n# Graphique\nhist(variable_data, main = params$titre_graphique)\n```\n\n25 minutes. Introduction aux paramètres.",
+    "crumbs": [
+      "EC Libre : Introduction à la programmation (en R) avec des LLMs",
+      "ECLibre",
+      "Séance 7 : Automatisation et rapports"
+    ]
+  },
+  {
+    "objectID": "ECLibre/08Lecon7Automatisation.html#générer-des-rapports-par-programme",
+    "href": "ECLibre/08Lecon7Automatisation.html#générer-des-rapports-par-programme",
+    "title": "Séance 7 : Automatisation et rapports",
+    "section": "Générer des rapports par programme",
+    "text": "Générer des rapports par programme\nVous pouvez générer des rapports depuis R :\n\nlibrary(quarto)\n\n# Générer un rapport avec des paramètres spécifiques\nquarto_render(\"template.qmd\",\n              execute_params = list(\n                dataset = \"ventes_janvier.csv\",\n                variable = \"montant\",\n                titre_graphique = \"Ventes de janvier\"\n              ),\n              output_file = \"rapport_janvier.html\")\n\n# Boucle pour générer plusieurs rapports\nfichiers &lt;- c(\"ventes_janvier.csv\", \"ventes_fevrier.csv\", \"ventes_mars.csv\")\n\nfor (f in fichiers) {\n  mois &lt;- tools::file_path_sans_ext(basename(f))\n\n  quarto_render(\"template.qmd\",\n                execute_params = list(\n                  dataset = f,\n                  variable = \"montant\",\n                  titre_graphique = paste(\"Ventes de\", mois)\n                ),\n                output_file = paste0(\"rapport_\", mois, \".html\"))\n}\n\n\n20 minutes. Automatisation complète.",
+    "crumbs": [
+      "EC Libre : Introduction à la programmation (en R) avec des LLMs",
+      "ECLibre",
+      "Séance 7 : Automatisation et rapports"
+    ]
+  },
+  {
+    "objectID": "ECLibre/08Lecon7Automatisation.html#exercice-7-fonction-de-génération-de-rapport",
+    "href": "ECLibre/08Lecon7Automatisation.html#exercice-7-fonction-de-génération-de-rapport",
+    "title": "Séance 7 : Automatisation et rapports",
+    "section": "Exercice 7 : Fonction de génération de rapport",
+    "text": "Exercice 7 : Fonction de génération de rapport\nCréez une fonction qui génère des rapports automatiquement :\n\ngenerer_rapport &lt;- function(fichier_donnees, output_dir = \"rapports/\") {\n  # Extraire le nom du fichier sans extension\n  nom_base &lt;- tools::file_path_sans_ext(basename(fichier_donnees))\n\n  # Créer le dossier de sortie si nécessaire\n  if (!dir.exists(output_dir)) {\n    dir.create(output_dir, recursive = TRUE)\n  }\n\n  # Générer le rapport\n  output_file &lt;- file.path(output_dir, paste0(\"rapport_\", nom_base, \".html\"))\n\n  quarto::quarto_render(\n    \"template_analyse.qmd\",\n    execute_params = list(\n      dataset = fichier_donnees,\n      titre = paste(\"Analyse de\", nom_base)\n    ),\n    output_file = output_file\n  )\n\n  message(\"Rapport généré : \", output_file)\n  return(output_file)\n}\n\n# Utilisation\nfichiers &lt;- list.files(\"donnees/\", pattern = \"\\\\.csv$\", full.names = TRUE)\nrapports &lt;- lapply(fichiers, generer_rapport)\n\n\n30 minutes. Fonction professionnelle de génération de rapports.",
+    "crumbs": [
+      "EC Libre : Introduction à la programmation (en R) avec des LLMs",
+      "ECLibre",
+      "Séance 7 : Automatisation et rapports"
+    ]
+  },
+  {
+    "objectID": "ECLibre/08Lecon7Automatisation.html#formats-de-sortie-multiples",
+    "href": "ECLibre/08Lecon7Automatisation.html#formats-de-sortie-multiples",
+    "title": "Séance 7 : Automatisation et rapports",
+    "section": "Formats de sortie multiples",
+    "text": "Formats de sortie multiples\nQuarto peut générer différents formats :\n---\ntitle: \"Mon Rapport\"\nformat:\n  html:\n    toc: true\n  pdf:\n    toc: true\n  docx: default\n---\n\nPour générer un format spécifique :\n\nquarto_render(\"rapport.qmd\", output_format = \"pdf\")",
+    "crumbs": [
+      "EC Libre : Introduction à la programmation (en R) avec des LLMs",
+      "ECLibre",
+      "Séance 7 : Automatisation et rapports"
+    ]
+  },
+  {
+    "objectID": "ECLibre/08Lecon7Automatisation.html#projet-final-rapports",
+    "href": "ECLibre/08Lecon7Automatisation.html#projet-final-rapports",
+    "title": "Séance 7 : Automatisation et rapports",
+    "section": "Projet final : Rapports",
+    "text": "Projet final : Rapports\nObjectif : Transformer votre rapport précédent en un rapport Quarto\n\n\n\n\n\n\nNoteUtilisez tout ce que vous avez appris\n\n\n\nFonctions, dplyr, ggplot2, gestion d’erreurs, Quarto !\n\n\n\n65 minutes. Projet de synthèse final.",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1913,7 +1961,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html#critères-du-projet",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Critères du projet",
-    "text": "Critères du projet\n\n\n✅ Template R Markdown paramétrable et réutilisable\n✅ Fonction de génération robuste (gère les erreurs)\n✅ Rapports complets (stats + graphiques + texte)\n✅ Code commenté et organisé\n✅ Fonctionne avec différents fichiers de données\n\n\n\nBonus :\n\nGénération automatique d’un index de tous les rapports\nGraphiques interactifs avec plotly\nRapport au format PDF\nEnvoi automatique par email (avancé !)",
+    "text": "Critères du projet\n\n\nVotre projet est maintenant écrit en un mélange de Quarto et R",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1925,7 +1973,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html#exercice-réflexif-journal-de-bord",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Exercice réflexif : Journal de bord",
-    "text": "Exercice réflexif : Journal de bord\nDocumentez :\n\nAutomatisation :\n\nComment automatiser un traitement répétitif ?\nVotre fonction d’analyse par lots\nUne erreur que vous avez gérée avec tryCatch()\n\nR Markdown :\n\nDifférences avec un script R normal\nAvantages pour vos analyses\nOptions de blocs de code les plus utiles\n\nRapports paramétrés :\n\nVotre template réutilisable\nComment vous allez l’utiliser à l’avenir\nDifficultés rencontrées et solutions\n\n\n\n15 minutes. Documentation des apprentissages avancés.",
+    "text": "Exercice réflexif : Journal de bord\nDocumentez :\n\nAutomatisation :\n\nComment automatiser un traitement répétitif ?\nVotre fonction d’analyse par lots\nUne erreur que vous avez gérée avec tryCatch()\n\nQuarto :\n\nDifférences avec un script R normal\nAvantages pour vos analyses\nOptions de blocs de code les plus utiles\n\nRapports :\n\nVotre rapport\n\n\n\n15 minutes. Documentation des apprentissages avancés.",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1937,7 +1985,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html#ce-que-vous-avez-accompli",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Ce que vous avez accompli",
-    "text": "Ce que vous avez accompli\n\n✅ Automatiser le traitement de plusieurs fichiers ✅ Créer des rapports reproductibles avec R Markdown ✅ Paramétrer des analyses pour la réutilisation ✅ Générer des documents professionnels automatiquement ✅ Gérer les erreurs dans les processus automatisés ✅ Combiner toutes vos compétences en R",
+    "text": "Ce que vous avez accompli\n\n\nAutomatiser le traitement de plusieurs fichiers\nCréer des rapports reproductibles avec Quarto\nParamétrer des analyses pour la réutilisation\nGénérer des documents professionnels automatiquement\nGérer les erreurs dans les processus automatisés\nCombiner toutes vos compétences en R",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1949,7 +1997,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html#concepts-clés-de-la-séance",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Concepts clés de la séance",
-    "text": "Concepts clés de la séance\nAutomatisation :\n\nlist.files() : lister des fichiers\nBoucles for et lapply() sur plusieurs fichiers\ntryCatch() : gestion des erreurs\n\nR Markdown :\n\nStructure : YAML + Markdown + code R\nOptions de blocs : echo, eval, message, warning\nrender() : générer des rapports par programme\n\nParamètres :\n\nparams dans le YAML\nAccès avec params$nom_parametre",
+    "text": "Concepts clés de la séance\nAutomatisation :\n\nlist.files() : lister des fichiers\nBoucles for et lapply() sur plusieurs fichiers\ntryCatch() : gestion des erreurs\n\nQuarto :\n\nStructure : YAML + Markdown + code R\nOptions de blocs : echo, eval, message, warning (avec syntaxe #|)\nquarto_render() : générer des rapports par programme\n\nParamètres :\n\nparams dans le YAML\nAccès avec params$nom_parametre",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1961,7 +2009,7 @@
     "href": "ECLibre/08Lecon7Automatisation.html#pour-aller-plus-loin",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Pour aller plus loin",
-    "text": "Pour aller plus loin\n\n\nExplorez d’autres formats de sortie (PDF, Word, slides)\nCréez une bibliothèque de templates pour différents types d’analyses\nAutomatisez la génération régulière de rapports (tâches planifiées)\nPartagez vos templates avec vos collègues",
+    "text": "Pour aller plus loin\n\n\nExplorez d’autres formats de sortie (PDF, Word, revealjs)\nCréez une bibliothèque de templates pour différents types d’analyses\nAutomatisez la génération régulière de rapports (tâches planifiées)\nPartagez vos templates avec vos collègues",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1969,23 +2017,11 @@
     ]
   },
   {
-    "objectID": "ECLibre/08Lecon7Automatisation.html#préparation-séance-finale",
-    "href": "ECLibre/08Lecon7Automatisation.html#préparation-séance-finale",
+    "objectID": "ECLibre/08Lecon7Automatisation.html#bilan-final",
+    "href": "ECLibre/08Lecon7Automatisation.html#bilan-final",
     "title": "Séance 7 : Automatisation et rapports",
-    "section": "Préparation séance finale",
-    "text": "Préparation séance finale\n\n\n\n\n\n\nNoteDevoirs\n\n\n\n\nFinalisez votre système de rapports automatisés\nTestez-le avec au moins 3 fichiers différents\nMettez à jour votre journal en détail\nPréparez-vous pour le projet collaboratif final\nRéfléchissez aux bonnes pratiques pour travailler en équipe sur du code\n\n\n\n\nSéance finale : Projet collaboratif - intégrer vos compétences en équipe !",
-    "crumbs": [
-      "EC Libre : Introduction à la programmation (en R) avec des LLMs",
-      "ECLibre",
-      "Séance 7 : Automatisation et rapports"
-    ]
-  },
-  {
-    "objectID": "ECLibre/08Lecon7Automatisation.html#questions",
-    "href": "ECLibre/08Lecon7Automatisation.html#questions",
-    "title": "Séance 7 : Automatisation et rapports",
-    "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nAstucePoints clés à retenir\n\n\n\n\nAutomatiser évite la répétition et les erreurs\nR Markdown garantit la reproductibilité\nLes paramètres rendent vos analyses réutilisables\nLa gestion d’erreurs est essentielle en production\nVous êtes maintenant capables de créer des systèmes professionnels !\n\n\n\n\nBravo pour ces compétences avancées ! 🎓",
+    "section": "Bilan final",
+    "text": "Bilan final\nQuels retours vous avez à faire sur le cours ?",
     "crumbs": [
       "EC Libre : Introduction à la programmation (en R) avec des LLMs",
       "ECLibre",
@@ -1997,14 +2033,14 @@
     "href": "ECLibre/slide-lecon7.html#plan-de-la-séance",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Plan de la séance",
-    "text": "Plan de la séance\n\nRécap et partage (15min) : Retours sur l’organisation du code\nTraitement par lots (60min) : Analyser plusieurs fichiers automatiquement\nIntroduction à R Markdown (60min) : Mélanger code, texte et résultats\nRapport paramétré (65min) : Créer un template d’analyse réutilisable\n\n\nProduction attendue : Rapport automatisé fonctionnel au format PDF/HTML"
+    "text": "Plan de la séance\n\nRécap et partage : Retours sur l’organisation du code\nTraitement par lots : Analyser plusieurs fichiers automatiquement\nIntroduction à Quarto : Mélanger code, texte et résultats\nRapport paramétré : Créer un template d’analyse réutilisable\n\n\nProduction attendue : Rapport automatisé fonctionnel au format PDF/HTML"
   },
   {
     "objectID": "ECLibre/slide-lecon7.html#objectifs-de-la-séance",
     "href": "ECLibre/slide-lecon7.html#objectifs-de-la-séance",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Objectifs de la séance",
-    "text": "Objectifs de la séance\n\n\n\n\n\n\nAutomatiser pour gagner du temps\n\n\n\n\n\n\n\nAutomatiser le traitement de plusieurs fichiers\nCréer des rapports reproductibles\nMaîtriser R Markdown pour mélanger code et texte\nParamétrer ses analyses pour la réutilisation\nGénérer des documents professionnels"
+    "text": "Objectifs de la séance\n\n\n\n\n\n\nAutomatiser pour gagner du temps\n\n\n\n\n\n\n\nAutomatiser le traitement de plusieurs fichiers\nCréer des rapports reproductibles\nMaîtriser Quarto pour mélanger code et texte\nParamétrer ses analyses pour la réutilisation\nGénérer des documents professionnels"
   },
   {
     "objectID": "ECLibre/slide-lecon7.html#retours-sur-lorganisation",
@@ -2018,7 +2054,7 @@
     "href": "ECLibre/slide-lecon7.html#le-défi-de-léchelle",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Le défi de l’échelle",
-    "text": "Le défi de l’échelle\nSituation réelle :\n\nVous avez analysé les ventes de janvier…\n\n\nMaintenant on vous demande d’analyser janvier, février, mars, avril, mai, juin… 📊\n\n\n\n\n\n\n\n\nProblème\n\n\nCopier-coller votre code 12 fois ? Non ! Il faut automatiser."
+    "text": "Le défi de l’échelle\nSituation réelle :\n\nVous avez analysé les ventes de janvier…\n\n\nMaintenant on vous demande d’analyser janvier, février, mars, avril, mai, juin…\n\n\n\n\n\n\n\n\nProblème\n\n\nCopier-coller votre code 12 fois ? Non ! Il faut automatiser."
   },
   {
     "objectID": "ECLibre/slide-lecon7.html#principe-de-lautomatisation",
@@ -2032,7 +2068,7 @@
     "href": "ECLibre/slide-lecon7.html#exercice-1-lister-des-fichiers",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Exercice 1 : Lister des fichiers",
-    "text": "Exercice 1 : Lister des fichiers\nDemandez au LLM :\n\n“Comment lister tous les fichiers CSV d’un dossier en R ?”\n\n\nVous découvrirez :\n\n# Lister tous les fichiers CSV du dossier courant\nfichiers &lt;- list.files(pattern = \"\\\\.csv$\")\n\n# Lister avec le chemin complet\nfichiers &lt;- list.files(path = \"donnees/\", pattern = \"\\\\.csv$\",\n                       full.names = TRUE)\n\n# Voir les fichiers\nprint(fichiers)\n\n\n\nTestez avec vos propres fichiers !\n\n\n15 minutes. Première étape de l’automatisation."
+    "text": "Exercice 1 : Lister des fichiers\nComment lister tous les fichiers CSV d’un dossier en R ?\n\nSolutions possibles :\n\n# Lister tous les fichiers CSV du dossier courant\nfichiers &lt;- list.files(pattern = \"\\\\.csv$\")\n\n# Lister avec le chemin complet\nfichiers &lt;- list.files(path = \"donnees/\", pattern = \"\\\\.csv$\",\n                       full.names = TRUE)\n\n# Voir les fichiers\nprint(fichiers)\n\n\n\nTestez avec vos propres fichiers !\n\n\n15 minutes. Première étape de l’automatisation."
   },
   {
     "objectID": "ECLibre/slide-lecon7.html#exercice-2-boucle-sur-des-fichiers",
@@ -2053,119 +2089,140 @@
     "href": "ECLibre/slide-lecon7.html#gestion-des-erreurs-dans-les-boucles",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Gestion des erreurs dans les boucles",
-    "text": "Gestion des erreurs dans les boucles\nProblème : Un fichier corrompu plante tout !\n\n# Mauvais : tout plante au premier problème\nfor (fichier in fichiers) {\n  donnees &lt;- read.csv(fichier)  # Erreur ici = tout s'arrête\n  analyser(donnees)\n}\n\n# Bon : gérer les erreurs\nfor (fichier in fichiers) {\n  resultat &lt;- tryCatch({\n    donnees &lt;- read.csv(fichier)\n    analyser(donnees)\n  }, error = function(e) {\n    message(\"Erreur avec \", fichier, \": \", e$message)\n    NULL  # Retourner NULL en cas d'erreur\n  })\n}\n\n\nDemandez au LLM d’expliquer tryCatch() !"
+    "text": "Gestion des erreurs dans les boucles\nProblème : Un fichier corrompu plante tout !\n\n# Mauvais : tout plante au premier problème\nfor (fichier in fichiers) {\n  donnees &lt;- read.csv(fichier)  # Erreur ici = tout s'arrête\n  analyser(donnees)\n}\n\n# Bon : gérer les erreurs\nfor (fichier in fichiers) {\n  resultat &lt;- tryCatch({\n    donnees &lt;- read.csv(fichier)\n    analyser(donnees)\n  }, error = function(e) {\n    message(\"Erreur avec \", fichier, \": \", e$message)\n    NULL  # Retourner NULL en cas d'erreur\n  })\n}\n\n\nEssayez d’expliquer ce que signifie tryCatch()."
   },
   {
-    "objectID": "ECLibre/slide-lecon7.html#quest-ce-que-r-markdown",
-    "href": "ECLibre/slide-lecon7.html#quest-ce-que-r-markdown",
+    "objectID": "ECLibre/slide-lecon7.html#quest-ce-que-quarto",
+    "href": "ECLibre/slide-lecon7.html#quest-ce-que-quarto",
     "title": "Séance 7 : Automatisation et rapports",
-    "section": "Qu’est-ce que R Markdown ?",
-    "text": "Qu’est-ce que R Markdown ?\nR Markdown permet de créer des documents qui mélangent :\n\nDu texte (explications, interprétations)\nDu code R (analyses)\nDes résultats (tableaux, graphiques)\nDes formules mathématiques\n\n\nFormats de sortie :\n\nPDF, HTML, Word\nPrésentations (comme ce cours !)\nSites web, livres"
+    "section": "Qu’est-ce que Quarto ?",
+    "text": "Qu’est-ce que Quarto ?\nQuarto permet de créer des documents qui mélangent :\n\nDu texte (explications, interprétations)\nDu code R (analyses)\nDes résultats (tableaux, graphiques)\nDes formules mathématiques\n\n\nFormats de sortie :\n\nPDF, HTML, Word\nPrésentations (comme ce cours !)\nSites web, livres"
   },
   {
-    "objectID": "ECLibre/slide-lecon7.html#pourquoi-r-markdown",
-    "href": "ECLibre/slide-lecon7.html#pourquoi-r-markdown",
+    "objectID": "ECLibre/slide-lecon7.html#pourquoi-quarto",
+    "href": "ECLibre/slide-lecon7.html#pourquoi-quarto",
     "title": "Séance 7 : Automatisation et rapports",
-    "section": "Pourquoi R Markdown ?",
-    "text": "Pourquoi R Markdown ?\nAvantages :\n\nReproductibilité : tout est dans un seul fichier\nCohérence : résultats toujours à jour avec le code\nCommunication : rapports professionnels\nGain de temps : pas de copier-coller de résultats\n\n\n\n\n\n\n\n\nImportant\n\n\nSi vos données changent, votre rapport se met à jour automatiquement !"
+    "section": "Pourquoi Quarto ?",
+    "text": "Pourquoi Quarto ?\nAvantages :\n\nReproductibilité : tout est dans un seul fichier\nCohérence : résultats toujours à jour avec le code\nCommunication : rapports faciles à produire\nGain de temps : pas de copier-coller de résultats\n\n\n\n\n\n\n\n\nImportant\n\n\nSi vos données changent, votre rapport se met à jour automatiquement !"
   },
   {
-    "objectID": "ECLibre/slide-lecon7.html#structure-dun-document-r-markdown",
-    "href": "ECLibre/slide-lecon7.html#structure-dun-document-r-markdown",
+    "objectID": "ECLibre/slide-lecon7.html#structure-dun-document-quarto",
+    "href": "ECLibre/slide-lecon7.html#structure-dun-document-quarto",
     "title": "Séance 7 : Automatisation et rapports",
-    "section": "Structure d’un document R Markdown",
-    "text": "Structure d’un document R Markdown\nUn fichier .Rmd contient :\n---\ntitle: \"Mon Rapport\"\nauthor: \"Votre Nom\"\ndate: \"2025-01-15\"\noutput: html_document\n---\n\n# Introduction\n\nCeci est du texte normal.\n\n```{r}\n# Ceci est du code R\ndonnees &lt;- read.csv(\"data.csv\")\nmean(donnees$valeur)\n```\n\n## Résultats\n\nLe graphique ci-dessous montre...\n\n```{r}\nplot(donnees$x, donnees$y)\n```"
+    "section": "Structure d’un document Quarto",
+    "text": "Structure d’un document Quarto\nUn fichier .qmd contient :\n---\ntitle: \"Mon Rapport\"\nauthor: \"Votre Nom\"\ndate: \"2025-01-15\"\nformat: html\n---\n\n# Introduction\n\nCeci est du texte normal.\n\n```{r}\n# Ceci est du code R\ndonnees &lt;- read.csv(\"data.csv\")\nmean(donnees$valeur)\n```\n\n## Résultats\n\nLe graphique ci-dessous montre...\n\n```{r}\nplot(donnees$x, donnees$y)\n```"
   },
   {
-    "objectID": "ECLibre/slide-lecon7.html#exercice-4-premier-document-r-markdown",
-    "href": "ECLibre/slide-lecon7.html#exercice-4-premier-document-r-markdown",
+    "objectID": "ECLibre/slide-lecon7.html#exercice-4-premier-document-quarto",
+    "href": "ECLibre/slide-lecon7.html#exercice-4-premier-document-quarto",
     "title": "Séance 7 : Automatisation et rapports",
-    "section": "Exercice 4 : Premier document R Markdown",
-    "text": "Exercice 4 : Premier document R Markdown\nCréez un nouveau fichier R Markdown :\n\nDans RStudio : File &gt; New File &gt; R Markdown\nDonnez un titre et choisissez HTML\nCliquez sur “Knit” pour générer le document\n\n\nObservez :\n\nL’en-tête YAML (entre les ---)\nLes blocs de code R (entre les ```{r} )\nLe texte Markdown\nLe résultat généré\n\n\n\nDemandez au LLM :\n\n“Explique-moi la syntaxe de base de Markdown (titres, listes, gras, italique)”\n\n\n\n20 minutes. Première découverte de R Markdown."
+    "section": "Exercice 4 : Premier document Quarto",
+    "text": "Exercice 4 : Premier document Quarto\nCréez un nouveau fichier Quarto :\n\nDans RStudio : File &gt; New File &gt; Quarto\nDonnez un titre et choisissez HTML\nCliquez sur “Render” pour générer le document\n\n\nObservez :\n\nL’en-tête YAML (entre les ---)\nLes blocs de code R (entre les ```{r} )\nLe texte Markdown\nLe résultat généré\n\n\n\nCherchez la syntaxe de base de Markdown (titres, listes, gras, italique)\n\n\n20 minutes. Première découverte de Quarto."
   },
   {
     "objectID": "ECLibre/slide-lecon7.html#options-des-blocs-de-code",
     "href": "ECLibre/slide-lecon7.html#options-des-blocs-de-code",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Options des blocs de code",
-    "text": "Options des blocs de code\nOn peut contrôler ce qui apparaît dans le rapport :\n```{r, echo=TRUE, eval=TRUE}\n# echo=TRUE : montrer le code\n# eval=TRUE : exécuter le code\nx &lt;- 1:10\nmean(x)\n```\n\n```{r, echo=FALSE, eval=TRUE}\n# echo=FALSE : cacher le code, montrer seulement le résultat\nplot(x, x^2)\n```\n\n```{r, eval=FALSE}\n# eval=FALSE : montrer le code mais ne pas l'exécuter\n# Utile pour montrer des exemples\ninstall.packages(\"monpackage\")\n```\n\nAutres options utiles :\n\nmessage=FALSE : cacher les messages\nwarning=FALSE : cacher les avertissements\nfig.width=8, fig.height=5 : taille des graphiques"
+    "text": "Options des blocs de code\nOn peut contrôler ce qui apparaît dans le rapport :\n```{r}\n#| echo: true\n#| eval: true\n# montrer et exécuter le code\nx &lt;- 1:10\nmean(x)\n```\n\n```{r}\n#| echo: false\n#| eval: true\n# cacher le code, montrer seulement le résultat\nplot(x, x^2)\n```\n\n```{r}\n#| eval: false\n# montrer le code mais ne pas l'exécuter\n# Utile pour montrer des exemples\ninstall.packages(\"monpackage\")\n```\n\nAutres options utiles :\n\nmessage: false : cacher les messages\nwarning: false : cacher les avertissements\nfig-width: 8, fig-height: 5 : taille des graphiques"
   },
   {
     "objectID": "ECLibre/slide-lecon7.html#exercice-5-rapport-danalyse-simple",
     "href": "ECLibre/slide-lecon7.html#exercice-5-rapport-danalyse-simple",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Exercice 5 : Rapport d’analyse simple",
-    "text": "Exercice 5 : Rapport d’analyse simple\nCréez un rapport R Markdown qui :\n\nImporte un jeu de données\nAffiche les premières lignes (avec head())\nCalcule des statistiques (moyenne, médiane, etc.)\nCrée 2 graphiques\nInterprète les résultats en texte\n\nStructure suggérée :\n# Introduction\nDescription du dataset...\n\n# Exploration des données\n```{r}\ndonnees &lt;- read.csv(\"data.csv\")\nhead(donnees)\nsummary(donnees)\n```\n\n# Analyse\n```{r, echo=FALSE}\n# Graphiques sans montrer le code\n```\n\n# Conclusion\nLes résultats montrent que...\n\n30 minutes. Premier rapport complet."
+    "text": "Exercice 5 : Rapport d’analyse simple\nCréez un rapport Quarto qui :\n\nImporte un jeu de données\nAffiche les premières lignes (avec head())\nCalcule des statistiques (moyenne, médiane, etc.)\nCrée 2 graphiques\nInterprète les résultats en texte\n\nStructure suggérée :\n# Introduction\nDescription du dataset...\n\n# Exploration des données\n```{r}\ndonnees &lt;- read.csv(\"data.csv\")\nhead(donnees)\nsummary(donnees)\n```\n\n# Analyse\n```{r}\n#| echo: false\n# Graphiques sans montrer le code\n```\n\n# Conclusion\nLes résultats montrent que...\n\n30 minutes. Premier rapport complet."
   },
   {
     "objectID": "ECLibre/slide-lecon7.html#markdown-pour-le-formatage",
     "href": "ECLibre/slide-lecon7.html#markdown-pour-le-formatage",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Markdown pour le formatage",
-    "text": "Markdown pour le formatage\nSyntaxe de base :\n# Titre niveau 1\n## Titre niveau 2\n### Titre niveau 3\n\n**Texte en gras**\n*Texte en italique*\n\n- Liste à puces\n- Deuxième élément\n\n1. Liste numérotée\n2. Deuxième élément\n\n[Lien](https://www.example.com)\n\n![Image](chemin/vers/image.png)\n\nDemandez au LLM de vous montrer plus d’options de formatage !"
+    "text": "Markdown pour le formatage\nSyntaxe de base :\n# Titre niveau 1\n## Titre niveau 2\n### Titre niveau 3\n\n**Texte en gras**\n*Texte en italique*\n\n- Liste à puces\n- Deuxième élément\n\n1. Liste numérotée\n2. Deuxième élément\n\n[Lien](https://www.example.com)\n\n![Image](chemin/vers/image.png)\nToutes les options de formatages en Quarto sont disponibles ici : https://quarto.org/docs/authoring/markdown-basics.html"
   },
   {
     "objectID": "ECLibre/slide-lecon7.html#pourquoi-paramétrer",
     "href": "ECLibre/slide-lecon7.html#pourquoi-paramétrer",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Pourquoi paramétrer ?",
-    "text": "Pourquoi paramétrer ?\nProblème : Vous voulez le même rapport pour différents datasets\nSolution : Créer un template paramétrable\n---\ntitle: \"Rapport de ventes\"\nparams:\n  fichier: \"ventes_janvier.csv\"\n  seuil: 1000\n---\n\n```{r}\ndonnees &lt;- read.csv(params$fichier)\nventes_importantes &lt;- donnees[donnees$montant &gt; params$seuil, ]\n\n## Exercice 6 : Premier rapport paramétré {.smaller}\n\n**Créez un rapport avec paramètres :**\n\n\n````{.default}\n---\ntitle: \"Analyse automatisée\"\nparams:\n  dataset: \"data.csv\"\n  variable: \"valeur\"\n  titre_graphique: \"Distribution des valeurs\"\noutput: html_document\n---\n\n# Analyse de `r params$variable`\n\n```{r}\ndonnees &lt;- read.csv(params$dataset)\nvariable_data &lt;- donnees[[params$variable]]\n\n# Statistiques\ncat(\"Moyenne:\", mean(variable_data, na.rm = TRUE), \"\\n\")\ncat(\"Médiane:\", median(variable_data, na.rm = TRUE), \"\\n\")\n\n# Graphique\nhist(variable_data, main = params$titre_graphique)\n\n::: {.notes}\n25 minutes. Introduction aux paramètres.\n:::\n\n## Générer des rapports par programme {.smaller}\n\n**Vous pouvez générer des rapports depuis R :**\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(rmarkdown)\n\n# Générer un rapport avec des paramètres spécifiques\nrender(\"template.Rmd\",\n       params = list(\n         dataset = \"ventes_janvier.csv\",\n         variable = \"montant\",\n         titre_graphique = \"Ventes de janvier\"\n       ),\n       output_file = \"rapport_janvier.html\")\n\n# Boucle pour générer plusieurs rapports\nfichiers &lt;- c(\"ventes_janvier.csv\", \"ventes_fevrier.csv\", \"ventes_mars.csv\")\n\nfor (f in fichiers) {\n  mois &lt;- tools::file_path_sans_ext(basename(f))\n\n  render(\"template.Rmd\",\n         params = list(\n           dataset = f,\n           variable = \"montant\",\n           titre_graphique = paste(\"Ventes de\", mois)\n         ),\n         output_file = paste0(\"rapport_\", mois, \".html\"))\n}\n```\n:::\n\n\n::: {.notes}\n20 minutes. Automatisation complète.\n:::\n\n## Exercice 7 : Fonction de génération de rapport {.smaller}\n\n**Créez une fonction qui génère des rapports automatiquement :**\n\n\n::: {.cell}\n\n```{.r .cell-code}\ngenerer_rapport &lt;- function(fichier_donnees, output_dir = \"rapports/\") {\n  # Extraire le nom du fichier sans extension\n  nom_base &lt;- tools::file_path_sans_ext(basename(fichier_donnees))\n\n  # Créer le dossier de sortie si nécessaire\n  if (!dir.exists(output_dir)) {\n    dir.create(output_dir, recursive = TRUE)\n  }\n\n  # Générer le rapport\n  output_file &lt;- file.path(output_dir, paste0(\"rapport_\", nom_base, \".html\"))\n\n  rmarkdown::render(\n    \"template_analyse.Rmd\",\n    params = list(\n      dataset = fichier_donnees,\n      titre = paste(\"Analyse de\", nom_base)\n    ),\n    output_file = output_file\n  )\n\n  message(\"Rapport généré : \", output_file)\n  return(output_file)\n}\n\n# Utilisation\nfichiers &lt;- list.files(\"donnees/\", pattern = \"\\\\.csv$\", full.names = TRUE)\nrapports &lt;- lapply(fichiers, generer_rapport)\n```\n:::\n\n\n::: {.notes}\n30 minutes. Fonction professionnelle de génération de rapports.\n:::\n\n## Formats de sortie multiples\n\n**R Markdown peut générer différents formats :**\n\n````markdown\n---\ntitle: \"Mon Rapport\"\noutput:\n  html_document:\n    toc: true\n    toc_float: true\n  pdf_document:\n    toc: true\n  word_document: default\n---\n\nPour générer un format spécifique :\n\nrender(\"rapport.Rmd\", output_format = \"pdf_document\")"
+    "text": "Pourquoi paramétrer ?\nProblème : Vous voulez le même rapport pour différents datasets\nSolution : Créer un template paramétrable\n---\ntitle: \"Rapport de ventes\"\nformat: html\nparams:\n  fichier: \"ventes_janvier.csv\"\n  seuil: 1000\n---\n\n```{r}\ndonnees &lt;- read.csv(params$fichier)\nventes_importantes &lt;- donnees[donnees$montant &gt; params$seuil, ]\n```"
   },
   {
-    "objectID": "ECLibre/slide-lecon7.html#projet-final-rapports-automatisés",
-    "href": "ECLibre/slide-lecon7.html#projet-final-rapports-automatisés",
+    "objectID": "ECLibre/slide-lecon7.html#exercice-6-premier-rapport-paramétré",
+    "href": "ECLibre/slide-lecon7.html#exercice-6-premier-rapport-paramétré",
     "title": "Séance 7 : Automatisation et rapports",
-    "section": "Projet final : Rapports automatisés",
-    "text": "Projet final : Rapports automatisés\nObjectif : Créer un système complet de génération de rapports\nSpécifications :\n\nUn template R Markdown paramétrable\nUne fonction qui génère des rapports pour plusieurs fichiers\nLes rapports doivent inclure :\n\nImport et nettoyage automatique\nStatistiques descriptives\nAu moins 3 graphiques\nInterprétation textuelle\n\nGestion des erreurs (fichiers manquants, colonnes manquantes)\nGénération en HTML\n\n\n\n\n\n\n\nUtilisez tout ce que vous avez appris\n\n\nFonctions, dplyr, ggplot2, gestion d’erreurs, R Markdown !\n\n\n\n\n65 minutes. Projet de synthèse final."
+    "section": "Exercice 6 : Premier rapport paramétré",
+    "text": "Exercice 6 : Premier rapport paramétré\nCréez un rapport avec paramètres :\n---\ntitle: \"Analyse automatisée\"\nformat: html\nparams:\n  dataset: \"data.csv\"\n  variable: \"valeur\"\n  titre_graphique: \"Distribution des valeurs\"\n---\n\n# Analyse de `r params$variable`\n\n```{r}\ndonnees &lt;- read.csv(params$dataset)\nvariable_data &lt;- donnees[[params$variable]]\n\n# Statistiques\ncat(\"Moyenne:\", mean(variable_data, na.rm = TRUE), \"\\n\")\ncat(\"Médiane:\", median(variable_data, na.rm = TRUE), \"\\n\")\n\n# Graphique\nhist(variable_data, main = params$titre_graphique)\n```\n\n25 minutes. Introduction aux paramètres."
+  },
+  {
+    "objectID": "ECLibre/slide-lecon7.html#générer-des-rapports-par-programme",
+    "href": "ECLibre/slide-lecon7.html#générer-des-rapports-par-programme",
+    "title": "Séance 7 : Automatisation et rapports",
+    "section": "Générer des rapports par programme",
+    "text": "Générer des rapports par programme\nVous pouvez générer des rapports depuis R :\n\nlibrary(quarto)\n\n# Générer un rapport avec des paramètres spécifiques\nquarto_render(\"template.qmd\",\n              execute_params = list(\n                dataset = \"ventes_janvier.csv\",\n                variable = \"montant\",\n                titre_graphique = \"Ventes de janvier\"\n              ),\n              output_file = \"rapport_janvier.html\")\n\n# Boucle pour générer plusieurs rapports\nfichiers &lt;- c(\"ventes_janvier.csv\", \"ventes_fevrier.csv\", \"ventes_mars.csv\")\n\nfor (f in fichiers) {\n  mois &lt;- tools::file_path_sans_ext(basename(f))\n\n  quarto_render(\"template.qmd\",\n                execute_params = list(\n                  dataset = f,\n                  variable = \"montant\",\n                  titre_graphique = paste(\"Ventes de\", mois)\n                ),\n                output_file = paste0(\"rapport_\", mois, \".html\"))\n}\n\n\n20 minutes. Automatisation complète."
+  },
+  {
+    "objectID": "ECLibre/slide-lecon7.html#exercice-7-fonction-de-génération-de-rapport",
+    "href": "ECLibre/slide-lecon7.html#exercice-7-fonction-de-génération-de-rapport",
+    "title": "Séance 7 : Automatisation et rapports",
+    "section": "Exercice 7 : Fonction de génération de rapport",
+    "text": "Exercice 7 : Fonction de génération de rapport\nCréez une fonction qui génère des rapports automatiquement :\n\ngenerer_rapport &lt;- function(fichier_donnees, output_dir = \"rapports/\") {\n  # Extraire le nom du fichier sans extension\n  nom_base &lt;- tools::file_path_sans_ext(basename(fichier_donnees))\n\n  # Créer le dossier de sortie si nécessaire\n  if (!dir.exists(output_dir)) {\n    dir.create(output_dir, recursive = TRUE)\n  }\n\n  # Générer le rapport\n  output_file &lt;- file.path(output_dir, paste0(\"rapport_\", nom_base, \".html\"))\n\n  quarto::quarto_render(\n    \"template_analyse.qmd\",\n    execute_params = list(\n      dataset = fichier_donnees,\n      titre = paste(\"Analyse de\", nom_base)\n    ),\n    output_file = output_file\n  )\n\n  message(\"Rapport généré : \", output_file)\n  return(output_file)\n}\n\n# Utilisation\nfichiers &lt;- list.files(\"donnees/\", pattern = \"\\\\.csv$\", full.names = TRUE)\nrapports &lt;- lapply(fichiers, generer_rapport)\n\n\n30 minutes. Fonction professionnelle de génération de rapports."
+  },
+  {
+    "objectID": "ECLibre/slide-lecon7.html#formats-de-sortie-multiples",
+    "href": "ECLibre/slide-lecon7.html#formats-de-sortie-multiples",
+    "title": "Séance 7 : Automatisation et rapports",
+    "section": "Formats de sortie multiples",
+    "text": "Formats de sortie multiples\nQuarto peut générer différents formats :\n---\ntitle: \"Mon Rapport\"\nformat:\n  html:\n    toc: true\n  pdf:\n    toc: true\n  docx: default\n---\n\nPour générer un format spécifique :\n\nquarto_render(\"rapport.qmd\", output_format = \"pdf\")"
+  },
+  {
+    "objectID": "ECLibre/slide-lecon7.html#projet-final-rapports",
+    "href": "ECLibre/slide-lecon7.html#projet-final-rapports",
+    "title": "Séance 7 : Automatisation et rapports",
+    "section": "Projet final : Rapports",
+    "text": "Projet final : Rapports\nObjectif : Transformer votre rapport précédent en un rapport Quarto\n\n\n\n\n\n\nUtilisez tout ce que vous avez appris\n\n\nFonctions, dplyr, ggplot2, gestion d’erreurs, Quarto !\n\n\n\n\n65 minutes. Projet de synthèse final."
   },
   {
     "objectID": "ECLibre/slide-lecon7.html#critères-du-projet",
     "href": "ECLibre/slide-lecon7.html#critères-du-projet",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Critères du projet",
-    "text": "Critères du projet\n\n✅ Template R Markdown paramétrable et réutilisable\n✅ Fonction de génération robuste (gère les erreurs)\n✅ Rapports complets (stats + graphiques + texte)\n✅ Code commenté et organisé\n✅ Fonctionne avec différents fichiers de données\n\n\nBonus :\n\nGénération automatique d’un index de tous les rapports\nGraphiques interactifs avec plotly\nRapport au format PDF\nEnvoi automatique par email (avancé !)"
+    "text": "Critères du projet\n\nVotre projet est maintenant écrit en un mélange de Quarto et R"
   },
   {
     "objectID": "ECLibre/slide-lecon7.html#exercice-réflexif-journal-de-bord",
     "href": "ECLibre/slide-lecon7.html#exercice-réflexif-journal-de-bord",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Exercice réflexif : Journal de bord",
-    "text": "Exercice réflexif : Journal de bord\nDocumentez :\n\nAutomatisation :\n\nComment automatiser un traitement répétitif ?\nVotre fonction d’analyse par lots\nUne erreur que vous avez gérée avec tryCatch()\n\nR Markdown :\n\nDifférences avec un script R normal\nAvantages pour vos analyses\nOptions de blocs de code les plus utiles\n\nRapports paramétrés :\n\nVotre template réutilisable\nComment vous allez l’utiliser à l’avenir\nDifficultés rencontrées et solutions\n\n\n\n15 minutes. Documentation des apprentissages avancés."
+    "text": "Exercice réflexif : Journal de bord\nDocumentez :\n\nAutomatisation :\n\nComment automatiser un traitement répétitif ?\nVotre fonction d’analyse par lots\nUne erreur que vous avez gérée avec tryCatch()\n\nQuarto :\n\nDifférences avec un script R normal\nAvantages pour vos analyses\nOptions de blocs de code les plus utiles\n\nRapports :\n\nVotre rapport\n\n\n\n15 minutes. Documentation des apprentissages avancés."
   },
   {
     "objectID": "ECLibre/slide-lecon7.html#ce-que-vous-avez-accompli",
     "href": "ECLibre/slide-lecon7.html#ce-que-vous-avez-accompli",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Ce que vous avez accompli",
-    "text": "Ce que vous avez accompli\n✅ Automatiser le traitement de plusieurs fichiers ✅ Créer des rapports reproductibles avec R Markdown ✅ Paramétrer des analyses pour la réutilisation ✅ Générer des documents professionnels automatiquement ✅ Gérer les erreurs dans les processus automatisés ✅ Combiner toutes vos compétences en R"
+    "text": "Ce que vous avez accompli\n\nAutomatiser le traitement de plusieurs fichiers\nCréer des rapports reproductibles avec Quarto\nParamétrer des analyses pour la réutilisation\nGénérer des documents professionnels automatiquement\nGérer les erreurs dans les processus automatisés\nCombiner toutes vos compétences en R"
   },
   {
     "objectID": "ECLibre/slide-lecon7.html#concepts-clés-de-la-séance",
     "href": "ECLibre/slide-lecon7.html#concepts-clés-de-la-séance",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Concepts clés de la séance",
-    "text": "Concepts clés de la séance\nAutomatisation :\n\nlist.files() : lister des fichiers\nBoucles for et lapply() sur plusieurs fichiers\ntryCatch() : gestion des erreurs\n\nR Markdown :\n\nStructure : YAML + Markdown + code R\nOptions de blocs : echo, eval, message, warning\nrender() : générer des rapports par programme\n\nParamètres :\n\nparams dans le YAML\nAccès avec params$nom_parametre"
+    "text": "Concepts clés de la séance\nAutomatisation :\n\nlist.files() : lister des fichiers\nBoucles for et lapply() sur plusieurs fichiers\ntryCatch() : gestion des erreurs\n\nQuarto :\n\nStructure : YAML + Markdown + code R\nOptions de blocs : echo, eval, message, warning (avec syntaxe #|)\nquarto_render() : générer des rapports par programme\n\nParamètres :\n\nparams dans le YAML\nAccès avec params$nom_parametre"
   },
   {
     "objectID": "ECLibre/slide-lecon7.html#pour-aller-plus-loin",
     "href": "ECLibre/slide-lecon7.html#pour-aller-plus-loin",
     "title": "Séance 7 : Automatisation et rapports",
     "section": "Pour aller plus loin",
-    "text": "Pour aller plus loin\n\nExplorez d’autres formats de sortie (PDF, Word, slides)\nCréez une bibliothèque de templates pour différents types d’analyses\nAutomatisez la génération régulière de rapports (tâches planifiées)\nPartagez vos templates avec vos collègues"
+    "text": "Pour aller plus loin\n\nExplorez d’autres formats de sortie (PDF, Word, revealjs)\nCréez une bibliothèque de templates pour différents types d’analyses\nAutomatisez la génération régulière de rapports (tâches planifiées)\nPartagez vos templates avec vos collègues"
   },
   {
-    "objectID": "ECLibre/slide-lecon7.html#préparation-séance-finale",
-    "href": "ECLibre/slide-lecon7.html#préparation-séance-finale",
+    "objectID": "ECLibre/slide-lecon7.html#bilan-final",
+    "href": "ECLibre/slide-lecon7.html#bilan-final",
     "title": "Séance 7 : Automatisation et rapports",
-    "section": "Préparation séance finale",
-    "text": "Préparation séance finale\n\n\n\n\n\n\nDevoirs\n\n\n\nFinalisez votre système de rapports automatisés\nTestez-le avec au moins 3 fichiers différents\nMettez à jour votre journal en détail\nPréparez-vous pour le projet collaboratif final\nRéfléchissez aux bonnes pratiques pour travailler en équipe sur du code\n\n\n\n\n\nSéance finale : Projet collaboratif - intégrer vos compétences en équipe !"
-  },
-  {
-    "objectID": "ECLibre/slide-lecon7.html#questions",
-    "href": "ECLibre/slide-lecon7.html#questions",
-    "title": "Séance 7 : Automatisation et rapports",
-    "section": "Questions ?",
-    "text": "Questions ?\n\n\n\n\n\n\nPoints clés à retenir\n\n\n\nAutomatiser évite la répétition et les erreurs\nR Markdown garantit la reproductibilité\nLes paramètres rendent vos analyses réutilisables\nLa gestion d’erreurs est essentielle en production\nVous êtes maintenant capables de créer des systèmes professionnels !\n\n\n\n\n\nBravo pour ces compétences avancées ! 🎓"
+    "section": "Bilan final",
+    "text": "Bilan final\nQuels retours vous avez à faire sur le cours ?"
   },
   {
     "objectID": "ECLibre/06Lecon5Projet.html",
