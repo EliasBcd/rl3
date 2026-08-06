@@ -1,10 +1,11 @@
 ---
-title: "Représentations graphiques"
+title: "Représenter des données"
+subtitle: "L3 économie-finance"
 author: "Elias Bouacida"
 format: 
   html: default
   revealjs:
-    output-file: slides-representations-graphiques.html
+    output-file: slides-graphiques.html
     scrollable: true
     embed-resources: true
 date: last-modified
@@ -13,11 +14,9 @@ execute:
   echo: true
   cache: true  
 bibliography: Bibliographie.bib
-self-contained: true
-# width: 1920
-# height: 1080
 code-overflow: wrap
 date-format: long
+format-links: [revealjs]
 ---
 
 ```{r setup}
@@ -25,388 +24,489 @@ date-format: long
 
 library(tidyverse)
 library(questionr)
+data(hdv2003)
+d <- as_tibble(hdv2003)
 ```
 
-# Introduction
+# Pourquoi un graphique
 
-## Introduction
+## Ce qu'un tableau ne dit pas {.smaller}
 
-`ggplot2` est une librairie qui permet de générer des graphiques avec une syntaxe cohérente et puissante. 
-Elle nécessite l'apprentissage d'un "mini-langage" supplémentaire, mais permet la construction de graphiques complexes de manière efficace.
+La séance dernière, nous avons résumé l'âge des enquêtés :
 
-Une des particularités de `ggplot2` est qu'elle part du principe que les données relatives à un graphique sont stockées dans un tableau de données (`data.frame`, `tibble` ou autre).
-
-Ce chapitre est élaboré à partir du chapitre 8 de @Barnier.
-
-
-## Préparation
-
-`ggplot2` est un paquet comme un autre, que l'on charge à l'aide de `library`
-
-```{r}
-#| eval: false
-
-library(ggplot2)
-```
-
-## Données
-
-Les données que nous allons utiliser sont issues du recensement de la population de 2018 inclus dans le paquet `questionr`, que nous devons installer et charger.
-
-```{r}
-#| eval: false
-
-install.packages('questionr')
-library(questionr)
-```
-
-Nous allons seulement utiliser une partie de ces données, nous utilisons pour cela la fonction `filter` de la librairie `tidyverse`.
-
-```{r}
-data(rp2018)
-
-rp <- filter(
-  rp2018,
-  departement %in% c("Oise", "Rhône", "Hauts-de-Seine", "Lozère", "Bouches-du-Rhône")
+```{r resume_age}
+d |> summarise(
+  moyenne = mean(age),
+  ecart_type = sd(age),
+  mediane = median(age)
 )
 ```
 
-## Initialisation : données à représenter
-
-Un graphique `ggplot2` s'initialise à l'aide de la fonction `ggplot()`. 
-Les données sont **toujours** issues d'un tableau de données, qu'on passe en argument data à la fonction `ggplot`.
-
-```{r}
-#| eval: false
-ggplot(data = rp)
-ggplot(rp) ## Equivalent au premier et généralement utilisé
-```
-
-
-## Géométries : comment ?
-
-Il faut ajouter des éléments de représentation graphique. 
-Ces éléments sont appelés des `geom` et on les ajoute à l'objet graphique de base avec l'opérateur `+`.
-
-Une des `geom` les plus simples est `geom_histogram` :
-
-```{r}
-#| eval: false
-ggplot(rp) + geom_histogram()
-```
-
-## Esthétiques : quelles données sont représentées ? {.smaller}
-
-Reste à indiquer quelle donnée nous voulons représenter sous forme d'histogramme.
-Cela se fait à l'aide d'arguments passés via la fonction `aes()`.
-Ici, nous avons un paramètre à renseigner, `x`, qui indique la variable à représenter sur l'axe des x (l'axe horizontal).
-
-:::: {.columns}
-
-::: {.column width='45%'}
-Ainsi, si on souhaite représenter la distribution des communes du jeu de données selon le pourcentage de cadres dans leur population active (variable `cadres`) :
-
-```{r}
-ggplot(rp) + geom_histogram(aes(x = cadres))
-```
+::: {.fragment}
+Trois nombres.
+Mais **quelle est la forme** de cette distribution ? 
+Y a-t-il un seul groupe d'âge, ou plusieurs ? 
+Des valeurs aberrantes ?
 :::
 
-::: {.column width="40%"}
-Si on veut représenter une autre variable, il suffit de changer la valeur de `x` :
+## La même variable, en image
 
-```{r}
-ggplot(rp) + geom_histogram(aes(x = ouvr))
+```{r hist_age_motivation}
+#| echo: false
+#| fig-height: 4.5
+ggplot(d) + geom_histogram(aes(x = age), bins = 30)
 ```
+
+::: {.fragment}
+Deux indicateurs identiques peuvent correspondre à des distributions très différentes. 
+C'est ce que nous allons apprendre à voir.
 :::
-::::
+
+## `ggplot2` {.smaller}
+
+`ggplot2` permet de construire des graphiques avec une syntaxe cohérente et puissante. 
+Elle demande l'apprentissage d'un petit langage supplémentaire, mais permet ensuite de construire des graphiques complexes efficacement.
+
+Une de ses particularités : les données d'un graphique sont **toujours** dans un tableau de données.
+
+```{r prep}
+#| eval: false
+library(tidyverse)   # ggplot2 est inclus
+library(questionr)
+data(hdv2003)
+d <- as_tibble(hdv2003)
+```
+
+Ce chapitre est élaboré à partir du chapitre 8 de @Barnier.
+
+# Les trois ingrédients
+
+## Initialisation : quelles données ?
+
+Un graphique s'initialise avec la fonction `ggplot()`. 
+On lui passe le tableau de données.
+
+```{r init}
+#| fig-height: 3
+ggplot(d)
+```
+
+Rien ne s'affiche : nous n'avons pas encore dit **quoi** représenter, ni **comment**.
+
+## Géométrie : comment ?
+
+Il faut ajouter un élément de représentation graphique, appelé **géométrie** (`geom`). 
+On l'ajoute avec l'opérateur `+`.
+
+```{r geom_seul}
+#| eval: false
+ggplot(d) + geom_histogram()
+```
+
+Cela ne fonctionne pas encore : il manque la variable à représenter.
+
+## Esthétique : quelle variable ? {.smaller}
+
+On indique la variable à représenter avec la fonction `aes()`. 
+Ici, le paramètre `x` désigne la variable portée par l'axe horizontal.
+
+```{r hist_age}
+#| fig-height: 4
+ggplot(d) + geom_histogram(aes(x = age))
+```
+
+## Changer de variable
+
+Il suffit de changer la valeur de `x` :
+
+```{r hist_tv}
+#| fig-height: 4
+ggplot(d) + geom_histogram(aes(x = heures.tv))
+```
+
+::: {.callout-note}
+R affiche un avertissement signalant les valeurs manquantes écartées. 
+Un **avertissement** n'est pas une erreur : le graphique est produit. 
+Mais lisez-le -- il vous dit combien d'observations ne sont pas représentées.
+:::
 
 ## En résumé
 
-Pour représenter un graphique, il faut :
+Pour faire un graphique, il faut trois choses :
 
-1. Des données (argument `data` de `ggplot()`)
-2. Un type de représentation (histogramme, ligne, point, etc) donné par `geom_xxxx` où `xxxx` est le type de représentation recherché.
-3. Une ou des variables à représenter (argument `aes()` dans `geom_xxxx`)
-
-On lie les différentes commandes à l'aide de l'opérateur `+`.
-
-# Les géométries
-
-## Nuage de points 
-
-Certaines `geom` prennent plusieurs paramètres.
-Ainsi, si on veut représenter un nuage de points, on peut le faire en ajoutant un `geom_point`.
-On doit alors indiquer à la fois la position en `x` (la variable sur l'axe horizontal) et en `y` (la variable sur l'axe vertical) de ces points, il faut donc passer ces deux arguments à `aes()` :
-
-```{r}
-ggplot(rp) + geom_point(aes(x = dipl_sup, y = cadres))
-```
-
-## Apparence des géométries
-
-On peut modifier certains attributs graphiques d'un `geom` en lui passant des arguments supplémentaires. 
-Par exemple, pour un nuage de points, on peut modifier :
-
-- la couleur  avec l'argument `color` ; 
-- la taille avec l'argument `size` ;
-- la transparence avec l'argument `alpha`.
-
-```{r points}
-#| fig-width: 9
-#| fig-height: 5
-#| 
-ggplot(rp) +
-  geom_point(
-    aes(x = dipl_sup, y = cadres),
-    color = "darkgreen", size = 3, alpha = 0.3
-  )
-```
-
-
-::: {.notes}
-On notera que dans ce cas les arguments sont dans la fonction `geom` mais à l'extérieur du `aes()`. Plus d'explications sur ce point dans quelques instants.
+::: {.incremental}
+1. **Des données** : l'argument de `ggplot()`
+2. **Un type de représentation** : `geom_xxxx`
+3. **Une ou des variables** : l'argument `aes()`
 :::
 
-## Exemples de `geom`
+::: {.fragment}
+On lie les éléments avec l'opérateur `+`.
+:::
 
-Il existe un grand nombre de `geom`, décrites en détail dans la [documentation officielle](http://ggplot2.tidyverse.org/reference/). 
-Outre les `geom_histogram` et `geom_point` que l'on vient de voir, on pourra noter les `geom` suivantes :
+# Représenter une variable
 
-- `geom_boxplot`
-- `geom_violin`
-- `geom_bar` et `geom_col`
-- `geom_text`
-- `geom_label`
-- `geom_density`
-- `geom_line`
-- `geom_hex` et `geom_bin2d`
+## Une variable quantitative : l'histogramme {.smaller}
+
+L'histogramme découpe la variable en intervalles et compte les observations dans chacun. 
+On contrôle le découpage avec `bins` :
+
+:::: {.columns}
+::: {.column width='48%'}
+```{r bins10}
+#| fig-height: 3.5
+ggplot(d) + 
+  geom_histogram(aes(x = age), bins = 10)
+```
+:::
+
+::: {.column width='48%'}
+```{r bins50}
+#| fig-height: 3.5
+ggplot(d) + 
+  geom_histogram(aes(x = age), bins = 50)
+```
+:::
+::::
+
+::: {.callout-warning}
+Le nombre d'intervalles change ce que vous voyez. 
+Identifiez l'intervalle qui correspond à ce que vous étudiez, ou essayez-en toujours plusieurs avant de conclure quoi que ce soit sur la forme d'une distribution.
+:::
+
+## Une variable qualitative : le diagramme en barres
+
+```{r bar_qualif}
+#| fig-height: 4
+ggplot(d) + geom_bar(aes(x = qualif))
+```
+
+::: {.callout-tip}
+`geom_bar()` compte lui-même les effectifs : c'est l'équivalent graphique du `count()` de la séance dernière.
+Les valeurs manquantes apparaissent comme une barre.
+:::
+
+## Étiquettes illisibles
+
+Quand les modalités sont longues, on inverse les axes en passant la variable en `y` :
+
+```{r bar_qualif_y}
+#| fig-height: 4
+ggplot(d) + geom_bar(aes(y = qualif))
+```
+
+## Exercice {.smaller}
+
+1. Représentez la distribution du nombre de frères et sœurs (`freres.soeurs`).
+2. Faites un diagramme en barres de la variable `relig`. 
+Comparez avec le `count()` de la séance dernière.
+3. Représentez la distribution de l'âge avec 5, puis 20, puis 100 intervalles.
+Que voyez-vous apparaître, et que voyez-vous disparaître ?
+
+::: {.notes}
+20 minutes. 
+La question 3 est la plus importante : elle installe l'idée qu'un graphique est un choix, pas une donnée brute.
+:::
+
+# Croiser deux variables
+
+## Nuage de points {.smaller}
+
+Pour deux variables quantitatives, on utilise `geom_point()`, qui demande une position en `x` et une en `y` :
+
+```{r point_brut}
+#| fig-height: 4
+ggplot(d) + geom_point(aes(x = age, y = heures.tv))
+```
+
+## Le problème des points superposés {.smaller}
+
+Il y a 2000 observations et beaucoup se superposent exactement : impossible de savoir où se concentrent les enquêtés.
+
+La transparence (`alpha`) et un léger décalage aléatoire (`geom_jitter`) rendent la densité visible :
+
+```{r point_jitter}
+#| fig-height: 4
+ggplot(d) + geom_jitter(aes(x = age, y = heures.tv), alpha = 0.15)
+```
+
+::: {.callout-important}
+Le premier graphique n'était pas faux, il était illisible. 
+Un graphique peut cacher l'information aussi bien qu'un tableau.
+:::
+
+## Quantitative selon qualitative : la boîte à moustaches
+
+```{r boxplot}
+#| fig-height: 4
+ggplot(d) + geom_boxplot(aes(x = sexe, y = heures.tv))
+```
+
+## Lire une boîte à moustaches {.smaller}
+
+::: {.incremental}
+- Le trait épais au milieu est la **médiane**.
+- La boîte va du **premier au troisième quartile** : elle contient la moitié centrale des observations.
+- Les moustaches s'étendent jusqu'aux valeurs extrêmes, dans la limite d'une fois et demie la hauteur de la boîte.
+- Les points au-delà sont affichés individuellement : ce sont les valeurs **atypiques**.
+:::
+
+::: {.fragment}
+Ce sont exactement les quartiles calculés la séance dernière avec `quantile()`. 
+La boîte est leur traduction visuelle.
+:::
+
+## Comparer plusieurs groupes
+
+```{r boxplot_qualif}
+#| fig-height: 4.5
+ggplot(d) + geom_boxplot(aes(x = heures.tv, y = qualif))
+```
+
+::: {.callout-tip}
+Comparez avec le tableau `group_by(qualif) |> summarise(...)` de la séance dernière : même information, mais la dispersion de chaque groupe devient visible.
+:::
 
 # Mappages
 
-Un *mappage*, dans `ggplot2`, est une mise en relation entre un **attribut graphique** du `geom` (position, couleur, taille...) et une **variable** du tableau de données.
+## Relier un attribut à une variable
 
-Ces mappages sont passés aux différents `geom` via la fonction `aes()`.
+Un **mappage** est une mise en relation entre un attribut graphique (position, couleur, taille, transparence) et une variable du tableau.
 
-## Exemples de mappages
+Tous les mappages se déclarent dans `aes()`.
 
-On a déjà vu les mappages `x` et `y` pour un nuage de points. 
-Ceux-ci signifient que la position d'un point donné horizontalement (`x`) et verticalement (`y`) dépend de la valeur des variables passées comme arguments `x` et `y` dans `aes()`.
+## Couleur
 
-```{r}
-ggplot(rp) +
-  geom_point(
-    aes(x = dipl_sup, y = cadres)
+```{r color_map}
+#| fig-height: 4
+ggplot(d) + 
+  geom_jitter(aes(x = age, y = heures.tv, color = sexe), alpha = 0.3)
+```
+
+## Taille et transparence {.smaller}
+
+```{r size_map}
+#| fig-height: 4
+ggplot(d) + 
+  geom_jitter(
+    aes(x = age, y = heures.tv, color = sexe, size = freres.soeurs), 
+    alpha = 0.3
   )
 ```
 
-## Couleur (`color` ou `colour`) {.scrollable}
+Chaque `geom` possède sa propre liste de mappages possibles.
 
-Il y en a d'autres. 
-`color` permet de faire varier la couleur des points automatiquement en fonction des valeurs d'une troisième variable. 
+## `aes()` ou pas `aes()` ? {.smaller}
 
-```{r}
-ggplot(rp) +
-  geom_point(
-    aes(x = dipl_sup, y = cadres, color = departement)
-  )
-```
+Parfois on veut fixer un attribut sans le relier à une variable : tous les points en rouge, par exemple. 
+On utilise le même argument `color`, mais **à l'extérieur** de `aes()`.
 
-## Tailles (`size`)
-
-On peut aussi faire varier la taille des points avec `size`. 
-Ici, la taille dépend de la population totale de la commune :
-
-```{r}
-ggplot(rp) +
-  geom_point(
-    aes(x = dipl_sup, y = cadres, color = departement, size = pop_tot)
-  )
-```
-
-## Transparence (`alpha`)
-
-On peut même associer la transparence des points à une variable avec `alpha` :
-
-```{r}
-ggplot(rp) +
-  geom_point(
-    aes(x = dipl_sup, y = cadres, color = departement, size = pop_tot, alpha = maison)
-  )
-```
-
-Chaque `geom` possède sa propre liste de mappages.
-
-
-## `aes()` or not `aes()` ?
-
-Parfois on souhaite changer un attribut sans le relier à une variable : par exemple si on veut représenter tous les points en rouge.
-On utilise toujours l'attribut `color`, mais comme il ne s'agit pas d'un mappage, on le définit **à l'extérieur** de la fonction `aes()`.
-
-```{r}
-ggplot(rp) +
-  geom_point(
-    aes(x = dipl_sup, y = cadres),
-    color = "red"
-  )
-```
-
-Par contre, si on veut faire varier la couleur en fonction des valeurs prises par une variable, on réalise un mappage, et on doit donc placer l'attribut `color` **à l'intérieur** de `aes()`.
-
-```{r}
-ggplot(rp) +
-  geom_point(
-    aes(x = dipl_sup, y = cadres, color = departement)
-  )
-```
-
-On peut mélanger attributs liés à une variable (mappage, donc dans `aes()`) et attributs constants (donc à l'extérieur). 
-Dans l'exemple suivant, la taille varie en fonction de la variable `pop_tot`, mais la couleur est constante pour tous les points.
-
-```{r}
-ggplot(rp) +
-  geom_point(
-    aes(x = dipl_sup, y = cadres, size = pop_tot),
-    color = "royalblue"
-  )
-```
-
-
-**La règle est donc simple mais très importante :**  
-Si on établit un lien entre les valeurs d'une variable et un attribut graphique, on définit un mappage, et on le déclare dans `aes()`.
-Sinon, on modifie l'attribut de la même manière pour tous les points, et on le définit en-dehors de la fonction `aes()`.
-
-
-# Représentation de plusieurs `geom` {.smaller}
-
-On peut représenter plusieurs `geom` simultanément sur un même graphique, il suffit de les ajouter à tour de rôle avec l'opérateur `+`.
-
-Par exemple, on peut superposer la position des points au-dessus d'un boxplot. 
-On va pour cela ajouter un `geom_point` après avoir ajouté notre `geom_boxplot`.
-
-```{r}
-ggplot(rp) +
-  geom_boxplot(aes(x = departement, y = maison)) +
-  geom_point(
-    aes(x = departement, y = maison),
-    col = "red", alpha = 0.2
-  )
-```
-
-::: aside
-Quand une commande `ggplot2` devient longue, il peut être plus lisible de la répartir sur plusieurs lignes.
-Dans ce cas, il faut penser à placer l'opérateur `+` en fin de ligne, afin que R comprenne que la commande n'est pas complète et qu'il prenne en compte la suite.
-:::
-
-Pour simplifier un peu le code, plutôt que de déclarer les mappages dans chaque `geom`, on peut les déclarer dans l'appel à `ggplot()`. 
-Ils seront automatiquement "hérités" par les `geom` ajoutés (sauf s'ils redéfinissent les mêmes mappages).
-
-```{r}
-ggplot(rp, aes(x = departement, y = maison)) +
-  geom_boxplot() +
-  geom_jitter(color = "red", alpha = 0.2)
-```
-
----
 :::: {.columns}
-
-::: {.column width="50%"}
-Autre exemple, on peut vouloir ajouter à un nuage de points une ligne de régression linéaire à l'aide de `geom_smooth` :
-
-```{r}
-ggplot(rp, aes(x = dipl_sup, y = cadres)) +
-  geom_point(alpha = 0.2) +
-  geom_smooth(method = "lm")
+::: {.column width='48%'}
+```{r hors_aes}
+#| fig-height: 3.2
+ggplot(d) + 
+  geom_jitter(
+    aes(x = age, y = heures.tv), 
+    color = "darkred", alpha = 0.2
+  )
 ```
 :::
-
-::: {.column width="50%"}
-Et on peut même superposer une troisième visualisation de la répartition des points dans l'espace avec `geom_density2d` :
-
-```{r}
-ggplot(rp, aes(x = dipl_sup, y = cadres)) +
-  geom_point(alpha = 0.2) +
-  geom_density2d(color = "red") +
-  geom_smooth(method = "lm")
+::: {.column width='48%'}
+```{r dans_aes}
+#| fig-height: 3.2
+ggplot(d) + 
+  geom_jitter(
+    aes(x = age, y = heures.tv, 
+        color = sexe), 
+    alpha = 0.2
+  )
 ```
 :::
-
 ::::
 
-# Scales
+## La règle {.smaller}
 
-On a vu qu'avec `ggplot2` on définit des mappages entre des attributs graphiques (position, taille, couleur, etc.) et des variables d'un tableau de données. Ces mappages sont définis, pour chaque `geom`, via la fonction `aes()`.
+::: {.callout-important}
+Si l'attribut **dépend d'une variable**, il va **dans** `aes()`.
 
-Les *scales* dans `ggplot2` permettent de modifier la manière dont un attribut graphique sera relié aux valeurs d'une variable, et dont la légende correspondante va être affichée.
-Par exemple, pour l'attribut `color`, on pourra définir la palette de couleur utilisée. 
-Pour `size`, les tailles minimales et maximales, etc.
+Si l'attribut est **le même pour tous les points**, il va **en dehors** de `aes()`.
+:::
 
-Pour modifier une *scale* existante, on ajoute un nouvel élément à notre objet `ggplot2` avec l'opérateur `+`.
-Cet élément prend la forme `scale_<attribut>_<type>`.
+::: {.fragment}
+On peut mélanger les deux. 
+Ici la taille dépend d'une variable, la couleur est constante :
 
-Voyons tout de suite un exemple
+```{r melange}
+#| fig-height: 3
+ggplot(d) + 
+  geom_jitter(aes(x = age, y = heures.tv, size = freres.soeurs), color = "royalblue", alpha = 0.2)
+```
+:::
 
-## `scale_x`, `scale_y`
+## Une erreur classique {.smaller}
 
-Les *scales* `scale_x_<type>` et `scale_y_<type>` modifient les axes `x` et `y` du graphique.
-
-
-## Continuous
-
-`scale_x_continuous` et `scale_y_continuous` s'appliquent lorsque la variable `x` ou `y` est numérique (quantitative).
-
-C'est le cas de notre nuage de points croisant part de cadres et part de diplômés du supérieur.
-
-```{r}
-ggplot(rp) +
-  geom_point(aes(x = dipl_sup, y = cadres))
+```{r erreur_aes}
+#| fig-height: 3.5
+ggplot(d) + geom_jitter(aes(x = age, y = heures.tv, color = "darkred"))
 ```
 
-## Limits
+::: {.fragment}
+`color` est ici **dans** `aes()` : R comprend qu'il faut colorer selon une variable qui vaudrait « darkred » pour tout le monde. 
+Il crée donc un groupe unique, lui attribue sa première couleur de palette, et ajoute une légende absurde. 
+Aucun message d'erreur.
+:::
 
-Comme on représente des pourcentages, on peut vouloir forcer les axes `x` et `y` à s'étendre des valeurs 0 à 100. On peut le faire en ajoutant un élément `scale_x_continuous` et un élément `scale_y_continuous`, et en utilisant leur argument `limits`.
+# Superposer et découper
 
-```{r}
-ggplot(rp) +
-  geom_point(aes(x = dipl_sup, y = cadres)) +
-  scale_x_continuous(limits = c(0,100)) +
-  scale_y_continuous(limits = c(0,100))
+## Plusieurs géométries {.smaller}
+
+On peut ajouter plusieurs `geom` avec `+`. 
+Pour éviter de répéter les mappages, on les déclare dans `ggplot()` : ils sont hérités par toutes les géométries.
+
+```{r superposition}
+#| fig-height: 4
+ggplot(d, aes(x = sexe, y = heures.tv)) +
+  geom_boxplot() +
+  geom_jitter(color = "red", alpha = 0.1)
 ```
 
-## Légende
+## Ajouter une tendance {.smaller}
 
-Là aussi, on peut modifier les étiquettes des axes en indiquant une chaîne de caractères en premier argument.
-
-```{r}
-ggplot(rp) +
-  geom_point(aes(x = dipl_sup, y = cadres)) +
-  scale_x_continuous("Part des diplômés du supérieur (%)", limits = c(0,100)) +
-  scale_y_continuous("Part des cadres (%)", limits = c(0,100))
+```{r smooth}
+#| fig-height: 4
+ggplot(d, aes(x = age, y = heures.tv)) +
+  geom_jitter(alpha = 0.15) +
+  geom_smooth(method = "lm")
 ```
 
-## Autres `scale_x_<type>`
+::: {.callout-note}
+`geom_smooth(method = "lm")` ajoute une droite de régression linéaire. 
+Vous la retrouverez en économétrie ; ici, elle sert seulement à visualiser une tendance.
+:::
 
+## Découper en sous-graphiques {.smaller}
 
+`facet_wrap()` répète le même graphique pour chaque modalité d'une variable :
 
-- On utilise `scale_x_log10` et `scale_y_log10` pour passer un axe à une échelle logarithmique.
-- `scale_x_discrete` et `scale_y_discrete` s'appliquent lorsque l'axe correspond à une variable discrète (qualitative).
-C'est le cas par exemple de l'axe des `x` dans un diagramme en barres.
-L'argument `limits` de `scale_x_discrete` permet d'indiquer quelles valeurs sont affichées et dans quel ordre.
+```{r facet}
+#| fig-height: 4
+ggplot(d, aes(x = age, y = heures.tv)) +
+  geom_jitter(alpha = 0.2) +
+  facet_wrap(~ sexe)
+```
 
+C'est le pendant graphique du `group_by()` de la séance dernière.
 
-# Ressources
+::: {.aside}
+Quand une commande devient longue, répartissez-la sur plusieurs lignes en plaçant le `+` **en fin de ligne**, pour que R comprenne que la commande continue.
+:::
 
-[La documentation officielle](http://ggplot2.tidyverse.org/index.html) (en anglais) de `ggplot2` est très complète et accessible en ligne.
+# Mise en forme
 
-Une "antisèche" (en anglais) résumant en deux pages l'ensemble des fonctions et arguments et disponible soit directement depuis RStudio (menu *Help > Cheatsheets > Data visualization with ggplot2*) ou [en ligne](https://www.rstudio.com/resources/cheatsheets/).
+## Les échelles {.smaller}
 
-Les parties [Data visualisation](http://r4ds.had.co.nz/data-visualisation.html) et [Graphics for communication](http://r4ds.had.co.nz/graphics-for-communication.html) de l'ouvrage en ligne *R for data science*, de Hadley Wickham, sont une très bonne introduction à `ggplot2`.
+Les *scales* modifient la manière dont un attribut est relié aux valeurs d'une variable, et l'affichage de la légende correspondante. 
+Elles s'ajoutent avec `+` et prennent la forme `scale_<attribut>_<type>`.
 
-Plusieurs ouvrages, toujours en anglais, abordent en détail l'utilisation de `ggplot2`, en particulier [ggplot2: Elegant Graphics for Data Analysis](http://www.amazon.fr/ggplot2-Elegant-Graphics-Data-Analysis/dp/0387981403/), toujours de Hadley Wickham, et le [R Graphics Cookbook](http://www.amazon.fr/R-Graphics-Cookbook-Winston-Chang/dp/1449316956) de Winston Chang.
+```{r scale_limits}
+#| fig-height: 3.5
+ggplot(d) + 
+  geom_jitter(aes(x = age, y = heures.tv), alpha = 0.15) +
+  scale_x_continuous(limits = c(18, 100)) +
+  scale_y_continuous(limits = c(0, 12))
+```
 
-Le [site associé](http://www.cookbook-r.com/Graphs/) à ce dernier ouvrage comporte aussi pas mal d'exemples et d'informations intéressantes.
+## Titres et étiquettes {.smaller}
 
-Enfin, si `ggplot2` présente déjà un très grand nombre de fonctionnalités, il existe aussi un système d'extensions permettant d'ajouter des `geom`, des thèmes, etc. Le site [ggplot2 extensions](https://exts.ggplot2.tidyverse.org/) est une très bonne ressource pour les parcourir et les découvrir, notamment grâce à sa [galerie](https://exts.ggplot2.tidyverse.org/gallery/).
+`labs()` règle tous les textes du graphique en une seule fois :
 
+```{r labs}
+#| fig-height: 3.8
+ggplot(d) + 
+  geom_jitter(aes(x = age, y = heures.tv, color = sexe), alpha = 0.3) +
+  labs(
+    title = "Télévision et âge",
+    subtitle = "Enquête Histoires de vie, INSEE, 2003",
+    x = "Âge (années)",
+    y = "Heures de télévision par jour",
+    color = "Sexe"
+  )
+```
 
+## Thèmes
 
+```{r theme}
+#| fig-height: 4
+ggplot(d) + 
+  geom_bar(aes(y = qualif)) +
+  labs(x = "Effectif", y = NULL) +
+  theme_minimal()
+```
 
+Essayez aussi `theme_bw()`, `theme_classic()`, `theme_light()`.
+
+## Un graphique lisible {.smaller}
+
+::: {.incremental}
+- **Des axes nommés**, en français, avec l'unité. 
+`heures.tv` n'est pas un titre d'axe.
+- **La source**, en sous-titre ou en légende.
+- **Pas de décoration inutile.** 
+Les couleurs doivent porter de l'information, sinon elles distraient.
+- **Le nombre d'observations** représentées, surtout si des valeurs manquantes ont été écartées.
+:::
+
+## Enregistrer un graphique
+
+```{r ggsave}
+#| eval: false
+ggsave("tv_age.png", width = 8, height = 5)
+```
+
+`ggsave()` enregistre le dernier graphique affiché, dans le dossier de travail. 
+Le format est déduit de l'extension du fichier.
+
+# À vous
+
+## Exercices {.smaller}
+
+Dans un script commenté :
+
+1. Représentez la distribution de l'âge selon le sexe, avec des boîtes à moustaches.
+2. Faites un diagramme en barres du niveau d'études (`nivetud`), lisible.
+3. Le nombre d'heures de télévision diffère-t-il selon que l'on pratique un sport ? 
+Représentez-le, puis comparez avec le tableau correspondant de la séance dernière.
+4. Reprenez le nuage de points âge / heures de télévision, découpez-le par catégorie socio-professionnelle avec `facet_wrap()`, et donnez-lui un titre et des axes nommés.
+
+::: {.callout-tip}
+Pour chaque graphique, écrivez en commentaire ce que vous y lisez. Un graphique sans lecture ne sert à rien.
+:::
+
+## Exercice swirl
+
+```{r swirl}
+#| eval: false
+library(swirl)
+swirl()
+```
+
+Faites la leçon **Representations_graphiques**.
+
+## Pour la prochaine séance {.smaller}
+
+La séance 5 est un projet : une analyse complète, de votre choix, sur `hdv2003`.
+
+::: {.incremental}
+- Choisissez **deux ou trois questions** auxquelles vous voulez répondre.
+- Écrivez-les avant de coder.
+- Apportez-les à la séance prochaine.
+:::
+
+## Ressources {.smaller}
+
+L'[antisèche ggplot2](https://posit.co/resources/cheatsheets/) résume l'essentiel en deux pages. Elle est aussi accessible depuis RStudio : *Help > Cheatsheets > Data visualization with ggplot2*.
+
+La [documentation officielle](https://ggplot2.tidyverse.org/reference/) donne la liste complète des géométries, avec un exemple pour chacune.
+
+Le chapitre [Data visualisation](https://r4ds.hadley.nz/data-visualize) de *R for Data Science* est une bonne introduction complémentaire, en anglais.
