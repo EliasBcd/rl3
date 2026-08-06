@@ -16,29 +16,29 @@ website:
     contents:
       - text: "Index"
         href: index.qmd
-      - section: "Introduction à R et Rstudio"
+      - section: "Séance 1 : premiers pas"
         contents:
-          - 01Introduction.qmd
-          - 02Lecon1.qmd
-          - ControlFlow.qmd
-      - section: "Analyse de données"
+          - 00Introduction.qmd
+          - 01Lecon1.qmd
+      - section: "Séance 2 : données"
         contents:
-          - 03Donnees.qmd
+          - 02Donnees.qmd
+      - section: "Séance 3 : analyse"
+        contents:
+          - 03Analyse.qmd
+      - section: "Séance 4 : représentations graphiques"
+        contents:
           - 04RepresentationsGraphiques.qmd
+      - section: "Séance 5 : projet"
+        contents:
+          - 05Projet.qmd
       - section: "Exercices"
         contents:
           - Swirl.qmd
-          - Exercices.qmd
-          - Diamants.qmd
-      - section: "Cours avancés"
-        contents:
-          - Markdown.qmd
-          - TiragesAleatoires.qmd
 
 format:
   html:
     theme: default
-    css: styles.css
     toc: true
 
 bibliography: 
