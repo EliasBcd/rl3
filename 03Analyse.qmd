@@ -78,7 +78,8 @@ d |> summarise(
 
 Les indicateurs de dispersion mesurent si les valeurs sont regroupées ou dispersées.
 
-Le plus simple est l'**étendue** : l'écart entre la plus grande et la plus petite valeur. Les plus utilisés sont la **variance** (`var`) et l'**écart-type** (`sd`, pour *standard deviation*).
+Le plus simple est l'**étendue** : l'écart entre la plus grande et la plus petite valeur. 
+Les plus utilisés sont la **variance** (`var`) et l'**écart-type** (`sd`, pour *standard deviation*).
 
 ```{r dispersion}
 d |> summarise(
@@ -113,7 +114,9 @@ summary(d$age)
 ```
 
 ::: {.callout-note}
-`summary()` attend un vecteur, d'où le `$`. C'est pratique pour explorer, mais le résultat n'est pas un tableau : on ne peut pas l'enchaîner avec `|>`. Pour produire un résultat réutilisable, préférez `summarise()`.
+`summary()` attend un vecteur, d'où le `$`. 
+C'est pratique pour explorer, mais le résultat n'est pas un tableau : on ne peut pas l'enchaîner avec `|>`. 
+Pour produire un résultat réutilisable, préférez `summarise()`.
 :::
 
 ## Valeurs manquantes
@@ -122,7 +125,8 @@ summary(d$age)
 d |> summarise(moyenne = mean(heures.tv))
 ```
 
-Le résultat est `NA`. La variable contient des valeurs manquantes, et la moyenne d'un ensemble contenant une valeur inconnue est inconnue.
+Le résultat est `NA`. 
+La variable contient des valeurs manquantes, et la moyenne d'un ensemble contenant une valeur inconnue est inconnue.
 
 ## Écarter les valeurs manquantes
 
@@ -141,10 +145,12 @@ d |> summarise(
 
 ## Le vrai danger {.smaller}
 
-En séance 1, nous avons vu comment lire un message d'erreur. Ces erreurs-là sont les faciles : R refuse de continuer, vous savez qu'il y a un problème.
+En séance 1, nous avons vu comment lire un message d'erreur. 
+Ces erreurs-là sont les faciles : R refuse de continuer, vous savez qu'il y a un problème.
 
 ::: {.fragment}
-À partir d'aujourd'hui, vous allez produire des **chiffres**. Et un chiffre faux ressemble exactement à un chiffre juste.
+À partir d'aujourd'hui, vous allez produire des **chiffres**. 
+Et un chiffre faux ressemble exactement à un chiffre juste.
 :::
 
 ::: {.fragment}
@@ -156,19 +162,28 @@ Il n'y a pas de message d'erreur pour vous prévenir qu'une moyenne porte sur la
 ## Trois pièges {.smaller}
 
 ::: {.incremental}
-1. **`na.rm = TRUE` change la population.** Vous ne calculez plus la moyenne des 2000 enquêtés, mais celle des répondants. Comptez toujours combien vous en écartez.
+1. **`na.rm = TRUE` change la population.** 
+Vous ne calculez plus la moyenne des 2000 enquêtés, mais celle des répondants. 
+Comptez toujours combien vous en écartez.
 
-2. **L'oubli du `<-`.** Vous croyez avoir créé une variable, elle n'existe pas. Les calculs suivants portent sur l'ancien tableau.
+2. **L'oubli du `<-`.** 
+Vous croyez avoir créé une variable, elle n'existe pas. 
+Les calculs suivants portent sur l'ancien tableau.
 
-3. **Les effectifs faibles.** Une moyenne calculée sur six personnes n'est pas comparable à une moyenne calculée sur huit cents. Affichez toujours l'effectif à côté de l'indicateur.
+3. **Les effectifs faibles.** 
+Une moyenne calculée sur six personnes n'est pas comparable à une moyenne calculée sur huit cents. 
+Affichez toujours l'effectif à côté de l'indicateur.
 :::
 
 ## La parade
 
 ::: {.incremental}
-- **Prédisez avant de lancer.** Écrivez en commentaire l'ordre de grandeur que vous attendez. Un résultat qui surprend est soit une découverte, soit une erreur — il faut trancher, pas passer à la suite.
+- **Prédisez avant de lancer.** 
+Écrivez en commentaire l'ordre de grandeur que vous attendez. 
+Un résultat qui surprend est soit une découverte, soit une erreur -- il faut trancher, pas passer à la suite.
 - **Affichez toujours l'effectif** à côté de chaque indicateur.
-- **Recoupez.** Un même chiffre obtenu de deux façons différentes est probablement juste.
+- **Recoupez.** 
+Un même chiffre obtenu de deux façons différentes est probablement juste.
 :::
 
 # Variables qualitatives
@@ -194,12 +209,13 @@ d |> count(qualif, sort = TRUE)
 ```
 
 ::: {.callout-tip}
-`count()` affiche les valeurs manquantes comme une modalité à part entière. C'est un avantage sur la fonction `table()` de base, qui les masque par défaut — et qui vous ferait donc calculer des pourcentages sur un total incomplet.
+`count()` affiche les valeurs manquantes comme une modalité à part entière. 
 :::
 
 ## Passer aux pourcentages
 
-Les effectifs bruts se comparent mal. On les rapporte au total avec `mutate()` :
+Les effectifs bruts se comparent mal. 
+On les rapporte au total avec `mutate()` :
 
 ```{r count_pct}
 d |>
@@ -209,13 +225,17 @@ d |>
 
 ## Exercice {.smaller}
 
-1. Faites le tri à plat de la variable `relig`. Quelle est la modalité la plus fréquente ?
+1. Faites le tri à plat de la variable `relig`. 
+Quelle est la modalité la plus fréquente ?
 2. Exprimez ce tri à plat en pourcentages.
 3. Quelle proportion des enquêtés pratique la pêche ou la chasse (`peche.chasse`) ?
-4. Combien de valeurs manquantes contient la variable `trav.satisf` ? Que représentent-elles, à votre avis ?
+4. Combien de valeurs manquantes contient la variable `trav.satisf` ? 
+Que représentent-elles, à votre avis ?
 
 ::: {.notes}
-20 minutes. La question 4 est importante : les NA de trav.satisf correspondent aux personnes sans emploi. Une valeur manquante a souvent un sens.
+20 minutes. 
+La question 4 est importante : les NA de trav.satisf correspondent aux personnes sans emploi. 
+Une valeur manquante a souvent un sens.
 :::
 
 # Comparer des groupes
@@ -234,7 +254,8 @@ d |>
   )
 ```
 
-`n()` donne l'effectif du groupe. Prenez l'habitude de toujours l'inclure.
+`n()` donne l'effectif du groupe. 
+Prenez l'habitude de toujours l'inclure.
 
 ## Grouper sur plusieurs variables {.smaller}
 
@@ -249,7 +270,8 @@ d |>
 ```
 
 ::: {.callout-note}
-`.groups = "drop"` supprime le regroupement une fois le calcul fait. Sans cet argument, R affiche un avertissement et le tableau reste groupé, ce qui fausse les opérations suivantes — une erreur silencieuse de plus.
+`.groups = "drop"` supprime le regroupement une fois le calcul fait. 
+Sans cet argument, R affiche un avertissement et le tableau reste groupé, ce qui fausse les opérations suivantes -- une erreur silencieuse de plus.
 :::
 
 ## L'outil central du cours {.smaller}
@@ -272,7 +294,8 @@ d |>
 
 1. L'âge moyen varie-t-il selon le niveau d'études (`nivetud`) ?
 2. Les personnes qui déclarent lire des bandes dessinées sont-elles plus jeunes que les autres ?
-3. Comparez le nombre moyen d'heures de télévision selon la catégorie socio-professionnelle. Y a-t-il des groupes trop petits pour que la comparaison soit sérieuse ?
+3. Comparez le nombre moyen d'heures de télévision selon la catégorie socio-professionnelle. 
+Y a-t-il des groupes trop petits pour que la comparaison soit sérieuse ?
 
 ::: {.callout-tip}
 Écrivez en commentaire, avant de lancer, ce que vous attendez comme résultat.
@@ -282,7 +305,9 @@ d |>
 
 ## L'analyse bivariée
 
-Faire une analyse **bivariée**, c'est étudier la relation entre deux variables : sont-elles liées ? les valeurs de l'une influencent-elles celles de l'autre ? ou sont-elles indépendantes ?
+Faire une analyse **bivariée**, c'est étudier la relation entre deux variables : sont-elles liées ? 
+Les valeurs de l'une influencent-elles celles de l'autre ? 
+Ou sont-elles indépendantes ?
 
 ## Compter les combinaisons {.smaller}
 
@@ -294,7 +319,8 @@ d |> count(qualif, sexe)
 
 ## Une présentation en tableau {.smaller}
 
-Le résultat précédent est correct mais peu lisible. `pivot_wider()` le remet en forme de tableau à double entrée :
+Le résultat précédent est correct mais peu lisible. 
+`pivot_wider()` le remet en forme de tableau à double entrée :
 
 ```{r croise_large}
 d |>
@@ -304,7 +330,8 @@ d |>
 
 ## Pourcentages en ligne {.smaller}
 
-Les effectifs bruts ne se comparent pas, car les groupes n'ont pas la même taille. On calcule donc les pourcentages **à l'intérieur de chaque ligne** :
+Les effectifs bruts ne se comparent pas, car les groupes n'ont pas la même taille. 
+On calcule donc les pourcentages **à l'intérieur de chaque ligne** :
 
 ```{r croise_pct}
 d |>
@@ -326,7 +353,8 @@ Le choix change complètement la lecture :
 Pour obtenir les pourcentages colonne, on groupe par `sexe` au lieu de `qualif`.
 
 ::: {.callout-important}
-Ce sont deux questions différentes, et deux tableaux différents, calculés sur les mêmes effectifs. Sachez toujours dire lequel des deux vous êtes en train de lire — c'est là que se logent la plupart des interprétations fausses.
+Ce sont deux questions différentes, et deux tableaux différents, calculés sur les mêmes effectifs. 
+Sachez toujours dire lequel des deux vous êtes en train de lire -- c'est là que se logent la plupart des interprétations fausses.
 :::
 
 ## Deux variables quantitatives
@@ -342,7 +370,8 @@ d |> summarise(
 `use = "complete.obs"` écarte les observations dont l'une des deux valeurs manque.
 
 ::: {.callout-warning}
-Une corrélation mesure une association linéaire, pas une causalité. Et une corrélation proche de zéro n'exclut pas une relation d'une autre forme — nous le verrons graphiquement la séance prochaine.
+Une corrélation mesure une association linéaire, pas une causalité.
+Et une corrélation proche de zéro n'exclut pas une relation d'une autre forme -- nous le verrons graphiquement la séance prochaine.
 :::
 
 # À vous
@@ -374,5 +403,6 @@ Pour chaque question : l'effectif de chaque groupe à côté de l'indicateur, et
 Barnier, *Introduction à R et au tidyverse* : chapitre sur les statistiques descriptives.
 
 ::: {.fragment}
-Séance prochaine : les mêmes questions, mais en graphiques. Vous verrez que certaines choses invisibles dans un tableau sautent aux yeux dans un nuage de points.
+Séance prochaine : les mêmes questions, mais en graphiques.
+Vous verrez que certaines choses invisibles dans un tableau sautent aux yeux dans un nuage de points.
 :::
