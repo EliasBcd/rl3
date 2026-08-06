@@ -33,3 +33,5 @@ vignettes/*.pdf
 _site/
 libs/
 *_files/
+renv/*
+**/*.quarto_ipynb
