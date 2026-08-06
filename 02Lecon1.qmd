@@ -1,5 +1,6 @@
 ---
 title: "Premiers pas avec R"
+subtitle: "L3 économie-finance"
 author: "Elias Bouacida"
 date: last-modified
 format: 
@@ -18,6 +19,44 @@ date-format: long
 format-links: [revealjs]
 ---
 
+# Ce cours
+
+## Où nous allons {.smaller}
+
+Cinq séances de trois heures, sur machine.
+
+| Séance | Objet |
+|:--|:--|
+| 1 | Premiers pas : objets, types, vecteurs, fonctions |
+| 2 | Découvrir un tableau de données |
+| 3 | Décrire des données |
+| 4 | Représenter des données |
+| 5 | Projet : une analyse complète |
+
+À la fin, vous serez capables de prendre un jeu de données, de le décrire et d'en tirer des graphiques lisibles.
+
+## Comment {.smaller}
+
+::: {.incremental}
+- **Un seul jeu de données** pendant tout le cours : l'enquête *Histoires de vie* de l'INSEE. Vous finirez par bien le connaître, et c'est voulu.
+- **Une seule famille d'outils** : le `tidyverse`, à partir de la séance 2.
+- **Une lecture à faire chez vous** entre les séances : le manuel de Julien Barnier, *Introduction à R et au tidyverse*. Le temps en salle sert à pratiquer, pas à écouter.
+- **Des exercices interactifs** avec `swirl`, à faire en séance et à terminer chez vous.
+:::
+
+## Une remarque sur les assistants IA
+
+Vous pouvez tout à fait utiliser ChatGPT, Gemini ou Claude en dehors du cours. 
+Ils vous donneront presque toujours une réponse, parfois fausse, et pas toujours simple à comprendre.
+
+::: {.callout-important}
+Le problème n'est pas qu'ils se trompent : c'est que vous ne pouvez pas le voir tant que vous ne savez pas faire sans eux.
+Ces cinq séances servent à acquérir de quoi les juger.
+
+Pendant les séances, servez-vous de l'aide de R (`?`) et des messages d'erreur. 
+C'est ce que vous apprendrez ici.
+:::
+
 # Introduction à R
 
 ## La console
@@ -25,15 +64,14 @@ format-links: [revealjs]
 Au premier lancement de RStudio, l'interface est organisée en trois grandes zones.
 
 ```{r rstudio}
-#| label: fig-rstudio
 #| out-width: '100%'
 #| echo: false
 #| fig-align: center
-#| fig-cap: "Accueil Rstudio"
+#| fig-cap: "Accueil RStudio"
 knitr::include_graphics(file.path("resources", "fenetreRStudio.png"))
 ```
 
-::: {notes}
+::: {.notes}
 La zone de gauche se nomme **la Console**. 
 À son démarrage, RStudio a lancé une nouvelle session de R et c'est dans cette fenêtre que nous allons pouvoir interagir avec lui.
 
@@ -59,8 +97,7 @@ Le symbole `>` réapparaît, et nous pouvons lancer d'autres opérations :
 5^2
 ```
 
-## Addition, Sousraction, Multiplication et Division
-
+## Les opérations arithmétiques
 
 | Math          | code `R`    | Résultat    |
 |:-------------:|:-------:|:---------:|
@@ -68,59 +105,32 @@ Le symbole `>` réapparaît, et nous pouvons lancer d'autres opérations :
 | $3 - 2$       | `3 - 2` | `r 3 - 2` |
 | $3 \times 2$    | `3 * 2` | `r 3 * 2` |
 | $3 \div 2$       | `3 / 2` | `r 3 / 2` |
+| $3^2$        | `3 ^ 2`         | `r 3 ^ 2`         |
+| $\sqrt{100}$ | `sqrt(100)`     | `r sqrt(100)`     |
 
 : Principales opérations arithmétiques
 
-## Exposants
+## Autres fonctions mathématiques {.smaller}
 
-
-
-| Math          | code `R`    | Résultat    |
-|:-------------:|:-------:|:---------:|
-| $3^2$        | `3 ^ 2`         | `r 3 ^ 2`         |
-| $2^{(-3)}$   | `2 ^ (-3)`      | `r 2 ^ (-3)`      |
-| $100^{1/2}$  | `100 ^ (1 / 2)` | `r 100 ^ (1 / 2)` |
-| $10^2$       | `1e2`           | `r 1e2`           |
-| $\sqrt{100}$ | `sqrt(100)`     | `r sqrt(100)`     |
-
-: Utilisation des puissances
-
-
-## Constantes mathématiques 
-
+R dispose des fonctions mathématiques usuelles. 
+Vous n'en aurez pas besoin dans les prochaines séances, mais elles vous serviront ailleurs.
 
 | Math          | code `R`    | Résultat    |
 |:------------:|:---------------:|:-----------------:|
 | $\pi$        | `pi`            | `3.141593`            |
 | $e$          | `exp(1)`        | `2.718282`        |
-
-: Constantes mathématiques
-
-
-## Logarithmes
-
-Il n'y a pas de `ln()` dans `R`, mais on utilise `log()` pour désigner le logarithme naturel.  
-`log10()` désigne le logarithme en base 10.  
-`log(x, base)` désigne le logarithme en `base` quelconque.
-
-| Math          | code `R`    | Résultat    |
-|:------------:|:---------------:|:-----------------:|
-| $\ln(e)$         | `log(exp(1))`       | `1`       |
+| $\ln(x)$         | `log(x)`       | logarithme naturel       |
 | $\log_{10}(1000)$ | `log10(1000)`       | `3`       |
-| $\log_{10}(1000)$ | `log(1000, 10)`       | `3`       |
+| $10^2$       | `1e2`           | `r 1e2`           |
 
-: Logarithmes dans R
+: Constantes et fonctions usuelles
 
-## Trigonometrie
+::: {.callout-note}
+Attention : il n'y a pas de fonction `ln()` en R. 
+Le logarithme naturel s'écrit `log()`.
+:::
 
-| Math          | code `R`    | Résultat    |
-|:------------:|:---------------:|:-----------------:|
-| $\sin(\pi / 2)$ | `sin(pi / 2)` | `1` |
-| $\cos(0)$       | `cos(0)`      | `1`      |
-
-: Fonctions trigonométriques
-
-## Espaces et codage
+## Espaces et lisibilité
 
 À de rares exceptions près, les espaces autour des commandes ne sont pas pris en compte.
 Les 3 commandes suivantes sont équivalentes :
@@ -132,10 +142,12 @@ Les 3 commandes suivantes sont équivalentes :
 10       +         2
 ```
 
-La pratique standard est d'utiliser la deuxième ligne, afin d'avoir un code lisible.
+La pratique standard est d'utiliser la deuxième écriture, afin d'avoir un code lisible.
 
 ## R bloqué
 
+Il peut arriver qu'on saisisse une commande incomplète. 
+R remplace alors l'invite `>` par un `+` : il attend la suite.
 
 ```{r incomplet}
 #| eval: false
@@ -143,31 +155,27 @@ La pratique standard est d'utiliser la deuxième ligne, afin d'avoir un code lis
 > 4 *
 +
 ```
-::: {notes}
-Il peut arriver qu'on saisisse une commande incomplète.
-`R` remplace alors l'invite de commande `>` par un `+`.
-Il attend qu'on lui donne des instructions.
 
-On peut compléter la commande et appuyer sur `Entrée` ou annuler tout et appuyer sur `Echap` pour retourner à une invite de commande normale
+::: {.callout-tip}
+Complétez la commande, ou appuyez sur `Échap` pour tout annuler et revenir à une invite normale.
 :::
 
 # Objets 
 
 ## Objets
 
-Nous savons utiliser `R` comme une calculatrice, pour une utilisation plus avancée, on peut stocker le résultat d'un calcul dans un **objet** à l'aide de l'opérateur d'assignation `<-`.
-Cette "flèche" stocke ce qu'il y a à sa droite dans un objet dont le nom est indiqué à sa gauche.
+Nous savons utiliser R comme une calculatrice. 
+Pour une utilisation plus avancée, on peut stocker le résultat d'un calcul dans un **objet** à l'aide de l'opérateur d'**assignation** `<-`.
+
+Cette « flèche » stocke ce qu'il y a à sa droite dans un objet dont le nom est indiqué à sa gauche.
 
 ```{r assignation}
 x <- 2
 ```
-Se lit "prend la valeur 2 et mets la dans un objet qui s'appelle `x`".
+
+Se lit « prend la valeur 2 et mets-la dans un objet qui s'appelle `x` ».
 
 ## Afficher la valeur d'un objet
-
-
-
-
 
 ```{r lecture}
 x
@@ -175,15 +183,16 @@ x
 
 ::: {.notes}
 Lors d'une opération d'assignation, R n'affiche pas le résultat de l'opération.
-Si on exécute une commande comportant juste le nom d'un objet, `R` affiche son contenu.
+Si on exécute une commande comportant juste le nom d'un objet, R affiche son contenu.
 Bien indiquer aux étudiants que l'assignation entraîne un non affichage du résultat.
 :::
 
 ## Utilisation d'un objet
 
-On peut évidemment réutiliser cet objet dans d'autres opérations : `R` le remplacera alors par sa valeur.
+On peut réutiliser cet objet dans d'autres opérations : R le remplacera alors par sa valeur.
+
 ```{r valeur}
-x+4
+x + 4
 ```
 
 ---
@@ -209,7 +218,7 @@ x
 
 ---
 
-Assigner un objet à un autre  copie juste la valeur de l'objet de droite dans celui de gauche
+Assigner un objet à un autre copie juste la valeur de l'objet de droite dans celui de gauche.
 
 ```{r copie}
 x <- 1
@@ -218,14 +227,27 @@ x <- y
 x
 ```
 
+## Exercice {.smaller}
+
+Dans la console :
+
+1. Créez un objet `age` contenant votre âge, et un objet `prenom` contenant votre prénom.
+2. Créez un objet `annee_naissance` calculé à partir de `age`.
+3. Que se passe-t-il si vous tapez `Age` au lieu de `age` ?
+4. Peut-on mettre un espace dans un nom d'objet ? Un chiffre au début ?
+
+::: {.notes}
+10 minutes. 
+La question 3 fait apparaître le premier message d'erreur : ne pas la sauter, elle prépare la section sur les erreurs.
+:::
+
 # Types
 
 ## Chaîne de caractères
 
-Les objets peuvent contenir tout un tas d'informations.
-Les valeurs prises peuvent être de différentes **types**.
+Les valeurs contenues dans les objets peuvent être de différents **types**.
 
-Jusqu'ici on n'a stocké que des nombres, mais ils peuvent aussi contenir des *chaînes de caractères* (du texte), qu'on délimite avec des guillemets simples ou doubles (`'` ou `"`) :
+Jusqu'ici on n'a stocké que des nombres, mais un objet peut aussi contenir une *chaîne de caractères* (du texte), qu'on délimite avec des guillemets simples ou doubles (`'` ou `"`) :
 
 ```{r chaines}
 chien <- "Chihuahua"
@@ -234,17 +256,17 @@ chien
 
 ## Conditions logiques (booléens)
 
-Ou des *conditions logiques* (`TRUE` ou `FALSE`) basées sur des comparaisons :
+Ou des *conditions logiques* (`TRUE` ou `FALSE`), généralement issues de comparaisons :
 
 ```{r booleen}
 valeur <- TRUE
 valeur
 
 chien == "Doberman"
-3<2
+3 < 2
 ```
 
-On appelle `TRUE` et `FALSE` des booléens.
+On appelle `TRUE` et `FALSE` des **booléens**.
 
 ## Opérateurs logiques {.smaller}
 
@@ -255,91 +277,102 @@ On appelle `TRUE` et `FALSE` des booléens.
 | `x <= y` | `x` plus petit ou égal à `y`    | `3 <= 42`              | `r 3 <= 42`              |
 | `x >= y` | `x` plus grand ou égal à `y` | `3 >= 42`              | `r 3 >= 42`              |
 | `x == y` | `x` égal à `y`                  | `3 == 42`              | `r 3 == 42`              |
-| `x != y` | `x` non égal à `y`              | `3 != 42`              | `r 3 != 42`              |
+| `x != y` | `x` différent de `y`              | `3 != 42`              | `r 3 != 42`              |
 | `!x`     | non `x`                          | `!(3 > 42)`            | `r !(3 > 42)`            |
-| `x | y`  | `x` ou `y`     |     `(3 > 42) || TRUE`[^1]  | `r TRUE`      |
-| `x & y`  | `x` et `y`                      | `(3 < 4) && ( 42 > 13)`^1^ | `r (3 < 4) & ( 42 > 13)` |
+| `x | y`  | `x` ou `y`     |     `(3 > 42) | TRUE`  | `r TRUE`      |
+| `x & y`  | `x` et `y`                      | `(3 < 4) & (42 > 13)` | `r (3 < 4) & ( 42 > 13)` |
 
-[^1]: On peut en fait utiliser `|` ou `||` et `&` ou `&&`, mais leur comportement diffère avec des vecteurs.
-L'opérateur doublé est conçu pour les cas où il n'y a à gauche et a droite qu'une seule valeur logique (donc pas pour les vecteurs).
+::: {.callout-warning}
+La comparaison s'écrit `==`, avec deux signes égal. 
+Un seul `=` ne compare pas : il assigne. 
+C'est l'erreur la plus fréquente au début, et elle ne provoque pas toujours de message.
+:::
+
+## Ces opérateurs serviront tout le cours
+
+Vous les retrouverez dès la séance 2, pour sélectionner des lignes dans un tableau :
+
+```{r apercu}
+#| eval: false
+# Séance 2 : les enquêtés de moins de 25 ans
+d |> filter(age < 25)
+```
+
+::: .notes
+
+Ignorer pour l'instant le sens du pipe ` |> `.
+
+:::
+
+# Vecteurs
 
 ## Vecteurs
 
-Ou des **vecteurs**.
-Imaginons qu'on a demandé la taille en centimètres de 5 personnes et qu'on souhaite calculer leur taille moyenne.
-On stocke l'ensemble de nos tailles dans un seul objet, un **vecteur**, avec la syntaxe suivante :
+Imaginons qu'on ait demandé la taille en centimètres de cinq personnes et qu'on souhaite calculer leur taille moyenne.
+
+On stocke l'ensemble de ces tailles dans un seul objet, un **vecteur** :
 
 ```{r tailles}
 tailles <- c(156, 164, 197, 147, 173)
-```
-
-où le `c()` veut dire "combine les valeurs suivantes dans un vecteur".
-
----
-
-Si on affiche le contenu de cet objet, on voit qu'il contient bien l'ensemble des tailles saisies.
-
-```{r affichage_tailles}
 tailles
 ```
 
+où `c()` veut dire « combine les valeurs suivantes dans un vecteur ».
 
-## Opérations sur les vecteurs
+## Opérations sur un vecteur
 
-L'avantage d'un vecteur est que lorsqu'on lui applique une opération, celle-ci s'applique à toutes les valeurs qu'il contient.
-Ainsi, si on veut la taille en mètres plutôt qu'en centimètres :
-
-```{r tailes_m}
-tailles_m <- tailles / 100
-tailles_m
-```
-
-...
-
-Cela fonctionne pour toutes les opérations de base.
+Une opération appliquée à un vecteur s'applique à chacun de ses éléments :
 
 ```{r op_vec}
 tailles + 10
 tailles^2
 ```
 
-## Opérations vectorielles
+## Opérations entre vecteurs {.smaller}
 
-Imaginons maintenant qu'on a aussi demandé aux cinq mêmes personnes leur poids en kilos. On peut créer un deuxième vecteur :
+Imaginons qu'on ait aussi demandé aux cinq mêmes personnes leur poids en kilos.
 
 ```{r poids}
 poids <- c(45, 59, 110, 44, 88)
 ```
 
-...
-
-On peut alors effectuer des calculs utilisant nos deux vecteurs `tailles` et `poids`. 
-On peut par exemple calculer l'indice de masse corporelle (IMC) de chacun de nos enquêtés en divisant leur poids en kilo par leur taille en mètre au carré :
+On peut alors calculer l'indice de masse corporelle de chacun, en divisant le poids en kilos par la taille en mètres au carré :
 
 ```{r imc}
 imc <- poids / (tailles / 100) ^ 2
 imc
 ```
 
-## Autre type dans un vecteur
+::: {.callout-tip}
+Une seule ligne calcule les cinq indices. 
+C'est le principe central de R : on travaille sur des colonnes entières, pas sur des valeurs une par une.
+:::
 
-Un vecteur peut contenir n'importe quel type d'objet.
+## Un vecteur a un seul type {.smaller}
 
+Un vecteur peut contenir du texte :
 
-```{r  diplome}
+```{r diplome}
 diplome <- c("CAP", "Bac", "Bac+2", "CAP", "Bac+3")
 diplome
 ```
 
-::: {.notes}
-Imaginons qu'on a demandé aux 5 mêmes personnes leur niveau de diplôme : on peut regrouper l'information dans un vecteur de *chaînes de caractères*.
-Une chaîne de caractère contient du texte libre, délimité par des guillemets simples ou doubles.
+Mais pas mélanger les types. Si on essaie, R convertit tout :
 
+```{r coercition}
+chiens <- c("Chihuahua", 5, "Doberman", 15)
+chiens
+```
+
+::: {.callout-warning}
+Remarquez les guillemets autour des nombres : R les a transformés en texte, sans prévenir. 
+Vous ne pourrez plus faire de calcul avec. 
+C'est une source d'erreur classique lors de l'import de données.
 :::
 
 ## Vecteurs de nombres consécutifs
 
-L'opérateur `:`, lui, permet de générer rapidement un vecteur comprenant tous les nombres entre deux valeurs, opération assez courante sous R :
+L'opérateur `:` génère un vecteur contenant tous les entiers entre deux valeurs :
 
 ```{r sequence}
 x <- 1:10
@@ -348,166 +381,224 @@ x
 
 ## Accès à un élément
 
-Enfin, notons qu'on peut accéder à un élément particulier d'un vecteur en faisant suivre le nom du vecteur de crochets contenant le numéro de l'élément désiré.
+On accède à un élément d'un vecteur en faisant suivre son nom de crochets contenant la position voulue.
 
 ```{r lecture_vecteur}
 diplome[2]
+tailles[c(1, 3)]
 ```
 
-Cette opération, qui utilise l'opérateur `[]`, permet donc la sélection d'éléments d'un vecteur.
+## Affichage dans la console {.smaller}
 
-## Vecteurs dans la console
-
-Dernière remarque, si on affiche dans la console un vecteur avec beaucoup d'éléments, ceux-ci seront répartis sur plusieurs lignes.
-Par exemple, si on a un vecteur de 50 nombres on peut obtenir quelque chose comme :
+Si un vecteur contient beaucoup d'éléments, l'affichage est réparti sur plusieurs lignes :
 
      [1] 294 425 339 914 114 896 716 648 915 587 181 926 489
     [14] 848 583 182 662 888 417 133 146 322 400 698 506 944
     [27] 237 324 333 443 487 658 793 288 897 588 697 439 697
-    [40] 914 694 126 969 744 927 337 439 226 704 635
 
-R ajoute systématiquement un nombre entre crochets au début de chaque ligne : il s'agit en fait de la position du premier élément de la ligne dans le vecteur.
-Ainsi, le 848 de la deuxième ligne est le 14e élément du vecteur, le 914 de la dernière ligne est le 40e, etc.
+Le nombre entre crochets en début de ligne indique la **position du premier élément de la ligne**. 
+Ainsi le 848 est le 14e élément du vecteur.
 
-Ceci explique le `[1]` qu'on obtient quand on affiche un simple nombre^[Et permet de constater que pour R, un nombre est un vecteur à un seul élément.] :
-
-     [1] 4
-
-## Listes
-
-Les éléments d'un vecteur sont forcément du même types.
-Si on veut mélanger le poids et le nom de différents chiens dans un même vecteur, le résultat n'est pas vraiment ce que vous attendez.
-
-```{r listes}
-chiens <- c("Chihuahua", 5, "Doberman", 15)
-chiens
-```
-
-::: {.notes}
-Remarquer que `R` met des guillemets autour des nombres : il les a transformés en chaînes de caractères.
-:::
-
----
-
-Pour pouvoir combiner des nombres et des chaînes de caractères, il faut utiliser des listes, à l'aide de la fonction `list()`.
-
-```{r listes2}
-liste_chiens <- list("Chihuahua", 5, "Doberman", 15)
-liste_chiens
-```
-
-Nous verrons les listes plus en détails plus tard.
-Remarquez à ce stade la présence de double crochets `[[ ]]`, qui nous indique que nous faisons face à une liste.
-
+Ceci explique le `[1]` qui apparaît quand on affiche un simple nombre : pour R, un nombre est un vecteur à un seul élément.
 
 # Fonctions
 
 ## Une fonction
 
-Formellement, une **fonction** a un *nom*, prend en entrée entre parenthèses des *arguments* et retourne un *résultat*.
-
-Par exemple, la fonction *length* permet de connaître la taille d'un vecteur.
+Une **fonction** a un *nom*, prend en entrée des *arguments* entre parenthèses, et renvoie un *résultat*.
 
 ```{r length}
 length(tailles)
+mean(tailles)
 ```
 
-## Arguments
+## Arguments {.smaller}
 
-Une fonction prend entre parenthèses un ou plusieurs *arguments*. 
-Par exemple, la fonction `c` combine plusieurs éléments en un vecteur, et contient plusieurs arguments.
+Certaines fonctions prennent plusieurs arguments, qui portent un nom.
 
-```{r tailles-function}
-tailles <- c(156, 164, 197, 147, 173)
+```{r arguments}
+tailles_incompletes <- c(156, 164, NA, 147, 173)
+mean(tailles_incompletes)
+mean(tailles_incompletes, na.rm = TRUE)
 ```
 
-## Aide sur une fonction
+`NA` (*Not Available*) signale une **valeur manquante**. 
+La moyenne d'un ensemble contenant une valeur inconnue est inconnue : d'où le premier résultat.
 
-On peut obtenir de l'aide sur un objet ou une fonction à l'aide de la fonction `help`.
+L'argument `na.rm = TRUE` demande d'écarter ces valeurs avant de calculer.
+
+## Aide sur une fonction {.smaller}
+
+On obtient l'aide sur une fonction avec `?` :
 
 ```{r help}
+#| eval: false
+?mean
 help("mean")
 ```
 
-On peut aussi utiliser la version raccourcie `?mean`
+L'aide s'affiche dans le panneau en bas à droite. 
+Elle est technique, mais elle est exacte et toujours disponible.
 
+::: {.callout-tip}
+Deux rubriques suffisent au début : **Usage**, qui donne la liste des arguments, et **Examples**, tout en bas, que vous pouvez copier dans la console pour voir la fonction à l'œuvre.
+:::
+
+## Exercice {.smaller}
+
+Sur le vecteur `imc` calculé plus haut :
+
+1. Combien contient-il de valeurs ?
+2. Quel est le plus petit ? le plus grand ? (cherchez les fonctions dans l'aide si besoin)
+3. Ouvrez `?quantile`. Que fait l'argument `probs` ?
+4. Calculez la médiane des tailles de deux façons différentes.
+
+# Quand ça ne marche pas
+
+## Lire un message d'erreur {.smaller}
+
+R vous parle. 
+Ses messages sont brefs, mais ils désignent presque toujours l'endroit exact du problème.
+
+```{r erreur_objet}
+#| eval: false
+taille
+```
+
+    Erreur : objet 'taille' introuvable
+
+::: {.fragment}
+R vous dit qu'il ne connaît aucun objet portant ce nom. 
+Notre vecteur s'appelle `tailles`, au pluriel.
+:::
+
+## Trois erreurs que vous rencontrerez aujourd'hui {.smaller}
+
+```{r erreur_fonction}
+#| eval: false
+means(tailles)
+```
+
+    Erreur : impossible de trouver la fonction "means"
+
+::: {.fragment}
+```{r erreur_type}
+#| eval: false
+"12" + 3
+```
+
+    Erreur : argument non numérique pour un opérateur binaire
+:::
+
+::: {.fragment}
+```{r erreur_parenthese}
+#| eval: false
+mean(tailles
+```
+
+    +
+
+Une parenthèse n'est pas fermée : R attend la suite. 
+`Échap` pour annuler.
+:::
+
+## La méthode {.smaller}
+
+::: {.incremental}
+1. **Lisez la dernière ligne.** 
+C'est là qu'est le message.
+2. **Repérez le nom cité entre guillemets.** 
+C'est presque toujours là qu'est la faute.
+3. **Comparez-le à ce que vous avez tapé.** Faute de frappe, singulier au lieu du pluriel, majuscule oubliée : R distingue `age` de `Age`.
+4. **Si le nom est correct**, l'objet n'existe pas encore : avez-vous exécuté la ligne qui le crée ?
+:::
+
+::: {.fragment}
+::: {.callout-important}
+Un message d'erreur n'est pas un échec, c'est un diagnostic. 
+Le vrai problème, ce sont les codes qui tournent sans rien dire et donnent un résultat faux -- nous en verrons en séance 3.
+:::
+:::
 
 # Scripts
 
-## Scripts
+## Pourquoi un script
 
-Pour l'instant, nous avons tapé les commandes les unes après les autres dans la console (de manière "interactive").
-Peu pratique pour réutiliser : on utilise un fichier, appeler script.
+Jusqu'ici nous avons tapé les commandes une à une dans la console. 
+Rien n'est conservé : à la fermeture de RStudio, tout est perdu.
+
+Un **script** est un fichier texte contenant vos commandes. 
+On le crée avec *File > New File > R Script*. (`Fichier > Nouveau Fichier > Script R`)
 
 ```{r script}
 #| eval: false
+# Tailles et poids de cinq enquêtés
 tailles <- c(156, 164, 197, 147, 173)
 poids <- c(45, 59, 110, 44, 88)
 
 mean(tailles)
 mean(poids)
 
+# Indice de masse corporelle
 imc <- poids / (tailles / 100) ^ 2
 min(imc)
 max(imc)
 ```
 
+## Exécuter et commenter
+
+- `Ctrl + Entrée` exécute la ligne courante ou la sélection.
+- Tout ce qui suit un `#` est ignoré par R : c'est un **commentaire**.
+
+::: {.callout-tip}
+Commentez ce que vous cherchez à faire, pas ce que fait la ligne. 
+`# calcule la moyenne` au-dessus de `mean(x)` n'apprend rien à personne. 
+`# on écarte les non-répondants` est utile.
+:::
+
+À partir d'aujourd'hui, travaillez toujours dans un script, jamais directement dans la console.
+
 # Paquets
 
-## Installer et charger des extensions (*packages*) {#sec-packages}
+## Installer une extension {.smaller}
 
-Extension diffusées sur un réseau de de serveurs nommé [CRAN](https://cran.r-project.org/) (*Comprehensive R Archive Network*).
+Les fonctions supplémentaires sont distribuées sous forme de **paquets** (*packages*), diffusés sur un réseau de serveurs nommé [CRAN](https://cran.r-project.org/).
 
-Pour installer une extension, si on dispose d'une connexion Internet, on peut utiliser le bouton *Install* de l'onglet *Packages* de RStudio. 
+On installe un paquet avec `install.packages()`, une seule fois, comme on installe un programme :
 
-![Installer une extension](resources/rstudio_package_install.png)
-
-
-Il suffit alors d'indiquer le nom de l'extension dans le champ *Package* et de cliquer sur *Install*.
-
-![Installation d'une extension](resources/rstudio_package_install2.png)
-
-## En ligne de commande
-
-On peut aussi installer des extensions en utilisant la fonction `install.packages()` directement dans la console. 
-Par exemple, pour installer le *package* `questionr` on peut exécuter la commande :
-
-```{r}
+```{r install}
 #| eval: false
 install.packages("questionr")
 ```
 
-Installer une extension via l'une des deux méthodes précédentes va télécharger l'ensemble des fichiers nécessaires depuis l'une des machines du CRAN, puis installer tout ça sur le disque dur de votre ordinateur. Vous n'avez besoin de le faire qu'une fois, comme vous le faites pour installer un programme sur votre Mac ou PC.
+![Installer un paquet depuis RStudio](resources/rstudio_package_install.png)
 
-## Charger un paquet
+## Charger un paquet {.smaller}
 
-Une fois l'extension installée, il faut la "charger" avant de pouvoir utiliser les fonctions qu'elle propose. Ceci se fait avec la fonction `library`. Par exemple, pour pouvoir utiliser les fonctions de `questionr`, vous devrez exécuter la commande suivante :
+L'installation ne suffit pas : il faut **charger** le paquet à chaque nouvelle session, avec `library()`.
 
-```{r}
+```{r library}
 #| eval: false
 library(questionr)
 ```
 
-Ainsi, on regroupe en général en début de script toute une série d'appels à `library` qui permettent de charger tous les packages utilisés dans le script. Quelque chose comme :
+On regroupe donc en début de script tous les appels à `library` :
 
-```{r}
+```{r librairies}
 #| eval: false
-library(readxl)
-library(ggplot2)
+library(tidyverse)
 library(questionr)
 ```
 
-Si vous essayez d'exécuter une fonction d'une extension et que vous obtenez le message d'erreur `impossible de trouver la fonction`, c'est certainement parce que vous n'avez pas exécuté la commande `library` correspondante.
+::: {.callout-warning}
+Si vous obtenez `impossible de trouver la fonction`, c'est presque toujours qu'un `library()` manque en haut du script.
+:::
 
+# À vous
 
-# À vous !
+## Installer swirl {.scrollable}
 
-## Swirl {.scrollable}
-
-Le moment est venu de mettre en pratique ce que nous avons vu.
-
-La première chose à faire est d'installer le paquet `swirl`.
-Pour cela, copier-coller les lignes suivantes dans la console et taper `Entrée`.
+`swirl` est un paquet qui vous fait pratiquer R de manière interactive, directement dans la console.
 
 ```{r swirl}
 #| eval: false
@@ -515,18 +606,17 @@ install.packages('swirl')
 library(swirl)
 ```
 
-Nous allons maintenant indiquer à `swirl` que nous souhaitons le voir en français
+Indiquons-lui que nous souhaitons travailler en français :
 
 ```{r french}
 #| eval: false
-select_language('french', append_rprofile = T)
+select_language('french', append_rprofile = TRUE)
 ```
 
-## Cours et leçons swirl
+## Installer le cours
 
-- `swirl` est un paquet `R` qui vous permet de vous exercer de manière interactive avec `R`.
-- Vous pouvez vous procurer le cours sur Github, à cette adresse <https://github.com/EliasBcd/InitiationR>.
-Vous pouvez le faire directement dans `R`, à l'aide de la commande suivante :
+Le cours est disponible sur GitHub, à l'adresse <https://github.com/EliasBcd/InitiationR>. 
+On l'installe directement depuis R :
 
 ```{r lecon}
 #| eval: false
@@ -535,46 +625,48 @@ install_course_github("EliasBcd", "InitiationR")
 
 ## Lancer une leçon {.smaller}
 
-Vous pouvez ensuite lancer le cours en tapant la commande suivante :
-
 ```{r lancement_swirl}
 #| eval: false
 swirl()
 ```
 
-- L'invite de commande dialogue avec vous ! Elle vous demande un nom.  
-- Tapez-le et gardez-le même tout au long du cours.^[Votre numéro d'étudiant, ou votre prénom et votre nom, il faut que je puisse vous identifier par la suite.] Appuyez sur `Entrée`.  
-- Lisez bien ce qui apparait dans la console.
-- Quand `R` vous demande choisir un cours, tapez le nombre correspondant au cours "InitiationR" et appuyez sur `Entrée`.
-- Ensuite choisissez la première leçon (qui devrait être "Manipulations simples").
-- Suivez maintenant les instructions de R dans l'invite de commande.
+- swirl dialogue avec vous et vous demande un nom. 
+Donnez votre numéro d'étudiant ou votre nom, et **gardez le même toute l'année**.
+- Choisissez le cours « InitiationR », puis la leçon.
+- Suivez les instructions dans la console.
+
+Pour aujourd'hui : **Manipulations_simples**, **Types**, puis **Vecteurs**.
 
 ## Fin d'une leçon
 
-À la fin d'une leçon, `swirl` va vous proposer de soumettre votre progression.
+À la fin d'une leçon, swirl vous propose de soumettre votre progression.
 
-Tapez le numéro correspondant à "Oui", `R` devrait ouvrir votre navigateur internet sur une page Moodle ou vous pouvez soumettre le fichier `.txt` de la leçon que vous avez faites.
+Répondez « Oui » : R ouvre votre navigateur sur la page Moodle où déposer le fichier `.txt` de la leçon.
 
+::: {.callout-note}
+C'est ce dépôt qui valide votre travail. 
+Faites-le à chaque leçon terminée.
+:::
 
+## Réinstaller le cours
 
-## Réinstaller un cours
+En cas de problème :
 
-Si pour une raison ou pour une autre il y a besoin de réinstaller le cours, tapez les commande suivante :
-
-```{r reinstallation1}
+```{r reinstallation}
 #| eval: false
 uninstall_course("InitiationR")
-```
-
-Si `swirl` vous demande de confirmer, choisissez Oui.
-
-```{r reinstallation2}
-#| eval: false
 install_course_github("EliasBcd", "InitiationR")
 ```
 
+## Pour la prochaine séance {.smaller}
 
+::: {.incremental}
+1. Terminez les trois leçons swirl et déposez-les sur Moodle.
+2. Lisez les chapitres d'introduction du manuel de Barnier (prise en main, vecteurs).
+3. Installez le paquet `tidyverse` chez vous : `install.packages("tidyverse")`. 
+C'est long, ne le faites pas au début de la séance 2.
+:::
 
-
-
-
+::: {.fragment}
+Séance prochaine : nous abandonnons les vecteurs saisis à la main pour de vraies données d'enquête.
+:::
