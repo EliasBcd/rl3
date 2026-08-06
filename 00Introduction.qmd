@@ -58,7 +58,7 @@ Il faut m'envoyer les fichiers de ces exercices pour la validation.
 
 Quand vous avez un problème avec R, vous pouvez généralement trouver sur internet la réponse à votre question. 
 [Stackoverflow](https://stackoverflow.com/) est une bonne ressource pour commencer.
-Les assistants par IA type ChatGPT ou Claude peuvent en général fournir des réponses, mais il est sont parfois fausses et il n'est pas toujours simple de les comprendre.
+Les assistants par IA type ChatGPT, Gemini ou Claude peuvent en général fournir des réponses, mais il est sont parfois fausses et il n'est pas toujours simple de les comprendre.
 
 
 # R et Rstudio
