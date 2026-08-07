@@ -19,7 +19,7 @@ website:
       - section: "Séance 1 : premiers pas"
         contents:
           - 00Introduction.qmd
-          - 01Lecon1.qmd
+          - 01PremiersPas.qmd
       - section: "Séance 2 : données"
         contents:
           - 02Donnees.qmd

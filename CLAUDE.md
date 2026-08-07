@@ -14,9 +14,10 @@ et projet tutoré.
 
 ## Historique du dépôt — à connaître avant toute modification
 
-- La version **2025** (dossier `M3P/`) intégrait des LLM comme source
-  d'explication première, dès la première séance. **Cette approche a échoué** :
-  les étudiants attribuaient les erreurs à l'outil (« c'est la sortie de
+- La version **2025** (tag git `2025`, ancien dossier `M3P/`, retiré du
+  répertoire de travail) intégrait des LLM comme source d'explication
+  première, dès la première séance. **Cette approche a échoué** : les
+  étudiants attribuaient les erreurs à l'outil (« c'est la sortie de
   ChatGPT ») sans réfléchir à ce qu'ils faisaient, et n'ont pas acquis
   d'autonomie. Ne pas y revenir.
 - La version **2024.1** (tag git, commit `2c176d0`) est la base retenue pour la
@@ -46,12 +47,16 @@ et projet tutoré.
 
 | Fichier | Séance | Contenu |
 |---|---|---|
-| `02Lecon1.qmd` | 1 | Objets, types, vecteurs, fonctions, erreurs, scripts, paquets |
-| `03Donnees.qmd` | 2 | Tibble, `glimpse`, pipe, `select`/`filter`/`arrange`/`mutate` |
-| `04Analyse.qmd` | 3 | `summarise`, `count`, `group_by`, croisements, erreurs silencieuses |
-| `05Graphiques.qmd` | 4 | ggplot2 sur `hdv2003` |
-| `06Projet.qmd` | 5 | Projet en autonomie |
+| `00Introduction.qmd` | 1 | Installation R/RStudio, présentation du cours |
+| `01Lecon1.qmd` | 1 | Objets, types, vecteurs, fonctions, erreurs, scripts, paquets, installation de swirl |
+| `02Donnees.qmd` | 2 | Passage au tidyverse, tibble, `glimpse`, pipe, `select`/`filter`/`arrange`/`mutate` |
+| `03Analyse.qmd` | 3 | `summarise`, valeurs manquantes, erreurs silencieuses, `count`, `group_by`, croisements |
+| `04RepresentationsGraphiques.qmd` | 4 | ggplot2 sur `hdv2003` |
+| `05Projet.qmd` | 5 | Projet en autonomie |
+| `Swirl.qmd` | — | Page unique d'instructions swirl, référencée depuis chaque séance |
+| `index.qmd` | — | Syllabus |
 
+La navigation (`_quarto.yml`) et `index.qmd` reflètent déjà cette structure.
 Chaque séance se termine par des leçons swirl et une lecture dans Barnier.
 
 ## Fils conducteurs à préserver
@@ -87,8 +92,7 @@ Leçons utilisées : `Manipulations_simples`, `Types`, `Vecteurs` (séance 1),
 `Dataframes` (séance 2), `Valeurs_manquantes`, `Analyse_de_données` (séance 3),
 `Representations_graphiques` (séance 4).
 
-**À vérifier avant la rentrée** : le paquet `swirl` n'a pas été testé depuis
-octobre 2024, il est sensible aux montées de version de R.
+Vérifié fonctionnel sur R 4.6.1 / swirl 2.4.5.
 
 ## Conventions techniques
 
@@ -101,8 +105,5 @@ octobre 2024, il est sensible aux montées de version de R.
 
 ## Reste à faire
 
-- Mettre à jour `index.qmd` et `_quarto.yml` pour la nouvelle numérotation.
-- Retirer de la navigation les fichiers écartés.
-- Compiler les cinq séances et vérifier les sorties (jamais rendues à ce jour).
-- Vérifier `swirl` sur la version de R des salles machine.
-- Décider du barème.
+
+
