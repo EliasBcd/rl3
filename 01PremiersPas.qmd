@@ -635,7 +635,7 @@ Donnez votre numéro d'étudiant ou votre nom, et **gardez le même toute l'ann�
 - Choisissez le cours « InitiationR », puis la leçon.
 - Suivez les instructions dans la console.
 
-Pour aujourd'hui : **Manipulations_simples**, **Types**, puis **Vecteurs**.
+Pour aujourd'hui : **Manipulations_simples**, **Types**, **Vecteurs**, **Fonctions**, puis **Logique**.
 
 ## Fin d'une leçon
 
