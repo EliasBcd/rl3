@@ -337,14 +337,14 @@ library(swirl)
 swirl()
 ```
 
-Faites la leçon **Dataframes**, et déposez le fichier sur Moodle.
+Faites la leçon **Tableaux_de_donnes** et **Manipuler_les_donnees** et déposez le fichier sur Moodle.
 
 ## Pour la prochaine séance {.smaller}
 
 ::: {.incremental}
 1. Terminez les exercices ci-dessus.
-2. Terminez la leçon swirl **Dataframes**.
-3. Lisez le chapitre de Barnier sur la manipulation de données avec `dplyr`.
+2. Terminez les leçons swirl **Tableaux_de_donnes** et **Manipuler_les_donnees**.
+3. Lisez les chapitre de Barnier sur le `tidyverse` (chap. 6) et la manipulation de données avec `dplyr` (chap. 10).
 :::
 
 ::: {.fragment}

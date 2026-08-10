@@ -271,7 +271,7 @@ d |>
 
 ::: {.callout-note}
 `.groups = "drop"` supprime le regroupement une fois le calcul fait. 
-Sans cet argument, R affiche un avertissement et le tableau reste groupé, ce qui fausse les opérations suivantes -- une erreur silencieuse de plus.
+Sans cet argument, R affiche un avertissement et le tableau reste groupé, ce qu'il faut garder en tête pour les opérations suivantes.
 :::
 
 ## L'outil central du cours {.smaller}
@@ -397,10 +397,6 @@ Produisez un court script commenté qui répond à :
 ::: {.callout-tip}
 Pour chaque question : l'effectif de chaque groupe à côté de l'indicateur, et une phrase de commentaire disant ce que vous lisez dans le résultat.
 :::
-
-## Lecture
-
-Barnier, *Introduction à R et au tidyverse* : chapitre sur les statistiques descriptives.
 
 ::: {.fragment}
 Séance prochaine : les mêmes questions, mais en graphiques.
