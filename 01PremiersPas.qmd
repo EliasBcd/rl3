@@ -635,7 +635,7 @@ Donnez votre numéro d'étudiant ou votre nom, et **gardez le même toute l'ann�
 - Choisissez le cours « InitiationR », puis la leçon.
 - Suivez les instructions dans la console.
 
-Pour aujourd'hui : **Manipulations_simples**, **Types**, **Vecteurs**, **Fonctions**, puis **Logique**.
+Pour aujourd'hui : **Manipulations_simples**, **Types**, **Vecteurs**, **Fonctions**, **Messages d'erreurs** puis **Logique**.
 
 ## Fin d'une leçon
 
@@ -661,7 +661,7 @@ install_course_github("EliasBcd", "InitiationR")
 ## Pour la prochaine séance {.smaller}
 
 ::: {.incremental}
-1. Terminez les cinq leçons swirl et déposez-les sur Moodle.
+1. Terminez les six leçons swirl et déposez-les sur Moodle.
 :::
 
 ::: {.fragment}
