@@ -49,7 +49,7 @@ Cinq séances de trois heures, en salle machine.
 5. **Projet en autonomie** ([Projet](05Projet.qmd))
     - Une analyse complète sur `hdv2003`, du script au rendu
 
-Chaque séance renvoie vers des leçons `swirl` et une lecture correspondante
+Chaque séance renvoie vers des leçons `swirl` et une lecture facultative correspondante
 dans @Barnier.
 
 ## Une remarque sur les assistants IA
@@ -77,6 +77,8 @@ Cours à validation, sur la base des exercices `swirl` rendus au fur et à mesur
 - Commande
 - Script
 - Paquet (ou librairie)
+- Tableau
+- Graphique
 
 ## Liens entre ces notions
 

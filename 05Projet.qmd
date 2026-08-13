@@ -27,6 +27,36 @@ data(hdv2003)
 d <- as_tibble(hdv2003)
 ```
 
+# Reprise de la séance 4
+
+## Un graphique trompeur {.smaller}
+
+```{r reprise_enonce}
+#| echo: false
+#| fig-height: 4.5
+#| warning: false
+ggplot(d) + geom_point(aes(x = age, y = heures.tv))
+```
+
+Qu'est-ce que ce graphique cache ou exagère ? Comment le corriger ?
+
+::: {.notes}
+10 minutes de discussion en binômes, puis correction collective au tableau.
+2000 points sans transparence : la densité réelle est invisible, tout semble uniformément réparti.
+:::
+
+## Correction {.smaller}
+
+```{r reprise_correction}
+#| fig-height: 4.5
+#| warning: false
+ggplot(d) + geom_jitter(aes(x = age, y = heures.tv), alpha = 0.15)
+```
+
+::: {.callout-important}
+Sans transparence ni décalage, les points se superposent exactement : on ne voit pas où se concentrent réellement les enquêtés. `geom_jitter()` et `alpha` révèlent la densité que le premier graphique cachait.
+:::
+
 # Aujourd'hui
 
 ## Le déroulé
@@ -254,7 +284,7 @@ Le point 3 est le plus efficace.
 
 ## Ce que vous déposez
 
-Un fichier `.R`, nommé `Nom_Prenom.R`, déposé sur Moodle.
+Un fichier `.R`, nommé `Nom_Prenom.R`, déposé sur [Moodle](https://moodle.univ-paris8.fr/mod/assign/view.php?id=426023&action=editsubmission).
 
 Il doit :
 
@@ -322,7 +352,7 @@ Vous savez maintenant charger des données, les décrire, les représenter et re
 ::: {.incremental}
 - Vous retrouverez ces outils en économétrie, en séries temporelles et dans votre projet tutoré.
 - Les leçons swirl que vous n'avez pas faites restent disponibles : conditions, boucles, écriture de fonctions.
-- Le manuel de Barnier couvre largement ce que nous n'avons pas eu le temps d'aborder.
+- Le manuel de Julien Barnier, [*Introduction à R et au tidyverse*](https://juba.github.io/tidyverse/), couvre largement ce que nous n'avons pas eu le temps d'aborder.
 :::
 
 ::: {.fragment}

@@ -38,7 +38,7 @@ format-links: [revealjs]
 ## Déroulement du cours
 
 
-- Une partie théorique à lire chez vous, où nous discuterons des notions de programmation (en `R`) et des commandes
+- Une partie théorique où nous discuterons des notions de programmation (en `R`) et des commandes
 - Une partie pratique où vous travaillerez sur machine
 - Le seul prérequis pour suivre ce cours est d'avoir accès à `R` et RStudio sur un ordinateur.
 
@@ -51,14 +51,14 @@ format-links: [revealjs]
 
 Le cours est construit à partir de deux ressources :
 
-1. Le manuel de @Barnier (en français), que vous devez lire au fur et à mesure pour la séance suivante.
+1. Le manuel de @Barnier (en français), que vous pouvez lire au fur et à mesure pour la séance suivante.
 Il est disponible sur Moodle et en ligne.
-2. Les exercices développés par l'équipe @swirldev (en anglais) et traduits et adaptés pour le cours, et d'autres élaborés par moi-même. Il sont disponibles sur ce [dépôt Github](https://github.com/EliasBcd/InitiationR).
-Il faut m'envoyer les fichiers de ces exercices pour la validation.
+2. Les exercices développés par l'équipe @swirldev (en anglais) et traduits et adaptés pour le cours, et d'autres élaborés par moi-même. Ils sont disponibles sur ce [dépôt Github](https://github.com/EliasBcd/InitiationR).
+Il faut m'envoyer les fichiers finaux de ces exercices pour la validation.
 
 Quand vous avez un problème avec R, vous pouvez généralement trouver sur internet la réponse à votre question. 
 [Stackoverflow](https://stackoverflow.com/) est une bonne ressource pour commencer.
-Les assistants par IA type ChatGPT, Gemini ou Claude peuvent en général fournir des réponses, mais il est sont parfois fausses et il n'est pas toujours simple de les comprendre.
+Les assistants par IA type ChatGPT, Gemini ou Claude peuvent en général fournir des réponses, mais elles sont parfois fausses et il n'est pas toujours simple de les comprendre.
 
 
 # R et Rstudio
@@ -71,7 +71,7 @@ R et Rstudio sont deux logiciels libres, gratuits, téléchargeables en ligne et
 Pour installer `R`, il suffit de se rendre sur une des pages suivantes :
 
 - [Windows](https://cloud.r-project.org/bin/windows/base/)
-- [Mac](https://cloud.r-project.org/bin/macosx/) ^[Pour les possesseurs de Mac récents, à processeurs M1 ou plus récents, il faut utiliser la version *arm64*, les autres doivent prendre la version classique]
+- [Mac](https://cloud.r-project.org/bin/macosx/)
 - Pour Linux, vous pouvez utiliser le gestionnaire de paquet du système ou bien suivre les instructions [ici](https://cran.r-project.org/bin/linux/ubuntu/) pour obtenir la dernière version de `R` (pour Ubuntu/Debian)
 
 ## RStudio

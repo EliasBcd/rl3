@@ -40,8 +40,8 @@ Cinq séances de trois heures, sur machine.
 ::: {.incremental}
 - **Un seul jeu de données** pendant tout le cours : l'enquête *Histoires de vie* de l'INSEE. Vous finirez par bien le connaître, et c'est voulu.
 - **Une seule famille d'outils** : le `tidyverse`, à partir de la séance 2.
-- **Une lecture à faire chez vous** entre les séances : le manuel de Julien Barnier, *Introduction à R et au tidyverse*. Le temps en salle sert à pratiquer, pas à écouter.
-- **Des exercices interactifs** avec `swirl`, à faire en séance et à terminer chez vous.
+- **Des exercices interactifs** avec `swirl`, à faire en séance et à terminer chez vous. Le temps en salle sert à pratiquer, pas à écouter.
+- Chaque séance commence par une reprise de dix à quinze minutes sur la séance précédente.
 :::
 
 ## Une remarque sur les assistants IA
@@ -661,12 +661,19 @@ install_course_github("EliasBcd", "InitiationR")
 ## Pour la prochaine séance {.smaller}
 
 ::: {.incremental}
-1. Terminez les trois leçons swirl et déposez-les sur Moodle.
-2. Lisez les chapitres d'introduction du manuel de Barnier (prise en main, vecteurs).
-3. Installez le paquet `tidyverse` chez vous : `install.packages("tidyverse")`. 
-C'est long, ne le faites pas au début de la séance 2.
+1. Terminez les cinq leçons swirl et déposez-les sur Moodle.
 :::
 
 ::: {.fragment}
 Séance prochaine : nous abandonnons les vecteurs saisis à la main pour de vraies données d'enquête.
+:::
+
+## Ressources {.smaller}
+
+Pour aller plus loin, ou revoir une notion à votre rythme :
+
+- Le manuel de Julien Barnier, [*Introduction à R et au tidyverse*](https://juba.github.io/tidyverse/), en français et disponible en ligne. Ce n'est pas un travail à faire : une référence à consulter librement, quand vous en avez besoin.
+
+::: {.callout-note}
+Rien à lire pour la prochaine séance. Seules les leçons swirl sont attendues entre deux séances.
 :::

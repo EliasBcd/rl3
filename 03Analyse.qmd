@@ -26,14 +26,73 @@ data(hdv2003)
 d <- as_tibble(hdv2003)
 ```
 
+# Reprise de la séance 2
+
+## Sur papier, sans machine {.smaller}
+
+Voici un petit tableau de six personnes :
+
+```{r reprise_tableau}
+#| echo: false
+tibble(
+  prenom = c("Alice", "Bilal", "Chloé", "David", "Éva", "Farid"),
+  age = c(22, 45, 31, 19, 58, 27),
+  categorie = c("Étudiant", "Cadre", "Employé", "Étudiant", "Cadre", "Ouvrier"),
+  heures_tv = c(1, 3, 2, 4, 2, 5)
+)
+```
+
+Sur papier, dessinez le tableau obtenu par chacun de ces deux enchaînements. Pas de machine.
+
+```{r reprise_enonce}
+#| eval: false
+tab |>
+  filter(categorie != "Étudiant") |>
+  arrange(age) |>
+  select(prenom, categorie)
+
+tab |>
+  mutate(heures_semaine = heures_tv * 7) |>
+  filter(heures_semaine > 14)
+```
+
+::: {.notes}
+10 minutes de dessin individuel, puis correction collective au tableau.
+Regardez si les étudiants confondent filter et select, ou oublient que mutate ajoute une colonne sans retirer les autres.
+:::
+
+## Correction {.smaller}
+
+```{r reprise_correction}
+tab <- tibble(
+  prenom = c("Alice", "Bilal", "Chloé", "David", "Éva", "Farid"),
+  age = c(22, 45, 31, 19, 58, 27),
+  categorie = c("Étudiant", "Cadre", "Employé", "Étudiant", "Cadre", "Ouvrier"),
+  heures_tv = c(1, 3, 2, 4, 2, 5)
+)
+
+tab |>
+  filter(categorie != "Étudiant") |>
+  arrange(age) |>
+  select(prenom, categorie)
+
+tab |>
+  mutate(heures_semaine = heures_tv * 7) |>
+  filter(heures_semaine > 14)
+```
+
+::: {.callout-important}
+`mutate()` ajoute une colonne au tableau complet ; le `filter()` qui suit porte sur ce tableau augmenté, pas sur le tableau d'origine.
+:::
+
 # Où nous en sommes
 
 ## Rappel
 
-La séance dernière, nous avons appris à découper un tableau : `select`, `filter`, `arrange`, `mutate`.
+Lors de la dernière séance, nous avons appris à découper un tableau : `select`, `filter`, `arrange`, `mutate`.
 
 ```{r rappel}
-d |>
+d |> # d le tableau hdv2003 utilisé la semaine dernière
   filter(age < 25) |>
   select(age, sexe, qualif)
 ```
@@ -223,7 +282,7 @@ d |>
   mutate(pourcentage = round(100 * n / sum(n), 1))
 ```
 
-## Exercice {.smaller}
+## Exercice 1 {.smaller}
 
 1. Faites le tri à plat de la variable `relig`. 
 Quelle est la modalité la plus fréquente ?
@@ -290,7 +349,7 @@ d |>
   arrange(desc(tv_moyenne))
 ```
 
-## Exercice {.smaller}
+## Exercice 2 {.smaller}
 
 1. L'âge moyen varie-t-il selon le niveau d'études (`nivetud`) ?
 2. Les personnes qui déclarent lire des bandes dessinées sont-elles plus jeunes que les autres ?
@@ -386,7 +445,7 @@ swirl()
 
 Faites les leçons **Valeurs_manquantes** et **Analyse_de_données**.
 
-## Pour la prochaine séance {.smaller}
+## Exercice 3 {.smaller}
 
 Produisez un court script commenté qui répond à :
 

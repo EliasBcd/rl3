@@ -28,6 +28,46 @@ data(hdv2003)
 d <- as_tibble(hdv2003)
 ```
 
+# Reprise de la séance 3
+
+## Le code tourne, le résultat est faux {.smaller}
+
+Ce script s'exécute **sans erreur et sans avertissement**. Pourtant le commentaire qui l'accompagne est faux.
+
+```{r reprise_enonce}
+#| eval: false
+# On écarte les personnes qui déclarent plus de 10h de télévision par jour,
+# puis on calcule la moyenne sur l'ensemble des enquêtés.
+d |> mutate(heures.tv = if_else(heures.tv > 10, NA_real_, heures.tv))
+
+d |> summarise(
+  effectif = n(),
+  tv_moyenne_tous = mean(heures.tv, na.rm = TRUE)
+)
+```
+
+Trouvez ce qui ne va pas, corrigez, et expliquez en français ce qui s'est passé.
+
+::: {.notes}
+15 minutes de recherche en binômes, puis correction collective au tableau.
+Le mutate n'est pas assigné : le recodage des valeurs extrêmes ne sert à rien, et l'effectif de 2000 masque le na.rm = TRUE qui écarte déjà 5 non-répondants.
+:::
+
+## Correction {.smaller}
+
+```{r reprise_correction}
+d_corrige <- d |> mutate(heures.tv = if_else(heures.tv > 10, NA_real_, heures.tv))
+
+d_corrige |> summarise(
+  effectif = sum(!is.na(heures.tv)),
+  tv_moyenne = mean(heures.tv, na.rm = TRUE)
+)
+```
+
+::: {.callout-important}
+Deux erreurs superposées : le `mutate()` sans `<-` ne modifiait rien, donc le recodage annoncé n'avait jamais lieu ; et l'effectif affiché (`n()`) comptait tout le tableau au lieu des seuls répondants, cachant le `na.rm = TRUE`.
+:::
+
 # Pourquoi un graphique
 
 ## Ce qu'un tableau ne dit pas {.smaller}

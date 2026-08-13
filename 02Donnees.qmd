@@ -26,6 +26,56 @@ data(hdv2003)
 d <- as_tibble(hdv2003)
 ```
 
+# Reprise de la séance 1
+
+## Sur papier, sans machine {.smaller}
+
+Pour chaque ligne, écrivez ce que R va afficher. Ne lancez rien avant d'avoir écrit vos réponses.
+
+```{r reprise_enonce}
+#| eval: false
+x <- 3
+x <- x + 1
+x
+
+chien <- c("Chihuahua", 5)
+chien
+
+y <- c(10, 20, NA, 40)
+mean(y)
+mean(y, na.rm = TRUE)
+
+z <- 7
+z > 5 & z < 10
+```
+
+::: {.notes}
+10 minutes de prédiction individuelle, puis correction collective au tableau.
+C'est un diagnostic : notez les questions où la classe se trompe massivement.
+:::
+
+## Correction {.smaller}
+
+```{r reprise_correction}
+x <- 3
+x <- x + 1
+x
+
+chien <- c("Chihuahua", 5)
+chien
+
+y <- c(10, 20, NA, 40)
+mean(y)
+mean(y, na.rm = TRUE)
+
+z <- 7
+z > 5 & z < 10
+```
+
+::: {.callout-important}
+Deux pièges classiques : `x <- x + 1` écrase l'ancienne valeur de `x`, et mélanger texte et nombre dans `c()` convertit tout en texte -- silencieusement.
+:::
+
 # Du vecteur au tableau
 
 ## Où nous en sommes
@@ -102,7 +152,7 @@ d
 ```
 
 ::: {.callout-tip}
-Un tibble s'affiche proprement : les dix premières lignes, le type de chaque colonne, et le nombre de lignes restantes. Taper `hdv2003` sans conversion aurait déversé 2000 lignes dans la console.
+Un tibble s'affiche proprement : les dix premières lignes, le type de chaque colonne et le nombre de lignes restantes. Taper `hdv2003` sans conversion aurait affiché toutes les colonnes sur plusieurs lignes.
 :::
 
 ## Les dimensions
@@ -149,7 +199,7 @@ levels(d$qualif)
 L'opérateur `$` désigne une colonne du tableau : `d$qualif` est le vecteur des qualifications.
 :::
 
-## Exercice {.smaller}
+## Exercice 1 {.smaller}
 
 Ouvrez le tableau dans la visionneuse de RStudio :
 
@@ -158,7 +208,7 @@ Ouvrez le tableau dans la visionneuse de RStudio :
 View(d)
 ```
 
-Puis, dans un script :
+Puis, dans un script (éventuellement en commentant) :
 
 1. Combien y a-t-il d'observations ? de variables ?
 2. Citez trois variables quantitatives et trois variables qualitatives.
@@ -313,17 +363,17 @@ C'est ce qui permet de les enchaîner avec `|>`.
 
 # À vous
 
-## Exercices {.smaller}
+## Exercice 2 {.smaller}
 
 Dans un script commenté :
 
 1. Affichez uniquement les variables `age`, `qualif` et `sport`.
-2. Combien y a-t-il d'enquêtés de plus de 60 ans ?
+2. Combien y a-t-il d'enquêtés de plus de 60 ans (inclus) ?
 3. Affichez les hommes qui déclarent pratiquer un sport, triés du plus jeune au plus âgé.
 4. Créez une variable `tv.annuelle` (heures de télévision par an) et conservez-la dans `d`.
 5. Quel est l'enquêté le plus âgé du jeu de données ?
-Quelle est sa qualification ?
-6. Combien d'enquêtés ont entre 25 et 35 ans ?
+Quelle est son niveau d'étude ?
+6. Combien d'enquêtés ont entre 25 (inclus) et 35 ans (exclus) ?
 
 ::: {.callout-tip}
 Pour la question 6 : deux conditions séparées par une virgule.
@@ -342,9 +392,7 @@ Faites la leçon **Tableaux_de_donnes** et **Manipuler_les_donnees** et déposez
 ## Pour la prochaine séance {.smaller}
 
 ::: {.incremental}
-1. Terminez les exercices ci-dessus.
-2. Terminez les leçons swirl **Tableaux_de_donnes** et **Manipuler_les_donnees**.
-3. Lisez les chapitre de Barnier sur le `tidyverse` (chap. 6) et la manipulation de données avec `dplyr` (chap. 10).
+Terminez les leçons swirl **Tableaux_de_donnes** et **Manipuler_les_donnees**.
 :::
 
 ::: {.fragment}
