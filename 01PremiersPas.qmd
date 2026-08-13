@@ -524,7 +524,7 @@ Le vrai problème, ce sont les codes qui tournent sans rien dire et donnent un r
 
 ## Pourquoi un script
 
-Jusqu'ici nous avons tapé les commandes une à une dans la console. 
+Jusqu'ici, nous avons tapé les commandes une à une dans la console. 
 Rien n'est conservé : à la fermeture de RStudio, tout est perdu.
 
 Un **script** est un fichier texte contenant vos commandes. 

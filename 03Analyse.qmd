@@ -395,7 +395,7 @@ Produisez un court script commenté qui répond à :
 3. Les hommes et les femmes déclarent-ils pratiquer un sport dans les mêmes proportions ?
 
 ::: {.callout-tip}
-Pour chaque question : l'effectif de chaque groupe à côté de l'indicateur, et une phrase de commentaire disant ce que vous lisez dans le résultat.
+Pour chaque question : l'effectif de chaque groupe à côté de l'indicateur et une phrase de commentaire disant ce que vous lisez dans le résultat.
 :::
 
 ::: {.fragment}
