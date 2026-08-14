@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: _site
+
+author: 
+  - name: Elias Bouacida
+    affiliation: "Université Paris 8"
+    orcid: 0000-0001-8656-6678
+    email: elias.bouacida@univ-paris8.fr
+
+website:
+  title: "Initiation à R"
+  description: "Leçons pour le cours d'Initiation à R dispensé à l'université Paris 8 aux étudiants en licence 3 économie-finance."
+  sidebar:
+    style: "docked"
+    contents:
+      - text: "Index"
+        href: index.qmd
+      - section: "Séance 1 : premiers pas"
+        contents:
+          - 00Introduction.qmd
+          - 01PremiersPas.qmd
+      - section: "Séance 2 : données"
+        contents:
+          - 02Donnees.qmd
+      - section: "Séance 3 : analyse"
+        contents:
+          - 03Analyse.qmd
+      - section: "Séance 4 : représentations graphiques"
+        contents:
+          - 04RepresentationsGraphiques.qmd
+      - section: "Séance 5 : projet"
+        contents:
+          - 05Projet.qmd
+      - section: "Exercices"
+        contents:
+          - Swirl.qmd
+
+format:
+  html:
+    theme: default
+    toc: true
+
+bibliography: 
+  - Bibliographie.bib
+  - BibliographieExercice.bib
+
+date: last-modified
+date-format: long
+
+execute: 
+  cache: true
+
+lang: fr
