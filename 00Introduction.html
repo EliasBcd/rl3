@@ -8,7 +8,7 @@
 
 <meta name="author" content="Elias Bouacida">
 
-<title>Introduction à R – Initiation à R</title>
+<title>Initiation à R</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -106,7 +106,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Index</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00Introduction.html">Séance 1 : premiers pas</a></li><li class="breadcrumb-item"><a href="./00Introduction.html">Initiation à R</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
@@ -133,7 +133,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Index</span></a>
   </div>
 </li>
@@ -148,7 +148,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00Introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="./00Introduction.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Initiation à R</span></a>
   </div>
 </li>
@@ -255,43 +255,54 @@ div.csl-indent {
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#syllabus" id="toc-syllabus" class="nav-link active" data-scroll-target="#syllabus">Syllabus</a>
+  <li><a href="#introduction-générale" id="toc-introduction-générale" class="nav-link active" data-scroll-target="#introduction-générale">Introduction générale</a>
   <ul class="collapse">
-  <li><a href="#objectif" id="toc-objectif" class="nav-link" data-scroll-target="#objectif">Objectif</a></li>
-  <li><a href="#plan-du-cours" id="toc-plan-du-cours" class="nav-link" data-scroll-target="#plan-du-cours">Plan du cours</a></li>
-  <li><a href="#une-remarque-sur-les-assistants-ia" id="toc-une-remarque-sur-les-assistants-ia" class="nav-link" data-scroll-target="#une-remarque-sur-les-assistants-ia">Une remarque sur les assistants IA</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R ?</a></li>
+  <li><a href="#objectif-du-cours" id="toc-objectif-du-cours" class="nav-link" data-scroll-target="#objectif-du-cours">Objectif du cours</a></li>
+  <li><a href="#déroulement-du-cours" id="toc-déroulement-du-cours" class="nav-link" data-scroll-target="#déroulement-du-cours">Déroulement du cours</a></li>
   <li><a href="#validation" id="toc-validation" class="nav-link" data-scroll-target="#validation">Validation</a></li>
+  <li><a href="#cours" id="toc-cours" class="nav-link" data-scroll-target="#cours">Cours</a></li>
   </ul></li>
-  <li><a href="#logiciels-requis-pour-le-cours" id="toc-logiciels-requis-pour-le-cours" class="nav-link" data-scroll-target="#logiciels-requis-pour-le-cours">Logiciels requis pour le cours</a></li>
-  <li><a href="#notions-principales" id="toc-notions-principales" class="nav-link" data-scroll-target="#notions-principales">Notions principales</a>
+  <li><a href="#r-et-rstudio" id="toc-r-et-rstudio" class="nav-link" data-scroll-target="#r-et-rstudio">R et Rstudio</a>
   <ul class="collapse">
-  <li><a href="#liens-entre-ces-notions" id="toc-liens-entre-ces-notions" class="nav-link" data-scroll-target="#liens-entre-ces-notions">Liens entre ces notions</a></li>
-  <li><a href="#sec-types" id="toc-sec-types" class="nav-link" data-scroll-target="#sec-types">Les types</a></li>
+  <li><a href="#installation-de-r" id="toc-installation-de-r" class="nav-link" data-scroll-target="#installation-de-r">Installation de R</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
+  <li><a href="#lancement-de-rstudio" id="toc-lancement-de-rstudio" class="nav-link" data-scroll-target="#lancement-de-rstudio">Lancement de Rstudio</a></li>
   </ul></li>
-  <li><a href="#références" id="toc-références" class="nav-link" data-scroll-target="#références">Références</a></li>
+  <li><a href="#références" id="toc-références" class="nav-link" data-scroll-target="#références">Références</a>
+  <ul class="collapse">
+  <li><a href="#bibliographie" id="toc-bibliographie" class="nav-link" data-scroll-target="#bibliographie">Bibliographie</a></li>
+  </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="slide-intro.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00Introduction.html">Séance 1 : premiers pas</a></li><li class="breadcrumb-item"><a href="./00Introduction.html">Initiation à R</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introduction à R</h1>
-<p class="subtitle lead">Syllabus</p>
+<h1 class="title">Initiation à R</h1>
+<p class="subtitle lead">L3 économie-finance</p>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Auteur·rice</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Elias Bouacida </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Université Paris 8
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Auteur·rice</div>
-    <div class="quarto-title-meta-contents">
-             <p>Elias Bouacida </p>
-          </div>
-  </div>
-    
+      
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
@@ -307,107 +318,90 @@ div.csl-indent {
 </header>
 
 
-<p>Ce site contient les présentations utilisées pour le cours d’introduction à R dispensé en L3 économie-finance à l’université Paris 8.</p>
-<section id="syllabus" class="level1">
-<h1>Syllabus</h1>
-<p>La principale ressource bibliographique pour le cours est <span class="citation" data-cites="Barnier">Barnier et Kauffmann (<a href="#ref-Barnier" role="doc-biblioref">2023</a>)</span>.</p>
-<section id="objectif" class="level2">
-<h2 class="anchored" data-anchor-id="objectif">Objectif</h2>
-<p>Savoir charger un jeu de données, le décrire et le représenter. Le cours prépare aux usages ultérieurs en économétrie, séries temporelles et projet tutoré.</p>
-<p>Un seul jeu de données est utilisé du début à la fin : <code>hdv2003</code> (paquet <code>questionr</code>, enquête <em>Histoire de vie</em> 2003).</p>
+<section id="introduction-générale" class="level1">
+<h1>Introduction générale</h1>
+<section id="r" class="level2">
+<h2 class="anchored" data-anchor-id="r">R ?</h2>
+<ul>
+<li>Est un langage de programmation tourné principalement vers l’analyse des données et les statistiques. <a href="https://fr.wikipedia.org/wiki/R_(langage)" class="uri">https://fr.wikipedia.org/wiki/R_(langage)</a></li>
+<li>Dérive d’un langage antérieur appelé S <a href="https://fr.wikipedia.org/wiki/S_(langage)" class="uri">https://fr.wikipedia.org/wiki/S_(langage)</a></li>
+<li>Est un <a href="https://fr.wikipedia.org/wiki/Logiciel_libre">logiciel libre</a></li>
+</ul>
 </section>
-<section id="plan-du-cours" class="level2">
-<h2 class="anchored" data-anchor-id="plan-du-cours">Plan du cours</h2>
-<p>Cinq séances de trois heures, en salle machine.</p>
-<ol type="1">
-<li><strong>Premiers pas</strong> (<a href="./00Introduction.html">Introduction</a>, <a href="./01PremiersPas.html">Premiers Pas</a>)
+<section id="objectif-du-cours" class="level2">
+<h2 class="anchored" data-anchor-id="objectif-du-cours">Objectif du cours</h2>
 <ul>
-<li>Installer R et RStudio, présenter l’interface</li>
-<li>Objets, types (booléen, numérique, chaîne de caractères), vecteurs</li>
-<li>Fonctions, messages d’erreur, scripts, paquets</li>
-<li>Installation de swirl</li>
-</ul></li>
-<li><strong>Découvrir un tableau de données</strong> (<a href="./02Donnees.html">Explorer des données</a>)
-<ul>
-<li>Passage au <code>tidyverse</code></li>
-<li>Tibble (tableau), <code>glimpse()</code>, le tuyau <code>|&gt;</code></li>
-<li><code>select()</code>, <code>filter()</code>, <code>arrange()</code>, <code>mutate()</code></li>
-</ul></li>
-<li><strong>Analyser des données</strong> (<a href="./03Analyse.html">Analyser des données</a>)
-<ul>
-<li><code>summarise()</code>, valeurs manquantes</li>
-<li>Les erreurs silencieuses</li>
-<li><code>count()</code>, <code>group_by()</code>, croisement de deux variables</li>
-</ul></li>
-<li><strong>Représenter des données</strong> (<a href="./04RepresentationsGraphiques.html">Représenter des données</a>)
-<ul>
-<li><code>ggplot2</code> : données, géométrie, esthétique</li>
-<li>Représenter une variable, croiser deux variables</li>
-<li>Mappages, superposition, mise en forme</li>
-</ul></li>
-<li><strong>Projet en autonomie</strong> (<a href="./05Projet.html">Projet</a>)
-<ul>
-<li>Une analyse complète sur <code>hdv2003</code>, du script au rendu</li>
-</ul></li>
-</ol>
-<p>Chaque séance renvoie vers des leçons <code>swirl</code> et une lecture facultative correspondante dans <span class="citation" data-cites="Barnier">Barnier et Kauffmann (<a href="#ref-Barnier" role="doc-biblioref">2023</a>)</span>.</p>
+<li>Apprendre à utiliser R et Rstudio</li>
+<li>Apprendre à utiliser les principales librairies (aussi appelées paquets) de R pour l’analyse de données et les statistiques (le <a href="https://www.tidyverse.org/">tidyverse</a>)</li>
+<li>Vous préparez à utiliser R dans d’autres cours (économétrie, séries temporelles, économie du travail, projet tutoré)</li>
+</ul>
 </section>
-<section id="une-remarque-sur-les-assistants-ia" class="level2">
-<h2 class="anchored" data-anchor-id="une-remarque-sur-les-assistants-ia">Une remarque sur les assistants IA</h2>
-<p>Ce cours n’utilise pas d’assistant IA dans son déroulé. On ne peut juger la qualité d’une réponse produite par un LLM que si l’on sait déjà faire sans lui : c’est cette autonomie que le cours cherche à construire.</p>
+<section id="déroulement-du-cours" class="level2">
+<h2 class="anchored" data-anchor-id="déroulement-du-cours">Déroulement du cours</h2>
+<ul>
+<li>Une partie théorique où nous discuterons des notions de programmation (en <code>R</code>) et des commandes</li>
+<li>Une partie pratique où vous travaillerez sur machine</li>
+<li>Le seul prérequis pour suivre ce cours est d’avoir accès à <code>R</code> et RStudio sur un ordinateur.</li>
+</ul>
 </section>
 <section id="validation" class="level2">
 <h2 class="anchored" data-anchor-id="validation">Validation</h2>
-<p>Cours à validation, sur la base des exercices <code>swirl</code> rendus au fur et à mesure et d’un rendu final : un script <code>.R</code> commenté (sections <code># Titre ----</code>), déposé à l’issue de la séance 5.</p>
-</section>
-</section>
-<section id="logiciels-requis-pour-le-cours" class="level1">
-<h1>Logiciels requis pour le cours</h1>
 <ul>
-<li>R, dans sa dernière version</li>
-<li>RStudio, dans sa dernière version</li>
-<li>Les paquets <code>swirl</code>, <code>tidyverse</code>, <code>questionr</code></li>
+<li>Le cours n’est pas noté, mais est validé par l’envoi de votre travail sur ordinateur.</li>
 </ul>
 </section>
-<section id="notions-principales" class="level1">
-<h1>Notions principales</h1>
-<ul>
-<li>Objet</li>
-<li>Fonction (argument, expression, résultat)</li>
-<li>Assignation</li>
-<li>Type (voir <a href="#sec-types" class="quarto-xref">Section&nbsp;3.2</a>)</li>
-<li>Valeur</li>
-<li>Commande</li>
-<li>Script</li>
-<li>Paquet (ou librairie)</li>
-<li>Tableau</li>
-<li>Graphique</li>
-</ul>
-<section id="liens-entre-ces-notions" class="level2">
-<h2 class="anchored" data-anchor-id="liens-entre-ces-notions">Liens entre ces notions</h2>
-<p>Une valeur est assignée à un objet. Une valeur peut être de différent type. Une commande est une instruction donnée à R. Un script rassemble un ensemble de commandes dans un fichier texte. Une fonction rassemble un ensemble de commandes effectuées sur des arguments et donne un résultat. Un type décrit la forme de la variable stockée en mémoire. Un paquet rassemble dans plusieurs scripts des objets et des fonctions.</p>
+<section id="cours" class="level2">
+<h2 class="anchored" data-anchor-id="cours">Cours</h2>
+<p>Le cours est construit à partir de deux ressources :</p>
+<ol type="1">
+<li>Le manuel de <span class="citation" data-cites="Barnier">Barnier et Kauffmann (<a href="#ref-Barnier" role="doc-biblioref">2023</a>)</span> (en français), que vous pouvez lire au fur et à mesure pour la séance suivante. Il est disponible sur Moodle et en ligne.</li>
+<li>Les exercices développés par l’équipe <span class="citation" data-cites="swirldev"><span class="nocase">swirldev</span> (<a href="#ref-swirldev" role="doc-biblioref">2022</a>)</span> (en anglais) et traduits et adaptés pour le cours, et d’autres élaborés par moi-même. Ils sont disponibles sur ce <a href="https://github.com/EliasBcd/InitiationR">dépôt Github</a>. Il faut m’envoyer les fichiers finaux de ces exercices pour la validation.</li>
+</ol>
+<p>Quand vous avez un problème avec R, vous pouvez généralement trouver sur internet la réponse à votre question. <a href="https://stackoverflow.com/">Stackoverflow</a> est une bonne ressource pour commencer. Les assistants par IA type ChatGPT, Gemini ou Claude peuvent en général fournir des réponses, mais elles sont parfois fausses et il n’est pas toujours simple de les comprendre.</p>
 </section>
-<section id="sec-types" class="level2">
-<h2 class="anchored" data-anchor-id="sec-types">Les types</h2>
+</section>
+<section id="r-et-rstudio" class="level1">
+<h1>R et Rstudio</h1>
+<section id="installation-de-r" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="installation-de-r">Installation de R</h2>
+<p>R et Rstudio sont deux logiciels libres, gratuits, téléchargeables en ligne et fonctionnant sous Windows, Mac et Linux.</p>
+<p>Pour installer <code>R</code>, il suffit de se rendre sur une des pages suivantes :</p>
 <ul>
-<li>Booléen</li>
-<li>Numériques</li>
-<li>Chaînes de caractères</li>
-<li>Vecteurs</li>
-<li>Tableau (tibble, data.frame)</li>
+<li><a href="https://cloud.r-project.org/bin/windows/base/">Windows</a></li>
+<li><a href="https://cloud.r-project.org/bin/macosx/">Mac</a></li>
+<li>Pour Linux, vous pouvez utiliser le gestionnaire de paquet du système ou bien suivre les instructions <a href="https://cran.r-project.org/bin/linux/ubuntu/">ici</a> pour obtenir la dernière version de <code>R</code> (pour Ubuntu/Debian)</li>
 </ul>
+</section>
+<section id="rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio">RStudio</h2>
+<ul>
+<li>Pour installer RStudio, rendez-vous sur <a href="https://posit.co/download/rstudio-desktop/">ici</a> et installez la version Desktop (gratuite) adaptée à votre système.</li>
+<li>Il faut installer R <strong>avant</strong> d’installer RStudio, sinon RStudio vous enverra une erreur.</li>
+<li>Vous pouvez aussi utiliser la version en ligne <a href="https://posit.cloud/">posit Cloud</a>, qui est très similaire à Rstudio.</li>
+<li>Vous trouverez plus d’informations sur l’installation de R et Rstudio sur le <a href="https://moodle.univ-paris8.fr/mod/page/view.php?id=272504">page Moodle</a> du cours.</li>
+</ul>
+</section>
+<section id="lancement-de-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="lancement-de-rstudio">Lancement de Rstudio</h2>
+<p>Une fois installé, pour lancer Rstudio, vous pouvez cliquer sur l’icône correspondante <img src="resources/RStudio-Logo-Flat.png" class="img-fluid" style="width:10.0%" alt="Logo RStudio"> ou bien rechercher l’application RStudio sur votre ordinateur.</p>
 </section>
 </section>
 <section id="références" class="level1">
+<h1>Références</h1>
+<section id="bibliographie" class="level2">
 
 
 
 
 </section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Références</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Bibliographie</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-Barnier" class="csl-entry" role="listitem">
 Barnier, Julien, et Mayeul Kauffmann. 2023. <em>"Introduction à R et au tydiverse"</em>. Version v2023-05-02. Zenodo, released. <a href="https://doi.org/10.5281/zenodo.6382598">https://doi.org/10.5281/zenodo.6382598</a>.
+</div>
+<div id="ref-swirldev" class="csl-entry" role="listitem">
+<span class="nocase">swirldev</span>. 2022. <em>Basic R programming</em>. <a href="https://github.com/swirldev/R_Programming_E">https://github.com/swirldev/R_Programming_E</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

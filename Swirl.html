@@ -8,7 +8,7 @@
 
 <meta name="author" content="Elias Bouacida">
 
-<title>Introduction à R – Initiation à R</title>
+<title>Utiliser Swirl – Initiation à R</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,26 +27,42 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -106,7 +122,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Index</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Swirl.html">Exercices</a></li><li class="breadcrumb-item"><a href="./Swirl.html">Utiliser Swirl</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
@@ -133,7 +149,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Index</span></a>
   </div>
 </li>
@@ -239,7 +255,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Swirl.html" class="sidebar-item-text sidebar-link">
+  <a href="./Swirl.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Utiliser Swirl</span></a>
   </div>
 </li>
@@ -255,30 +271,18 @@ div.csl-indent {
     <h2 id="toc-title">Sur cette page</h2>
    
   <ul>
-  <li><a href="#syllabus" id="toc-syllabus" class="nav-link active" data-scroll-target="#syllabus">Syllabus</a>
-  <ul class="collapse">
-  <li><a href="#objectif" id="toc-objectif" class="nav-link" data-scroll-target="#objectif">Objectif</a></li>
-  <li><a href="#plan-du-cours" id="toc-plan-du-cours" class="nav-link" data-scroll-target="#plan-du-cours">Plan du cours</a></li>
-  <li><a href="#une-remarque-sur-les-assistants-ia" id="toc-une-remarque-sur-les-assistants-ia" class="nav-link" data-scroll-target="#une-remarque-sur-les-assistants-ia">Une remarque sur les assistants IA</a></li>
-  <li><a href="#validation" id="toc-validation" class="nav-link" data-scroll-target="#validation">Validation</a></li>
-  </ul></li>
-  <li><a href="#logiciels-requis-pour-le-cours" id="toc-logiciels-requis-pour-le-cours" class="nav-link" data-scroll-target="#logiciels-requis-pour-le-cours">Logiciels requis pour le cours</a></li>
-  <li><a href="#notions-principales" id="toc-notions-principales" class="nav-link" data-scroll-target="#notions-principales">Notions principales</a>
-  <ul class="collapse">
-  <li><a href="#liens-entre-ces-notions" id="toc-liens-entre-ces-notions" class="nav-link" data-scroll-target="#liens-entre-ces-notions">Liens entre ces notions</a></li>
-  <li><a href="#sec-types" id="toc-sec-types" class="nav-link" data-scroll-target="#sec-types">Les types</a></li>
-  </ul></li>
-  <li><a href="#références" id="toc-références" class="nav-link" data-scroll-target="#références">Références</a></li>
+  <li><a href="#utilisation-de-swirl" id="toc-utilisation-de-swirl" class="nav-link active" data-scroll-target="#utilisation-de-swirl">Utilisation de <code>swirl</code></a></li>
+  <li><a href="#rendu-des-exercices" id="toc-rendu-des-exercices" class="nav-link" data-scroll-target="#rendu-des-exercices">Rendu des exercices</a></li>
+  <li><a href="#aller-plus-loin" id="toc-aller-plus-loin" class="nav-link" data-scroll-target="#aller-plus-loin">Aller plus loin</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Swirl.html">Exercices</a></li><li class="breadcrumb-item"><a href="./Swirl.html">Utiliser Swirl</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introduction à R</h1>
-<p class="subtitle lead">Syllabus</p>
+<h1 class="title">Utiliser Swirl</h1>
 </div>
 
 
@@ -307,109 +311,45 @@ div.csl-indent {
 </header>
 
 
-<p>Ce site contient les présentations utilisées pour le cours d’introduction à R dispensé en L3 économie-finance à l’université Paris 8.</p>
-<section id="syllabus" class="level1">
-<h1>Syllabus</h1>
-<p>La principale ressource bibliographique pour le cours est <span class="citation" data-cites="Barnier">Barnier et Kauffmann (<a href="#ref-Barnier" role="doc-biblioref">2023</a>)</span>.</p>
-<section id="objectif" class="level2">
-<h2 class="anchored" data-anchor-id="objectif">Objectif</h2>
-<p>Savoir charger un jeu de données, le décrire et le représenter. Le cours prépare aux usages ultérieurs en économétrie, séries temporelles et projet tutoré.</p>
-<p>Un seul jeu de données est utilisé du début à la fin : <code>hdv2003</code> (paquet <code>questionr</code>, enquête <em>Histoire de vie</em> 2003).</p>
-</section>
-<section id="plan-du-cours" class="level2">
-<h2 class="anchored" data-anchor-id="plan-du-cours">Plan du cours</h2>
-<p>Cinq séances de trois heures, en salle machine.</p>
-<ol type="1">
-<li><strong>Premiers pas</strong> (<a href="./00Introduction.html">Introduction</a>, <a href="./01PremiersPas.html">Premiers Pas</a>)
-<ul>
-<li>Installer R et RStudio, présenter l’interface</li>
-<li>Objets, types (booléen, numérique, chaîne de caractères), vecteurs</li>
-<li>Fonctions, messages d’erreur, scripts, paquets</li>
-<li>Installation de swirl</li>
-</ul></li>
-<li><strong>Découvrir un tableau de données</strong> (<a href="./02Donnees.html">Explorer des données</a>)
-<ul>
-<li>Passage au <code>tidyverse</code></li>
-<li>Tibble (tableau), <code>glimpse()</code>, le tuyau <code>|&gt;</code></li>
-<li><code>select()</code>, <code>filter()</code>, <code>arrange()</code>, <code>mutate()</code></li>
-</ul></li>
-<li><strong>Analyser des données</strong> (<a href="./03Analyse.html">Analyser des données</a>)
-<ul>
-<li><code>summarise()</code>, valeurs manquantes</li>
-<li>Les erreurs silencieuses</li>
-<li><code>count()</code>, <code>group_by()</code>, croisement de deux variables</li>
-</ul></li>
-<li><strong>Représenter des données</strong> (<a href="./04RepresentationsGraphiques.html">Représenter des données</a>)
-<ul>
-<li><code>ggplot2</code> : données, géométrie, esthétique</li>
-<li>Représenter une variable, croiser deux variables</li>
-<li>Mappages, superposition, mise en forme</li>
-</ul></li>
-<li><strong>Projet en autonomie</strong> (<a href="./05Projet.html">Projet</a>)
-<ul>
-<li>Une analyse complète sur <code>hdv2003</code>, du script au rendu</li>
-</ul></li>
-</ol>
-<p>Chaque séance renvoie vers des leçons <code>swirl</code> et une lecture facultative correspondante dans <span class="citation" data-cites="Barnier">Barnier et Kauffmann (<a href="#ref-Barnier" role="doc-biblioref">2023</a>)</span>.</p>
-</section>
-<section id="une-remarque-sur-les-assistants-ia" class="level2">
-<h2 class="anchored" data-anchor-id="une-remarque-sur-les-assistants-ia">Une remarque sur les assistants IA</h2>
-<p>Ce cours n’utilise pas d’assistant IA dans son déroulé. On ne peut juger la qualité d’une réponse produite par un LLM que si l’on sait déjà faire sans lui : c’est cette autonomie que le cours cherche à construire.</p>
-</section>
-<section id="validation" class="level2">
-<h2 class="anchored" data-anchor-id="validation">Validation</h2>
-<p>Cours à validation, sur la base des exercices <code>swirl</code> rendus au fur et à mesure et d’un rendu final : un script <code>.R</code> commenté (sections <code># Titre ----</code>), déposé à l’issue de la séance 5.</p>
-</section>
-</section>
-<section id="logiciels-requis-pour-le-cours" class="level1">
-<h1>Logiciels requis pour le cours</h1>
-<ul>
-<li>R, dans sa dernière version</li>
-<li>RStudio, dans sa dernière version</li>
-<li>Les paquets <code>swirl</code>, <code>tidyverse</code>, <code>questionr</code></li>
-</ul>
-</section>
-<section id="notions-principales" class="level1">
-<h1>Notions principales</h1>
-<ul>
-<li>Objet</li>
-<li>Fonction (argument, expression, résultat)</li>
-<li>Assignation</li>
-<li>Type (voir <a href="#sec-types" class="quarto-xref">Section&nbsp;3.2</a>)</li>
-<li>Valeur</li>
-<li>Commande</li>
-<li>Script</li>
-<li>Paquet (ou librairie)</li>
-<li>Tableau</li>
-<li>Graphique</li>
-</ul>
-<section id="liens-entre-ces-notions" class="level2">
-<h2 class="anchored" data-anchor-id="liens-entre-ces-notions">Liens entre ces notions</h2>
-<p>Une valeur est assignée à un objet. Une valeur peut être de différent type. Une commande est une instruction donnée à R. Un script rassemble un ensemble de commandes dans un fichier texte. Une fonction rassemble un ensemble de commandes effectuées sur des arguments et donne un résultat. Un type décrit la forme de la variable stockée en mémoire. Un paquet rassemble dans plusieurs scripts des objets et des fonctions.</p>
-</section>
-<section id="sec-types" class="level2">
-<h2 class="anchored" data-anchor-id="sec-types">Les types</h2>
-<ul>
-<li>Booléen</li>
-<li>Numériques</li>
-<li>Chaînes de caractères</li>
-<li>Vecteurs</li>
-<li>Tableau (tibble, data.frame)</li>
-</ul>
-</section>
-</section>
-<section id="références" class="level1">
-
-
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Références</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-Barnier" class="csl-entry" role="listitem">
-Barnier, Julien, et Mayeul Kauffmann. 2023. <em>"Introduction à R et au tydiverse"</em>. Version v2023-05-02. Zenodo, released. <a href="https://doi.org/10.5281/zenodo.6382598">https://doi.org/10.5281/zenodo.6382598</a>.
+<section id="utilisation-de-swirl" class="level2">
+<h2 class="anchored" data-anchor-id="utilisation-de-swirl">Utilisation de <code>swirl</code></h2>
+<p>Si le paquet swirl n’est pas installé, installez-le à l’aide de la commande suivante dans la console</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'swirl'</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div></section></div></main> <!-- /main -->
+<p>Quoiqu’il arrive, exécutez les lignes suivantes dans la console :</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(swirl)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">uninstall_all_courses</span>() </span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Ici <code>R</code> vous demandera si vous voulez tout désinstaller, dites oui. Puis tapez les lignes suivantes.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install_course_github</span>(<span class="st">'EliasBcd'</span>, <span class="st">'InitiationR'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select_language</span>(<span class="st">'french'</span>, <span class="at">append_rprofile =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">swirl</span>()</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Suivez ensuite les instructions qui apparaissent dans la console. Utilisez toujours le même nom, il me permet de vous identifier. Sélectionnez le cours <code>InitiationR</code>. C’est normalement le cours numéro 1. Sélectionnez enfin la leçon correspondant à votre progression dans le cours.</p>
+</section>
+<section id="rendu-des-exercices" class="level2">
+<h2 class="anchored" data-anchor-id="rendu-des-exercices">Rendu des exercices</h2>
+<p>Vous devez déposés à la fin de chaque leçon swirl le fichier .txt généré sur Moodle, <a href="https://moodle.univ-paris8.fr/mod/assign/view.php?id=271762">ici</a></p>
+<p>Le fichier s’appelle en général <code>nom_de_la_leçon.txt</code> et apparaît à la racine de votre dossier personnel. Ici, par exemple, le fichier <code>Exercice_1.txt</code>. On le trouve sur l’onglet en bas à droite, dans l’onglet File.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/RenduExercice.png" class="img-fluid figure-img"></p>
+<figcaption>Exemple avec Exercice_1.txt</figcaption>
+</figure>
+</div>
+<p>Vous pouvez ensuite le déposer sur Moodle, dans le devoir “Suivi de la Progression”. Vous pouvez déposer plusieurs fichiers, cela ne pose pas de problème, tant qu’ils ont des noms différents.</p>
+</section>
+<section id="aller-plus-loin" class="level2">
+<h2 class="anchored" data-anchor-id="aller-plus-loin">Aller plus loin</h2>
+<p>Le cours <code>InitiationR</code> propose aussi des leçons facultatives, en autonomie, pour qui veut pratiquer davantage ou approfondir un point (fonctions, boucles, tirages aléatoires…). Chaque séance rappelle celles qui prennent la suite directe de ce qui vient d’être vu. La liste complète, avec un résumé de chaque leçon, est disponible dans <a href="https://github.com/EliasBcd/InitiationR/blob/main/LECONS_OPTIONNELLES.md"><code>LECONS_OPTIONNELLES.md</code></a> sur le dépôt du cours.</p>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
