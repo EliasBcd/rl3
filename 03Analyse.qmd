@@ -443,7 +443,7 @@ library(swirl)
 swirl()
 ```
 
-Faites les leçons **Valeurs_manquantes** et **Analyse_de_données**.
+Faites les leçons **Valeurs_manquantes** et **Decrire_les_données**.
 
 ## Exercice 3 {.smaller}
 
