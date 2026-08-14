@@ -533,6 +533,12 @@ swirl()
 
 Faites la leçon **Representations_graphiques**.
 
+::: {.callout-note}
+En option, pour pratiquer davantage : la leçon facultative **Exercice_5**
+reprend nuage de points, boîte à moustaches et diagramme en bâtons. Voir
+[`LECONS_OPTIONNELLES.md`](https://github.com/EliasBcd/InitiationR/blob/main/LECONS_OPTIONNELLES.md).
+:::
+
 ## Pour la prochaine séance {.smaller}
 
 La séance 5 est un projet : une analyse complète, de votre choix, sur `hdv2003`.

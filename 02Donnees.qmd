@@ -387,12 +387,12 @@ library(swirl)
 swirl()
 ```
 
-Faites la leçon **Tableaux_de_donnes** et **Manipuler_les_donnees** et déposez le fichier sur Moodle.
+Faites la leçon **Tableaux_de_donnees** et **Manipuler_les_donnees** et déposez le fichier sur Moodle.
 
 ## Pour la prochaine séance {.smaller}
 
 ::: {.incremental}
-Terminez les leçons swirl **Tableaux_de_donnes** et **Manipuler_les_donnees**.
+Terminez les leçons swirl **Tableaux_de_donnees** et **Manipuler_les_donnees**.
 :::
 
 ::: {.fragment}

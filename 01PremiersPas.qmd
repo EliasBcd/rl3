@@ -664,6 +664,12 @@ install_course_github("EliasBcd", "InitiationR")
 1. Terminez les six leçons swirl et déposez-les sur Moodle.
 :::
 
+::: {.callout-note}
+En option, pour pratiquer davantage : la leçon facultative **Exercice_1**
+reprend vecteurs et fonctions de base. Voir
+[`LECONS_OPTIONNELLES.md`](https://github.com/EliasBcd/InitiationR/blob/main/LECONS_OPTIONNELLES.md).
+:::
+
 ::: {.fragment}
 Séance prochaine : nous abandonnons les vecteurs saisis à la main pour de vraies données d'enquête.
 :::

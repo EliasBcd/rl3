@@ -59,3 +59,13 @@ Ici, par exemple, le fichier `Exercice_1.txt`. On le trouve sur l'onglet en bas 
 
 Vous pouvez ensuite le déposer sur Moodle, dans le devoir "Suivi de la Progression".
 Vous pouvez déposer plusieurs fichiers, cela ne pose pas de problème, tant qu'ils ont des noms différents.
+
+## Aller plus loin
+
+Le cours `InitiationR` propose aussi des leçons facultatives, en autonomie,
+pour qui veut pratiquer davantage ou approfondir un point (fonctions,
+boucles, tirages aléatoires...). Chaque séance rappelle celles qui prennent
+la suite directe de ce qui vient d'être vu. La liste complète, avec un
+résumé de chaque leçon, est disponible dans
+[`LECONS_OPTIONNELLES.md`](https://github.com/EliasBcd/InitiationR/blob/main/LECONS_OPTIONNELLES.md)
+sur le dépôt du cours.

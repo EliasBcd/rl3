@@ -351,7 +351,7 @@ Vous savez maintenant charger des données, les décrire, les représenter et re
 
 ::: {.incremental}
 - Vous retrouverez ces outils en économétrie, en séries temporelles et dans votre projet tutoré.
-- Les leçons swirl que vous n'avez pas faites restent disponibles : conditions, boucles, écriture de fonctions.
+- Les leçons swirl facultatives restent disponibles si vous voulez aller plus loin : conditions, boucles, écriture de fonctions, tirages aléatoires... Voir [`LECONS_OPTIONNELLES.md`](https://github.com/EliasBcd/InitiationR/blob/main/LECONS_OPTIONNELLES.md) pour la liste complète.
 - Le manuel de Julien Barnier, [*Introduction à R et au tidyverse*](https://juba.github.io/tidyverse/), couvre largement ce que nous n'avons pas eu le temps d'aborder.
 :::
 

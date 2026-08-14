@@ -443,7 +443,13 @@ library(swirl)
 swirl()
 ```
 
-Faites les leçons **Valeurs_manquantes** et **Decrire_les_données**.
+Faites les leçons **Valeurs_manquantes** et **Decrire_les_donnees**.
+
+::: {.callout-note}
+En option, pour pratiquer davantage : la leçon facultative **Exercice_2**
+reprend le chargement et le résumé d'un tableau. Voir
+[`LECONS_OPTIONNELLES.md`](https://github.com/EliasBcd/InitiationR/blob/main/LECONS_OPTIONNELLES.md).
+:::
 
 ## Exercice 3 {.smaller}
 

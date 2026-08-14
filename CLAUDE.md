@@ -121,8 +121,8 @@ Les étudiants déposent le fichier `.txt` produit à la fin de chaque leçon su
 Moodle : c'est le suivi de progression.
 
 Leçons utilisées : `Manipulations_simples`, `Types`, `Vecteurs`, `Messages_erreurs`, `Fonctions`,
-`Logique` (séance 1), `Tableaux_de_donnes`, `Manipuler_les_donnees`
-(séance 2), `Valeurs_manquantes`, `Analyse_de_données` (séance 3),
+`Logique` (séance 1), `Tableaux_de_donnees`, `Manipuler_les_donnees`
+(séance 2), `Valeurs_manquantes`, `Decrire_les_donnees` (séance 3),
 `Representations_graphiques` (séance 4).
 
 Vérifié fonctionnel sur R 4.6.1 / swirl 2.4.5.
