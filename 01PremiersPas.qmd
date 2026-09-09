@@ -39,8 +39,8 @@ Cinq séances de trois heures, sur machine.
 
 ::: {.incremental}
 - **Un seul jeu de données** pendant tout le cours : l'enquête *Histoires de vie* de l'INSEE. Vous finirez par bien le connaître, et c'est voulu.
-- **Une seule famille d'outils** : le `tidyverse`, à partir de la séance 2.
-- **Des exercices interactifs** avec `swirl`, à faire en séance et à terminer chez vous. Le temps en salle sert à pratiquer, pas à écouter.
+- **Une seule famille d'outils**, le `tidyverse`, à partir de la séance 2.
+- **Des exercices interactifs** avec `swirl`, à faire en séance et à terminer chez vous. Le temps en salle sert à pratiquer.
 - Chaque séance commence par une reprise de dix à quinze minutes sur la séance précédente.
 :::
 
@@ -53,9 +53,11 @@ Ils vous donneront presque toujours une réponse, parfois fausse, et pas toujour
 Le problème n'est pas qu'ils se trompent : c'est que vous ne pouvez pas le voir tant que vous ne savez pas faire sans eux.
 Ces cinq séances servent à acquérir de quoi les juger.
 
-Pendant les séances, servez-vous de l'aide de R (`?`) et des messages d'erreur. 
+Pendant les séances, servez-vous de l'aide de R et des messages d'erreur. 
 C'est ce que vous apprendrez ici.
 :::
+
+Charte IA de l'université : <https://www.univ-paris8.fr/IMG/pdf/02_chartes_cadre_ia_up8.pdf>
 
 # Introduction à R
 
@@ -78,7 +80,7 @@ La zone de gauche se nomme **la Console**.
 Faire la démonstration en direct.
 :::
 
-## Console 
+## Console {.smaller}
 
 La Console affiche un texte de bienvenue suivi d'une ligne commençant par le caractère `>` (l'invite de commande). 
 

@@ -47,7 +47,7 @@ format-links: [revealjs]
 
 - Le cours n'est pas noté, mais est validé par l'envoi de votre travail sur ordinateur.
 
-## Cours
+## Cours {.smaller}
 
 Le cours est construit à partir de deux ressources :
 
