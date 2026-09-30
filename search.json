@@ -3515,7 +3515,7 @@
     "href": "04RepresentationsGraphiques.html#les-échelles",
     "title": "Représenter des données",
     "section": "Les échelles",
-    "text": "Les échelles\nLes scales modifient la manière dont un attribut est relié aux valeurs d’une variable, et l’affichage de la légende correspondante. Elles s’ajoutent avec + et prennent la forme scale_&lt;attribut&gt;_&lt;type&gt;.\n\nggplot(d) + \n  geom_jitter(aes(x = age, y = heures.tv), alpha = 0.15) +\n  scale_x_continuous(limits = c(18, 100)) +\n  scale_y_continuous(limits = c(0, 12))\n\nWarning: Removed 127 rows containing missing values or values outside the scale range\n(`geom_point()`).",
+    "text": "Les échelles\nLes scales modifient la manière dont un attribut est relié aux valeurs d’une variable, et l’affichage de la légende correspondante. Elles s’ajoutent avec + et prennent la forme scale_&lt;attribut&gt;_&lt;type&gt;.\n\nggplot(d) + \n  geom_jitter(aes(x = age, y = heures.tv), alpha = 0.15) +\n  scale_x_continuous(limits = c(18, 100)) +\n  scale_y_continuous(limits = c(0, 12))\n\nWarning: Removed 137 rows containing missing values or values outside the scale range\n(`geom_point()`).",
     "crumbs": [
       "Séance 4 : représentations graphiques",
       "Représenter des données"
