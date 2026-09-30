@@ -8,40 +8,93 @@ date: last-modified
 date-format: long
 ---
 
-Ce site contient la plupart des présentations utilisées pour le cours d'introduction à la programmation (en R) dispensé au sein de l'université Paris 8.
+Ce site contient les présentations utilisées pour le cours d'introduction à R dispensé en L3 économie-finance à l'université Paris 8.
 
-
-# Syllabus 
+# Syllabus
 
 Une ressource bibliographique utile pour comprendre de nombreux concepts en R est proposée par @Barnier.
 
+## Objectif
+
+Savoir charger un jeu de données, le décrire et le représenter. 
+Le cours
+prépare aux usages ultérieurs en économétrie, séries temporelles et projet
+tutoré.
+
+Un seul jeu de données est utilisé du début à la fin : `hdv2003` (paquet
+`questionr`, enquête *Histoire de vie* 2003).
+
 ## Plan du cours
 
-Le cours est structuré en 3 phases progressives sur 8 séances de 3h.
+Cinq séances de trois heures, en salle machine.
 
-### Phase 1 : Fondations 🌱 (Séances 1-3)
+1. **Premiers pas** ([Introduction](00Introduction.qmd), [Premiers Pas](01PremiersPas.qmd))
+    - Installer R et RStudio, présenter l'interface
+    - Objets, types (booléen, numérique, chaîne de caractères), vecteurs
+    - Fonctions, messages d'erreur, scripts, paquets
+    - Installation de swirl
+2. **Découvrir un tableau de données** ([Explorer des données](02Donnees.qmd))
+    - Passage au `tidyverse`
+    - Tibble (tableau), `glimpse()`, le tuyau `|>`
+    - `select()`, `filter()`, `arrange()`, `mutate()`
+3. **Analyser des données** ([Analyser des données](03Analyse.qmd))
+    - `summarise()`, valeurs manquantes
+    - Les erreurs silencieuses
+    - `count()`, `group_by()`, croisement de deux variables
+4. **Représenter des données** ([Représenter des données](04RepresentationsGraphiques.qmd))
+    - `ggplot2` : données, géométrie, esthétique
+    - Représenter une variable, croiser deux variables
+    - Mappages, superposition, mise en forme
+5. **Projet en autonomie** ([Projet](05Projet.qmd))
+    - Une analyse complète sur `hdv2003`, du script au rendu
 
-**Objectif :** Maîtriser le dialogue avec un LLM et les concepts R de base
+Chaque séance renvoie vers des leçons `swirl` et une lecture facultative correspondante
+dans @Barnier.
 
-### Phase 2 : Application 🚀 (Séances 4-5)
+## Une remarque sur les assistants IA
 
-**Objectif :** Analyser de vraies données en autonomie
-
-### Phase 3 : Expertise ⭐ (Séances 6-8)
-
-**Objectif :** Devenir autonome et collaborer efficacement
-
-
-**À la fin du cours, vous serez capable de :** analyser des données en autonomie, créer vos propres outils, automatiser vos analyses, collaborer sur du code, et utiliser les LLMs comme de véritables partenaires de travail.
+Ce cours n'utilise pas d'assistant IA dans son déroulé. 
+On ne peut juger la qualité d'une réponse produite par un LLM que si l'on sait déjà faire sans lui : c'est cette autonomie que le cours cherche à construire.
 
 ## Validation
 
+Cours à validation, sur la base des exercices `swirl` rendus au fur et à mesure et d'un rendu final : un script `.R` commenté (sections `# Titre ----`), déposé à l'issue de la séance 5.
 
-En M3P, c'est un cours à validation. 
-En EC libre, c'est un cours noté, l'évaluation varie donc un peu entre les deux.
+# Logiciels requis pour le cours
 
-# Organisation du site
+- R, dans sa dernière version
+- RStudio, dans sa dernière version
+- Les paquets `swirl`, `tidyverse`, `questionr`
 
-Pour chaque module, vous trouverez la présentation sous la forme d'une page web classique (`html`) et une version sous la forme d'une présentation téléchargeable en cliquant à droite sur `revealjs`.
+# Notions principales
+
+- Objet
+- Fonction (argument, expression, résultat)
+- Assignation
+- Type (voir @sec-types)
+- Valeur
+- Commande
+- Script
+- Paquet (ou librairie)
+- Tableau
+- Graphique
+
+## Liens entre ces notions
+
+Une valeur est assignée à un objet.
+Une valeur peut être de différent type.
+Une commande est une instruction donnée à R.
+Un script rassemble un ensemble de commandes dans un fichier texte.
+Une fonction rassemble un ensemble de commandes effectuées sur des arguments et donne un résultat.
+Un type décrit la forme de la variable stockée en mémoire.
+Un paquet rassemble dans plusieurs scripts des objets et des fonctions.
+
+## Les types {#sec-types}
+
+- Booléen
+- Numériques
+- Chaînes de caractères
+- Vecteurs
+- Tableau (tibble, data.frame)
 
 # Références

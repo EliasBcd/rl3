@@ -1,0 +1,469 @@
+---
+title: "Décrire des données"
+subtitle: "L3 économie-finance"
+author: "Elias Bouacida"
+format: 
+  html: default
+  revealjs:
+    output-file: slide-analyse.html
+    embed-resources: true
+    scrollable: true
+lang: fr
+institute: "Université Paris 8"
+date: last-modified
+date-format: long
+execute: 
+  echo: true
+format-links: [revealjs]
+---
+
+```{r setup}
+#| include: false
+
+library(tidyverse)
+library(questionr)
+data(hdv2003)
+d <- as_tibble(hdv2003)
+```
+
+# Reprise de la séance 2
+
+## Sur papier, sans machine {.smaller}
+
+Voici un petit tableau de six personnes :
+
+```{r reprise_tableau}
+#| echo: false
+tibble(
+  prenom = c("Alice", "Bilal", "Chloé", "David", "Éva", "Farid"),
+  age = c(22, 45, 31, 19, 58, 27),
+  categorie = c("Étudiant", "Cadre", "Employé", "Étudiant", "Cadre", "Ouvrier"),
+  heures_tv = c(1, 3, 2, 4, 2, 5)
+)
+```
+
+Sur papier, dessinez le tableau obtenu par chacun de ces deux enchaînements. Pas de machine.
+
+```{r reprise_enonce}
+#| eval: false
+tab |>
+  filter(categorie != "Étudiant") |>
+  arrange(age) |>
+  select(prenom, categorie)
+
+tab |>
+  mutate(heures_semaine = heures_tv * 7) |>
+  filter(heures_semaine > 14)
+```
+
+::: {.notes}
+10 minutes de dessin individuel, puis correction collective au tableau.
+Regardez si les étudiants confondent filter et select, ou oublient que mutate ajoute une colonne sans retirer les autres.
+:::
+
+## Correction {.smaller}
+
+```{r reprise_correction}
+tab <- tibble(
+  prenom = c("Alice", "Bilal", "Chloé", "David", "Éva", "Farid"),
+  age = c(22, 45, 31, 19, 58, 27),
+  categorie = c("Étudiant", "Cadre", "Employé", "Étudiant", "Cadre", "Ouvrier"),
+  heures_tv = c(1, 3, 2, 4, 2, 5)
+)
+
+tab |>
+  filter(categorie != "Étudiant") |>
+  arrange(age) |>
+  select(prenom, categorie)
+
+tab |>
+  mutate(heures_semaine = heures_tv * 7) |>
+  filter(heures_semaine > 14)
+```
+
+::: {.callout-important}
+`mutate()` ajoute une colonne au tableau complet ; le `filter()` qui suit porte sur ce tableau augmenté, pas sur le tableau d'origine.
+:::
+
+# Où nous en sommes
+
+## Rappel
+
+Lors de la dernière séance, nous avons appris à découper un tableau : `select`, `filter`, `arrange`, `mutate`.
+
+```{r rappel}
+d |> # d le tableau hdv2003 utilisé la semaine dernière
+  filter(age < 25) |>
+  select(age, sexe, qualif)
+```
+
+## Aujourd'hui
+
+::: {.incremental}
+- **Résumer** une variable quantitative : moyenne, dispersion, quartiles
+- **Compter** les modalités d'une variable qualitative
+- **Comparer** des groupes
+- **Croiser** deux variables
+:::
+
+::: {.fragment}
+Et une mise en garde : les calculs qui donnent un résultat faux sans rien dire.
+:::
+
+# Variables quantitatives
+
+## De quoi parle-t-on
+
+Une variable **quantitative** est numérique et peut prendre un grand nombre de valeurs : ici l'âge (`age`) ou le nombre d'heures de télévision (`heures.tv`).
+
+```{r quanti}
+d |> select(age, heures.tv, freres.soeurs)
+```
+
+## Résumer : `summarise()`
+
+`summarise()` calcule des indicateurs sur l'ensemble du tableau et renvoie un tableau d'une seule ligne.
+
+```{r summarise}
+d |> summarise(
+  moyenne = mean(age),
+  mediane = median(age),
+  minimum = min(age),
+  maximum = max(age)
+)
+```
+
+## Indicateurs de dispersion {.smaller}
+
+Les indicateurs de dispersion mesurent si les valeurs sont regroupées ou dispersées.
+
+Le plus simple est l'**étendue** : l'écart entre la plus grande et la plus petite valeur. 
+Les plus utilisés sont la **variance** (`var`) et l'**écart-type** (`sd`, pour *standard deviation*).
+
+```{r dispersion}
+d |> summarise(
+  etendue = max(age) - min(age),
+  variance = var(age),
+  ecart_type = sd(age)
+)
+```
+
+## Quartiles {.smaller}
+
+- le **premier quartile** est la valeur en dessous de laquelle se trouvent 25 % des observations ;
+- le **deuxième quartile** est la médiane : 50 % en dessous, 50 % au dessus ;
+- le **troisième quartile** laisse 75 % des observations en dessous.
+
+```{r quartiles}
+d |> summarise(
+  q1 = quantile(age, 0.25),
+  q2 = quantile(age, 0.50),
+  q3 = quantile(age, 0.75)
+)
+```
+
+L'argument de `quantile()` est une proportion entre 0 et 1 : `0.5` donne la médiane, `0.1` le premier décile.
+
+## Un résumé rapide
+
+Pour un aperçu immédiat, `summary()` donne l'essentiel en une commande :
+
+```{r summary}
+summary(d$age)
+```
+
+::: {.callout-note}
+`summary()` attend un vecteur, d'où le `$`. 
+C'est pratique pour explorer, mais le résultat n'est pas un tableau : on ne peut pas l'enchaîner avec `|>`. 
+Pour produire un résultat réutilisable, préférez `summarise()`.
+:::
+
+## Valeurs manquantes
+
+```{r na_probleme}
+d |> summarise(moyenne = mean(heures.tv))
+```
+
+Le résultat est `NA`. 
+La variable contient des valeurs manquantes, et la moyenne d'un ensemble contenant une valeur inconnue est inconnue.
+
+## Écarter les valeurs manquantes
+
+Comme en séance 1, l'argument `na.rm = TRUE` demande d'ignorer ces valeurs :
+
+```{r na_rm}
+d |> summarise(
+  moyenne = mean(heures.tv, na.rm = TRUE),
+  nombre_na = sum(is.na(heures.tv))
+)
+```
+
+`is.na()` renvoie `TRUE` pour chaque valeur manquante ; `sum()` les compte.
+
+# Les erreurs silencieuses
+
+## Le vrai danger {.smaller}
+
+En séance 1, nous avons vu comment lire un message d'erreur. 
+Ces erreurs-là sont les faciles : R refuse de continuer, vous savez qu'il y a un problème.
+
+::: {.fragment}
+À partir d'aujourd'hui, vous allez produire des **chiffres**. 
+Et un chiffre faux ressemble exactement à un chiffre juste.
+:::
+
+::: {.fragment}
+::: {.callout-important}
+Il n'y a pas de message d'erreur pour vous prévenir qu'une moyenne porte sur la mauvaise population.
+:::
+:::
+
+## Trois pièges {.smaller}
+
+::: {.incremental}
+1. **`na.rm = TRUE` change la population.** 
+Vous ne calculez plus la moyenne des 2000 enquêtés, mais celle des répondants. 
+Comptez toujours combien vous en écartez.
+
+2. **L'oubli du `<-`.** 
+Vous croyez avoir créé une variable, elle n'existe pas. 
+Les calculs suivants portent sur l'ancien tableau.
+
+3. **Les effectifs faibles.** 
+Une moyenne calculée sur six personnes n'est pas comparable à une moyenne calculée sur huit cents. 
+Affichez toujours l'effectif à côté de l'indicateur.
+:::
+
+## La parade
+
+::: {.incremental}
+- **Prédisez avant de lancer.** 
+Écrivez en commentaire l'ordre de grandeur que vous attendez. 
+Un résultat qui surprend est soit une découverte, soit une erreur -- il faut trancher, pas passer à la suite.
+- **Affichez toujours l'effectif** à côté de chaque indicateur.
+- **Recoupez.** 
+Un même chiffre obtenu de deux façons différentes est probablement juste.
+:::
+
+# Variables qualitatives
+
+## De quoi parle-t-on {.smaller}
+
+Une variable **qualitative** ne prend qu'un nombre limité de valeurs, appelées **modalités** : le sexe (`sexe`), le niveau d'études (`nivetud`), la catégorie socio-professionnelle (`qualif`).
+
+Une variable qualitative peut être numérique, et certaines variables se traitent au choix comme quantitatives ou qualitatives : c'est le cas du nombre de frères et sœurs.
+
+## Tri à plat : `count()`
+
+Le **tri à plat** compte le nombre d'observations pour chaque modalité.
+
+```{r count_sexe}
+d |> count(sexe)
+```
+
+## Trier les effectifs
+
+```{r count_qualif}
+d |> count(qualif, sort = TRUE)
+```
+
+::: {.callout-tip}
+`count()` affiche les valeurs manquantes comme une modalité à part entière. 
+:::
+
+## Passer aux pourcentages
+
+Les effectifs bruts se comparent mal. 
+On les rapporte au total avec `mutate()` :
+
+```{r count_pct}
+d |>
+  count(qualif) |>
+  mutate(pourcentage = round(100 * n / sum(n), 1))
+```
+
+## Exercice 1 {.smaller}
+
+1. Faites le tri à plat de la variable `relig`. 
+Quelle est la modalité la plus fréquente ?
+2. Exprimez ce tri à plat en pourcentages.
+3. Quelle proportion des enquêtés pratique la pêche ou la chasse (`peche.chasse`) ?
+4. Combien de valeurs manquantes contient la variable `trav.satisf` ? 
+Que représentent-elles, à votre avis ?
+
+::: {.notes}
+20 minutes. 
+La question 4 est importante : les NA de trav.satisf correspondent aux personnes sans emploi. 
+Une valeur manquante a souvent un sens.
+:::
+
+# Comparer des groupes
+
+## `group_by()`
+
+`group_by()` découpe le tableau en groupes ; `summarise()` calcule alors un résultat **par groupe**.
+
+```{r group_by}
+d |>
+  group_by(sexe) |>
+  summarise(
+    effectif = n(),
+    age_moyen = mean(age),
+    tv_moyenne = mean(heures.tv, na.rm = TRUE)
+  )
+```
+
+`n()` donne l'effectif du groupe. 
+Prenez l'habitude de toujours l'inclure.
+
+## Grouper sur plusieurs variables {.smaller}
+
+```{r group_by2}
+d |>
+  group_by(sexe, sport) |>
+  summarise(
+    effectif = n(),
+    age_moyen = mean(age),
+    .groups = "drop"
+  )
+```
+
+::: {.callout-note}
+`.groups = "drop"` supprime le regroupement une fois le calcul fait. 
+Sans cet argument, R affiche un avertissement et le tableau reste groupé, ce qu'il faut garder en tête pour les opérations suivantes.
+:::
+
+## L'outil central du cours {.smaller}
+
+C'est la combinaison la plus utile de tout ce que nous verrons :
+
+> **découper** en groupes (`group_by`), **calculer** un indicateur par groupe (`summarise`), **trier** le résultat (`arrange`).
+
+```{r combo}
+d |>
+  group_by(qualif) |>
+  summarise(
+    effectif = n(),
+    tv_moyenne = mean(heures.tv, na.rm = TRUE)
+  ) |>
+  arrange(desc(tv_moyenne))
+```
+
+## Exercice 2 {.smaller}
+
+1. L'âge moyen varie-t-il selon le niveau d'études (`nivetud`) ?
+2. Les personnes qui déclarent lire des bandes dessinées sont-elles plus jeunes que les autres ?
+3. Comparez le nombre moyen d'heures de télévision selon la catégorie socio-professionnelle. 
+Y a-t-il des groupes trop petits pour que la comparaison soit sérieuse ?
+
+::: {.callout-tip}
+Écrivez en commentaire, avant de lancer, ce que vous attendez comme résultat.
+:::
+
+# Croiser deux variables
+
+## L'analyse bivariée
+
+Faire une analyse **bivariée**, c'est étudier la relation entre deux variables : sont-elles liées ? 
+Les valeurs de l'une influencent-elles celles de l'autre ? 
+Ou sont-elles indépendantes ?
+
+## Compter les combinaisons {.smaller}
+
+Pour croiser deux variables qualitatives, on compte les effectifs de chaque combinaison :
+
+```{r croise_long}
+d |> count(qualif, sexe)
+```
+
+## Une présentation en tableau {.smaller}
+
+Le résultat précédent est correct mais peu lisible. 
+`pivot_wider()` le remet en forme de tableau à double entrée :
+
+```{r croise_large}
+d |>
+  count(qualif, sexe) |>
+  pivot_wider(names_from = sexe, values_from = n)
+```
+
+## Pourcentages en ligne {.smaller}
+
+Les effectifs bruts ne se comparent pas, car les groupes n'ont pas la même taille. 
+On calcule donc les pourcentages **à l'intérieur de chaque ligne** :
+
+```{r croise_pct}
+d |>
+  count(qualif, sexe) |>
+  group_by(qualif) |>
+  mutate(pourcentage = round(100 * n / sum(n), 1)) |>
+  ungroup() |>
+  select(-n) |>
+  pivot_wider(names_from = sexe, values_from = pourcentage)
+```
+
+## Ligne ou colonne ? {.smaller}
+
+Le choix change complètement la lecture :
+
+- **pourcentages ligne** : parmi les cadres, quelle part de femmes ?
+- **pourcentages colonne** : parmi les femmes, quelle part de cadres ?
+
+Pour obtenir les pourcentages colonne, on groupe par `sexe` au lieu de `qualif`.
+
+::: {.callout-important}
+Ce sont deux questions différentes, et deux tableaux différents, calculés sur les mêmes effectifs. 
+Sachez toujours dire lequel des deux vous êtes en train de lire -- c'est là que se logent la plupart des interprétations fausses.
+:::
+
+## Deux variables quantitatives
+
+Pour deux variables numériques, on mesure la relation par la **corrélation** :
+
+```{r correlation}
+d |> summarise(
+  correlation = cor(age, heures.tv, use = "complete.obs")
+)
+```
+
+`use = "complete.obs"` écarte les observations dont l'une des deux valeurs manque.
+
+::: {.callout-warning}
+Une corrélation mesure une association linéaire, pas une causalité.
+Et une corrélation proche de zéro n'exclut pas une relation d'une autre forme -- nous le verrons graphiquement la séance prochaine.
+:::
+
+# À vous
+
+## Exercices swirl
+
+```{r swirl}
+#| eval: false
+library(swirl)
+swirl()
+```
+
+Faites les leçons **Valeurs_manquantes** et **Decrire_les_donnees**.
+
+::: {.callout-note}
+En option, pour pratiquer davantage : la leçon facultative **Exercice_2**
+reprend le chargement et le résumé d'un tableau. Voir
+[`LECONS_OPTIONNELLES.md`](https://github.com/EliasBcd/InitiationR/blob/main/LECONS_OPTIONNELLES.md).
+:::
+
+## Exercice 3 {.smaller}
+
+Produisez un court script commenté qui répond à :
+
+1. Quel est l'âge moyen des enquêtés, par catégorie socio-professionnelle ?
+2. Le nombre d'heures de télévision varie-t-il selon le niveau d'études ?
+3. Les hommes et les femmes déclarent-ils pratiquer un sport dans les mêmes proportions ?
+
+::: {.callout-tip}
+Pour chaque question : l'effectif de chaque groupe à côté de l'indicateur et une phrase de commentaire disant ce que vous lisez dans le résultat.
+:::
+
+::: {.fragment}
+Séance prochaine : les mêmes questions, mais en graphiques.
+Vous verrez que certaines choses invisibles dans un tableau sautent aux yeux dans un nuage de points.
+:::
