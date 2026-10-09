@@ -8,6 +8,10 @@ environ 20 étudiants.
 
 Enseignant : Elias Bouacida.
 
+**Depuis octobre 2026, le cours est suivi en asynchrone** : les étudiants
+travaillent seuls, chez eux. Chaque séance existe en deux versions (voir
+« Notes de cours et diapositives » ci-dessous).
+
 Objectif : que les étudiants sachent charger un jeu de données, le décrire et
 le représenter. Le cours prépare aux usages en économétrie, séries temporelles
 et projet tutoré.
@@ -66,6 +70,25 @@ et projet tutoré.
 | `index.qmd` | — | Syllabus |
 
 La navigation (`_quarto.yml`) et `index.qmd` reflètent déjà cette structure.
+
+## Notes de cours et diapositives (octobre 2026)
+
+Chaque séance existe en deux fichiers :
+
+- `NNNom.qmd` : **notes de cours**, sortie `html` seule. Texte continu, écrit
+  pour un étudiant seul devant RStudio : paragraphes plutôt que puces, pas de
+  `{.notes}`, `{.incremental}`, `{.fragment}`, `{.smaller}` ni colonnes, aucune
+  référence à la salle, au tableau ou à une durée. Les corrections des
+  reprises sont dans un encadré replié
+  (`::: {.callout-note collapse="true" title="Correction"}`).
+- `NNNom-diapos.qmd` : **diapositives**, sortie `revealjs` seule, pour un
+  éventuel usage en présentiel. Restaurées telles quelles depuis la version
+  diapositive d'origine ; elles gardent les notes d'enseignant et la
+  correction collective au tableau. Listées dans la section « Diapositives »
+  de la barre latérale.
+
+Une modification de fond (exemple, exercice, leçon swirl) doit être reportée
+dans les deux fichiers.
 Chaque séance se termine par des leçons swirl (seul travail attendu entre deux
 séances) et s'ouvre par une reprise de la séance précédente (voir
 « Structure des reprises » ci-dessous). `01PremiersPas.qmd` n'a pas de
@@ -89,8 +112,10 @@ Chaque séance, sauf la première, s'ouvre par une section « Reprise » insér�
 juste après le bloc `setup` et avant le contenu propre à la séance : une
 diapositive de consigne (`#| eval: false` pour ne pas afficher la sortie),
 suivie d'une diapositive de correction. Visée : 30 minutes, correction
-comprise. La correction se fait collectivement au tableau — c'est là qu'est
-la valeur pédagogique, et elle sert de diagnostic sur ce qui n'est pas passé.
+comprise. En présentiel, la correction se fait collectivement au tableau —
+c'est là qu'est la valeur pédagogique, et elle sert de diagnostic sur ce qui
+n'est pas passé. Dans les notes de cours, la correction est repliée, suivie
+d'une explication et d'un renvoi vers la séance à relire en cas d'erreur.
 
 | Fichier | Reprend | Format |
 |---|---|---|

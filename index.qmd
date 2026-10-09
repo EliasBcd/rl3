@@ -1,5 +1,5 @@
 ---
-title: Initiation à la programmation (en R) à l'aide des LLMs
+title: Initiation à l'analyse de données à l'aide de R
 subtitle: Plan général
 author: Elias Bouacida
 format: html
@@ -8,7 +8,9 @@ date: last-modified
 date-format: long
 ---
 
-Ce site contient les présentations utilisées pour le cours d'introduction à R dispensé en L3 économie-finance à l'université Paris 8.
+Ce site contient les notes du cours d'introduction à R dispensé en L3 économie-finance à l'université Paris 8.
+Chaque séance est rédigée pour être suivie en autonomie, RStudio ouvert à côté.
+Les diapositives correspondantes sont disponibles dans la section « Diapositives » du menu.
 
 # Syllabus
 
@@ -26,7 +28,7 @@ Un seul jeu de données est utilisé du début à la fin : `hdv2003` (paquet
 
 ## Plan du cours
 
-Cinq séances de trois heures, en salle machine.
+Cinq séances. Chacune, sauf la première, s'ouvre par un exercice de reprise de la séance précédente, et se termine par des leçons `swirl`.
 
 1. **Premiers pas** ([Introduction](00Introduction.qmd), [Premiers Pas](01PremiersPas.qmd))
     - Installer R et RStudio, présenter l'interface

@@ -3,91 +3,77 @@ title: "Initiation à R"
 subtitle: "L3 économie-finance"
 author: "Elias Bouacida"
 date: last-modified
-format: 
-  html: default
-  revealjs:
-    output-file: slide-intro.html
-    embed-resources: true
-    scrollable: true
+format: html
 editor: source
 institute: "Université Paris 8"
 bibliography: "Bibliographie.bib"
 lang: fr
-execute: 
+execute:
   echo: true
 date-format: long
-format-links: [revealjs]
 ---
 
+# Qu'est-ce que R ?
 
+R est un langage de programmation tourné principalement vers l'analyse de données et les statistiques.
+Il dérive d'un langage plus ancien, appelé [S](https://fr.wikipedia.org/wiki/S_(langage)), et c'est un [logiciel libre](https://fr.wikipedia.org/wiki/Logiciel_libre) : il est gratuit, et n'importe qui peut lire et modifier son code.
+Vous trouverez une présentation plus complète sur [Wikipédia](https://fr.wikipedia.org/wiki/R_(langage)).
 
-# Introduction générale
+On n'utilise presque jamais R directement.
+On passe par **RStudio**, un logiciel qui rassemble dans une même fenêtre l'endroit où l'on écrit son code, celui où R l'exécute, et ceux où s'affichent les résultats et les graphiques.
 
-## R ?
+# Objectif du cours
 
-- Est un langage de programmation tourné principalement vers l'analyse des données et les statistiques. <https://fr.wikipedia.org/wiki/R_(langage)>
-- Dérive d'un langage antérieur appelé S <https://fr.wikipedia.org/wiki/S_(langage)>
-- Est un [logiciel libre](https://fr.wikipedia.org/wiki/Logiciel_libre)
+Ce cours a trois objectifs :
 
-## Objectif du cours
+- apprendre à utiliser R et RStudio ;
+- apprendre à utiliser les principales extensions de R pour l'analyse de données, regroupées sous le nom de [tidyverse](https://www.tidyverse.org/) ;
+- vous préparer à utiliser R dans d'autres cours : économétrie, séries temporelles, économie du travail, projet tutoré.
 
-- Apprendre à utiliser R et Rstudio
-- Apprendre à utiliser les principales librairies (aussi appelées paquets) de R pour l'analyse de données et les statistiques (le [tidyverse](https://www.tidyverse.org/))
-- Vous préparez à utiliser R dans d'autres cours (économétrie, séries temporelles, économie du travail, projet tutoré)
+Aucune connaissance en programmation n'est requise.
+Le seul prérequis est d'avoir accès à R et RStudio sur un ordinateur.
 
-## Déroulement du cours
+# Comment travailler
 
+Chaque séance se présente sous la forme d'une page de cours, à lire **devant votre ordinateur, RStudio ouvert**.
+Le code des exemples est fait pour être recopié et exécuté au fur et à mesure.
+Lire du code sans l'exécuter ne sert à peu près à rien : c'est en le tapant, en le modifiant et en se trompant qu'on apprend.
 
-- Une partie théorique où nous discuterons des notions de programmation (en `R`) et des commandes
-- Une partie pratique où vous travaillerez sur machine
-- Le seul prérequis pour suivre ce cours est d'avoir accès à `R` et RStudio sur un ordinateur.
+Chaque séance se termine par des leçons interactives `swirl`, qui vous font pratiquer directement dans R.
+Elles reprennent des exercices développés par l'équipe @swirldev, traduits et adaptés pour ce cours, et d'autres que j'ai écrits ; elles sont disponibles sur [ce dépôt GitHub](https://github.com/EliasBcd/InitiationR).
+Le fichier produit à la fin de chaque leçon est à déposer sur Moodle : c'est ce qui valide votre travail.
+La page [Utiliser swirl](Swirl.qmd) explique comment faire.
 
+Quand vous avez un problème avec R, vous trouverez généralement la réponse à votre question sur internet.
+[Stack Overflow](https://stackoverflow.com/) est une bonne ressource pour commencer.
 
-## Validation
+# Installer R et RStudio
 
-- Le cours n'est pas noté, mais est validé par l'envoi de votre travail sur ordinateur.
+R et RStudio sont deux logiciels libres et gratuits, qui fonctionnent sous Windows, Mac et Linux.
+Il faut les installer **dans cet ordre** : R d'abord, RStudio ensuite.
+Si vous installez RStudio en premier, il vous enverra une erreur au démarrage, parce qu'il ne trouvera pas R.
 
-## Cours {.smaller}
+## Installer R
 
-Le cours est construit à partir de deux ressources :
+Téléchargez l'installateur correspondant à votre système et lancez-le, en gardant les options proposées par défaut :
 
-1. Le manuel de @Barnier (en français), que vous pouvez lire au fur et à mesure pour la séance suivante.
-Il est disponible sur Moodle et en ligne.
-2. Les exercices développés par l'équipe @swirldev (en anglais) et traduits et adaptés pour le cours, et d'autres élaborés par moi-même. Ils sont disponibles sur ce [dépôt Github](https://github.com/EliasBcd/InitiationR).
-Il faut m'envoyer les fichiers finaux de ces exercices pour la validation.
+- [Windows](https://cloud.r-project.org/bin/windows/base/) ;
+- [Mac](https://cloud.r-project.org/bin/macosx/) : prenez la version qui correspond à votre processeur (Apple Silicon pour les Mac récents, Intel pour les plus anciens) ;
+- Linux : utilisez le gestionnaire de paquets de votre système, ou suivez [ces instructions](https://cran.r-project.org/bin/linux/ubuntu/) pour obtenir la dernière version (Ubuntu/Debian).
 
-Quand vous avez un problème avec R, vous pouvez généralement trouver sur internet la réponse à votre question. 
-[Stackoverflow](https://stackoverflow.com/) est une bonne ressource pour commencer.
-Les assistants par IA type ChatGPT, Gemini ou Claude peuvent en général fournir des réponses, mais elles sont parfois fausses et il n'est pas toujours simple de les comprendre.
+## Installer RStudio
 
+Rendez-vous sur [la page de téléchargement de RStudio](https://posit.co/download/rstudio-desktop/) et installez la version *Desktop*, gratuite, adaptée à votre système.
 
-# R et Rstudio
+Si vous ne pouvez rien installer sur votre ordinateur, vous pouvez utiliser [Posit Cloud](https://posit.cloud/), une version en ligne très proche de RStudio, qui fonctionne dans un navigateur.
 
-## Installation de R {.scrollable}
+Vous trouverez plus d'informations sur l'installation sur la [page Moodle](https://moodle.univ-paris8.fr/mod/page/view.php?id=272504) du cours.
 
+## Lancer RStudio
 
-R et Rstudio sont deux logiciels libres, gratuits, téléchargeables en ligne et fonctionnant sous Windows, Mac et Linux.
+Une fois les deux logiciels installés, lancez RStudio en cliquant sur son icône ![Logo RStudio](resources/RStudio-Logo-Flat.png){width=5%}, ou en le recherchant parmi les applications de votre ordinateur.
+C'est toujours RStudio que vous lancerez, jamais R directement : RStudio s'occupe de démarrer R.
 
-Pour installer `R`, il suffit de se rendre sur une des pages suivantes :
-
-- [Windows](https://cloud.r-project.org/bin/windows/base/)
-- [Mac](https://cloud.r-project.org/bin/macosx/)
-- Pour Linux, vous pouvez utiliser le gestionnaire de paquet du système ou bien suivre les instructions [ici](https://cran.r-project.org/bin/linux/ubuntu/) pour obtenir la dernière version de `R` (pour Ubuntu/Debian)
-
-## RStudio
-
-- Pour installer RStudio, rendez-vous sur [ici](https://posit.co/download/rstudio-desktop/) et installez la version Desktop (gratuite) adaptée à votre système.
-- Il faut installer R **avant** d'installer RStudio, sinon RStudio vous enverra une erreur.
-- Vous pouvez aussi utiliser la version en ligne [posit Cloud](https://posit.cloud/), qui est très similaire à Rstudio.
-- Vous trouverez plus d'informations sur l'installation de R et Rstudio sur le [page Moodle](https://moodle.univ-paris8.fr/mod/page/view.php?id=272504) du cours.
-
-
-
-## Lancement de Rstudio
-
-Une fois installé, pour lancer Rstudio, vous pouvez cliquer sur l'icône correspondante ![Logo RStudio](resources/RStudio-Logo-Flat.png){width=10%} ou bien rechercher l'application RStudio sur votre ordinateur.
-
+Si RStudio s'ouvre sans message d'erreur, vous êtes prêts pour [la suite](01PremiersPas.qmd).
 
 # Références
-
-## Bibliographie

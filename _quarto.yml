@@ -38,6 +38,20 @@ website:
       - section: "Exercices"
         contents:
           - Swirl.qmd
+      - section: "Diapositives"
+        contents:
+          - text: "Séance 1 : introduction"
+            href: 00Introduction-diapos.qmd
+          - text: "Séance 1 : premiers pas"
+            href: 01PremiersPas-diapos.qmd
+          - text: "Séance 2 : données"
+            href: 02Donnees-diapos.qmd
+          - text: "Séance 3 : analyse"
+            href: 03Analyse-diapos.qmd
+          - text: "Séance 4 : graphiques"
+            href: 04RepresentationsGraphiques-diapos.qmd
+          - text: "Séance 5 : projet"
+            href: 05Projet-diapos.qmd
 
 format:
   html:
