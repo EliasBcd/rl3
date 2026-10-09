@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-2bf9dcd16c7858cb4bc01cde5a08d97c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -261,6 +261,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Diapositives</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slide-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 1 : introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slide-lecon1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 1 : premiers pas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slide-donnees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 2 : données</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slide-analyse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 3 : analyse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides-graphiques.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 4 : graphiques</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides-projet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Séance 5 : projet</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -272,6 +319,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#utilisation-de-swirl" id="toc-utilisation-de-swirl" class="nav-link active" data-scroll-target="#utilisation-de-swirl">Utilisation de <code>swirl</code></a></li>
+  <li><a href="#sec-bloque" id="toc-sec-bloque" class="nav-link" data-scroll-target="#sec-bloque">Si vous êtes bloqués</a></li>
   <li><a href="#rendu-des-exercices" id="toc-rendu-des-exercices" class="nav-link" data-scroll-target="#rendu-des-exercices">Rendu des exercices</a></li>
   <li><a href="#aller-plus-loin" id="toc-aller-plus-loin" class="nav-link" data-scroll-target="#aller-plus-loin">Aller plus loin</a></li>
   </ul>
@@ -299,7 +347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">30 septembre 2026</p>
+      <p class="date">9 octobre 2026</p>
     </div>
   </div>
   
@@ -330,9 +378,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Suivez ensuite les instructions qui apparaissent dans la console. Utilisez toujours le même nom, il me permet de vous identifier. Sélectionnez le cours <code>InitiationR</code>. C’est normalement le cours numéro 1. Sélectionnez enfin la leçon correspondant à votre progression dans le cours.</p>
 </section>
+<section id="sec-bloque" class="level2">
+<h2 class="anchored" data-anchor-id="sec-bloque">Si vous êtes bloqués</h2>
+<p>swirl ne vérifie pas le résultat de votre commande : il compare ce que vous avez tapé à une liste de réponses qu’il connaît. Une commande juste, qui fonctionne, peut donc être refusée si elle est écrite autrement que prévu.</p>
+<p>Quand swirl refuse votre réponse :</p>
+<ol type="1">
+<li><strong>Relisez la consigne mot à mot.</strong> Les noms demandés (d’objet, de colonne, de résultat) doivent être repris exactement.</li>
+<li><strong>Écrivez la commande comme dans le cours</strong> : le tuyau <code>|&gt;</code> plutôt que <code>%&gt;%</code>, et sans étape supplémentaire.</li>
+<li><strong>Lisez l’indice</strong> que swirl affiche après une mauvaise réponse : il précise souvent la forme attendue.</li>
+<li><strong>Si vous tournez en rond, passez la question</strong> en tapant <code>skip()</code>. swirl exécute alors la bonne réponse à votre place et passe à la suite. Regardez bien la commande qu’il exécute : c’est ainsi que vous comprendrez ce qui coinçait.</li>
+</ol>
+<p>Passer quelques questions n’est pas un problème : environ une question sur cinq reste acceptable. Au-delà, reprenez plutôt la séance correspondante avant de continuer la leçon.</p>
+<p>Quelques autres commandes utiles, à taper à l’invite <code>&gt;</code> pendant une leçon :</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Commande</th>
+<th style="text-align: left;">Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>skip()</code></td>
+<td style="text-align: left;">passe la question en cours</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>play()</code></td>
+<td style="text-align: left;">vous laisse taper des commandes librement, sans que swirl les corrige</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>nxt()</code></td>
+<td style="text-align: left;">revient à la leçon après un <code>play()</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>bye()</code></td>
+<td style="text-align: left;">quitte swirl en gardant votre progression ; <code>swirl()</code> vous ramène où vous en étiez</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>info()</code></td>
+<td style="text-align: left;">rappelle la liste de ces commandes</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="rendu-des-exercices" class="level2">
 <h2 class="anchored" data-anchor-id="rendu-des-exercices">Rendu des exercices</h2>
-<p>Vous devez déposés à la fin de chaque leçon swirl le fichier .txt généré sur Moodle, <a href="https://moodle.univ-paris8.fr/mod/assign/view.php?id=271762">ici</a></p>
+<p>Vous devez déposer à la fin de chaque leçon swirl le fichier .txt généré sur Moodle, <a href="https://moodle.univ-paris8.fr/mod/assign/view.php?id=271762">ici</a></p>
 <p>Le fichier s’appelle en général <code>nom_de_la_leçon.txt</code> et apparaît à la racine de votre dossier personnel. Ici, par exemple, le fichier <code>Exercice_1.txt</code>. On le trouve sur l’onglet en bas à droite, dans l’onglet File.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
