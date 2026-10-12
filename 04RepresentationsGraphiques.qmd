@@ -22,7 +22,7 @@ data(hdv2003)
 d <- as_tibble(hdv2003)
 ```
 
-# Reprise de la séance 3
+# Reprise du chapitre 3
 
 Le script suivant s'exécute **sans erreur et sans avertissement**.
 Pourtant, le commentaire qui l'accompagne est faux : le résultat ne correspond pas à ce qui est annoncé.
@@ -31,7 +31,7 @@ Pourtant, le commentaire qui l'accompagne est faux : le résultat ne correspond 
 #| eval: false
 # On écarte les personnes qui déclarent plus de 10h de télévision par jour,
 # puis on calcule la moyenne sur l'ensemble des enquêtés.
-d |> mutate(heures.tv = if_else(heures.tv > 10, NA_real_, heures.tv))
+d |> mutate(heures.tv = if_else(heures.tv > 10, NA, heures.tv))
 
 d |> summarise(
   effectif = n(),
@@ -39,7 +39,7 @@ d |> summarise(
 )
 ```
 
-La fonction `if_else()` est nouvelle : elle remplace par une valeur manquante (`NA_real_`) les heures de télévision supérieures à 10, et laisse les autres inchangées.
+La fonction `if_else()` est nouvelle : elle remplace par une valeur manquante (`NA`) les heures de télévision supérieures à 10, et laisse les autres inchangées.
 Le reste ne fait appel qu'à ce que vous connaissez.
 
 Trouvez ce qui ne va pas, corrigez le script, et expliquez en une ou deux phrases ce qui s'est passé.
@@ -66,14 +66,14 @@ Ensuite, l'effectif affiché est trompeur.
 `n()` compte toutes les lignes du tableau, soit 2000, alors que la moyenne, à cause de `na.rm = TRUE`, ne porte que sur les répondants.
 Pour afficher le nombre de personnes réellement prises en compte, il faut compter les valeurs non manquantes : `sum(!is.na(heures.tv))`.
 
-Si vous n'aviez repéré aucun des deux problèmes, relisez la partie « Les erreurs silencieuses » de la [séance 3](03Analyse.qmd).
+Si vous n'aviez repéré aucun des deux problèmes, relisez la partie « Les erreurs silencieuses » du [chapitre 3](03Analyse.qmd).
 :::
 
 # Pourquoi un graphique
 
 ## Ce qu'un tableau ne dit pas
 
-La séance dernière, nous avons résumé l'âge des enquêtés :
+Au chapitre précédent, nous avons résumé l'âge des enquêtés :
 
 ```{r resume_age}
 d |> summarise(
@@ -97,7 +97,7 @@ ggplot(d) + geom_histogram(aes(x = age), bins = 30)
 
 Deux variables qui ont la même moyenne et le même écart-type peuvent avoir des distributions très différentes.
 Un graphique permet de le voir d'un coup d'œil.
-C'est ce que nous allons apprendre à faire dans cette séance.
+C'est ce que nous allons apprendre à faire dans ce chapitre.
 
 ## `ggplot2`
 
@@ -115,7 +115,7 @@ data(hdv2003)
 d <- as_tibble(hdv2003)
 ```
 
-Cette séance s'inspire du chapitre 8 de @Barnier.
+Ce chapitre s'inspire du chapitre 8 de @Barnier.
 
 # Les trois ingrédients d'un graphique
 
@@ -215,7 +215,7 @@ Pour une variable qualitative, on utilise `geom_bar()`, qui dessine une barre pa
 ggplot(d) + geom_bar(aes(x = qualif))
 ```
 
-`geom_bar()` compte lui-même les effectifs : c'est l'équivalent graphique du `count()` de la séance dernière.
+`geom_bar()` compte lui-même les effectifs : c'est l'équivalent graphique du `count()` du chapitre précédent.
 Comme `count()`, il fait apparaître les valeurs manquantes sous la forme d'une barre `NA`.
 
 Les étiquettes se chevauchent : les noms des modalités sont trop longs pour tenir sous les barres.
@@ -229,10 +229,48 @@ ggplot(d) + geom_bar(aes(y = qualif))
 ## Exercice 1
 
 1. Représentez la distribution du nombre de frères et sœurs (`freres.soeurs`).
-2. Faites un diagramme en barres de la variable `relig`. Comparez avec le `count()` de la séance dernière.
+2. Faites un diagramme en barres de la variable `relig`. Comparez avec le `count()` du chapitre précédent.
 3. Représentez la distribution de l'âge avec 5, puis 20, puis 100 intervalles. Que voyez-vous apparaître, et que voyez-vous disparaître ?
 
 La question 3 est la plus importante : un graphique est le résultat de choix, pas une simple photographie des données.
+
+::: {.callout-note collapse="true" title="Correction"}
+```{r ex_unevar_q1}
+#| fig-height: 3.5
+ggplot(d) + geom_bar(aes(x = freres.soeurs))
+```
+
+`freres.soeurs` ne prend que des valeurs entières, et peu nombreuses : un diagramme en barres donne une barre par valeur.
+Un histogramme avec `binwidth = 1` donnerait le même résultat.
+La plupart des enquêtés ont un ou deux frères et sœurs, mais la distribution s'étire jusqu'à 22.
+
+```{r ex_unevar_q2}
+#| fig-height: 3.5
+ggplot(d) + geom_bar(aes(y = relig))
+```
+
+Les longueurs des barres sont les effectifs du `count(relig)` du chapitre précédent.
+
+```{r ex_unevar_q3_5}
+#| fig-height: 3
+ggplot(d) + geom_histogram(aes(x = age), bins = 5)
+```
+
+```{r ex_unevar_q3_20}
+#| fig-height: 3
+ggplot(d) + geom_histogram(aes(x = age), bins = 20)
+```
+
+```{r ex_unevar_q3_100}
+#| fig-height: 3
+ggplot(d) + geom_histogram(aes(x = age), bins = 100)
+```
+
+Avec 5 intervalles, on ne voit plus qu'une masse grossière : la forme de la distribution disparaît.
+Avec 100 intervalles, des trous apparaissent : les âges sont des nombres entiers, entre 18 et 97 ans, et il y a plus d'intervalles que de valeurs possibles.
+Ces trous ne disent rien des enquêtés, ils viennent du découpage.
+Avec 20 intervalles, on lit la forme générale sans ces artefacts.
+:::
 
 # Croiser deux variables
 
@@ -282,7 +320,7 @@ Une boîte à moustaches se lit ainsi :
 - les moustaches s'étendent jusqu'aux valeurs les plus extrêmes, dans la limite d'une fois et demie la hauteur de la boîte ;
 - les points au-delà des moustaches sont affichés individuellement : ce sont les valeurs **atypiques**.
 
-Ce sont exactement les quartiles calculés la séance dernière avec `quantile()`.
+Ce sont exactement les quartiles calculés au chapitre précédent avec `quantile()`.
 La boîte en est la traduction visuelle.
 
 La boîte à moustaches est particulièrement utile pour comparer de nombreux groupes.
@@ -293,7 +331,7 @@ Ici encore, on met la variable qualitative en `y` pour que les étiquettes reste
 ggplot(d) + geom_boxplot(aes(x = heures.tv, y = qualif))
 ```
 
-Comparez avec le tableau `group_by(qualif) |> summarise(...)` de la séance dernière : c'est la même information, mais la dispersion de chaque groupe devient visible.
+Comparez avec le tableau `group_by(qualif) |> summarise(...)` du chapitre précédent : c'est la même information, mais la dispersion de chaque groupe devient visible.
 
 # Mappages
 
@@ -427,7 +465,7 @@ ggplot(d, aes(x = age, y = heures.tv)) +
   facet_wrap(~ sexe)
 ```
 
-C'est l'équivalent graphique du `group_by()` de la séance dernière.
+C'est l'équivalent graphique du `group_by()` du chapitre précédent.
 
 # Mise en forme
 
@@ -507,11 +545,55 @@ Dans un script commenté :
 
 1. Représentez la distribution de l'âge selon le sexe, avec des boîtes à moustaches.
 2. Faites un diagramme en barres lisible du niveau d'études (`nivetud`).
-3. Le nombre d'heures de télévision diffère-t-il selon que l'on pratique un sport ou non ? Représentez-le, puis comparez avec le tableau correspondant de la séance dernière.
+3. Le nombre d'heures de télévision diffère-t-il selon que l'on pratique un sport ou non ? Représentez-le, puis comparez avec le tableau correspondant du chapitre précédent.
 4. Reprenez le nuage de points âge / heures de télévision, découpez-le selon la qualification avec `facet_wrap()`, et donnez-lui un titre et des axes nommés.
 
 Pour chaque graphique, écrivez en commentaire ce que vous y lisez.
 Un graphique sans lecture ne sert à rien.
+
+::: {.callout-note collapse="true" title="Correction"}
+```{r ex_graph_q1}
+#| fig-height: 3.5
+# Les deux distributions sont presque identiques : médiane de 48 ans
+# pour les hommes, 47 pour les femmes, mêmes quartiles.
+ggplot(d) + geom_boxplot(aes(x = sexe, y = age))
+```
+
+```{r ex_graph_q2}
+#| fig-height: 4
+# Les niveaux les plus fréquents sont l'enseignement technique court
+# et l'enseignement supérieur.
+ggplot(d) +
+  geom_bar(aes(y = nivetud)) +
+  labs(x = "Effectif", y = NULL, title = "Niveau d'études des enquêtés")
+```
+
+```{r ex_graph_q3}
+#| fig-height: 3.5
+ggplot(d) +
+  geom_boxplot(aes(x = sport, y = heures.tv)) +
+  labs(x = "Pratique un sport", y = "Heures de télévision par jour")
+```
+
+Les deux boîtes sont identiques : même médiane (2 heures), mêmes quartiles (1 et 3 heures).
+Pourtant, au chapitre précédent, la moyenne était de 2,5 heures pour les non-sportifs et de 1,8 heure pour les sportifs.
+Les déclarations se concentrent sur des heures rondes, et les quartiles tombent sur les mêmes valeurs dans les deux groupes : la boîte ne montre pas la différence que la moyenne révèle.
+Un graphique peut cacher une différence aussi bien qu'un tableau : il faut confronter les deux.
+
+```{r ex_graph_q4}
+#| fig-height: 5
+ggplot(d) +
+  geom_jitter(aes(x = age, y = heures.tv), alpha = 0.15) +
+  facet_wrap(~ qualif) +
+  labs(
+    title = "Âge et télévision selon la qualification",
+    x = "Âge (années)",
+    y = "Heures de télévision par jour"
+  )
+```
+
+Chaque panneau correspond à une qualification ; le panneau `NA` regroupe les personnes dont la qualification n'est pas renseignée, en majorité sans emploi.
+:::
 
 ## Les leçons swirl
 
@@ -538,10 +620,10 @@ Le chapitre [Data visualisation](https://r4ds.hadley.nz/data-visualize) de *R fo
 
 # La suite
 
-Avant la prochaine séance, terminez la leçon swirl et déposez-la sur Moodle.
+Avant de passer au chapitre suivant, terminez la leçon swirl et déposez-la sur Moodle.
 
-La séance 5 est un projet : une analyse complète de votre choix sur l'enquête *Histoire de vie*.
+Le chapitre 5 est un projet : une analyse complète de votre choix sur l'enquête *Histoire de vie*.
 Pour vous y préparer, choisissez dès maintenant **deux ou trois questions** auxquelles vous aimeriez répondre avec ces données, et écrivez-les.
-La séance prochaine vous aidera à les préciser.
+Le chapitre suivant vous aidera à les préciser.
 
 # Références

@@ -20,9 +20,9 @@ data(hdv2003)
 d <- as_tibble(hdv2003)
 ```
 
-# Reprise de la séance 1
+# Reprise du chapitre 1
 
-Avant de commencer, vérifiez que les notions de la séance 1 sont acquises.
+Avant de commencer, vérifiez que les notions du chapitre 1 sont acquises.
 Prenez une feuille et, **sans lancer R**, écrivez pour chaque ligne ce que R va afficher.
 Ne regardez la correction qu'une fois toutes vos réponses écrites : c'est l'effort de prédiction qui est utile, pas la lecture de la réponse.
 
@@ -64,14 +64,14 @@ Deux pièges classiques se cachent dans cet exercice.
 D'abord, `x <- x + 1` calcule `x + 1` avec l'ancienne valeur de `x`, puis range le résultat dans `x` : l'ancienne valeur est écrasée.
 Ensuite, mélanger du texte et un nombre dans `c()` convertit tout en texte, sans prévenir : le `5` est devenu `"5"`.
 
-Si vous vous êtes trompés sur une ligne, relisez la partie correspondante de la [séance 1](01PremiersPas.qmd) avant d'aller plus loin.
+Si vous vous êtes trompés sur une ligne, relisez la partie correspondante du [chapitre 1](01PremiersPas.qmd) avant d'aller plus loin.
 :::
 
 # Du vecteur au tableau
 
 ## Où nous en sommes
 
-La séance précédente, vous avez manipulé des **vecteurs** : des suites de valeurs de même type.
+Au chapitre précédent, vous avez manipulé des **vecteurs** : des suites de valeurs de même type.
 
 ```{r rappel_vecteur}
 tailles <- c(156, 164, 197, 147, 173)
@@ -80,9 +80,9 @@ mean(tailles)
 
 De vraies données ne se présentent jamais ainsi.
 Elles arrivent sous forme de **tableau**, avec des lignes, qui correspondent aux individus ou aux observations, et des colonnes, qui correspondent aux variables.
-Chaque colonne d'un tableau est un vecteur : tout ce que vous avez appris la séance dernière s'applique.
+Chaque colonne d'un tableau est un vecteur : tout ce que vous avez appris au chapitre précédent s'applique.
 
-Dans cette séance, nous allons charger un vrai jeu de données d'enquête, apprendre à le regarder avant de faire le moindre calcul, puis voir quatre opérations : **choisir des colonnes**, **choisir des lignes**, **trier** et **créer une variable**.
+Dans ce chapitre, nous allons charger un vrai jeu de données d'enquête, apprendre à le regarder avant de faire le moindre calcul, puis voir quatre opérations : **choisir des colonnes**, **choisir des lignes**, **trier** et **créer une variable**.
 Ces quatre opérations couvrent la très grande majorité du travail de préparation des données.
 
 ## Un outil dédié : le tidyverse
@@ -109,7 +109,7 @@ Un seul `library(tidyverse)` les charge tous.
 ## Nos données
 
 Nous travaillerons sur l'enquête **Histoire de vie** réalisée par l'INSEE en 2003 : 2000 personnes y ont été interrogées sur leurs conditions de vie, leur travail et leurs loisirs.
-Une partie de l'enquête est disponible dans le paquet `questionr`, que vous avez installé lors de la séance 1.
+Une partie de l'enquête est disponible dans le paquet `questionr`, que vous avez installé au chapitre 1.
 On charge le paquet, puis les données, avec la fonction `data()` :
 
 ```{r chargement}
@@ -206,6 +206,18 @@ Puis, dans un script, en écrivant vos réponses en commentaire :
 
 Ne calculez rien pour l'instant : le but est de faire connaissance avec les données.
 
+::: {.callout-note collapse="true" title="Correction"}
+```{r ex_decouverte_correction}
+dim(d)
+levels(d$relig)
+```
+
+1. Le tableau compte 2000 observations (les enquêtés) et 20 variables.
+2. Les variables quantitatives sont `age`, `freres.soeurs` et `heures.tv`. Les variables `id` et `poids` sont aussi des nombres, mais ce ne sont pas des variables à analyser : `id` est un identifiant, et `poids` est le poids statistique de chaque enquêté dans l'enquête, pas son poids en kilos. Parmi les variables qualitatives : `sexe`, `nivetud`, `qualif`, `relig`, `sport`, et toutes les variables de loisirs.
+3. Les modalités de `relig` sont affichées ci-dessus.
+4. Dans la visionneuse, les valeurs manquantes apparaissent en grisé sous la forme `NA`. On en trouve dans `nivetud`, `qualif`, `trav.imp`, `trav.satisf` et `heures.tv`. Vous apprendrez à les compter au chapitre 3.
+:::
+
 # Le tuyau
 
 Le tidyverse s'utilise avec un opérateur particulier, le **tuyau** (*pipe* en anglais), qui s'écrit `|>`.
@@ -247,7 +259,7 @@ d |> select(-id, -poids)
 ## Choisir des lignes : `filter()`
 
 `filter()` garde les lignes qui vérifient une condition.
-On y retrouve les opérateurs logiques de la séance 1.
+On y retrouve les opérateurs logiques du chapitre 1.
 Voici les enquêtés de moins de 25 ans :
 
 ```{r filter}
@@ -312,7 +324,7 @@ d |>
 ```
 
 À gauche du `=`, le nom de la nouvelle variable ; à droite, le calcul qui la produit.
-Comme pour les vecteurs de la séance 1, le calcul s'applique à toutes les lignes à la fois.
+Comme pour les vecteurs du chapitre 1, le calcul s'applique à toutes les lignes à la fois.
 On peut créer plusieurs variables d'un coup, en les séparant par des virgules :
 
 ```{r mutate2}
@@ -372,6 +384,43 @@ Pour les questions 2 et 6, le nombre de lignes du résultat s'affiche en haut du
 Pour la question 6, il faut deux conditions séparées par une virgule.
 :::
 
+::: {.callout-note collapse="true" title="Correction"}
+```{r ex_verbes_q1}
+d |> select(age, qualif, sport)
+```
+
+Question 2 : « 60 ans ou plus » inclut 60, d'où `>=`.
+
+```{r ex_verbes_q2}
+d |> filter(age >= 60)
+```
+
+Il y a 516 enquêtés de 60 ans ou plus.
+
+```{r ex_verbes_q3}
+d |> filter(sexe == "Homme", sport == "Oui") |> arrange(age)
+```
+
+Question 4 : une heure par jour fait 365 heures par an.
+Sans le `d <-`, la variable serait affichée puis perdue.
+
+```{r ex_verbes_q4}
+d <- d |> mutate(tv.annuelle = heures.tv * 365)
+```
+
+```{r ex_verbes_q5}
+d |> arrange(desc(age)) |> select(age, sexe, nivetud)
+```
+
+L'enquêtée la plus âgée est une femme de 97 ans, qui a arrêté ses études après la dernière année d'études primaires.
+
+```{r ex_verbes_q6}
+d |> filter(age >= 25, age < 35)
+```
+
+321 enquêtés ont entre 25 et 35 ans.
+:::
+
 ## Les leçons swirl
 
 Lancez swirl :
@@ -387,7 +436,7 @@ Si vous bloquez sur une question, voir [Si vous êtes bloqués](Swirl.qmd#sec-bl
 
 # La suite
 
-Avant la prochaine séance, terminez les deux leçons swirl et déposez-les sur Moodle.
+Avant de passer au chapitre suivant, terminez les deux leçons swirl et déposez-les sur Moodle.
 
 Nous savons désormais découper un tableau.
-La séance prochaine, nous apprendrons à le résumer : moyennes, effectifs, comparaisons entre groupes.
+Au chapitre suivant, nous apprendrons à le résumer : moyennes, effectifs, comparaisons entre groupes.

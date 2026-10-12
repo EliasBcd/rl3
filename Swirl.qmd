@@ -61,7 +61,7 @@ Quand swirl refuse votre réponse :
 4. **Si vous tournez en rond, passez la question** en tapant `skip()`. swirl exécute alors la bonne réponse à votre place et passe à la suite. Regardez bien la commande qu'il exécute : c'est ainsi que vous comprendrez ce qui coinçait.
 
 Passer quelques questions n'est pas un problème : environ une question sur cinq reste acceptable.
-Au-delà, reprenez plutôt la séance correspondante avant de continuer la leçon.
+Au-delà, reprenez plutôt le chapitre correspondant avant de continuer la leçon.
 
 Quelques autres commandes utiles, à taper à l'invite `>` pendant une leçon :
 
@@ -89,7 +89,7 @@ Vous pouvez déposer plusieurs fichiers, cela ne pose pas de problème, tant qu'
 
 Le cours `InitiationR` propose aussi des leçons facultatives, en autonomie,
 pour qui veut pratiquer davantage ou approfondir un point (fonctions,
-boucles, tirages aléatoires...). Chaque séance rappelle celles qui prennent
+boucles, tirages aléatoires...). Chaque chapitre rappelle celles qui prennent
 la suite directe de ce qui vient d'être vu. La liste complète, avec un
 résumé de chaque leçon, est disponible dans
 [`LECONS_OPTIONNELLES.md`](https://github.com/EliasBcd/InitiationR/blob/main/LECONS_OPTIONNELLES.md)

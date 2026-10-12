@@ -21,12 +21,12 @@ data(hdv2003)
 d <- as_tibble(hdv2003)
 ```
 
-# Reprise de la séance 4
+# Reprise du chapitre 4
 
-Regardez le graphique suivant :
+Le code suivant représente l'âge et le nombre d'heures de télévision par jour des enquêtés de l'enquête *Histoire de vie* (`d`, comme dans les chapitres précédents).
+Regardez le graphique qu'il produit :
 
 ```{r reprise_enonce}
-#| echo: false
 #| fig-height: 4.5
 #| warning: false
 ggplot(d) + geom_point(aes(x = age, y = heures.tv))
@@ -47,12 +47,12 @@ Les 2000 points sont opaques, et beaucoup se superposent exactement.
 Le premier graphique donne donc l'impression que les enquêtés sont répartis uniformément, alors qu'ils se concentrent dans certaines zones.
 `geom_jitter()` sépare les points superposés en les décalant légèrement, et la transparence (`alpha`) fait apparaître plus foncées les zones où ils s'accumulent.
 
-Si vous n'aviez pas identifié le problème, relisez la partie « Croiser deux variables » de la [séance 4](04RepresentationsGraphiques.qmd).
+Si vous n'aviez pas identifié le problème, relisez la partie « Croiser deux variables » du [chapitre 4](04RepresentationsGraphiques.qmd).
 :::
 
 # Ce qui est attendu
 
-Cette dernière séance est consacrée à un projet personnel : une analyse complète de l'enquête *Histoire de vie*, qui mobilise tout ce que vous avez appris.
+Ce dernier chapitre est consacré à un projet personnel : une analyse complète de l'enquête *Histoire de vie*, qui mobilise tout ce que vous avez appris.
 
 Vous rendrez un **script R commenté** qui répond à **deux ou trois questions** de votre choix sur ces données.
 Pour chaque question, le script doit contenir :
@@ -83,7 +83,7 @@ d |>
   arrange(age)
 ```
 
-Voir la [séance 2](02Donnees.qmd).
+Voir le [chapitre 2](02Donnees.qmd).
 
 ## Décrire
 
@@ -105,7 +105,7 @@ d |>
   arrange(desc(age_moyen))
 ```
 
-Voir la [séance 3](03Analyse.qmd).
+Voir le [chapitre 3](03Analyse.qmd).
 
 ## Représenter
 
@@ -124,7 +124,7 @@ ggplot(d) +
   labs(x = "Heures de télévision par jour", y = NULL)
 ```
 
-Voir la [séance 4](04RepresentationsGraphiques.qmd).
+Voir le [chapitre 4](04RepresentationsGraphiques.qmd).
 
 # Choisir ses questions
 
@@ -232,7 +232,7 @@ d |> summarise(
 
 ## Les réflexes
 
-Quatre réflexes, vus au fil des séances, font la différence entre un script qui tourne et une analyse juste :
+Quatre réflexes, vus au fil des chapitres, font la différence entre un script qui tourne et une analyse juste :
 
 1. **Prédisez** l'ordre de grandeur avant de lancer un calcul. Un résultat qui surprend est soit une découverte, soit une erreur.
 2. **Affichez l'effectif** à côté de chaque indicateur. Une moyenne sur six personnes ne se compare pas à une moyenne sur huit cents.
@@ -244,7 +244,7 @@ Quatre réflexes, vus au fil des séances, font la différence entre un script q
 1. **Lisez la dernière ligne du message d'erreur.** Le nom cité entre guillemets est presque toujours la faute.
 2. **Ouvrez l'aide** de la fonction avec `?nom_de_la_fonction`, et regardez la rubrique *Examples*, tout en bas.
 3. **Réduisez le problème.** Exécutez votre enchaînement étape par étape, en ajoutant les `|>` un à un, pour voir à quelle étape le résultat cesse d'être celui que vous attendez.
-4. **Revenez à la séance** où la notion a été présentée : les tableaux de rappel ci-dessus indiquent laquelle.
+4. **Revenez au chapitre** où la notion a été présentée : les tableaux de rappel ci-dessus indiquent lequel.
 
 Le point 3 est le plus efficace.
 

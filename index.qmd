@@ -9,7 +9,7 @@ date-format: long
 ---
 
 Ce site contient les notes du cours d'introduction à R dispensé en L3 économie-finance à l'université Paris 8.
-Chaque séance est rédigée pour être suivie en autonomie, RStudio ouvert à côté.
+Chaque chapitre est rédigé pour être suivi en autonomie, RStudio ouvert à côté.
 Les diapositives correspondantes sont disponibles dans la section « Diapositives » du menu.
 
 # Syllabus
@@ -28,7 +28,7 @@ Un seul jeu de données est utilisé du début à la fin : `hdv2003` (paquet
 
 ## Plan du cours
 
-Cinq séances. Chacune, sauf la première, s'ouvre par un exercice de reprise de la séance précédente, et se termine par des leçons `swirl`.
+Cinq chapitres. Chacun, sauf le premier, s'ouvre par un exercice de reprise du chapitre précédent, et se termine par des leçons `swirl`.
 
 1. **Premiers pas** ([Introduction](00Introduction.qmd), [Premiers Pas](01PremiersPas.qmd))
     - Installer R et RStudio, présenter l'interface
@@ -50,8 +50,7 @@ Cinq séances. Chacune, sauf la première, s'ouvre par un exercice de reprise de
 5. **Projet en autonomie** ([Projet](05Projet.qmd))
     - Une analyse complète sur `hdv2003`, du script au rendu
 
-Chaque séance renvoie vers des leçons `swirl` et une lecture facultative correspondante
-dans @Barnier.
+Chaque chapitre renvoie vers des leçons `swirl`.
 
 ## Une remarque sur les assistants IA
 
@@ -60,13 +59,34 @@ On ne peut juger la qualité d'une réponse produite par un LLM que si l'on sait
 
 ## Validation
 
-Cours à validation, sur la base des exercices `swirl` rendus au fur et à mesure et d'un rendu final : un script `.R` commenté (sections `# Titre ----`), déposé à l'issue de la séance 5.
+Cours à validation, sur la base des exercices `swirl` rendus au fur et à mesure et d'un rendu final : un script `.R` commenté (sections `# Titre ----`), déposé à l'issue du chapitre 5.
 
 # Logiciels requis pour le cours
 
 - R, dans sa dernière version
 - RStudio, dans sa dernière version
 - Les paquets `swirl`, `tidyverse`, `questionr`
+
+Les instructions d'installation de R et RStudio sont dans la page [Introduction](00Introduction.qmd).
+
+## Passer RStudio en français
+
+Par défaut, les menus de RStudio sont en anglais.
+Pour les passer en français :
+
+1. Ouvrez le menu *Tools > Global Options…*
+2. Dans la rubrique *General*, ouvrez l'onglet *Advanced*.
+3. Dans la liste *User Interface Language*, choisissez *Français*, puis cliquez sur *OK*.
+4. Fermez et relancez RStudio : le changement n'est pris en compte qu'au redémarrage.
+
+Ce réglage ne change que les menus de RStudio, pas les messages de R.
+Ceux-ci suivent la langue de votre système : si votre ordinateur est en anglais, les messages d'erreur s'afficheront en anglais, alors que le cours les cite en français.
+Pour les obtenir en français, exécutez la commande suivante dans la console au début de chaque session :
+
+```{r langue}
+#| eval: false
+Sys.setenv(LANGUAGE = "fr")
+```
 
 # Notions principales
 

@@ -79,8 +79,11 @@ Chaque séance existe en deux fichiers :
   pour un étudiant seul devant RStudio : paragraphes plutôt que puces, pas de
   `{.notes}`, `{.incremental}`, `{.fragment}`, `{.smaller}` ni colonnes, aucune
   référence à la salle, au tableau ou à une durée. Les corrections des
-  reprises sont dans un encadré replié
-  (`::: {.callout-note collapse="true" title="Correction"}`).
+  reprises **et de tous les exercices** sont dans un encadré replié
+  (`::: {.callout-note collapse="true" title="Correction"}`), avec le code
+  exécuté et une phrase de lecture des résultats. Les chiffres cités dans ces
+  phrases ont été vérifiés sur `hdv2003` : les revérifier si un exercice
+  change. Les diapositives n'ont pas ces corrections.
 - `NNNom-diapos.qmd` : **diapositives**, sortie `revealjs` seule, pour un
   éventuel usage en présentiel. Restaurées telles quelles depuis la version
   diapositive d'origine ; elles gardent les notes d'enseignant et la
@@ -89,6 +92,10 @@ Chaque séance existe en deux fichiers :
 
 Une modification de fond (exemple, exercice, leçon swirl) doit être reportée
 dans les deux fichiers.
+
+Vocabulaire : les notes de cours parlent de **chapitres** (« chapitre 2 »,
+« au chapitre précédent »), les diapositives gardent **séance**. Ne pas
+employer « leçon » pour les chapitres : le mot désigne les leçons swirl.
 Chaque séance se termine par des leçons swirl (seul travail attendu entre deux
 séances) et s'ouvre par une reprise de la séance précédente (voir
 « Structure des reprises » ci-dessous). `01PremiersPas.qmd` n'a pas de

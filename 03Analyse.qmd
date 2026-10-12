@@ -20,7 +20,7 @@ data(hdv2003)
 d <- as_tibble(hdv2003)
 ```
 
-# Reprise de la séance 2
+# Reprise du chapitre 2
 
 Voici un petit tableau de six personnes, appelé `tab` :
 
@@ -73,12 +73,12 @@ Le tri se fait bien sur l'âge, même si la colonne `age` n'apparaît plus à la
 Dans le second, `mutate()` ajoute une colonne au tableau complet, sans retirer les autres.
 Le `filter()` qui suit porte sur ce tableau augmenté : il peut donc utiliser la nouvelle colonne `heures_semaine`.
 
-Si vous avez confondu `filter()` et `select()`, ou oublié que `mutate()` conserve toutes les colonnes, relisez la [séance 2](02Donnees.qmd) avant d'aller plus loin.
+Si vous avez confondu `filter()` et `select()`, ou oublié que `mutate()` conserve toutes les colonnes, relisez le [chapitre 2](02Donnees.qmd) avant d'aller plus loin.
 :::
 
 # Où nous en sommes
 
-Lors de la séance précédente, nous avons appris à découper un tableau avec `select()`, `filter()`, `arrange()` et `mutate()`.
+Au chapitre précédent, nous avons appris à découper un tableau avec `select()`, `filter()`, `arrange()` et `mutate()`.
 
 ```{r rappel}
 d |>
@@ -86,7 +86,7 @@ d |>
   select(age, sexe, qualif)
 ```
 
-Pour la suite, votre script doit commencer par charger les paquets et les données, comme la séance dernière :
+Pour la suite, votre script doit commencer par charger les paquets et les données, comme au chapitre précédent :
 
 ```{r chargement}
 #| eval: false
@@ -96,7 +96,7 @@ data(hdv2003)
 d <- as_tibble(hdv2003)
 ```
 
-Dans cette séance, nous allons **résumer** une variable quantitative (moyenne, dispersion, quartiles), **compter** les modalités d'une variable qualitative, **comparer** des groupes et **croiser** deux variables.
+Dans ce chapitre, nous allons **résumer** une variable quantitative (moyenne, dispersion, quartiles), **compter** les modalités d'une variable qualitative, **comparer** des groupes et **croiser** deux variables.
 Nous verrons aussi un danger qui apparaît dès qu'on produit des chiffres : les calculs qui donnent un résultat faux sans rien dire.
 
 # Variables quantitatives
@@ -180,7 +180,7 @@ d |> summarise(moyenne = mean(heures.tv))
 ```
 
 Le résultat est `NA`.
-Comme en séance 1, la variable contient des valeurs manquantes, et la moyenne d'un ensemble contenant une valeur inconnue est inconnue.
+Comme au chapitre 1, la variable contient des valeurs manquantes, et la moyenne d'un ensemble contenant une valeur inconnue est inconnue.
 L'argument `na.rm = TRUE` demande d'écarter ces valeurs.
 Il est prudent de compter en même temps combien on en écarte :
 
@@ -199,7 +199,7 @@ La moyenne porte donc sur 1995 personnes, et non sur 2000.
 
 ## Le vrai danger
 
-En séance 1, nous avons vu comment lire un message d'erreur.
+Au chapitre 1, nous avons vu comment lire un message d'erreur.
 Ces erreurs-là sont en fait les plus faciles : R refuse de continuer, et vous savez qu'il y a un problème.
 
 À partir de maintenant, vous produisez des **chiffres**.
@@ -252,7 +252,7 @@ L'argument `sort = TRUE` trie les modalités de la plus fréquente à la moins f
 d |> count(qualif, sort = TRUE)
 ```
 
-Remarquez la dernière ligne : `count()` affiche les valeurs manquantes comme une modalité à part entière.
+Remarquez la ligne `<NA>` : `count()` affiche les valeurs manquantes comme une modalité à part entière.
 C'est une bonne chose : vous voyez immédiatement combien il y en a.
 
 ## Passer aux pourcentages
@@ -275,6 +275,41 @@ d |>
 4. Combien de valeurs manquantes contient la variable `trav.satisf` ? Que représentent-elles, à votre avis ?
 
 Pour la question 4, regardez qui sont les personnes concernées, par exemple avec `filter(is.na(trav.satisf))` : une valeur manquante a souvent un sens.
+
+::: {.callout-note collapse="true" title="Correction"}
+```{r ex_triaplat_q1}
+d |> count(relig, sort = TRUE)
+```
+
+La modalité la plus fréquente est « Appartenance sans pratique ».
+
+```{r ex_triaplat_q2}
+d |>
+  count(relig, sort = TRUE) |>
+  mutate(pourcentage = round(100 * n / sum(n), 1))
+```
+
+```{r ex_triaplat_q3}
+d |>
+  count(peche.chasse) |>
+  mutate(pourcentage = round(100 * n / sum(n), 1))
+```
+
+11,2 % des enquêtés pratiquent la pêche ou la chasse.
+
+```{r ex_triaplat_q4}
+d |> summarise(nombre_na = sum(is.na(trav.satisf)))
+
+d |>
+  filter(is.na(trav.satisf)) |>
+  count(occup)
+```
+
+La variable `trav.satisf` compte 952 valeurs manquantes.
+À une exception près, elles concernent des personnes qui n'exercent pas de profession : chômeurs, retraités, étudiants, personnes au foyer.
+La question sur la satisfaction au travail ne leur a pas été posée.
+Ces `NA` ne sont donc pas des refus de répondre : une moyenne de satisfaction ne porte que sur les personnes qui travaillent.
+:::
 
 # Comparer des groupes
 
@@ -341,6 +376,40 @@ Pour chaque question, écrivez en commentaire, **avant de lancer le code**, le r
 1. L'âge moyen varie-t-il selon le niveau d'études (`nivetud`) ?
 2. Les personnes qui déclarent lire des bandes dessinées (`lecture.bd`) sont-elles plus jeunes que les autres ?
 3. Comparez le nombre moyen d'heures de télévision selon la qualification. Y a-t-il des groupes trop petits pour que la comparaison soit sérieuse ?
+
+::: {.callout-note collapse="true" title="Correction"}
+```{r ex_groupes_q1}
+d |>
+  group_by(nivetud) |>
+  summarise(effectif = n(), age_moyen = mean(age))
+```
+
+Les enquêtés les moins diplômés sont les plus âgés : les études se sont allongées au fil des générations.
+La ligne `NA` regroupe 112 enquêtés de 23 ans en moyenne, sans doute encore en études.
+
+```{r ex_groupes_q2}
+d |>
+  group_by(lecture.bd) |>
+  summarise(effectif = n(), age_moyen = mean(age))
+```
+
+Les lecteurs de bandes dessinées ont en moyenne 44 ans, contre 48 ans pour les autres.
+Mais ils ne sont que 47 : la différence est à prendre avec prudence.
+
+```{r ex_groupes_q3}
+d |>
+  group_by(qualif) |>
+  summarise(
+    effectif = n(),
+    tv_moyenne = mean(heures.tv, na.rm = TRUE)
+  ) |>
+  arrange(desc(tv_moyenne))
+```
+
+Les ouvriers spécialisés regardent la télévision 3 heures par jour en moyenne, les cadres 1,6 heure.
+Les plus petits groupes, « Autre » (58 personnes) et « Technicien » (86), restent comparables, mais leurs moyennes sont moins sûres que celles des employés (594).
+La ligne `NA` (347 personnes) regroupe surtout des personnes sans emploi : ce n'est pas une qualification.
+:::
 
 # Croiser deux variables
 
@@ -416,7 +485,7 @@ L'argument `use = "complete.obs"` joue le rôle de `na.rm = TRUE` : il écarte l
 
 ::: {.callout-warning}
 Une corrélation mesure une association linéaire, pas une causalité.
-Et une corrélation proche de zéro n'exclut pas une relation d'une autre forme : nous le verrons graphiquement à la séance prochaine.
+Et une corrélation proche de zéro n'exclut pas une relation d'une autre forme : nous le verrons graphiquement au chapitre suivant.
 :::
 
 # À vous
@@ -430,6 +499,40 @@ Produisez un court script commenté qui répond aux questions suivantes :
 3. Les hommes et les femmes déclarent-ils pratiquer un sport dans les mêmes proportions ?
 
 Pour chaque question, affichez l'effectif de chaque groupe à côté de l'indicateur, et écrivez une phrase de commentaire qui dit ce que vous lisez dans le résultat.
+
+::: {.callout-note collapse="true" title="Correction"}
+```{r ex_synthese_q1}
+# L'âge moyen varie peu selon la qualification : de 46 à 50 ans.
+d |>
+  group_by(qualif) |>
+  summarise(effectif = n(), age_moyen = mean(age)) |>
+  arrange(desc(age_moyen))
+```
+
+```{r ex_synthese_q2}
+# Le temps passé devant la télévision diminue avec le niveau d'études :
+# environ 3 heures par jour pour les niveaux primaires, 1,6 heure
+# pour l'enseignement supérieur. Le groupe « N'a jamais fait d'études »
+# ne compte que 39 personnes.
+d |>
+  group_by(nivetud) |>
+  summarise(
+    effectif = n(),
+    tv_moyenne = mean(heures.tv, na.rm = TRUE)
+  )
+```
+
+```{r ex_synthese_q3}
+# 41 % des hommes déclarent pratiquer un sport, contre 32 % des femmes.
+d |>
+  count(sexe, sport) |>
+  group_by(sexe) |>
+  mutate(pourcentage = round(100 * n / sum(n), 1))
+```
+
+Pour la question 3, on groupe par `sexe` avant de calculer les pourcentages : on compare ainsi la part de sportifs parmi les hommes et parmi les femmes.
+Grouper par `sport` répondrait à une autre question : parmi les sportifs, quelle part d'hommes ?
+:::
 
 ## Les leçons swirl
 
@@ -447,7 +550,7 @@ Voir [`LECONS_OPTIONNELLES.md`](https://github.com/EliasBcd/InitiationR/blob/mai
 
 # La suite
 
-Avant la prochaine séance, terminez les deux leçons swirl et déposez-les sur Moodle.
+Avant de passer au chapitre suivant, terminez les deux leçons swirl et déposez-les sur Moodle.
 
-La séance prochaine, nous reprendrons les mêmes questions, mais en graphiques.
+Au chapitre suivant, nous reprendrons les mêmes questions, mais en graphiques.
 Vous verrez que certaines choses invisibles dans un tableau sautent aux yeux dans un graphique.

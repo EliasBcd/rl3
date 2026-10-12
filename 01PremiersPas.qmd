@@ -17,9 +17,9 @@ date-format: long
 
 ## Où nous allons
 
-Le cours est découpé en cinq séances :
+Le cours est découpé en cinq chapitres :
 
-| Séance | Objet |
+| Chapitre | Objet |
 |:--|:--|
 | 1 | Premiers pas : objets, types, vecteurs, fonctions |
 | 2 | Découvrir un tableau de données |
@@ -30,12 +30,12 @@ Le cours est découpé en cinq séances :
 À la fin, vous serez capables de prendre un jeu de données, de le décrire et d'en tirer des graphiques lisibles.
 
 Trois principes guident le cours.
-D'abord, **un seul jeu de données** du début à la fin : l'enquête *Histoire de vie* de l'INSEE, à partir de la séance 2.
+D'abord, **un seul jeu de données** du début à la fin : l'enquête *Histoire de vie* de l'INSEE, à partir du chapitre 2.
 Vous finirez par bien le connaître, et c'est voulu : quand les données vous sont familières, vous repérez plus facilement un résultat qui cloche.
-Ensuite, **une seule famille d'outils**, le `tidyverse`, que nous adopterons à partir de la séance 2.
+Ensuite, **une seule famille d'outils**, le `tidyverse`, que nous adopterons à partir du chapitre 2.
 Aujourd'hui, nous apprenons les bases de R sur lesquelles il repose.
-Enfin, **des exercices interactifs** avec `swirl` à la fin de chaque séance.
-À partir de la séance 2, chaque séance s'ouvre aussi par un court exercice de reprise sur la séance précédente.
+Enfin, **des exercices interactifs** avec `swirl` à la fin de chaque chapitre.
+À partir du chapitre 2, chaque chapitre s'ouvre aussi par un court exercice de reprise sur le chapitre précédent.
 
 ## Comment lire ces pages
 
@@ -214,6 +214,7 @@ Assigner un objet à un autre copie simplement la valeur de droite dans l'objet 
 Avant d'exécuter les lignes suivantes, essayez de prédire ce que vaudra `x` à la fin.
 
 ```{r copie}
+#| eval: false
 x <- 1
 y <- 3
 x <- y
@@ -233,6 +234,39 @@ Dans la console :
 
 Ne sautez pas la question 3 : elle vous fait rencontrer votre premier message d'erreur.
 Nous verrons plus bas comment le lire.
+
+::: {.callout-note collapse="true" title="Correction"}
+Par exemple :
+
+```{r ex_objets_correction}
+#| eval: false
+age <- 20
+prenom <- "Camille"
+annee_naissance <- 2026 - age   # remplacez 2026 par l'année en cours
+annee_naissance
+```
+
+Le calcul de `annee_naissance` n'est exact qu'à un an près : il dépend de la date de votre anniversaire.
+
+Taper `Age` provoque une erreur :
+
+    Erreur : objet 'Age' introuvable
+
+R distingue les majuscules des minuscules : pour lui, `age` et `Age` sont deux noms différents, et seul le premier existe.
+
+Une espace ou un chiffre au début d'un nom provoquent aussi une erreur :
+
+```{r ex_objets_noms}
+#| eval: false
+mon age <- 20
+2age <- 20
+```
+
+    Erreur : symbole inattendu dans "mon age"
+
+Un nom d'objet commence par une lettre, et ne contient que des lettres, des chiffres, des points et des tirets bas.
+Pour séparer plusieurs mots, on utilise le tiret bas, comme dans `annee_naissance`.
+:::
 
 # Types
 
@@ -287,7 +321,7 @@ C'est l'erreur la plus fréquente au début, et elle ne provoque pas toujours de
 :::
 
 Ces opérateurs vous serviront pendant tout le cours.
-Dès la séance 2, ils permettront de sélectionner des lignes dans un tableau, par exemple les enquêtés de moins de 25 ans :
+Dès le chapitre 2, ils permettront de sélectionner des lignes dans un tableau, par exemple les enquêtés de moins de 25 ans :
 
 ```{r apercu}
 #| eval: false
@@ -336,7 +370,7 @@ imc
 
 Une seule ligne calcule les cinq indices.
 C'est le principe central de R : on travaille sur des colonnes entières, pas sur des valeurs une par une.
-Vous le retrouverez dès la séance prochaine, quand chaque colonne d'un tableau de données sera un vecteur.
+Vous le retrouverez dès le chapitre suivant, quand chaque colonne d'un tableau de données sera un vecteur.
 
 ## Un vecteur n'a qu'un seul type
 
@@ -352,6 +386,7 @@ Si on mélange texte et nombres, R ne refuse pas : il convertit tout en texte.
 Prédisez le résultat avant d'exécuter :
 
 ```{r coercition}
+#| eval: false
 chiens <- c("Chihuahua", 5, "Doberman", 15)
 chiens
 ```
@@ -424,7 +459,7 @@ mean(tailles_incompletes, na.rm = TRUE)
 Le premier résultat est `NA` : la moyenne d'un ensemble qui contient une valeur inconnue est elle-même inconnue.
 R refuse de deviner.
 L'argument `na.rm = TRUE` (pour *NA remove*) lui demande d'écarter les valeurs manquantes avant de calculer.
-La moyenne porte alors sur quatre personnes, et non sur cinq : nous reviendrons en séance 3 sur ce que cela implique.
+La moyenne porte alors sur quatre personnes, et non sur cinq : nous reviendrons au chapitre 3 sur ce que cela implique.
 
 ## L'aide d'une fonction
 
@@ -452,6 +487,26 @@ Sur le vecteur `imc` calculé plus haut :
 2. Quelle est la plus petite ? la plus grande ? Les fonctions s'appellent comme en anglais ; cherchez dans l'aide si besoin.
 3. Ouvrez `?quantile`. Que fait l'argument `probs` ?
 4. Calculez la médiane des tailles de deux façons différentes.
+
+::: {.callout-note collapse="true" title="Correction"}
+```{r ex_imc_correction}
+length(imc)
+min(imc)
+max(imc)
+```
+
+`range(imc)` aurait donné le minimum et le maximum d'un coup.
+
+L'argument `probs` de `quantile()` indique la ou les proportions voulues, entre 0 et 1 : `0.5` donne la médiane, `0.25` le premier quartile.
+Sans cet argument, `quantile()` renvoie le minimum, les trois quartiles et le maximum.
+
+```{r ex_mediane_correction}
+median(tailles)
+quantile(tailles, probs = 0.5)
+```
+
+Les deux résultats sont identiques ; `quantile()` y ajoute seulement une étiquette, `50%`.
+:::
 
 # Quand ça ne marche pas
 
@@ -520,7 +575,7 @@ Face à un message d'erreur, procédez dans l'ordre.
 Un message d'erreur n'est pas un échec, c'est un diagnostic.
 Le vrai danger, ce sont les commandes qui s'exécutent sans rien dire et donnent un résultat faux.
 Vous en avez déjà vu deux exemples : le `=` à la place de `==`, et les nombres convertis en texte dans un vecteur.
-Nous y reviendrons en détail en séance 3.
+Nous y reviendrons en détail au chapitre 3.
 :::
 
 # Scripts
@@ -576,7 +631,7 @@ R est livré avec un ensemble de fonctions de base.
 Des milliers d'autres sont distribuées sous forme d'extensions appelées **paquets** (*packages*), diffusés sur un réseau de serveurs nommé [CRAN](https://cran.r-project.org/).
 
 On installe un paquet avec `install.packages()`, en mettant son nom entre guillemets.
-Installez maintenant le paquet `questionr`, qui contient les données que nous utiliserons à partir de la séance prochaine :
+Installez maintenant le paquet `questionr`, qui contient les données que nous utiliserons à partir du chapitre suivant :
 
 ```{r install}
 #| eval: false
@@ -646,7 +701,7 @@ Donnez votre numéro d'étudiant ou votre nom, et **gardez le même toute l'ann�
 Choisissez ensuite le cours « InitiationR », puis la leçon, et suivez les instructions qui s'affichent dans la console.
 Si swirl refuse une réponse qui vous semble juste, lisez la partie [Si vous êtes bloqués](Swirl.qmd#sec-bloque) de la page sur swirl.
 
-Pour cette séance, faites dans l'ordre les leçons **Manipulations_simples**, **Types**, **Vecteurs**, **Messages_erreurs**, **Fonctions** puis **Logique**.
+Pour ce chapitre, faites dans l'ordre les leçons **Manipulations_simples**, **Types**, **Vecteurs**, **Messages_erreurs**, **Fonctions** puis **Logique**.
 
 ## Déposer votre travail
 
@@ -677,7 +732,7 @@ Ce n'est pas un travail à faire : consultez-le librement, quand vous en avez be
 
 # La suite
 
-Avant la prochaine séance, terminez les six leçons swirl et déposez-les sur Moodle.
+Avant de passer au chapitre suivant, terminez les six leçons swirl et déposez-les sur Moodle.
 Il n'y a rien d'autre à faire.
 
-La séance prochaine, nous abandonnons les vecteurs saisis à la main pour travailler sur de vraies données d'enquête.
+Au chapitre suivant, nous abandonnons les vecteurs saisis à la main pour travailler sur de vraies données d'enquête.

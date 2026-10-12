@@ -35,11 +35,11 @@ Le seul prérequis est d'avoir accès à R et RStudio sur un ordinateur.
 
 # Comment travailler
 
-Chaque séance se présente sous la forme d'une page de cours, à lire **devant votre ordinateur, RStudio ouvert**.
+Chaque chapitre se présente sous la forme d'une page de cours, à lire **devant votre ordinateur, RStudio ouvert**.
 Le code des exemples est fait pour être recopié et exécuté au fur et à mesure.
 Lire du code sans l'exécuter ne sert à peu près à rien : c'est en le tapant, en le modifiant et en se trompant qu'on apprend.
 
-Chaque séance se termine par des leçons interactives `swirl`, qui vous font pratiquer directement dans R.
+Chaque chapitre se termine par des leçons interactives `swirl`, qui vous font pratiquer directement dans R.
 Elles reprennent des exercices développés par l'équipe @swirldev, traduits et adaptés pour ce cours, et d'autres que j'ai écrits ; elles sont disponibles sur [ce dépôt GitHub](https://github.com/EliasBcd/InitiationR).
 Le fichier produit à la fin de chaque leçon est à déposer sur Moodle : c'est ce qui valide votre travail.
 La page [Utiliser swirl](Swirl.qmd) explique comment faire.
@@ -73,6 +73,25 @@ Vous trouverez plus d'informations sur l'installation sur la [page Moodle](https
 
 Une fois les deux logiciels installés, lancez RStudio en cliquant sur son icône ![Logo RStudio](resources/RStudio-Logo-Flat.png){width=5%}, ou en le recherchant parmi les applications de votre ordinateur.
 C'est toujours RStudio que vous lancerez, jamais R directement : RStudio s'occupe de démarrer R.
+
+## Passer RStudio en français
+
+Par défaut, les menus de RStudio sont en anglais.
+Pour les passer en français :
+
+1. Ouvrez le menu *Tools > Global Options…*
+2. Dans la rubrique *General*, ouvrez l'onglet *Advanced*.
+3. Dans la liste *User Interface Language*, choisissez *Français*, puis cliquez sur *OK*.
+4. Fermez et relancez RStudio : le changement n'est pris en compte qu'au redémarrage.
+
+Ce réglage ne change que les menus de RStudio, pas les messages de R.
+Ceux-ci suivent la langue de votre système : si votre ordinateur est en anglais, les messages d'erreur s'afficheront en anglais, alors que le cours les cite en français.
+Pour les obtenir en français, exécutez la commande suivante dans la console au début de chaque session :
+
+```{r langue}
+#| eval: false
+Sys.setenv(LANGUAGE = "fr")
+```
 
 Si RStudio s'ouvre sans message d'erreur, vous êtes prêts pour [la suite](01PremiersPas.qmd).
 
