@@ -27,6 +27,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -140,7 +175,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Séance 1 : premiers pas</span></a>
+ <span class="menu-text">Chapitre 1 : premiers pas</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -163,7 +198,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Séance 2 : données</span></a>
+ <span class="menu-text">Chapitre 2 : données</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -180,7 +215,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Séance 3 : analyse</span></a>
+ <span class="menu-text">Chapitre 3 : analyse</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -197,7 +232,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Séance 4 : représentations graphiques</span></a>
+ <span class="menu-text">Chapitre 4 : représentations graphiques</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -214,7 +249,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Séance 5 : projet</span></a>
+ <span class="menu-text">Chapitre 5 : projet</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -309,7 +344,10 @@ div.csl-indent {
   <li><a href="#une-remarque-sur-les-assistants-ia" id="toc-une-remarque-sur-les-assistants-ia" class="nav-link" data-scroll-target="#une-remarque-sur-les-assistants-ia">Une remarque sur les assistants IA</a></li>
   <li><a href="#validation" id="toc-validation" class="nav-link" data-scroll-target="#validation">Validation</a></li>
   </ul></li>
-  <li><a href="#logiciels-requis-pour-le-cours" id="toc-logiciels-requis-pour-le-cours" class="nav-link" data-scroll-target="#logiciels-requis-pour-le-cours">Logiciels requis pour le cours</a></li>
+  <li><a href="#logiciels-requis-pour-le-cours" id="toc-logiciels-requis-pour-le-cours" class="nav-link" data-scroll-target="#logiciels-requis-pour-le-cours">Logiciels requis pour le cours</a>
+  <ul class="collapse">
+  <li><a href="#passer-rstudio-en-français" id="toc-passer-rstudio-en-français" class="nav-link" data-scroll-target="#passer-rstudio-en-français">Passer RStudio en français</a></li>
+  </ul></li>
   <li><a href="#notions-principales" id="toc-notions-principales" class="nav-link" data-scroll-target="#notions-principales">Notions principales</a>
   <ul class="collapse">
   <li><a href="#liens-entre-ces-notions" id="toc-liens-entre-ces-notions" class="nav-link" data-scroll-target="#liens-entre-ces-notions">Liens entre ces notions</a></li>
@@ -342,7 +380,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">9 octobre 2026</p>
+      <p class="date">12 octobre 2026</p>
     </div>
   </div>
   
@@ -354,7 +392,7 @@ div.csl-indent {
 </header>
 
 
-<p>Ce site contient les notes du cours d’introduction à R dispensé en L3 économie-finance à l’université Paris 8. Chaque séance est rédigée pour être suivie en autonomie, RStudio ouvert à côté. Les diapositives correspondantes sont disponibles dans la section « Diapositives » du menu.</p>
+<p>Ce site contient les notes du cours d’introduction à R dispensé en L3 économie-finance à l’université Paris 8. Chaque chapitre est rédigé pour être suivi en autonomie, RStudio ouvert à côté. Les diapositives correspondantes sont disponibles dans la section « Diapositives » du menu.</p>
 <section id="syllabus" class="level1">
 <h1>Syllabus</h1>
 <p>Une ressource bibliographique utile pour comprendre de nombreux concepts en R est proposée par <span class="citation" data-cites="Barnier">Barnier et Kauffmann (<a href="#ref-Barnier" role="doc-biblioref">2023</a>)</span>.</p>
@@ -365,7 +403,7 @@ div.csl-indent {
 </section>
 <section id="plan-du-cours" class="level2">
 <h2 class="anchored" data-anchor-id="plan-du-cours">Plan du cours</h2>
-<p>Cinq séances. Chacune, sauf la première, s’ouvre par un exercice de reprise de la séance précédente, et se termine par des leçons <code>swirl</code>.</p>
+<p>Cinq chapitres. Chacun, sauf le premier, s’ouvre par un exercice de reprise du chapitre précédent, et se termine par des leçons <code>swirl</code>.</p>
 <ol type="1">
 <li><strong>Premiers pas</strong> (<a href="./00Introduction.html">Introduction</a>, <a href="./01PremiersPas.html">Premiers Pas</a>)
 <ul>
@@ -397,7 +435,7 @@ div.csl-indent {
 <li>Une analyse complète sur <code>hdv2003</code>, du script au rendu</li>
 </ul></li>
 </ol>
-<p>Chaque séance renvoie vers des leçons <code>swirl</code> et une lecture facultative correspondante dans <span class="citation" data-cites="Barnier">Barnier et Kauffmann (<a href="#ref-Barnier" role="doc-biblioref">2023</a>)</span>.</p>
+<p>Chaque chapitre renvoie vers des leçons <code>swirl</code>.</p>
 </section>
 <section id="une-remarque-sur-les-assistants-ia" class="level2">
 <h2 class="anchored" data-anchor-id="une-remarque-sur-les-assistants-ia">Une remarque sur les assistants IA</h2>
@@ -405,7 +443,7 @@ div.csl-indent {
 </section>
 <section id="validation" class="level2">
 <h2 class="anchored" data-anchor-id="validation">Validation</h2>
-<p>Cours à validation, sur la base des exercices <code>swirl</code> rendus au fur et à mesure et d’un rendu final : un script <code>.R</code> commenté (sections <code># Titre ----</code>), déposé à l’issue de la séance 5.</p>
+<p>Cours à validation, sur la base des exercices <code>swirl</code> rendus au fur et à mesure et d’un rendu final : un script <code>.R</code> commenté (sections <code># Titre ----</code>), déposé à l’issue du chapitre 5.</p>
 </section>
 </section>
 <section id="logiciels-requis-pour-le-cours" class="level1">
@@ -415,6 +453,21 @@ div.csl-indent {
 <li>RStudio, dans sa dernière version</li>
 <li>Les paquets <code>swirl</code>, <code>tidyverse</code>, <code>questionr</code></li>
 </ul>
+<p>Les instructions d’installation de R et RStudio sont dans la page <a href="./00Introduction.html">Introduction</a>.</p>
+<section id="passer-rstudio-en-français" class="level2">
+<h2 class="anchored" data-anchor-id="passer-rstudio-en-français">Passer RStudio en français</h2>
+<p>Par défaut, les menus de RStudio sont en anglais. Pour les passer en français :</p>
+<ol type="1">
+<li>Ouvrez le menu <em>Tools &gt; Global Options…</em></li>
+<li>Dans la rubrique <em>General</em>, ouvrez l’onglet <em>Advanced</em>.</li>
+<li>Dans la liste <em>User Interface Language</em>, choisissez <em>Français</em>, puis cliquez sur <em>OK</em>.</li>
+<li>Fermez et relancez RStudio : le changement n’est pris en compte qu’au redémarrage.</li>
+</ol>
+<p>Ce réglage ne change que les menus de RStudio, pas les messages de R. Ceux-ci suivent la langue de votre système : si votre ordinateur est en anglais, les messages d’erreur s’afficheront en anglais, alors que le cours les cite en français. Pour les obtenir en français, exécutez la commande suivante dans la console au début de chaque session :</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">LANGUAGE =</span> <span class="st">"fr"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
 </section>
 <section id="notions-principales" class="level1">
 <h1>Notions principales</h1>

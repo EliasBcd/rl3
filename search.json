@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Initiation à l’analyse de données à l’aide de R",
     "section": "",
-    "text": "Ce site contient les notes du cours d’introduction à R dispensé en L3 économie-finance à l’université Paris 8. Chaque séance est rédigée pour être suivie en autonomie, RStudio ouvert à côté. Les diapositives correspondantes sont disponibles dans la section « Diapositives » du menu.",
+    "text": "Ce site contient les notes du cours d’introduction à R dispensé en L3 économie-finance à l’université Paris 8. Chaque chapitre est rédigé pour être suivi en autonomie, RStudio ouvert à côté. Les diapositives correspondantes sont disponibles dans la section « Diapositives » du menu.",
     "crumbs": [
       "Index"
     ]
@@ -24,7 +24,7 @@
     "href": "index.html#plan-du-cours",
     "title": "Initiation à l’analyse de données à l’aide de R",
     "section": "Plan du cours",
-    "text": "Plan du cours\nCinq séances. Chacune, sauf la première, s’ouvre par un exercice de reprise de la séance précédente, et se termine par des leçons swirl.\n\nPremiers pas (Introduction, Premiers Pas)\n\nInstaller R et RStudio, présenter l’interface\nObjets, types (booléen, numérique, chaîne de caractères), vecteurs\nFonctions, messages d’erreur, scripts, paquets\nInstallation de swirl\n\nDécouvrir un tableau de données (Explorer des données)\n\nPassage au tidyverse\nTibble (tableau), glimpse(), le tuyau |&gt;\nselect(), filter(), arrange(), mutate()\n\nAnalyser des données (Analyser des données)\n\nsummarise(), valeurs manquantes\nLes erreurs silencieuses\ncount(), group_by(), croisement de deux variables\n\nReprésenter des données (Représenter des données)\n\nggplot2 : données, géométrie, esthétique\nReprésenter une variable, croiser deux variables\nMappages, superposition, mise en forme\n\nProjet en autonomie (Projet)\n\nUne analyse complète sur hdv2003, du script au rendu\n\n\nChaque séance renvoie vers des leçons swirl et une lecture facultative correspondante dans Barnier et Kauffmann (2023).",
+    "text": "Plan du cours\nCinq chapitres. Chacun, sauf le premier, s’ouvre par un exercice de reprise du chapitre précédent, et se termine par des leçons swirl.\n\nPremiers pas (Introduction, Premiers Pas)\n\nInstaller R et RStudio, présenter l’interface\nObjets, types (booléen, numérique, chaîne de caractères), vecteurs\nFonctions, messages d’erreur, scripts, paquets\nInstallation de swirl\n\nDécouvrir un tableau de données (Explorer des données)\n\nPassage au tidyverse\nTibble (tableau), glimpse(), le tuyau |&gt;\nselect(), filter(), arrange(), mutate()\n\nAnalyser des données (Analyser des données)\n\nsummarise(), valeurs manquantes\nLes erreurs silencieuses\ncount(), group_by(), croisement de deux variables\n\nReprésenter des données (Représenter des données)\n\nggplot2 : données, géométrie, esthétique\nReprésenter une variable, croiser deux variables\nMappages, superposition, mise en forme\n\nProjet en autonomie (Projet)\n\nUne analyse complète sur hdv2003, du script au rendu\n\n\nChaque chapitre renvoie vers des leçons swirl.",
     "crumbs": [
       "Index"
     ]
@@ -44,7 +44,17 @@
     "href": "index.html#validation",
     "title": "Initiation à l’analyse de données à l’aide de R",
     "section": "Validation",
-    "text": "Validation\nCours à validation, sur la base des exercices swirl rendus au fur et à mesure et d’un rendu final : un script .R commenté (sections # Titre ----), déposé à l’issue de la séance 5.",
+    "text": "Validation\nCours à validation, sur la base des exercices swirl rendus au fur et à mesure et d’un rendu final : un script .R commenté (sections # Titre ----), déposé à l’issue du chapitre 5.",
+    "crumbs": [
+      "Index"
+    ]
+  },
+  {
+    "objectID": "index.html#passer-rstudio-en-français",
+    "href": "index.html#passer-rstudio-en-français",
+    "title": "Initiation à l’analyse de données à l’aide de R",
+    "section": "Passer RStudio en français",
+    "text": "Passer RStudio en français\nPar défaut, les menus de RStudio sont en anglais. Pour les passer en français :\n\nOuvrez le menu Tools &gt; Global Options…\nDans la rubrique General, ouvrez l’onglet Advanced.\nDans la liste User Interface Language, choisissez Français, puis cliquez sur OK.\nFermez et relancez RStudio : le changement n’est pris en compte qu’au redémarrage.\n\nCe réglage ne change que les menus de RStudio, pas les messages de R. Ceux-ci suivent la langue de votre système : si votre ordinateur est en anglais, les messages d’erreur s’afficheront en anglais, alors que le cours les cite en français. Pour les obtenir en français, exécutez la commande suivante dans la console au début de chaque session :\n\nSys.setenv(LANGUAGE = \"fr\")",
     "crumbs": [
       "Index"
     ]
@@ -5035,7 +5045,7 @@
     "section": "",
     "text": "R est un langage de programmation tourné principalement vers l’analyse de données et les statistiques. Il dérive d’un langage plus ancien, appelé S, et c’est un logiciel libre : il est gratuit, et n’importe qui peut lire et modifier son code. Vous trouverez une présentation plus complète sur Wikipédia.\nOn n’utilise presque jamais R directement. On passe par RStudio, un logiciel qui rassemble dans une même fenêtre l’endroit où l’on écrit son code, celui où R l’exécute, et ceux où s’affichent les résultats et les graphiques.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Initiation à R"
     ]
   },
@@ -5046,7 +5056,7 @@
     "section": "Installer R",
     "text": "Installer R\nTéléchargez l’installateur correspondant à votre système et lancez-le, en gardant les options proposées par défaut :\n\nWindows ;\nMac : prenez la version qui correspond à votre processeur (Apple Silicon pour les Mac récents, Intel pour les plus anciens) ;\nLinux : utilisez le gestionnaire de paquets de votre système, ou suivez ces instructions pour obtenir la dernière version (Ubuntu/Debian).",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Initiation à R"
     ]
   },
@@ -5057,7 +5067,7 @@
     "section": "Installer RStudio",
     "text": "Installer RStudio\nRendez-vous sur la page de téléchargement de RStudio et installez la version Desktop, gratuite, adaptée à votre système.\nSi vous ne pouvez rien installer sur votre ordinateur, vous pouvez utiliser Posit Cloud, une version en ligne très proche de RStudio, qui fonctionne dans un navigateur.\nVous trouverez plus d’informations sur l’installation sur la page Moodle du cours.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Initiation à R"
     ]
   },
@@ -5066,9 +5076,20 @@
     "href": "00Introduction.html#lancer-rstudio",
     "title": "Initiation à R",
     "section": "Lancer RStudio",
-    "text": "Lancer RStudio\nUne fois les deux logiciels installés, lancez RStudio en cliquant sur son icône , ou en le recherchant parmi les applications de votre ordinateur. C’est toujours RStudio que vous lancerez, jamais R directement : RStudio s’occupe de démarrer R.\nSi RStudio s’ouvre sans message d’erreur, vous êtes prêts pour la suite.",
+    "text": "Lancer RStudio\nUne fois les deux logiciels installés, lancez RStudio en cliquant sur son icône , ou en le recherchant parmi les applications de votre ordinateur. C’est toujours RStudio que vous lancerez, jamais R directement : RStudio s’occupe de démarrer R.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
+      "Initiation à R"
+    ]
+  },
+  {
+    "objectID": "00Introduction.html#passer-rstudio-en-français",
+    "href": "00Introduction.html#passer-rstudio-en-français",
+    "title": "Initiation à R",
+    "section": "Passer RStudio en français",
+    "text": "Passer RStudio en français\nPar défaut, les menus de RStudio sont en anglais. Pour les passer en français :\n\nOuvrez le menu Tools &gt; Global Options…\nDans la rubrique General, ouvrez l’onglet Advanced.\nDans la liste User Interface Language, choisissez Français, puis cliquez sur OK.\nFermez et relancez RStudio : le changement n’est pris en compte qu’au redémarrage.\n\nCe réglage ne change que les menus de RStudio, pas les messages de R. Ceux-ci suivent la langue de votre système : si votre ordinateur est en anglais, les messages d’erreur s’afficheront en anglais, alors que le cours les cite en français. Pour les obtenir en français, exécutez la commande suivante dans la console au début de chaque session :\n\nSys.setenv(LANGUAGE = \"fr\")\n\nSi RStudio s’ouvre sans message d’erreur, vous êtes prêts pour la suite.",
+    "crumbs": [
+      "Chapitre 1 : premiers pas",
       "Initiation à R"
     ]
   },
@@ -5077,9 +5098,9 @@
     "href": "01PremiersPas.html",
     "title": "Premiers pas avec R",
     "section": "",
-    "text": "Le cours est découpé en cinq séances :\n\n\n\nSéance\nObjet\n\n\n\n\n1\nPremiers pas : objets, types, vecteurs, fonctions\n\n\n2\nDécouvrir un tableau de données\n\n\n3\nDécrire des données\n\n\n4\nReprésenter des données\n\n\n5\nProjet : une analyse complète\n\n\n\nÀ la fin, vous serez capables de prendre un jeu de données, de le décrire et d’en tirer des graphiques lisibles.\nTrois principes guident le cours. D’abord, un seul jeu de données du début à la fin : l’enquête Histoire de vie de l’INSEE, à partir de la séance 2. Vous finirez par bien le connaître, et c’est voulu : quand les données vous sont familières, vous repérez plus facilement un résultat qui cloche. Ensuite, une seule famille d’outils, le tidyverse, que nous adopterons à partir de la séance 2. Aujourd’hui, nous apprenons les bases de R sur lesquelles il repose. Enfin, des exercices interactifs avec swirl à la fin de chaque séance. À partir de la séance 2, chaque séance s’ouvre aussi par un court exercice de reprise sur la séance précédente.\n\n\n\nOuvrez RStudio à côté de cette page. Chaque fois que vous rencontrez un bloc de code, recopiez-le et exécutez-le. Recopiez-le plutôt que de le coller : taper le code vous oblige à le lire, et vous fera commettre les fautes de frappe qu’il vaut mieux apprendre à reconnaître tout de suite.\nPrenez aussi l’habitude de prédire avant d’exécuter : avant de lancer une commande, demandez-vous ce que R va afficher. Si le résultat correspond à ce que vous attendiez, vous avez compris. Sinon, c’est que quelque chose vous échappe, et c’est le moment de s’arrêter pour comprendre, pas de passer à la suite.\n\n\n\nVous pouvez tout à fait utiliser ChatGPT, Gemini ou Claude en dehors de ce cours. Ils vous donneront presque toujours une réponse, parfois fausse, et pas toujours simple à comprendre.\n\n\n\n\n\n\nImportant\n\n\n\nLe problème n’est pas qu’ils se trompent : c’est que vous ne pouvez pas le voir tant que vous ne savez pas faire sans eux. Ce cours sert à acquérir de quoi les juger.\nQuand vous êtes bloqués, servez-vous de l’aide de R et des messages d’erreur. C’est ce que vous apprendrez ici.\n\n\nLa charte IA de l’université est disponible ici : https://www.univ-paris8.fr/IMG/pdf/02_chartes_cadre_ia_up8.pdf.",
+    "text": "Le cours est découpé en cinq chapitres :\n\n\n\nChapitre\nObjet\n\n\n\n\n1\nPremiers pas : objets, types, vecteurs, fonctions\n\n\n2\nDécouvrir un tableau de données\n\n\n3\nDécrire des données\n\n\n4\nReprésenter des données\n\n\n5\nProjet : une analyse complète\n\n\n\nÀ la fin, vous serez capables de prendre un jeu de données, de le décrire et d’en tirer des graphiques lisibles.\nTrois principes guident le cours. D’abord, un seul jeu de données du début à la fin : l’enquête Histoire de vie de l’INSEE, à partir du chapitre 2. Vous finirez par bien le connaître, et c’est voulu : quand les données vous sont familières, vous repérez plus facilement un résultat qui cloche. Ensuite, une seule famille d’outils, le tidyverse, que nous adopterons à partir du chapitre 2. Aujourd’hui, nous apprenons les bases de R sur lesquelles il repose. Enfin, des exercices interactifs avec swirl à la fin de chaque chapitre. À partir du chapitre 2, chaque chapitre s’ouvre aussi par un court exercice de reprise sur le chapitre précédent.\n\n\n\nOuvrez RStudio à côté de cette page. Chaque fois que vous rencontrez un bloc de code, recopiez-le et exécutez-le. Recopiez-le plutôt que de le coller : taper le code vous oblige à le lire, et vous fera commettre les fautes de frappe qu’il vaut mieux apprendre à reconnaître tout de suite.\nPrenez aussi l’habitude de prédire avant d’exécuter : avant de lancer une commande, demandez-vous ce que R va afficher. Si le résultat correspond à ce que vous attendiez, vous avez compris. Sinon, c’est que quelque chose vous échappe, et c’est le moment de s’arrêter pour comprendre, pas de passer à la suite.\n\n\n\nVous pouvez tout à fait utiliser ChatGPT, Gemini ou Claude en dehors de ce cours. Ils vous donneront presque toujours une réponse, parfois fausse, et pas toujours simple à comprendre.\n\n\n\n\n\n\nImportant\n\n\n\nLe problème n’est pas qu’ils se trompent : c’est que vous ne pouvez pas le voir tant que vous ne savez pas faire sans eux. Ce cours sert à acquérir de quoi les juger.\nQuand vous êtes bloqués, servez-vous de l’aide de R et des messages d’erreur. C’est ce que vous apprendrez ici.\n\n\nLa charte IA de l’université est disponible ici : https://www.univ-paris8.fr/IMG/pdf/02_chartes_cadre_ia_up8.pdf.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5088,9 +5109,9 @@
     "href": "01PremiersPas.html#où-nous-allons",
     "title": "Premiers pas avec R",
     "section": "",
-    "text": "Le cours est découpé en cinq séances :\n\n\n\nSéance\nObjet\n\n\n\n\n1\nPremiers pas : objets, types, vecteurs, fonctions\n\n\n2\nDécouvrir un tableau de données\n\n\n3\nDécrire des données\n\n\n4\nReprésenter des données\n\n\n5\nProjet : une analyse complète\n\n\n\nÀ la fin, vous serez capables de prendre un jeu de données, de le décrire et d’en tirer des graphiques lisibles.\nTrois principes guident le cours. D’abord, un seul jeu de données du début à la fin : l’enquête Histoire de vie de l’INSEE, à partir de la séance 2. Vous finirez par bien le connaître, et c’est voulu : quand les données vous sont familières, vous repérez plus facilement un résultat qui cloche. Ensuite, une seule famille d’outils, le tidyverse, que nous adopterons à partir de la séance 2. Aujourd’hui, nous apprenons les bases de R sur lesquelles il repose. Enfin, des exercices interactifs avec swirl à la fin de chaque séance. À partir de la séance 2, chaque séance s’ouvre aussi par un court exercice de reprise sur la séance précédente.",
+    "text": "Le cours est découpé en cinq chapitres :\n\n\n\nChapitre\nObjet\n\n\n\n\n1\nPremiers pas : objets, types, vecteurs, fonctions\n\n\n2\nDécouvrir un tableau de données\n\n\n3\nDécrire des données\n\n\n4\nReprésenter des données\n\n\n5\nProjet : une analyse complète\n\n\n\nÀ la fin, vous serez capables de prendre un jeu de données, de le décrire et d’en tirer des graphiques lisibles.\nTrois principes guident le cours. D’abord, un seul jeu de données du début à la fin : l’enquête Histoire de vie de l’INSEE, à partir du chapitre 2. Vous finirez par bien le connaître, et c’est voulu : quand les données vous sont familières, vous repérez plus facilement un résultat qui cloche. Ensuite, une seule famille d’outils, le tidyverse, que nous adopterons à partir du chapitre 2. Aujourd’hui, nous apprenons les bases de R sur lesquelles il repose. Enfin, des exercices interactifs avec swirl à la fin de chaque chapitre. À partir du chapitre 2, chaque chapitre s’ouvre aussi par un court exercice de reprise sur le chapitre précédent.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5101,7 +5122,7 @@
     "section": "",
     "text": "Ouvrez RStudio à côté de cette page. Chaque fois que vous rencontrez un bloc de code, recopiez-le et exécutez-le. Recopiez-le plutôt que de le coller : taper le code vous oblige à le lire, et vous fera commettre les fautes de frappe qu’il vaut mieux apprendre à reconnaître tout de suite.\nPrenez aussi l’habitude de prédire avant d’exécuter : avant de lancer une commande, demandez-vous ce que R va afficher. Si le résultat correspond à ce que vous attendiez, vous avez compris. Sinon, c’est que quelque chose vous échappe, et c’est le moment de s’arrêter pour comprendre, pas de passer à la suite.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5112,7 +5133,7 @@
     "section": "",
     "text": "Vous pouvez tout à fait utiliser ChatGPT, Gemini ou Claude en dehors de ce cours. Ils vous donneront presque toujours une réponse, parfois fausse, et pas toujours simple à comprendre.\n\n\n\n\n\n\nImportant\n\n\n\nLe problème n’est pas qu’ils se trompent : c’est que vous ne pouvez pas le voir tant que vous ne savez pas faire sans eux. Ce cours sert à acquérir de quoi les juger.\nQuand vous êtes bloqués, servez-vous de l’aide de R et des messages d’erreur. C’est ce que vous apprendrez ici.\n\n\nLa charte IA de l’université est disponible ici : https://www.univ-paris8.fr/IMG/pdf/02_chartes_cadre_ia_up8.pdf.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5123,7 +5144,7 @@
     "section": "La console",
     "text": "La console\nAu premier lancement de RStudio, la fenêtre est organisée en trois grandes zones.\n\n\n\n\n\nAccueil RStudio\n\n\n\n\nLa zone de gauche s’appelle la console. Au démarrage, RStudio a lancé R, et c’est dans cette zone que nous allons pouvoir dialoguer avec lui.\nLa console affiche un texte de bienvenue, suivi d’une ligne commençant par le caractère &gt;. C’est l’invite de commande : R attend vos instructions. Cliquez dans la console, tapez le texte suivant et appuyez sur Entrée.\n\n2+2\n\n[1] 4\n\n\nR affiche le résultat, puis le symbole &gt; réapparaît : il attend la commande suivante. Essayez d’autres opérations :\n\n5-7\n\n[1] -2\n\n4*12\n\n[1] 48\n\n-10/3\n\n[1] -3.333333\n\n5^2\n\n[1] 25\n\n\nNe vous préoccupez pas du [1] qui précède chaque résultat, nous l’expliquerons plus bas.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5134,7 +5155,7 @@
     "section": "Les opérations arithmétiques",
     "text": "Les opérations arithmétiques\nLe tableau suivant récapitule les opérations de base et leur écriture en R.\n\nPrincipales opérations arithmétiques\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(3 + 2\\)\n3 + 2\n5\n\n\n\\(3 - 2\\)\n3 - 2\n1\n\n\n\\(3 \\times 2\\)\n3 * 2\n6\n\n\n\\(3 \\div 2\\)\n3 / 2\n1.5\n\n\n\\(3^2\\)\n3 ^ 2\n9\n\n\n\\(\\sqrt{100}\\)\nsqrt(100)\n10\n\n\n\nR dispose aussi des fonctions mathématiques usuelles. Vous n’en aurez pas besoin dans la suite de ce cours, mais elles vous serviront ailleurs, en économétrie notamment.\n\nConstantes et fonctions usuelles\n\n\nMath\ncode R\nRésultat\n\n\n\n\n\\(\\pi\\)\npi\n3.141593\n\n\n\\(e\\)\nexp(1)\n2.718282\n\n\n\\(\\ln(x)\\)\nlog(x)\nlogarithme naturel\n\n\n\\(\\log_{10}(1000)\\)\nlog10(1000)\n3\n\n\n\\(10^2\\)\n1e2\n100\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nAttention : il n’y a pas de fonction ln() en R. Le logarithme naturel s’écrit log().",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5145,7 +5166,7 @@
     "section": "Espaces et lisibilité",
     "text": "Espaces et lisibilité\nÀ de rares exceptions près, R ne tient pas compte des espaces autour des commandes. Les trois commandes suivantes sont équivalentes :\n\n10+2\n10 + 2\n10       +         2\n\nL’usage est d’adopter la deuxième écriture, avec une espace de part et d’autre de l’opérateur : c’est la plus lisible.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5156,7 +5177,7 @@
     "section": "Quand R attend la suite",
     "text": "Quand R attend la suite\nIl arrive qu’on valide une commande incomplète, par exemple 4 * sans le second nombre. R ne renvoie alors pas de résultat : il remplace l’invite &gt; par un +, pour signaler qu’il attend la suite de la commande.\n\n&gt; 4 *\n+\n\nVous pouvez soit compléter la commande (tapez 3 puis Entrée), soit appuyer sur Échap pour l’abandonner et retrouver une invite normale. Si R semble ne plus vous répondre, regardez d’abord le début de la dernière ligne de la console : un + à la place du &gt; en est presque toujours la cause.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5167,7 +5188,7 @@
     "section": "Stocker une valeur",
     "text": "Stocker une valeur\nNous savons utiliser R comme une calculatrice. Pour aller plus loin, il faut pouvoir conserver un résultat afin de le réutiliser. On le stocke pour cela dans un objet, à l’aide de l’opérateur d’assignation &lt;-.\nCette « flèche » prend ce qui se trouve à sa droite et le range dans un objet dont le nom est indiqué à sa gauche.\n\nx &lt;- 2\n\nCette ligne se lit : « prends la valeur 2 et mets-la dans un objet qui s’appelle x ». Remarquez que R n’affiche rien : une assignation ne produit pas d’affichage. Pour voir le contenu d’un objet, il suffit de taper son nom :\n\nx\n\n[1] 2",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5178,7 +5199,7 @@
     "section": "Utiliser un objet",
     "text": "Utiliser un objet\nOn peut ensuite utiliser cet objet dans d’autres opérations : R le remplace alors par sa valeur.\n\nx + 4\n\n[1] 6\n\n\nOn peut créer autant d’objets qu’on le souhaite, et les combiner entre eux :\n\nx &lt;- 2\ny &lt;- 5\nresultat &lt;- x + y\nresultat\n\n[1] 7",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5187,9 +5208,9 @@
     "href": "01PremiersPas.html#remplacer-la-valeur-dun-objet",
     "title": "Premiers pas avec R",
     "section": "Remplacer la valeur d’un objet",
-    "text": "Remplacer la valeur d’un objet\nSi l’on assigne une nouvelle valeur à un objet existant, la précédente est perdue, sans avertissement :\n\nx &lt;- 2\nx &lt;- 5\nx\n\n[1] 5\n\n\nAssigner un objet à un autre copie simplement la valeur de droite dans l’objet de gauche. Avant d’exécuter les lignes suivantes, essayez de prédire ce que vaudra x à la fin.\n\nx &lt;- 1\ny &lt;- 3\nx &lt;- y\nx\n\n[1] 3\n\n\nLes deux objets ne sont pas « liés » pour autant : si vous modifiez y ensuite, x garde la valeur 3.",
+    "text": "Remplacer la valeur d’un objet\nSi l’on assigne une nouvelle valeur à un objet existant, la précédente est perdue, sans avertissement :\n\nx &lt;- 2\nx &lt;- 5\nx\n\n[1] 5\n\n\nAssigner un objet à un autre copie simplement la valeur de droite dans l’objet de gauche. Avant d’exécuter les lignes suivantes, essayez de prédire ce que vaudra x à la fin.\n\nx &lt;- 1\ny &lt;- 3\nx &lt;- y\nx\n\nLes deux objets ne sont pas « liés » pour autant : si vous modifiez y ensuite, x garde la valeur 3.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5198,9 +5219,9 @@
     "href": "01PremiersPas.html#exercice",
     "title": "Premiers pas avec R",
     "section": "Exercice",
-    "text": "Exercice\nDans la console :\n\nCréez un objet age contenant votre âge, et un objet prenom contenant votre prénom (entre guillemets : prenom &lt;- \"Camille\").\nCréez un objet annee_naissance, calculé à partir de age.\nQue se passe-t-il si vous tapez Age au lieu de age ?\nPeut-on mettre une espace dans un nom d’objet ? Un chiffre au début ?\n\nNe sautez pas la question 3 : elle vous fait rencontrer votre premier message d’erreur. Nous verrons plus bas comment le lire.",
+    "text": "Exercice\nDans la console :\n\nCréez un objet age contenant votre âge, et un objet prenom contenant votre prénom (entre guillemets : prenom &lt;- \"Camille\").\nCréez un objet annee_naissance, calculé à partir de age.\nQue se passe-t-il si vous tapez Age au lieu de age ?\nPeut-on mettre une espace dans un nom d’objet ? Un chiffre au début ?\n\nNe sautez pas la question 3 : elle vous fait rencontrer votre premier message d’erreur. Nous verrons plus bas comment le lire.\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\nPar exemple :\n\nage &lt;- 20\nprenom &lt;- \"Camille\"\nannee_naissance &lt;- 2026 - age   # remplacez 2026 par l'année en cours\nannee_naissance\n\nLe calcul de annee_naissance n’est exact qu’à un an près : il dépend de la date de votre anniversaire.\nTaper Age provoque une erreur :\nErreur : objet 'Age' introuvable\nR distingue les majuscules des minuscules : pour lui, age et Age sont deux noms différents, et seul le premier existe.\nUne espace ou un chiffre au début d’un nom provoquent aussi une erreur :\n\nmon age &lt;- 20\n2age &lt;- 20\n\nErreur : symbole inattendu dans \"mon age\"\nUn nom d’objet commence par une lettre, et ne contient que des lettres, des chiffres, des points et des tirets bas. Pour séparer plusieurs mots, on utilise le tiret bas, comme dans annee_naissance.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5211,7 +5232,7 @@
     "section": "Chaînes de caractères",
     "text": "Chaînes de caractères\nLes valeurs stockées dans les objets peuvent être de différents types. Jusqu’ici, nous n’avons manipulé que des nombres. Un objet peut aussi contenir du texte, qu’on appelle une chaîne de caractères. On la délimite par des guillemets, simples ou doubles (' ou \") :\n\nchien &lt;- \"Chihuahua\"\nchien\n\n[1] \"Chihuahua\"\n\n\nLes guillemets sont indispensables : sans eux, R croirait que Chihuahua est le nom d’un objet, et le chercherait.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5222,7 +5243,7 @@
     "section": "Booléens",
     "text": "Booléens\nUn objet peut enfin contenir une condition logique, qui vaut TRUE (vrai) ou FALSE (faux). On appelle ces valeurs des booléens. Elles résultent le plus souvent d’une comparaison :\n\nvaleur &lt;- TRUE\nvaleur\n\n[1] TRUE\n\nchien == \"Doberman\"\n\n[1] FALSE\n\n3 &lt; 2\n\n[1] FALSE",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5231,9 +5252,9 @@
     "href": "01PremiersPas.html#opérateurs-logiques",
     "title": "Premiers pas avec R",
     "section": "Opérateurs logiques",
-    "text": "Opérateurs logiques\nVoici les opérateurs qui produisent des booléens :\n\n\n\n\n\n\n\n\n\nOpérateur\nRésumé\nExemple\nRésultat\n\n\n\n\nx &lt; y\nx plus petit que y\n3 &lt; 42\nTRUE\n\n\nx &gt; y\nx plus grand que y\n3 &gt; 42\nFALSE\n\n\nx &lt;= y\nx plus petit ou égal à y\n3 &lt;= 42\nTRUE\n\n\nx &gt;= y\nx plus grand ou égal à y\n3 &gt;= 42\nFALSE\n\n\nx == y\nx égal à y\n3 == 42\nFALSE\n\n\nx != y\nx différent de y\n3 != 42\nTRUE\n\n\n!x\nnon x\n!(3 &gt; 42)\nTRUE\n\n\nx | y\nx ou y\n(3 &gt; 42) | TRUE\nTRUE\n\n\nx & y\nx et y\n(3 &lt; 4) & (42 &gt; 13)\nTRUE\n\n\n\n\n\n\n\n\n\nAvertissement\n\n\n\nLa comparaison s’écrit ==, avec deux signes égal. Un seul = ne compare pas : il assigne. C’est l’erreur la plus fréquente au début, et elle ne provoque pas toujours de message.\n\n\nCes opérateurs vous serviront pendant tout le cours. Dès la séance 2, ils permettront de sélectionner des lignes dans un tableau, par exemple les enquêtés de moins de 25 ans :\n\nd |&gt; filter(age &lt; 25)\n\nNe cherchez pas encore à comprendre le reste de cette ligne : retenez seulement que age &lt; 25 est une comparaison comme celles du tableau ci-dessus.",
+    "text": "Opérateurs logiques\nVoici les opérateurs qui produisent des booléens :\n\n\n\n\n\n\n\n\n\nOpérateur\nRésumé\nExemple\nRésultat\n\n\n\n\nx &lt; y\nx plus petit que y\n3 &lt; 42\nTRUE\n\n\nx &gt; y\nx plus grand que y\n3 &gt; 42\nFALSE\n\n\nx &lt;= y\nx plus petit ou égal à y\n3 &lt;= 42\nTRUE\n\n\nx &gt;= y\nx plus grand ou égal à y\n3 &gt;= 42\nFALSE\n\n\nx == y\nx égal à y\n3 == 42\nFALSE\n\n\nx != y\nx différent de y\n3 != 42\nTRUE\n\n\n!x\nnon x\n!(3 &gt; 42)\nTRUE\n\n\nx | y\nx ou y\n(3 &gt; 42) | TRUE\nTRUE\n\n\nx & y\nx et y\n(3 &lt; 4) & (42 &gt; 13)\nTRUE\n\n\n\n\n\n\n\n\n\nAvertissement\n\n\n\nLa comparaison s’écrit ==, avec deux signes égal. Un seul = ne compare pas : il assigne. C’est l’erreur la plus fréquente au début, et elle ne provoque pas toujours de message.\n\n\nCes opérateurs vous serviront pendant tout le cours. Dès le chapitre 2, ils permettront de sélectionner des lignes dans un tableau, par exemple les enquêtés de moins de 25 ans :\n\nd |&gt; filter(age &lt; 25)\n\nNe cherchez pas encore à comprendre le reste de cette ligne : retenez seulement que age &lt; 25 est une comparaison comme celles du tableau ci-dessus.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5244,7 +5265,7 @@
     "section": "Regrouper plusieurs valeurs",
     "text": "Regrouper plusieurs valeurs\nImaginons qu’on ait demandé leur taille en centimètres à cinq personnes, et qu’on veuille calculer leur taille moyenne. Plutôt que de créer cinq objets, on range les cinq valeurs dans un seul objet, appelé vecteur :\n\ntailles &lt;- c(156, 164, 197, 147, 173)\ntailles\n\n[1] 156 164 197 147 173\n\n\nLa fonction c() signifie « combine les valeurs suivantes en un vecteur ». Les valeurs sont séparées par des virgules.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5253,9 +5274,9 @@
     "href": "01PremiersPas.html#calculer-sur-un-vecteur",
     "title": "Premiers pas avec R",
     "section": "Calculer sur un vecteur",
-    "text": "Calculer sur un vecteur\nUne opération appliquée à un vecteur s’applique à chacun de ses éléments :\n\ntailles + 10\n\n[1] 166 174 207 157 183\n\ntailles^2\n\n[1] 24336 26896 38809 21609 29929\n\n\nImaginons qu’on ait aussi demandé leur poids en kilos aux cinq mêmes personnes :\n\npoids &lt;- c(45, 59, 110, 44, 88)\n\nOn peut alors calculer l’indice de masse corporelle de chacune, en divisant le poids en kilos par le carré de la taille en mètres. R fait le calcul élément par élément : le premier poids avec la première taille, le deuxième avec la deuxième, et ainsi de suite.\n\nimc &lt;- poids / (tailles / 100) ^ 2\nimc\n\n[1] 18.49112 21.93635 28.34394 20.36189 29.40292\n\n\nUne seule ligne calcule les cinq indices. C’est le principe central de R : on travaille sur des colonnes entières, pas sur des valeurs une par une. Vous le retrouverez dès la séance prochaine, quand chaque colonne d’un tableau de données sera un vecteur.",
+    "text": "Calculer sur un vecteur\nUne opération appliquée à un vecteur s’applique à chacun de ses éléments :\n\ntailles + 10\n\n[1] 166 174 207 157 183\n\ntailles^2\n\n[1] 24336 26896 38809 21609 29929\n\n\nImaginons qu’on ait aussi demandé leur poids en kilos aux cinq mêmes personnes :\n\npoids &lt;- c(45, 59, 110, 44, 88)\n\nOn peut alors calculer l’indice de masse corporelle de chacune, en divisant le poids en kilos par le carré de la taille en mètres. R fait le calcul élément par élément : le premier poids avec la première taille, le deuxième avec la deuxième, et ainsi de suite.\n\nimc &lt;- poids / (tailles / 100) ^ 2\nimc\n\n[1] 18.49112 21.93635 28.34394 20.36189 29.40292\n\n\nUne seule ligne calcule les cinq indices. C’est le principe central de R : on travaille sur des colonnes entières, pas sur des valeurs une par une. Vous le retrouverez dès le chapitre suivant, quand chaque colonne d’un tableau de données sera un vecteur.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5264,9 +5285,9 @@
     "href": "01PremiersPas.html#un-vecteur-na-quun-seul-type",
     "title": "Premiers pas avec R",
     "section": "Un vecteur n’a qu’un seul type",
-    "text": "Un vecteur n’a qu’un seul type\nUn vecteur peut contenir du texte :\n\ndiplome &lt;- c(\"CAP\", \"Bac\", \"Bac+2\", \"CAP\", \"Bac+3\")\ndiplome\n\n[1] \"CAP\"   \"Bac\"   \"Bac+2\" \"CAP\"   \"Bac+3\"\n\n\nEn revanche, toutes ses valeurs doivent être du même type. Si on mélange texte et nombres, R ne refuse pas : il convertit tout en texte. Prédisez le résultat avant d’exécuter :\n\nchiens &lt;- c(\"Chihuahua\", 5, \"Doberman\", 15)\nchiens\n\n[1] \"Chihuahua\" \"5\"         \"Doberman\"  \"15\"       \n\n\n\n\n\n\n\n\nAvertissement\n\n\n\nRemarquez les guillemets autour de \"5\" et \"15\" : R a transformé les nombres en texte, sans prévenir. Vous ne pourrez plus faire de calcul avec. C’est une source d’erreur classique lors de l’import de données : il suffit d’une case contenant du texte dans une colonne de nombres pour que toute la colonne devienne du texte.",
+    "text": "Un vecteur n’a qu’un seul type\nUn vecteur peut contenir du texte :\n\ndiplome &lt;- c(\"CAP\", \"Bac\", \"Bac+2\", \"CAP\", \"Bac+3\")\ndiplome\n\n[1] \"CAP\"   \"Bac\"   \"Bac+2\" \"CAP\"   \"Bac+3\"\n\n\nEn revanche, toutes ses valeurs doivent être du même type. Si on mélange texte et nombres, R ne refuse pas : il convertit tout en texte. Prédisez le résultat avant d’exécuter :\n\nchiens &lt;- c(\"Chihuahua\", 5, \"Doberman\", 15)\nchiens\n\n\n\n\n\n\n\nAvertissement\n\n\n\nRemarquez les guillemets autour de \"5\" et \"15\" : R a transformé les nombres en texte, sans prévenir. Vous ne pourrez plus faire de calcul avec. C’est une source d’erreur classique lors de l’import de données : il suffit d’une case contenant du texte dans une colonne de nombres pour que toute la colonne devienne du texte.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5277,7 +5298,7 @@
     "section": "Créer une suite d’entiers",
     "text": "Créer une suite d’entiers\nL’opérateur : crée un vecteur contenant tous les entiers entre deux valeurs :\n\nx &lt;- 1:10\nx\n\n [1]  1  2  3  4  5  6  7  8  9 10",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5288,7 +5309,7 @@
     "section": "Accéder à un élément",
     "text": "Accéder à un élément\nOn accède à un élément d’un vecteur en faisant suivre son nom de crochets contenant sa position. On peut aussi demander plusieurs positions à la fois, en les combinant avec c() :\n\ndiplome[2]\n\n[1] \"Bac\"\n\ntailles[c(1, 3)]\n\n[1] 156 197",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5299,7 +5320,7 @@
     "section": "Le [1] de l’affichage",
     "text": "Le [1] de l’affichage\nSi un vecteur contient beaucoup d’éléments, R répartit l’affichage sur plusieurs lignes :\n [1] 294 425 339 914 114 896 716 648 915 587 181 926 489\n[14] 848 583 182 662 888 417 133 146 322 400 698 506 944\n[27] 237 324 333 443 487 658 793 288 897 588 697 439 697\nLe nombre entre crochets au début de chaque ligne indique la position du premier élément de la ligne. Ainsi, 848 est le 14ᵉ élément du vecteur.\nC’est ce qui explique le [1] affiché devant chaque résultat depuis le début : pour R, un nombre seul est un vecteur à un élément.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5310,7 +5331,7 @@
     "section": "Utiliser une fonction",
     "text": "Utiliser une fonction\nUne fonction a un nom, prend des arguments entre parenthèses, et renvoie un résultat. Vous en avez déjà utilisé deux : sqrt() et c(). En voici deux autres, qui donnent le nombre d’éléments d’un vecteur et sa moyenne :\n\nlength(tailles)\n\n[1] 5\n\nmean(tailles)\n\n[1] 167.4",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5319,9 +5340,9 @@
     "href": "01PremiersPas.html#les-arguments",
     "title": "Premiers pas avec R",
     "section": "Les arguments",
-    "text": "Les arguments\nCertaines fonctions prennent plusieurs arguments. Le premier est en général la donnée sur laquelle on travaille ; les suivants modifient le comportement de la fonction, et on les désigne par leur nom.\nSupposons qu’une des cinq personnes n’ait pas donné sa taille. R représente une valeur manquante par NA (pour Not Available) :\n\ntailles_incompletes &lt;- c(156, 164, NA, 147, 173)\nmean(tailles_incompletes)\n\n[1] NA\n\nmean(tailles_incompletes, na.rm = TRUE)\n\n[1] 160\n\n\nLe premier résultat est NA : la moyenne d’un ensemble qui contient une valeur inconnue est elle-même inconnue. R refuse de deviner. L’argument na.rm = TRUE (pour NA remove) lui demande d’écarter les valeurs manquantes avant de calculer. La moyenne porte alors sur quatre personnes, et non sur cinq : nous reviendrons en séance 3 sur ce que cela implique.",
+    "text": "Les arguments\nCertaines fonctions prennent plusieurs arguments. Le premier est en général la donnée sur laquelle on travaille ; les suivants modifient le comportement de la fonction, et on les désigne par leur nom.\nSupposons qu’une des cinq personnes n’ait pas donné sa taille. R représente une valeur manquante par NA (pour Not Available) :\n\ntailles_incompletes &lt;- c(156, 164, NA, 147, 173)\nmean(tailles_incompletes)\n\n[1] NA\n\nmean(tailles_incompletes, na.rm = TRUE)\n\n[1] 160\n\n\nLe premier résultat est NA : la moyenne d’un ensemble qui contient une valeur inconnue est elle-même inconnue. R refuse de deviner. L’argument na.rm = TRUE (pour NA remove) lui demande d’écarter les valeurs manquantes avant de calculer. La moyenne porte alors sur quatre personnes, et non sur cinq : nous reviendrons au chapitre 3 sur ce que cela implique.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5332,7 +5353,7 @@
     "section": "L’aide d’une fonction",
     "text": "L’aide d’une fonction\nChaque fonction de R est documentée. On affiche sa page d’aide avec ?, ou avec la fonction help() :\n\n?mean\nhelp(\"mean\")\n\nL’aide s’affiche dans le panneau en bas à droite de RStudio. Elle est technique, souvent en anglais, mais elle est exacte et toujours disponible, même sans connexion.\nDeux rubriques suffisent au début. La rubrique Usage donne la liste des arguments de la fonction et leur valeur par défaut. La rubrique Examples, tout en bas, contient des exemples que vous pouvez copier dans la console pour voir la fonction à l’œuvre.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5341,9 +5362,9 @@
     "href": "01PremiersPas.html#exercice-1",
     "title": "Premiers pas avec R",
     "section": "Exercice",
-    "text": "Exercice\nSur le vecteur imc calculé plus haut :\n\nCombien contient-il de valeurs ?\nQuelle est la plus petite ? la plus grande ? Les fonctions s’appellent comme en anglais ; cherchez dans l’aide si besoin.\nOuvrez ?quantile. Que fait l’argument probs ?\nCalculez la médiane des tailles de deux façons différentes.",
+    "text": "Exercice\nSur le vecteur imc calculé plus haut :\n\nCombien contient-il de valeurs ?\nQuelle est la plus petite ? la plus grande ? Les fonctions s’appellent comme en anglais ; cherchez dans l’aide si besoin.\nOuvrez ?quantile. Que fait l’argument probs ?\nCalculez la médiane des tailles de deux façons différentes.\n\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\nlength(imc)\n\n[1] 5\n\nmin(imc)\n\n[1] 18.49112\n\nmax(imc)\n\n[1] 29.40292\n\n\nrange(imc) aurait donné le minimum et le maximum d’un coup.\nL’argument probs de quantile() indique la ou les proportions voulues, entre 0 et 1 : 0.5 donne la médiane, 0.25 le premier quartile. Sans cet argument, quantile() renvoie le minimum, les trois quartiles et le maximum.\n\nmedian(tailles)\n\n[1] 164\n\nquantile(tailles, probs = 0.5)\n\n50% \n164 \n\n\nLes deux résultats sont identiques ; quantile() y ajoute seulement une étiquette, 50%.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5354,7 +5375,7 @@
     "section": "Lire un message d’erreur",
     "text": "Lire un message d’erreur\nVous allez rencontrer beaucoup de messages d’erreur, et c’est normal. Ces messages sont brefs, mais ils désignent presque toujours l’endroit exact du problème. Apprendre à les lire est la compétence la plus utile de ce cours : c’est elle qui vous permettra de vous débloquer seuls.\nTapez la commande suivante :\n\ntaille\n\nR répond :\nErreur : objet 'taille' introuvable\nIl vous dit qu’il ne connaît aucun objet portant ce nom. Et en effet, notre vecteur s’appelle tailles, au pluriel.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5365,7 +5386,7 @@
     "section": "Trois autres erreurs courantes",
     "text": "Trois autres erreurs courantes\nLa fonction n’existe pas, ici à cause d’une faute de frappe :\n\nmeans(tailles)\n\nErreur : impossible de trouver la fonction \"means\"\nOn essaie de calculer avec du texte. Les guillemets font de \"12\" une chaîne de caractères, et on ne peut pas additionner du texte et un nombre :\n\n\"12\" + 3\n\nErreur : argument non numérique pour un opérateur binaire\nUne parenthèse n’est pas fermée. Il n’y a pas de message cette fois : R affiche un + et attend la suite, comme nous l’avons vu plus haut. Appuyez sur Échap, puis corrigez la commande.\n\nmean(tailles\n\n+",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5374,9 +5395,9 @@
     "href": "01PremiersPas.html#la-méthode",
     "title": "Premiers pas avec R",
     "section": "La méthode",
-    "text": "La méthode\nFace à un message d’erreur, procédez dans l’ordre.\n\nLisez la dernière ligne du message : c’est là que R dit ce qui ne va pas.\nRepérez le nom cité entre guillemets : c’est presque toujours là qu’est la faute.\nComparez-le à ce que vous avez tapé. Faute de frappe, singulier au lieu du pluriel, majuscule oubliée : R distingue age de Age.\nSi le nom est correct, c’est que l’objet n’existe pas encore : avez-vous exécuté la ligne qui le crée ?\n\n\n\n\n\n\n\nImportant\n\n\n\nUn message d’erreur n’est pas un échec, c’est un diagnostic. Le vrai danger, ce sont les commandes qui s’exécutent sans rien dire et donnent un résultat faux. Vous en avez déjà vu deux exemples : le = à la place de ==, et les nombres convertis en texte dans un vecteur. Nous y reviendrons en détail en séance 3.",
+    "text": "La méthode\nFace à un message d’erreur, procédez dans l’ordre.\n\nLisez la dernière ligne du message : c’est là que R dit ce qui ne va pas.\nRepérez le nom cité entre guillemets : c’est presque toujours là qu’est la faute.\nComparez-le à ce que vous avez tapé. Faute de frappe, singulier au lieu du pluriel, majuscule oubliée : R distingue age de Age.\nSi le nom est correct, c’est que l’objet n’existe pas encore : avez-vous exécuté la ligne qui le crée ?\n\n\n\n\n\n\n\nImportant\n\n\n\nUn message d’erreur n’est pas un échec, c’est un diagnostic. Le vrai danger, ce sont les commandes qui s’exécutent sans rien dire et donnent un résultat faux. Vous en avez déjà vu deux exemples : le = à la place de ==, et les nombres convertis en texte dans un vecteur. Nous y reviendrons en détail au chapitre 3.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5387,7 +5408,7 @@
     "section": "Pourquoi un script",
     "text": "Pourquoi un script\nJusqu’ici, nous avons tapé les commandes une à une dans la console. Rien n’est conservé : si vous fermez RStudio, tout est perdu, et il faut tout retaper.\nUn script est un fichier texte qui contient vos commandes. On le crée avec le menu File &gt; New File &gt; R Script (Fichier &gt; Nouveau fichier &gt; Script R). Il s’ouvre dans une nouvelle zone, en haut à gauche, au-dessus de la console. Créez-en un, recopiez-y le code suivant, et enregistrez-le (Ctrl + S) :\n\n# Tailles et poids de cinq enquêtés\ntailles &lt;- c(156, 164, 197, 147, 173)\npoids &lt;- c(45, 59, 110, 44, 88)\n\nmean(tailles)\nmean(poids)\n\n# Indice de masse corporelle\nimc &lt;- poids / (tailles / 100) ^ 2\nmin(imc)\nmax(imc)",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5398,7 +5419,7 @@
     "section": "Exécuter et commenter",
     "text": "Exécuter et commenter\nÉcrire une commande dans un script ne l’exécute pas. Pour l’envoyer à la console, placez le curseur sur la ligne et appuyez sur Ctrl + Entrée (Cmd + Entrée sur Mac). Si vous sélectionnez plusieurs lignes, Ctrl + Entrée les exécute toutes. Le résultat s’affiche dans la console, comme si vous aviez tapé la commande vous-mêmes.\nTout ce qui suit un # sur une ligne est ignoré par R : c’est un commentaire, écrit pour les humains qui liront le script, à commencer par vous.\n\n\n\n\n\n\nAstuce\n\n\n\nCommentez ce que vous cherchez à faire, pas ce que fait la ligne. # calcule la moyenne au-dessus de mean(x) n’apprend rien à personne. # on écarte les non-répondants est utile.\n\n\nÀ partir de maintenant, travaillez toujours dans un script, jamais directement dans la console. C’est aussi sous forme de script que vous rendrez votre projet final.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5407,9 +5428,9 @@
     "href": "01PremiersPas.html#installer-un-paquet",
     "title": "Premiers pas avec R",
     "section": "Installer un paquet",
-    "text": "Installer un paquet\nR est livré avec un ensemble de fonctions de base. Des milliers d’autres sont distribuées sous forme d’extensions appelées paquets (packages), diffusés sur un réseau de serveurs nommé CRAN.\nOn installe un paquet avec install.packages(), en mettant son nom entre guillemets. Installez maintenant le paquet questionr, qui contient les données que nous utiliserons à partir de la séance prochaine :\n\ninstall.packages(\"questionr\")\n\nOn peut aussi passer par l’onglet Packages de RStudio, en bas à droite, et son bouton Install :\n\n\n\nInstaller un paquet depuis RStudio\n\n\nL’installation se fait une seule fois par ordinateur, comme pour n’importe quel logiciel. Ne laissez donc pas de install.packages() dans vos scripts.",
+    "text": "Installer un paquet\nR est livré avec un ensemble de fonctions de base. Des milliers d’autres sont distribuées sous forme d’extensions appelées paquets (packages), diffusés sur un réseau de serveurs nommé CRAN.\nOn installe un paquet avec install.packages(), en mettant son nom entre guillemets. Installez maintenant le paquet questionr, qui contient les données que nous utiliserons à partir du chapitre suivant :\n\ninstall.packages(\"questionr\")\n\nOn peut aussi passer par l’onglet Packages de RStudio, en bas à droite, et son bouton Install :\n\n\n\nInstaller un paquet depuis RStudio\n\n\nL’installation se fait une seule fois par ordinateur, comme pour n’importe quel logiciel. Ne laissez donc pas de install.packages() dans vos scripts.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5420,7 +5441,7 @@
     "section": "Charger un paquet",
     "text": "Charger un paquet\nL’installation ne suffit pas : il faut aussi charger le paquet, avec library(), à chaque fois que vous relancez RStudio. Cette fois, les guillemets ne sont pas nécessaires.\n\nlibrary(questionr)\n\nOn regroupe en général tous les appels à library() au début du script, pour qu’ils s’exécutent en premier :\n\nlibrary(tidyverse)\nlibrary(questionr)\n\n\n\n\n\n\n\nAvertissement\n\n\n\nSi R vous répond impossible de trouver la fonction, alors que le nom de la fonction est bien écrit, c’est presque toujours qu’un library() n’a pas été exécuté.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5431,7 +5452,7 @@
     "section": "Installer swirl",
     "text": "Installer swirl\nswirl est un paquet qui vous fait pratiquer R de manière interactive, directement dans la console : il vous pose des questions, vous tapez les commandes, il vous corrige. Installez-le, chargez-le, puis indiquez-lui que vous souhaitez travailler en français :\n\ninstall.packages(\"swirl\")\nlibrary(swirl)\nselect_language(\"french\", append_rprofile = TRUE)\n\nInstallez ensuite le cours de cette matière. Il est disponible sur GitHub, à l’adresse https://github.com/EliasBcd/InitiationR, et s’installe directement depuis R :\n\ninstall_course_github(\"EliasBcd\", \"InitiationR\")",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5440,9 +5461,9 @@
     "href": "01PremiersPas.html#lancer-une-leçon",
     "title": "Premiers pas avec R",
     "section": "Lancer une leçon",
-    "text": "Lancer une leçon\n\nswirl()\n\nswirl vous demande d’abord un nom. Donnez votre numéro d’étudiant ou votre nom, et gardez le même toute l’année : swirl s’en sert pour retrouver votre progression. Choisissez ensuite le cours « InitiationR », puis la leçon, et suivez les instructions qui s’affichent dans la console. Si swirl refuse une réponse qui vous semble juste, lisez la partie Si vous êtes bloqués de la page sur swirl.\nPour cette séance, faites dans l’ordre les leçons Manipulations_simples, Types, Vecteurs, Messages_erreurs, Fonctions puis Logique.",
+    "text": "Lancer une leçon\n\nswirl()\n\nswirl vous demande d’abord un nom. Donnez votre numéro d’étudiant ou votre nom, et gardez le même toute l’année : swirl s’en sert pour retrouver votre progression. Choisissez ensuite le cours « InitiationR », puis la leçon, et suivez les instructions qui s’affichent dans la console. Si swirl refuse une réponse qui vous semble juste, lisez la partie Si vous êtes bloqués de la page sur swirl.\nPour ce chapitre, faites dans l’ordre les leçons Manipulations_simples, Types, Vecteurs, Messages_erreurs, Fonctions puis Logique.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5453,7 +5474,7 @@
     "section": "Déposer votre travail",
     "text": "Déposer votre travail\nÀ la fin de chaque leçon, swirl vous propose de soumettre votre progression. Répondez « Oui » : R ouvre votre navigateur sur la page Moodle où déposer le fichier .txt de la leçon. La page Utiliser swirl explique où trouver ce fichier si besoin.\n\n\n\n\n\n\nNote\n\n\n\nC’est ce dépôt qui valide votre travail. Faites-le à chaque leçon terminée.\n\n\nSi le cours semble ne pas fonctionner, réinstallez-le :\n\nuninstall_course(\"InitiationR\")\ninstall_course_github(\"EliasBcd\", \"InitiationR\")",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5464,7 +5485,7 @@
     "section": "Pour aller plus loin",
     "text": "Pour aller plus loin\nSi vous voulez pratiquer davantage, la leçon facultative Exercice_1 reprend les vecteurs et les fonctions de base. La liste des leçons facultatives est disponible dans LECONS_OPTIONNELLES.md.\nLe manuel de Julien Barnier, Introduction à R et au tidyverse, en français et en ligne, est une bonne référence pour revoir une notion à votre rythme. Ce n’est pas un travail à faire : consultez-le librement, quand vous en avez besoin.",
     "crumbs": [
-      "Séance 1 : premiers pas",
+      "Chapitre 1 : premiers pas",
       "Premiers pas avec R"
     ]
   },
@@ -5473,9 +5494,9 @@
     "href": "02Donnees.html",
     "title": "Découvrir un tableau de données",
     "section": "",
-    "text": "Avant de commencer, vérifiez que les notions de la séance 1 sont acquises. Prenez une feuille et, sans lancer R, écrivez pour chaque ligne ce que R va afficher. Ne regardez la correction qu’une fois toutes vos réponses écrites : c’est l’effort de prédiction qui est utile, pas la lecture de la réponse.\n\nx &lt;- 3\nx &lt;- x + 1\nx\n\nchien &lt;- c(\"Chihuahua\", 5)\nchien\n\ny &lt;- c(10, 20, NA, 40)\nmean(y)\nmean(y, na.rm = TRUE)\n\nz &lt;- 7\nz &gt; 5 & z &lt; 10\n\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\nx &lt;- 3\nx &lt;- x + 1\nx\n\n[1] 4\n\nchien &lt;- c(\"Chihuahua\", 5)\nchien\n\n[1] \"Chihuahua\" \"5\"        \n\ny &lt;- c(10, 20, NA, 40)\nmean(y)\n\n[1] NA\n\nmean(y, na.rm = TRUE)\n\n[1] 23.33333\n\nz &lt;- 7\nz &gt; 5 & z &lt; 10\n\n[1] TRUE\n\n\nDeux pièges classiques se cachent dans cet exercice. D’abord, x &lt;- x + 1 calcule x + 1 avec l’ancienne valeur de x, puis range le résultat dans x : l’ancienne valeur est écrasée. Ensuite, mélanger du texte et un nombre dans c() convertit tout en texte, sans prévenir : le 5 est devenu \"5\".\nSi vous vous êtes trompés sur une ligne, relisez la partie correspondante de la séance 1 avant d’aller plus loin.",
+    "text": "Avant de commencer, vérifiez que les notions du chapitre 1 sont acquises. Prenez une feuille et, sans lancer R, écrivez pour chaque ligne ce que R va afficher. Ne regardez la correction qu’une fois toutes vos réponses écrites : c’est l’effort de prédiction qui est utile, pas la lecture de la réponse.\n\nx &lt;- 3\nx &lt;- x + 1\nx\n\nchien &lt;- c(\"Chihuahua\", 5)\nchien\n\ny &lt;- c(10, 20, NA, 40)\nmean(y)\nmean(y, na.rm = TRUE)\n\nz &lt;- 7\nz &gt; 5 & z &lt; 10\n\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\nx &lt;- 3\nx &lt;- x + 1\nx\n\n[1] 4\n\nchien &lt;- c(\"Chihuahua\", 5)\nchien\n\n[1] \"Chihuahua\" \"5\"        \n\ny &lt;- c(10, 20, NA, 40)\nmean(y)\n\n[1] NA\n\nmean(y, na.rm = TRUE)\n\n[1] 23.33333\n\nz &lt;- 7\nz &gt; 5 & z &lt; 10\n\n[1] TRUE\n\n\nDeux pièges classiques se cachent dans cet exercice. D’abord, x &lt;- x + 1 calcule x + 1 avec l’ancienne valeur de x, puis range le résultat dans x : l’ancienne valeur est écrasée. Ensuite, mélanger du texte et un nombre dans c() convertit tout en texte, sans prévenir : le 5 est devenu \"5\".\nSi vous vous êtes trompés sur une ligne, relisez la partie correspondante du chapitre 1 avant d’aller plus loin.",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5484,9 +5505,9 @@
     "href": "02Donnees.html#où-nous-en-sommes",
     "title": "Découvrir un tableau de données",
     "section": "Où nous en sommes",
-    "text": "Où nous en sommes\nLa séance précédente, vous avez manipulé des vecteurs : des suites de valeurs de même type.\n\ntailles &lt;- c(156, 164, 197, 147, 173)\nmean(tailles)\n\n[1] 167.4\n\n\nDe vraies données ne se présentent jamais ainsi. Elles arrivent sous forme de tableau, avec des lignes, qui correspondent aux individus ou aux observations, et des colonnes, qui correspondent aux variables. Chaque colonne d’un tableau est un vecteur : tout ce que vous avez appris la séance dernière s’applique.\nDans cette séance, nous allons charger un vrai jeu de données d’enquête, apprendre à le regarder avant de faire le moindre calcul, puis voir quatre opérations : choisir des colonnes, choisir des lignes, trier et créer une variable. Ces quatre opérations couvrent la très grande majorité du travail de préparation des données.",
+    "text": "Où nous en sommes\nAu chapitre précédent, vous avez manipulé des vecteurs : des suites de valeurs de même type.\n\ntailles &lt;- c(156, 164, 197, 147, 173)\nmean(tailles)\n\n[1] 167.4\n\n\nDe vraies données ne se présentent jamais ainsi. Elles arrivent sous forme de tableau, avec des lignes, qui correspondent aux individus ou aux observations, et des colonnes, qui correspondent aux variables. Chaque colonne d’un tableau est un vecteur : tout ce que vous avez appris au chapitre précédent s’applique.\nDans ce chapitre, nous allons charger un vrai jeu de données d’enquête, apprendre à le regarder avant de faire le moindre calcul, puis voir quatre opérations : choisir des colonnes, choisir des lignes, trier et créer une variable. Ces quatre opérations couvrent la très grande majorité du travail de préparation des données.",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5497,7 +5518,7 @@
     "section": "Un outil dédié : le tidyverse",
     "text": "Un outil dédié : le tidyverse\nOn peut manipuler des tableaux avec les seuls outils de base de R, mais c’est verbeux et peu lisible. Le tidyverse est un ensemble de paquets conçus pour travailler sur des tableaux, avec une syntaxe cohérente. C’est lui que nous utiliserons dans toute la suite du cours.\nInstallez-le une fois, puis chargez-le en haut de votre script :\n\ninstall.packages(\"tidyverse\")\nlibrary(tidyverse)\n\nL’installation peut prendre plusieurs minutes : le tidyverse rassemble de nombreux paquets.\n\n\n\n\n\n\nNote\n\n\n\ntidyverse n’est pas un paquet comme les autres mais une collection : dplyr pour manipuler les tableaux, ggplot2 pour les graphiques, tidyr pour les réorganiser, et quelques autres. Un seul library(tidyverse) les charge tous.",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5506,9 +5527,9 @@
     "href": "02Donnees.html#nos-données",
     "title": "Découvrir un tableau de données",
     "section": "Nos données",
-    "text": "Nos données\nNous travaillerons sur l’enquête Histoire de vie réalisée par l’INSEE en 2003 : 2000 personnes y ont été interrogées sur leurs conditions de vie, leur travail et leurs loisirs. Une partie de l’enquête est disponible dans le paquet questionr, que vous avez installé lors de la séance 1. On charge le paquet, puis les données, avec la fonction data() :\n\nlibrary(questionr)\ndata(hdv2003)\n\nUn objet hdv2003 apparaît alors dans l’onglet Environment de RStudio, en haut à droite. C’est ce jeu de données qui nous accompagnera jusqu’à la fin du cours.",
+    "text": "Nos données\nNous travaillerons sur l’enquête Histoire de vie réalisée par l’INSEE en 2003 : 2000 personnes y ont été interrogées sur leurs conditions de vie, leur travail et leurs loisirs. Une partie de l’enquête est disponible dans le paquet questionr, que vous avez installé au chapitre 1. On charge le paquet, puis les données, avec la fonction data() :\n\nlibrary(questionr)\ndata(hdv2003)\n\nUn objet hdv2003 apparaît alors dans l’onglet Environment de RStudio, en haut à droite. C’est ce jeu de données qui nous accompagnera jusqu’à la fin du cours.",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5519,7 +5540,7 @@
     "section": "Un tableau lisible",
     "text": "Un tableau lisible\nCommençons par convertir le tableau en tibble, la forme de tableau utilisée par le tidyverse, et rangeons-le dans un objet d, plus court à taper :\n\nd &lt;- as_tibble(hdv2003)\nd\n\n\n\n# A tibble: 2,000 × 20\n      id   age sexe  nivetud        poids occup qualif freres.soeurs clso  relig\n   &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;fct&gt; &lt;fct&gt;          &lt;int&gt; &lt;fct&gt; &lt;fct&gt;\n 1     1    28 Femme Enseignement…  2634. Exer… Emplo…             8 Oui   Ni c…\n 2     2    23 Femme &lt;NA&gt;           9738. Etud… &lt;NA&gt;               2 Oui   Ni c…\n 3     3    59 Homme Derniere ann…  3994. Exer… Techn…             2 Non   Ni c…\n 4     4    34 Homme Enseignement…  5732. Exer… Techn…             1 Non   Appa…\n 5     5    71 Femme Derniere ann…  4329. Retr… Emplo…             0 Oui   Prat…\n 6     6    35 Femme Enseignement…  8675. Exer… Emplo…             5 Non   Ni c…\n 7     7    60 Femme Derniere ann…  6166. Au f… Ouvri…             1 Oui   Appa…\n 8     8    47 Homme Enseignement… 12892. Exer… Ouvri…             5 Non   Ni c…\n 9     9    20 Femme &lt;NA&gt;           7809. Etud… &lt;NA&gt;               4 Oui   Appa…\n10    10    28 Homme Enseignement…  2277. Exer… Autre              2 Non   Prat…\n# ℹ 1,990 more rows\n# ℹ 10 more variables: trav.imp &lt;fct&gt;, trav.satisf &lt;fct&gt;, hard.rock &lt;fct&gt;,\n#   lecture.bd &lt;fct&gt;, peche.chasse &lt;fct&gt;, cuisine &lt;fct&gt;, bricol &lt;fct&gt;,\n#   cinema &lt;fct&gt;, sport &lt;fct&gt;, heures.tv &lt;dbl&gt;\n\n\nUn tibble s’affiche de façon compacte. La première ligne indique ses dimensions : 2000 lignes et 20 colonnes. Viennent ensuite les dix premières lignes, avec sous le nom de chaque colonne son type entre chevrons, et enfin le nombre de lignes et de colonnes qui n’ont pas pu être affichées. Si vous tapez hdv2003 sans conversion, R essaie au contraire d’afficher tout le tableau, et la console devient illisible.",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5530,7 +5551,7 @@
     "section": "Dimensions et noms des variables",
     "text": "Dimensions et noms des variables\nUn tableau est un objet comme un autre : on peut lui appliquer des fonctions. nrow() donne le nombre de lignes, ncol() le nombre de colonnes, et dim() les deux à la fois :\n\nnrow(d)\n\n[1] 2000\n\nncol(d)\n\n[1] 20\n\ndim(d)\n\n[1] 2000   20\n\n\nnames() donne la liste des variables :\n\nnames(d)\n\n [1] \"id\"            \"age\"           \"sexe\"          \"nivetud\"      \n [5] \"poids\"         \"occup\"         \"qualif\"        \"freres.soeurs\"\n [9] \"clso\"          \"relig\"         \"trav.imp\"      \"trav.satisf\"  \n[13] \"hard.rock\"     \"lecture.bd\"    \"peche.chasse\"  \"cuisine\"      \n[17] \"bricol\"        \"cinema\"        \"sport\"         \"heures.tv\"",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5541,7 +5562,7 @@
     "section": "Un aperçu complet",
     "text": "Un aperçu complet\nglimpse() affiche, pour chaque variable, son type et ses premières valeurs. C’est la commande à taper en premier devant un tableau que vous ne connaissez pas.\n\nglimpse(d)\n\nRows: 2,000\nColumns: 20\n$ id            &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1…\n$ age           &lt;int&gt; 28, 23, 59, 34, 71, 35, 60, 47, 20, 28, 65, 47, 63, 67, …\n$ sexe          &lt;fct&gt; Femme, Femme, Homme, Homme, Femme, Femme, Femme, Homme, …\n$ nivetud       &lt;fct&gt; \"Enseignement superieur y compris technique superieur\", …\n$ poids         &lt;dbl&gt; 2634.3982, 9738.3958, 3994.1025, 5731.6615, 4329.0940, 8…\n$ occup         &lt;fct&gt; \"Exerce une profession\", \"Etudiant, eleve\", \"Exerce une …\n$ qualif        &lt;fct&gt; Employe, NA, Technicien, Technicien, Employe, Employe, O…\n$ freres.soeurs &lt;int&gt; 8, 2, 2, 1, 0, 5, 1, 5, 4, 2, 3, 4, 1, 5, 2, 3, 4, 0, 2,…\n$ clso          &lt;fct&gt; Oui, Oui, Non, Non, Oui, Non, Oui, Non, Oui, Non, Oui, O…\n$ relig         &lt;fct&gt; Ni croyance ni appartenance, Ni croyance ni appartenance…\n$ trav.imp      &lt;fct&gt; Peu important, NA, Aussi important que le reste, Moins i…\n$ trav.satisf   &lt;fct&gt; Insatisfaction, NA, Equilibre, Satisfaction, NA, Equilib…\n$ hard.rock     &lt;fct&gt; Non, Non, Non, Non, Non, Non, Non, Non, Non, Non, Non, N…\n$ lecture.bd    &lt;fct&gt; Non, Non, Non, Non, Non, Non, Non, Non, Non, Non, Non, N…\n$ peche.chasse  &lt;fct&gt; Non, Non, Non, Non, Non, Non, Oui, Oui, Non, Non, Non, N…\n$ cuisine       &lt;fct&gt; Oui, Non, Non, Oui, Non, Non, Oui, Oui, Non, Non, Oui, N…\n$ bricol        &lt;fct&gt; Non, Non, Non, Oui, Non, Non, Non, Oui, Non, Non, Oui, O…\n$ cinema        &lt;fct&gt; Non, Oui, Non, Oui, Non, Oui, Non, Non, Oui, Oui, Oui, N…\n$ sport         &lt;fct&gt; Non, Oui, Oui, Oui, Non, Oui, Non, Non, Non, Oui, Non, O…\n$ heures.tv     &lt;dbl&gt; 0.0, 1.0, 0.0, 2.0, 3.0, 2.0, 2.9, 1.0, 2.0, 2.0, 1.0, 0…",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5552,7 +5573,7 @@
     "section": "Les types de variables",
     "text": "Les types de variables\nVous voyez apparaître plusieurs types. &lt;int&gt; (entier) et &lt;dbl&gt; (nombre décimal) désignent des nombres : ce sont les variables quantitatives, comme l’âge ou le nombre d’heures passées devant la télévision. &lt;fct&gt; désigne un facteur : c’est ainsi que R stocke une variable qualitative, qui ne peut prendre qu’un nombre limité de valeurs, appelées modalités.\nlevels() donne la liste des modalités d’un facteur :\n\nlevels(d$qualif)\n\n[1] \"Ouvrier specialise\"       \"Ouvrier qualifie\"        \n[3] \"Technicien\"               \"Profession intermediaire\"\n[5] \"Cadre\"                    \"Employe\"                 \n[7] \"Autre\"                   \n\n\nL’opérateur $ désigne une colonne du tableau : d$qualif est le vecteur des qualifications des 2000 enquêtés.\n\n\n\n\n\n\nAvertissement\n\n\n\nRemarquez que les modalités sont écrites sans accents (\"Employe\", \"Ouvrier qualifie\"). Quand vous sélectionnerez des lignes selon une modalité, il faudra l’écrire exactement comme R l’affiche, majuscules comprises : sinon, R ne trouvera aucune ligne, et ne vous dira rien.",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5561,9 +5582,9 @@
     "href": "02Donnees.html#exercice-1",
     "title": "Découvrir un tableau de données",
     "section": "Exercice 1",
-    "text": "Exercice 1\nOuvrez le tableau dans la visionneuse de RStudio, qui l’affiche comme un tableur :\n\nView(d)\n\nPuis, dans un script, en écrivant vos réponses en commentaire :\n\nCombien y a-t-il d’observations ? de variables ?\nCitez trois variables quantitatives et trois variables qualitatives.\nQuelles sont les modalités de la variable relig ?\nVoyez-vous des valeurs manquantes ? Dans quelles variables ?\n\nNe calculez rien pour l’instant : le but est de faire connaissance avec les données.",
+    "text": "Exercice 1\nOuvrez le tableau dans la visionneuse de RStudio, qui l’affiche comme un tableur :\n\nView(d)\n\nPuis, dans un script, en écrivant vos réponses en commentaire :\n\nCombien y a-t-il d’observations ? de variables ?\nCitez trois variables quantitatives et trois variables qualitatives.\nQuelles sont les modalités de la variable relig ?\nVoyez-vous des valeurs manquantes ? Dans quelles variables ?\n\nNe calculez rien pour l’instant : le but est de faire connaissance avec les données.\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\ndim(d)\n\n[1] 2000   20\n\nlevels(d$relig)\n\n[1] \"Pratiquant regulier\"         \"Pratiquant occasionnel\"     \n[3] \"Appartenance sans pratique\"  \"Ni croyance ni appartenance\"\n[5] \"Rejet\"                       \"NSP ou NVPR\"                \n\n\n\nLe tableau compte 2000 observations (les enquêtés) et 20 variables.\nLes variables quantitatives sont age, freres.soeurs et heures.tv. Les variables id et poids sont aussi des nombres, mais ce ne sont pas des variables à analyser : id est un identifiant, et poids est le poids statistique de chaque enquêté dans l’enquête, pas son poids en kilos. Parmi les variables qualitatives : sexe, nivetud, qualif, relig, sport, et toutes les variables de loisirs.\nLes modalités de relig sont affichées ci-dessus.\nDans la visionneuse, les valeurs manquantes apparaissent en grisé sous la forme NA. On en trouve dans nivetud, qualif, trav.imp, trav.satisf et heures.tv. Vous apprendrez à les compter au chapitre 3.",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5574,7 +5595,7 @@
     "section": "Choisir des colonnes : select()",
     "text": "Choisir des colonnes : select()\nselect() garde les colonnes dont on lui donne le nom :\n\nd |&gt; select(age, sexe, heures.tv)\n\n# A tibble: 2,000 × 3\n     age sexe  heures.tv\n   &lt;int&gt; &lt;fct&gt;     &lt;dbl&gt;\n 1    28 Femme       0  \n 2    23 Femme       1  \n 3    59 Homme       0  \n 4    34 Homme       2  \n 5    71 Femme       3  \n 6    35 Femme       2  \n 7    60 Femme       2.9\n 8    47 Homme       1  \n 9    20 Femme       2  \n10    28 Homme       2  \n# ℹ 1,990 more rows\n\n\nPrécédé d’un signe -, un nom de colonne est au contraire retiré :\n\nd |&gt; select(-id, -poids)\n\n# A tibble: 2,000 × 18\n     age sexe  nivetud           occup qualif freres.soeurs clso  relig trav.imp\n   &lt;int&gt; &lt;fct&gt; &lt;fct&gt;             &lt;fct&gt; &lt;fct&gt;          &lt;int&gt; &lt;fct&gt; &lt;fct&gt; &lt;fct&gt;   \n 1    28 Femme Enseignement sup… Exer… Emplo…             8 Oui   Ni c… Peu imp…\n 2    23 Femme &lt;NA&gt;              Etud… &lt;NA&gt;               2 Oui   Ni c… &lt;NA&gt;    \n 3    59 Homme Derniere annee d… Exer… Techn…             2 Non   Ni c… Aussi i…\n 4    34 Homme Enseignement sup… Exer… Techn…             1 Non   Appa… Moins i…\n 5    71 Femme Derniere annee d… Retr… Emplo…             0 Oui   Prat… &lt;NA&gt;    \n 6    35 Femme Enseignement tec… Exer… Emplo…             5 Non   Ni c… Le plus…\n 7    60 Femme Derniere annee d… Au f… Ouvri…             1 Oui   Appa… &lt;NA&gt;    \n 8    47 Homme Enseignement tec… Exer… Ouvri…             5 Non   Ni c… Peu imp…\n 9    20 Femme &lt;NA&gt;              Etud… &lt;NA&gt;               4 Oui   Appa… &lt;NA&gt;    \n10    28 Homme Enseignement tec… Exer… Autre              2 Non   Prat… Moins i…\n# ℹ 1,990 more rows\n# ℹ 9 more variables: trav.satisf &lt;fct&gt;, hard.rock &lt;fct&gt;, lecture.bd &lt;fct&gt;,\n#   peche.chasse &lt;fct&gt;, cuisine &lt;fct&gt;, bricol &lt;fct&gt;, cinema &lt;fct&gt;, sport &lt;fct&gt;,\n#   heures.tv &lt;dbl&gt;",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5583,9 +5604,9 @@
     "href": "02Donnees.html#choisir-des-lignes-filter",
     "title": "Découvrir un tableau de données",
     "section": "Choisir des lignes : filter()",
-    "text": "Choisir des lignes : filter()\nfilter() garde les lignes qui vérifient une condition. On y retrouve les opérateurs logiques de la séance 1. Voici les enquêtés de moins de 25 ans :\n\nd |&gt; filter(age &lt; 25)\n\n# A tibble: 169 × 20\n      id   age sexe  nivetud        poids occup qualif freres.soeurs clso  relig\n   &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;fct&gt; &lt;fct&gt;          &lt;int&gt; &lt;fct&gt; &lt;fct&gt;\n 1     2    23 Femme &lt;NA&gt;           9738. Etud… &lt;NA&gt;               2 Oui   Ni c…\n 2     9    20 Femme &lt;NA&gt;           7809. Etud… &lt;NA&gt;               4 Oui   Appa…\n 3    18    20 Femme &lt;NA&gt;           1551. Etud… &lt;NA&gt;               0 Non   Appa…\n 4    25    20 Femme &lt;NA&gt;           8780. Exer… Ouvri…             0 Non   Appa…\n 5    38    19 Femme &lt;NA&gt;           7626. Etud… &lt;NA&gt;               1 Non   Appa…\n 6    54    23 Femme Enseignement… 11355. Au f… &lt;NA&gt;               1 Non   Prat…\n 7    56    23 Femme Enseignement…  6344. Exer… Ouvri…             1 Oui   Prat…\n 8    59    23 Homme Enseignement…  3463. Chom… Emplo…             4 Oui   Appa…\n 9    79    22 Femme Enseignement…  6169. Exer… Emplo…             3 Oui   Rejet\n10    94    23 Femme &lt;NA&gt;           4454. Etud… &lt;NA&gt;               0 Oui   Prat…\n# ℹ 159 more rows\n# ℹ 10 more variables: trav.imp &lt;fct&gt;, trav.satisf &lt;fct&gt;, hard.rock &lt;fct&gt;,\n#   lecture.bd &lt;fct&gt;, peche.chasse &lt;fct&gt;, cuisine &lt;fct&gt;, bricol &lt;fct&gt;,\n#   cinema &lt;fct&gt;, sport &lt;fct&gt;, heures.tv &lt;dbl&gt;\n\n\nOn peut donner plusieurs conditions, séparées par des virgules. La virgule signifie « et » : une ligne n’est gardée que si elle vérifie toutes les conditions.\n\nd |&gt; filter(age &lt; 25, sexe == \"Femme\")\n\n# A tibble: 93 × 20\n      id   age sexe  nivetud        poids occup qualif freres.soeurs clso  relig\n   &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;fct&gt; &lt;fct&gt;          &lt;int&gt; &lt;fct&gt; &lt;fct&gt;\n 1     2    23 Femme &lt;NA&gt;           9738. Etud… &lt;NA&gt;               2 Oui   Ni c…\n 2     9    20 Femme &lt;NA&gt;           7809. Etud… &lt;NA&gt;               4 Oui   Appa…\n 3    18    20 Femme &lt;NA&gt;           1551. Etud… &lt;NA&gt;               0 Non   Appa…\n 4    25    20 Femme &lt;NA&gt;           8780. Exer… Ouvri…             0 Non   Appa…\n 5    38    19 Femme &lt;NA&gt;           7626. Etud… &lt;NA&gt;               1 Non   Appa…\n 6    54    23 Femme Enseignement… 11355. Au f… &lt;NA&gt;               1 Non   Prat…\n 7    56    23 Femme Enseignement…  6344. Exer… Ouvri…             1 Oui   Prat…\n 8    79    22 Femme Enseignement…  6169. Exer… Emplo…             3 Oui   Rejet\n 9    94    23 Femme &lt;NA&gt;           4454. Etud… &lt;NA&gt;               0 Oui   Prat…\n10   100    19 Femme &lt;NA&gt;           2187. Exer… Emplo…             0 Oui   Appa…\n# ℹ 83 more rows\n# ℹ 10 more variables: trav.imp &lt;fct&gt;, trav.satisf &lt;fct&gt;, hard.rock &lt;fct&gt;,\n#   lecture.bd &lt;fct&gt;, peche.chasse &lt;fct&gt;, cuisine &lt;fct&gt;, bricol &lt;fct&gt;,\n#   cinema &lt;fct&gt;, sport &lt;fct&gt;, heures.tv &lt;dbl&gt;\n\n\n\n\n\n\n\n\nAvertissement\n\n\n\nPour un « ou », utilisez | : filter(age &lt; 25 | age &gt; 70).\nEt rappelez-vous : la comparaison s’écrit ==, avec deux signes égal. Si vous écrivez sexe = \"Femme\", R vous le signale par un message qui commence par We detected a named input.",
+    "text": "Choisir des lignes : filter()\nfilter() garde les lignes qui vérifient une condition. On y retrouve les opérateurs logiques du chapitre 1. Voici les enquêtés de moins de 25 ans :\n\nd |&gt; filter(age &lt; 25)\n\n# A tibble: 169 × 20\n      id   age sexe  nivetud        poids occup qualif freres.soeurs clso  relig\n   &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;fct&gt; &lt;fct&gt;          &lt;int&gt; &lt;fct&gt; &lt;fct&gt;\n 1     2    23 Femme &lt;NA&gt;           9738. Etud… &lt;NA&gt;               2 Oui   Ni c…\n 2     9    20 Femme &lt;NA&gt;           7809. Etud… &lt;NA&gt;               4 Oui   Appa…\n 3    18    20 Femme &lt;NA&gt;           1551. Etud… &lt;NA&gt;               0 Non   Appa…\n 4    25    20 Femme &lt;NA&gt;           8780. Exer… Ouvri…             0 Non   Appa…\n 5    38    19 Femme &lt;NA&gt;           7626. Etud… &lt;NA&gt;               1 Non   Appa…\n 6    54    23 Femme Enseignement… 11355. Au f… &lt;NA&gt;               1 Non   Prat…\n 7    56    23 Femme Enseignement…  6344. Exer… Ouvri…             1 Oui   Prat…\n 8    59    23 Homme Enseignement…  3463. Chom… Emplo…             4 Oui   Appa…\n 9    79    22 Femme Enseignement…  6169. Exer… Emplo…             3 Oui   Rejet\n10    94    23 Femme &lt;NA&gt;           4454. Etud… &lt;NA&gt;               0 Oui   Prat…\n# ℹ 159 more rows\n# ℹ 10 more variables: trav.imp &lt;fct&gt;, trav.satisf &lt;fct&gt;, hard.rock &lt;fct&gt;,\n#   lecture.bd &lt;fct&gt;, peche.chasse &lt;fct&gt;, cuisine &lt;fct&gt;, bricol &lt;fct&gt;,\n#   cinema &lt;fct&gt;, sport &lt;fct&gt;, heures.tv &lt;dbl&gt;\n\n\nOn peut donner plusieurs conditions, séparées par des virgules. La virgule signifie « et » : une ligne n’est gardée que si elle vérifie toutes les conditions.\n\nd |&gt; filter(age &lt; 25, sexe == \"Femme\")\n\n# A tibble: 93 × 20\n      id   age sexe  nivetud        poids occup qualif freres.soeurs clso  relig\n   &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;fct&gt; &lt;fct&gt;          &lt;int&gt; &lt;fct&gt; &lt;fct&gt;\n 1     2    23 Femme &lt;NA&gt;           9738. Etud… &lt;NA&gt;               2 Oui   Ni c…\n 2     9    20 Femme &lt;NA&gt;           7809. Etud… &lt;NA&gt;               4 Oui   Appa…\n 3    18    20 Femme &lt;NA&gt;           1551. Etud… &lt;NA&gt;               0 Non   Appa…\n 4    25    20 Femme &lt;NA&gt;           8780. Exer… Ouvri…             0 Non   Appa…\n 5    38    19 Femme &lt;NA&gt;           7626. Etud… &lt;NA&gt;               1 Non   Appa…\n 6    54    23 Femme Enseignement… 11355. Au f… &lt;NA&gt;               1 Non   Prat…\n 7    56    23 Femme Enseignement…  6344. Exer… Ouvri…             1 Oui   Prat…\n 8    79    22 Femme Enseignement…  6169. Exer… Emplo…             3 Oui   Rejet\n 9    94    23 Femme &lt;NA&gt;           4454. Etud… &lt;NA&gt;               0 Oui   Prat…\n10   100    19 Femme &lt;NA&gt;           2187. Exer… Emplo…             0 Oui   Appa…\n# ℹ 83 more rows\n# ℹ 10 more variables: trav.imp &lt;fct&gt;, trav.satisf &lt;fct&gt;, hard.rock &lt;fct&gt;,\n#   lecture.bd &lt;fct&gt;, peche.chasse &lt;fct&gt;, cuisine &lt;fct&gt;, bricol &lt;fct&gt;,\n#   cinema &lt;fct&gt;, sport &lt;fct&gt;, heures.tv &lt;dbl&gt;\n\n\n\n\n\n\n\n\nAvertissement\n\n\n\nPour un « ou », utilisez | : filter(age &lt; 25 | age &gt; 70).\nEt rappelez-vous : la comparaison s’écrit ==, avec deux signes égal. Si vous écrivez sexe = \"Femme\", R vous le signale par un message qui commence par We detected a named input.",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5596,7 +5617,7 @@
     "section": "Trier : arrange()",
     "text": "Trier : arrange()\narrange() trie les lignes selon une variable, par ordre croissant :\n\nd |&gt; arrange(age)\n\n# A tibble: 2,000 × 20\n      id   age sexe  nivetud        poids occup qualif freres.soeurs clso  relig\n   &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;fct&gt; &lt;fct&gt;          &lt;int&gt; &lt;fct&gt; &lt;fct&gt;\n 1   162    18 Homme &lt;NA&gt;           4983. Etud… &lt;NA&gt;               2 Non   Appa…\n 2   215    18 Homme &lt;NA&gt;           4631. Etud… &lt;NA&gt;               2 Oui   Ni c…\n 3   346    18 Femme &lt;NA&gt;           1725. Etud… &lt;NA&gt;               9 Non   Prat…\n 4   377    18 Homme &lt;NA&gt;          11213. Etud… &lt;NA&gt;               1 Oui   Rejet\n 5   511    18 Homme &lt;NA&gt;           2448. Etud… &lt;NA&gt;               6 Non   Prat…\n 6   646    18 Homme &lt;NA&gt;           4545. Exer… Ouvri…             6 Non   Ni c…\n 7   852    18 Femme &lt;NA&gt;           3285. Etud… &lt;NA&gt;               0 Non   Prat…\n 8   916    18 Femme &lt;NA&gt;           3564. Etud… &lt;NA&gt;               2 Non   Ni c…\n 9  1211    18 Homme Enseignement… 14254. Exer… Ouvri…             1 Non   Appa…\n10  1213    18 Femme 2eme cycle     4910. Chom… &lt;NA&gt;               4 Non   Ni c…\n# ℹ 1,990 more rows\n# ℹ 10 more variables: trav.imp &lt;fct&gt;, trav.satisf &lt;fct&gt;, hard.rock &lt;fct&gt;,\n#   lecture.bd &lt;fct&gt;, peche.chasse &lt;fct&gt;, cuisine &lt;fct&gt;, bricol &lt;fct&gt;,\n#   cinema &lt;fct&gt;, sport &lt;fct&gt;, heures.tv &lt;dbl&gt;\n\n\nPour trier dans l’ordre décroissant, on entoure la variable de desc() :\n\nd |&gt; arrange(desc(age))\n\n# A tibble: 2,000 × 20\n      id   age sexe  nivetud        poids occup qualif freres.soeurs clso  relig\n   &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;fct&gt; &lt;fct&gt;          &lt;int&gt; &lt;fct&gt; &lt;fct&gt;\n 1  1916    97 Femme Derniere ann…  2163. Autr… Autre              5 Non   Prat…\n 2   270    96 Femme Derniere ann…  9993. Retr… &lt;NA&gt;               1 Oui   Ni c…\n 3  1542    93 Femme Derniere ann…  7108. Reti… &lt;NA&gt;               7 Non   Prat…\n 4   235    92 Homme N'a jamais f…   827. Retr… Ouvri…             0 Ne s… Prat…\n 5  1151    91 Homme Derniere ann…  4291. Reti… &lt;NA&gt;               3 Oui   Appa…\n 6    96    90 Femme Derniere ann…  5875. Au f… Emplo…             7 Non   Prat…\n 7  1122    90 Femme 1er cycle     14812. Retr… Emplo…             3 Oui   Prat…\n 8  1767    90 Femme Derniere ann… 12266. Reti… &lt;NA&gt;               2 Non   Appa…\n 9   759    89 Femme Derniere ann…  9555. Au f… &lt;NA&gt;               1 Non   Prat…\n10   971    89 Homme Derniere ann…  2374. Retr… Ouvri…             5 Oui   Prat…\n# ℹ 1,990 more rows\n# ℹ 10 more variables: trav.imp &lt;fct&gt;, trav.satisf &lt;fct&gt;, hard.rock &lt;fct&gt;,\n#   lecture.bd &lt;fct&gt;, peche.chasse &lt;fct&gt;, cuisine &lt;fct&gt;, bricol &lt;fct&gt;,\n#   cinema &lt;fct&gt;, sport &lt;fct&gt;, heures.tv &lt;dbl&gt;",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5607,7 +5628,7 @@
     "section": "Enchaîner les opérations",
     "text": "Enchaîner les opérations\nC’est ici que le tuyau prend tout son sens. Cherchons les femmes de moins de 25 ans, triées par nombre d’heures de télévision décroissant, en n’affichant que trois variables :\n\nd |&gt;\n  filter(age &lt; 25, sexe == \"Femme\") |&gt;\n  arrange(desc(heures.tv)) |&gt;\n  select(age, heures.tv, qualif)\n\n# A tibble: 93 × 3\n     age heures.tv qualif            \n   &lt;int&gt;     &lt;dbl&gt; &lt;fct&gt;             \n 1    19        10 Employe           \n 2    18        10 &lt;NA&gt;              \n 3    23         9 Employe           \n 4    19         6 &lt;NA&gt;              \n 5    23         6 &lt;NA&gt;              \n 6    24         6 Employe           \n 7    21         5 &lt;NA&gt;              \n 8    18         5 Employe           \n 9    22         5 Ouvrier specialise\n10    24         4 Employe           \n# ℹ 83 more rows\n\n\nLe code se lit comme une phrase : prends d, ensuite garde les femmes de moins de 25 ans, ensuite trie par heures de télévision décroissantes, ensuite garde trois colonnes. Chaque étape reçoit le tableau produit par l’étape précédente.\nPrenez l’habitude d’écrire une opération par ligne, avec le |&gt; en fin de ligne. Le |&gt; en fin de ligne indique à R que la commande continue à la ligne suivante.",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5616,9 +5637,9 @@
     "href": "02Donnees.html#créer-une-variable-mutate",
     "title": "Découvrir un tableau de données",
     "section": "Créer une variable : mutate()",
-    "text": "Créer une variable : mutate()\nLa variable heures.tv contient le nombre d’heures passées chaque jour devant la télévision. mutate() permet de créer une nouvelle variable à partir des autres, ici le même temps exprimé en minutes :\n\nd |&gt;\n  mutate(minutes.tv = heures.tv * 60) |&gt;\n  select(heures.tv, minutes.tv)\n\n# A tibble: 2,000 × 2\n   heures.tv minutes.tv\n       &lt;dbl&gt;      &lt;dbl&gt;\n 1       0            0\n 2       1           60\n 3       0            0\n 4       2          120\n 5       3          180\n 6       2          120\n 7       2.9        174\n 8       1           60\n 9       2          120\n10       2          120\n# ℹ 1,990 more rows\n\n\nÀ gauche du =, le nom de la nouvelle variable ; à droite, le calcul qui la produit. Comme pour les vecteurs de la séance 1, le calcul s’applique à toutes les lignes à la fois. On peut créer plusieurs variables d’un coup, en les séparant par des virgules :\n\nd |&gt;\n  mutate(\n    minutes.tv = heures.tv * 60,\n    tv.semaine = heures.tv * 7\n  ) |&gt;\n  select(heures.tv, minutes.tv, tv.semaine)\n\n# A tibble: 2,000 × 3\n   heures.tv minutes.tv tv.semaine\n       &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;\n 1       0            0        0  \n 2       1           60        7  \n 3       0            0        0  \n 4       2          120       14  \n 5       3          180       21  \n 6       2          120       14  \n 7       2.9        174       20.3\n 8       1           60        7  \n 9       2          120       14  \n10       2          120       14  \n# ℹ 1,990 more rows",
+    "text": "Créer une variable : mutate()\nLa variable heures.tv contient le nombre d’heures passées chaque jour devant la télévision. mutate() permet de créer une nouvelle variable à partir des autres, ici le même temps exprimé en minutes :\n\nd |&gt;\n  mutate(minutes.tv = heures.tv * 60) |&gt;\n  select(heures.tv, minutes.tv)\n\n# A tibble: 2,000 × 2\n   heures.tv minutes.tv\n       &lt;dbl&gt;      &lt;dbl&gt;\n 1       0            0\n 2       1           60\n 3       0            0\n 4       2          120\n 5       3          180\n 6       2          120\n 7       2.9        174\n 8       1           60\n 9       2          120\n10       2          120\n# ℹ 1,990 more rows\n\n\nÀ gauche du =, le nom de la nouvelle variable ; à droite, le calcul qui la produit. Comme pour les vecteurs du chapitre 1, le calcul s’applique à toutes les lignes à la fois. On peut créer plusieurs variables d’un coup, en les séparant par des virgules :\n\nd |&gt;\n  mutate(\n    minutes.tv = heures.tv * 60,\n    tv.semaine = heures.tv * 7\n  ) |&gt;\n  select(heures.tv, minutes.tv, tv.semaine)\n\n# A tibble: 2,000 × 3\n   heures.tv minutes.tv tv.semaine\n       &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;\n 1       0            0        0  \n 2       1           60        7  \n 3       0            0        0  \n 4       2          120       14  \n 5       3          180       21  \n 6       2          120       14  \n 7       2.9        174       20.3\n 8       1           60        7  \n 9       2          120       14  \n10       2          120       14  \n# ℹ 1,990 more rows",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5629,7 +5650,7 @@
     "section": "Conserver le résultat",
     "text": "Conserver le résultat\nLes fonctions du tidyverse ne modifient pas le tableau d’origine : elles en renvoient une version transformée, qui s’affiche puis disparaît. Pour garder le résultat, il faut l’assigner, comme n’importe quelle valeur :\n\nd &lt;- d |&gt; mutate(minutes.tv = heures.tv * 60)\n\n\n\n\n\n\n\nImportant\n\n\n\nC’est l’erreur la plus fréquente au début : on lance d |&gt; mutate(...), on voit le bon résultat s’afficher, et on constate plus tard que la variable n’existe pas.\nSans &lt;-, rien n’est conservé. Et surtout, R ne dit rien.",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5640,7 +5661,7 @@
     "section": "Récapitulatif",
     "text": "Récapitulatif\n\nLes quatre fonctions de base\n\n\nFonction\nCe qu’elle fait\n\n\n\n\nselect()\nchoisit des colonnes\n\n\nfilter()\nchoisit des lignes\n\n\narrange()\ntrie les lignes\n\n\nmutate()\ncrée ou modifie une colonne\n\n\n\nToutes prennent un tableau comme premier argument, et toutes renvoient un tableau. C’est ce qui permet de les enchaîner avec |&gt;.",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5649,9 +5670,9 @@
     "href": "02Donnees.html#exercice-2",
     "title": "Découvrir un tableau de données",
     "section": "Exercice 2",
-    "text": "Exercice 2\nDans un script commenté :\n\nAffichez uniquement les variables age, qualif et sport.\nCombien y a-t-il d’enquêtés de 60 ans ou plus ?\nAffichez les hommes qui déclarent pratiquer un sport, triés du plus jeune au plus âgé.\nCréez une variable tv.annuelle (heures de télévision par an) et conservez-la dans d.\nQuel est l’enquêté le plus âgé du jeu de données ? Quel est son niveau d’études ?\nCombien d’enquêtés ont entre 25 ans (inclus) et 35 ans (exclus) ?\n\n\n\n\n\n\n\nAstuce\n\n\n\nPour les questions 2 et 6, le nombre de lignes du résultat s’affiche en haut du tibble. Pour la question 6, il faut deux conditions séparées par une virgule.",
+    "text": "Exercice 2\nDans un script commenté :\n\nAffichez uniquement les variables age, qualif et sport.\nCombien y a-t-il d’enquêtés de 60 ans ou plus ?\nAffichez les hommes qui déclarent pratiquer un sport, triés du plus jeune au plus âgé.\nCréez une variable tv.annuelle (heures de télévision par an) et conservez-la dans d.\nQuel est l’enquêté le plus âgé du jeu de données ? Quel est son niveau d’études ?\nCombien d’enquêtés ont entre 25 ans (inclus) et 35 ans (exclus) ?\n\n\n\n\n\n\n\nAstuce\n\n\n\nPour les questions 2 et 6, le nombre de lignes du résultat s’affiche en haut du tibble. Pour la question 6, il faut deux conditions séparées par une virgule.\n\n\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\nd |&gt; select(age, qualif, sport)\n\n# A tibble: 2,000 × 3\n     age qualif           sport\n   &lt;int&gt; &lt;fct&gt;            &lt;fct&gt;\n 1    28 Employe          Non  \n 2    23 &lt;NA&gt;             Oui  \n 3    59 Technicien       Oui  \n 4    34 Technicien       Oui  \n 5    71 Employe          Non  \n 6    35 Employe          Oui  \n 7    60 Ouvrier qualifie Non  \n 8    47 Ouvrier qualifie Non  \n 9    20 &lt;NA&gt;             Non  \n10    28 Autre            Oui  \n# ℹ 1,990 more rows\n\n\nQuestion 2 : « 60 ans ou plus » inclut 60, d’où &gt;=.\n\nd |&gt; filter(age &gt;= 60)\n\n# A tibble: 516 × 21\n      id   age sexe  nivetud        poids occup qualif freres.soeurs clso  relig\n   &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;fct&gt; &lt;fct&gt;          &lt;int&gt; &lt;fct&gt; &lt;fct&gt;\n 1     5    71 Femme Derniere ann…  4329. Retr… Emplo…             0 Oui   Prat…\n 2     7    60 Femme Derniere ann…  6166. Au f… Ouvri…             1 Oui   Appa…\n 3    11    65 Femme Enseignement…   704. Retr… Emplo…             3 Oui   Appa…\n 4    13    63 Femme Derniere ann…  7118. Retr… Emplo…             1 Oui   Appa…\n 5    14    67 Femme Enseignement…   587. Exer… &lt;NA&gt;               5 Oui   Prat…\n 6    15    76 Femme A arrete ses… 11042. Retr… &lt;NA&gt;               2 Oui   Appa…\n 7    17    62 Homme Enseignement…  4836. Retr… Cadre              4 Non   Prat…\n 8    19    70 Homme Derniere ann…  3141. Retr… Ouvri…             2 Non   Appa…\n 9    24    79 Femme Derniere ann… 11663. Autr… &lt;NA&gt;              11 Non   Prat…\n10    26    74 Homme Enseignement…  1701. Retr… Cadre              2 Oui   Ni c…\n# ℹ 506 more rows\n# ℹ 11 more variables: trav.imp &lt;fct&gt;, trav.satisf &lt;fct&gt;, hard.rock &lt;fct&gt;,\n#   lecture.bd &lt;fct&gt;, peche.chasse &lt;fct&gt;, cuisine &lt;fct&gt;, bricol &lt;fct&gt;,\n#   cinema &lt;fct&gt;, sport &lt;fct&gt;, heures.tv &lt;dbl&gt;, minutes.tv &lt;dbl&gt;\n\n\nIl y a 516 enquêtés de 60 ans ou plus.\n\nd |&gt; filter(sexe == \"Homme\", sport == \"Oui\") |&gt; arrange(age)\n\n# A tibble: 369 × 21\n      id   age sexe  nivetud        poids occup qualif freres.soeurs clso  relig\n   &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;fct&gt; &lt;fct&gt;          &lt;int&gt; &lt;fct&gt; &lt;fct&gt;\n 1   162    18 Homme &lt;NA&gt;           4983. Etud… &lt;NA&gt;               2 Non   Appa…\n 2   215    18 Homme &lt;NA&gt;           4631. Etud… &lt;NA&gt;               2 Oui   Ni c…\n 3   377    18 Homme &lt;NA&gt;          11213. Etud… &lt;NA&gt;               1 Oui   Rejet\n 4   511    18 Homme &lt;NA&gt;           2448. Etud… &lt;NA&gt;               6 Non   Prat…\n 5   646    18 Homme &lt;NA&gt;           4545. Exer… Ouvri…             6 Non   Ni c…\n 6  1261    18 Homme Enseignement…  6789. Chom… &lt;NA&gt;               5 Non   Prat…\n 7  1395    18 Homme &lt;NA&gt;           9133. Etud… &lt;NA&gt;               2 Oui   Appa…\n 8  1774    18 Homme &lt;NA&gt;           8834. Etud… &lt;NA&gt;               1 Non   Appa…\n 9  1937    18 Homme &lt;NA&gt;           6401. Etud… &lt;NA&gt;               3 Oui   Ni c…\n10   204    19 Homme &lt;NA&gt;           6340. Etud… &lt;NA&gt;               1 Non   Appa…\n# ℹ 359 more rows\n# ℹ 11 more variables: trav.imp &lt;fct&gt;, trav.satisf &lt;fct&gt;, hard.rock &lt;fct&gt;,\n#   lecture.bd &lt;fct&gt;, peche.chasse &lt;fct&gt;, cuisine &lt;fct&gt;, bricol &lt;fct&gt;,\n#   cinema &lt;fct&gt;, sport &lt;fct&gt;, heures.tv &lt;dbl&gt;, minutes.tv &lt;dbl&gt;\n\n\nQuestion 4 : une heure par jour fait 365 heures par an. Sans le d &lt;-, la variable serait affichée puis perdue.\n\nd &lt;- d |&gt; mutate(tv.annuelle = heures.tv * 365)\n\n\nd |&gt; arrange(desc(age)) |&gt; select(age, sexe, nivetud)\n\n# A tibble: 2,000 × 3\n     age sexe  nivetud                          \n   &lt;int&gt; &lt;fct&gt; &lt;fct&gt;                            \n 1    97 Femme Derniere annee d'etudes primaires\n 2    96 Femme Derniere annee d'etudes primaires\n 3    93 Femme Derniere annee d'etudes primaires\n 4    92 Homme N'a jamais fait d'etudes         \n 5    91 Homme Derniere annee d'etudes primaires\n 6    90 Femme Derniere annee d'etudes primaires\n 7    90 Femme 1er cycle                        \n 8    90 Femme Derniere annee d'etudes primaires\n 9    89 Femme Derniere annee d'etudes primaires\n10    89 Homme Derniere annee d'etudes primaires\n# ℹ 1,990 more rows\n\n\nL’enquêtée la plus âgée est une femme de 97 ans, qui a arrêté ses études après la dernière année d’études primaires.\n\nd |&gt; filter(age &gt;= 25, age &lt; 35)\n\n# A tibble: 321 × 22\n      id   age sexe  nivetud        poids occup qualif freres.soeurs clso  relig\n   &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;fct&gt; &lt;fct&gt;          &lt;int&gt; &lt;fct&gt; &lt;fct&gt;\n 1     1    28 Femme Enseignement…  2634. Exer… Emplo…             8 Oui   Ni c…\n 2     4    34 Homme Enseignement…  5732. Exer… Techn…             1 Non   Appa…\n 3    10    28 Homme Enseignement…  2277. Exer… Autre              2 Non   Prat…\n 4    21    30 Femme Enseignement… 14648. Exer… Emplo…             6 Oui   Appa…\n 5    22    30 Homme Enseignement…  8128. Exer… Emplo…             2 Oui   Appa…\n 6    27    31 Femme Enseignement…  6663. Exer… Ouvri…             1 Non   Appa…\n 7    30    30 Homme Enseignement… 10621. Exer… Ouvri…             1 Oui   Ni c…\n 8    32    29 Homme Enseignement… 14162. Exer… Autre              2 Oui   Appa…\n 9    50    34 Femme Enseignement…  6592. Exer… Cadre              2 Non   Appa…\n10    55    26 Homme Enseignement…  9293. Exer… Techn…             1 Oui   Rejet\n# ℹ 311 more rows\n# ℹ 12 more variables: trav.imp &lt;fct&gt;, trav.satisf &lt;fct&gt;, hard.rock &lt;fct&gt;,\n#   lecture.bd &lt;fct&gt;, peche.chasse &lt;fct&gt;, cuisine &lt;fct&gt;, bricol &lt;fct&gt;,\n#   cinema &lt;fct&gt;, sport &lt;fct&gt;, heures.tv &lt;dbl&gt;, minutes.tv &lt;dbl&gt;,\n#   tv.annuelle &lt;dbl&gt;\n\n\n321 enquêtés ont entre 25 et 35 ans.",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5662,7 +5683,7 @@
     "section": "Les leçons swirl",
     "text": "Les leçons swirl\nLancez swirl :\n\nlibrary(swirl)\nswirl()\n\nFaites les leçons Tableaux_de_donnees puis Manipuler_les_donnees, et déposez les fichiers .txt sur Moodle à la fin de chacune. Si vous bloquez sur une question, voir Si vous êtes bloqués.",
     "crumbs": [
-      "Séance 2 : données",
+      "Chapitre 2 : données",
       "Découvrir un tableau de données"
     ]
   },
@@ -5671,9 +5692,9 @@
     "href": "03Analyse.html",
     "title": "Décrire des données",
     "section": "",
-    "text": "Voici un petit tableau de six personnes, appelé tab :\n\n\n# A tibble: 6 × 4\n  prenom   age categorie heures_tv\n  &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;\n1 Alice     22 Étudiant          1\n2 Bilal     45 Cadre             3\n3 Chloé     31 Employé           2\n4 David     19 Étudiant          4\n5 Éva       58 Cadre             2\n6 Farid     27 Ouvrier           5\n\n\nSur une feuille, sans lancer R, dessinez le tableau produit par chacun des deux enchaînements suivants : ses colonnes, ses lignes et leur ordre.\n\ntab |&gt;\n  filter(categorie != \"Étudiant\") |&gt;\n  arrange(age) |&gt;\n  select(prenom, categorie)\n\ntab |&gt;\n  mutate(heures_semaine = heures_tv * 7) |&gt;\n  filter(heures_semaine &gt; 14)\n\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\ntab &lt;- tibble(\n  prenom = c(\"Alice\", \"Bilal\", \"Chloé\", \"David\", \"Éva\", \"Farid\"),\n  age = c(22, 45, 31, 19, 58, 27),\n  categorie = c(\"Étudiant\", \"Cadre\", \"Employé\", \"Étudiant\", \"Cadre\", \"Ouvrier\"),\n  heures_tv = c(1, 3, 2, 4, 2, 5)\n)\n\ntab |&gt;\n  filter(categorie != \"Étudiant\") |&gt;\n  arrange(age) |&gt;\n  select(prenom, categorie)\n\n# A tibble: 4 × 2\n  prenom categorie\n  &lt;chr&gt;  &lt;chr&gt;    \n1 Farid  Ouvrier  \n2 Chloé  Employé  \n3 Bilal  Cadre    \n4 Éva    Cadre    \n\ntab |&gt;\n  mutate(heures_semaine = heures_tv * 7) |&gt;\n  filter(heures_semaine &gt; 14)\n\n# A tibble: 3 × 5\n  prenom   age categorie heures_tv heures_semaine\n  &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;          &lt;dbl&gt;\n1 Bilal     45 Cadre             3             21\n2 David     19 Étudiant          4             28\n3 Farid     27 Ouvrier           5             35\n\n\nDans le premier enchaînement, filter() retire les deux étudiants, arrange() trie les quatre lignes restantes par âge, et select() ne garde que deux colonnes. Le tri se fait bien sur l’âge, même si la colonne age n’apparaît plus à la fin : elle existait encore au moment du tri.\nDans le second, mutate() ajoute une colonne au tableau complet, sans retirer les autres. Le filter() qui suit porte sur ce tableau augmenté : il peut donc utiliser la nouvelle colonne heures_semaine.\nSi vous avez confondu filter() et select(), ou oublié que mutate() conserve toutes les colonnes, relisez la séance 2 avant d’aller plus loin.",
+    "text": "Voici un petit tableau de six personnes, appelé tab :\n\n\n# A tibble: 6 × 4\n  prenom   age categorie heures_tv\n  &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;\n1 Alice     22 Étudiant          1\n2 Bilal     45 Cadre             3\n3 Chloé     31 Employé           2\n4 David     19 Étudiant          4\n5 Éva       58 Cadre             2\n6 Farid     27 Ouvrier           5\n\n\nSur une feuille, sans lancer R, dessinez le tableau produit par chacun des deux enchaînements suivants : ses colonnes, ses lignes et leur ordre.\n\ntab |&gt;\n  filter(categorie != \"Étudiant\") |&gt;\n  arrange(age) |&gt;\n  select(prenom, categorie)\n\ntab |&gt;\n  mutate(heures_semaine = heures_tv * 7) |&gt;\n  filter(heures_semaine &gt; 14)\n\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\ntab &lt;- tibble(\n  prenom = c(\"Alice\", \"Bilal\", \"Chloé\", \"David\", \"Éva\", \"Farid\"),\n  age = c(22, 45, 31, 19, 58, 27),\n  categorie = c(\"Étudiant\", \"Cadre\", \"Employé\", \"Étudiant\", \"Cadre\", \"Ouvrier\"),\n  heures_tv = c(1, 3, 2, 4, 2, 5)\n)\n\ntab |&gt;\n  filter(categorie != \"Étudiant\") |&gt;\n  arrange(age) |&gt;\n  select(prenom, categorie)\n\n# A tibble: 4 × 2\n  prenom categorie\n  &lt;chr&gt;  &lt;chr&gt;    \n1 Farid  Ouvrier  \n2 Chloé  Employé  \n3 Bilal  Cadre    \n4 Éva    Cadre    \n\ntab |&gt;\n  mutate(heures_semaine = heures_tv * 7) |&gt;\n  filter(heures_semaine &gt; 14)\n\n# A tibble: 3 × 5\n  prenom   age categorie heures_tv heures_semaine\n  &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;          &lt;dbl&gt;\n1 Bilal     45 Cadre             3             21\n2 David     19 Étudiant          4             28\n3 Farid     27 Ouvrier           5             35\n\n\nDans le premier enchaînement, filter() retire les deux étudiants, arrange() trie les quatre lignes restantes par âge, et select() ne garde que deux colonnes. Le tri se fait bien sur l’âge, même si la colonne age n’apparaît plus à la fin : elle existait encore au moment du tri.\nDans le second, mutate() ajoute une colonne au tableau complet, sans retirer les autres. Le filter() qui suit porte sur ce tableau augmenté : il peut donc utiliser la nouvelle colonne heures_semaine.\nSi vous avez confondu filter() et select(), ou oublié que mutate() conserve toutes les colonnes, relisez le chapitre 2 avant d’aller plus loin.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5684,7 +5705,7 @@
     "section": "De quoi parle-t-on",
     "text": "De quoi parle-t-on\nUne variable quantitative est numérique et peut prendre un grand nombre de valeurs différentes. Dans nos données, c’est le cas de l’âge (age), du nombre d’heures passées devant la télévision (heures.tv) ou du nombre de frères et sœurs (freres.soeurs).\n\nd |&gt; select(age, heures.tv, freres.soeurs)\n\n# A tibble: 2,000 × 3\n     age heures.tv freres.soeurs\n   &lt;int&gt;     &lt;dbl&gt;         &lt;int&gt;\n 1    28       0               8\n 2    23       1               2\n 3    59       0               2\n 4    34       2               1\n 5    71       3               0\n 6    35       2               5\n 7    60       2.9             1\n 8    47       1               5\n 9    20       2               4\n10    28       2               2\n# ℹ 1,990 more rows",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5695,7 +5716,7 @@
     "section": "Résumer : summarise()",
     "text": "Résumer : summarise()\nsummarise() calcule des indicateurs sur l’ensemble du tableau, et renvoie un tableau d’une seule ligne. Comme dans mutate(), on donne à gauche du = le nom de chaque indicateur, et à droite le calcul :\n\nd |&gt; summarise(\n  moyenne = mean(age),\n  mediane = median(age),\n  minimum = min(age),\n  maximum = max(age)\n)\n\n# A tibble: 1 × 4\n  moyenne mediane minimum maximum\n    &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt;\n1    48.2      48      18      97",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5706,7 +5727,7 @@
     "section": "Indicateurs de dispersion",
     "text": "Indicateurs de dispersion\nLa moyenne et la médiane disent où se situe le centre des valeurs. Les indicateurs de dispersion disent si les valeurs sont regroupées autour de ce centre, ou au contraire étalées.\nLe plus simple est l’étendue, l’écart entre la plus grande et la plus petite valeur. Les plus utilisés sont la variance (var()) et l’écart-type (sd(), pour standard deviation), qui mesurent l’écart moyen des valeurs à la moyenne.\n\nd |&gt; summarise(\n  etendue = max(age) - min(age),\n  variance = var(age),\n  ecart_type = sd(age)\n)\n\n# A tibble: 1 × 3\n  etendue variance ecart_type\n    &lt;int&gt;    &lt;dbl&gt;      &lt;dbl&gt;\n1      79     287.       16.9",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5717,7 +5738,7 @@
     "section": "Quartiles",
     "text": "Quartiles\nLes quartiles découpent les observations, rangées par ordre croissant, en quatre groupes de même taille :\n\nle premier quartile est la valeur en dessous de laquelle se trouvent 25 % des observations ;\nle deuxième quartile est la médiane : 50 % des observations en dessous, 50 % au-dessus ;\nle troisième quartile laisse 75 % des observations en dessous.\n\nLa fonction quantile() les calcule. Son second argument est une proportion entre 0 et 1 : 0.5 donne la médiane, 0.1 le premier décile.\n\nd |&gt; summarise(\n  q1 = quantile(age, 0.25),\n  q2 = quantile(age, 0.50),\n  q3 = quantile(age, 0.75)\n)\n\n# A tibble: 1 × 3\n     q1    q2    q3\n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    35    48    60",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5728,7 +5749,7 @@
     "section": "Un résumé rapide",
     "text": "Un résumé rapide\nPour un premier aperçu, summary() donne l’essentiel en une seule commande :\n\nsummary(d$age)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  18.00   35.00   48.00   48.16   60.00   97.00 \n\n\nsummary() attend un vecteur, d’où le $. C’est pratique pour explorer, mais son résultat n’est pas un tableau : on ne peut pas l’enchaîner avec |&gt;. Pour un résultat que vous réutiliserez, préférez summarise().",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5737,9 +5758,9 @@
     "href": "03Analyse.html#valeurs-manquantes",
     "title": "Décrire des données",
     "section": "Valeurs manquantes",
-    "text": "Valeurs manquantes\nCalculons maintenant la moyenne des heures de télévision :\n\nd |&gt; summarise(moyenne = mean(heures.tv))\n\n# A tibble: 1 × 1\n  moyenne\n    &lt;dbl&gt;\n1      NA\n\n\nLe résultat est NA. Comme en séance 1, la variable contient des valeurs manquantes, et la moyenne d’un ensemble contenant une valeur inconnue est inconnue. L’argument na.rm = TRUE demande d’écarter ces valeurs. Il est prudent de compter en même temps combien on en écarte :\n\nd |&gt; summarise(\n  moyenne = mean(heures.tv, na.rm = TRUE),\n  nombre_na = sum(is.na(heures.tv))\n)\n\n# A tibble: 1 × 2\n  moyenne nombre_na\n    &lt;dbl&gt;     &lt;int&gt;\n1    2.25         5\n\n\nis.na() renvoie TRUE pour chaque valeur manquante et FALSE pour les autres. sum() compte les TRUE, car R les traite comme des 1 et les FALSE comme des 0. La moyenne porte donc sur 1995 personnes, et non sur 2000.",
+    "text": "Valeurs manquantes\nCalculons maintenant la moyenne des heures de télévision :\n\nd |&gt; summarise(moyenne = mean(heures.tv))\n\n# A tibble: 1 × 1\n  moyenne\n    &lt;dbl&gt;\n1      NA\n\n\nLe résultat est NA. Comme au chapitre 1, la variable contient des valeurs manquantes, et la moyenne d’un ensemble contenant une valeur inconnue est inconnue. L’argument na.rm = TRUE demande d’écarter ces valeurs. Il est prudent de compter en même temps combien on en écarte :\n\nd |&gt; summarise(\n  moyenne = mean(heures.tv, na.rm = TRUE),\n  nombre_na = sum(is.na(heures.tv))\n)\n\n# A tibble: 1 × 2\n  moyenne nombre_na\n    &lt;dbl&gt;     &lt;int&gt;\n1    2.25         5\n\n\nis.na() renvoie TRUE pour chaque valeur manquante et FALSE pour les autres. sum() compte les TRUE, car R les traite comme des 1 et les FALSE comme des 0. La moyenne porte donc sur 1995 personnes, et non sur 2000.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5748,9 +5769,9 @@
     "href": "03Analyse.html#le-vrai-danger",
     "title": "Décrire des données",
     "section": "Le vrai danger",
-    "text": "Le vrai danger\nEn séance 1, nous avons vu comment lire un message d’erreur. Ces erreurs-là sont en fait les plus faciles : R refuse de continuer, et vous savez qu’il y a un problème.\nÀ partir de maintenant, vous produisez des chiffres. Or un chiffre faux ressemble exactement à un chiffre juste. Aucun message d’erreur ne vous préviendra qu’une moyenne porte sur la mauvaise population.",
+    "text": "Le vrai danger\nAu chapitre 1, nous avons vu comment lire un message d’erreur. Ces erreurs-là sont en fait les plus faciles : R refuse de continuer, et vous savez qu’il y a un problème.\nÀ partir de maintenant, vous produisez des chiffres. Or un chiffre faux ressemble exactement à un chiffre juste. Aucun message d’erreur ne vous préviendra qu’une moyenne porte sur la mauvaise population.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5761,7 +5782,7 @@
     "section": "Trois pièges",
     "text": "Trois pièges\nna.rm = TRUE change la population. Avec cet argument, vous ne calculez plus la moyenne des 2000 enquêtés, mais celle des seuls répondants. Ce n’est pas un problème en soi, mais il faut le savoir, et pouvoir le dire : comptez toujours combien de valeurs vous écartez.\nL’oubli du &lt;-. Vous croyez avoir créé ou modifié une variable avec mutate(), mais sans assignation, elle n’existe pas. Les calculs suivants portent sur l’ancien tableau, et rien ne vous le signale.\nLes effectifs faibles. Une moyenne calculée sur six personnes n’est pas comparable à une moyenne calculée sur huit cents : quelques individus atypiques suffisent à la déplacer. Affichez toujours l’effectif à côté de l’indicateur.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5772,7 +5793,7 @@
     "section": "La parade",
     "text": "La parade\nTrois réflexes protègent de ces pièges.\n\nPrédisez avant de lancer. Écrivez en commentaire l’ordre de grandeur que vous attendez. Un résultat qui vous surprend est soit une découverte, soit une erreur : il faut trancher avant de passer à la suite.\nAffichez toujours l’effectif à côté de chaque indicateur.\nRecoupez. Un même chiffre obtenu de deux façons différentes est probablement juste.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5783,7 +5804,7 @@
     "section": "De quoi parle-t-on",
     "text": "De quoi parle-t-on\nUne variable qualitative ne prend qu’un nombre limité de valeurs, appelées modalités : le sexe (sexe), le niveau d’études (nivetud), la qualification professionnelle (qualif).\nLa frontière n’est pas toujours nette. Une variable qualitative peut être codée par des nombres, et certaines variables peuvent se traiter au choix comme quantitatives ou qualitatives : c’est le cas du nombre de frères et sœurs, qui ne prend que quelques valeurs entières.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5792,9 +5813,9 @@
     "href": "03Analyse.html#tri-à-plat-count",
     "title": "Décrire des données",
     "section": "Tri à plat : count()",
-    "text": "Tri à plat : count()\nLe tri à plat compte le nombre d’observations pour chaque modalité. La fonction count() le produit, dans une colonne appelée n :\n\nd |&gt; count(sexe)\n\n# A tibble: 2 × 2\n  sexe      n\n  &lt;fct&gt; &lt;int&gt;\n1 Homme   899\n2 Femme  1101\n\n\nL’argument sort = TRUE trie les modalités de la plus fréquente à la moins fréquente :\n\nd |&gt; count(qualif, sort = TRUE)\n\n# A tibble: 8 × 2\n  qualif                       n\n  &lt;fct&gt;                    &lt;int&gt;\n1 Employe                    594\n2 &lt;NA&gt;                       347\n3 Ouvrier qualifie           292\n4 Cadre                      260\n5 Ouvrier specialise         203\n6 Profession intermediaire   160\n7 Technicien                  86\n8 Autre                       58\n\n\nRemarquez la dernière ligne : count() affiche les valeurs manquantes comme une modalité à part entière. C’est une bonne chose : vous voyez immédiatement combien il y en a.",
+    "text": "Tri à plat : count()\nLe tri à plat compte le nombre d’observations pour chaque modalité. La fonction count() le produit, dans une colonne appelée n :\n\nd |&gt; count(sexe)\n\n# A tibble: 2 × 2\n  sexe      n\n  &lt;fct&gt; &lt;int&gt;\n1 Homme   899\n2 Femme  1101\n\n\nL’argument sort = TRUE trie les modalités de la plus fréquente à la moins fréquente :\n\nd |&gt; count(qualif, sort = TRUE)\n\n# A tibble: 8 × 2\n  qualif                       n\n  &lt;fct&gt;                    &lt;int&gt;\n1 Employe                    594\n2 &lt;NA&gt;                       347\n3 Ouvrier qualifie           292\n4 Cadre                      260\n5 Ouvrier specialise         203\n6 Profession intermediaire   160\n7 Technicien                  86\n8 Autre                       58\n\n\nRemarquez la ligne &lt;NA&gt; : count() affiche les valeurs manquantes comme une modalité à part entière. C’est une bonne chose : vous voyez immédiatement combien il y en a.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5805,7 +5826,7 @@
     "section": "Passer aux pourcentages",
     "text": "Passer aux pourcentages\nLes effectifs bruts se comparent mal. On les rapporte au total avec mutate(), puisque le résultat de count() est un tableau comme un autre. sum(n) est le total des effectifs, et round(..., 1) arrondit à une décimale :\n\nd |&gt;\n  count(qualif) |&gt;\n  mutate(pourcentage = round(100 * n / sum(n), 1))\n\n# A tibble: 8 × 3\n  qualif                       n pourcentage\n  &lt;fct&gt;                    &lt;int&gt;       &lt;dbl&gt;\n1 Ouvrier specialise         203        10.2\n2 Ouvrier qualifie           292        14.6\n3 Technicien                  86         4.3\n4 Profession intermediaire   160         8  \n5 Cadre                      260        13  \n6 Employe                    594        29.7\n7 Autre                       58         2.9\n8 &lt;NA&gt;                       347        17.4",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5814,9 +5835,9 @@
     "href": "03Analyse.html#exercice-1",
     "title": "Décrire des données",
     "section": "Exercice 1",
-    "text": "Exercice 1\n\nFaites le tri à plat de la variable relig. Quelle est la modalité la plus fréquente ?\nExprimez ce tri à plat en pourcentages.\nQuelle proportion des enquêtés pratique la pêche ou la chasse (peche.chasse) ?\nCombien de valeurs manquantes contient la variable trav.satisf ? Que représentent-elles, à votre avis ?\n\nPour la question 4, regardez qui sont les personnes concernées, par exemple avec filter(is.na(trav.satisf)) : une valeur manquante a souvent un sens.",
+    "text": "Exercice 1\n\nFaites le tri à plat de la variable relig. Quelle est la modalité la plus fréquente ?\nExprimez ce tri à plat en pourcentages.\nQuelle proportion des enquêtés pratique la pêche ou la chasse (peche.chasse) ?\nCombien de valeurs manquantes contient la variable trav.satisf ? Que représentent-elles, à votre avis ?\n\nPour la question 4, regardez qui sont les personnes concernées, par exemple avec filter(is.na(trav.satisf)) : une valeur manquante a souvent un sens.\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\nd |&gt; count(relig, sort = TRUE)\n\n# A tibble: 6 × 2\n  relig                           n\n  &lt;fct&gt;                       &lt;int&gt;\n1 Appartenance sans pratique    760\n2 Pratiquant occasionnel        442\n3 Ni croyance ni appartenance   399\n4 Pratiquant regulier           266\n5 Rejet                          93\n6 NSP ou NVPR                    40\n\n\nLa modalité la plus fréquente est « Appartenance sans pratique ».\n\nd |&gt;\n  count(relig, sort = TRUE) |&gt;\n  mutate(pourcentage = round(100 * n / sum(n), 1))\n\n# A tibble: 6 × 3\n  relig                           n pourcentage\n  &lt;fct&gt;                       &lt;int&gt;       &lt;dbl&gt;\n1 Appartenance sans pratique    760        38  \n2 Pratiquant occasionnel        442        22.1\n3 Ni croyance ni appartenance   399        20  \n4 Pratiquant regulier           266        13.3\n5 Rejet                          93         4.7\n6 NSP ou NVPR                    40         2  \n\n\n\nd |&gt;\n  count(peche.chasse) |&gt;\n  mutate(pourcentage = round(100 * n / sum(n), 1))\n\n# A tibble: 2 × 3\n  peche.chasse     n pourcentage\n  &lt;fct&gt;        &lt;int&gt;       &lt;dbl&gt;\n1 Non           1776        88.8\n2 Oui            224        11.2\n\n\n11,2 % des enquêtés pratiquent la pêche ou la chasse.\n\nd |&gt; summarise(nombre_na = sum(is.na(trav.satisf)))\n\n# A tibble: 1 × 1\n  nombre_na\n      &lt;int&gt;\n1       952\n\nd |&gt;\n  filter(is.na(trav.satisf)) |&gt;\n  count(occup)\n\n# A tibble: 7 × 2\n  occup                     n\n  &lt;fct&gt;                 &lt;int&gt;\n1 Exerce une profession     1\n2 Chomeur                 134\n3 Etudiant, eleve          94\n4 Retraite                392\n5 Retire des affaires      77\n6 Au foyer                171\n7 Autre inactif            83\n\n\nLa variable trav.satisf compte 952 valeurs manquantes. À une exception près, elles concernent des personnes qui n’exercent pas de profession : chômeurs, retraités, étudiants, personnes au foyer. La question sur la satisfaction au travail ne leur a pas été posée. Ces NA ne sont donc pas des refus de répondre : une moyenne de satisfaction ne porte que sur les personnes qui travaillent.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5827,7 +5848,7 @@
     "section": "group_by()",
     "text": "group_by()\ngroup_by() découpe le tableau en groupes, selon les modalités d’une variable. Un summarise() placé ensuite calcule ses indicateurs dans chaque groupe, et renvoie une ligne par groupe :\n\nd |&gt;\n  group_by(sexe) |&gt;\n  summarise(\n    effectif = n(),\n    age_moyen = mean(age),\n    tv_moyenne = mean(heures.tv, na.rm = TRUE)\n  )\n\n# A tibble: 2 × 4\n  sexe  effectif age_moyen tv_moyenne\n  &lt;fct&gt;    &lt;int&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 Homme      899      48.2       2.22\n2 Femme     1101      48.2       2.27\n\n\nn() donne l’effectif de chaque groupe. Prenez l’habitude de toujours l’inclure : c’est lui qui vous montre si une comparaison repose sur assez d’observations.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5838,7 +5859,7 @@
     "section": "Grouper sur plusieurs variables",
     "text": "Grouper sur plusieurs variables\nOn peut grouper selon plusieurs variables à la fois. On obtient alors une ligne par combinaison de modalités :\n\nd |&gt;\n  group_by(sexe, sport) |&gt;\n  summarise(\n    effectif = n(),\n    age_moyen = mean(age),\n    .groups = \"drop\"\n  )\n\n# A tibble: 4 × 4\n  sexe  sport effectif age_moyen\n  &lt;fct&gt; &lt;fct&gt;    &lt;int&gt;     &lt;dbl&gt;\n1 Homme Non        530      53.3\n2 Homme Oui        369      40.7\n3 Femme Non        747      51.5\n4 Femme Oui        354      41.1\n\n\nL’argument .groups = \"drop\" supprime le regroupement une fois le calcul fait. Sans lui, R affiche un message pour vous prévenir que le résultat est encore groupé, ce qui modifierait le comportement des opérations suivantes.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5849,7 +5870,7 @@
     "section": "L’outil central du cours",
     "text": "L’outil central du cours\nLa combinaison suivante est la plus utile de tout ce que nous verrons :\n\ndécouper en groupes (group_by()), calculer un indicateur par groupe (summarise()), trier le résultat (arrange()).\n\nPar exemple, quelles qualifications regardent le plus la télévision ?\n\nd |&gt;\n  group_by(qualif) |&gt;\n  summarise(\n    effectif = n(),\n    tv_moyenne = mean(heures.tv, na.rm = TRUE)\n  ) |&gt;\n  arrange(desc(tv_moyenne))\n\n# A tibble: 8 × 3\n  qualif                   effectif tv_moyenne\n  &lt;fct&gt;                       &lt;int&gt;      &lt;dbl&gt;\n1 Ouvrier specialise            203       3.00\n2 Ouvrier qualifie              292       2.47\n3 Employe                       594       2.42\n4 Technicien                     86       2.11\n5 Profession intermediaire      160       2.03\n6 &lt;NA&gt;                          347       2.01\n7 Autre                          58       1.87\n8 Cadre                         260       1.60\n\n\nRegardez la colonne effectif avant d’interpréter les moyennes : tous les groupes n’ont pas la même taille.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5858,9 +5879,9 @@
     "href": "03Analyse.html#exercice-2",
     "title": "Décrire des données",
     "section": "Exercice 2",
-    "text": "Exercice 2\nPour chaque question, écrivez en commentaire, avant de lancer le code, le résultat que vous attendez.\n\nL’âge moyen varie-t-il selon le niveau d’études (nivetud) ?\nLes personnes qui déclarent lire des bandes dessinées (lecture.bd) sont-elles plus jeunes que les autres ?\nComparez le nombre moyen d’heures de télévision selon la qualification. Y a-t-il des groupes trop petits pour que la comparaison soit sérieuse ?",
+    "text": "Exercice 2\nPour chaque question, écrivez en commentaire, avant de lancer le code, le résultat que vous attendez.\n\nL’âge moyen varie-t-il selon le niveau d’études (nivetud) ?\nLes personnes qui déclarent lire des bandes dessinées (lecture.bd) sont-elles plus jeunes que les autres ?\nComparez le nombre moyen d’heures de télévision selon la qualification. Y a-t-il des groupes trop petits pour que la comparaison soit sérieuse ?\n\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\nd |&gt;\n  group_by(nivetud) |&gt;\n  summarise(effectif = n(), age_moyen = mean(age))\n\n# A tibble: 9 × 3\n  nivetud                                                     effectif age_moyen\n  &lt;fct&gt;                                                          &lt;int&gt;     &lt;dbl&gt;\n1 N'a jamais fait d'etudes                                          39      59.7\n2 A arrete ses etudes, avant la derniere annee d'etudes prim…       86      63.0\n3 Derniere annee d'etudes primaires                                341      63.4\n4 1er cycle                                                        204      50.9\n5 2eme cycle                                                       183      47.8\n6 Enseignement technique ou professionnel court                    463      45.2\n7 Enseignement technique ou professionnel long                     131      40.0\n8 Enseignement superieur y compris technique superieur             441      43.3\n9 &lt;NA&gt;                                                             112      22.8\n\n\nLes enquêtés les moins diplômés sont les plus âgés : les études se sont allongées au fil des générations. La ligne NA regroupe 112 enquêtés de 23 ans en moyenne, sans doute encore en études.\n\nd |&gt;\n  group_by(lecture.bd) |&gt;\n  summarise(effectif = n(), age_moyen = mean(age))\n\n# A tibble: 2 × 3\n  lecture.bd effectif age_moyen\n  &lt;fct&gt;         &lt;int&gt;     &lt;dbl&gt;\n1 Non            1953      48.3\n2 Oui              47      43.7\n\n\nLes lecteurs de bandes dessinées ont en moyenne 44 ans, contre 48 ans pour les autres. Mais ils ne sont que 47 : la différence est à prendre avec prudence.\n\nd |&gt;\n  group_by(qualif) |&gt;\n  summarise(\n    effectif = n(),\n    tv_moyenne = mean(heures.tv, na.rm = TRUE)\n  ) |&gt;\n  arrange(desc(tv_moyenne))\n\n# A tibble: 8 × 3\n  qualif                   effectif tv_moyenne\n  &lt;fct&gt;                       &lt;int&gt;      &lt;dbl&gt;\n1 Ouvrier specialise            203       3.00\n2 Ouvrier qualifie              292       2.47\n3 Employe                       594       2.42\n4 Technicien                     86       2.11\n5 Profession intermediaire      160       2.03\n6 &lt;NA&gt;                          347       2.01\n7 Autre                          58       1.87\n8 Cadre                         260       1.60\n\n\nLes ouvriers spécialisés regardent la télévision 3 heures par jour en moyenne, les cadres 1,6 heure. Les plus petits groupes, « Autre » (58 personnes) et « Technicien » (86), restent comparables, mais leurs moyennes sont moins sûres que celles des employés (594). La ligne NA (347 personnes) regroupe surtout des personnes sans emploi : ce n’est pas une qualification.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5871,7 +5892,7 @@
     "section": "L’analyse bivariée",
     "text": "L’analyse bivariée\nFaire une analyse bivariée, c’est étudier la relation entre deux variables. Sont-elles liées ? Les valeurs de l’une varient-elles avec celles de l’autre ? Ou sont-elles indépendantes ?",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5882,7 +5903,7 @@
     "section": "Deux variables qualitatives",
     "text": "Deux variables qualitatives\nPour croiser deux variables qualitatives, on compte les effectifs de chaque combinaison de modalités. Il suffit de donner deux variables à count() :\n\nd |&gt; count(qualif, sexe)\n\n# A tibble: 16 × 3\n   qualif                   sexe      n\n   &lt;fct&gt;                    &lt;fct&gt; &lt;int&gt;\n 1 Ouvrier specialise       Homme    96\n 2 Ouvrier specialise       Femme   107\n 3 Ouvrier qualifie         Homme   229\n 4 Ouvrier qualifie         Femme    63\n 5 Technicien               Homme    66\n 6 Technicien               Femme    20\n 7 Profession intermediaire Homme    88\n 8 Profession intermediaire Femme    72\n 9 Cadre                    Homme   145\n10 Cadre                    Femme   115\n11 Employe                  Homme    96\n12 Employe                  Femme   498\n13 Autre                    Homme    21\n14 Autre                    Femme    37\n15 &lt;NA&gt;                     Homme   158\n16 &lt;NA&gt;                     Femme   189\n\n\nLe résultat est correct, mais peu lisible : une ligne par combinaison. La fonction pivot_wider() le remet en forme de tableau à double entrée. L’argument names_from indique la variable dont les modalités deviennent des colonnes, et values_from celle qui remplit les cases :\n\nd |&gt;\n  count(qualif, sexe) |&gt;\n  pivot_wider(names_from = sexe, values_from = n)\n\n# A tibble: 8 × 3\n  qualif                   Homme Femme\n  &lt;fct&gt;                    &lt;int&gt; &lt;int&gt;\n1 Ouvrier specialise          96   107\n2 Ouvrier qualifie           229    63\n3 Technicien                  66    20\n4 Profession intermediaire    88    72\n5 Cadre                      145   115\n6 Employe                     96   498\n7 Autre                       21    37\n8 &lt;NA&gt;                       158   189",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5893,7 +5914,7 @@
     "section": "Pourcentages en ligne",
     "text": "Pourcentages en ligne\nLes effectifs bruts ne se comparent pas, car les groupes n’ont pas la même taille. On calcule donc des pourcentages à l’intérieur de chaque ligne. Pour cela, on groupe par qualif avant de calculer les pourcentages : sum(n) est alors le total de chaque qualification, et non le total général.\n\nd |&gt;\n  count(qualif, sexe) |&gt;\n  group_by(qualif) |&gt;\n  mutate(pourcentage = round(100 * n / sum(n), 1)) |&gt;\n  ungroup() |&gt;\n  select(-n) |&gt;\n  pivot_wider(names_from = sexe, values_from = pourcentage)\n\n# A tibble: 8 × 3\n  qualif                   Homme Femme\n  &lt;fct&gt;                    &lt;dbl&gt; &lt;dbl&gt;\n1 Ouvrier specialise        47.3  52.7\n2 Ouvrier qualifie          78.4  21.6\n3 Technicien                76.7  23.3\n4 Profession intermediaire  55    45  \n5 Cadre                     55.8  44.2\n6 Employe                   16.2  83.8\n7 Autre                     36.2  63.8\n8 &lt;NA&gt;                      45.5  54.5\n\n\nungroup() supprime le regroupement une fois les pourcentages calculés, et select(-n) retire les effectifs pour ne garder que les pourcentages dans le tableau final.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5904,7 +5925,7 @@
     "section": "Ligne ou colonne ?",
     "text": "Ligne ou colonne ?\nLe choix entre pourcentages en ligne et en colonne change complètement la lecture :\n\nles pourcentages en ligne répondent à la question : parmi les cadres, quelle est la part des femmes ?\nles pourcentages en colonne répondent à la question : parmi les femmes, quelle est la part des cadres ?\n\nPour obtenir les pourcentages en colonne, il suffit de grouper par sexe au lieu de qualif.\n\n\n\n\n\n\nImportant\n\n\n\nCe sont deux questions différentes, et deux tableaux différents, calculés à partir des mêmes effectifs. Sachez toujours dire lequel des deux vous êtes en train de lire : c’est là que se logent la plupart des interprétations fausses.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5913,9 +5934,9 @@
     "href": "03Analyse.html#deux-variables-quantitatives",
     "title": "Décrire des données",
     "section": "Deux variables quantitatives",
-    "text": "Deux variables quantitatives\nPour deux variables numériques, on mesure la relation par le coefficient de corrélation, compris entre -1 et 1 :\n\nd |&gt; summarise(\n  correlation = cor(age, heures.tv, use = \"complete.obs\")\n)\n\n# A tibble: 1 × 1\n  correlation\n        &lt;dbl&gt;\n1       0.178\n\n\nL’argument use = \"complete.obs\" joue le rôle de na.rm = TRUE : il écarte les observations dont l’une des deux valeurs manque.\n\n\n\n\n\n\nAvertissement\n\n\n\nUne corrélation mesure une association linéaire, pas une causalité. Et une corrélation proche de zéro n’exclut pas une relation d’une autre forme : nous le verrons graphiquement à la séance prochaine.",
+    "text": "Deux variables quantitatives\nPour deux variables numériques, on mesure la relation par le coefficient de corrélation, compris entre -1 et 1 :\n\nd |&gt; summarise(\n  correlation = cor(age, heures.tv, use = \"complete.obs\")\n)\n\n# A tibble: 1 × 1\n  correlation\n        &lt;dbl&gt;\n1       0.178\n\n\nL’argument use = \"complete.obs\" joue le rôle de na.rm = TRUE : il écarte les observations dont l’une des deux valeurs manque.\n\n\n\n\n\n\nAvertissement\n\n\n\nUne corrélation mesure une association linéaire, pas une causalité. Et une corrélation proche de zéro n’exclut pas une relation d’une autre forme : nous le verrons graphiquement au chapitre suivant.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5924,9 +5945,9 @@
     "href": "03Analyse.html#exercice-3",
     "title": "Décrire des données",
     "section": "Exercice 3",
-    "text": "Exercice 3\nProduisez un court script commenté qui répond aux questions suivantes :\n\nQuel est l’âge moyen des enquêtés, selon leur qualification ?\nLe nombre d’heures de télévision varie-t-il selon le niveau d’études ?\nLes hommes et les femmes déclarent-ils pratiquer un sport dans les mêmes proportions ?\n\nPour chaque question, affichez l’effectif de chaque groupe à côté de l’indicateur, et écrivez une phrase de commentaire qui dit ce que vous lisez dans le résultat.",
+    "text": "Exercice 3\nProduisez un court script commenté qui répond aux questions suivantes :\n\nQuel est l’âge moyen des enquêtés, selon leur qualification ?\nLe nombre d’heures de télévision varie-t-il selon le niveau d’études ?\nLes hommes et les femmes déclarent-ils pratiquer un sport dans les mêmes proportions ?\n\nPour chaque question, affichez l’effectif de chaque groupe à côté de l’indicateur, et écrivez une phrase de commentaire qui dit ce que vous lisez dans le résultat.\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\n# L'âge moyen varie peu selon la qualification : de 46 à 50 ans.\nd |&gt;\n  group_by(qualif) |&gt;\n  summarise(effectif = n(), age_moyen = mean(age)) |&gt;\n  arrange(desc(age_moyen))\n\n# A tibble: 8 × 3\n  qualif                   effectif age_moyen\n  &lt;fct&gt;                       &lt;int&gt;     &lt;dbl&gt;\n1 Ouvrier qualifie              292      50.0\n2 Cadre                         260      49.7\n3 Profession intermediaire      160      49.1\n4 Ouvrier specialise            203      48.9\n5 &lt;NA&gt;                          347      47.9\n6 Autre                          58      47.0\n7 Employe                       594      46.7\n8 Technicien                     86      45.9\n\n\n\n# Le temps passé devant la télévision diminue avec le niveau d'études :\n# environ 3 heures par jour pour les niveaux primaires, 1,6 heure\n# pour l'enseignement supérieur. Le groupe « N'a jamais fait d'études »\n# ne compte que 39 personnes.\nd |&gt;\n  group_by(nivetud) |&gt;\n  summarise(\n    effectif = n(),\n    tv_moyenne = mean(heures.tv, na.rm = TRUE)\n  )\n\n# A tibble: 9 × 3\n  nivetud                                                    effectif tv_moyenne\n  &lt;fct&gt;                                                         &lt;int&gt;      &lt;dbl&gt;\n1 N'a jamais fait d'etudes                                         39       2.82\n2 A arrete ses etudes, avant la derniere annee d'etudes pri…       86       3.13\n3 Derniere annee d'etudes primaires                               341       2.97\n4 1er cycle                                                       204       2.54\n5 2eme cycle                                                      183       2.02\n6 Enseignement technique ou professionnel court                   463       2.32\n7 Enseignement technique ou professionnel long                    131       2.11\n8 Enseignement superieur y compris technique superieur            441       1.57\n9 &lt;NA&gt;                                                            112       1.53\n\n\n\n# 41 % des hommes déclarent pratiquer un sport, contre 32 % des femmes.\nd |&gt;\n  count(sexe, sport) |&gt;\n  group_by(sexe) |&gt;\n  mutate(pourcentage = round(100 * n / sum(n), 1))\n\n# A tibble: 4 × 4\n# Groups:   sexe [2]\n  sexe  sport     n pourcentage\n  &lt;fct&gt; &lt;fct&gt; &lt;int&gt;       &lt;dbl&gt;\n1 Homme Non     530        59  \n2 Homme Oui     369        41  \n3 Femme Non     747        67.8\n4 Femme Oui     354        32.2\n\n\nPour la question 3, on groupe par sexe avant de calculer les pourcentages : on compare ainsi la part de sportifs parmi les hommes et parmi les femmes. Grouper par sport répondrait à une autre question : parmi les sportifs, quelle part d’hommes ?",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5937,7 +5958,7 @@
     "section": "Les leçons swirl",
     "text": "Les leçons swirl\n\nlibrary(swirl)\nswirl()\n\nFaites les leçons Valeurs_manquantes puis Decrire_les_donnees, et déposez les fichiers .txt sur Moodle. Si vous bloquez sur une question, voir Si vous êtes bloqués.\nSi vous voulez pratiquer davantage, la leçon facultative Exercice_2 reprend le chargement et le résumé d’un tableau. Voir LECONS_OPTIONNELLES.md.",
     "crumbs": [
-      "Séance 3 : analyse",
+      "Chapitre 3 : analyse",
       "Décrire des données"
     ]
   },
@@ -5946,9 +5967,9 @@
     "href": "04RepresentationsGraphiques.html",
     "title": "Représenter des données",
     "section": "",
-    "text": "Le script suivant s’exécute sans erreur et sans avertissement. Pourtant, le commentaire qui l’accompagne est faux : le résultat ne correspond pas à ce qui est annoncé.\n\n# On écarte les personnes qui déclarent plus de 10h de télévision par jour,\n# puis on calcule la moyenne sur l'ensemble des enquêtés.\nd |&gt; mutate(heures.tv = if_else(heures.tv &gt; 10, NA_real_, heures.tv))\n\nd |&gt; summarise(\n  effectif = n(),\n  tv_moyenne_tous = mean(heures.tv, na.rm = TRUE)\n)\n\nLa fonction if_else() est nouvelle : elle remplace par une valeur manquante (NA_real_) les heures de télévision supérieures à 10, et laisse les autres inchangées. Le reste ne fait appel qu’à ce que vous connaissez.\nTrouvez ce qui ne va pas, corrigez le script, et expliquez en une ou deux phrases ce qui s’est passé. Il y a deux problèmes. Vous pouvez exécuter le code, mais cherchez d’abord en le lisant.\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\nd_corrige &lt;- d |&gt; mutate(heures.tv = if_else(heures.tv &gt; 10, NA_real_, heures.tv))\n\nd_corrige |&gt; summarise(\n  effectif = sum(!is.na(heures.tv)),\n  tv_moyenne = mean(heures.tv, na.rm = TRUE)\n)\n\n# A tibble: 1 × 2\n  effectif tv_moyenne\n     &lt;int&gt;      &lt;dbl&gt;\n1     1991       2.23\n\n\nDeux erreurs se superposent.\nD’abord, le mutate() n’est pas assigné. Le tableau modifié s’affiche, puis disparaît : d est inchangé, et le recodage annoncé n’a jamais lieu. Le summarise() porte donc sur les données d’origine.\nEnsuite, l’effectif affiché est trompeur. n() compte toutes les lignes du tableau, soit 2000, alors que la moyenne, à cause de na.rm = TRUE, ne porte que sur les répondants. Pour afficher le nombre de personnes réellement prises en compte, il faut compter les valeurs non manquantes : sum(!is.na(heures.tv)).\nSi vous n’aviez repéré aucun des deux problèmes, relisez la partie « Les erreurs silencieuses » de la séance 3.",
+    "text": "Le script suivant s’exécute sans erreur et sans avertissement. Pourtant, le commentaire qui l’accompagne est faux : le résultat ne correspond pas à ce qui est annoncé.\n\n# On écarte les personnes qui déclarent plus de 10h de télévision par jour,\n# puis on calcule la moyenne sur l'ensemble des enquêtés.\nd |&gt; mutate(heures.tv = if_else(heures.tv &gt; 10, NA, heures.tv))\n\nd |&gt; summarise(\n  effectif = n(),\n  tv_moyenne_tous = mean(heures.tv, na.rm = TRUE)\n)\n\nLa fonction if_else() est nouvelle : elle remplace par une valeur manquante (NA) les heures de télévision supérieures à 10, et laisse les autres inchangées. Le reste ne fait appel qu’à ce que vous connaissez.\nTrouvez ce qui ne va pas, corrigez le script, et expliquez en une ou deux phrases ce qui s’est passé. Il y a deux problèmes. Vous pouvez exécuter le code, mais cherchez d’abord en le lisant.\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\nd_corrige &lt;- d |&gt; mutate(heures.tv = if_else(heures.tv &gt; 10, NA_real_, heures.tv))\n\nd_corrige |&gt; summarise(\n  effectif = sum(!is.na(heures.tv)),\n  tv_moyenne = mean(heures.tv, na.rm = TRUE)\n)\n\n# A tibble: 1 × 2\n  effectif tv_moyenne\n     &lt;int&gt;      &lt;dbl&gt;\n1     1991       2.23\n\n\nDeux erreurs se superposent.\nD’abord, le mutate() n’est pas assigné. Le tableau modifié s’affiche, puis disparaît : d est inchangé, et le recodage annoncé n’a jamais lieu. Le summarise() porte donc sur les données d’origine.\nEnsuite, l’effectif affiché est trompeur. n() compte toutes les lignes du tableau, soit 2000, alors que la moyenne, à cause de na.rm = TRUE, ne porte que sur les répondants. Pour afficher le nombre de personnes réellement prises en compte, il faut compter les valeurs non manquantes : sum(!is.na(heures.tv)).\nSi vous n’aviez repéré aucun des deux problèmes, relisez la partie « Les erreurs silencieuses » du chapitre 3.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -5957,9 +5978,9 @@
     "href": "04RepresentationsGraphiques.html#ce-quun-tableau-ne-dit-pas",
     "title": "Représenter des données",
     "section": "Ce qu’un tableau ne dit pas",
-    "text": "Ce qu’un tableau ne dit pas\nLa séance dernière, nous avons résumé l’âge des enquêtés :\n\nd |&gt; summarise(\n  moyenne = mean(age),\n  ecart_type = sd(age),\n  mediane = median(age)\n)\n\n# A tibble: 1 × 3\n  moyenne ecart_type mediane\n    &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;\n1    48.2       16.9      48\n\n\nCes trois nombres ne disent pas tout. Quelle est la forme de la distribution ? Les âges sont-ils répartis régulièrement, ou concentrés autour de quelques valeurs ? Y a-t-il des valeurs aberrantes ? Voici la même variable représentée par un histogramme :\n\n\n\n\n\n\n\n\n\nDeux variables qui ont la même moyenne et le même écart-type peuvent avoir des distributions très différentes. Un graphique permet de le voir d’un coup d’œil. C’est ce que nous allons apprendre à faire dans cette séance.",
+    "text": "Ce qu’un tableau ne dit pas\nAu chapitre précédent, nous avons résumé l’âge des enquêtés :\n\nd |&gt; summarise(\n  moyenne = mean(age),\n  ecart_type = sd(age),\n  mediane = median(age)\n)\n\n# A tibble: 1 × 3\n  moyenne ecart_type mediane\n    &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;\n1    48.2       16.9      48\n\n\nCes trois nombres ne disent pas tout. Quelle est la forme de la distribution ? Les âges sont-ils répartis régulièrement, ou concentrés autour de quelques valeurs ? Y a-t-il des valeurs aberrantes ? Voici la même variable représentée par un histogramme :\n\n\n\n\n\n\n\n\n\nDeux variables qui ont la même moyenne et le même écart-type peuvent avoir des distributions très différentes. Un graphique permet de le voir d’un coup d’œil. C’est ce que nous allons apprendre à faire dans ce chapitre.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -5968,9 +5989,9 @@
     "href": "04RepresentationsGraphiques.html#ggplot2",
     "title": "Représenter des données",
     "section": "ggplot2",
-    "text": "ggplot2\nNous utiliserons ggplot2, le paquet du tidyverse consacré aux graphiques. Il demande d’apprendre une petite syntaxe supplémentaire, mais celle-ci est cohérente : une fois les principes compris, on construit des graphiques complexes en assemblant des éléments simples.\nUne de ses particularités est que les données d’un graphique sont toujours dans un tableau de données. ggplot2 est chargé par library(tidyverse) : votre script commence donc comme d’habitude.\n\nlibrary(tidyverse)\nlibrary(questionr)\ndata(hdv2003)\nd &lt;- as_tibble(hdv2003)\n\nCette séance s’inspire du chapitre 8 de Barnier et Kauffmann (2023).",
+    "text": "ggplot2\nNous utiliserons ggplot2, le paquet du tidyverse consacré aux graphiques. Il demande d’apprendre une petite syntaxe supplémentaire, mais celle-ci est cohérente : une fois les principes compris, on construit des graphiques complexes en assemblant des éléments simples.\nUne de ses particularités est que les données d’un graphique sont toujours dans un tableau de données. ggplot2 est chargé par library(tidyverse) : votre script commence donc comme d’habitude.\n\nlibrary(tidyverse)\nlibrary(questionr)\ndata(hdv2003)\nd &lt;- as_tibble(hdv2003)\n\nCe chapitre s’inspire du chapitre 8 de Barnier et Kauffmann (2023).",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -5981,7 +6002,7 @@
     "section": "Les données",
     "text": "Les données\nUn graphique commence par la fonction ggplot(), à laquelle on passe le tableau de données :\n\nggplot(d)\n\n\n\n\n\n\n\n\nSeul un cadre gris s’affiche : nous n’avons pas encore dit quoi représenter, ni comment.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -5992,7 +6013,7 @@
     "section": "La géométrie",
     "text": "La géométrie\nIl faut ensuite choisir un type de représentation, appelé géométrie (geom) : un histogramme, des barres, des points… Chaque géométrie correspond à une fonction dont le nom commence par geom_. On l’ajoute au graphique avec l’opérateur + :\n\nggplot(d) + geom_histogram()\n\nCette commande ne fonctionne pas encore : R ne sait pas quelle variable représenter.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6003,7 +6024,7 @@
     "section": "L’esthétique",
     "text": "L’esthétique\nOn indique la variable à représenter avec la fonction aes() (pour aesthetics), placée dans la géométrie. Ici, x désigne la variable portée par l’axe horizontal :\n\nggplot(d) + geom_histogram(aes(x = age))\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\n\nPour représenter une autre variable, il suffit de changer la valeur de x :\n\nggplot(d) + geom_histogram(aes(x = heures.tv))\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\nWarning: Removed 5 rows containing non-finite outside the scale range\n(`stat_bin()`).\n\n\n\n\n\n\n\n\n\nR affiche cette fois un avertissement (warning), qui signale que des lignes ont été écartées : ce sont les valeurs manquantes. Un avertissement n’est pas une erreur : le graphique est bien produit. Mais lisez-le, car il vous dit combien d’observations ne sont pas représentées.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6014,7 +6035,7 @@
     "section": "En résumé",
     "text": "En résumé\nPour faire un graphique, il faut trois choses :\n\ndes données : l’argument de ggplot() ;\nun type de représentation : une fonction geom_...() ;\nune ou des variables : l’argument aes().\n\nOn relie ces éléments avec l’opérateur +.\n\n\n\n\n\n\nAvertissement\n\n\n\nDans un graphique, on enchaîne les éléments avec +, et non avec |&gt;. Si vous utilisez |&gt; par erreur, R vous le signale par un message qui se termine par Did you use %&gt;% or |&gt; instead of +?",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6025,7 +6046,7 @@
     "section": "Une variable quantitative : l’histogramme",
     "text": "Une variable quantitative : l’histogramme\nL’histogramme découpe une variable quantitative en intervalles, et représente par une barre le nombre d’observations dans chacun. L’argument bins contrôle le nombre d’intervalles. Comparez :\n\nggplot(d) +\n  geom_histogram(aes(x = age), bins = 10)\n\n\n\n\n\n\n\n\n\nggplot(d) +\n  geom_histogram(aes(x = age), bins = 50)\n\n\n\n\n\n\n\n\nAvec 10 intervalles, la distribution paraît régulière ; avec 50, des irrégularités apparaissent. Aucun des deux n’est « le bon » : le nombre d’intervalles change ce que vous voyez.\n\n\n\n\n\n\nAvertissement\n\n\n\nChoisissez un découpage adapté à ce que vous étudiez, et essayez-en toujours plusieurs avant de conclure quoi que ce soit sur la forme d’une distribution.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6034,9 +6055,9 @@
     "href": "04RepresentationsGraphiques.html#une-variable-qualitative-le-diagramme-en-barres",
     "title": "Représenter des données",
     "section": "Une variable qualitative : le diagramme en barres",
-    "text": "Une variable qualitative : le diagramme en barres\nPour une variable qualitative, on utilise geom_bar(), qui dessine une barre par modalité :\n\nggplot(d) + geom_bar(aes(x = qualif))\n\n\n\n\n\n\n\n\ngeom_bar() compte lui-même les effectifs : c’est l’équivalent graphique du count() de la séance dernière. Comme count(), il fait apparaître les valeurs manquantes sous la forme d’une barre NA.\nLes étiquettes se chevauchent : les noms des modalités sont trop longs pour tenir sous les barres. La solution la plus simple est d’inverser les axes, en passant la variable en y :\n\nggplot(d) + geom_bar(aes(y = qualif))",
+    "text": "Une variable qualitative : le diagramme en barres\nPour une variable qualitative, on utilise geom_bar(), qui dessine une barre par modalité :\n\nggplot(d) + geom_bar(aes(x = qualif))\n\n\n\n\n\n\n\n\ngeom_bar() compte lui-même les effectifs : c’est l’équivalent graphique du count() du chapitre précédent. Comme count(), il fait apparaître les valeurs manquantes sous la forme d’une barre NA.\nLes étiquettes se chevauchent : les noms des modalités sont trop longs pour tenir sous les barres. La solution la plus simple est d’inverser les axes, en passant la variable en y :\n\nggplot(d) + geom_bar(aes(y = qualif))",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6045,9 +6066,9 @@
     "href": "04RepresentationsGraphiques.html#exercice-1",
     "title": "Représenter des données",
     "section": "Exercice 1",
-    "text": "Exercice 1\n\nReprésentez la distribution du nombre de frères et sœurs (freres.soeurs).\nFaites un diagramme en barres de la variable relig. Comparez avec le count() de la séance dernière.\nReprésentez la distribution de l’âge avec 5, puis 20, puis 100 intervalles. Que voyez-vous apparaître, et que voyez-vous disparaître ?\n\nLa question 3 est la plus importante : un graphique est le résultat de choix, pas une simple photographie des données.",
+    "text": "Exercice 1\n\nReprésentez la distribution du nombre de frères et sœurs (freres.soeurs).\nFaites un diagramme en barres de la variable relig. Comparez avec le count() du chapitre précédent.\nReprésentez la distribution de l’âge avec 5, puis 20, puis 100 intervalles. Que voyez-vous apparaître, et que voyez-vous disparaître ?\n\nLa question 3 est la plus importante : un graphique est le résultat de choix, pas une simple photographie des données.\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\nggplot(d) + geom_bar(aes(x = freres.soeurs))\n\n\n\n\n\n\n\n\nfreres.soeurs ne prend que des valeurs entières, et peu nombreuses : un diagramme en barres donne une barre par valeur. Un histogramme avec binwidth = 1 donnerait le même résultat. La plupart des enquêtés ont un ou deux frères et sœurs, mais la distribution s’étire jusqu’à 22.\n\nggplot(d) + geom_bar(aes(y = relig))\n\n\n\n\n\n\n\n\nLes longueurs des barres sont les effectifs du count(relig) du chapitre précédent.\n\nggplot(d) + geom_histogram(aes(x = age), bins = 5)\n\n\n\n\n\n\n\n\n\nggplot(d) + geom_histogram(aes(x = age), bins = 20)\n\n\n\n\n\n\n\n\n\nggplot(d) + geom_histogram(aes(x = age), bins = 100)\n\n\n\n\n\n\n\n\nAvec 5 intervalles, on ne voit plus qu’une masse grossière : la forme de la distribution disparaît. Avec 100 intervalles, des trous apparaissent : les âges sont des nombres entiers, entre 18 et 97 ans, et il y a plus d’intervalles que de valeurs possibles. Ces trous ne disent rien des enquêtés, ils viennent du découpage. Avec 20 intervalles, on lit la forme générale sans ces artefacts.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6058,7 +6079,7 @@
     "section": "Nuage de points",
     "text": "Nuage de points\nPour croiser deux variables quantitatives, on utilise geom_point(), qui place un point par observation. Il lui faut une variable en x et une variable en y :\n\nggplot(d) + geom_point(aes(x = age, y = heures.tv))\n\nWarning: Removed 5 rows containing missing values or values outside the scale range\n(`geom_point()`).",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6069,7 +6090,7 @@
     "section": "Le problème des points superposés",
     "text": "Le problème des points superposés\nCe graphique est trompeur. Il y a 2000 observations, mais beaucoup d’entre elles se superposent exactement : l’âge et les heures de télévision sont des nombres entiers, ou presque, et de nombreux enquêtés partagent les mêmes valeurs. Impossible de savoir où se concentrent les enquêtés.\nDeux réglages rendent la densité visible. La transparence, réglée par l’argument alpha entre 0 (invisible) et 1 (opaque), fait apparaître plus foncées les zones où les points s’accumulent. geom_jitter() remplace geom_point() et décale légèrement chaque point au hasard, pour que les points superposés se séparent.\n\nggplot(d) + geom_jitter(aes(x = age, y = heures.tv), alpha = 0.15)\n\nWarning: Removed 5 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nLe premier graphique n’était pas faux, il était illisible. Un graphique peut cacher l’information aussi bien qu’un tableau.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6078,9 +6099,9 @@
     "href": "04RepresentationsGraphiques.html#une-variable-quantitative-selon-une-qualitative-la-boîte-à-moustaches",
     "title": "Représenter des données",
     "section": "Une variable quantitative selon une qualitative : la boîte à moustaches",
-    "text": "Une variable quantitative selon une qualitative : la boîte à moustaches\nPour comparer la distribution d’une variable quantitative entre les modalités d’une variable qualitative, on utilise la boîte à moustaches, avec geom_boxplot() :\n\nggplot(d) + geom_boxplot(aes(x = sexe, y = heures.tv))\n\nWarning: Removed 5 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nUne boîte à moustaches se lit ainsi :\n\nle trait épais au milieu de la boîte est la médiane ;\nla boîte va du premier au troisième quartile : elle contient la moitié centrale des observations ;\nles moustaches s’étendent jusqu’aux valeurs les plus extrêmes, dans la limite d’une fois et demie la hauteur de la boîte ;\nles points au-delà des moustaches sont affichés individuellement : ce sont les valeurs atypiques.\n\nCe sont exactement les quartiles calculés la séance dernière avec quantile(). La boîte en est la traduction visuelle.\nLa boîte à moustaches est particulièrement utile pour comparer de nombreux groupes. Ici encore, on met la variable qualitative en y pour que les étiquettes restent lisibles :\n\nggplot(d) + geom_boxplot(aes(x = heures.tv, y = qualif))\n\nWarning: Removed 5 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nComparez avec le tableau group_by(qualif) |&gt; summarise(...) de la séance dernière : c’est la même information, mais la dispersion de chaque groupe devient visible.",
+    "text": "Une variable quantitative selon une qualitative : la boîte à moustaches\nPour comparer la distribution d’une variable quantitative entre les modalités d’une variable qualitative, on utilise la boîte à moustaches, avec geom_boxplot() :\n\nggplot(d) + geom_boxplot(aes(x = sexe, y = heures.tv))\n\nWarning: Removed 5 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nUne boîte à moustaches se lit ainsi :\n\nle trait épais au milieu de la boîte est la médiane ;\nla boîte va du premier au troisième quartile : elle contient la moitié centrale des observations ;\nles moustaches s’étendent jusqu’aux valeurs les plus extrêmes, dans la limite d’une fois et demie la hauteur de la boîte ;\nles points au-delà des moustaches sont affichés individuellement : ce sont les valeurs atypiques.\n\nCe sont exactement les quartiles calculés au chapitre précédent avec quantile(). La boîte en est la traduction visuelle.\nLa boîte à moustaches est particulièrement utile pour comparer de nombreux groupes. Ici encore, on met la variable qualitative en y pour que les étiquettes restent lisibles :\n\nggplot(d) + geom_boxplot(aes(x = heures.tv, y = qualif))\n\nWarning: Removed 5 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nComparez avec le tableau group_by(qualif) |&gt; summarise(...) du chapitre précédent : c’est la même information, mais la dispersion de chaque groupe devient visible.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6091,7 +6112,7 @@
     "section": "Relier un attribut à une variable",
     "text": "Relier un attribut à une variable\nUn mappage met en relation un attribut graphique (la position, la couleur, la taille, la transparence…) et une variable du tableau. Les arguments x et y que nous avons utilisés jusqu’ici sont des mappages : ils relient la position horizontale et verticale à des variables. Tous les mappages se déclarent dans aes().\nPar exemple, l’argument color relie la couleur des points à une variable :\n\nggplot(d) +\n  geom_jitter(aes(x = age, y = heures.tv, color = sexe), alpha = 0.3)\n\nWarning: Removed 5 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nR choisit les couleurs et ajoute une légende automatiquement. On peut de la même manière relier la taille des points à une variable avec size :\n\nggplot(d) +\n  geom_jitter(\n    aes(x = age, y = heures.tv, color = sexe, size = freres.soeurs),\n    alpha = 0.3\n  )\n\nWarning: Removed 5 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nChaque géométrie a sa propre liste de mappages possibles, indiquée dans sa page d’aide (rubrique Aesthetics).",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6102,7 +6123,7 @@
     "section": "aes() ou pas aes() ?",
     "text": "aes() ou pas aes() ?\nOn veut parfois fixer un attribut sans le relier à une variable : mettre tous les points en rouge, par exemple. On utilise alors le même argument color, mais en dehors de aes() :\n\nggplot(d) +\n  geom_jitter(\n    aes(x = age, y = heures.tv),\n    color = \"darkred\", alpha = 0.2\n  )\n\nWarning: Removed 5 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nComparez avec le graphique où color est dans aes() :\n\nggplot(d) +\n  geom_jitter(\n    aes(x = age, y = heures.tv,\n        color = sexe),\n    alpha = 0.2\n  )\n\nWarning: Removed 5 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nC’est pour la même raison que alpha est placé en dehors de aes() depuis le début : la transparence est la même pour tous les points.\n\n\n\n\n\n\nImportant\n\n\n\nSi l’attribut dépend d’une variable, il va dans aes().\nSi l’attribut est le même pour tous les points, il va en dehors de aes().\n\n\nOn peut mélanger les deux. Ici, la taille dépend d’une variable, et la couleur est la même pour tous :\n\nggplot(d) +\n  geom_jitter(aes(x = age, y = heures.tv, size = freres.soeurs), color = \"royalblue\", alpha = 0.2)\n\nWarning: Removed 5 rows containing missing values or values outside the scale range\n(`geom_point()`).",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6113,7 +6134,7 @@
     "section": "Une erreur classique",
     "text": "Une erreur classique\nQue se passe-t-il si l’on place une couleur fixe dans aes() ?\n\nggplot(d) + geom_jitter(aes(x = age, y = heures.tv, color = \"darkred\"))\n\nWarning: Removed 5 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nLes points ne sont pas rouges. Placé dans aes(), color est interprété comme un mappage : R comprend qu’il faut colorer les points selon une variable qui vaudrait « darkred » pour tout le monde. Il crée donc un groupe unique, lui attribue la première couleur de sa palette, et ajoute une légende absurde. Aucun message d’erreur ne vous prévient : c’est le graphique lui-même qu’il faut regarder.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6124,7 +6145,7 @@
     "section": "Plusieurs géométries",
     "text": "Plusieurs géométries\nOn peut superposer plusieurs géométries en les ajoutant avec +. Pour éviter de répéter les mêmes mappages dans chacune, on les déclare une fois pour toutes dans ggplot() : ils s’appliquent alors à toutes les géométries.\n\nggplot(d, aes(x = sexe, y = heures.tv)) +\n  geom_boxplot() +\n  geom_jitter(color = \"red\", alpha = 0.1)\n\nWarning: Removed 5 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\nWarning: Removed 5 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nQuand une commande devient longue, répartissez-la sur plusieurs lignes en plaçant le + en fin de ligne. Comme pour |&gt;, c’est ce qui indique à R que la commande continue. Si le + est placé au début de la ligne suivante, R exécute la première ligne seule, puis vous signale une erreur sur la seconde.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6135,7 +6156,7 @@
     "section": "Ajouter une tendance",
     "text": "Ajouter une tendance\ngeom_smooth() ajoute une courbe de tendance. Avec method = \"lm\", c’est une droite de régression linéaire :\n\nggplot(d, aes(x = age, y = heures.tv)) +\n  geom_jitter(alpha = 0.15) +\n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 5 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 5 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nVous retrouverez la régression linéaire en économétrie. Ici, elle sert seulement à visualiser une tendance générale.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6144,9 +6165,9 @@
     "href": "04RepresentationsGraphiques.html#découper-en-sous-graphiques",
     "title": "Représenter des données",
     "section": "Découper en sous-graphiques",
-    "text": "Découper en sous-graphiques\nfacet_wrap() répète le même graphique pour chaque modalité d’une variable. Le nom de la variable est précédé d’un ~ :\n\nggplot(d, aes(x = age, y = heures.tv)) +\n  geom_jitter(alpha = 0.2) +\n  facet_wrap(~ sexe)\n\nWarning: Removed 5 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nC’est l’équivalent graphique du group_by() de la séance dernière.",
+    "text": "Découper en sous-graphiques\nfacet_wrap() répète le même graphique pour chaque modalité d’une variable. Le nom de la variable est précédé d’un ~ :\n\nggplot(d, aes(x = age, y = heures.tv)) +\n  geom_jitter(alpha = 0.2) +\n  facet_wrap(~ sexe)\n\nWarning: Removed 5 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nC’est l’équivalent graphique du group_by() du chapitre précédent.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6155,9 +6176,9 @@
     "href": "04RepresentationsGraphiques.html#les-échelles",
     "title": "Représenter des données",
     "section": "Les échelles",
-    "text": "Les échelles\nLes échelles (scales) contrôlent la façon dont un attribut est relié aux valeurs d’une variable : l’étendue d’un axe, les couleurs utilisées, l’affichage de la légende… Elles s’ajoutent avec +, et leur nom suit le modèle scale_&lt;attribut&gt;_&lt;type&gt;. Par exemple, pour fixer l’étendue des deux axes :\n\nggplot(d) +\n  geom_jitter(aes(x = age, y = heures.tv), alpha = 0.15) +\n  scale_x_continuous(limits = c(18, 100)) +\n  scale_y_continuous(limits = c(0, 12))\n\nWarning: Removed 124 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nAttention : les observations situées en dehors des limites sont retirées du graphique. R le signale par un avertissement, qu’il faut lire.",
+    "text": "Les échelles\nLes échelles (scales) contrôlent la façon dont un attribut est relié aux valeurs d’une variable : l’étendue d’un axe, les couleurs utilisées, l’affichage de la légende… Elles s’ajoutent avec +, et leur nom suit le modèle scale_&lt;attribut&gt;_&lt;type&gt;. Par exemple, pour fixer l’étendue des deux axes :\n\nggplot(d) +\n  geom_jitter(aes(x = age, y = heures.tv), alpha = 0.15) +\n  scale_x_continuous(limits = c(18, 100)) +\n  scale_y_continuous(limits = c(0, 12))\n\nWarning: Removed 134 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nAttention : les observations situées en dehors des limites sont retirées du graphique. R le signale par un avertissement, qu’il faut lire.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6168,7 +6189,7 @@
     "section": "Titres et étiquettes",
     "text": "Titres et étiquettes\nlabs() règle tous les textes du graphique en une seule fois : titre, sous-titre, noms des axes et titres des légendes.\n\nggplot(d) +\n  geom_jitter(aes(x = age, y = heures.tv, color = sexe), alpha = 0.3) +\n  labs(\n    title = \"Télévision et âge\",\n    subtitle = \"Enquête Histoire de vie, INSEE, 2003\",\n    x = \"Âge (années)\",\n    y = \"Heures de télévision par jour\",\n    color = \"Sexe\"\n  )\n\nWarning: Removed 5 rows containing missing values or values outside the scale range\n(`geom_point()`).",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6179,7 +6200,7 @@
     "section": "Thèmes",
     "text": "Thèmes\nLes thèmes modifient l’apparence générale du graphique : fond, quadrillage, polices.\n\nggplot(d) +\n  geom_bar(aes(y = qualif)) +\n  labs(x = \"Effectif\", y = NULL) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nEssayez aussi theme_bw(), theme_classic() et theme_light().",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6190,7 +6211,7 @@
     "section": "Un graphique lisible",
     "text": "Un graphique lisible\nUn graphique est destiné à être lu par quelqu’un d’autre que vous. Quatre règles le rendent lisible :\n\ndes axes nommés, en français, avec l’unité : heures.tv n’est pas un titre d’axe ;\nla source des données, en sous-titre ou en légende ;\npas de décoration inutile : les couleurs doivent porter une information, sinon elles distraient ;\nle nombre d’observations représentées, surtout si des valeurs manquantes ont été écartées.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6201,7 +6222,7 @@
     "section": "Enregistrer un graphique",
     "text": "Enregistrer un graphique\nggsave() enregistre le dernier graphique affiché dans un fichier, placé dans votre dossier de travail. Le format est déduit de l’extension du nom de fichier, et les dimensions sont en pouces :\n\nggsave(\"tv_age.png\", width = 8, height = 5)",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6210,9 +6231,9 @@
     "href": "04RepresentationsGraphiques.html#exercice-2",
     "title": "Représenter des données",
     "section": "Exercice 2",
-    "text": "Exercice 2\nDans un script commenté :\n\nReprésentez la distribution de l’âge selon le sexe, avec des boîtes à moustaches.\nFaites un diagramme en barres lisible du niveau d’études (nivetud).\nLe nombre d’heures de télévision diffère-t-il selon que l’on pratique un sport ou non ? Représentez-le, puis comparez avec le tableau correspondant de la séance dernière.\nReprenez le nuage de points âge / heures de télévision, découpez-le selon la qualification avec facet_wrap(), et donnez-lui un titre et des axes nommés.\n\nPour chaque graphique, écrivez en commentaire ce que vous y lisez. Un graphique sans lecture ne sert à rien.",
+    "text": "Exercice 2\nDans un script commenté :\n\nReprésentez la distribution de l’âge selon le sexe, avec des boîtes à moustaches.\nFaites un diagramme en barres lisible du niveau d’études (nivetud).\nLe nombre d’heures de télévision diffère-t-il selon que l’on pratique un sport ou non ? Représentez-le, puis comparez avec le tableau correspondant du chapitre précédent.\nReprenez le nuage de points âge / heures de télévision, découpez-le selon la qualification avec facet_wrap(), et donnez-lui un titre et des axes nommés.\n\nPour chaque graphique, écrivez en commentaire ce que vous y lisez. Un graphique sans lecture ne sert à rien.\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\n# Les deux distributions sont presque identiques : médiane de 48 ans\n# pour les hommes, 47 pour les femmes, mêmes quartiles.\nggplot(d) + geom_boxplot(aes(x = sexe, y = age))\n\n\n\n\n\n\n\n\n\n# Les niveaux les plus fréquents sont l'enseignement technique court\n# et l'enseignement supérieur.\nggplot(d) +\n  geom_bar(aes(y = nivetud)) +\n  labs(x = \"Effectif\", y = NULL, title = \"Niveau d'études des enquêtés\")\n\n\n\n\n\n\n\n\n\nggplot(d) +\n  geom_boxplot(aes(x = sport, y = heures.tv)) +\n  labs(x = \"Pratique un sport\", y = \"Heures de télévision par jour\")\n\nWarning: Removed 5 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nLes deux boîtes sont identiques : même médiane (2 heures), mêmes quartiles (1 et 3 heures). Pourtant, au chapitre précédent, la moyenne était de 2,5 heures pour les non-sportifs et de 1,8 heure pour les sportifs. Les déclarations se concentrent sur des heures rondes, et les quartiles tombent sur les mêmes valeurs dans les deux groupes : la boîte ne montre pas la différence que la moyenne révèle. Un graphique peut cacher une différence aussi bien qu’un tableau : il faut confronter les deux.\n\nggplot(d) +\n  geom_jitter(aes(x = age, y = heures.tv), alpha = 0.15) +\n  facet_wrap(~ qualif) +\n  labs(\n    title = \"Âge et télévision selon la qualification\",\n    x = \"Âge (années)\",\n    y = \"Heures de télévision par jour\"\n  )\n\nWarning: Removed 5 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nChaque panneau correspond à une qualification ; le panneau NA regroupe les personnes dont la qualification n’est pas renseignée, en majorité sans emploi.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6223,7 +6244,7 @@
     "section": "Les leçons swirl",
     "text": "Les leçons swirl\n\nlibrary(swirl)\nswirl()\n\nFaites la leçon Representations_graphiques et déposez le fichier .txt sur Moodle. Si vous bloquez sur une question, voir Si vous êtes bloqués.\nSi vous voulez pratiquer davantage, la leçon facultative Exercice_5 reprend le nuage de points, la boîte à moustaches et le diagramme en barres. Voir LECONS_OPTIONNELLES.md.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6234,7 +6255,7 @@
     "section": "Ressources",
     "text": "Ressources\nL’antisèche ggplot2 résume l’essentiel en deux pages. Elle est aussi accessible depuis RStudio : Help &gt; Cheatsheets &gt; Data visualization with ggplot2.\nLa documentation officielle donne la liste complète des géométries, avec un exemple pour chacune.\nLe chapitre Data visualisation de R for Data Science est une bonne introduction complémentaire, en anglais.",
     "crumbs": [
-      "Séance 4 : représentations graphiques",
+      "Chapitre 4 : représentations graphiques",
       "Représenter des données"
     ]
   },
@@ -6243,9 +6264,9 @@
     "href": "05Projet.html",
     "title": "Projet : une analyse complète",
     "section": "",
-    "text": "Regardez le graphique suivant :\n\n\n\n\n\n\n\n\n\nQu’est-ce que ce graphique cache, ou exagère ? Comment le corriger ? Écrivez votre réponse, puis le code du graphique corrigé, avant d’ouvrir la correction.\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\nggplot(d) + geom_jitter(aes(x = age, y = heures.tv), alpha = 0.15)\n\n\n\n\n\n\n\n\nLes 2000 points sont opaques, et beaucoup se superposent exactement. Le premier graphique donne donc l’impression que les enquêtés sont répartis uniformément, alors qu’ils se concentrent dans certaines zones. geom_jitter() sépare les points superposés en les décalant légèrement, et la transparence (alpha) fait apparaître plus foncées les zones où ils s’accumulent.\nSi vous n’aviez pas identifié le problème, relisez la partie « Croiser deux variables » de la séance 4.",
+    "text": "Le code suivant représente l’âge et le nombre d’heures de télévision par jour des enquêtés de l’enquête Histoire de vie (d, comme dans les chapitres précédents). Regardez le graphique qu’il produit :\n\nggplot(d) + geom_point(aes(x = age, y = heures.tv))\n\n\n\n\n\n\n\n\nQu’est-ce que ce graphique cache, ou exagère ? Comment le corriger ? Écrivez votre réponse, puis le code du graphique corrigé, avant d’ouvrir la correction.\n\n\n\n\n\n\nNoteCorrection\n\n\n\n\n\n\nggplot(d) + geom_jitter(aes(x = age, y = heures.tv), alpha = 0.15)\n\n\n\n\n\n\n\n\nLes 2000 points sont opaques, et beaucoup se superposent exactement. Le premier graphique donne donc l’impression que les enquêtés sont répartis uniformément, alors qu’ils se concentrent dans certaines zones. geom_jitter() sépare les points superposés en les décalant légèrement, et la transparence (alpha) fait apparaître plus foncées les zones où ils s’accumulent.\nSi vous n’aviez pas identifié le problème, relisez la partie « Croiser deux variables » du chapitre 4.",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -6254,9 +6275,9 @@
     "href": "05Projet.html#manipuler-un-tableau",
     "title": "Projet : une analyse complète",
     "section": "Manipuler un tableau",
-    "text": "Manipuler un tableau\n\n\n\nFonction\nCe qu’elle fait\n\n\n\n\nselect()\nchoisit des colonnes\n\n\nfilter()\nchoisit des lignes\n\n\narrange()\ntrie les lignes\n\n\nmutate()\ncrée ou modifie une colonne\n\n\n\n\nd |&gt;\n  filter(age &lt; 30) |&gt;\n  select(age, sexe, qualif) |&gt;\n  arrange(age)\n\nVoir la séance 2.",
+    "text": "Manipuler un tableau\n\n\n\nFonction\nCe qu’elle fait\n\n\n\n\nselect()\nchoisit des colonnes\n\n\nfilter()\nchoisit des lignes\n\n\narrange()\ntrie les lignes\n\n\nmutate()\ncrée ou modifie une colonne\n\n\n\n\nd |&gt;\n  filter(age &lt; 30) |&gt;\n  select(age, sexe, qualif) |&gt;\n  arrange(age)\n\nVoir le chapitre 2.",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -6265,9 +6286,9 @@
     "href": "05Projet.html#décrire",
     "title": "Projet : une analyse complète",
     "section": "Décrire",
-    "text": "Décrire\n\n\n\nFonction\nCe qu’elle fait\n\n\n\n\nsummarise()\ncalcule des indicateurs\n\n\ncount()\ncompte les modalités\n\n\ngroup_by()\ndécoupe en groupes\n\n\nn()\ndonne l’effectif du groupe\n\n\n\n\nd |&gt;\n  group_by(qualif) |&gt;\n  summarise(\n    effectif = n(),\n    age_moyen = mean(age)\n  ) |&gt;\n  arrange(desc(age_moyen))\n\nVoir la séance 3.",
+    "text": "Décrire\n\n\n\nFonction\nCe qu’elle fait\n\n\n\n\nsummarise()\ncalcule des indicateurs\n\n\ncount()\ncompte les modalités\n\n\ngroup_by()\ndécoupe en groupes\n\n\nn()\ndonne l’effectif du groupe\n\n\n\n\nd |&gt;\n  group_by(qualif) |&gt;\n  summarise(\n    effectif = n(),\n    age_moyen = mean(age)\n  ) |&gt;\n  arrange(desc(age_moyen))\n\nVoir le chapitre 3.",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -6276,9 +6297,9 @@
     "href": "05Projet.html#représenter",
     "title": "Projet : une analyse complète",
     "section": "Représenter",
-    "text": "Représenter\n\n\n\nGéométrie\nPour quoi\n\n\n\n\ngeom_histogram()\ndistribution d’une variable quantitative\n\n\ngeom_bar()\neffectifs d’une variable qualitative\n\n\ngeom_point(), geom_jitter()\ndeux variables quantitatives\n\n\ngeom_boxplot()\nune quantitative selon une qualitative\n\n\nfacet_wrap()\nle même graphique par groupe\n\n\n\n\nggplot(d) +\n  geom_boxplot(aes(x = heures.tv, y = qualif)) +\n  labs(x = \"Heures de télévision par jour\", y = NULL)\n\nVoir la séance 4.",
+    "text": "Représenter\n\n\n\nGéométrie\nPour quoi\n\n\n\n\ngeom_histogram()\ndistribution d’une variable quantitative\n\n\ngeom_bar()\neffectifs d’une variable qualitative\n\n\ngeom_point(), geom_jitter()\ndeux variables quantitatives\n\n\ngeom_boxplot()\nune quantitative selon une qualitative\n\n\nfacet_wrap()\nle même graphique par groupe\n\n\n\n\nggplot(d) +\n  geom_boxplot(aes(x = heures.tv, y = qualif)) +\n  labs(x = \"Heures de télévision par jour\", y = NULL)\n\nVoir le chapitre 4.",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -6289,7 +6310,7 @@
     "section": "Une bonne question",
     "text": "Une bonne question\nLe choix des questions est l’étape la plus importante du projet. Une bonne question remplit trois conditions :\n\nelle porte sur des variables qui existent dans le jeu de données (vérifiez avec glimpse(d)) ;\nelle est assez précise pour qu’on sache quel calcul faire ;\nelle a une réponse vérifiable : un chiffre, une comparaison, une forme.\n\nQuelques exemples :\n\n\n\n\n\n\n\nTrop vague\nUtilisable\n\n\n\n\n« Étudier les loisirs »\n« Les cadres lisent-ils plus de bandes dessinées que les ouvriers ? »\n\n\n« Analyser la télévision »\n« Le temps passé devant la télévision diminue-t-il avec le niveau d’études ? »\n\n\n« Voir les différences hommes-femmes »\n« À âge et qualification comparables, les femmes déclarent-elles moins pratiquer un sport ? »",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -6300,7 +6321,7 @@
     "section": "Si vous ne savez pas par où commencer",
     "text": "Si vous ne savez pas par où commencer\nVoici quelques pistes :\n\nQui pratique un sport ? Est-ce lié à l’âge, au diplôme, à la qualification ?\nLe sentiment d’appartenance à une classe sociale (clso) varie-t-il selon la qualification ?\nLe nombre de frères et sœurs est-il lié à la pratique religieuse (relig) ?\nQui déclare que le travail est important (trav.imp) ? Et qui en est satisfait (trav.satisf) ?\nLes activités de loisir (cuisine, bricol, peche.chasse, cinema) se répartissent-elles différemment selon le sexe ?\n\nPrenez-en une, et posez-vous ensuite la question qui vient naturellement après.",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -6311,7 +6332,7 @@
     "section": "Écrivez-les d’abord",
     "text": "Écrivez-les d’abord\n\n\n\n\n\n\nImportant\n\n\n\nÉcrivez vos deux ou trois questions en français, dans votre script, avant d’écrire la moindre ligne de code.\nSinon, vous produirez des calculs sans savoir ce que vous cherchez, et vous ne pourrez pas dire si le résultat est bon.",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -6322,7 +6343,7 @@
     "section": "La structure",
     "text": "La structure\nVotre script doit suivre la structure suivante :\n\n# Projet M3P — Prénom Nom — numéro d'étudiant\n# Analyse de l'enquête Histoire de vie 2003\n\n# Préparation ------------------------------------------------\n\nlibrary(tidyverse)\nlibrary(questionr)\n\ndata(hdv2003)\nd &lt;- as_tibble(hdv2003)\n\n\n# Question 1 : les cadres regardent-ils moins la télévision ? ----\n\n# ...\n\n\n# Question 2 : ... ----\n\n# ...",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -6333,7 +6354,7 @@
     "section": "Les sections",
     "text": "Les sections\nUn commentaire terminé par au moins quatre tirets crée une section :\n\n# Question 1 : la pratique sportive selon l'âge ----\n\nRStudio affiche alors un plan du script, qui permet de passer d’une section à l’autre. Ctrl + Shift + O affiche ou masque ce plan. Les sections ne changent rien à l’exécution : ce sont des commentaires ordinaires.\nFaites une section par question. C’est ce qui rend un script lisible, pour moi qui le corrigerai, et pour vous quand vous le relirez dans trois semaines.",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -6344,7 +6365,7 @@
     "section": "Commenter utilement",
     "text": "Commenter utilement\nCommentez ce que vous cherchez et ce que vous trouvez, pas ce que fait la ligne :\n\n# Inutile\n# calcule la moyenne\nmean(d$age)\n\n# Utile\n# On écarte les 5 non-répondants sur les heures de télévision.\n# La moyenne porte donc sur 1995 personnes.\nd |&gt; summarise(\n  effectif = sum(!is.na(heures.tv)),\n  moyenne = mean(heures.tv, na.rm = TRUE)\n)",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -6353,9 +6374,9 @@
     "href": "05Projet.html#les-réflexes",
     "title": "Projet : une analyse complète",
     "section": "Les réflexes",
-    "text": "Les réflexes\nQuatre réflexes, vus au fil des séances, font la différence entre un script qui tourne et une analyse juste :\n\nPrédisez l’ordre de grandeur avant de lancer un calcul. Un résultat qui surprend est soit une découverte, soit une erreur.\nAffichez l’effectif à côté de chaque indicateur. Une moyenne sur six personnes ne se compare pas à une moyenne sur huit cents.\nNommez vos axes. heures.tv n’est pas un titre d’axe.\nRelancez tout depuis le début avant de rendre. Redémarrez R avec Ctrl + Shift + F10, puis exécutez le script en entier (Ctrl + Shift + Entrée). Il doit tourner sans erreur dans une session vierge : c’est la seule façon de vérifier qu’il ne dépend pas d’un objet que vous avez créé dans la console et oublié.",
+    "text": "Les réflexes\nQuatre réflexes, vus au fil des chapitres, font la différence entre un script qui tourne et une analyse juste :\n\nPrédisez l’ordre de grandeur avant de lancer un calcul. Un résultat qui surprend est soit une découverte, soit une erreur.\nAffichez l’effectif à côté de chaque indicateur. Une moyenne sur six personnes ne se compare pas à une moyenne sur huit cents.\nNommez vos axes. heures.tv n’est pas un titre d’axe.\nRelancez tout depuis le début avant de rendre. Redémarrez R avec Ctrl + Shift + F10, puis exécutez le script en entier (Ctrl + Shift + Entrée). Il doit tourner sans erreur dans une session vierge : c’est la seule façon de vérifier qu’il ne dépend pas d’un objet que vous avez créé dans la console et oublié.",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -6364,9 +6385,9 @@
     "href": "05Projet.html#quand-vous-êtes-bloqués",
     "title": "Projet : une analyse complète",
     "section": "Quand vous êtes bloqués",
-    "text": "Quand vous êtes bloqués\n\nLisez la dernière ligne du message d’erreur. Le nom cité entre guillemets est presque toujours la faute.\nOuvrez l’aide de la fonction avec ?nom_de_la_fonction, et regardez la rubrique Examples, tout en bas.\nRéduisez le problème. Exécutez votre enchaînement étape par étape, en ajoutant les |&gt; un à un, pour voir à quelle étape le résultat cesse d’être celui que vous attendez.\nRevenez à la séance où la notion a été présentée : les tableaux de rappel ci-dessus indiquent laquelle.\n\nLe point 3 est le plus efficace.",
+    "text": "Quand vous êtes bloqués\n\nLisez la dernière ligne du message d’erreur. Le nom cité entre guillemets est presque toujours la faute.\nOuvrez l’aide de la fonction avec ?nom_de_la_fonction, et regardez la rubrique Examples, tout en bas.\nRéduisez le problème. Exécutez votre enchaînement étape par étape, en ajoutant les |&gt; un à un, pour voir à quelle étape le résultat cesse d’être celui que vous attendez.\nRevenez au chapitre où la notion a été présentée : les tableaux de rappel ci-dessus indiquent lequel.\n\nLe point 3 est le plus efficace.",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -6377,7 +6398,7 @@
     "section": "Ce que vous déposez",
     "text": "Ce que vous déposez\nUn fichier .R, nommé Nom_Prenom.R, à déposer sur Moodle.\nIl doit :\n\ns’exécuter en entier, sans erreur, dans une session vierge ;\ncontenir vos questions, écrites en français ;\nproduire au moins deux graphiques aux axes nommés ;\ncontenir vos commentaires de lecture des résultats.",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -6388,7 +6409,7 @@
     "section": "Critères d’évaluation",
     "text": "Critères d’évaluation\n\n\n\nCritère\nCe que je regarde\n\n\n\n\nLe script tourne\nexécution complète sans erreur\n\n\nQuestions\nposées explicitement, précises\n\n\nPertinence\nle calcul répond bien à la question posée\n\n\nPrudence\neffectifs affichés, valeurs manquantes traitées\n\n\nGraphiques\nlisibles, axes nommés\n\n\nLecture\nune phrase de commentaire par résultat\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nDeux questions bien traitées valent mieux que cinq survolées.",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -6399,7 +6420,7 @@
     "section": "Pour aller plus loin",
     "text": "Pour aller plus loin\nRStudio sait transformer un script en document, sans rien apprendre de nouveau : les lignes qui commencent par #' sont interprétées comme du texte.\n\n#' # Analyse de la pratique sportive\n#'\n#' On commence par regarder la répartition par sexe.\n\nd |&gt; count(sport, sexe)\n\nCtrl + Shift + K produit alors un document HTML qui mêle texte, code et résultats.\n\n\n\n\n\n\nNote\n\n\n\nC’est facultatif, et cela ne rapporte rien de plus. Mais si le mécanisme vous intéresse, c’est le point d’entrée vers Quarto et les documents reproductibles.",
     "crumbs": [
-      "Séance 5 : projet",
+      "Chapitre 5 : projet",
       "Projet : une analyse complète"
     ]
   },
@@ -9083,7 +9104,7 @@
     "href": "Swirl.html#sec-bloque",
     "title": "Utiliser Swirl",
     "section": "Si vous êtes bloqués",
-    "text": "Si vous êtes bloqués\nswirl ne vérifie pas le résultat de votre commande : il compare ce que vous avez tapé à une liste de réponses qu’il connaît. Une commande juste, qui fonctionne, peut donc être refusée si elle est écrite autrement que prévu.\nQuand swirl refuse votre réponse :\n\nRelisez la consigne mot à mot. Les noms demandés (d’objet, de colonne, de résultat) doivent être repris exactement.\nÉcrivez la commande comme dans le cours : le tuyau |&gt; plutôt que %&gt;%, et sans étape supplémentaire.\nLisez l’indice que swirl affiche après une mauvaise réponse : il précise souvent la forme attendue.\nSi vous tournez en rond, passez la question en tapant skip(). swirl exécute alors la bonne réponse à votre place et passe à la suite. Regardez bien la commande qu’il exécute : c’est ainsi que vous comprendrez ce qui coinçait.\n\nPasser quelques questions n’est pas un problème : environ une question sur cinq reste acceptable. Au-delà, reprenez plutôt la séance correspondante avant de continuer la leçon.\nQuelques autres commandes utiles, à taper à l’invite &gt; pendant une leçon :\n\n\n\n\n\n\n\nCommande\nEffet\n\n\n\n\nskip()\npasse la question en cours\n\n\nplay()\nvous laisse taper des commandes librement, sans que swirl les corrige\n\n\nnxt()\nrevient à la leçon après un play()\n\n\nbye()\nquitte swirl en gardant votre progression ; swirl() vous ramène où vous en étiez\n\n\ninfo()\nrappelle la liste de ces commandes",
+    "text": "Si vous êtes bloqués\nswirl ne vérifie pas le résultat de votre commande : il compare ce que vous avez tapé à une liste de réponses qu’il connaît. Une commande juste, qui fonctionne, peut donc être refusée si elle est écrite autrement que prévu.\nQuand swirl refuse votre réponse :\n\nRelisez la consigne mot à mot. Les noms demandés (d’objet, de colonne, de résultat) doivent être repris exactement.\nÉcrivez la commande comme dans le cours : le tuyau |&gt; plutôt que %&gt;%, et sans étape supplémentaire.\nLisez l’indice que swirl affiche après une mauvaise réponse : il précise souvent la forme attendue.\nSi vous tournez en rond, passez la question en tapant skip(). swirl exécute alors la bonne réponse à votre place et passe à la suite. Regardez bien la commande qu’il exécute : c’est ainsi que vous comprendrez ce qui coinçait.\n\nPasser quelques questions n’est pas un problème : environ une question sur cinq reste acceptable. Au-delà, reprenez plutôt le chapitre correspondant avant de continuer la leçon.\nQuelques autres commandes utiles, à taper à l’invite &gt; pendant une leçon :\n\n\n\n\n\n\n\nCommande\nEffet\n\n\n\n\nskip()\npasse la question en cours\n\n\nplay()\nvous laisse taper des commandes librement, sans que swirl les corrige\n\n\nnxt()\nrevient à la leçon après un play()\n\n\nbye()\nquitte swirl en gardant votre progression ; swirl() vous ramène où vous en étiez\n\n\ninfo()\nrappelle la liste de ces commandes",
     "crumbs": [
       "Exercices",
       "Utiliser Swirl"
@@ -9105,7 +9126,7 @@
     "href": "Swirl.html#aller-plus-loin",
     "title": "Utiliser Swirl",
     "section": "Aller plus loin",
-    "text": "Aller plus loin\nLe cours InitiationR propose aussi des leçons facultatives, en autonomie, pour qui veut pratiquer davantage ou approfondir un point (fonctions, boucles, tirages aléatoires…). Chaque séance rappelle celles qui prennent la suite directe de ce qui vient d’être vu. La liste complète, avec un résumé de chaque leçon, est disponible dans LECONS_OPTIONNELLES.md sur le dépôt du cours.",
+    "text": "Aller plus loin\nLe cours InitiationR propose aussi des leçons facultatives, en autonomie, pour qui veut pratiquer davantage ou approfondir un point (fonctions, boucles, tirages aléatoires…). Chaque chapitre rappelle celles qui prennent la suite directe de ce qui vient d’être vu. La liste complète, avec un résumé de chaque leçon, est disponible dans LECONS_OPTIONNELLES.md sur le dépôt du cours.",
     "crumbs": [
       "Exercices",
       "Utiliser Swirl"

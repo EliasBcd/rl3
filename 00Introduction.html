@@ -27,6 +27,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -106,7 +141,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00Introduction.html">Séance 1 : premiers pas</a></li><li class="breadcrumb-item"><a href="./00Introduction.html">Initiation à R</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00Introduction.html">Chapitre 1 : premiers pas</a></li><li class="breadcrumb-item"><a href="./00Introduction.html">Initiation à R</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
@@ -140,7 +175,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Séance 1 : premiers pas</span></a>
+ <span class="menu-text">Chapitre 1 : premiers pas</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -163,7 +198,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Séance 2 : données</span></a>
+ <span class="menu-text">Chapitre 2 : données</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -180,7 +215,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Séance 3 : analyse</span></a>
+ <span class="menu-text">Chapitre 3 : analyse</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -197,7 +232,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Séance 4 : représentations graphiques</span></a>
+ <span class="menu-text">Chapitre 4 : représentations graphiques</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -214,7 +249,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Séance 5 : projet</span></a>
+ <span class="menu-text">Chapitre 5 : projet</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -310,6 +345,7 @@ div.csl-indent {
   <li><a href="#installer-r" id="toc-installer-r" class="nav-link" data-scroll-target="#installer-r">Installer R</a></li>
   <li><a href="#installer-rstudio" id="toc-installer-rstudio" class="nav-link" data-scroll-target="#installer-rstudio">Installer RStudio</a></li>
   <li><a href="#lancer-rstudio" id="toc-lancer-rstudio" class="nav-link" data-scroll-target="#lancer-rstudio">Lancer RStudio</a></li>
+  <li><a href="#passer-rstudio-en-français" id="toc-passer-rstudio-en-français" class="nav-link" data-scroll-target="#passer-rstudio-en-français">Passer RStudio en français</a></li>
   </ul></li>
   <li><a href="#références" id="toc-références" class="nav-link" data-scroll-target="#références">Références</a></li>
   </ul>
@@ -318,7 +354,7 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00Introduction.html">Séance 1 : premiers pas</a></li><li class="breadcrumb-item"><a href="./00Introduction.html">Initiation à R</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00Introduction.html">Chapitre 1 : premiers pas</a></li><li class="breadcrumb-item"><a href="./00Introduction.html">Initiation à R</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Initiation à R</h1>
 <p class="subtitle lead">L3 économie-finance</p>
@@ -345,7 +381,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">9 octobre 2026</p>
+      <p class="date">12 octobre 2026</p>
     </div>
   </div>
   
@@ -374,8 +410,8 @@ div.csl-indent {
 </section>
 <section id="comment-travailler" class="level1">
 <h1>Comment travailler</h1>
-<p>Chaque séance se présente sous la forme d’une page de cours, à lire <strong>devant votre ordinateur, RStudio ouvert</strong>. Le code des exemples est fait pour être recopié et exécuté au fur et à mesure. Lire du code sans l’exécuter ne sert à peu près à rien : c’est en le tapant, en le modifiant et en se trompant qu’on apprend.</p>
-<p>Chaque séance se termine par des leçons interactives <code>swirl</code>, qui vous font pratiquer directement dans R. Elles reprennent des exercices développés par l’équipe <span class="citation" data-cites="swirldev"><span class="nocase">swirldev</span> (<a href="#ref-swirldev" role="doc-biblioref">2022</a>)</span>, traduits et adaptés pour ce cours, et d’autres que j’ai écrits ; elles sont disponibles sur <a href="https://github.com/EliasBcd/InitiationR">ce dépôt GitHub</a>. Le fichier produit à la fin de chaque leçon est à déposer sur Moodle : c’est ce qui valide votre travail. La page <a href="./Swirl.html">Utiliser swirl</a> explique comment faire.</p>
+<p>Chaque chapitre se présente sous la forme d’une page de cours, à lire <strong>devant votre ordinateur, RStudio ouvert</strong>. Le code des exemples est fait pour être recopié et exécuté au fur et à mesure. Lire du code sans l’exécuter ne sert à peu près à rien : c’est en le tapant, en le modifiant et en se trompant qu’on apprend.</p>
+<p>Chaque chapitre se termine par des leçons interactives <code>swirl</code>, qui vous font pratiquer directement dans R. Elles reprennent des exercices développés par l’équipe <span class="citation" data-cites="swirldev"><span class="nocase">swirldev</span> (<a href="#ref-swirldev" role="doc-biblioref">2022</a>)</span>, traduits et adaptés pour ce cours, et d’autres que j’ai écrits ; elles sont disponibles sur <a href="https://github.com/EliasBcd/InitiationR">ce dépôt GitHub</a>. Le fichier produit à la fin de chaque leçon est à déposer sur Moodle : c’est ce qui valide votre travail. La page <a href="./Swirl.html">Utiliser swirl</a> explique comment faire.</p>
 <p>Quand vous avez un problème avec R, vous trouverez généralement la réponse à votre question sur internet. <a href="https://stackoverflow.com/">Stack Overflow</a> est une bonne ressource pour commencer.</p>
 </section>
 <section id="installer-r-et-rstudio" class="level1">
@@ -399,6 +435,20 @@ div.csl-indent {
 <section id="lancer-rstudio" class="level2">
 <h2 class="anchored" data-anchor-id="lancer-rstudio">Lancer RStudio</h2>
 <p>Une fois les deux logiciels installés, lancez RStudio en cliquant sur son icône <img src="resources/RStudio-Logo-Flat.png" class="img-fluid" style="width:5.0%" alt="Logo RStudio">, ou en le recherchant parmi les applications de votre ordinateur. C’est toujours RStudio que vous lancerez, jamais R directement : RStudio s’occupe de démarrer R.</p>
+</section>
+<section id="passer-rstudio-en-français" class="level2">
+<h2 class="anchored" data-anchor-id="passer-rstudio-en-français">Passer RStudio en français</h2>
+<p>Par défaut, les menus de RStudio sont en anglais. Pour les passer en français :</p>
+<ol type="1">
+<li>Ouvrez le menu <em>Tools &gt; Global Options…</em></li>
+<li>Dans la rubrique <em>General</em>, ouvrez l’onglet <em>Advanced</em>.</li>
+<li>Dans la liste <em>User Interface Language</em>, choisissez <em>Français</em>, puis cliquez sur <em>OK</em>.</li>
+<li>Fermez et relancez RStudio : le changement n’est pris en compte qu’au redémarrage.</li>
+</ol>
+<p>Ce réglage ne change que les menus de RStudio, pas les messages de R. Ceux-ci suivent la langue de votre système : si votre ordinateur est en anglais, les messages d’erreur s’afficheront en anglais, alors que le cours les cite en français. Pour les obtenir en français, exécutez la commande suivante dans la console au début de chaque session :</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">LANGUAGE =</span> <span class="st">"fr"</span>)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Si RStudio s’ouvre sans message d’erreur, vous êtes prêts pour <a href="./01PremiersPas.html">la suite</a>.</p>
 </section>
 </section>
